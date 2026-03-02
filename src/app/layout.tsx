@@ -11,9 +11,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://etma-pro.ru"),
+  // 1. Закрываем от поисковиков
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
+  
+  // 2. Ваши текущие настройки
+  metadataBase: new URL("https://etalonklimat.ru"), // Замените на новый домен!
   title: "ETALON — B2B каталог",
   description: "Профессиональный B2B-портал оборудования",
+  
+  // ... остальные поля (openGraph и т.д.)
 };
 
 export default function RootLayout({
