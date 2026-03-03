@@ -1,58 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import DownloadPriceBtn from "./DownloadPriceBtn";
 import * as Slider from "@radix-ui/react-slider";
-import { categories } from "@/data/products";
 import { fromLog, toLog } from "@/utils/math";
 import { useFilterStore } from "@/store/useFilterStore";
 import type { Product } from "@/data/products";
-
-function CategoryIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className="h-4 w-4 text-[#FF8C00]"
-    >
-      <rect
-        x="3.5"
-        y="5"
-        width="17"
-        height="6"
-        rx="1.5"
-        className="fill-none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <rect
-        x="3.5"
-        y="13"
-        width="10"
-        height="6"
-        rx="1.5"
-        className="fill-none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <circle
-        cx="18.5"
-        cy="16"
-        r="2.5"
-        className="fill-none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-    </svg>
-  );
-}
-
-function SubCategoryBullet() {
-  return (
-    <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-[#FF8C00]" aria-hidden="true" />
-  );
-}
 
 type SidebarProps = {
   products?: Product[];
@@ -63,9 +16,6 @@ export default function Sidebar({
   products = [],
   filteredCount = 0,
 }: SidebarProps) {
-  const [openSlug, setOpenSlug] = useState<string | null>(
-    categories.length ? categories[0].slug : null
-  );
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [tooltipAnchor, setTooltipAnchor] = useState<HTMLElement | null>(null);
   const tooltipTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -250,83 +200,11 @@ export default function Sidebar({
   return (
     <aside ref={asideRef} className="relative w-full rounded-xl bg-[#003366] p-4 shadow-lg shadow-slate-800/30">
       <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
-        Категории
+        Фильтры
       </h2>
-      <nav className="space-y-1">
-        {categories.map((category) => {
-          const isOpen = openSlug === category.slug;
-          const hasSubs = category.subCategories.length > 0;
-
-          if (!hasSubs) {
-            return (
-              <div key={category.slug} className="rounded-lg">
-                <Link
-                  href={`/category/${category.slug}`}
-                  className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-white/95 transition hover:bg-white/15 hover:shadow-md"
-                >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-white/20">
-                    <CategoryIcon />
-                  </span>
-                  <span className="flex-1 text-[13px] leading-snug">
-                    {category.name}
-                  </span>
-                </Link>
-              </div>
-            );
-          }
-
-          return (
-            <div key={category.slug} className="rounded-lg">
-              <button
-                type="button"
-                onClick={() =>
-                  setOpenSlug((prev) => (prev === category.slug ? null : category.slug))
-                }
-                className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-white/95 transition hover:bg-white/15 hover:shadow-md"
-              >
-                <span className="flex h-8 w-8 items-center justify-center rounded-md bg-white/20">
-                  <CategoryIcon />
-                </span>
-                <span className="flex-1 text-[13px] leading-snug">
-                  {category.name}
-                </span>
-                <span
-                  className={`ml-1 transition-transform ${
-                    isOpen ? "rotate-90" : "rotate-0"
-                  }`}
-                  aria-hidden="true"
-                >
-                  ▸
-                </span>
-              </button>
-              {isOpen && (
-                <div className="mt-1 space-y-0.5 pl-11 pr-2 pb-2">
-                  <Link
-                    href={`/category/${category.slug}`}
-                    className="flex items-center gap-2 rounded-md px-2 py-1 text-xs font-medium text-white/90 hover:bg-white/15"
-                  >
-                    <SubCategoryBullet />
-                    <span className="text-[12px] leading-snug">Показать все товары раздела</span>
-                  </Link>
-                  {category.subCategories.map((sub) => (
-                    <Link
-                      key={sub.slug}
-                      href={`/category/${sub.slug}`}
-                      className="flex items-center gap-2 rounded-md px-2 py-1 text-xs text-white/90 hover:bg-white/15"
-                    >
-                      <SubCategoryBullet />
-                      <span className="text-[12px] leading-snug">{sub.name}</span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </nav>
 
       {showFilters && (
-        <div className="mt-6 space-y-5 border-t border-white/20 pt-4">
+        <div className="mt-4 space-y-5 border-t border-white/20 pt-4">
           {uniqueFuelTypes.length > 0 && (
             <div ref={fuelRef} className="relative">
               <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">

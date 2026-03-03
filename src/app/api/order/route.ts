@@ -29,7 +29,7 @@ function calculateTotalRub(items: OrderItem[], rate: number): number {
   }, 0);
 }
 
-function buildMessage(body: OrderBody): string {
+function buildMessage(body: OrderBody, orderNumber: string): string {
   const rate = body.rate ?? 1;
   const totalRub =
     body.rate != null
@@ -39,7 +39,7 @@ function buildMessage(body: OrderBody): string {
         : parseFloat(String(body.totalPrice).replace(/\s/g, "")) || 0;
 
   const lines = [
-    "📦 НОВЫЙ ЗАКАЗ",
+    `📦 НОВЫЙ ЗАКАЗ №${orderNumber}`,
     "",
     `👤 Клиент: ${body.customerName}`,
     `📞 Телефон: ${body.customerPhone}`,
@@ -84,7 +84,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const text = buildMessage(body);
+    const orderNumber = new Date()
+      .toISOString()
+      .replace(/[-:.TZ]/g, "")
+      .slice(0, 14);
+
+    const text = buildMessage(body, orderNumber);
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
     const res = await fetch(url, {
@@ -105,7 +110,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return new NextResponse(null, { status: 200 });
+    return NextResponse.json({ orderNumber }, { status: 200 });
   } catch (e) {
     console.error("Order API error:", e);
     return NextResponse.json(

@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import ProductCard from "@/components/ProductCard";
-import Sidebar from "@/components/Sidebar";
 import { useFilterStore } from "@/store/useFilterStore";
 import type { Product } from "@/data/products";
 import type { CategoryMatch } from "@/data/products";
@@ -83,39 +82,46 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
     ]
   );
 
+  const productsRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.innerWidth >= 768) return;
+    if (!productsRef.current) return;
+
+    const rect = productsRef.current.getBoundingClientRect();
+    const offset = 80;
+    const top = rect.top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }, []);
+
   return (
-    <section className="flex w-full max-w-6xl flex-col gap-6 md:flex-row">
-      <div className="md:w-1/4 lg:w-[22%]">
-        <Sidebar
-          products={products}
-          filteredCount={filteredProducts.length}
-        />
-      </div>
-      <div className="md:w-3/4 lg:w-[78%]">
-        <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 transition-shadow hover:shadow-lg md:p-5">
-          <nav className="mb-4 text-sm text-slate-500">
-            <Link href="/" className="hover:text-[#003366]">
-              Главная
-            </Link>
-            <span className="mx-2">/</span>
-            {"parentName" in categoryMatch ? (
-              <>
-                <Link
-                  href={`/category/${categoryMatch.parentSlug}`}
-                  className="hover:text-[#003366]"
-                >
-                  {categoryMatch.parentName}
-                </Link>
-                <span className="mx-2">/</span>
-                <span className="text-[#0b1f33]">{categoryMatch.name}</span>
-              </>
-            ) : (
+    <section className="w-full max-w-6xl">
+      <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 transition-shadow hover:shadow-lg md:p-5">
+        <nav className="mb-4 text-sm text-slate-500">
+          <Link href="/" className="hover:text-[#003366]">
+            Главная
+          </Link>
+          <span className="mx-2">/</span>
+          {"parentName" in categoryMatch ? (
+            <>
+              <Link
+                href={`/category/${categoryMatch.parentSlug}`}
+                className="hover:text-[#003366]"
+              >
+                {categoryMatch.parentName}
+              </Link>
+              <span className="mx-2">/</span>
               <span className="text-[#0b1f33]">{categoryMatch.name}</span>
-            )}
-          </nav>
-          <h1 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
-            {categoryMatch.name}
-          </h1>
+            </>
+          ) : (
+            <span className="text-[#0b1f33]">{categoryMatch.name}</span>
+          )}
+        </nav>
+        <h1 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
+          {categoryMatch.name}
+        </h1>
+        <div ref={productsRef}>
           {filteredProducts.length > 0 ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {filteredProducts.map((product) => (

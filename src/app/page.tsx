@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import ProductCard from "@/components/ProductCard";
-import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import { products, categories } from "@/data/products";
 import Link from "next/link";
@@ -44,7 +43,7 @@ export default function Home() {
         </section>
 
         {/* Categories grid */}
-        <section className="mx-auto max-w-6xl px-4 py-10">
+        <section id="categories" className="mx-auto max-w-6xl px-4 py-10">
           <h2 className="mb-6 text-xl font-semibold text-[#0b1f33] md:text-2xl">
             Категории
           </h2>
@@ -64,47 +63,42 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Main content: Sidebar + Popular products */}
-        <section className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-6 md:flex-row md:py-8">
-          <div className="md:w-1/4 lg:w-[22%]">
-            <Sidebar products={products} filteredCount={products.length} />
-          </div>
-          <div className="md:w-3/4 lg:w-[78%]">
-            <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
-              <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
-                Популярные товары
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {popularProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    sku={product.sku}
-                    priceEur={product.priceEur}
-                    priceRub={product.priceRub}
-                    description={product.description}
-                    image={product.image}
-                  />
-                ))}
-              </div>
+        {/* Popular products + Brands */}
+        <section className="mx-auto max-w-6xl px-4 py-6 md:py-8">
+          <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
+            <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
+              Популярные товары
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {popularProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  sku={product.sku}
+                  priceEur={product.priceEur}
+                  priceRub={product.priceRub}
+                  description={product.description}
+                  image={product.image}
+                />
+              ))}
             </div>
+          </div>
 
-            {/* Brands */}
-            <div className="mt-8 rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
-              <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
-                Наши бренды
-              </h2>
-              <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-                {uniqueBrands.map((brand) => (
-                  <div
-                    key={brand}
-                    className="flex h-14 min-w-[100px] items-center justify-center rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700"
-                  >
-                    {brand}
-                  </div>
-                ))}
-              </div>
+          {/* Brands */}
+          <div className="mt-8 rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
+            <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
+              Наши бренды
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+              {uniqueBrands.map((brand) => (
+                <div
+                  key={brand}
+                  className="flex h-14 min-w-[100px] items-center justify-center rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700"
+                >
+                  {brand}
+                </div>
+              ))}
             </div>
           </div>
         </section>

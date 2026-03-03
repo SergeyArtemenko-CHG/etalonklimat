@@ -16,11 +16,12 @@ export default function CartPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [orderNumber, setOrderNumber] = useState<string | null>(null);
 
   const totalPriceRub = getTotalPriceRub(rate);
   const totalPriceFormatted = formatPrice(undefined, totalPriceRub, rate);
 
-  if (items.length === 0) {
+  if (items.length === 0 && !success) {
     return (
       <div className="min-h-screen bg-slate-100">
         <Header />
@@ -140,15 +141,23 @@ export default function CartPage() {
 
           <div className="mt-8 space-y-6">
             {success ? (
-              <div className="rounded-xl border border-green-200 bg-green-50 p-4 text-green-800">
-                <p className="font-semibold">Заказ успешно оформлен!</p>
-                <p className="mt-1 text-sm">Мы свяжемся с вами в ближайшее время.</p>
-                <Link
-                  href="/"
-                  className="mt-3 inline-block text-sm font-medium text-green-700 underline hover:no-underline"
-                >
-                  Вернуться в каталог
-                </Link>
+              <div className="flex items-center justify-center py-10">
+                <div className="max-w-xl text-center rounded-2xl border border-green-200 bg-green-50 px-6 py-10 shadow-sm">
+                  <h2 className="text-2xl font-bold text-green-800 md:text-3xl">
+                    {orderNumber
+                      ? `Ваш заказ №${orderNumber} успешно оформлен!`
+                      : "Ваш заказ успешно оформлен!"}
+                  </h2>
+                  <p className="mt-4 text-sm text-green-800 md:text-base">
+                    Наш менеджер свяжется с вами в ближайшее время.
+                  </p>
+                  <Link
+                    href="/"
+                    className="mt-8 inline-block rounded-xl bg-[#FF8C00] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
+                  >
+                    Вернуться в каталог
+                  </Link>
+                </div>
               </div>
             ) : (
               <>
@@ -228,12 +237,22 @@ export default function CartPage() {
                               customerPhone: customerPhone.trim(),
                             }),
                           });
+                          const data = await res.json().catch(() => null);
                           if (!res.ok) {
-                            const data = await res.json().catch(() => ({}));
-                            throw new Error(data.error || "Ошибка отправки заказа");
+                            throw new Error(
+                              (data && typeof data === "object" && "error" in data && (data as any).error) ||
+                                "Ошибка отправки заказа"
+                            );
                           }
+                          setOrderNumber(
+                            data && typeof data === "object" && "orderNumber" in data
+                              ? String((data as any).orderNumber)
+                              : null
+                          );
                           setSuccess(true);
                           clearCart();
+                          setCustomerName("");
+                          setCustomerPhone("");
                         } catch (e) {
                           setError(e instanceof Error ? e.message : "Ошибка отправки заказа");
                         } finally {

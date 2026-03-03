@@ -102,6 +102,8 @@ export default function ProductTabs({
                   <li key={i}>
                     <a
                       href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm text-[#003366] underline hover:text-[#ff8c00]"
                     >
                     <svg

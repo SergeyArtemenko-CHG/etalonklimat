@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { products } from "@/data/products";
+import { products, categories } from "@/data/products";
 import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
@@ -29,7 +29,10 @@ function ProductImagePlaceholder({ className }: { className?: string }) {
 export default function Header() {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
+  const [catalogOpen, setCatalogOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   const totalItems = useCartStore((s) => s.getTotalItems());
   const rate = useCurrencyStore((s) => s.rate);
@@ -50,6 +53,7 @@ export default function Header() {
   const handleClickOutside = useCallback((e: MouseEvent) => {
     if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
       setOpen(false);
+      setCatalogOpen(false);
     }
   }, []);
 
@@ -58,11 +62,30 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [handleClickOutside]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY > lastScrollY.current && currentY > 80) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#003366] text-white shadow-md">
+    <header
+      className={`sticky top-0 z-50 w-full bg-[#003366] text-white shadow-md transition-transform duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       {/* Top bar */}
       <div className="border-b border-white/10 bg-[#02274d]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 text-xs sm:text-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-1.5 text-xs sm:text-sm md:py-2">
           <div className="flex items-center gap-2">
             <span className="text-white/70">Ваш город:</span>
             <button className="rounded-full border border-white/30 px-2 py-0.5 text-xs font-medium hover:border-white hover:bg-white/10">
@@ -84,10 +107,10 @@ export default function Header() {
       </div>
 
       {/* Main header */}
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:gap-6 md:py-5">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-3 px-4 py-2 md:flex-row md:items-center md:gap-6 md:py-5">
         {/* Logo */}
         <div className="flex items-center md:w-[200px]">
-          <Link href="/" className="flex items-center gap-3 transition opacity-90 hover:opacity-100">
+          <Link href="/" className="flex items-center gap-2 transition opacity-90 hover:opacity-100">
             <svg
               viewBox="0 0 48 48"
               className="h-10 w-10 shrink-0"
@@ -99,7 +122,7 @@ export default function Header() {
                 <path d="M14 14v20" strokeWidth="3.5" />
               </g>
             </svg>
-            <span className="text-xl font-bold tracking-[0.2em] text-white">
+            <span className="text-lg font-bold tracking-[0.15em] text-white md:text-xl md:tracking-[0.2em]">
               ETALON
             </span>
           </Link>
@@ -108,12 +131,47 @@ export default function Header() {
         {/* Catalog + search */}
         <div
           ref={containerRef}
-          className="relative flex w-full flex-col gap-3 md:flex-1 md:flex-row md:items-center"
+          className="relative flex w-full flex-col gap-2 md:flex-1 md:flex-row md:items-center"
         >
-          <button className="flex items-center justify-center rounded-xl bg-[#FF8C00] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg md:w-[140px]">
-            Каталог
+          <button
+            type="button"
+            onClick={() => setCatalogOpen((prev) => !prev)}
+            className="flex items-center justify-center gap-1.5 rounded-lg bg-[#FF8C00] px-3 py-1.5 text-xs font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg md:w-[140px] md:rounded-xl md:px-4 md:py-2 md:text-sm"
+          >
+            <span>Каталог</span>
+            <span
+              className={`text-[10px] transition-transform ${
+                catalogOpen ? "rotate-180" : "rotate-0"
+              }`}
+              aria-hidden="true"
+            >
+              ▾
+            </span>
           </button>
-          <div className="relative flex flex-1 items-center rounded-md bg-white px-3 py-2 shadow-sm">
+          {catalogOpen && (
+            <div className="absolute left-0 top-full z-40 mt-2 w-full max-h-80 overflow-y-auto rounded-xl border border-slate-200 bg-white py-2 shadow-xl md:w-72">
+              <Link
+                href="/#categories"
+                onClick={() => setCatalogOpen(false)}
+                className="block px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#003366] hover:bg-slate-50"
+              >
+                Все категории
+              </Link>
+              <div className="mt-1 border-t border-slate-100" />
+              {categories.map((cat) => (
+                <Link
+                  key={cat.slug}
+                  href={`/category/${cat.slug}`}
+                  onClick={() => setCatalogOpen(false)}
+                  className="flex items-center gap-2 px-4 py-2 text-sm text-slate-800 hover:bg-slate-50"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#FF8C00]" aria-hidden="true" />
+                  <span className="truncate">{cat.name}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+          <div className="relative flex flex-1 items-center rounded-md bg-white px-2 py-1.5 shadow-sm md:px-3 md:py-2">
             <input
               type="text"
               placeholder="Поиск по товарам"
@@ -124,7 +182,7 @@ export default function Header() {
                 setOpen(v.trim().length >= 2);
               }}
               onFocus={() => showDropdown && setOpen(true)}
-              className="w-full border-none text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-0"
+              className="w-full border-none text-xs text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-0 md:text-sm"
             />
             {open && showDropdown && (
               <div className="absolute left-0 right-0 top-full z-50 mt-1 max-h-80 overflow-y-auto rounded-lg border border-slate-200 bg-white py-2 shadow-lg">
