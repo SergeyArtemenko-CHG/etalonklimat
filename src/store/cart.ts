@@ -91,6 +91,7 @@ export const useCartStore = create<CartStore>()(
     }),
     {
       name: "cart-storage",
+      version: 1,
     }
   )
 );

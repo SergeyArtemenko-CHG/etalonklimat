@@ -27,13 +27,20 @@ function ProductImagePlaceholder({ className }: { className?: string }) {
 }
 
 export default function Header() {
+  const [mounted, setMounted] = useState(false);
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isShrunk, setIsShrunk] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const totalItems = useCartStore((s) => s.getTotalItems());
+
+  if (!mounted) return null;
   const rate = useCurrencyStore((s) => s.rate);
 
   const trimmed = query.trim();
