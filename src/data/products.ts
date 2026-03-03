@@ -179,7 +179,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-1000-naruzhnogo-razmeshcheniya",
@@ -201,7 +201,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "atmosfernyi-deaerator-da-es-10000",
@@ -223,7 +223,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-10000-naruzhnogo-razmeshcheniya",
@@ -245,7 +245,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-12000",
@@ -267,7 +267,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-12000-naruzhnogo-razmeshcheniya",
@@ -443,7 +443,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "atmosfernyi-deaerator-da-es-3000",
@@ -553,7 +553,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "atmosfernyi-deaerator-da-es-5000",
@@ -707,7 +707,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-100-1000-kvt-6-bar",
@@ -729,7 +729,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-12-120-kvt-6-bar",
@@ -751,7 +751,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-120-1200-kvt-6-bar",
@@ -773,7 +773,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-130-1300-kvt-6-bar",
@@ -795,7 +795,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-140-1400-kvt-6-bar",
@@ -817,7 +817,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-15-150-kvt-6-bar",
@@ -839,7 +839,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-160-1600-kvt-6-bar",
@@ -905,7 +905,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-200-2000-kvt-6-bar",
@@ -927,7 +927,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_REX_140-160",
+    image: "/images/products-watermarked/ICI_REX_140-160",
   },
   {
     id: "vodogreinyi-kotel-onix-200-2000-kvt-6-bar-2",
@@ -1279,7 +1279,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G",
   },
   {
     id: "vstroennyi-ekonomaizer-iz-nerzhaveyushchei-stali-eso-nova-2000",
@@ -1301,7 +1301,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G",
   },
   {
     id: "vstroennyi-ekonomaizer-iz-nerzhaveyushchei-stali-eso-nova-2500",
@@ -1323,7 +1323,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G",
   },
   {
     id: "vstroennyi-ekonomaizer-iz-nerzhaveyushchei-stali-eso-nova-3000",
@@ -1345,7 +1345,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G",
   },
   {
     id: "vstroennyi-ekonomaizer-iz-nerzhaveyushchei-stali-eso-nova-4000",
@@ -1457,7 +1457,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_1_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_1_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-2-c-tc",
@@ -1481,7 +1481,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_1_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_1_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tc-evo-r-ce-d1-1-2-s",
@@ -1505,7 +1505,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tc-evo-r-ce-d1-1-4-s",
@@ -1529,7 +1529,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tc-evo-r-ce-d2-s",
@@ -1553,7 +1553,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tc-evo-r-ce-ct-d1-1-2-s",
@@ -1577,7 +1577,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tc-evo-r-ce-ct-d1-1-4-s",
@@ -1793,7 +1793,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tc-evo-r-ce-d1-1-4-s",
@@ -1817,7 +1817,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tc-evo-r-ce-d2-s",
@@ -1841,7 +1841,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tc-evo-r-ce-dn65-fs65",
@@ -1865,7 +1865,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tc-evo-r-ce-ct-d1-1-2-s",
@@ -2177,7 +2177,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1000-m-ce-tl-el-r-ce-dn125-s-f125",
@@ -2201,7 +2201,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1000-m-ce-tl-el-r-ce-dn65-s-f65",
@@ -2225,7 +2225,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1000-m-ce-tl-el-r-ce-dn80-s-f80",
@@ -2249,7 +2249,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-2-evo-tc-r-ce-ct-d2-s",
@@ -2273,7 +2273,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-2-evo-tl-r-ce-ct-d2-s",
@@ -2297,7 +2297,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-m-ce-evo-tc-r-ce-ct-d2-s",
@@ -2321,7 +2321,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-m-ce-evo-tc-r-ce-ct-dn65-fs65",
@@ -2345,7 +2345,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-m-ce-evo-tc-r-ce-ct-dn80-fs80",
@@ -2801,7 +2801,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/gas p.jpg",
+    image: "/images/products-watermarked/gas p.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1800-m-ce-tl-el-r-ce-dn125-s-f125",
@@ -2825,7 +2825,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/gas p.jpg",
+    image: "/images/products-watermarked/gas p.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1800-m-ce-tl-el-r-ce-dn65-s-f65",
@@ -2849,7 +2849,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/gas p.jpg",
+    image: "/images/products-watermarked/gas p.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1800-m-ce-tl-el-r-ce-dn80-s-f80",
@@ -2873,7 +2873,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/gas p.jpg",
+    image: "/images/products-watermarked/gas p.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-el-r-ce-d2-fs50",
@@ -2897,7 +2897,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-el-r-ce-dn100-fs100",
@@ -2921,7 +2921,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-el-r-ce-dn65-fs65",
@@ -2945,7 +2945,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-el-r-ce-dn80-fs80",
@@ -2969,7 +2969,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-el-r-ce-ct-d2-fs50",
@@ -3809,7 +3809,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-d2-s-f50-lpg",
@@ -3833,7 +3833,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-dn100-s-f100",
@@ -3857,7 +3857,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-dn65-s-f65",
@@ -3881,7 +3881,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-dn80-s-f80",
@@ -3929,7 +3929,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-ct-dn100-s-f100",
@@ -3953,7 +3953,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-ct-dn65-s-f65",
@@ -3977,7 +3977,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-ct-dn80-s-f80",
@@ -4001,7 +4001,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-450-m-ce-tl-el-evo-r-ce-d2-s-f50",
@@ -4385,7 +4385,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_650_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-650-m-ce-tl-el-r-ce-dn80-s-fs80",
@@ -4409,7 +4409,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_650_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-650-m-el-tl-gpl-r-dn100",
@@ -4433,7 +4433,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_650_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-650-m-tl-mec-r-ce-ct-dn65",
@@ -4457,7 +4457,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_650_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-750-m-ce-tl-el-r-ce-dn100-s-f100",
@@ -4529,7 +4529,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_1_2_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-1-ce-f-r-ce-ct-d1-2-s",
@@ -4553,7 +4553,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_1_2_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-1-2-ce-tc-r-ce-d1-2-s",
@@ -4577,7 +4577,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-1-2-ce-tc-r-ce-ct-d1-2-s",
@@ -4601,7 +4601,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-1-2-ce-tl-r-ce-d1-2-s",
@@ -4673,7 +4673,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_1_2_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-2-ce-f-r-ce-ct-d3-4-s",
@@ -4697,7 +4697,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_1_2_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-2-2-ce-tc-r-ce-d3-4-s",
@@ -4721,7 +4721,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-2-2-ce-tc-r-ce-ct-d3-4-s",
@@ -4745,7 +4745,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-2-2-ce-tl-r-ce-d3-4-s",
@@ -4817,7 +4817,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-ce-f-r-ce-d1-1-4-s",
@@ -4841,7 +4841,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-ce-f-r-ce-ct-d1-s",
@@ -4865,7 +4865,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-ce-f-r-ce-ct-d1-1-4-s",
@@ -4889,7 +4889,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tc-r-ce-d1-s",
@@ -5873,7 +5873,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x0-ce-tc-r-ce-ct-d1-2-s",
@@ -5897,7 +5897,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x0-ce-tl-r-ce-d1-2-s",
@@ -5921,7 +5921,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x0-ce-tl-r-ce-ct-d1-2-s",
@@ -5945,7 +5945,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x0-thls",
@@ -5969,7 +5969,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0_THLS.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0_THLS.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x1-ce-tc-r-ce-d1-2-s",
@@ -6089,7 +6089,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x2-ce-tc-r-ce-ct-d3-4-s",
@@ -6113,7 +6113,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x2-ce-tl-r-ce-d3-4-s",
@@ -6185,7 +6185,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X2_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x2-m-ce-tc-r-ce-ct-d3-4-s",
@@ -6209,7 +6209,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X2_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x2-m-ce-tl-r-ce-d3-4-s",
@@ -6281,7 +6281,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tc-r-ce-d1-1-2-s",
@@ -6305,7 +6305,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tc-r-ce-d1-1-4-s",
@@ -6593,7 +6593,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tc-r-ce-d1-1-2-s",
@@ -6617,7 +6617,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tc-r-ce-d1-1-4-s",
@@ -6881,7 +6881,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tc-r-ce-d1-1-2-s",
@@ -6905,7 +6905,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tc-r-ce-d1-1-4-s",
@@ -7169,7 +7169,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tc-r-ce-d1-1-2-s",
@@ -7457,7 +7457,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tc-r-ce-d1-s-lpg",
