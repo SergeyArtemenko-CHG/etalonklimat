@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import AddToCartButton from "./AddToCartButton";
+import ProductRequestForm from "./ProductRequestForm";
 import { formatPrice } from "@/utils/currency";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 
@@ -16,6 +17,7 @@ type ProductCardProps = {
   image?: string;
   burnerPowerMin?: number;
   burnerPowerMax?: number;
+  inStock?: boolean;
 };
 
 function CardImagePlaceholder() {
@@ -57,9 +59,11 @@ export default function ProductCard({
   image,
   burnerPowerMin,
   burnerPowerMax,
+  inStock = true,
 }: ProductCardProps) {
   const rate = useCurrencyStore((s) => s.rate);
   const [imageError, setImageError] = useState(false);
+  const [requestModal, setRequestModal] = useState<"discount" | "price" | null>(null);
   const href = `/product/${id}`;
   const imageSrc = image?.trim() || undefined;
   const showImage = imageSrc && !imageError;
@@ -117,20 +121,52 @@ export default function ProductCard({
               Мощность: {powerText}
             </span>
           )}
-          <span className="mt-1 text-base font-semibold text-slate-900">
-            {formatPrice(priceEur, priceRub, rate)}
-          </span>
+          {inStock && (
+            <span className="mt-1 text-base font-semibold text-slate-900">
+              {formatPrice(priceEur, priceRub, rate)}
+            </span>
+          )}
         </div>
       </Link>
-      <div className="flex items-center px-2 pb-2 md:px-4 md:pb-4 md:pt-0">
-        <AddToCartButton
-          id={id}
-          name={name}
-          priceEur={priceEur}
-          priceRub={priceRub}
-          variant="card"
-        />
+      <div className="flex flex-col gap-1.5 px-2 pb-2 md:flex-row md:items-center md:px-4 md:pb-4 md:pt-0 md:gap-2">
+        {inStock ? (
+          <>
+            <div className="flex-1 min-w-0">
+              <AddToCartButton
+                id={id}
+                name={name}
+                priceEur={priceEur}
+                priceRub={priceRub}
+                variant="card"
+              />
+            </div>
+            <button
+              type="button"
+              onClick={() => setRequestModal("discount")}
+              className="shrink-0 rounded-lg border border-slate-200 px-2 py-1 text-[10px] font-medium leading-tight text-slate-700 transition hover:border-[#FF8C00] hover:bg-[#fff4e6] hover:text-[#FF8C00] md:text-[11px]"
+            >
+              Индивидуальная скидка
+            </button>
+          </>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setRequestModal("price")}
+            className="w-full rounded-lg bg-[#FF8C00] px-2 py-1 text-[11px] font-semibold text-white shadow-md transition hover:bg-[#ff9f26] md:py-1.5"
+          >
+            Узнать цену и срок поставки
+          </button>
+        )}
       </div>
+      {requestModal && (
+        <ProductRequestForm
+          type={requestModal}
+          productName={name}
+          productId={id}
+          productSku={sku}
+          onClose={() => setRequestModal(null)}
+        />
+      )}
     </article>
   );
 }

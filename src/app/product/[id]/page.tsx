@@ -8,7 +8,7 @@ import {
   getProductById,
 } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
-import ProductAddToCart from "./ProductAddToCart";
+import ProductPageActions from "./ProductPageActions";
 import ProductPriceDisplay from "@/components/ProductPriceDisplay";
 
 type Props = {
@@ -73,23 +73,36 @@ export default async function ProductPage({ params }: Props) {
                 Артикул: {product.sku}
               </span>
               <div className="mb-4 flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#fff4e6] px-2.5 py-1 text-xs font-medium text-[#ff8c00]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff8c00]" />
-                  В наличии
-                </span>
+                {product.inStock !== false ? (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#fff4e6] px-2.5 py-1 text-xs font-medium text-[#ff8c00]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#ff8c00]" />
+                    В наличии
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
+                    <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
+                    Под заказ
+                  </span>
+                )}
               </div>
-              <p className="mb-6 text-2xl font-bold text-slate-900 md:text-3xl">
-                <ProductPriceDisplay
-                  priceEur={product.priceEur}
-                  priceRub={product.priceRub}
-                />
-              </p>
-              <span className="mb-3 text-xs text-slate-400">Цена с НДС</span>
-              <ProductAddToCart
+              {product.inStock !== false && (
+                <>
+                  <p className="mb-6 text-2xl font-bold text-slate-900 md:text-3xl">
+                    <ProductPriceDisplay
+                      priceEur={product.priceEur}
+                      priceRub={product.priceRub}
+                    />
+                  </p>
+                  <span className="mb-3 text-xs text-slate-400">Цена с НДС</span>
+                </>
+              )}
+              <ProductPageActions
                 id={product.id}
                 name={product.name}
+                sku={product.sku}
                 priceEur={product.priceEur}
                 priceRub={product.priceRub}
+                inStock={product.inStock}
               />
             </div>
           </div>

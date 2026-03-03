@@ -107,28 +107,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
       {/* Main content */}
       <div className="md:w-3/4 lg:w-[78%]">
         <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 transition-shadow hover:shadow-lg md:p-5">
-          <nav className="mb-4 text-sm text-slate-500">
-            <Link href="/" className="hover:text-[#003366]">
-              Главная
-            </Link>
-            <span className="mx-2">/</span>
-            {"parentName" in categoryMatch ? (
-              <>
-                <Link
-                  href={`/category/${categoryMatch.parentSlug}`}
-                  className="hover:text-[#003366]"
-                >
-                  {categoryMatch.parentName}
-                </Link>
-                <span className="mx-2">/</span>
-                <span className="text-[#0b1f33]">{categoryMatch.name}</span>
-              </>
-            ) : (
-              <span className="text-[#0b1f33]">{categoryMatch.name}</span>
-            )}
-          </nav>
-
-          {/* Mobile filters toggle */}
+          {/* Mobile filters toggle — вверху, перед хлебными крошками */}
           <div className="mb-4 md:hidden">
             <button
               type="button"
@@ -155,6 +134,27 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
             )}
           </div>
 
+          <nav className="mb-4 text-sm text-slate-500">
+            <Link href="/" className="hover:text-[#003366]">
+              Главная
+            </Link>
+            <span className="mx-2">/</span>
+            {"parentName" in categoryMatch ? (
+              <>
+                <Link
+                  href={`/category/${categoryMatch.parentSlug}`}
+                  className="hover:text-[#003366]"
+                >
+                  {categoryMatch.parentName}
+                </Link>
+                <span className="mx-2">/</span>
+                <span className="text-[#0b1f33]">{categoryMatch.name}</span>
+              </>
+            ) : (
+              <span className="text-[#0b1f33]">{categoryMatch.name}</span>
+            )}
+          </nav>
+
           <h1 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
             {categoryMatch.name}
           </h1>
@@ -173,6 +173,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
                     image={product.image}
                     burnerPowerMin={product.burnerPowerMin}
                     burnerPowerMax={product.burnerPowerMax}
+                    inStock={product.inStock}
                   />
                 ))}
               </div>

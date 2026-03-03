@@ -81,6 +81,7 @@ export default function Home() {
                   image={product.image}
                   burnerPowerMin={product.burnerPowerMin}
                   burnerPowerMax={product.burnerPowerMax}
+                  inStock={product.inStock}
                 />
               ))}
             </div>

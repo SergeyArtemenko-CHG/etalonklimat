@@ -202,6 +202,7 @@ ${p.files
     specs: ${p.specs && p.specs.length ? JSON.stringify(p.specs, null, 2) : "undefined"},
     files: ${filesArray},
     image: ${p.image ? toTsString(p.image) : "undefined"},
+    inStock: ${p.inStock === false ? "false" : "undefined"},
   }`;
           })
           .join(",\n");
@@ -240,9 +241,10 @@ export interface Product {
   categorySlug: string;
   subCategory?: string;
   subCategorySlug?: string;
-  specs?: ProductSpec[];
+    specs?: ProductSpec[];
   files?: ProductFile[];
   image?: string;
+  inStock?: boolean;
 }
 
 export const categories: CategoryNode[] = [
@@ -327,6 +329,8 @@ function main() {
   const idxBoilerType = col("Тип котла");
   const idxHeatExchanger = col("Материал теплообменника");
   const idxPriceRub = col("Цена РУБ");
+  const idxAvailability = col("Наличие");
+  const idxSku = col("Артикул");
 
   for (let index = 0; index < dataRows.length; index++) {
     const row = dataRows[index];
@@ -337,6 +341,9 @@ function main() {
       idxHeatExchanger >= 0 ? row[idxHeatExchanger] : row[18];
     const rawPriceRub =
       idxPriceRub >= 0 ? row[idxPriceRub] : row[12];
+    const rawAvailability =
+      idxAvailability >= 0 ? row[idxAvailability] : undefined;
+    const rawSku = idxSku >= 0 ? (row[idxSku] || "").toString().trim() : "";
 
     // CSV: Номенклатура;Вид номенклатуры;Подвид;Файл сертификат;Файл инструкция;Текстовое описание;Файл картинки;Цена Евро;Бренд;Мощность горелки мин., кВт;Мощность горелки макс., кВт;Вид топлива;Цена РУБ;...
     const [
@@ -399,6 +406,10 @@ function main() {
     }
     usedIds.add(id);
 
+    const sku = rawSku || id;
+    const availVal = (rawAvailability ?? "").toString().trim();
+    const inStock = availVal === "" ? true : availVal === "1" || availVal === 1;
+
     const categorySlug = categoryName ? slugify(categoryName) : "uncategorized";
     const subCategorySlug = subCategoryName ? slugify(subCategoryName) : "";
 
@@ -437,7 +448,7 @@ function main() {
 
     const product = {
       id,
-      sku: id,
+      sku,
       name,
       description: description || undefined,
       longDescription: undefined,
@@ -456,6 +467,7 @@ function main() {
       specs: undefined,
       files: files.length ? files : undefined,
       image: imageFile ? `/images/products-watermarked/${imageFile}` : undefined,
+      inStock,
     };
 
     products.push(product);

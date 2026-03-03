@@ -4,6 +4,7 @@ import "./globals.css";
 import CurrencyRateLoader from "@/components/CurrencyRateLoader";
 import CookieBanner from "@/components/CookieBanner";
 import FloatingContactBtn from "@/components/FloatingContactBtn";
+import FloatingScrollToTop from "@/components/FloatingScrollToTop";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <CurrencyRateLoader />
         {children}
         <CookieBanner />
+        <FloatingScrollToTop />
         <FloatingContactBtn />
       </body>
     </html>

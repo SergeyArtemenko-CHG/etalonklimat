@@ -38,6 +38,7 @@ export interface Product {
   specs?: ProductSpec[];
   files?: ProductFile[];
   image?: string;
+  inStock?: boolean;
 }
 
 export const categories: CategoryNode[] = [

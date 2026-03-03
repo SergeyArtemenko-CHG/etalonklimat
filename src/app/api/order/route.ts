@@ -39,7 +39,7 @@ function buildMessage(body: OrderBody, orderNumber: string): string {
         : parseFloat(String(body.totalPrice).replace(/\s/g, "")) || 0;
 
   const lines = [
-    `📦 НОВЫЙ ЗАКАЗ №${orderNumber}`,
+    `📦 ЗАКАЗ №${orderNumber}`,
     "",
     `👤 Клиент: ${body.customerName}`,
     `📞 Телефон: ${body.customerPhone}`,
