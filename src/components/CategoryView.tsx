@@ -75,23 +75,16 @@ function applyFilters(
   const noPressure =
     store.workingPressureMin == null && store.workingPressureMax == null;
 
-  if (
-    slug === "kotly-parovye" &&
-    noBoiler &&
-    noSteam &&
-    noPressure
-  )
-    return products;
-  if (
-    slug === "kotly-vodogreinye" &&
-    noBoiler &&
-    noPressure
-  )
-    return products;
-  if (noBurner && slug !== "kotly-parovye" && slug !== "kotly-vodogreinye")
-    return products;
+  const safeProducts = products ?? [];
 
-  return products.filter((p) => {
+  if (slug === "kotly-parovye" && noBoiler && noSteam && noPressure)
+    return safeProducts;
+  if (slug === "kotly-vodogreinye" && noBoiler && noPressure)
+    return safeProducts;
+  if (noBurner && slug !== "kotly-parovye" && slug !== "kotly-vodogreinye")
+    return safeProducts;
+
+  return safeProducts.filter((p) => {
     if (slug === "kotly-parovye") {
       const bp = getBoilerPowerRange(p);
       const so = getSteamOutputRange(p);
@@ -127,12 +120,16 @@ function applyFilters(
   });
 }
 
-/** Сброс фильтров при смене категории */
+/** Сброс фильтров при смене категории (один раз на каждый slug) */
 function useResetFiltersOnSlugChange(slug: string) {
   const resetFilters = useFilterStore((s) => s.resetFilters);
+  const prevSlugRef = useRef<string | null>(null);
+
   useEffect(() => {
+    if (prevSlugRef.current === slug) return;
     resetFilters();
-  }, [slug, resetFilters]);
+    prevSlugRef.current = slug;
+  }, [slug]);
 }
 
 export default function CategoryView({ products, categoryMatch }: CategoryViewProps) {
@@ -242,7 +239,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
           <div ref={productsRef}>
             {filteredProducts.length > 0 ? (
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {filteredProducts.map((product) => (
+                {(filteredProducts ?? []).map((product) => (
                   <ProductCard
                     key={product.id}
                     id={product.id}

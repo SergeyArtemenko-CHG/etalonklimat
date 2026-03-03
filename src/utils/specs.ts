@@ -7,29 +7,53 @@ const SPEC_NAMES = {
 } as const;
 
 function parseSpecValue(value: string): { min: number; max: number } | null {
-  const s = (value ?? "").toString().trim().replace(/,/g, ".");
-  const matches = s.match(/[\d.]+/g);
-  if (!matches?.length) return null;
-  const numbers = matches.map((x) => Number(x)).filter((n) => Number.isFinite(n));
-  if (numbers.length === 0) return null;
-  return { min: Math.min(...numbers), max: Math.max(...numbers) };
+  try {
+    const s = (value ?? "").toString().trim().replace(/,/g, ".");
+    const matches = s.match(/[\d.]+/g);
+    if (!matches?.length) return null;
+    const numbers = matches
+      .map((x) => Number(x))
+      .filter((n) => Number.isFinite(n));
+    if (numbers.length === 0) return null;
+    return { min: Math.min(...numbers), max: Math.max(...numbers) };
+  } catch {
+    return null;
+  }
 }
 
 function findSpec(product: Product, name: string): { min: number; max: number } | null {
-  if (!product?.specs || !Array.isArray(product.specs)) return null;
-  const spec = product.specs.find((s) => s.name === name || s.name.includes(name));
-  if (!spec?.value) return null;
-  return parseSpecValue(spec.value);
+  try {
+    if (!product?.specs || !Array.isArray(product.specs)) return null;
+    const spec = product.specs.find(
+      (s) => s && s.name && (s.name === name || s.name.includes(name))
+    );
+    if (!spec?.value) return null;
+    return parseSpecValue(spec.value);
+  } catch {
+    return null;
+  }
 }
 
 export function getBoilerPowerRange(product: Product): { min: number; max: number } | null {
-  return findSpec(product, SPEC_NAMES.BOILER_POWER);
+  try {
+    return findSpec(product, SPEC_NAMES.BOILER_POWER);
+  } catch {
+    return null;
+  }
 }
 
 export function getSteamOutputRange(product: Product): { min: number; max: number } | null {
-  return findSpec(product, SPEC_NAMES.STEAM_OUTPUT);
+  try {
+    return findSpec(product, SPEC_NAMES.STEAM_OUTPUT);
+  } catch {
+    return null;
+  }
 }
 
 export function getWorkingPressureRange(product: Product): { min: number; max: number } | null {
-  return findSpec(product, SPEC_NAMES.WORKING_PRESSURE);
+  try {
+    return findSpec(product, SPEC_NAMES.WORKING_PRESSURE);
+  } catch {
+    return null;
+  }
 }
