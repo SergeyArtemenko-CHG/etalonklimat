@@ -42,11 +42,6 @@ async function main() {
     process.exit(1);
   }
 
-  console.log("Loading watermark from", WATERMARK_PATH);
-  const watermarkBuffer = await sharp(WATERMARK_PATH)
-    .png()
-    .toBuffer();
-
   const files = await collectFiles(INPUT_DIR);
   if (files.length === 0) {
     console.log("No images found in", INPUT_DIR);
@@ -62,10 +57,28 @@ async function main() {
     await fs.promises.mkdir(path.dirname(outputPath), { recursive: true });
 
     try {
-      await sharp(inputPath)
+      // Узнаем размер оригинального изображения
+      const image = sharp(inputPath);
+      const metadata = await image.metadata();
+
+      if (!metadata.width || !metadata.height) {
+        console.warn("Skip image without dimensions:", rel);
+        continue;
+      }
+
+      const baseWidth = metadata.width;
+      const targetWmWidth = Math.max(Math.round(baseWidth * 0.3), 1);
+
+      // Масштабируем водяной знак под ширину ~30% от оригинала
+      const watermarkResizedBuffer = await sharp(WATERMARK_PATH)
+        .resize({ width: targetWmWidth, fit: "inside" })
+        .png()
+        .toBuffer();
+
+      await image
         .composite([
           {
-            input: watermarkBuffer,
+            input: watermarkResizedBuffer,
             gravity: "southeast",
             opacity: 0.3,
           },
