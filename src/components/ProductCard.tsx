@@ -14,6 +14,8 @@ type ProductCardProps = {
   priceRub?: number;
   description?: string;
   image?: string;
+  burnerPowerMin?: number;
+  burnerPowerMax?: number;
 };
 
 function CardImagePlaceholder() {
@@ -53,6 +55,8 @@ export default function ProductCard({
   priceRub,
   description,
   image,
+  burnerPowerMin,
+  burnerPowerMax,
 }: ProductCardProps) {
   const rate = useCurrencyStore((s) => s.rate);
   const [imageError, setImageError] = useState(false);
@@ -65,16 +69,35 @@ export default function ProductCard({
     setImageError(true);
   };
 
+  const powerText = (() => {
+    if (
+      burnerPowerMin != null &&
+      burnerPowerMax != null &&
+      burnerPowerMin !== burnerPowerMax
+    ) {
+      return `${burnerPowerMin}–${burnerPowerMax} кВт`;
+    }
+    const single = burnerPowerMin ?? burnerPowerMax;
+    if (single != null) {
+      return `${single} кВт`;
+    }
+    return null;
+  })();
+
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-md shadow-slate-200/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-300/50">
-      <Link href={href} className="flex flex-1 flex-col" tabIndex={0}>
-        <div className="flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 p-3">
-          <div className="flex h-full w-full items-center justify-center rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+    <article className="flex h-full flex-row overflow-hidden rounded-xl bg-white shadow-md shadow-slate-200/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-300/50 md:flex-col">
+      <Link
+        href={href}
+        className="flex flex-1 items-center gap-2 px-2 py-2 md:flex-col md:items-stretch md:px-0 md:py-0"
+        tabIndex={0}
+      >
+        <div className="flex shrink-0 items-center justify-center p-2 md:w-full md:p-3">
+          <div className="flex items-center justify-center rounded-lg border border-slate-200 bg-white p-1.5 shadow-sm md:p-3">
             {showImage ? (
               <img
                 src={imageSrc}
                 alt={name}
-                className="h-full w-full object-contain"
+                className="h-20 w-20 object-contain md:h-32 md:w-full"
                 onError={handleImageError}
               />
             ) : (
@@ -82,34 +105,24 @@ export default function ProductCard({
             )}
           </div>
         </div>
-      <div className="flex flex-1 flex-col gap-2 px-4 pb-4 pt-3">
-        <h3 className="min-h-[2.5rem] line-clamp-2 text-sm font-bold text-slate-900 leading-tight hover:text-[#003366]">
-          {name}
-        </h3>
-        <span className="text-[11px] font-medium text-slate-400">
-          Артикул: {sku}
-        </span>
-
-        {description && (
-          <p className="line-clamp-2 text-xs text-slate-500">{description}</p>
-        )}
-
-        <div className="mt-1 flex items-center justify-between text-xs">
-          <span className="inline-flex items-center gap-1 rounded-full bg-[#fff4e6] px-2 py-0.5 font-medium text-[#ff8c00]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#ff8c00]" />
-            В наличии
+        <div className="flex min-w-0 flex-1 flex-col gap-1.5 md:px-4 md:pb-4 md:pt-3">
+          <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 hover:text-[#003366]">
+            {name}
+          </h3>
+          <span className="text-[11px] font-medium text-slate-400">
+            Артикул: {sku}
           </span>
-          <span className="text-[11px] text-slate-400">Цена с НДС</span>
-        </div>
-
-        <div className="mt-2 flex items-center justify-between">
-          <span className="text-base font-semibold text-slate-900">
+          {powerText && (
+            <span className="text-[11px] text-slate-500">
+              Мощность: {powerText}
+            </span>
+          )}
+          <span className="mt-1 text-base font-semibold text-slate-900">
             {formatPrice(priceEur, priceRub, rate)}
           </span>
         </div>
-      </div>
       </Link>
-      <div className="px-4 pb-4">
+      <div className="flex items-center px-2 pb-2 md:px-4 md:pb-4 md:pt-0">
         <AddToCartButton
           id={id}
           name={name}

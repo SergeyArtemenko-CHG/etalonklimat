@@ -26,7 +26,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="#" className="transition hover:text-[#FF8C00]">
+                <Link href="/about" className="transition hover:text-[#FF8C00]">
                   О нас
                 </Link>
               </li>
@@ -41,7 +41,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="transition hover:text-[#FF8C00]">
+                <Link href="/contacts" className="transition hover:text-[#FF8C00]">
                   Контакты
                 </Link>
               </li>
@@ -84,13 +84,8 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="#" className="transition hover:text-[#FF8C00]">
-                  Доставка
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="transition hover:text-[#FF8C00]">
-                  Оплата
+                <Link href="/delivery" className="transition hover:text-[#FF8C00]">
+                  Доставка и оплата
                 </Link>
               </li>
               <li>
@@ -120,12 +115,15 @@ export default function Footer() {
             <p className="mb-4 text-sm text-white/70">
               Звонок по России бесплатный
             </p>
-            <p className="mb-4 text-sm text-white/80">
+            <p className="mb-2 text-sm text-white/80">
               г. Москва, ул. Примерная, д. 1
             </p>
-            <p className="mb-4 text-sm text-white/80">
+            <a
+              href="mailto:market@etalon.ru"
+              className="mb-4 block text-sm text-white/80 underline-offset-2 hover:text-[#FF8C00] hover:underline"
+            >
               market@etalon.ru
-            </p>
+            </a>
             <div className="flex gap-2">
               <SocialIcon href="https://vk.com" label="ВКонтакте">
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">

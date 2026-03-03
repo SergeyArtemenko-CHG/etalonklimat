@@ -333,7 +333,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-2000",
@@ -355,7 +355,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-2000-naruzhnogo-razmeshcheniya",
@@ -377,7 +377,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-20000",
@@ -399,7 +399,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-20000-naruzhnogo-razmeshcheniya",
@@ -421,7 +421,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-25000",
@@ -465,7 +465,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-3000-naruzhnogo-razmeshcheniya",
@@ -487,7 +487,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-4000",
@@ -509,7 +509,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-4000-naruzhnogo-razmeshcheniya",
@@ -531,7 +531,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-500-500-l-ch",
@@ -575,7 +575,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-5000-naruzhnogo-razmeshcheniya",
@@ -597,7 +597,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-6000",
@@ -619,7 +619,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-6000-naruzhnogo-razmeshcheniya",
@@ -641,7 +641,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-8000",
@@ -663,7 +663,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-8000-naruzhnogo-razmeshcheniya",
@@ -685,7 +685,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "vodogreinyi-kotel-onix-10-100-kvt-6-bar",
@@ -861,7 +861,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-180-1800-kvt-6-bar",
@@ -883,7 +883,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-20-200-kvt-6-bar",
@@ -949,7 +949,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-25-250-kvt-6-bar",
@@ -971,7 +971,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-250-2500-kvt-6-bar",
@@ -993,7 +993,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-30-300-kvt-6-bar",
@@ -1015,7 +1015,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-300-3000-kvt-6-bar",
@@ -1037,7 +1037,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-35-350-kvt-6-bar",
@@ -1059,7 +1059,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-350-3500-kvt-6-bar",
@@ -1081,7 +1081,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-40-400-kvt-6-bar",
@@ -1103,7 +1103,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-50-500-kvt-6-bar",
@@ -1125,7 +1125,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-60-600-kvt-6-bar",
@@ -1147,7 +1147,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-75-750-kvt-6-bar",
@@ -1169,7 +1169,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-85-850-kvt-6-bar",
@@ -1191,7 +1191,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85",
   },
   {
     id: "vodogreinyi-kotel-onix-t-500-5000-kvt-6-bar",
@@ -1213,7 +1213,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-t-600-6000-kvt-6-bar",
@@ -1235,7 +1235,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vodogreinyi-kotel-onix-t-800-8000-kvt-6-bar",
@@ -1257,7 +1257,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ONIX",
+    image: "/images/products-watermarked/ONIX",
   },
   {
     id: "vstroennyi-ekonomaizer-iz-nerzhaveyushchei-stali-eso-nova-1500",
@@ -1367,7 +1367,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G",
   },
   {
     id: "vstroennyi-ekonomaizer-iz-nerzhaveyushchei-stali-eso-nova-500",
@@ -1389,7 +1389,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G",
   },
   {
     id: "vstroennyi-ekonomaizer-iz-nerzhaveyushchei-stali-eso-nova-5000",
@@ -1411,7 +1411,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G",
   },
   {
     id: "vstroennyi-ekonomaizer-iz-nerzhaveyushchei-stali-eco-nova-1000",
@@ -1433,7 +1433,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-1-c-tc",
@@ -1455,8 +1455,8 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-      { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
-    ],
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
+  ],
     image: "/images/products-watermarked/FBR_GAS_1_2.jpg",
   },
   {
@@ -1601,7 +1601,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tc-evo-r-ce-ct-d2-s",
@@ -1625,7 +1625,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tl-evo-r-ce-d1-1-2-s",
@@ -1649,7 +1649,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tl-evo-r-ce-d1-1-4-s",
@@ -1673,7 +1673,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tl-evo-r-ce-d2-s",
@@ -1697,7 +1697,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tl-evo-r-ce-ct-d1-1-2-s",
@@ -1721,7 +1721,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tl-evo-r-ce-ct-d1-1-4-s",
@@ -1745,7 +1745,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-2-ce-tl-evo-r-ce-ct-d2-s",
@@ -1769,7 +1769,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tc-evo-r-ce-d1-1-2-s",
@@ -1839,7 +1839,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
@@ -1863,7 +1863,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
@@ -1887,9 +1887,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tc-evo-r-ce-ct-d1-1-4-s",
@@ -1911,9 +1911,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tc-evo-r-ce-ct-d2-s",
@@ -1935,9 +1935,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tc-evo-r-ce-ct-dn65-fs65",
@@ -1959,9 +1959,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tl-evo-r-ce-d1-1-2-s",
@@ -1983,9 +1983,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tl-evo-r-ce-d1-1-4-s",
@@ -2007,9 +2007,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tl-evo-r-ce-d2-s",
@@ -2031,9 +2031,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tl-evo-r-ce-dn65-fs65",
@@ -2055,9 +2055,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tl-evo-r-ce-ct-d1-1-2-s",
@@ -2079,9 +2079,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tl-evo-r-ce-ct-d1-1-4-s",
@@ -2103,9 +2103,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tl-evo-r-ce-ct-d2-s",
@@ -2127,9 +2127,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-100-m-ce-tl-evo-r-ce-ct-dn65-fs65",
@@ -2151,9 +2151,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1000-m-ce-tl-el-r-ce-dn100-s-f100",
@@ -2175,7 +2175,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
@@ -2199,7 +2199,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
@@ -2223,7 +2223,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
@@ -2247,7 +2247,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
@@ -2271,7 +2271,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
@@ -2295,7 +2295,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
@@ -2319,7 +2319,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
@@ -2343,7 +2343,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
@@ -2367,9 +2367,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-m-ce-evo-tl-r-ce-ct-d2-s",
@@ -2391,9 +2391,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-m-ce-evo-tl-r-ce-ct-dn65-fs65",
@@ -2415,9 +2415,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-m-ce-evo-tl-r-ce-ct-dn65-s-f65",
@@ -2439,9 +2439,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-130-m-ce-evo-tl-r-ce-ct-dn80-fs80",
@@ -2463,9 +2463,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1300-m-ce-tl-el-r-ce-dn65-s-f65",
@@ -2487,9 +2487,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1300-m-ce-tl-el-r-ce-dn80-s-f80",
@@ -2511,9 +2511,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1500-m-ce-tl-el-r-ce-dn65-s-f65",
@@ -2535,9 +2535,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1500-m-ce-tl-el-r-ce-dn80-s-f80",
@@ -2559,9 +2559,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-2-ce-tc-r-ce-ct-d2-s",
@@ -2583,9 +2583,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-2-ce-tl-r-ce-ct-d2-s",
@@ -2607,9 +2607,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-m-ce-tc-r-ce-ct-d2-s",
@@ -2631,9 +2631,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-m-ce-tc-r-ce-ct-dn65-fs65",
@@ -2655,9 +2655,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-m-ce-tc-r-ce-ct-dn80-fs80",
@@ -2679,9 +2679,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-m-ce-tl-r-ce-ct-d2-s",
@@ -2703,9 +2703,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-m-ce-tl-r-ce-ct-dn65-fs65",
@@ -2727,9 +2727,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-m-ce-tl-r-ce-ct-dn80-fs80",
@@ -2751,9 +2751,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/GAS P130, 160-M.jpg",
+    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-160-m-ce-lx4-tl-r-ce-ct-d2-s",
@@ -2775,9 +2775,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-1800-m-ce-lx-tl-el-r-ce-dn100-s-f100",
@@ -2799,7 +2799,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/gas p.jpg",
   },
@@ -2823,7 +2823,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/gas p.jpg",
   },
@@ -2847,7 +2847,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/gas p.jpg",
   },
@@ -2871,7 +2871,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/gas p.jpg",
   },
@@ -2895,7 +2895,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
@@ -2919,7 +2919,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
@@ -2943,7 +2943,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
@@ -2967,7 +2967,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
@@ -2991,9 +2991,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-el-r-ce-ct-dn100-fs100",
@@ -3015,9 +3015,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-el-r-ce-ct-dn65-fs65",
@@ -3039,9 +3039,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-el-r-ce-ct-dn80-fs80",
@@ -3063,9 +3063,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-mec-r-ce-ct-dn100-fs100",
@@ -3087,9 +3087,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-mec-r-ce-ct-dn65-fs65",
@@ -3111,9 +3111,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-tl-mec-r-ce-ct-dn80-fs80",
@@ -3135,9 +3135,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-190-m-ce-lx-tl-el-r-ce-ctq-dn65-s-f65",
@@ -3159,9 +3159,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-el-r-ce-d2-fs50",
@@ -3183,9 +3183,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-el-r-ce-dn100-fs100",
@@ -3207,9 +3207,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-el-r-ce-dn65-fs65",
@@ -3231,9 +3231,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-el-r-ce-dn80-fs80",
@@ -3255,9 +3255,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-el-r-ce-ct-d2-fs50",
@@ -3279,9 +3279,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-el-r-ce-ct-dn100-fs100",
@@ -3303,9 +3303,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-el-r-ce-ct-dn65-fs65",
@@ -3327,9 +3327,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-el-r-ce-ct-dn80-fs80",
@@ -3351,9 +3351,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-mec-r-ce-ct-d2-fs50",
@@ -3375,9 +3375,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-mec-r-ce-ct-dn100-fs100",
@@ -3399,9 +3399,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-mec-r-ce-ct-dn65-fs65",
@@ -3423,9 +3423,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-250-m-ce-tl-mec-r-ce-ct-dn80-fs80",
@@ -3447,9 +3447,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-el-r-ce-d2-fs50",
@@ -3471,9 +3471,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-el-r-ce-dn100-fs100",
@@ -3495,9 +3495,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-el-r-ce-dn65-fs65",
@@ -3519,9 +3519,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-el-r-ce-dn80-fs80",
@@ -3543,9 +3543,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-el-r-ce-ct-d2-fs50",
@@ -3567,9 +3567,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-el-r-ce-ct-dn100-fs100",
@@ -3591,9 +3591,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-el-r-ce-ct-dn65-fs65",
@@ -3615,9 +3615,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-el-r-ce-ct-dn80-fs80",
@@ -3639,9 +3639,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-mec-r-ce-ct-d2-fs50",
@@ -3663,9 +3663,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-mec-r-ce-ct-dn100-fs100",
@@ -3687,9 +3687,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-mec-r-ce-ct-dn65-fs65",
@@ -3711,9 +3711,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-tl-mec-r-ce-ct-dn80-fs80",
@@ -3735,9 +3735,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-lx-tl-el-r-ce-ctq-dn65-s-f65",
@@ -3759,9 +3759,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-300-m-ce-lx-tl-mec-r-ce-ct-d2-fs50",
@@ -3783,9 +3783,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-d2-s-f50",
@@ -3807,7 +3807,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
@@ -3831,7 +3831,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
@@ -3855,7 +3855,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
@@ -3879,7 +3879,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
@@ -3903,9 +3903,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-350-m-ce-tl-el-evo-r-ce-ct-d2-s-f50",
@@ -3927,7 +3927,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
@@ -3951,7 +3951,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
@@ -3975,7 +3975,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
@@ -3999,7 +3999,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
@@ -4023,9 +4023,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-450-m-ce-tl-el-evo-r-ce-dn65-s-f65",
@@ -4047,9 +4047,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-450-m-ce-tl-el-evo-r-ce-dn80-s-f80",
@@ -4071,9 +4071,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-450-m-ce-tl-el-evo-r-ce-ct-d2-s-f50",
@@ -4095,9 +4095,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-450-m-ce-tl-el-evo-r-ce-ct-dn65-s-f65",
@@ -4119,9 +4119,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-450-m-ce-tl-el-evo-r-ce-ct-dn80-s-f80",
@@ -4143,9 +4143,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-450-m-ce-tl-el-evo-r-ce-dn100-s-f100",
@@ -4167,9 +4167,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-450-m-ce-tl-el-evo-r-ce-ct-dn100-s-f100",
@@ -4191,9 +4191,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-550-m-ce-tl-el-evo-r-ce-d2-s-f50",
@@ -4215,9 +4215,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-550-m-ce-tl-el-evo-r-ce-dn80-s-f80",
@@ -4239,9 +4239,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-550-m-ce-tl-el-evo-r-ce-ct-d2-s-f50",
@@ -4263,9 +4263,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-550-m-ce-tl-el-evo-r-ce-ct-dn65-s-f65",
@@ -4287,9 +4287,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-550-m-ce-tl-el-evo-r-ce-ct-dn80-s-f80",
@@ -4311,9 +4311,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-550-m-ce-tl-el-evo-r-ce-dn100-s-f100",
@@ -4335,9 +4335,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-550-m-ce-tl-el-evo-r-ce-ct-dn100-s-f100",
@@ -4359,9 +4359,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-650-m-ce-tl-el-r-ce-dn65-s-f65",
@@ -4383,7 +4383,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
   },
@@ -4407,7 +4407,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
   },
@@ -4431,7 +4431,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
   },
@@ -4455,7 +4455,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
   },
@@ -4479,9 +4479,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-p-750-m-ce-tl-el-r-ce-dn80-s-f80",
@@ -4503,9 +4503,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-1-ce-f-r-ce-d1-2-s",
@@ -4527,7 +4527,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
   },
@@ -4551,7 +4551,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
   },
@@ -4575,7 +4575,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
@@ -4599,7 +4599,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
@@ -4623,9 +4623,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-1-2-ce-tl-r-ce-ct-d1-2-s",
@@ -4647,9 +4647,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-2-ce-f-r-ce-d3-4-s",
@@ -4671,7 +4671,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
   },
@@ -4695,7 +4695,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
   },
@@ -4719,7 +4719,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
@@ -4743,7 +4743,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
@@ -4767,9 +4767,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-2-2-ce-tl-r-ce-ct-d3-4-s",
@@ -4791,9 +4791,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-ce-f-r-ce-d1-s",
@@ -4815,7 +4815,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
@@ -4839,7 +4839,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
@@ -4863,7 +4863,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
@@ -4887,7 +4887,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
@@ -4911,9 +4911,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tc-r-ce-d1-1-2-s",
@@ -4935,9 +4935,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tc-r-ce-d1-1-4-s",
@@ -4959,9 +4959,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tc-r-ce-ct-d1-s",
@@ -4983,9 +4983,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tc-r-ce-ct-d1-1-2-s",
@@ -5007,9 +5007,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tc-r-ce-ct-d1-1-4-s",
@@ -5031,9 +5031,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tl-r-ce-d1-s",
@@ -5055,9 +5055,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tl-r-ce-d1-1-2-s",
@@ -5079,9 +5079,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tl-r-ce-d1-1-4-s",
@@ -5103,9 +5103,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tl-r-ce-ct-d1-s",
@@ -5127,9 +5127,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tl-r-ce-ct-d1-1-2-s",
@@ -5151,9 +5151,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-3-2-ce-tl-r-ce-ct-d1-1-4-s",
@@ -5175,9 +5175,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-ce-f-r-ce-d1-s",
@@ -5199,9 +5199,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-ce-f-r-ce-d1-1-4-s",
@@ -5223,9 +5223,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-ce-f-r-ce-ct-d1-s",
@@ -5247,9 +5247,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-ce-f-r-ce-ct-d1-1-4-s",
@@ -5271,9 +5271,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tc-r-ce-d1-s",
@@ -5295,9 +5295,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tc-r-ce-d1-1-2-s",
@@ -5319,9 +5319,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tc-r-ce-d1-1-4-s",
@@ -5343,9 +5343,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tc-r-ce-ct-d1-s",
@@ -5367,9 +5367,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tc-r-ce-ct-d1-1-2-s",
@@ -5391,9 +5391,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tc-r-ce-ct-d1-1-4-s",
@@ -5415,9 +5415,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tl-r-ce-d1-s",
@@ -5439,9 +5439,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tl-r-ce-d1-1-2-s",
@@ -5463,9 +5463,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tl-r-ce-d1-1-4-s",
@@ -5487,9 +5487,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tl-r-ce-ct-d1-s",
@@ -5511,9 +5511,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tl-r-ce-ct-d1-1-2-s",
@@ -5535,9 +5535,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-4-2-ce-tl-r-ce-ct-d1-1-4-s",
@@ -5559,9 +5559,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tc-r-ce-d1-s",
@@ -5583,9 +5583,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tc-r-ce-d1-1-2-s",
@@ -5607,9 +5607,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tc-r-ce-d1-1-4-s",
@@ -5631,9 +5631,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tc-r-ce-ct-d1-s",
@@ -5655,9 +5655,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tc-r-ce-ct-d1-1-2-s",
@@ -5679,9 +5679,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tc-r-ce-ct-d1-1-4-s",
@@ -5703,9 +5703,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tl-r-ce-d1-s",
@@ -5727,9 +5727,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tl-r-ce-d1-1-2-s",
@@ -5751,9 +5751,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tl-r-ce-d1-1-4-s",
@@ -5775,9 +5775,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tl-r-ce-ct-d1-s",
@@ -5799,9 +5799,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tl-r-ce-ct-d1-1-2-s",
@@ -5823,9 +5823,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x-5-2-ce-tl-r-ce-ct-d1-1-4-s",
@@ -5847,9 +5847,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x0-ce-tc-r-ce-d1-2-s",
@@ -5871,7 +5871,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
@@ -5895,7 +5895,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
@@ -5919,7 +5919,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
@@ -5943,7 +5943,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
@@ -5967,7 +5967,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X0_THLS.jpg",
   },
@@ -5991,9 +5991,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x1-ce-tc-r-ce-ct-d1-2-s",
@@ -6015,9 +6015,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x1-ce-tl-r-ce-d1-2-s",
@@ -6039,9 +6039,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x1-ce-tl-r-ce-ct-d1-2-s",
@@ -6063,9 +6063,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X0.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x2-ce-tc-r-ce-d3-4-s",
@@ -6087,7 +6087,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X2.jpg",
   },
@@ -6111,7 +6111,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X2.jpg",
   },
@@ -6135,9 +6135,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x2-ce-tl-r-ce-ct-d3-4-s",
@@ -6159,9 +6159,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X2.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x2-m-ce-tc-r-ce-d3-4-s",
@@ -6183,7 +6183,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
   },
@@ -6207,7 +6207,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
   },
@@ -6231,9 +6231,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X2_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x2-m-ce-tl-r-ce-ct-d3-4-s",
@@ -6255,9 +6255,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X2_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tc-r-ce-d1-s",
@@ -6279,7 +6279,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
@@ -6303,7 +6303,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
@@ -6327,9 +6327,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tc-r-ce-ct-d1-s",
@@ -6351,9 +6351,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tc-r-ce-ct-d1-1-2-s",
@@ -6375,9 +6375,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tc-r-ce-ct-d1-1-4-s",
@@ -6399,9 +6399,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tl-r-ce-d1-s",
@@ -6423,9 +6423,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tl-r-ce-d1-1-2-s",
@@ -6447,9 +6447,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tl-r-ce-d1-1-4-s",
@@ -6471,9 +6471,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tl-r-ce-ct-d1-s",
@@ -6495,9 +6495,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tl-r-ce-ct-d1-1-2-s",
@@ -6519,9 +6519,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-ce-tl-r-ce-ct-d1-1-4-s",
@@ -6543,9 +6543,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-2-txl320-r-1-s",
@@ -6567,9 +6567,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tc-r-ce-d1-s",
@@ -6591,7 +6591,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
@@ -6615,7 +6615,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
@@ -6639,9 +6639,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tc-r-ce-ct-d1-s",
@@ -6663,9 +6663,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tc-r-ce-ct-d1-1-2-s",
@@ -6687,9 +6687,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tc-r-ce-ct-d1-1-4-s",
@@ -6711,9 +6711,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tl-r-ce-d1-s",
@@ -6735,9 +6735,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tl-r-ce-d1-1-2-s",
@@ -6759,9 +6759,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tl-r-ce-d1-1-4-s",
@@ -6783,9 +6783,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tl-r-ce-ct-d1-s",
@@ -6807,9 +6807,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tl-r-ce-ct-d1-1-2-s",
@@ -6831,9 +6831,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x3-m-ce-tl-r-ce-ct-d1-1-4-s",
@@ -6855,9 +6855,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X3_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tc-r-ce-d1-s",
@@ -6879,7 +6879,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
@@ -6903,7 +6903,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
@@ -6927,9 +6927,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tc-r-ce-ct-d1-s",
@@ -6951,9 +6951,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tc-r-ce-ct-d1-1-2-s",
@@ -6975,9 +6975,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tc-r-ce-ct-d1-1-4-s",
@@ -6999,9 +6999,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tl-r-ce-d1-s",
@@ -7023,9 +7023,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tl-r-ce-d1-1-2-s",
@@ -7047,9 +7047,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tl-r-ce-d1-1-4-s",
@@ -7071,9 +7071,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tl-r-ce-ct-d1-s",
@@ -7095,9 +7095,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tl-r-ce-ct-d1-1-2-s",
@@ -7119,9 +7119,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-ce-tl-r-ce-ct-d1-1-4-s",
@@ -7143,9 +7143,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tc-r-ce-d1-s",
@@ -7167,7 +7167,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
@@ -7191,9 +7191,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tc-r-ce-d1-1-4-s",
@@ -7215,9 +7215,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tc-r-ce-ct-d1-s",
@@ -7239,9 +7239,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tc-r-ce-ct-d1-1-2-s",
@@ -7263,9 +7263,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tc-r-ce-ct-d1-1-4-s",
@@ -7287,9 +7287,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tl-r-ce-d1-s",
@@ -7311,9 +7311,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tl-r-ce-d1-1-2-s",
@@ -7335,9 +7335,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tl-r-ce-d1-1-4-s",
@@ -7359,9 +7359,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tl-r-ce-ct-d1-s",
@@ -7383,9 +7383,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tl-r-ce-ct-d1-1-2-s",
@@ -7407,9 +7407,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x4-m-ce-tl-r-ce-ct-d1-1-4-s",
@@ -7431,9 +7431,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X4_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tc-r-ce-d1-s",
@@ -7455,7 +7455,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
@@ -7479,9 +7479,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tc-r-ce-d1-1-2-s",
@@ -7503,9 +7503,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tc-r-ce-d1-1-4-s",
@@ -7527,9 +7527,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tc-r-ce-ct-d1-s",
@@ -7551,9 +7551,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tc-r-ce-ct-d1-1-2-s",
@@ -7575,9 +7575,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tc-r-ce-ct-d1-1-4-s",
@@ -7599,9 +7599,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tl-r-ce-d1-s",
@@ -7623,9 +7623,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tl-r-ce-d1-1-2-s",
@@ -7647,9 +7647,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tl-r-ce-d1-1-4-s",
@@ -7671,9 +7671,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tl-r-ce-ct-d1-s",
@@ -7695,9 +7695,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tl-r-ce-ct-d1-1-2-s",
@@ -7719,9 +7719,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-ce-tl-r-ce-ct-d1-1-4-s",
@@ -7743,9 +7743,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tc-el-r-ce-d1-s",
@@ -7767,9 +7767,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tc-el-r-ce-ct-d1-s",
@@ -7791,9 +7791,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tc-el-r-ce-ct-d1-1-2-s",
@@ -7815,9 +7815,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tc-el-r-ce-ct-d1-1-4-s",
@@ -7839,9 +7839,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tc-el-r-ce-d1-1-2-s",
@@ -7863,9 +7863,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tc-el-r-ce-d1-1-4-s",
@@ -7887,9 +7887,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tl-el-r-ce-d1-s",
@@ -7911,9 +7911,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tl-el-r-ce-ct-d1-s",
@@ -7935,9 +7935,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tl-el-r-ce-ct-d1-1-2-s",
@@ -7959,9 +7959,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tl-el-r-ce-ct-d1-1-4-s",
@@ -7983,9 +7983,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tl-el-r-ce-d1-1-2-s",
@@ -8007,9 +8007,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-x5-m-ce-tl-el-r-ce-d1-1-4-s",
@@ -8031,9 +8031,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_X5_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tc-r-ce-d1-s",
@@ -8055,9 +8055,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tc-r-ce-d1-1-2-s",
@@ -8079,9 +8079,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tc-r-ce-d1-1-4-s",
@@ -8103,9 +8103,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tc-r-ce-ct-d1-s",
@@ -8127,9 +8127,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tc-r-ce-ct-d1-1-2-s",
@@ -8151,9 +8151,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tc-r-ce-ct-d1-1-4-s",
@@ -8175,9 +8175,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tl-r-ce-d1-s",
@@ -8199,9 +8199,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tl-r-ce-d1-1-2-s",
@@ -8223,9 +8223,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tl-r-ce-d1-1-4-s",
@@ -8247,9 +8247,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tl-r-ce-ct-d1-s",
@@ -8271,9 +8271,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tl-r-ce-ct-d1-1-2-s",
@@ -8295,9 +8295,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-40-m-ce-tl-r-ce-ct-d1-1-4-s",
@@ -8319,9 +8319,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tc-evo-r-ce-d1-s",
@@ -8343,9 +8343,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tc-evo-r-ce-d1-1-2-s",
@@ -8367,9 +8367,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tc-evo-r-ce-d1-1-4-s",
@@ -8391,9 +8391,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tc-evo-r-ce-ct-d1-s",
@@ -8415,9 +8415,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tc-evo-r-ce-ct-d1-1-2-s",
@@ -8439,9 +8439,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tc-evo-r-ce-ct-d1-1-4-s",
@@ -8463,9 +8463,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tl-evo-r-ce-d1-s",
@@ -8487,9 +8487,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tl-evo-r-ce-d1-1-2-s",
@@ -8511,9 +8511,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tl-evo-r-ce-d1-1-4-s",
@@ -8535,9 +8535,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tl-evo-r-ce-ct-d1-s",
@@ -8559,9 +8559,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tl-evo-r-ce-ct-d1-1-2-s",
@@ -8583,9 +8583,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-ce-tl-evo-r-ce-ct-d1-1-4-s",
@@ -8607,9 +8607,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tc-evo-r-ce-d1-s",
@@ -8631,9 +8631,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tc-evo-r-ce-d1-s-lpg-002359r057031",
@@ -8655,9 +8655,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tc-evo-r-ce-d1-1-2-s",
@@ -8679,9 +8679,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tc-evo-r-ce-d1-1-4-s",
@@ -8703,9 +8703,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tc-evo-r-ce-ct-d1-s",
@@ -8727,9 +8727,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tc-evo-r-ce-ct-d1-1-2-s",
@@ -8751,9 +8751,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tc-evo-r-ce-ct-d1-1-4-s",
@@ -8775,9 +8775,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tl-evo-r-ce-d1-s",
@@ -8799,9 +8799,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tl-evo-r-ce-d1-1-2-s",
@@ -8823,9 +8823,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tl-evo-r-ce-d1-1-4-s",
@@ -8847,9 +8847,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tl-evo-r-ce-ct-d1-s",
@@ -8871,9 +8871,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tl-evo-r-ce-ct-d1-1-2-s",
@@ -8895,9 +8895,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-tl-evo-r-ce-ct-d1-1-4-s",
@@ -8919,9 +8919,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-lx-tl-evo-r-ce-d1-1-2-s",
@@ -8943,9 +8943,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP_60_2_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP_60_2_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-2-ce-lx-tl-evo-r-ce-d1-1-4-s",
@@ -8967,9 +8967,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP_60_2_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP_60_2_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tc-evo-r-ce-d1-s",
@@ -8991,9 +8991,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tc-evo-r-ce-d1-1-2-s",
@@ -9015,9 +9015,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tc-evo-r-ce-d1-1-4-s",
@@ -9039,9 +9039,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tc-evo-r-ce-ct-d1-s",
@@ -9063,9 +9063,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tc-evo-r-ce-ct-d1-1-2-s",
@@ -9087,9 +9087,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tc-evo-r-ce-ct-d1-1-4-s",
@@ -9111,9 +9111,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tl-evo-r-ce-d1-s",
@@ -9135,9 +9135,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tl-evo-r-ce-d1-1-2-s",
@@ -9159,9 +9159,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tl-evo-r-ce-d1-1-4-s",
@@ -9183,9 +9183,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tl-evo-r-ce-d1-1-4-s-rampa-s-pravoi-storony",
@@ -9207,9 +9207,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tl-evo-r-ce-ct-d1-s",
@@ -9231,9 +9231,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tl-evo-r-ce-ct-d1-1-2-s",
@@ -9255,9 +9255,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-tl-evo-r-ce-ct-d1-1-4-s",
@@ -9279,9 +9279,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-lx-tl-evo-r-ce-d1-1-2-s",
@@ -9303,9 +9303,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-60-m-ce-lx-tl-evo-r-ce-d1-1-4-s",
@@ -9327,9 +9327,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tc-r-ce-d1-1-2-s",
@@ -9351,9 +9351,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tc-r-ce-d1-1-4",
@@ -9375,9 +9375,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tc-r-ce-d2-s",
@@ -9399,9 +9399,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tc-r-ce-ct-d1-1-2-s",
@@ -9423,9 +9423,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tc-r-ce-ct-d1-1-4",
@@ -9447,9 +9447,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tc-r-ce-ct-d2-s",
@@ -9471,9 +9471,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tl-r-ce-d1-1-2-s",
@@ -9495,9 +9495,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tl-r-ce-d1-1-4",
@@ -9519,9 +9519,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tl-r-ce-d2-s",
@@ -9543,9 +9543,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tl-r-ce-ct-d1-1-2-s",
@@ -9567,9 +9567,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tl-r-ce-ct-d1-1-4",
@@ -9591,9 +9591,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-2-ce-tl-r-ce-ct-d2-s",
@@ -9615,9 +9615,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-2.jpg",
+    image: "/images/products-watermarked/XP80-2.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tc-r-ce-d1-1-2-s",
@@ -9639,9 +9639,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tc-r-ce-d1-1-4-s",
@@ -9663,9 +9663,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tc-r-ce-d2-s",
@@ -9687,9 +9687,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tc-r-ce-dn65-fs65",
@@ -9711,9 +9711,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tc-r-ce-ct-d1-1-2-s",
@@ -9735,9 +9735,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tc-r-ce-ct-d1-1-4-s",
@@ -9759,9 +9759,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tc-r-ce-ct-d2-s",
@@ -9783,9 +9783,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tc-r-ce-ct-dn65-fs65",
@@ -9807,9 +9807,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tl-r-ce-d1-1-2-s",
@@ -9831,9 +9831,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tl-r-ce-d1-1-4-s",
@@ -9855,9 +9855,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tl-r-ce-d2-s",
@@ -9879,9 +9879,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tl-r-ce-dn65-fs65",
@@ -9903,9 +9903,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tl-r-ce-ct-d1-1-2-s",
@@ -9927,9 +9927,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tl-r-ce-ct-d1-1-4-s",
@@ -9951,9 +9951,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tl-r-ce-ct-d2-s",
@@ -9975,9 +9975,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-gas-xp-80-m-ce-tl-r-ce-ct-dn65-fs65",
@@ -9999,9 +9999,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/XP80-M.jpg",
+    image: "/images/products-watermarked/XP80-M.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-hi-gas-p1800-m-tl-el-r-dn150-s-f150",
@@ -10023,9 +10023,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_HI_GAS_P.jpg",
+    image: "/images/products-watermarked/FBR_HI_GAS_P.jpg",
   },
   {
     id: "gorelka-gazovaya-fbr-hi-gas-p2100-m-tl-el-r-dn150-s-f150",
@@ -10047,9 +10047,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_HI_GAS_P.jpg",
+    image: "/images/products-watermarked/FBR_HI_GAS_P.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-100-2-tc-evo",
@@ -10071,10 +10071,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP 75.2, FGP 100.2.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 75.2, FGP 100.2.pdf" },
   ],
-    image: "/images/products/FBR_FGP_70_100_2.jpg",
+    image: "/images/products-watermarked/FBR_FGP_70_100_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-100-2-tl-evo",
@@ -10096,10 +10096,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP 75.2, FGP 100.2.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 75.2, FGP 100.2.pdf" },
   ],
-    image: "/images/products/FBR_FGP_70_100_2.jpg",
+    image: "/images/products-watermarked/FBR_FGP_70_100_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-100-m-tc-evo",
@@ -10121,9 +10121,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_50_70_100_120_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_50_70_100_120_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-100-m-tl-evo",
@@ -10145,9 +10145,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_50_70_100_120_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_50_70_100_120_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-1000-m-tl-el",
@@ -10169,9 +10169,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_750_1000_1300_1500_1800_M_EL.jpg",
+    image: "/images/products-watermarked/FBR_FGP_750_1000_1300_1500_1800_M_EL.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-130-2-tc-evo",
@@ -10193,9 +10193,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP130, 160-2.jpg",
+    image: "/images/products-watermarked/FGP130, 160-2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-130-2-tl-evo",
@@ -10217,9 +10217,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP130, 160-2.jpg",
+    image: "/images/products-watermarked/FGP130, 160-2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-130-m-tc-evo",
@@ -10241,9 +10241,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP130, 160-M.jpg",
+    image: "/images/products-watermarked/FGP130, 160-M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-130-m-tl-evo",
@@ -10265,9 +10265,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP130, 160-M.jpg",
+    image: "/images/products-watermarked/FGP130, 160-M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-160-2-tc",
@@ -10289,9 +10289,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP130, 160-2.jpg",
+    image: "/images/products-watermarked/FGP130, 160-2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-160-2-tl",
@@ -10313,9 +10313,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP130, 160-2.jpg",
+    image: "/images/products-watermarked/FGP130, 160-2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-160-m-tc",
@@ -10337,9 +10337,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP130, 160-M.jpg",
+    image: "/images/products-watermarked/FGP130, 160-M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-160-m-tl",
@@ -10361,9 +10361,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP130, 160-M.jpg",
+    image: "/images/products-watermarked/FGP130, 160-M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-190-3-tl",
@@ -10385,9 +10385,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-190-m-tl-el",
@@ -10409,10 +10409,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products/FBR_FGP_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_190_250_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-250-3-tl",
@@ -10434,9 +10434,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-250-m-tl-el",
@@ -10458,10 +10458,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products/FBR_FGP_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_190_250_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-350-3-tl-el",
@@ -10483,9 +10483,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-350-3-tl-mec",
@@ -10507,9 +10507,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-350-m-tl-el",
@@ -10531,10 +10531,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products/FBR_FGP_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_350_450_550_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-450-3-tl-el",
@@ -10556,9 +10556,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-450-3-tl-mec",
@@ -10580,9 +10580,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-450-m-tl-el",
@@ -10604,10 +10604,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products/FBR_FGP_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_350_450_550_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-50-2-tc-evo-3",
@@ -10629,10 +10629,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/fgp50_2.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/fgp50_2.pdf" },
   ],
-    image: "/images/products/FGP50.png",
+    image: "/images/products-watermarked/FGP50.png",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-50-2-tl-evo-3",
@@ -10654,10 +10654,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/fgp50_2.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/fgp50_2.pdf" },
   ],
-    image: "/images/products/FGP50.png",
+    image: "/images/products-watermarked/FGP50.png",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-50-m-tc-evo",
@@ -10679,10 +10679,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP50_M.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP50_M.pdf" },
   ],
-    image: "/images/products/FBR_FGP_50_70_100_120_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_50_70_100_120_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-50-m-tl-evo",
@@ -10704,10 +10704,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP50_M.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP50_M.pdf" },
   ],
-    image: "/images/products/FBR_FGP_50_70_100_120_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_50_70_100_120_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-550-m-tl-el",
@@ -10729,10 +10729,10 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
-    { name: "Инструкция", url: "/docs/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
+    { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products/FBR_FGP_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_350_450_550_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-650-m-tl-el",
@@ -10754,9 +10754,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FGP_650_M.jpg",
+    image: "/images/products-watermarked/FBR_FGP_650_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-75-2-tc",
@@ -10778,9 +10778,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP75.jpg",
+    image: "/images/products-watermarked/FGP75.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-75-2-tl",
@@ -10802,9 +10802,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP75.jpg",
+    image: "/images/products-watermarked/FGP75.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-75-m-tc",
@@ -10826,9 +10826,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP75.jpg",
+    image: "/images/products-watermarked/FGP75.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fgp-75-m-tl",
@@ -10850,9 +10850,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FGP75.jpg",
+    image: "/images/products-watermarked/FGP75.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndl-16-tc",
@@ -10874,9 +10874,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndl-16-tl",
@@ -10898,9 +10898,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndl-25-tc",
@@ -10922,9 +10922,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndl-25-tl",
@@ -10946,9 +10946,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndl-8-tc",
@@ -10970,9 +10970,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndl-8-tl",
@@ -10994,9 +10994,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-100-2-tc",
@@ -11018,9 +11018,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-100-2-tl",
@@ -11042,9 +11042,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-100-m-tc",
@@ -11066,9 +11066,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-100-m-tl",
@@ -11090,9 +11090,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-125-2-tc",
@@ -11114,9 +11114,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-125-2-tl",
@@ -11138,9 +11138,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-125-m-tc",
@@ -11162,9 +11162,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-125-m-tl",
@@ -11186,9 +11186,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-150-2-tc",
@@ -11210,9 +11210,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-150-2-tl",
@@ -11234,9 +11234,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-150-m-tc",
@@ -11258,9 +11258,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-150-m-tl",
@@ -11282,9 +11282,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-1800-m-tl-el",
@@ -11306,9 +11306,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FNDP 1800.jpg",
+    image: "/images/products-watermarked/FNDP 1800.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-190-3-tl",
@@ -11330,9 +11330,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_190_250_350_3.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-190-m-tl-el",
@@ -11354,7 +11354,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -11378,9 +11378,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-25-2-tc",
@@ -11402,9 +11402,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-25-2-tl",
@@ -11426,9 +11426,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-250-3-tl",
@@ -11450,9 +11450,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_190_250_350_3.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-250-m-tl-el",
@@ -11474,7 +11474,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -11498,9 +11498,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-350-3-tl",
@@ -11522,9 +11522,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_190_250_350_3.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-350-3-tl-el",
@@ -11546,7 +11546,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -11570,9 +11570,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_350_450_550_M_EL.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_350_450_550_M_EL.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-350-m-tl-mec",
@@ -11594,9 +11594,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-45-2-tc",
@@ -11618,9 +11618,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-45-2-tl",
@@ -11642,9 +11642,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-450-3-tl-el",
@@ -11666,7 +11666,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -11690,9 +11690,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_350_450_550_M_EL.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_350_450_550_M_EL.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-450-m-tl-mec",
@@ -11714,9 +11714,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-550-m-tl-el",
@@ -11738,9 +11738,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_350_450_550_M_EL.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_350_450_550_M_EL.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-550-m-tl-mec",
@@ -11762,9 +11762,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-70-2-tc",
@@ -11786,9 +11786,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-70-2-tl",
@@ -11810,9 +11810,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-70-m-tc",
@@ -11834,9 +11834,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-fndp-70-m-tl",
@@ -11858,9 +11858,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-mazutnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0h-2001",
@@ -11882,9 +11882,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_S.jpg",
+    image: "/images/products-watermarked/FBR_G_0_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0hr-2001",
@@ -11906,9 +11906,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_S.jpg",
+    image: "/images/products-watermarked/FBR_G_0_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0s-2001",
@@ -11930,9 +11930,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_S.jpg",
+    image: "/images/products-watermarked/FBR_G_0_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0s-2003-tc",
@@ -11954,9 +11954,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_S.jpg",
+    image: "/images/products-watermarked/FBR_G_0_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0s-2003-txc",
@@ -11978,9 +11978,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_S.jpg",
+    image: "/images/products-watermarked/FBR_G_0_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0s-lx-tc",
@@ -12002,9 +12002,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_SR_S_H_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_0_SR_S_H_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0s-lx-txc",
@@ -12026,9 +12026,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_SR_S_H_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_0_SR_S_H_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0sr-2003-tc",
@@ -12050,9 +12050,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_S.jpg",
+    image: "/images/products-watermarked/FBR_G_0_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0sr-2003-txc",
@@ -12074,9 +12074,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_S.jpg",
+    image: "/images/products-watermarked/FBR_G_0_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0sr-lx-tc",
@@ -12098,9 +12098,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_SR_S_H_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_0_SR_S_H_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-0sr-lx-txc",
@@ -12122,9 +12122,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_0_SR_S_H_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_0_SR_S_H_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1-f-2001",
@@ -12146,9 +12146,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_2_F.jpg",
+    image: "/images/products-watermarked/FBR_G_1_2_F.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1-22-2001",
@@ -12170,9 +12170,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1.22.jpg",
+    image: "/images/products-watermarked/FBR_G_1.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1h-2001",
@@ -12194,9 +12194,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_S.jpg",
+    image: "/images/products-watermarked/FBR_G_1_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1hr-2001",
@@ -12218,9 +12218,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_S.jpg",
+    image: "/images/products-watermarked/FBR_G_1_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1s-2001",
@@ -12242,9 +12242,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_S.jpg",
+    image: "/images/products-watermarked/FBR_G_1_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1s-2003-tc",
@@ -12266,9 +12266,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_S.jpg",
+    image: "/images/products-watermarked/FBR_G_1_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1s-lx",
@@ -12290,9 +12290,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_SR_S_H_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_1_SR_S_H_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1sr-2003-tc",
@@ -12314,9 +12314,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_S.jpg",
+    image: "/images/products-watermarked/FBR_G_1_S.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-1sr-lx",
@@ -12338,9 +12338,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_SR_S_H_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_1_SR_S_H_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2-f-maxi",
@@ -12362,9 +12362,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_1_2_F.jpg",
+    image: "/images/products-watermarked/FBR_G_1_2_F.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2-22-lx-tc",
@@ -12386,9 +12386,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2.22_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_2.22_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2-22-lx-tl",
@@ -12410,9 +12410,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2.22_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_2.22_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2-22-maxi-tc",
@@ -12434,9 +12434,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2.22.jpg",
+    image: "/images/products-watermarked/FBR_G_2.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2-22-maxi-tl",
@@ -12458,9 +12458,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2.22.jpg",
+    image: "/images/products-watermarked/FBR_G_2.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2-22-maxi-txl",
@@ -12482,9 +12482,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2.22.jpg",
+    image: "/images/products-watermarked/FBR_G_2.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2-22-r-lx-tc",
@@ -12506,9 +12506,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2.22_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_2.22_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2-22-r-lx-tl",
@@ -12530,9 +12530,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2.22_LX.jpg",
+    image: "/images/products-watermarked/FBR_G_2.22_LX.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2h-maxi",
@@ -12554,9 +12554,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2_S_MAXI.jpg",
+    image: "/images/products-watermarked/FBR_G_2_S_MAXI.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2h-maxi-tl",
@@ -12578,9 +12578,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2_S_MAXI.jpg",
+    image: "/images/products-watermarked/FBR_G_2_S_MAXI.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2s-maxi",
@@ -12602,9 +12602,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2_S_MAXI.jpg",
+    image: "/images/products-watermarked/FBR_G_2_S_MAXI.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-2s-maxi-tl",
@@ -12626,9 +12626,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_2_S_MAXI.jpg",
+    image: "/images/products-watermarked/FBR_G_2_S_MAXI.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x-3-22-lx-tc",
@@ -12650,7 +12650,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -12674,7 +12674,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -12698,7 +12698,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -12722,7 +12722,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -12746,7 +12746,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -12770,7 +12770,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
     image: undefined,
   },
@@ -12794,9 +12794,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_3_4_F.jpg",
+    image: "/images/products-watermarked/FBR_G_3_4_F.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x3-f-tl",
@@ -12818,9 +12818,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_3_4_F.jpg",
+    image: "/images/products-watermarked/FBR_G_3_4_F.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x3-22-tc",
@@ -12842,9 +12842,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x3-22-tl",
@@ -12866,9 +12866,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x3h-tc",
@@ -12890,9 +12890,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_3.jpg",
+    image: "/images/products-watermarked/FBR_G_X_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x3h-tl",
@@ -12914,9 +12914,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_3.jpg",
+    image: "/images/products-watermarked/FBR_G_X_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x3s-tc",
@@ -12938,9 +12938,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_3.jpg",
+    image: "/images/products-watermarked/FBR_G_X_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x3s-tl",
@@ -12962,9 +12962,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_3.jpg",
+    image: "/images/products-watermarked/FBR_G_X_3.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4-f-tc",
@@ -12986,9 +12986,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_3_4_F.jpg",
+    image: "/images/products-watermarked/FBR_G_3_4_F.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4-f-tl",
@@ -13010,9 +13010,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_3_4_F.jpg",
+    image: "/images/products-watermarked/FBR_G_3_4_F.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4-22-tc",
@@ -13034,9 +13034,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4-22-tl",
@@ -13058,9 +13058,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4-2-tc",
@@ -13082,9 +13082,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_2.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4-2-tl",
@@ -13106,9 +13106,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_2.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4h-tc",
@@ -13130,9 +13130,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_5.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4h-tl",
@@ -13154,9 +13154,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_5.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4s-tc",
@@ -13178,9 +13178,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_5.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x4s-tl",
@@ -13202,9 +13202,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_5.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5-f-tc",
@@ -13226,9 +13226,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_5_F.jpg",
+    image: "/images/products-watermarked/FBR_G_5_F.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5-f-tl",
@@ -13250,9 +13250,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_5_F.jpg",
+    image: "/images/products-watermarked/FBR_G_5_F.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5-22-tc",
@@ -13274,9 +13274,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5-22-tl",
@@ -13298,9 +13298,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5-2-tc",
@@ -13322,9 +13322,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_5_2.jpg",
+    image: "/images/products-watermarked/FBR_G_X_5_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5-2-tl",
@@ -13346,9 +13346,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_5_2.jpg",
+    image: "/images/products-watermarked/FBR_G_X_5_2.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5h-tc",
@@ -13370,9 +13370,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_5.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5h-tl",
@@ -13394,9 +13394,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_5.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5s-tc",
@@ -13418,9 +13418,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_5.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
   },
   {
     id: "gorelka-zh-t-fbr-g-x5s-tl",
@@ -13442,9 +13442,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-dizelnye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/ДС EAЭС.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products/FBR_G_X_4_5.jpg",
+    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-fnd-gp-550-m-tl-el",
@@ -13466,9 +13466,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_KN_750_1000_1300_1500_1800_EL.jpg",
+    image: "/images/products-watermarked/FBR_KN_750_1000_1300_1500_1800_EL.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-fnd-gp-750-m-tl-el",
@@ -13490,9 +13490,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_KN_750_1000_1300_1500_1800_EL.jpg",
+    image: "/images/products-watermarked/FBR_KN_750_1000_1300_1500_1800_EL.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x0-tc-r-ce-d1-2-s",
@@ -13514,9 +13514,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x0-tc-r-ce-ct-d1-2-s",
@@ -13538,9 +13538,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x0-tl-r-ce-d1-2-s",
@@ -13562,9 +13562,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x0-tl-r-ce-ct-d1-2-s",
@@ -13586,9 +13586,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x1-tc-r-ce-d1-2-s",
@@ -13610,9 +13610,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x1-tc-r-ce-ct-d1-2-s",
@@ -13634,9 +13634,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x1-tl-r-ce-d1-2-s",
@@ -13658,9 +13658,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x1-tl-r-ce-ct-d1-2-s",
@@ -13682,9 +13682,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x3-tc-r-ce-d1-s",
@@ -13706,9 +13706,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x3-tc-r-ce-ct-d1-s",
@@ -13730,9 +13730,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x3-tl-r-ce-d1-s",
@@ -13754,9 +13754,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x3-tl-r-ce-ct-d1-s",
@@ -13778,9 +13778,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x4-tc-r-ce-d1-s",
@@ -13802,9 +13802,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x4-tc-r-ce-ct-d1-s",
@@ -13826,9 +13826,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x4-tl-r-ce-d1-s",
@@ -13850,9 +13850,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-gm-x4-tl-r-ce-ct-d1-s",
@@ -13874,9 +13874,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_GM_X0_4.jpg",
+    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-el-r-ce-d2-fs50",
@@ -13898,9 +13898,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-el-r-ce-dn65-fs65",
@@ -13922,9 +13922,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-el-r-ce-dn80-fs80",
@@ -13946,9 +13946,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-el-r-ce-ct-d2-fs50",
@@ -13970,9 +13970,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-el-r-ce-ct-dn100-fs100",
@@ -13994,9 +13994,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-el-r-ce-ct-dn65-fs65",
@@ -14018,9 +14018,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-el-r-ce-ct-dn80-fs80",
@@ -14042,9 +14042,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-el-r-dn100-fs100",
@@ -14066,9 +14066,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-mec-r-ce-ct-d2-fs50",
@@ -14090,9 +14090,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-mec-r-ce-ct-dn100-fs100",
@@ -14114,9 +14114,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-mec-r-ce-ct-dn65-fs65",
@@ -14138,9 +14138,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-190-m-tl-mec-r-ce-ct-dn80-fs80",
@@ -14162,9 +14162,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-el-r-ce-d2-fs50",
@@ -14186,9 +14186,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-el-r-ce-dn65-fs65",
@@ -14210,9 +14210,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-el-r-ce-dn80-fs80",
@@ -14234,9 +14234,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-el-r-ce-ct-d2-fs50",
@@ -14258,9 +14258,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-el-r-ce-ct-dn100-fs100",
@@ -14282,9 +14282,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-el-r-ce-ct-dn65-fs65",
@@ -14306,9 +14306,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-el-r-ce-ct-dn80-fs80",
@@ -14330,9 +14330,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-el-r-dn100-fs100",
@@ -14354,9 +14354,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-mec-r-ce-ct-d2-fs50",
@@ -14378,9 +14378,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-mec-r-ce-ct-dn100-fs100",
@@ -14402,9 +14402,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-mec-r-ce-ct-dn65-fs65",
@@ -14426,9 +14426,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-250-m-tl-mec-r-ce-ct-dn80-fs80",
@@ -14450,9 +14450,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_190_250_M.jpg",
+    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tc-r-ce-d1-s",
@@ -14474,9 +14474,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tc-r-ce-d1-1-2-s",
@@ -14498,9 +14498,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tc-r-ce-d1-1-4-s",
@@ -14522,9 +14522,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tc-r-ce-d2-s",
@@ -14546,9 +14546,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tc-r-ce-ct-d1-s",
@@ -14570,9 +14570,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tc-r-ce-ct-d1-1-2-s",
@@ -14594,9 +14594,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tc-r-ce-ct-d1-1-4-s",
@@ -14618,9 +14618,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tc-r-ce-ct-d2-s",
@@ -14642,9 +14642,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tl-r-ce-d1-s",
@@ -14666,9 +14666,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tl-r-ce-d1-1-2-s",
@@ -14690,9 +14690,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tl-r-ce-d1-1-4-s",
@@ -14714,9 +14714,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tl-r-ce-d2-s",
@@ -14738,9 +14738,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tl-r-ce-ct-d1-s",
@@ -14762,9 +14762,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tl-r-ce-ct-d1-1-2-s",
@@ -14786,9 +14786,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tl-r-ce-ct-d1-1-4-s",
@@ -14810,9 +14810,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-3-2-tl-r-ce-ct-d2-s",
@@ -14834,9 +14834,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_3_4.jpg",
+    image: "/images/products-watermarked/FBR_K_3_4.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tc-r-ce-ct-d1-s",
@@ -14858,9 +14858,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tc-evo-r-ce-ct-d1-1-2-s",
@@ -14882,9 +14882,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tc-evo-r-ce-ct-d1-1-4-s",
@@ -14906,9 +14906,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tc-evo-r-ce-ct-d2-s",
@@ -14930,9 +14930,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tc-evo2-r-ce-d1-s",
@@ -14954,9 +14954,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tc-evo2-r-ce-d1-1-2-s",
@@ -14978,9 +14978,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tc-evo2-r-ce-d1-1-4-s",
@@ -15002,9 +15002,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tc-evo2-r-ce-d2-s",
@@ -15026,9 +15026,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tl-r-ce-ct-d1-s",
@@ -15050,9 +15050,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tl-evo-r-ce-ct-d1-1-2-s",
@@ -15074,9 +15074,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tl-evo-r-ce-ct-d1-1-4-s",
@@ -15098,9 +15098,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tl-evo-r-ce-ct-d2-s",
@@ -15122,9 +15122,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tl-evo2-r-ce-d1-s",
@@ -15146,9 +15146,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tl-evo2-r-ce-d1-1-2-s",
@@ -15170,9 +15170,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tl-evo2-r-ce-d1-1-4-s",
@@ -15194,9 +15194,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-2-tl-evo2-r-ce-d2-s",
@@ -15218,9 +15218,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/K4_2_new.jpg",
+    image: "/images/products-watermarked/K4_2_new.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k-4-m-2-tc-el-evo-r-1-1-2-s",
@@ -15242,7 +15242,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: undefined,
   },
@@ -15266,7 +15266,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: undefined,
   },
@@ -15290,9 +15290,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_5_6_7.jpg",
+    image: "/images/products-watermarked/FBR_K_5_6_7.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-el-r-ce-d2-fs50",
@@ -15314,9 +15314,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-el-r-ce-dn100-fs100",
@@ -15338,9 +15338,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-el-r-ce-dn65-fs65",
@@ -15362,9 +15362,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-el-r-ce-dn80-fs80",
@@ -15386,9 +15386,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-el-r-ce-ct-d2-fs50",
@@ -15410,9 +15410,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-el-r-ce-ct-dn100-fs100",
@@ -15434,9 +15434,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-el-r-ce-ct-dn65-fs65",
@@ -15458,9 +15458,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-el-r-ce-ct-dn80-fs80",
@@ -15482,9 +15482,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-mec-r-ce-ct-d2-fs50",
@@ -15506,9 +15506,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-mec-r-ce-ct-dn100-fs100",
@@ -15530,9 +15530,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-mec-r-ce-ct-dn65-fs65",
@@ -15554,9 +15554,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k350-m-tl-mec-r-ce-ct-dn80-fs80",
@@ -15578,9 +15578,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k450-m-tl-el-r-ce-d2-fs50",
@@ -15602,9 +15602,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k450-m-tl-el-r-ce-dn100-fs100",
@@ -15626,9 +15626,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k450-m-tl-el-r-ce-dn65-fs65",
@@ -15650,9 +15650,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k450-m-tl-el-r-ce-dn80-fs80",
@@ -15674,9 +15674,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k450-m-tl-el-r-ce-ct-d2-fs50",
@@ -15698,9 +15698,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k450-m-tl-el-r-ce-ct-dn100-fs100",
@@ -15722,9 +15722,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k450-m-tl-el-r-ce-ct-dn65-fs65",
@@ -15746,9 +15746,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k450-m-tl-el-r-ce-ct-dn80-fs80",
@@ -15770,9 +15770,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k550-m-tl-el-r-ce-d2-fs50",
@@ -15794,9 +15794,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k550-m-tl-el-r-ce-dn100-fs100",
@@ -15818,9 +15818,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k550-m-tl-el-r-ce-dn65-fs65",
@@ -15842,9 +15842,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k550-m-tl-el-r-ce-dn80-fs80",
@@ -15866,9 +15866,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k550-m-tl-el-r-ce-ct-d2-fs50",
@@ -15890,9 +15890,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k550-m-tl-el-r-ce-ct-dn100-fs100",
@@ -15914,9 +15914,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k550-m-tl-el-r-ce-ct-dn65-fs65",
@@ -15938,9 +15938,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k550-m-tl-el-r-ce-ct-dn80-fs80",
@@ -15962,9 +15962,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_350_450_550_M.jpg",
+    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k650-m-tl-el-r-ce-dn65-s-f65",
@@ -15986,9 +15986,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_650_M.jpg",
+    image: "/images/products-watermarked/FBR_K_650_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k650-m-tl-el-r-ce-dn80-s-f80",
@@ -16010,9 +16010,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K_650_M.jpg",
+    image: "/images/products-watermarked/FBR_K_650_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k750-m-tl-el-r-ce-dn65-s-f65",
@@ -16034,9 +16034,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_K750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-k750-m-tl-el-r-ce-dn80-s-f80",
@@ -16058,9 +16058,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_K750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products-watermarked/FBR_K750_1000_1300_1500_1800_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kn-250-m-tl-mec-r-ce-ct-dn65-fs65",
@@ -16082,9 +16082,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/FBR_KN_190-250.jpg",
+    image: "/images/products-watermarked/FBR_KN_190-250.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kn-7-2-tl-r-ce-ct-d2",
@@ -16106,9 +16106,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KN7.png",
+    image: "/images/products-watermarked/KN7.png",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kn-7-m-tl-el-r-ce-ct-d2",
@@ -16130,9 +16130,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KN7.png",
+    image: "/images/products-watermarked/KN7.png",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kn1800-m-tl-el-r-ce-ct-dn125-s-f125",
@@ -16154,9 +16154,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KN 1800.jpg",
+    image: "/images/products-watermarked/KN 1800.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tc-r-ce-d1-s",
@@ -16178,9 +16178,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tc-r-ce-d1-1-2-s",
@@ -16202,9 +16202,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tc-r-ce-d1-1-4-s",
@@ -16226,9 +16226,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tc-r-ce-d2-s",
@@ -16250,9 +16250,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tc-r-ce-ct-d1-s",
@@ -16274,9 +16274,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tc-r-ce-ct-d1-1-2-s",
@@ -16298,9 +16298,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tc-r-ce-ct-d1-1-4-s",
@@ -16322,9 +16322,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tc-r-ce-ct-d2-s",
@@ -16346,9 +16346,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tl-r-ce-d1-s",
@@ -16370,9 +16370,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tl-r-ce-d1-1-2-s",
@@ -16394,9 +16394,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tl-r-ce-d1-1-4-s",
@@ -16418,9 +16418,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tl-r-ce-d2-s",
@@ -16442,9 +16442,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tl-r-ce-ct-d1-s",
@@ -16466,9 +16466,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tl-r-ce-ct-d1-1-2-s",
@@ -16490,9 +16490,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tl-r-ce-ct-d1-1-4-s",
@@ -16514,9 +16514,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-5-2-tl-r-ce-ct-d2-s",
@@ -16538,9 +16538,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX 5-2.jpg",
+    image: "/images/products-watermarked/KX 5-2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-6-2-tl-evo-r-ce-ct-d2-s",
@@ -16562,9 +16562,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX6, 7_2.jpg",
+    image: "/images/products-watermarked/KX6, 7_2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-6-m-tl-r-ce-ct-d2-s",
@@ -16586,9 +16586,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX6, 7_M.jpg",
+    image: "/images/products-watermarked/KX6, 7_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-6-m-tl-r-ce-ct-dn65-fs65",
@@ -16610,9 +16610,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX6, 7_M.jpg",
+    image: "/images/products-watermarked/KX6, 7_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-6-m-tl-r-ce-ct-dn80-fs80",
@@ -16634,9 +16634,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX6, 7_M.jpg",
+    image: "/images/products-watermarked/KX6, 7_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-7-2-tl-r-ce-ct-d2-s",
@@ -16658,9 +16658,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX6, 7_2.jpg",
+    image: "/images/products-watermarked/KX6, 7_2.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-7-m-tl-r-ce-ct-d2-s",
@@ -16682,9 +16682,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX6, 7_M.jpg",
+    image: "/images/products-watermarked/KX6, 7_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-7-m-tl-r-ce-ct-dn65-fs65",
@@ -16706,9 +16706,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX6, 7_M.jpg",
+    image: "/images/products-watermarked/KX6, 7_M.jpg",
   },
   {
     id: "gorelka-kombinirovannaya-fbr-kx-7-m-tl-r-ce-ct-dn80-fs80",
@@ -16730,9 +16730,9 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-kombinirovannye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products/KX6, 7_M.jpg",
+    image: "/images/products-watermarked/KX6, 7_M.jpg",
   },
   {
     id: "dymovaya-truba-s-krepleniem-na-korpus-kotla-hobshch-3m",
@@ -16798,7 +16798,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-1500",
@@ -16820,7 +16820,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-200",
@@ -16842,7 +16842,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-2000",
@@ -16864,7 +16864,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-2500",
@@ -16886,7 +16886,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-300",
@@ -16908,7 +16908,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-3000",
@@ -16930,7 +16930,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-4000",
@@ -16952,7 +16952,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-500",
@@ -16974,7 +16974,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-5000",
@@ -16996,7 +16996,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-800",
@@ -17018,7 +17018,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-200-ch-d1-25-013-100sb-material-aisi304-matovoe-pokrytie-1-d-bak-3",
@@ -17040,7 +17040,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-200-ch-d1-25-014-100sb-material-aisi304-matovoe-pokrytie-1-d-bak-4",
@@ -17062,7 +17062,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatnyi-bak-vrc-es-200-ch-d1-25-015-100sb-material-aisi304-matovoe-pokrytie-1-d-bak-5",
@@ -17084,7 +17084,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES",
   },
   {
     id: "kondensatsionnyi-kotel-naruzhnogo-razmeshcheniya-egs-bkt-f2-500-q-504-kvt-bez-dymovoi-truby",
@@ -17106,7 +17106,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/BKT-F2.300-600-1-1",
+    image: "/images/products-watermarked/BKT-F2.300-600-1-1",
   },
   {
     id: "kondensatsionnyi-kotel-naruzhnogo-razmeshcheniya-egs-bkt-f2-600-q-588-kvt-bez-dymovoi-truby",
@@ -17128,7 +17128,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/BKT-F2.300-600-1-1",
+    image: "/images/products-watermarked/BKT-F2.300-600-1-1",
   },
   {
     id: "kondensatsionnyi-kotel-naruzhnogo-razmeshcheniya-egs-bkt-f2-800-q-850-kvt-bez-dymovoi-truby",
@@ -17150,7 +17150,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/BKT-F2.300-600-1-1",
+    image: "/images/products-watermarked/BKT-F2.300-600-1-1",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-1000-q-1000-kvt",
@@ -17172,7 +17172,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-120-q-126-kvt",
@@ -17194,7 +17194,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-1600-q-1600-kvt",
@@ -17216,7 +17216,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-200-q-210-kvt",
@@ -17238,7 +17238,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-300-q-294-kvt",
@@ -17260,7 +17260,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-350-q-350-kvt",
@@ -17282,7 +17282,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-400-q-425-kvt",
@@ -17304,7 +17304,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-500-q-510-kvt",
@@ -17326,7 +17326,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-600-q-595-kvt",
@@ -17348,7 +17348,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-650-q-650-kvt",
@@ -17370,7 +17370,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-850-q-850-kvt",
@@ -17392,7 +17392,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "napolnyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-f1-900-q-900-kvt",
@@ -17414,7 +17414,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный787658",
+    image: "/images/products-watermarked/Безымянный787658",
   },
   {
     id: "nastennyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-w1-120-q-128-kvt",
@@ -17436,7 +17436,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "nastennyi-vodogreinyi-kondensatsionnyi-kotel-egs-alum-w1-90-q-96-6-kvt",
@@ -17458,7 +17458,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "neitralizator-kondensata-do-1-000-kvt",
@@ -17480,7 +17480,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "neitralizator-kondensata-do-150-kvt",
@@ -17502,7 +17502,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "neitralizator-kondensata-do-1500-kvt",
@@ -17524,7 +17524,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "neitralizator-kondensata-do-570-kvt",
@@ -17546,7 +17546,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "nizhnyaya-produvka-pro-es-n",
@@ -17744,7 +17744,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-1000-1000-kg-ch-16-bar",
@@ -17766,7 +17766,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-1500-1500-kg-ch-12-bar",
@@ -17788,7 +17788,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-1500-1500-kg-ch-16-bar",
@@ -17810,7 +17810,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-2000-2000-kg-ch-12-bar",
@@ -17832,7 +17832,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-2000-2000-kg-ch-16-bar",
@@ -17854,7 +17854,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-2500-2500-kg-ch-12-bar",
@@ -17876,7 +17876,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-2500-2500-kg-ch-16-bar",
@@ -17898,7 +17898,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-3000-3000-kg-ch-12-bar",
@@ -17920,7 +17920,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-3000-3000-kg-ch-16-bar",
@@ -17942,7 +17942,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-4000-4000-kg-ch-12-bar",
@@ -17964,7 +17964,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-4000-4000-kg-ch-16-bar",
@@ -17986,7 +17986,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-500-500-kg-ch-12-bar",
@@ -18008,7 +18008,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-500-500-kg-ch-16-bar",
@@ -18030,7 +18030,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-5000-5000-kg-ch-12-bar",
@@ -18052,7 +18052,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parovoi-kotel-nova-5000-5000-kg-ch-16-bar",
@@ -18074,7 +18074,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/NOVA",
+    image: "/images/products-watermarked/NOVA",
   },
   {
     id: "parogenerator-nova-technics-1000-1000-kg-ch-kondensatnyi-vodotrubnyi-so-vstroennym-ekonomaizerom",
@@ -18096,7 +18096,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "parogenerator-nova-technics-500-500-kg-ch-kondensatnyi-vodotrubnyi-so-vstroennym-ekonomaizerom",
@@ -18118,7 +18118,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/Безымянный",
+    image: "/images/products-watermarked/Безымянный",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-100",
@@ -18140,7 +18140,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-125",
@@ -18162,7 +18162,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-150",
@@ -18184,7 +18184,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-200",
@@ -18206,7 +18206,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-25",
@@ -18228,7 +18228,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-250",
@@ -18250,7 +18250,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-300",
@@ -18272,7 +18272,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-32",
@@ -18294,7 +18294,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-40",
@@ -18316,7 +18316,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-50",
@@ -18338,7 +18338,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-65",
@@ -18360,7 +18360,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "preobrazovatel-raskhoda-vikhrevoi-par-es-80",
@@ -18382,7 +18382,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2",
   },
   {
     id: "reagent-napolnitel-premium-15-kg",
@@ -18448,7 +18448,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/BDV-ES",
+    image: "/images/products-watermarked/BDV-ES",
   },
   {
     id: "separator-produvok-bdv-es-300",
@@ -18470,7 +18470,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/BDV-ES",
+    image: "/images/products-watermarked/BDV-ES",
   },
   {
     id: "separator-produvok-bdv-es-500",
@@ -18492,7 +18492,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/BDV-ES",
+    image: "/images/products-watermarked/BDV-ES",
   },
   {
     id: "separator-produvok-bdv-es-700",
@@ -18514,7 +18514,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/BDV-ES",
+    image: "/images/products-watermarked/BDV-ES",
   },
   {
     id: "turbulizator-36kh1200-mm",

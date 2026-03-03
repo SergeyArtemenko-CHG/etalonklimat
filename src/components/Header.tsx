@@ -31,8 +31,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [hidden, setHidden] = useState(false);
-  const lastScrollY = useRef(0);
+  const [isShrunk, setIsShrunk] = useState(false);
 
   const totalItems = useCartStore((s) => s.getTotalItems());
   const rate = useCurrencyStore((s) => s.rate);
@@ -65,23 +64,17 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
-      if (currentY > lastScrollY.current && currentY > 80) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
-      lastScrollY.current = currentY;
+      setIsShrunk(currentY > 50);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-[#003366] text-white shadow-md transition-transform duration-300 ${
-        hidden ? "-translate-y-full" : "translate-y-0"
-      }`}
+      className={`sticky top-0 z-50 w-full bg-[#003366] text-white shadow-md transition-all duration-300`}
     >
       {/* Top bar */}
       <div className="border-b border-white/10 bg-[#02274d]">
@@ -93,27 +86,31 @@ export default function Header() {
             </button>
           </div>
           <nav className="flex flex-wrap items-center gap-4 text-white/80">
-            <a href="#" className="hover:text-white">
+            <Link href="/about" className="hover:text-white">
               О компании
-            </a>
-            <a href="#" className="hover:text-white">
-              Доставка
-            </a>
-            <a href="#" className="hover:text-white">
+            </Link>
+            <Link href="/delivery" className="hover:text-white">
+              Доставка и оплата
+            </Link>
+            <Link href="/contacts" className="hover:text-white">
               Контакты
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
 
       {/* Main header */}
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-3 px-4 py-2 md:flex-row md:items-center md:gap-6 md:py-5">
+      <div
+        className={`relative mx-auto flex max-w-6xl flex-col px-4 ${
+          isShrunk ? "gap-2 py-1 md:flex-row md:items-center md:gap-4 md:py-3" : "gap-3 py-2 md:flex-row md:items-center md:gap-6 md:py-5"
+        }`}
+      >
         {/* Logo */}
         <div className="flex items-center md:w-[200px]">
           <Link href="/" className="flex items-center gap-2 transition opacity-90 hover:opacity-100">
             <svg
               viewBox="0 0 48 48"
-              className="h-10 w-10 shrink-0"
+              className={`${isShrunk ? "h-8 w-8" : "h-10 w-10"} shrink-0 transition-all duration-300`}
               aria-hidden="true"
             >
               <rect width="48" height="48" rx="8" fill="white" />
@@ -122,7 +119,11 @@ export default function Header() {
                 <path d="M14 14v20" strokeWidth="3.5" />
               </g>
             </svg>
-            <span className="text-lg font-bold tracking-[0.15em] text-white md:text-xl md:tracking-[0.2em]">
+            <span
+              className={`font-bold tracking-[0.15em] text-white transition-all duration-300 ${
+                isShrunk ? "text-base md:text-lg" : "text-lg md:text-xl"
+              } md:tracking-[0.2em]`}
+            >
               ETALON
             </span>
           </Link>
@@ -131,7 +132,7 @@ export default function Header() {
         {/* Catalog + search */}
         <div
           ref={containerRef}
-          className="relative flex w-full flex-col gap-2 md:flex-1 md:flex-row md:items-center"
+          className="relative flex w-full flex-row gap-2 md:flex-1 md:flex-row md:items-center"
         >
           <button
             type="button"

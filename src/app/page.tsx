@@ -78,8 +78,9 @@ export default function Home() {
                   sku={product.sku}
                   priceEur={product.priceEur}
                   priceRub={product.priceRub}
-                  description={product.description}
                   image={product.image}
+                  burnerPowerMin={product.burnerPowerMin}
+                  burnerPowerMax={product.burnerPowerMax}
                 />
               ))}
             </div>

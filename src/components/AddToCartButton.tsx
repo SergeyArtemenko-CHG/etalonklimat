@@ -25,7 +25,9 @@ export default function AddToCartButton({
     addItem({ id, name, priceEur, priceRub, quantity });
   };
 
-  const base =
+  const baseCard =
+    "flex items-center justify-center rounded-lg bg-[#FF8C00] text-white font-semibold shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg";
+  const basePage =
     "rounded-xl bg-[#FF8C00] text-white font-semibold uppercase tracking-[0.12em] shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg";
 
   if (variant === "card") {
@@ -33,7 +35,7 @@ export default function AddToCartButton({
       <button
         type="button"
         onClick={handleClick}
-        className={`w-full px-4 py-2 text-center text-xs shadow-sm ${base}`}
+        className={`w-full px-2 py-1 text-[11px] shadow-sm ${baseCard}`}
       >
         В корзину
       </button>
@@ -44,7 +46,7 @@ export default function AddToCartButton({
     <button
       type="button"
       onClick={handleClick}
-      className={`mt-4 w-full px-4 py-3 text-center text-sm shadow-md ${base}`}
+        className={`mt-4 w-full px-4 py-3 text-center text-sm shadow-md ${basePage}`}
     >
       В корзину
     </button>
