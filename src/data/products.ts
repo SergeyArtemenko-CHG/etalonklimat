@@ -289,7 +289,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-15000",
@@ -311,7 +311,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products/DA-ES",
+    image: "/images/products-watermarked/DA-ES",
   },
   {
     id: "atmosfernyi-deaerator-da-es-15000-naruzhnogo-razmeshcheniya",

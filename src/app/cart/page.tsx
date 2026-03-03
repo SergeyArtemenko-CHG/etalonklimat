@@ -9,7 +9,7 @@ import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
 
 export default function CartPage() {
-  const { items, removeItem, updateQuantity, getTotalPriceRub } = useCartStore();
+  const { items, removeItem, updateQuantity, getTotalPriceRub, clearCart } = useCartStore();
   const rate = useCurrencyStore((s) => s.rate);
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
@@ -233,6 +233,7 @@ export default function CartPage() {
                             throw new Error(data.error || "Ошибка отправки заказа");
                           }
                           setSuccess(true);
+                          clearCart();
                         } catch (e) {
                           setError(e instanceof Error ? e.message : "Ошибка отправки заказа");
                         } finally {

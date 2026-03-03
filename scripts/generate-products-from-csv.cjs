@@ -425,13 +425,13 @@ function main() {
     if (certificateFile) {
       files.push({
         name: "Сертификат",
-        url: `/docs/certificates/${certificateFile}`,
+        url: `/docs-watermarked/certificates/${certificateFile}`,
       });
     }
     if (manualFile) {
       files.push({
         name: "Инструкция",
-        url: `/docs/manuals/${manualFile}`,
+        url: `/docs-watermarked/manuals/${manualFile}`,
       });
     }
 
@@ -455,7 +455,7 @@ function main() {
       subCategorySlug: subCategorySlug || undefined,
       specs: undefined,
       files: files.length ? files : undefined,
-      image: imageFile ? `/images/products/${imageFile}` : undefined,
+      image: imageFile ? `/images/products-watermarked/${imageFile}` : undefined,
     };
 
     products.push(product);
