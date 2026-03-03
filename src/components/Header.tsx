@@ -74,7 +74,7 @@ export default function Header() {
 
   return (
     <header
-      className={`relative z-40 w-full bg-[#003366] text-white shadow-md transition-all duration-300`}
+      className={`relative z-40 w-full bg-[#003366] text-white shadow-md transition-all duration-300 md:sticky md:top-0 md:z-50`}
     >
       {/* Top bar */}
       <div className="border-b border-white/10 bg-[#02274d]">

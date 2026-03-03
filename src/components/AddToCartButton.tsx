@@ -35,9 +35,9 @@ export default function AddToCartButton({
       <button
         type="button"
         onClick={handleClick}
-        className={`w-full px-2 py-1 text-[11px] shadow-sm ${baseCard}`}
+        className={`w-full px-2 py-1.5 text-[11px] shadow-sm ${baseCard}`}
       >
-        В корзину
+        Купить
       </button>
     );
   }

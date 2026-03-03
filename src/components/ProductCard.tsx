@@ -63,7 +63,7 @@ export default function ProductCard({
 }: ProductCardProps) {
   const rate = useCurrencyStore((s) => s.rate);
   const [imageError, setImageError] = useState(false);
-  const [requestModal, setRequestModal] = useState<"discount" | "price" | null>(null);
+  const [requestModal, setRequestModal] = useState(false);
   const href = `/product/${id}`;
   const imageSrc = image?.trim() || undefined;
   const showImage = imageSrc && !imageError;
@@ -128,43 +128,32 @@ export default function ProductCard({
           )}
         </div>
       </Link>
-      <div className="flex flex-col gap-1.5 px-2 pb-2 md:flex-row md:items-center md:px-4 md:pb-4 md:pt-0 md:gap-2">
+      <div className="px-2 pb-2 md:px-4 md:pb-4 md:pt-0">
         {inStock ? (
-          <>
-            <div className="flex-1 min-w-0">
-              <AddToCartButton
-                id={id}
-                name={name}
-                priceEur={priceEur}
-                priceRub={priceRub}
-                variant="card"
-              />
-            </div>
-            <button
-              type="button"
-              onClick={() => setRequestModal("discount")}
-              className="shrink-0 rounded-lg border border-slate-200 px-2 py-1 text-[10px] font-medium leading-tight text-slate-700 transition hover:border-[#FF8C00] hover:bg-[#fff4e6] hover:text-[#FF8C00] md:text-[11px]"
-            >
-              Индивидуальная скидка
-            </button>
-          </>
+          <AddToCartButton
+            id={id}
+            name={name}
+            priceEur={priceEur}
+            priceRub={priceRub}
+            variant="card"
+          />
         ) : (
           <button
             type="button"
-            onClick={() => setRequestModal("price")}
-            className="w-full rounded-lg bg-[#FF8C00] px-2 py-1 text-[11px] font-semibold text-white shadow-md transition hover:bg-[#ff9f26] md:py-1.5"
+            onClick={() => setRequestModal(true)}
+            className="w-full rounded-lg bg-[#FF8C00] px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-[#ff9f26] md:py-2"
           >
-            Узнать цену и срок поставки
+            Запросить
           </button>
         )}
       </div>
       {requestModal && (
         <ProductRequestForm
-          type={requestModal}
+          type="price"
           productName={name}
           productId={id}
           productSku={sku}
-          onClose={() => setRequestModal(null)}
+          onClose={() => setRequestModal(false)}
         />
       )}
     </article>

@@ -39,7 +39,7 @@ export default function FloatingContactBtn() {
   }, [open]);
 
   return (
-    <div ref={menuRef} className="fixed bottom-6 right-6 z-40">
+    <div ref={menuRef} className="fixed bottom-20 right-6 z-40 md:bottom-6">
       {open && (
         <div className="absolute bottom-14 right-0 min-w-[220px] rounded-xl border border-slate-200 bg-white py-2 shadow-lg">
           <a

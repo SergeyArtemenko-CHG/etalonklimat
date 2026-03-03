@@ -14,73 +14,31 @@ type CategoryViewProps = {
 };
 
 /**
- * Фильтрует товары по выбранным в Sidebar фильтрам:
- * - Вид топлива: товар должен соответствовать одному из выбранных fuelType
- * - Бренд: товар должен соответствовать одному из выбранных брендов
- * - Мощность: товар отображается только если (burnerPowerMin >= powerMin) && (burnerPowerMax <= powerMax)
- * - Тип котла, Материал теплообменника: для категории Котлы
+ * Фильтрует товары по диапазону мощности (burnerPowerMin/Max).
  */
 function applyFilters(
   products: Product[],
-  fuelTypes: string[],
-  brands: string[],
   powerMin: number | null,
-  powerMax: number | null,
-  boilerTypes: string[],
-  heatExchangerMaterials: string[]
+  powerMax: number | null
 ) {
+  if (powerMin == null && powerMax == null) return products;
   return products.filter((p) => {
-    if (fuelTypes.length > 0 && (!p.fuelType?.trim() || !fuelTypes.includes(p.fuelType.trim()))) {
-      return false;
-    }
-    if (brands.length > 0 && (!p.brand?.trim() || !brands.includes(p.brand.trim()))) {
-      return false;
-    }
     const pMin = p.burnerPowerMin;
     const pMax = p.burnerPowerMax;
-    if (powerMin != null || powerMax != null) {
-      if (pMin == null || pMax == null) return false;
-      if (powerMin != null && pMin < powerMin) return false;
-      if (powerMax != null && pMax > powerMax) return false;
-    }
-    if (boilerTypes.length > 0 && (!p.boilerType?.trim() || !boilerTypes.includes(p.boilerType.trim()))) {
-      return false;
-    }
-    if (heatExchangerMaterials.length > 0 && (!p.heatExchangerMaterial?.trim() || !heatExchangerMaterials.includes(p.heatExchangerMaterial.trim()))) {
-      return false;
-    }
+    if (pMin == null || pMax == null) return false;
+    if (powerMin != null && pMin < powerMin) return false;
+    if (powerMax != null && pMax > powerMax) return false;
     return true;
   });
 }
 
 export default function CategoryView({ products, categoryMatch }: CategoryViewProps) {
-  const fuelTypes = useFilterStore((s) => s.fuelTypes);
-  const brands = useFilterStore((s) => s.brands);
   const powerMin = useFilterStore((s) => s.powerMin);
   const powerMax = useFilterStore((s) => s.powerMax);
-  const boilerTypes = useFilterStore((s) => s.boilerTypes);
-  const heatExchangerMaterials = useFilterStore((s) => s.heatExchangerMaterials);
 
   const filteredProducts = useMemo(
-    () =>
-      applyFilters(
-        products,
-        fuelTypes,
-        brands,
-        powerMin,
-        powerMax,
-        boilerTypes,
-        heatExchangerMaterials
-      ),
-    [
-      products,
-      fuelTypes,
-      brands,
-      powerMin,
-      powerMax,
-      boilerTypes,
-      heatExchangerMaterials,
-    ]
+    () => applyFilters(products, powerMin, powerMax),
+    [products, powerMin, powerMax]
   );
 
   const productsRef = useRef<HTMLDivElement | null>(null);

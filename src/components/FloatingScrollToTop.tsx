@@ -24,7 +24,7 @@ export default function FloatingScrollToTop() {
     <button
       type="button"
       onClick={scrollToTop}
-      className="fixed bottom-24 right-4 z-50 flex md:hidden h-12 w-12 items-center justify-center rounded-full bg-[#003366] text-white shadow-lg transition hover:bg-[#004080] active:scale-95"
+      className="fixed bottom-32 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#003366] text-white shadow-lg transition hover:bg-[#004080] active:scale-95 md:hidden"
       aria-label="Наверх"
     >
       <svg

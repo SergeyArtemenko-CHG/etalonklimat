@@ -20,27 +20,13 @@ export default function Sidebar({
   const [tooltipAnchor, setTooltipAnchor] = useState<HTMLElement | null>(null);
   const tooltipTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const asideRef = useRef<HTMLElement>(null);
-  const fuelRef = useRef<HTMLDivElement>(null);
-  const brandRef = useRef<HTMLDivElement>(null);
   const powerRef = useRef<HTMLDivElement>(null);
-  const boilerTypeRef = useRef<HTMLDivElement>(null);
-  const heatExchangerRef = useRef<HTMLDivElement>(null);
 
-  const fuelTypes = useFilterStore((s) => s.fuelTypes);
-  const brands = useFilterStore((s) => s.brands);
   const powerMin = useFilterStore((s) => s.powerMin);
   const powerMax = useFilterStore((s) => s.powerMax);
-  const toggleFuelType = useFilterStore((s) => s.toggleFuelType);
-  const toggleBrand = useFilterStore((s) => s.toggleBrand);
   const setPowerMin = useFilterStore((s) => s.setPowerMin);
   const setPowerMax = useFilterStore((s) => s.setPowerMax);
   const setPowerRange = useFilterStore((s) => s.setPowerRange);
-  const boilerTypes = useFilterStore((s) => s.boilerTypes);
-  const heatExchangerMaterials = useFilterStore((s) => s.heatExchangerMaterials);
-  const toggleBoilerType = useFilterStore((s) => s.toggleBoilerType);
-  const toggleHeatExchangerMaterial = useFilterStore(
-    (s) => s.toggleHeatExchangerMaterial
-  );
   const resetFilters = useFilterStore((s) => s.resetFilters);
 
   const showFilterTooltip = useCallback((anchorRef: React.RefObject<HTMLDivElement | null>) => {
@@ -71,39 +57,6 @@ export default function Sidebar({
       if (tooltipTimerRef.current) clearTimeout(tooltipTimerRef.current);
     };
   }, []);
-
-  const uniqueFuelTypes = useMemo(() => {
-    const set = new Set<string>();
-    products.forEach((p) => {
-      if (p.fuelType?.trim()) set.add(p.fuelType.trim());
-    });
-    return Array.from(set).sort((a, b) => a.localeCompare(b, "ru"));
-  }, [products]);
-
-  const uniqueBrands = useMemo(() => {
-    const set = new Set<string>();
-    products.forEach((p) => {
-      if (p.brand?.trim()) set.add(p.brand.trim());
-    });
-    return Array.from(set).sort((a, b) => a.localeCompare(b, "ru"));
-  }, [products]);
-
-  const uniqueBoilerTypes = useMemo(() => {
-    const set = new Set<string>();
-    products.forEach((p) => {
-      if (p.boilerType?.trim()) set.add(p.boilerType.trim());
-    });
-    return Array.from(set).sort((a, b) => a.localeCompare(b, "ru"));
-  }, [products]);
-
-  const uniqueHeatExchangerMaterials = useMemo(() => {
-    const set = new Set<string>();
-    products.forEach((p) => {
-      if (p.heatExchangerMaterial?.trim())
-        set.add(p.heatExchangerMaterial.trim());
-    });
-    return Array.from(set).sort((a, b) => a.localeCompare(b, "ru"));
-  }, [products]);
 
   const powerRange = useMemo(() => {
     let min = Infinity;
@@ -137,16 +90,6 @@ export default function Sidebar({
     ];
   }, [powerMin, powerMax, powerRange.min, powerRange.max]);
 
-  const handleFuelToggle = (ft: string) => {
-    toggleFuelType(ft);
-    showFilterTooltip(fuelRef);
-  };
-
-  const handleBrandToggle = (b: string) => {
-    toggleBrand(b);
-    showFilterTooltip(brandRef);
-  };
-
   const handleSliderChange = (value: number[]) => {
     const kwMin = fromLog(value[0], powerRange.min, powerRange.max);
     const kwMax = fromLog(value[1], powerRange.min, powerRange.max);
@@ -166,23 +109,7 @@ export default function Sidebar({
     showFilterTooltip(powerRef);
   };
 
-  const handleBoilerTypeToggle = (value: string) => {
-    toggleBoilerType(value);
-    showFilterTooltip(boilerTypeRef);
-  };
-
-  const handleHeatExchangerToggle = (value: string) => {
-    toggleHeatExchangerMaterial(value);
-    showFilterTooltip(heatExchangerRef);
-  };
-
-  const hasActiveFilters =
-    fuelTypes.length > 0 ||
-    brands.length > 0 ||
-    powerMin != null ||
-    powerMax != null ||
-    boilerTypes.length > 0 ||
-    heatExchangerMaterials.length > 0;
+  const hasActiveFilters = powerMin != null || powerMax != null;
 
   const showFilters = products.length > 0;
 
@@ -205,58 +132,10 @@ export default function Sidebar({
 
       {showFilters && (
         <div className="mt-4 space-y-5 border-t border-white/20 pt-4">
-          {uniqueFuelTypes.length > 0 && (
-            <div ref={fuelRef} className="relative">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
-                Вид топлива
-              </h3>
-              <div className="space-y-2">
-                {uniqueFuelTypes.map((ft) => (
-                  <label
-                    key={ft}
-                    className="flex cursor-pointer items-center gap-2 text-sm text-white/90"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={fuelTypes.includes(ft)}
-                      onChange={() => handleFuelToggle(ft)}
-                      className="h-4 w-4 rounded border-white/40 bg-white/10 text-[#FF8C00] focus:ring-[#FF8C00]"
-                    />
-                    <span>{ft}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {uniqueBrands.length > 0 && (
-            <div ref={brandRef} className="relative">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
-                Бренд
-              </h3>
-              <div className="space-y-2">
-                {uniqueBrands.map((b) => (
-                  <label
-                    key={b}
-                    className="flex cursor-pointer items-center gap-2 text-sm text-white/90"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={brands.includes(b)}
-                      onChange={() => handleBrandToggle(b)}
-                      className="h-4 w-4 rounded border-white/40 bg-white/10 text-[#FF8C00] focus:ring-[#FF8C00]"
-                    />
-                    <span>{b}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
-
           {hasPowerData && (
           <div ref={powerRef} className="relative">
             <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
-              Мощность, кВт
+              Диапазон мощности, кВт
             </h3>
             <Slider.Root
               min={0}
@@ -307,54 +186,6 @@ export default function Sidebar({
               </div>
             </div>
           </div>
-          )}
-
-          {uniqueBoilerTypes.length > 0 && (
-            <div ref={boilerTypeRef} className="relative">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
-                Тип котла
-              </h3>
-              <div className="space-y-2">
-                {uniqueBoilerTypes.map((bt) => (
-                  <label
-                    key={bt}
-                    className="flex cursor-pointer items-center gap-2 text-sm text-white/90"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={boilerTypes.includes(bt)}
-                      onChange={() => handleBoilerTypeToggle(bt)}
-                      className="h-4 w-4 rounded border-white/40 bg-white/10 text-[#FF8C00] focus:ring-[#FF8C00]"
-                    />
-                    <span>{bt}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {uniqueHeatExchangerMaterials.length > 0 && (
-            <div ref={heatExchangerRef} className="relative">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
-                Материал теплообменника
-              </h3>
-              <div className="space-y-2">
-                {uniqueHeatExchangerMaterials.map((m) => (
-                  <label
-                    key={m}
-                    className="flex cursor-pointer items-center gap-2 text-sm text-white/90"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={heatExchangerMaterials.includes(m)}
-                      onChange={() => handleHeatExchangerToggle(m)}
-                      className="h-4 w-4 rounded border-white/40 bg-white/10 text-[#FF8C00] focus:ring-[#FF8C00]"
-                    />
-                    <span>{m}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
           )}
 
           {hasActiveFilters && (
