@@ -5,6 +5,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import Sidebar from "@/components/Sidebar";
 import { useFilterStore } from "@/store/useFilterStore";
+import {
+  getBoilerPowerRange,
+  getSteamOutputRange,
+  getWorkingPressureRange,
+} from "@/utils/specs";
 import type { Product } from "@/data/products";
 import type { CategoryMatch } from "@/data/products";
 
@@ -13,32 +18,141 @@ type CategoryViewProps = {
   categoryMatch: CategoryMatch;
 };
 
+function passBurnerPowerFilter(
+  p: Product,
+  powerMin: number | null,
+  powerMax: number | null
+): boolean {
+  if (powerMin == null && powerMax == null) return true;
+  const pMin = p.burnerPowerMin ?? p.burnerPowerMax;
+  const pMax = p.burnerPowerMax ?? p.burnerPowerMin;
+  if (pMin == null && pMax == null) return false;
+  const lo = pMin ?? pMax!;
+  const hi = pMax ?? pMin!;
+  if (powerMin != null && hi < powerMin) return false;
+  if (powerMax != null && lo > powerMax) return false;
+  return true;
+}
+
+function passSpecRangeFilter(
+  range: { min: number; max: number } | null,
+  filterMin: number | null,
+  filterMax: number | null
+): boolean {
+  if (filterMin == null && filterMax == null) return true;
+  if (!range) return false;
+  if (filterMin != null && range.max < filterMin) return false;
+  if (filterMax != null && range.min > filterMax) return false;
+  return true;
+}
+
 /**
- * Фильтрует товары по диапазону мощности (burnerPowerMin/Max).
+ * Фильтрует товары в зависимости от категории:
+ * - kotly-parovye: мощность котла, паропроизводительность, рабочее давление (из specs)
+ * - kotly-vodogreinye: мощность котла, рабочее давление (из specs)
+ * - остальные: диапазон мощности (burnerPowerMin/Max)
  */
 function applyFilters(
   products: Product[],
-  powerMin: number | null,
-  powerMax: number | null
+  slug: string,
+  store: {
+    powerMin: number | null;
+    powerMax: number | null;
+    boilerPowerMin: number | null;
+    boilerPowerMax: number | null;
+    steamOutputMin: number | null;
+    steamOutputMax: number | null;
+    workingPressureMin: number | null;
+    workingPressureMax: number | null;
+  }
 ) {
-  if (powerMin == null && powerMax == null) return products;
+  const noBurner =
+    store.powerMin == null && store.powerMax == null;
+  const noBoiler =
+    store.boilerPowerMin == null && store.boilerPowerMax == null;
+  const noSteam =
+    store.steamOutputMin == null && store.steamOutputMax == null;
+  const noPressure =
+    store.workingPressureMin == null && store.workingPressureMax == null;
+
+  if (
+    slug === "kotly-parovye" &&
+    noBoiler &&
+    noSteam &&
+    noPressure
+  )
+    return products;
+  if (
+    slug === "kotly-vodogreinye" &&
+    noBoiler &&
+    noPressure
+  )
+    return products;
+  if (noBurner && slug !== "kotly-parovye" && slug !== "kotly-vodogreinye")
+    return products;
+
   return products.filter((p) => {
-    const pMin = p.burnerPowerMin;
-    const pMax = p.burnerPowerMax;
-    if (pMin == null || pMax == null) return false;
-    if (powerMin != null && pMin < powerMin) return false;
-    if (powerMax != null && pMax > powerMax) return false;
-    return true;
+    if (slug === "kotly-parovye") {
+      const bp = getBoilerPowerRange(p);
+      const so = getSteamOutputRange(p);
+      const wp = getWorkingPressureRange(p);
+      if (
+        !passSpecRangeFilter(bp, store.boilerPowerMin, store.boilerPowerMax)
+      )
+        return false;
+      if (
+        !passSpecRangeFilter(so, store.steamOutputMin, store.steamOutputMax)
+      )
+        return false;
+      if (
+        !passSpecRangeFilter(wp, store.workingPressureMin, store.workingPressureMax)
+      )
+        return false;
+      return true;
+    }
+    if (slug === "kotly-vodogreinye") {
+      const bp = getBoilerPowerRange(p);
+      const wp = getWorkingPressureRange(p);
+      if (
+        !passSpecRangeFilter(bp, store.boilerPowerMin, store.boilerPowerMax)
+      )
+        return false;
+      if (
+        !passSpecRangeFilter(wp, store.workingPressureMin, store.workingPressureMax)
+      )
+        return false;
+      return true;
+    }
+    return passBurnerPowerFilter(p, store.powerMin, store.powerMax);
   });
 }
 
+/** Сброс фильтров при смене категории */
+function useResetFiltersOnSlugChange(slug: string) {
+  const resetFilters = useFilterStore((s) => s.resetFilters);
+  useEffect(() => {
+    resetFilters();
+  }, [slug, resetFilters]);
+}
+
 export default function CategoryView({ products, categoryMatch }: CategoryViewProps) {
-  const powerMin = useFilterStore((s) => s.powerMin);
-  const powerMax = useFilterStore((s) => s.powerMax);
+  const slug = categoryMatch.slug;
+  useResetFiltersOnSlugChange(slug);
+
+  const filterState = useFilterStore((s) => ({
+    powerMin: s.powerMin,
+    powerMax: s.powerMax,
+    boilerPowerMin: s.boilerPowerMin,
+    boilerPowerMax: s.boilerPowerMax,
+    steamOutputMin: s.steamOutputMin,
+    steamOutputMax: s.steamOutputMax,
+    workingPressureMin: s.workingPressureMin,
+    workingPressureMax: s.workingPressureMax,
+  }));
 
   const filteredProducts = useMemo(
-    () => applyFilters(products, powerMin, powerMax),
-    [products, powerMin, powerMax]
+    () => applyFilters(products, slug, filterState),
+    [products, slug, filterState]
   );
 
   const productsRef = useRef<HTMLDivElement | null>(null);
@@ -59,7 +173,11 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
     <section className="flex w-full max-w-6xl flex-col gap-4 md:flex-row md:gap-6">
       {/* Desktop sidebar with filters */}
       <div className="hidden md:block md:w-1/4 lg:w-[22%]">
-        <Sidebar products={products} filteredCount={filteredProducts.length} />
+        <Sidebar
+          products={products}
+          filteredCount={filteredProducts.length}
+          categorySlug={slug}
+        />
       </div>
 
       {/* Main content */}
@@ -87,7 +205,11 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
             </button>
             {mobileFiltersOpen && (
               <div className="mt-3">
-                <Sidebar products={products} filteredCount={filteredProducts.length} />
+                <Sidebar
+                  products={products}
+                  filteredCount={filteredProducts.length}
+                  categorySlug={slug}
+                />
               </div>
             )}
           </div>

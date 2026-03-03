@@ -331,6 +331,9 @@ function main() {
   const idxPriceRub = col("Цена РУБ");
   const idxAvailability = col("Наличие");
   const idxSku = col("Артикул");
+  const idxBoilerPower = col("Мощность котла, кВт");
+  const idxSteamOutput = col("Паропроизводительность котла");
+  const idxWorkingPressure = col("Рабочее давление котла");
 
   for (let index = 0; index < dataRows.length; index++) {
     const row = dataRows[index];
@@ -344,6 +347,12 @@ function main() {
     const rawAvailability =
       idxAvailability >= 0 ? row[idxAvailability] : undefined;
     const rawSku = idxSku >= 0 ? (row[idxSku] || "").toString().trim() : "";
+    const rawBoilerPower =
+      idxBoilerPower >= 0 ? (row[idxBoilerPower] || "").toString().trim() : "";
+    const rawSteamOutput =
+      idxSteamOutput >= 0 ? (row[idxSteamOutput] || "").toString().trim() : "";
+    const rawWorkingPressure =
+      idxWorkingPressure >= 0 ? (row[idxWorkingPressure] || "").toString().trim() : "";
 
     // CSV: Номенклатура;Вид номенклатуры;Подвид;Файл сертификат;Файл инструкция;Текстовое описание;Файл картинки;Цена Евро;Бренд;Мощность горелки мин., кВт;Мощность горелки макс., кВт;Вид топлива;Цена РУБ;...
     const [
@@ -433,6 +442,20 @@ function main() {
       }
     }
 
+    const specs = [];
+    if (rawBoilerPower) {
+      specs.push({ name: "Мощность котла, кВт", value: rawBoilerPower });
+    }
+    if (rawSteamOutput) {
+      specs.push({
+        name: "Паропроизводительность котла, кг пара в час",
+        value: rawSteamOutput,
+      });
+    }
+    if (rawWorkingPressure) {
+      specs.push({ name: "Рабочее давление котла, бар", value: rawWorkingPressure });
+    }
+
     const files = [];
     if (certificateFile) {
       files.push({
@@ -465,7 +488,7 @@ function main() {
       categorySlug,
       subCategory: subCategoryName || undefined,
       subCategorySlug: subCategorySlug || undefined,
-      specs: undefined,
+      specs: specs.length ? specs : undefined,
       files: files.length ? files : undefined,
       image: imageFile ? `/images/products-watermarked/${imageFile}` : undefined,
       inStock,

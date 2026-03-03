@@ -7,6 +7,12 @@ type FilterStore = {
   powerMax: number | null;
   boilerTypes: string[];
   heatExchangerMaterials: string[];
+  boilerPowerMin: number | null;
+  boilerPowerMax: number | null;
+  steamOutputMin: number | null;
+  steamOutputMax: number | null;
+  workingPressureMin: number | null;
+  workingPressureMax: number | null;
   setFuelTypes: (values: string[]) => void;
   toggleFuelType: (value: string) => void;
   setBrands: (values: string[]) => void;
@@ -14,6 +20,9 @@ type FilterStore = {
   setPowerMin: (value: number | null) => void;
   setPowerMax: (value: number | null) => void;
   setPowerRange: (min: number, max: number) => void;
+  setBoilerPowerRange: (min: number | null, max: number | null) => void;
+  setSteamOutputRange: (min: number | null, max: number | null) => void;
+  setWorkingPressureRange: (min: number | null, max: number | null) => void;
   toggleBoilerType: (value: string) => void;
   toggleHeatExchangerMaterial: (value: string) => void;
   resetFilters: () => void;
@@ -26,6 +35,12 @@ const initialState = {
   powerMax: null as number | null,
   boilerTypes: [] as string[],
   heatExchangerMaterials: [] as string[],
+  boilerPowerMin: null as number | null,
+  boilerPowerMax: null as number | null,
+  steamOutputMin: null as number | null,
+  steamOutputMax: null as number | null,
+  workingPressureMin: null as number | null,
+  workingPressureMax: null as number | null,
 };
 
 export const useFilterStore = create<FilterStore>((set) => ({
@@ -54,6 +69,15 @@ export const useFilterStore = create<FilterStore>((set) => ({
   setPowerMax: (value) => set({ powerMax: value }),
 
   setPowerRange: (min, max) => set({ powerMin: min, powerMax: max }),
+
+  setBoilerPowerRange: (min, max) =>
+    set({ boilerPowerMin: min, boilerPowerMax: max }),
+
+  setSteamOutputRange: (min, max) =>
+    set({ steamOutputMin: min, steamOutputMax: max }),
+
+  setWorkingPressureRange: (min, max) =>
+    set({ workingPressureMin: min, workingPressureMax: max }),
 
   toggleBoilerType: (value) =>
     set((state) => ({

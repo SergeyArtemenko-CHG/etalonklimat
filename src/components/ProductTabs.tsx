@@ -4,9 +4,9 @@ import { useState } from "react";
 import type { ProductSpec, ProductFile } from "@/data/products";
 
 const TABS = [
-  { id: "description", label: "Описание" },
-  { id: "specs", label: "Технические характеристики" },
-  { id: "files", label: "Документация и файлы" },
+  { id: "description", label: "Описание", labelMobile: "Описание" },
+  { id: "specs", label: "Технические характеристики", labelMobile: "Характеристики" },
+  { id: "files", label: "Документация и файлы", labelMobile: "Файлы" },
 ] as const;
 
 type ProductTabsProps = {
@@ -27,19 +27,20 @@ export default function ProductTabs({
 
   return (
     <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
-      <div className="flex border-b border-slate-200">
+      <div className="flex flex-nowrap overflow-x-auto border-b border-slate-200">
         {TABS.map((tab) => (
           <button
             key={tab.id}
             type="button"
             onClick={() => setActive(tab.id)}
-            className={`flex-1 px-4 py-3 text-sm font-medium transition md:px-6 ${
+            className={`shrink-0 px-3 py-3 text-xs font-medium transition md:flex-1 md:px-6 md:text-sm ${
               active === tab.id
                 ? "border-b-2 border-[#ff8c00] text-[#ff8c00]"
                 : "text-slate-500 hover:text-slate-700"
             }`}
           >
-            {tab.label}
+            <span className="md:hidden">{tab.labelMobile}</span>
+            <span className="hidden md:inline">{tab.label}</span>
           </button>
         ))}
       </div>
