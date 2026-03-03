@@ -407,8 +407,9 @@ function main() {
     usedIds.add(id);
 
     const sku = rawSku || id;
-    const availVal = (rawAvailability ?? "").toString().trim();
-    const inStock = availVal === "" ? true : availVal === "1" || availVal === 1;
+    // inStock: только '1' или 1 = в наличии; '0', пусто или иное = false
+    const inStock =
+      rawAvailability === "1" || rawAvailability === 1;
 
     const categorySlug = categoryName ? slugify(categoryName) : "uncategorized";
     const subCategorySlug = subCategoryName ? slugify(subCategoryName) : "";

@@ -52,14 +52,14 @@ export default function ProductTabs({
         )}
 
         {active === "specs" && (
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[300px] border-collapse text-sm">
+          <div className="block w-full overflow-x-auto">
+            <table className="w-full min-w-[320px] border-collapse text-sm">
               <thead>
                 <tr>
-                  <th className="border-b border-slate-200 bg-slate-50 px-4 py-2 text-left font-semibold text-slate-700">
+                  <th className="whitespace-nowrap border-b border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-semibold text-slate-700 md:px-4 md:text-sm">
                     Название свойства
                   </th>
-                  <th className="border-b border-slate-200 bg-slate-50 px-4 py-2 text-left font-semibold text-slate-700">
+                  <th className="whitespace-nowrap border-b border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-semibold text-slate-700 md:px-4 md:text-sm">
                     Значение
                   </th>
                 </tr>
@@ -71,15 +71,17 @@ export default function ProductTabs({
                       key={i}
                       className="border-b border-slate-100 last:border-0 hover:bg-slate-50/50"
                     >
-                      <td className="px-4 py-3 text-slate-600">{spec.name}</td>
-                      <td className="px-4 py-3 font-medium text-slate-900">
+                      <td className="whitespace-nowrap px-3 py-3 text-xs text-slate-600 md:px-4 md:text-sm">
+                        {spec.name}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-3 text-xs font-medium text-slate-900 md:px-4 md:text-sm">
                         {spec.value}
                       </td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={2} className="px-4 py-6 text-center text-slate-500">
+                    <td colSpan={2} className="px-3 py-6 text-center text-xs text-slate-500 md:px-4 md:text-sm">
                       Технические характеристики не указаны.
                     </td>
                   </tr>
