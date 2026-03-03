@@ -58,8 +58,9 @@ export async function POST(request: NextRequest) {
 
     const today = getTodayIso();
     const lastDate = readLastNotifyDateFromFile();
-    if (lastDate === today) {
-      return new NextResponse(null, { status: 200 });
+    console.log("Today:", today, "LastDate:", lastDate);
+    if (lastDate && lastDate.trim() === today) {
+      return NextResponse.json({ skipped: true });
     }
 
     const text = `📈 КУРС ОБНОВЛЕН: 1 EUR = ${rate} RUB.`;
