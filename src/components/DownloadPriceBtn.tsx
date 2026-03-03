@@ -1,37 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { jsPDF } from "jspdf";
-import autoTable from "jspdf-autotable";
 import { products } from "@/data/products";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import type { Product } from "@/data/products";
-
-const FONT_URL = "/fonts/Roboto-Regular.ttf";
-const FONT_CDN = "https://cdn.jsdelivr.net/gh/googlefonts/roboto@main/src/hinted/Roboto-Regular.ttf";
-
-async function loadFont(doc: jsPDF): Promise<boolean> {
-  for (const url of [FONT_URL, FONT_CDN]) {
-    try {
-      const res = await fetch(url);
-      if (!res.ok) continue;
-      const arrayBuffer = await res.arrayBuffer();
-      const bytes = new Uint8Array(arrayBuffer);
-      let binary = "";
-      for (let i = 0; i < bytes.length; i++) {
-        binary += String.fromCharCode(bytes[i]);
-      }
-      const base64 = btoa(binary);
-      doc.addFileToVFS("Roboto-Regular.ttf", base64);
-      doc.addFont("Roboto-Regular.ttf", "Roboto", "normal");
-      doc.setFont("Roboto", "normal");
-      return true;
-    } catch {
-      continue;
-    }
-  }
-  return false;
-}
 
 function getPriceRub(p: Product, rate: number): number | null {
   if (p.priceRub != null && p.priceRub > 0) return p.priceRub;
@@ -48,13 +20,18 @@ export default function DownloadPriceBtn() {
     setLoading(true);
     setError(null);
     try {
-      const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+      const pdfMakeModule = await import("pdfmake/build/pdfmake");
+      const pdfFonts: any = await import("pdfmake/build/vfs_fonts");
+      const pdfMake: any = pdfMakeModule.default || pdfMakeModule;
 
-      const fontLoaded = await loadFont(doc);
-      if (!fontLoaded) {
-        setError("Не удалось загрузить шрифт (Cyrillic). Добавьте public/fonts/Roboto-Regular.ttf");
-        return;
-      }
+      // Инициализация встроенного VFS и шрифтов Roboto из pdfmake
+      pdfMake.vfs = pdfFonts.pdfMake?.vfs || pdfFonts.default?.pdfMake?.vfs || pdfFonts;
+      pdfMake.fonts = {
+        Roboto: {
+          normal: "Roboto-Regular.ttf",
+          bold: "Roboto-Medium.ttf",
+        },
+      };
 
       const dateStr = new Date().toLocaleDateString("ru-RU", {
         day: "2-digit",
@@ -62,33 +39,58 @@ export default function DownloadPriceBtn() {
         year: "numeric",
       });
 
-      doc.setFontSize(18);
-      doc.text("Прайс-лист ETALON", 14, 20);
-      doc.setFontSize(10);
-      doc.text(`Дата: ${dateStr}`, 14, 28);
-      doc.text(`Курс EUR: ${rate} руб.`, 14, 34);
-
-      const tableData = products
+      const tableBody = products
         .map((p) => {
           const priceRub = getPriceRub(p, rate);
           if (priceRub == null) return null;
-          return [p.category, p.sku, p.name, new Intl.NumberFormat("ru-RU").format(priceRub)];
+          return [
+            p.category,
+            p.sku,
+            p.name,
+            new Intl.NumberFormat("ru-RU").format(priceRub),
+          ];
         })
-        .filter((r): r is [string, string, string, string] => r != null);
+        .filter((r): r is string[] => r != null);
 
-      autoTable(doc, {
-        head: [["Категория", "Артикул", "Наименование", "Цена (руб.)"]],
-        body: tableData,
-        startY: 42,
-        styles: { font: "Roboto", fontSize: 9 },
-        headStyles: { fillColor: [0, 51, 102], textColor: 255 },
-        alternateRowStyles: { fillColor: [245, 246, 251] },
-        margin: { left: 14, right: 14 },
-      });
+      const docDefinition = {
+        pageSize: "A4" as const,
+        pageMargins: [40, 60, 40, 40],
+        defaultStyle: { font: "Roboto", fontSize: 9 },
+        content: [
+          { text: "Прайс-лист ETALON", style: "header", margin: [0, 0, 0, 8] },
+          { text: `Дата: ${dateStr}`, fontSize: 10, margin: [0, 0, 0, 4] },
+          { text: `Курс EUR: ${rate} руб.`, fontSize: 10, margin: [0, 0, 0, 16] },
+          {
+            table: {
+              headerRows: 1,
+              widths: ["*", "auto", "*", "auto"],
+              body: [
+                [
+                  { text: "Категория", style: "tableHeader" },
+                  { text: "Артикул", style: "tableHeader" },
+                  { text: "Наименование", style: "tableHeader" },
+                  { text: "Цена (руб.)", style: "tableHeader" },
+                ],
+                ...tableBody,
+              ],
+            },
+            layout: {
+              fillColor: (rowIndex: number) =>
+                rowIndex >= 1 && (rowIndex - 1) % 2 === 1 ? "#f5f6fb" : undefined,
+            },
+          },
+        ],
+        styles: {
+          header: { fontSize: 18, bold: true },
+          tableHeader: { fillColor: "#003366", color: "white", bold: true },
+        },
+      };
 
-      doc.save(`price-list-etalon-${dateStr.replace(/\./g, "-")}.pdf`);
+      const pdfDoc = pdfMake.createPdf(docDefinition);
+      pdfDoc.download(`price-list-etalon-${dateStr.replace(/\./g, "-")}.pdf`);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Ошибка генерации PDF");
+      console.error("DownloadPriceBtn PDF error:", e);
     } finally {
       setLoading(false);
     }

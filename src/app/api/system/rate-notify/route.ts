@@ -1,11 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
-/** Дата (YYYY-MM-DD UTC), когда последний раз отправили уведомление о курсе. */
-let lastRateNotifyDate: string | null = null;
+/** Файл в корне проекта с датой последнего уведомления (YYYY-MM-DD). */
+const LAST_NOTIFY_FILE = path.join(process.cwd(), "last_notify_date.txt");
 
-function getTodayUtc(): string {
+function getTodayIso(): string {
   const now = new Date();
-  return now.toISOString().slice(0, 10);
+  // Локальная дата в формате YYYY-MM-DD
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function readLastNotifyDateFromFile(): string | null {
+  try {
+    if (!fs.existsSync(LAST_NOTIFY_FILE)) return null;
+    const raw = fs.readFileSync(LAST_NOTIFY_FILE, "utf8");
+    const value = raw.trim();
+    if (!value) return null;
+    return value.slice(0, 10);
+  } catch {
+    return null;
+  }
+}
+
+function writeLastNotifyDateToFile(date: string): void {
+  try {
+    fs.writeFileSync(LAST_NOTIFY_FILE, `${date}\n`, "utf8");
+  } catch (e) {
+    console.error("Failed to write last_notify_date.txt:", e);
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -30,8 +56,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const today = getTodayUtc();
-    if (lastRateNotifyDate === today) {
+    const today = getTodayIso();
+    const lastDate = readLastNotifyDateFromFile();
+    if (lastDate === today) {
       return new NextResponse(null, { status: 200 });
     }
 
@@ -56,7 +83,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    lastRateNotifyDate = today;
+    writeLastNotifyDateToFile(today);
     return new NextResponse(null, { status: 200 });
   } catch (e) {
     console.error("Rate-notify API error:", e);
