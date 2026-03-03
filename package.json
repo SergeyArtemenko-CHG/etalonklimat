@@ -8,7 +8,8 @@
     "download-font": "node scripts/download-roboto-font.cjs",
     "start": "next start",
     "lint": "eslint",
-    "watermark": "node scripts/watermark.js"
+    "watermark": "node scripts/watermark.js",
+    "watermark-pdf": "node scripts/watermark-pdf.js"
   },
   "dependencies": {
     "@radix-ui/react-slider": "^1.3.6",
@@ -30,6 +31,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "pdf-lib": "^1.17.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"

@@ -1455,8 +1455,8 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
-  ],
+      { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
+    ],
     image: "/images/products-watermarked/FBR_GAS_1_2.jpg",
   },
   {
@@ -1479,7 +1479,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_1_2.jpg",
   },
@@ -1503,7 +1503,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1527,7 +1527,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1551,7 +1551,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1575,7 +1575,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1599,7 +1599,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1623,7 +1623,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1647,7 +1647,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1671,7 +1671,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1695,7 +1695,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1719,7 +1719,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1743,7 +1743,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1767,7 +1767,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products/FBR_GAS_P_70_100_150_2.jpg",
   },
@@ -1791,7 +1791,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
@@ -1815,7 +1815,7 @@ export const products: Product[] = [
     subCategorySlug: "gorelki-gazovye",
     specs: undefined,
     files: [
-    { name: "Сертификат", url: "/docs/certificates/С-IT.НВ54.В.06000.pdf" },
+    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
     image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
   },
