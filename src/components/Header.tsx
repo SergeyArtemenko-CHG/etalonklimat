@@ -39,8 +39,6 @@ export default function Header() {
   }, []);
 
   const totalItems = useCartStore((s) => s.getTotalItems());
-
-  if (!mounted) return null;
   const rate = useCurrencyStore((s) => s.rate);
 
   const trimmed = query.trim();
@@ -81,7 +79,9 @@ export default function Header() {
 
   return (
     <header
-      className={`relative z-40 w-full bg-[#003366] text-white shadow-md transition-all duration-300 md:sticky md:top-0 md:z-50`}
+      className={`relative z-40 w-full bg-[#003366] text-white shadow-md transition-all duration-300 md:sticky md:top-0 md:z-50 ${
+        mounted ? "" : "opacity-0 pointer-events-none"
+      }`}
     >
       {/* Top bar */}
       <div className="border-b border-white/10 bg-[#02274d]">
