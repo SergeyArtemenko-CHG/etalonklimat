@@ -28,7 +28,18 @@ type FilterStore = {
   resetFilters: () => void;
 };
 
-const initialState = {
+function deepFreeze<T>(obj: T): T {
+  if (obj === null || typeof obj !== "object") return obj;
+  Object.freeze(obj);
+  if (Array.isArray(obj)) {
+    obj.forEach(deepFreeze);
+  } else {
+    Object.values(obj).forEach(deepFreeze);
+  }
+  return obj;
+}
+
+const initialState = deepFreeze({
   fuelTypes: [] as string[],
   brands: [] as string[],
   powerMin: null as number | null,
@@ -41,7 +52,7 @@ const initialState = {
   steamOutputMax: null as number | null,
   workingPressureMin: null as number | null,
   workingPressureMax: null as number | null,
-};
+});
 
 export const useFilterStore = create<FilterStore>((set) => ({
   ...initialState,

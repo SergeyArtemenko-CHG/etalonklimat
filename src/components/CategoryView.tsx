@@ -121,16 +121,16 @@ function applyFilters(
   });
 }
 
-/** Сброс фильтров при смене категории (один раз на каждый slug) */
+/** Сброс фильтров при смене категории (один раз на каждый slug). Временно отключено для отладки #310. */
 function useResetFiltersOnSlugChange(slug: string) {
-  const resetFilters = useFilterStore((s) => s.resetFilters);
-  const prevSlugRef = useRef<string | null>(null);
+  // const resetFilters = useFilterStore((s) => s.resetFilters);
+  // const prevSlugRef = useRef<string | null>(null);
 
   useEffect(() => {
-    if (slug == null || slug === "") return;
-    if (prevSlugRef.current === slug) return;
-    resetFilters();
-    prevSlugRef.current = slug;
+    // if (slug == null || slug === "") return;
+    // if (prevSlugRef.current === slug) return;
+    // resetFilters();
+    // prevSlugRef.current = slug;
   }, [slug]);
 }
 
