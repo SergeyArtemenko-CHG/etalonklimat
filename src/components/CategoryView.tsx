@@ -121,17 +121,23 @@ function applyFilters(
   });
 }
 
-/** Сброс фильтров при смене категории (один раз на каждый slug). Временно отключено для отладки #310. */
 function useResetFiltersOnSlugChange(slug: string) {
-  // const resetFilters = useFilterStore((s) => s.resetFilters);
-  // const prevSlugRef = useRef<string | null>(null);
+  const resetFilters = useFilterStore((s) => s.resetFilters);
+  const prevSlugRef = useRef<string | null>(null);
 
   useEffect(() => {
-    // if (slug == null || slug === "") return;
-    // if (prevSlugRef.current === slug) return;
-    // resetFilters();
-    // prevSlugRef.current = slug;
-  }, [slug]);
+    // 1. Если категория пустая (например, на главной) — выходим
+    if (!slug) return;
+
+    // 2. Если категория та же самая — выходим (защита от цикла #310)
+    if (prevSlugRef.current === slug) return;
+
+    // 3. Если категория новая — сбрасываем фильтры
+    resetFilters();
+    
+    // 4. Запоминаем текущую категорию
+    prevSlugRef.current = slug;
+  }, [slug, resetFilters]);
 }
 
 export default function CategoryView({ products, categoryMatch }: CategoryViewProps) {
