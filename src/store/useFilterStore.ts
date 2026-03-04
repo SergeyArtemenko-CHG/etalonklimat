@@ -93,5 +93,22 @@ export const useFilterStore = create<FilterStore>((set) => ({
         : [...state.heatExchangerMaterials, value],
     })),
 
-  resetFilters: () => set(initialState),
+  resetFilters: () =>
+    set((state) => {
+      const alreadyEmpty =
+        state.powerMin == null &&
+        state.powerMax == null &&
+        state.boilerPowerMin == null &&
+        state.boilerPowerMax == null &&
+        state.steamOutputMin == null &&
+        state.steamOutputMax == null &&
+        state.workingPressureMin == null &&
+        state.workingPressureMax == null &&
+        state.fuelTypes.length === 0 &&
+        state.brands.length === 0 &&
+        state.boilerTypes.length === 0 &&
+        state.heatExchangerMaterials.length === 0;
+      if (alreadyEmpty) return state;
+      return initialState;
+    }),
 }));

@@ -127,6 +127,7 @@ function useResetFiltersOnSlugChange(slug: string) {
   const prevSlugRef = useRef<string | null>(null);
 
   useEffect(() => {
+    if (slug == null || slug === "") return;
     if (prevSlugRef.current === slug) return;
     resetFilters();
     prevSlugRef.current = slug;
@@ -134,23 +135,42 @@ function useResetFiltersOnSlugChange(slug: string) {
 }
 
 export default function CategoryView({ products, categoryMatch }: CategoryViewProps) {
-  const slug = categoryMatch.slug;
+  const slug = categoryMatch?.slug ?? "";
   useResetFiltersOnSlugChange(slug);
 
-  const filterState = useFilterStore((s) => ({
-    powerMin: s.powerMin,
-    powerMax: s.powerMax,
-    boilerPowerMin: s.boilerPowerMin,
-    boilerPowerMax: s.boilerPowerMax,
-    steamOutputMin: s.steamOutputMin,
-    steamOutputMax: s.steamOutputMax,
-    workingPressureMin: s.workingPressureMin,
-    workingPressureMax: s.workingPressureMax,
-  }));
+  const powerMin = useFilterStore((s) => s.powerMin);
+  const powerMax = useFilterStore((s) => s.powerMax);
+  const boilerPowerMin = useFilterStore((s) => s.boilerPowerMin);
+  const boilerPowerMax = useFilterStore((s) => s.boilerPowerMax);
+  const steamOutputMin = useFilterStore((s) => s.steamOutputMin);
+  const steamOutputMax = useFilterStore((s) => s.steamOutputMax);
+  const workingPressureMin = useFilterStore((s) => s.workingPressureMin);
+  const workingPressureMax = useFilterStore((s) => s.workingPressureMax);
 
   const filteredProducts = useMemo(
-    () => applyFilters(products ?? [], slug, filterState),
-    [products, slug, filterState]
+    () =>
+      applyFilters(products ?? [], slug, {
+        powerMin,
+        powerMax,
+        boilerPowerMin,
+        boilerPowerMax,
+        steamOutputMin,
+        steamOutputMax,
+        workingPressureMin,
+        workingPressureMax,
+      }),
+    [
+      products,
+      slug,
+      powerMin,
+      powerMax,
+      boilerPowerMin,
+      boilerPowerMax,
+      steamOutputMin,
+      steamOutputMax,
+      workingPressureMin,
+      workingPressureMax,
+    ]
   );
 
   const productsRef = useRef<HTMLDivElement | null>(null);
