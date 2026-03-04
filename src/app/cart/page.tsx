@@ -16,7 +16,6 @@ export default function CartPage() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
   const rate = useCurrencyStore((s) => s.rate);
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
@@ -27,6 +26,8 @@ export default function CartPage() {
 
   const totalPriceRub = getTotalPriceRub(rate);
   const totalPriceFormatted = formatPrice(undefined, totalPriceRub, rate);
+
+  if (!mounted) return null;
 
   if (items.length === 0 && !success) {
     return (
