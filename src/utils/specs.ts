@@ -23,7 +23,8 @@ function parseSpecValue(value: string): { min: number; max: number } | null {
 
 function findSpec(product: Product, name: string): { min: number; max: number } | null {
   try {
-    if (!product?.specs || !Array.isArray(product.specs)) return null;
+    if (!product?.specs) return null;
+    if (!Array.isArray(product.specs)) return null;
     const spec = product.specs.find(
       (s) => s && s.name && (s.name === name || s.name.includes(name))
     );

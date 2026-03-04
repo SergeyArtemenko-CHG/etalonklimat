@@ -23,6 +23,7 @@ export default function Sidebar({
   filteredCount = 0,
   categorySlug = "",
 }: SidebarProps) {
+  const [mounted, setMounted] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [tooltipAnchor, setTooltipAnchor] = useState<HTMLElement | null>(null);
   const tooltipTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -31,6 +32,12 @@ export default function Sidebar({
   const boilerPowerRef = useRef<HTMLDivElement>(null);
   const steamOutputRef = useRef<HTMLDivElement>(null);
   const workingPressureRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const safeProducts = products ?? [];
 
   const powerMin = useFilterStore((s) => s.powerMin);
   const powerMax = useFilterStore((s) => s.powerMax);
@@ -80,7 +87,7 @@ export default function Sidebar({
   const powerRange = useMemo(() => {
     let min = Infinity;
     let max = -Infinity;
-    products.forEach((p) => {
+    safeProducts.forEach((p) => {
       const pMin = p.burnerPowerMin ?? p.burnerPowerMax;
       const pMax = p.burnerPowerMax ?? p.burnerPowerMin;
       if (pMin != null && pMin < min) min = pMin;
@@ -90,12 +97,12 @@ export default function Sidebar({
     if (max === -Infinity) max = 100;
     if (min >= max) max = min + 1;
     return { min: Math.floor(min), max: Math.ceil(max) };
-  }, [products]);
+  }, [safeProducts]);
 
   const boilerPowerRange = useMemo(() => {
     let min = Infinity;
     let max = -Infinity;
-    products.forEach((p) => {
+    safeProducts.forEach((p) => {
       const r = getBoilerPowerRange(p);
       if (r) {
         if (r.min < min) min = r.min;
@@ -106,12 +113,12 @@ export default function Sidebar({
     if (max === -Infinity) max = 100;
     if (min >= max) max = min + 1;
     return { min: Math.floor(min), max: Math.ceil(max) };
-  }, [products]);
+  }, [safeProducts]);
 
   const steamOutputRange = useMemo(() => {
     let min = Infinity;
     let max = -Infinity;
-    products.forEach((p) => {
+    safeProducts.forEach((p) => {
       const r = getSteamOutputRange(p);
       if (r) {
         if (r.min < min) min = r.min;
@@ -122,12 +129,12 @@ export default function Sidebar({
     if (max === -Infinity) max = 100;
     if (min >= max) max = min + 1;
     return { min: Math.floor(min), max: Math.ceil(max) };
-  }, [products]);
+  }, [safeProducts]);
 
   const workingPressureRange = useMemo(() => {
     let min = Infinity;
     let max = -Infinity;
-    products.forEach((p) => {
+    safeProducts.forEach((p) => {
       const r = getWorkingPressureRange(p);
       if (r) {
         if (r.min < min) min = r.min;
@@ -138,7 +145,7 @@ export default function Sidebar({
     if (max === -Infinity) max = 10;
     if (min >= max) max = min + 1;
     return { min: Math.floor(min * 10) / 10, max: Math.ceil(max * 10) / 10 };
-  }, [products]);
+  }, [safeProducts]);
 
   const filterMode = useMemo((): "burner" | "steam" | "water" => {
     if (categorySlug === "kotly-parovye") return "steam";
@@ -148,23 +155,23 @@ export default function Sidebar({
 
   const hasPowerData = useMemo(
     () =>
-      products.some(
+      safeProducts.some(
         (p) => p.burnerPowerMin != null || p.burnerPowerMax != null
       ),
-    [products]
+    [safeProducts]
   );
 
   const hasBoilerPowerData = useMemo(
-    () => products.some((p) => getBoilerPowerRange(p) != null),
-    [products]
+    () => safeProducts.some((p) => getBoilerPowerRange(p) != null),
+    [safeProducts]
   );
   const hasSteamOutputData = useMemo(
-    () => products.some((p) => getSteamOutputRange(p) != null),
-    [products]
+    () => safeProducts.some((p) => getSteamOutputRange(p) != null),
+    [safeProducts]
   );
   const hasWorkingPressureData = useMemo(
-    () => products.some((p) => getWorkingPressureRange(p) != null),
-    [products]
+    () => safeProducts.some((p) => getWorkingPressureRange(p) != null),
+    [safeProducts]
   );
 
   const sliderValue = useMemo(() => {
@@ -205,7 +212,7 @@ export default function Sidebar({
     workingPressureMin != null ||
     workingPressureMax != null;
 
-  const showFilters = products.length > 0;
+  const showFilters = safeProducts.length > 0;
 
   const renderSpecFilter = (
     title: string,
@@ -296,6 +303,19 @@ export default function Sidebar({
       right: 16,
     };
   }, [tooltipVisible, tooltipAnchor]);
+
+  if (!mounted) {
+    return (
+      <aside className="relative w-full rounded-xl bg-[#003366] p-4 shadow-lg shadow-slate-800/30">
+        <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
+          Фильтры
+        </h2>
+        <div className="mt-4 border-t border-white/20 pt-4 text-xs text-white/70">
+          Загрузка…
+        </div>
+      </aside>
+    );
+  }
 
   return (
     <aside ref={asideRef} className="relative w-full rounded-xl bg-[#003366] p-4 shadow-lg shadow-slate-800/30">

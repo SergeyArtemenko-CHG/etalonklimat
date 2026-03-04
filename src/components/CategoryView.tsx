@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import ProductCard from "@/components/ProductCard";
 import Sidebar from "@/components/Sidebar";
 import { useFilterStore } from "@/store/useFilterStore";
@@ -148,7 +149,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
   }));
 
   const filteredProducts = useMemo(
-    () => applyFilters(products, slug, filterState),
+    () => applyFilters(products ?? [], slug, filterState),
     [products, slug, filterState]
   );
 
@@ -170,11 +171,13 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
     <section className="flex w-full max-w-6xl flex-col gap-4 md:flex-row md:gap-6">
       {/* Desktop sidebar with filters */}
       <div className="hidden md:block md:w-1/4 lg:w-[22%]">
-        <Sidebar
-          products={products}
-          filteredCount={filteredProducts.length}
-          categorySlug={slug}
-        />
+        <ErrorBoundary>
+          <Sidebar
+            products={products}
+            filteredCount={filteredProducts?.length ?? 0}
+            categorySlug={slug}
+          />
+        </ErrorBoundary>
       </div>
 
       {/* Main content */}
@@ -202,11 +205,13 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
             </button>
             {mobileFiltersOpen && (
               <div className="mt-3">
-                <Sidebar
-                  products={products}
-                  filteredCount={filteredProducts.length}
-                  categorySlug={slug}
-                />
+                <ErrorBoundary>
+                  <Sidebar
+                    products={products}
+                    filteredCount={filteredProducts?.length ?? 0}
+                    categorySlug={slug}
+                  />
+                </ErrorBoundary>
               </div>
             )}
           </div>
