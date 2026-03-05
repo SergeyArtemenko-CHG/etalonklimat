@@ -153,9 +153,11 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
   const workingPressureMin = useFilterStore((s) => s.workingPressureMin);
   const workingPressureMax = useFilterStore((s) => s.workingPressureMax);
 
+  const safeProducts = products ?? [];
+
   const filteredProducts = useMemo(
     () =>
-      applyFilters(products ?? [], slug, {
+      applyFilters(safeProducts, slug, {
         powerMin,
         powerMax,
         boilerPowerMin,
@@ -166,7 +168,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
         workingPressureMax,
       }),
     [
-      products,
+      safeProducts,
       slug,
       powerMin,
       powerMax,
@@ -178,6 +180,63 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
       workingPressureMax,
     ]
   );
+
+  const shouldShowFilters = useMemo(() => {
+    if (safeProducts.length === 0) return false;
+
+    const hasBurnerVariety = (() => {
+      let min: number | null = null;
+      let max: number | null = null;
+      let hasAny = false;
+      safeProducts.forEach((p) => {
+        const pMin = p.burnerPowerMin ?? p.burnerPowerMax;
+        const pMax = p.burnerPowerMax ?? p.burnerPowerMin;
+        if (pMin != null || pMax != null) {
+          hasAny = true;
+          const lo = pMin ?? pMax!;
+          const hi = pMax ?? pMin!;
+          if (min === null || lo < min) min = lo;
+          if (max === null || hi > max) max = hi;
+        }
+      });
+      if (!hasAny || min === null || max === null) return false;
+      return min !== max;
+    })();
+
+    const uniqueBoilerPowers = new Set<number>();
+    const uniqueSteamOutputs = new Set<number>();
+    const uniquePressures = new Set<number>();
+
+    safeProducts.forEach((p) => {
+      const bp = getBoilerPowerRange(p);
+      if (bp) {
+        uniqueBoilerPowers.add(bp.min);
+        uniqueBoilerPowers.add(bp.max);
+      }
+      const so = getSteamOutputRange(p);
+      if (so) {
+        uniqueSteamOutputs.add(so.min);
+        uniqueSteamOutputs.add(so.max);
+      }
+      const wp = getWorkingPressureRange(p);
+      if (wp) {
+        uniquePressures.add(wp.min);
+        uniquePressures.add(wp.max);
+      }
+    });
+
+    const hasBoilerVariety = uniqueBoilerPowers.size > 1;
+    const hasSteamVariety = uniqueSteamOutputs.size > 1;
+    const hasPressureVariety = uniquePressures.size > 1;
+
+    if (slug === "kotly-parovye") {
+      return hasBoilerVariety || hasSteamVariety || hasPressureVariety;
+    }
+    if (slug === "kotly-vodogreinye") {
+      return hasBoilerVariety || hasPressureVariety;
+    }
+    return hasBurnerVariety;
+  }, [safeProducts, slug]);
 
   const productsRef = useRef<HTMLDivElement | null>(null);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -196,51 +255,55 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
   return (
     <section className="flex w-full max-w-6xl flex-col gap-4 md:flex-row md:gap-6">
       {/* Desktop sidebar with filters */}
-      <div className="hidden md:block md:w-1/4 lg:w-[22%]">
-        <ErrorBoundary>
-          <Sidebar
-            products={products}
-            filteredCount={filteredProducts?.length ?? 0}
-            categorySlug={slug}
-          />
-        </ErrorBoundary>
-      </div>
+      {shouldShowFilters && (
+        <div className="hidden md:block md:w-1/4 lg:w-[22%]">
+          <ErrorBoundary>
+            <Sidebar
+              products={products}
+              filteredCount={filteredProducts?.length ?? 0}
+              categorySlug={slug}
+            />
+          </ErrorBoundary>
+        </div>
+      )}
 
       {/* Main content */}
-      <div className="md:w-3/4 lg:w-[78%]">
+      <div className={shouldShowFilters ? "md:w-3/4 lg:w-[78%]" : "md:w-full lg:w-full"}>
         <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 transition-shadow hover:shadow-lg md:p-5">
           {/* Mobile filters toggle — вверху, перед хлебными крошками */}
-          <div className="mb-4 md:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileFiltersOpen((prev) => !prev)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-[#003366] shadow-sm transition hover:bg-slate-100"
-            >
-              <span>Фильтры</span>
-              <span className="rounded-full bg-[#FF8C00]/10 px-2 py-0.5 text-[11px] font-medium text-[#FF8C00]">
-                {filteredProducts.length}
-              </span>
-              <span
-                className={`ml-1 text-[11px] transition-transform ${
-                  mobileFiltersOpen ? "rotate-180" : "rotate-0"
-                }`}
-                aria-hidden="true"
+          {shouldShowFilters && (
+            <div className="mb-4 md:hidden">
+              <button
+                type="button"
+                onClick={() => setMobileFiltersOpen((prev) => !prev)}
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-[#003366] shadow-sm transition hover:bg-slate-100"
               >
-                ▾
-              </span>
-            </button>
-            {mobileFiltersOpen && (
-              <div className="mt-3">
-                <ErrorBoundary>
-                  <Sidebar
-                    products={products}
-                    filteredCount={filteredProducts?.length ?? 0}
-                    categorySlug={slug}
-                  />
-                </ErrorBoundary>
-              </div>
-            )}
-          </div>
+                <span>Фильтры</span>
+                <span className="rounded-full bg-[#FF8C00]/10 px-2 py-0.5 text-[11px] font-medium text-[#FF8C00]">
+                  {filteredProducts.length}
+                </span>
+                <span
+                  className={`ml-1 text-[11px] transition-transform ${
+                    mobileFiltersOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                  aria-hidden="true"
+                >
+                  ▾
+                </span>
+              </button>
+              {mobileFiltersOpen && (
+                <div className="mt-3">
+                  <ErrorBoundary>
+                    <Sidebar
+                      products={products}
+                      filteredCount={filteredProducts?.length ?? 0}
+                      categorySlug={slug}
+                    />
+                  </ErrorBoundary>
+                </div>
+              )}
+            </div>
+          )}
 
           <nav className="mb-4 text-sm text-slate-500">
             <Link href="/" className="hover:text-[#003366]">

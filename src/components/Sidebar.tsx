@@ -306,7 +306,7 @@ export default function Sidebar({
 
   if (!mounted) {
     return (
-      <aside className="relative w-full rounded-xl bg-[#003366] p-4 shadow-lg shadow-slate-800/30">
+      <aside className="w-full rounded-xl bg-[#003366] p-4 shadow-lg shadow-slate-800/30 md:sticky md:top-24 md:self-start">
         <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
           Фильтры
         </h2>
@@ -318,7 +318,10 @@ export default function Sidebar({
   }
 
   return (
-    <aside ref={asideRef} className="relative w-full rounded-xl bg-[#003366] p-4 shadow-lg shadow-slate-800/30">
+    <aside
+      ref={asideRef}
+      className="w-full rounded-xl bg-[#003366] p-4 shadow-lg shadow-slate-800/30 md:sticky md:top-24 md:self-start"
+    >
       <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
         Фильтры
       </h2>

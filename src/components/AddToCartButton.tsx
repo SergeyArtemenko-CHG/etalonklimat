@@ -1,6 +1,7 @@
 "use client";
 
 import { useCartStore } from "@/store/cart";
+import { useToastStore } from "@/store/toast";
 
 type AddToCartButtonProps = {
   id: string;
@@ -20,9 +21,11 @@ export default function AddToCartButton({
   variant = "card",
 }: AddToCartButtonProps) {
   const addItem = useCartStore((s) => s.addItem);
+  const addToast = useToastStore((s) => s.addToast);
 
   const handleClick = () => {
     addItem({ id, name, priceEur, priceRub, quantity });
+    addToast(`Товар «${name}» добавлен в корзину`);
   };
 
   const baseCard =

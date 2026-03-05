@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import AddToCartButton from "@/components/AddToCartButton";
-import ProductRequestForm from "@/components/ProductRequestForm";
+import { useProductRequestStore } from "@/store/productRequest";
 
 type ProductPageActionsProps = {
   id: string;
@@ -22,28 +22,24 @@ export default function ProductPageActions({
   inStock = true,
 }: ProductPageActionsProps) {
   const [qty, setQty] = useState(1);
-  const [requestModal, setRequestModal] = useState<"discount" | "price" | null>(null);
+  const openRequestModal = useProductRequestStore((s) => s.open);
 
   if (!inStock) {
     return (
-      <>
-        <button
-          type="button"
-          onClick={() => setRequestModal("price")}
-          className="w-full rounded-xl bg-[#FF8C00] px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
-        >
-          Узнать цену и срок поставки
-        </button>
-        {requestModal && (
-          <ProductRequestForm
-            type="price"
-            productName={name}
-            productId={id}
-            productSku={sku}
-            onClose={() => setRequestModal(null)}
-          />
-        )}
-      </>
+      <button
+        type="button"
+        onClick={() =>
+          openRequestModal({
+            type: "price",
+            productName: name,
+            productId: id,
+            productSku: sku,
+          })
+        }
+        className="w-full rounded-xl bg-[#FF8C00] px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
+      >
+        Узнать цену и срок поставки
+      </button>
     );
   }
 
@@ -90,21 +86,20 @@ export default function ProductPageActions({
         />
         <button
           type="button"
-          onClick={() => setRequestModal("discount")}
+          onClick={() =>
+            openRequestModal({
+              type: "discount",
+              productName: name,
+              productId: id,
+              productSku: sku,
+            })
+          }
           className="rounded-xl border-2 border-[#FF8C00] px-4 py-3 text-sm font-semibold text-[#FF8C00] transition hover:bg-[#FF8C00] hover:text-white"
         >
           Получить индивидуальную скидку
         </button>
       </div>
-      {requestModal && (
-        <ProductRequestForm
-          type="discount"
-          productName={name}
-          productId={id}
-          productSku={sku}
-          onClose={() => setRequestModal(null)}
-        />
-      )}
     </>
   );
 }
+

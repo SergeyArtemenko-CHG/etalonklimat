@@ -5,6 +5,8 @@ import CurrencyRateLoader from "@/components/CurrencyRateLoader";
 import CookieBanner from "@/components/CookieBanner";
 import FloatingContactBtn from "@/components/FloatingContactBtn";
 import FloatingScrollToTop from "@/components/FloatingScrollToTop";
+import ProductRequestModalHost from "@/components/ProductRequestModalHost";
+import ToastContainer from "@/components/ToastContainer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,6 +46,8 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased`}
       >
         <CurrencyRateLoader />
+        <ProductRequestModalHost />
+        <ToastContainer />
         {children}
         <CookieBanner />
         <FloatingScrollToTop />

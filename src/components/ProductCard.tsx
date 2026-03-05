@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import AddToCartButton from "./AddToCartButton";
-import ProductRequestForm from "./ProductRequestForm";
 import { formatPrice } from "@/utils/currency";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
+import { useProductRequestStore } from "@/store/productRequest";
 
 type ProductCardProps = {
   id: string;
@@ -63,7 +63,7 @@ export default function ProductCard({
 }: ProductCardProps) {
   const rate = useCurrencyStore((s) => s.rate);
   const [imageError, setImageError] = useState(false);
-  const [requestModal, setRequestModal] = useState(false);
+  const openRequestModal = useProductRequestStore((s) => s.open);
   const href = `/product/${id}`;
   const imageSrc = image?.trim() || undefined;
   const showImage = imageSrc && !imageError;
@@ -140,22 +140,20 @@ export default function ProductCard({
         ) : (
           <button
             type="button"
-            onClick={() => setRequestModal(true)}
+            onClick={() =>
+              openRequestModal({
+                type: "price",
+                productName: name,
+                productId: id,
+                productSku: sku,
+              })
+            }
             className="w-full rounded-lg bg-[#FF8C00] px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-[#ff9f26] md:py-2"
           >
             Запросить
           </button>
         )}
       </div>
-      {requestModal && (
-        <ProductRequestForm
-          type="price"
-          productName={name}
-          productId={id}
-          productSku={sku}
-          onClose={() => setRequestModal(false)}
-        />
-      )}
     </article>
   );
 }
