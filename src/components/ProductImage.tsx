@@ -50,7 +50,9 @@ export default function ProductImage({
 
   const handleError = () => {
     console.error("Ошибка загрузки:", imageSrc);
-    if (fallbackToPlaceholder) setFailed(true);
+    if (fallbackToPlaceholder) {
+      setFailed(true);
+    }
   };
 
   if (showImage) {
