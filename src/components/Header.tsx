@@ -108,7 +108,7 @@ export default function Header() {
 
       {/* Main header */}
       <div
-        className={`relative mx-auto flex max-w-6xl flex-col px-4 min-h-[80px] md:min-h-[96px] ${
+        className={`relative mx-auto flex max-w-6xl flex-col px-4 h-[80px] md:h-[96px] ${
           isShrunk
             ? "gap-2 py-1 md:flex-row md:items-center md:gap-4 md:py-3"
             : "gap-3 py-2 md:flex-row md:items-center md:gap-6 md:py-5"
