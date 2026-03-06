@@ -22,11 +22,9 @@ export const metadata: Metadata = {
   },
   
   // 2. Ваши текущие настройки
-  metadataBase: new URL("https://etalonklimat.ru"), // Замените на новый домен!
+  metadataBase: new URL("https://etalonklimat.ru"),
   title: "ETALON — B2B каталог",
   description: "Профессиональный B2B-портал оборудования",
-  
-  // ... остальные поля (openGraph и т.д.)
 };
 
 export default function RootLayout({
@@ -43,12 +41,17 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased`}
+        className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <CurrencyRateLoader />
         <ProductRequestModalHost />
         <ToastContainer />
-        {children}
+        
+        {/* Обертка flex-1 заставит содержимое страниц (включая их футеры) растягиваться на весь экран */}
+        <div className="flex flex-col flex-1">
+          {children}
+        </div>
+
         <CookieBanner />
         <FloatingScrollToTop />
         <FloatingContactBtn />
