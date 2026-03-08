@@ -27,48 +27,48 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               1. Общие вопросы
             </h2>
-            <div className="space-y-4 text-slate-700 leading-relaxed">
-              <p>
+            <ol className="list-decimal space-y-4 pl-6 text-slate-700 leading-relaxed [&>li]:pl-1">
+              <li>
                 <strong>1.1.</strong> Настоящая Политика конфиденциальности описывает методы
                 использования и хранения интернет-магазином «EtalonKlimat.ru» конфиденциальной
-                информации клиентов, посещающих сайт etalonklimat.ru.
-              </p>
-              <p>
+                информации клиентов,                 посещающих сайт etalonklimat.ru.
+              </li>
+              <li>
                 <strong>1.2.</strong> Предоставляя интернет-магазину «EtalonKlimat.ru» информацию
                 частного характера через сайт etalonklimat.ru, клиент свободно, своей волей дает
                 согласие на передачу, использование и раскрытие его персональных данных согласно
                 условиям настоящей Политики конфиденциальности.
-              </p>
-              <p>
+              </li>
+              <li>
                 <strong>1.3.</strong> Настоящая Политика конфиденциальности применяется только в
                 отношении информации частного характера, полученной через данный сайт. Информация
                 частного характера – это информация, позволяющая при ее использовании отдельно или
                 в комбинации с другой доступной интернет-магазину информацией идентифицировать
                 персональные данные клиента.
-              </p>
-              <p>
+              </li>
+              <li>
                 <strong>1.4.</strong> Сайт не содержит материалов, неприемлемых для детей и
                 подростков младше 14 лет. Однако они не могут передавать никакие личные данные через
                 интернет без согласия одного из родителей или опекуна. Интернет-магазин
                 «EtalonKlimat.ru» гарантирует, что сознательно не собирает и не хранит никаких
                 личных данных, связанных с несовершеннолетними лицами.
-              </p>
-              <p>
+              </li>
+              <li>
                 <strong>1.5.</strong> На сайте etalonklimat.ru могут иметься ссылки, позволяющие
                 перейти на другие сайты. Интернет-магазин не несет ответственности за сведения,
                 публикуемые на этих сайтах, и предоставляет ссылки на них только в целях обеспечения
                 удобства клиентов. На сайте «EtalonKlimat.ru» не публикуются преднамеренно ссылки на
                 интернет-ресурсы, которые могут привести к повреждению компьютера клиента или
                 заражению его вирусами.
-              </p>
-            </div>
+              </li>
+            </ol>
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               2. Данные, которые получает интернет-магазин
             </h2>
             <div className="space-y-6 text-slate-700 leading-relaxed">
@@ -127,7 +127,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               3. Охрана личной информации пользователей
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -154,7 +154,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               4. Время хранения информации
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <p>
                 <strong>4.2.</strong> Для отзыва согласия и удаления данных напишите на{" "}
-                <a href="mailto:info@etalonklimat.ru" className="text-[#FF8C00] underline hover:text-[#ff9f26]">
+                <a href="mailto:info@etalonklimat.ru" className="text-[#FF8C00] font-medium underline hover:text-[#ff9f26]">
                   info@etalonklimat.ru
                 </a>
                 .
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               5. Безопасность банковских карт
             </h2>
             <p className="text-slate-700 leading-relaxed">
@@ -184,7 +184,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               6. Согласие на обработку персональных данных
             </h2>
             <p className="mb-4 text-slate-700 leading-relaxed">
@@ -200,8 +200,8 @@ export default function PrivacyPolicyPage() {
             </p>
           </section>
 
-          <section>
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+          <section className="mb-10">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               7. Внесение изменений и дополнений
             </h2>
             <p className="text-slate-700 leading-relaxed">
@@ -211,6 +211,10 @@ export default function PrivacyPolicyPage() {
               пользователи подчиняются новым условиям.
             </p>
           </section>
+
+          <p className="mt-10 pt-6 border-t border-slate-200 text-sm text-slate-500">
+            Последнее обновление: 5 марта 2025 г.
+          </p>
         </article>
       </main>
       <Footer />

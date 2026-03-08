@@ -39,8 +39,10 @@ export default function CookieBanner() {
           Мы используем файлы cookie, чтобы улучшить работу сайта. Продолжая
           использовать сайт, вы соглашаетесь с нашей{" "}
           <Link
-            href="/privacy"
+            href="/privacy-policy"
             className="underline decoration-white/70 underline-offset-2 transition hover:decoration-white"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Политикой конфиденциальности
           </Link>

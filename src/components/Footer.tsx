@@ -107,22 +107,19 @@ export default function Footer() {
               Контакты
             </h3>
             <a
-              href="tel:+78000000000"
+              href="tel:+74993980140"
               className="mb-2 block text-lg font-semibold text-white hover:text-[#FF8C00]"
             >
-              8 800 000-00-00
+              +7 (499) 398-01-40
             </a>
-            <p className="mb-4 text-sm text-white/70">
-              Звонок по России бесплатный
-            </p>
             <p className="mb-2 text-sm text-white/80">
-              г. Москва, ул. Примерная, д. 1
+              111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
             </p>
             <a
-              href="mailto:market@etalon.ru"
+              href="mailto:info@etalonklimat.ru"
               className="mb-4 block text-sm text-white/80 underline-offset-2 hover:text-[#FF8C00] hover:underline"
             >
-              market@etalon.ru
+              info@etalonklimat.ru
             </a>
             <div className="flex gap-2">
               <SocialIcon href="https://vk.com" label="ВКонтакте">
@@ -146,8 +143,37 @@ export default function Footer() {
 
         {/* Bottom: legal */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <p className="text-center text-xs text-white/60">
-            © {new Date().getFullYear()} ООО «ЭТАЛОН». Все права защищены. ОГРН 1234567890123, ИНН 1234567890
+          <div className="flex flex-col gap-2 text-center text-[11px] text-white/70 leading-snug max-w-2xl mx-auto">
+            <p>
+              Продолжая использовать наш сайт, вы даете согласие на обработку Cookies и других
+              данных в соответствии с{" "}
+              <Link
+                href="/privacy-policy"
+                className="underline underline-offset-1 hover:text-[#FF8C00] transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Политикой конфиденциальности
+              </Link>{" "}
+              и{" "}
+              <Link
+                href="/agreement"
+                className="underline underline-offset-1 hover:text-[#FF8C00] transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Пользовательским соглашением
+              </Link>
+              .
+            </p>
+            <p>
+              Вся информация на сайте – собственность Etalonklimat.ru. Публикация без разрешения
+              запрещена. Информация на сайте не является публичной офертой, определяемой положениями Статьи 437 ГК РФ.
+            </p>
+          </div>
+          <p className="mt-4 text-center text-[11px] text-white/60">
+            © {new Date().getFullYear()} ООО «ЭТАЛОН ПРОФИ» · ИНН 7720486235 · КПП 772001001 · 111141,
+            г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
           </p>
         </div>
       </div>

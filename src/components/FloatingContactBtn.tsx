@@ -2,10 +2,10 @@
 
 import { useState, useRef, useEffect } from "react";
 
-const PHONE = "78000000000";
+const PHONE = "74993980140";
 const WHATSAPP_URL = `https://wa.me/${PHONE}`;
 const TELEGRAM_URL = `https://t.me/+${PHONE}`;
-const TEL_URL = "tel:+78000000000";
+const TEL_URL = "tel:+74993980140";
 
 function ChatIcon({ className }: { className?: string }) {
   return (

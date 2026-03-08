@@ -49,14 +49,11 @@ export default function ContactsPage() {
             }
           >
             <a
-              href="tel:+78000000000"
+              href="tel:+74993980140"
               className="font-semibold text-[#003366] hover:text-[#ff8c00]"
             >
-              8 800 000-00-00
+              +7 (499) 398-01-40
             </a>
-            <div className="text-xs text-slate-500">
-              Звонок по России бесплатный
-            </div>
           </ContactRow>
 
           <ContactRow
@@ -87,10 +84,10 @@ export default function ContactsPage() {
             }
           >
             <a
-              href="mailto:market@etalon.ru"
+              href="mailto:info@etalonklimat.ru"
               className="font-semibold text-[#003366] hover:text-[#ff8c00]"
             >
-              market@etalon.ru
+              info@etalonklimat.ru
             </a>
           </ContactRow>
 
@@ -109,7 +106,7 @@ export default function ContactsPage() {
               </svg>
             }
           >
-            г. Москва, ул. Примерная, д. 1
+            111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
           </ContactRow>
         </div>
 
@@ -118,11 +115,9 @@ export default function ContactsPage() {
             Реквизиты компании
           </h2>
           <ul className="space-y-1 text-sm text-slate-700 md:text-base">
-            <li>ООО «ЭТАЛОН»</li>
-            <li>ИНН 1234567890 / КПП 123401001</li>
-            <li>ОГРН 1234567890123</li>
-            <li>Р/с 40702810900000000000 в ПАО «Банк»</li>
-            <li>К/с 30101810000000000000, БИК 044525000</li>
+            <li>ООО «ЭТАЛОН ПРОФИ»</li>
+            <li>ИНН 7720486235 · КПП 772001001</li>
+            <li>111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2</li>
           </ul>
         </div>
       </div>

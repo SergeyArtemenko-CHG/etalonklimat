@@ -27,7 +27,7 @@ export default function AgreementPage() {
           </p>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               1. Термины и определения
             </h2>
             <dl className="space-y-4 text-slate-700 leading-relaxed">
@@ -69,42 +69,42 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               2. Общие условия
             </h2>
-            <div className="space-y-4 text-slate-700 leading-relaxed">
-              <p>
+            <ol className="list-decimal space-y-4 pl-6 text-slate-700 leading-relaxed [&>li]:pl-1">
+              <li>
                 <strong>2.1.</strong> Заказывая Товары на Сайте, Покупатель принимает условия
                 настоящего Соглашения. В случае несогласия обязан прекратить использование сервиса.
-              </p>
-              <p>
+              </li>
+              <li>
                 <strong>2.2.</strong> Товар представлен на Сайте через фотообразцы, графические и
                 текстовые материалы, не являющиеся публичной офертой.
-              </p>
-              <p>
+              </li>
+              <li>
                 <strong>2.3.</strong> Регистрируясь на Сайте, Покупатель соглашается с Политикой
                 конфиденциальности Продавца.
-              </p>
-              <p>
-                <strong>2.4.</strong> Продавец осуществляет продажу Товаров на территории РФ.
-              </p>
-              <p>
+              </li>
+              <li>
+                <strong>2.4.</strong> Продавец осуществляет                 продажу Товаров на территории РФ.
+              </li>
+              <li>
                 <strong>2.5.</strong> Продавец в одностороннем порядке принимает и изменяет условия
                 Соглашения.
-              </p>
-              <p>
+              </li>
+              <li>
                 <strong>2.6.</strong> Применяются положения ГК РФ о розничной купле-продаже, Закон
-                «О защите прав потребителей» № 2300-1 и иные правовые акты.
-              </p>
-              <p>
+                «О защите прав потребителей» № 2300-1 и иные                 правовые акты.
+              </li>
+              <li>
                 <strong>2.7.</strong> Закон «О защите прав потребителей» не распространяется на
                 юридических лиц и ИП, приобретающих Товар для предпринимательской деятельности.
-              </p>
-            </div>
+              </li>
+            </ol>
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               3. Предмет соглашения
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -126,7 +126,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               4. Информация о Товаре
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -145,7 +145,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               5. Заказ Товара
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -173,7 +173,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               6. Оплата Товара
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -195,7 +195,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               7. Доставка Товара
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -219,7 +219,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               8. Возврат Товара и денежных средств
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -241,7 +241,7 @@ export default function AgreementPage() {
               </p>
               <p>
                 По вопросам возврата:{" "}
-                <a href="mailto:info@etalonklimat.ru" className="text-[#FF8C00] underline hover:text-[#ff9f26]">
+                <a href="mailto:info@etalonklimat.ru" className="text-[#FF8C00] font-medium underline hover:text-[#ff9f26]">
                   info@etalonklimat.ru
                 </a>
               </p>
@@ -249,7 +249,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               9. Гарантия на Товар
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -264,7 +264,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               10. Авторское право
             </h2>
             <p className="text-slate-700 leading-relaxed">
@@ -274,7 +274,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               11. Конфиденциальность
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -293,7 +293,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               12. Ответственность сторон
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -310,7 +310,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               13. Урегулирование споров
             </h2>
             <p className="text-slate-700 leading-relaxed">
@@ -320,7 +320,7 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               14. Особые условия, форс-мажор
             </h2>
             <p className="text-slate-700 leading-relaxed">
@@ -331,7 +331,7 @@ export default function AgreementPage() {
           </section>
 
           <section>
-            <h2 className="mb-4 text-lg font-semibold text-[#003366] border-b border-slate-200 pb-2">
+            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
               15. Срок действия
             </h2>
             <p className="text-slate-700 leading-relaxed">
@@ -340,6 +340,10 @@ export default function AgreementPage() {
               направленных на приобретение Товара.
             </p>
           </section>
+
+          <p className="mt-10 pt-6 border-t border-slate-200 text-sm text-slate-500">
+            Последнее обновление: 5 марта 2025 г.
+          </p>
         </article>
       </main>
       <Footer />
