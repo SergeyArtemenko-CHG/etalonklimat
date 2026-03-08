@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +12,7 @@ export default function CartPage() {
   const [mounted, setMounted] = useState(false);
   const { items, removeItem, updateQuantity, getTotalPriceRub, clearCart } = useCartStore();
   const rate = useCurrencyStore((s) => s.rate);
+  const honeypotRef = useRef<HTMLInputElement>(null);
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
   const [loading, setLoading] = useState(false);
@@ -162,6 +163,15 @@ export default function CartPage() {
                 ) : (
                   <>
                     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                      <input
+                        ref={honeypotRef}
+                        type="text"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        className="absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
+                        aria-hidden
+                      />
                       <p className="mb-3 text-sm font-medium text-slate-700">Контактные данные для заказа</p>
                       <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
                         <label className="flex-1">
@@ -218,6 +228,7 @@ export default function CartPage() {
                             type="button"
                             disabled={loading || !customerName.trim() || !customerPhone.trim()}
                             onClick={async () => {
+                            if (honeypotRef.current?.value) return; // Honeypot: bot detected
                             setError(null);
                             setLoading(true);
                             try {

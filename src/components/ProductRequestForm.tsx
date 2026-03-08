@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 
 export type RequestType = "discount" | "price";
@@ -22,6 +22,7 @@ export default function ProductRequestForm({
   onClose,
   onSuccess,
 }: ProductRequestFormProps) {
+  const honeypotRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
@@ -36,6 +37,7 @@ export default function ProductRequestForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (honeypotRef.current?.value) return; // Honeypot: bot detected
     setError("");
     if (!name.trim() || !phone.trim()) {
       setError("Заполните имя и телефон");
@@ -97,6 +99,15 @@ export default function ProductRequestForm({
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              ref={honeypotRef}
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              className="absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
+              aria-hidden
+            />
             <div>
               <label htmlFor="req-name" className="mb-1 block text-sm font-medium text-slate-700">
                 Имя
