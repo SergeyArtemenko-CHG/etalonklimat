@@ -57,6 +57,7 @@ function applyFilters(
   products: Product[],
   slug: string,
   store: {
+    inStockOnly: boolean;
     powerMin: number | null;
     powerMax: number | null;
     boilerPowerMin: number | null;
@@ -67,6 +68,13 @@ function applyFilters(
     workingPressureMax: number | null;
   }
 ) {
+  const safeProducts = products ?? [];
+  let result = safeProducts;
+
+  if (store.inStockOnly) {
+    result = result.filter((p) => p.inStock !== false);
+  }
+
   const noBurner =
     store.powerMin == null && store.powerMax == null;
   const noBoiler =
@@ -76,16 +84,14 @@ function applyFilters(
   const noPressure =
     store.workingPressureMin == null && store.workingPressureMax == null;
 
-  const safeProducts = products ?? [];
-
   if (slug === "kotly-parovye" && noBoiler && noSteam && noPressure)
-    return safeProducts;
+    return result;
   if (slug === "kotly-vodogreinye" && noBoiler && noPressure)
-    return safeProducts;
+    return result;
   if (noBurner && slug !== "kotly-parovye" && slug !== "kotly-vodogreinye")
-    return safeProducts;
+    return result;
 
-  return safeProducts.filter((p) => {
+  return result.filter((p) => {
     if (slug === "kotly-parovye") {
       const bp = getBoilerPowerRange(p);
       const so = getSteamOutputRange(p);
@@ -144,6 +150,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
   const slug = categoryMatch?.slug ?? "";
   useResetFiltersOnSlugChange(slug);
 
+  const inStockOnly = useFilterStore((s) => s.inStockOnly);
   const powerMin = useFilterStore((s) => s.powerMin);
   const powerMax = useFilterStore((s) => s.powerMax);
   const boilerPowerMin = useFilterStore((s) => s.boilerPowerMin);
@@ -158,6 +165,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
   const filteredProducts = useMemo(
     () =>
       applyFilters(safeProducts, slug, {
+        inStockOnly,
         powerMin,
         powerMax,
         boilerPowerMin,
@@ -170,6 +178,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
     [
       safeProducts,
       slug,
+      inStockOnly,
       powerMin,
       powerMax,
       boilerPowerMin,
@@ -181,62 +190,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
     ]
   );
 
-  const shouldShowFilters = useMemo(() => {
-    if (safeProducts.length === 0) return false;
-
-    const hasBurnerVariety = (() => {
-      let min: number | null = null;
-      let max: number | null = null;
-      let hasAny = false;
-      safeProducts.forEach((p) => {
-        const pMin = p.burnerPowerMin ?? p.burnerPowerMax;
-        const pMax = p.burnerPowerMax ?? p.burnerPowerMin;
-        if (pMin != null || pMax != null) {
-          hasAny = true;
-          const lo = pMin ?? pMax!;
-          const hi = pMax ?? pMin!;
-          if (min === null || lo < min) min = lo;
-          if (max === null || hi > max) max = hi;
-        }
-      });
-      if (!hasAny || min === null || max === null) return false;
-      return min !== max;
-    })();
-
-    const uniqueBoilerPowers = new Set<number>();
-    const uniqueSteamOutputs = new Set<number>();
-    const uniquePressures = new Set<number>();
-
-    safeProducts.forEach((p) => {
-      const bp = getBoilerPowerRange(p);
-      if (bp) {
-        uniqueBoilerPowers.add(bp.min);
-        uniqueBoilerPowers.add(bp.max);
-      }
-      const so = getSteamOutputRange(p);
-      if (so) {
-        uniqueSteamOutputs.add(so.min);
-        uniqueSteamOutputs.add(so.max);
-      }
-      const wp = getWorkingPressureRange(p);
-      if (wp) {
-        uniquePressures.add(wp.min);
-        uniquePressures.add(wp.max);
-      }
-    });
-
-    const hasBoilerVariety = uniqueBoilerPowers.size > 1;
-    const hasSteamVariety = uniqueSteamOutputs.size > 1;
-    const hasPressureVariety = uniquePressures.size > 1;
-
-    if (slug === "kotly-parovye") {
-      return hasBoilerVariety || hasSteamVariety || hasPressureVariety;
-    }
-    if (slug === "kotly-vodogreinye") {
-      return hasBoilerVariety || hasPressureVariety;
-    }
-    return hasBurnerVariety;
-  }, [safeProducts, slug]);
+  const shouldShowFilters = safeProducts.length > 0;
 
   const productsRef = useRef<HTMLDivElement | null>(null);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);

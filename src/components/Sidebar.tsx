@@ -39,6 +39,8 @@ export default function Sidebar({
 
   const safeProducts = products ?? [];
 
+  const inStockOnly = useFilterStore((s) => s.inStockOnly);
+  const setInStockOnly = useFilterStore((s) => s.setInStockOnly);
   const powerMin = useFilterStore((s) => s.powerMin);
   const powerMax = useFilterStore((s) => s.powerMax);
   const setPowerMin = useFilterStore((s) => s.setPowerMin);
@@ -203,6 +205,7 @@ export default function Sidebar({
   };
 
   const hasActiveFilters =
+    inStockOnly ||
     powerMin != null ||
     powerMax != null ||
     boilerPowerMin != null ||
@@ -328,6 +331,15 @@ export default function Sidebar({
 
       {showFilters && (
         <div className="mt-4 space-y-5 border-t border-white/20 pt-4">
+          <label className="flex cursor-pointer items-center gap-2">
+            <input
+              type="checkbox"
+              checked={inStockOnly}
+              onChange={(e) => setInStockOnly(e.target.checked)}
+              className="h-4 w-4 rounded border-white/40 bg-white/10 text-[#FF8C00] focus:ring-[#FF8C00] focus:ring-offset-0"
+            />
+            <span className="text-sm font-medium text-white/90">В наличии</span>
+          </label>
           {filterMode === "burner" && hasPowerData && (
             <div ref={powerRef} className="relative">
               <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">

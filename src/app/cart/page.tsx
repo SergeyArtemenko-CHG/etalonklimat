@@ -213,10 +213,11 @@ export default function CartPage() {
                           </svg>
                           Скачать коммерческое предложение (PDF)
                         </button>
-                        <button
-                          type="button"
-                          disabled={loading || !customerName.trim() || !customerPhone.trim()}
-                          onClick={async () => {
+                        <div className="flex flex-col items-center gap-2">
+                          <button
+                            type="button"
+                            disabled={loading || !customerName.trim() || !customerPhone.trim()}
+                            onClick={async () => {
                             setError(null);
                             setLoading(true);
                             try {
@@ -259,10 +260,22 @@ export default function CartPage() {
                               setLoading(false);
                             }
                           }}
-                          className="inline-flex items-center justify-center rounded-xl bg-[#FF8C00] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none"
-                        >
-                          {loading ? "Отправка…" : "Оформить заказ"}
-                        </button>
+                            className="inline-flex items-center justify-center rounded-xl bg-[#FF8C00] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none"
+                          >
+                            {loading ? "Отправка…" : "Оформить заказ"}
+                          </button>
+                          <p className="text-center text-[10px] text-slate-500">
+                            Нажимая кнопку, я подтверждаю, что ознакомлен с информацией о товаре и принимаю условия{" "}
+                            <Link href="/agreement" className="underline hover:text-slate-700">
+                              пользовательского соглашения
+                            </Link>
+                            , и даю согласие на{" "}
+                            <Link href="/privacy-policy" className="underline hover:text-slate-700">
+                              обработку моих персональных данных
+                            </Link>
+                            .
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </>

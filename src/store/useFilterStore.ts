@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 type FilterStore = {
+  inStockOnly: boolean;
   fuelTypes: string[];
   brands: string[];
   powerMin: number | null;
@@ -13,6 +14,7 @@ type FilterStore = {
   steamOutputMax: number | null;
   workingPressureMin: number | null;
   workingPressureMax: number | null;
+  setInStockOnly: (value: boolean) => void;
   setFuelTypes: (values: string[]) => void;
   toggleFuelType: (value: string) => void;
   setBrands: (values: string[]) => void;
@@ -40,6 +42,7 @@ function deepFreeze<T>(obj: T): T {
 }
 
 const initialState = deepFreeze({
+  inStockOnly: false,
   fuelTypes: [] as string[],
   brands: [] as string[],
   powerMin: null as number | null,
@@ -56,6 +59,8 @@ const initialState = deepFreeze({
 
 export const useFilterStore = create<FilterStore>((set) => ({
   ...initialState,
+
+  setInStockOnly: (value) => set({ inStockOnly: value }),
 
   setFuelTypes: (values) => set({ fuelTypes: values }),
 
@@ -107,6 +112,7 @@ export const useFilterStore = create<FilterStore>((set) => ({
   resetFilters: () =>
     set((state) => {
       const alreadyEmpty =
+        !state.inStockOnly &&
         state.powerMin == null &&
         state.powerMax == null &&
         state.boilerPowerMin == null &&

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export type RequestType = "discount" | "price";
 
@@ -144,6 +145,17 @@ export default function ProductRequestForm({
                 Отмена
               </button>
             </div>
+            <p className="text-center text-[10px] text-slate-500">
+              Нажимая кнопку, я подтверждаю, что ознакомлен с информацией о товаре и принимаю условия{" "}
+              <Link href="/agreement" className="underline hover:text-slate-700">
+                пользовательского соглашения
+              </Link>
+              , и даю согласие на{" "}
+              <Link href="/privacy-policy" className="underline hover:text-slate-700">
+                обработку моих персональных данных
+              </Link>
+              .
+            </p>
           </form>
         )}
       </div>
