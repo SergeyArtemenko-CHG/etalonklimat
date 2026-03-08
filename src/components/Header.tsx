@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { products, categories } from "@/data/products";
 import { useCartStore } from "@/store/cart";
@@ -17,20 +18,29 @@ export default function Header() {
   const catalogRef = useRef<HTMLDivElement>(null);
   const [isShrunk, setIsShrunk] = useState(false);
 
+  const router = useRouter();
   const totalItems = useCartStore((s) => s.getTotalItems());
   const rate = useCurrencyStore((s) => s.rate);
 
-  const trimmed = query.trim();
+  const trimmed = query.trim().toLowerCase();
   const showDropdown = trimmed.length >= 2;
   const results = showDropdown
     ? products
         .filter(
           (p) =>
-            p.name.toLowerCase().includes(trimmed.toLowerCase()) ||
-            p.sku.toLowerCase().includes(trimmed.toLowerCase()) ||
-            (p.description?.toLowerCase().includes(trimmed.toLowerCase()) ?? false)
+            p.name.toLowerCase().includes(trimmed) ||
+            p.sku.toLowerCase().includes(trimmed) ||
+            (p.description?.toLowerCase().includes(trimmed) ?? false)
         )
-        .slice(0, 6)
+        .sort((a, b) => {
+          const asku = a.sku.toLowerCase();
+          const bsku = b.sku.toLowerCase();
+          const aStarts = asku.startsWith(trimmed) ? 0 : asku.includes(trimmed) ? 1 : 2;
+          const bStarts = bsku.startsWith(trimmed) ? 0 : bsku.includes(trimmed) ? 1 : 2;
+          if (aStarts !== bStarts) return aStarts - bStarts;
+          return 0;
+        })
+        .slice(0, 8)
     : [];
 
   const handleClickOutside = useCallback((e: MouseEvent) => {
@@ -134,12 +144,19 @@ export default function Header() {
               <span className="hidden md:block">Каталог</span>
             </button>
 
-            <div className="relative flex flex-1 items-center overflow-hidden rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
+            <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
               <input
                 type="text"
                 placeholder="Поиск по артикулу или названию..."
                 value={query}
                 onChange={(e) => { setQuery(e.target.value); setOpen(e.target.value.trim().length >= 2); }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && results.length > 0) {
+                    e.preventDefault();
+                    router.push(`/product/${results[0].sku}`);
+                    setOpen(false);
+                  }
+                }}
                 className="h-10 w-full px-3 text-sm text-slate-900 focus:outline-none md:h-12 md:px-4"
               />
               
@@ -151,7 +168,7 @@ export default function Header() {
                         <div className="h-12 w-12 shrink-0 bg-slate-100 rounded flex items-center justify-center text-[10px] text-slate-400">IMG</div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium text-slate-900 truncate">{p.name}</p>
-                          <p className="text-xs text-slate-500">Арт: {p.sku}</p>
+                          <p className="text-[10px] text-slate-500 uppercase tracking-tight">Арт: {p.sku}</p>
                         </div>
                      </Link>
                    ))}

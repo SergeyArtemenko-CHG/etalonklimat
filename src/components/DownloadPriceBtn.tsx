@@ -40,6 +40,7 @@ export default function DownloadPriceBtn() {
       });
 
       const tableBody = products
+        .filter((p) => p.inStock !== false)
         .map((p) => {
           const priceRub = getPriceRub(p, rate);
           if (priceRub == null) return null;

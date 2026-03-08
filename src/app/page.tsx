@@ -34,7 +34,7 @@ export default function Home() {
               Котлы, горелки, деаэраторы, парогенераторы и комплектующие
             </p>
             <Link
-              href="/category/gorelki-dlya-kotlov-otopleniya"
+              href="/#categories"
               className="inline-block rounded-xl bg-[#FF8C00] px-6 py-3 text-base font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
             >
               В каталог
