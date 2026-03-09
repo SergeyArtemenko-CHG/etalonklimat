@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       return new NextResponse("ok", { status: 200, headers: { "Content-Type": "text/plain; charset=utf-8" } });
     }
 
-    const replyText = typeof message.text === "string" ? message.text.trim() : "";
+    const replyText = ((typeof message.text === "string" ? message.text : "") || "").trim();
     if (!replyText) {
       return new NextResponse("ok", { status: 200, headers: { "Content-Type": "text/plain; charset=utf-8" } });
     }

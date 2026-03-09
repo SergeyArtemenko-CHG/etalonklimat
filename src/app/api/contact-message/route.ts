@@ -1,18 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
-function buildMessage(name: string, phone: string, message: string, sessionId: string): string {
+function buildMessage(
+  name: string,
+  phone: string,
+  message: string,
+  sessionId: string
+): string {
   const n = (name || "").trim() || "Не указано";
   const p = (phone || "").trim() || "Не указано";
-  const lines = [
+  const msg = (message || "").trim() || "—";
+  const sid = (sessionId || "").trim();
+  return [
     "💬 НОВОЕ СООБЩЕНИЕ ИЗ ЧАТА",
     `👤 Имя: ${n}`,
     `📞 Телефон: ${p}`,
-    `📝 Вопрос: ${message}`,
-  ];
-  if (sessionId) {
-    lines.push(`ID: [${sessionId}]`);
-  }
-  return lines.join("\n");
+    `📝 Вопрос: ${msg}`,
+    `ID: [${sid}]`,
+  ].join("\n");
 }
 
 export async function POST(request: NextRequest) {
@@ -23,7 +27,8 @@ export async function POST(request: NextRequest) {
     const phone = typeof body.phone === "string" ? body.phone : "";
     const message = typeof body.message === "string" ? body.message : "";
     const website = typeof body.website === "string" ? body.website : "";
-    const sessionId = typeof body.sessionId === "string" ? (body.sessionId || "").trim() : "";
+    const sessionId = (typeof body.sessionId === "string" ? (body.sessionId || "").trim() : "") ||
+      `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
 
     if ((website || "").trim()) {
       return NextResponse.json({ success: true }, { status: 200 });
@@ -46,7 +51,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const text = buildMessage(name, phone, message.trim(), sessionId);
+    const text = buildMessage(name, phone, (message || "").trim(), sessionId);
 
     const url = `https://api.telegram.org/bot${encodeURIComponent(token)}/sendMessage`;
     const res = await fetch(url, {
@@ -65,7 +70,7 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { success: true, sessionId: sessionId || null },
+      { success: true, sessionId },
       { status: 200, headers: { "Content-Type": "application/json; charset=utf-8" } }
     );
   } catch (e) {

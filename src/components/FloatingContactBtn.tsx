@@ -158,15 +158,26 @@ export default function FloatingContactBtn() {
     setLoading(true);
 
     try {
-      await fetch("/api/contact-message", {
+      const sid = (sessionId || "").trim() || getSessionId();
+      const res = await fetch("/api/contact-message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: text,
-          sessionId: sessionId || undefined,
+          sessionId: sid,
           website: "",
         }),
       });
+      const data = await res.json().catch(() => ({}));
+      if (data.sessionId && typeof data.sessionId === "string") {
+        const newSid = (data.sessionId || "").trim();
+        if (newSid) {
+          setSessionId(newSid);
+          try {
+            localStorage.setItem(SESSION_STORAGE_KEY, newSid);
+          } catch {}
+        }
+      }
     } catch {
       // сообщение уже добавлено, просто не показываем ошибку
     } finally {

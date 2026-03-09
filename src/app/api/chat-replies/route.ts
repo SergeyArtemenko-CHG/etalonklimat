@@ -4,8 +4,14 @@ import { getReplies } from "@/lib/chat-replies-storage";
 export async function GET(request: NextRequest) {
   try {
     const sessionParam = request.nextUrl.searchParams.get("session");
-    const sessionId =
-      typeof sessionParam === "string" ? decodeURIComponent(sessionParam).trim() : "";
+    let sessionId = "";
+    if (typeof sessionParam === "string") {
+      try {
+        sessionId = (decodeURIComponent(sessionParam) || "").trim();
+      } catch {
+        sessionId = (sessionParam || "").trim();
+      }
+    }
 
     if (!sessionId) {
       return NextResponse.json(
