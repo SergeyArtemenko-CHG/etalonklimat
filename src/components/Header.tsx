@@ -121,22 +121,14 @@ export default function Header() {
         <div className="flex flex-col md:flex-row md:items-center gap-3 h-[72px] md:h-[88px] py-3 md:py-4">
           {/* Logo */}
           <div className="flex items-center justify-between md:w-auto md:min-w-[180px]">
-            <Link href="/" className="flex items-center gap-2 transition-transform active:scale-95">
-              <svg
-                viewBox="0 0 48 48"
-                className={`${isShrunk ? "h-7 w-7 md:h-8 md:w-8" : "h-9 w-9 md:h-10 md:w-10"} shrink-0 transition-all duration-300`}
-              >
-                <rect width="48" height="48" rx="8" fill="white" />
-                <g fill="none" stroke="#003366" strokeWidth="3">
-                  <path d="M14 14h20M14 24h16M14 34h12" />
-                  <path d="M14 14v20" strokeWidth="3.5" />
-                </g>
-              </svg>
-              <span className={`font-bold tracking-wider text-white transition-all duration-300 ${
-                isShrunk ? "text-lg" : "text-xl md:text-2xl"
-              }`}>
-                ETALON
-              </span>
+            <Link href="/" className="flex items-center transition-transform active:scale-95">
+              <img
+                src="/images/Logo/ETALON_LOGO.png"
+                alt="ETALON"
+                className={`shrink-0 object-contain transition-all duration-300 ${
+                  isShrunk ? "h-8 md:h-9" : "h-10 md:h-12"
+                }`}
+              />
             </Link>
             
             {/* Мобильная кнопка корзины (появляется только в мобильном ряду логотипа) */}

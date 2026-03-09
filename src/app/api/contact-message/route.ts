@@ -1,14 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 
-function buildMessage(name: string, phone: string, message: string): string {
+function buildMessage(name: string, phone: string, message: string, sessionId: string): string {
   const n = (name || "").trim() || "Не указано";
   const p = (phone || "").trim() || "Не указано";
-  return [
+  const lines = [
     "💬 НОВОЕ СООБЩЕНИЕ ИЗ ЧАТА",
     `👤 Имя: ${n}`,
     `📞 Телефон: ${p}`,
     `📝 Вопрос: ${message}`,
-  ].join("\n");
+  ];
+  if (sessionId) {
+    lines.push(`ID: [${sessionId}]`);
+  }
+  return lines.join("\n");
 }
 
 export async function POST(request: NextRequest) {
@@ -19,6 +23,7 @@ export async function POST(request: NextRequest) {
     const phone = typeof body.phone === "string" ? body.phone : "";
     const message = typeof body.message === "string" ? body.message : "";
     const website = typeof body.website === "string" ? body.website : "";
+    const sessionId = typeof body.sessionId === "string" ? (body.sessionId || "").trim() : "";
 
     if ((website || "").trim()) {
       return NextResponse.json({ success: true }, { status: 200 });
@@ -41,9 +46,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const text = buildMessage(name, phone, message.trim());
+    const text = buildMessage(name, phone, message.trim(), sessionId);
 
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    const url = `https://api.telegram.org/bot${encodeURIComponent(token)}/sendMessage`;
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -59,7 +64,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json(
+      { success: true, sessionId: sessionId || null },
+      { status: 200, headers: { "Content-Type": "application/json; charset=utf-8" } }
+    );
   } catch (e) {
     console.error("Contact-message API error:", e);
     return NextResponse.json(

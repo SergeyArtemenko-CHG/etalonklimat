@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 
 const STORAGE_KEY = "chat_widget_messages";
+const SESSION_STORAGE_KEY = "chat_widget_session";
 
 type Message = { role: "client" | "max"; text: string; id: string };
 
@@ -27,6 +28,19 @@ function saveMessages(messages: Message[]) {
 
 function genId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
+function getSessionId(): string {
+  if (typeof window === "undefined") return "";
+  try {
+    let s = localStorage.getItem(SESSION_STORAGE_KEY);
+    if (s) return s;
+    s = `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
+    localStorage.setItem(SESSION_STORAGE_KEY, s);
+    return s;
+  } catch {
+    return `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
+  }
 }
 
 function ChatIcon({ className }: { className?: string }) {
@@ -57,8 +71,14 @@ export default function FloatingContactBtn() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [sessionId, setSessionId] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const lastReplyIdxRef = useRef(0);
+
+  useEffect(() => {
+    setSessionId(getSessionId());
+  }, []);
 
   useEffect(() => {
     setMessages(loadMessages());
@@ -99,6 +119,35 @@ export default function FloatingContactBtn() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  useEffect(() => {
+    if (!sessionId) return;
+    const poll = async () => {
+      try {
+        const url = `/api/chat-replies?session=${encodeURIComponent(sessionId)}`;
+        const res = await fetch(url);
+        const data = await res.json().catch(() => ({ replies: [] }));
+        const replies = Array.isArray(data.replies) ? data.replies : [];
+        if (replies.length > lastReplyIdxRef.current) {
+          const newReplies = replies.slice(lastReplyIdxRef.current);
+          lastReplyIdxRef.current = replies.length;
+          setMessages((prev) => [
+            ...prev,
+            ...newReplies.map((r: { text: string; timestamp: number }) => ({
+              role: "max" as const,
+              text: r.text,
+              id: `reply-${r.timestamp}`,
+            })),
+          ]);
+        }
+      } catch {
+        // ignore
+      }
+    };
+    const id = setInterval(poll, 5000);
+    poll();
+    return () => clearInterval(id);
+  }, [sessionId]);
+
   const handleSend = async () => {
     const text = input.trim();
     if (!text || loading) return;
@@ -112,7 +161,11 @@ export default function FloatingContactBtn() {
       await fetch("/api/contact-message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({
+          message: text,
+          sessionId: sessionId || undefined,
+          website: "",
+        }),
       });
     } catch {
       // сообщение уже добавлено, просто не показываем ошибку
