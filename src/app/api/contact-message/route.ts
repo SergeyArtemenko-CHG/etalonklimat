@@ -1,32 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
 
-type Body = {
-  name?: string;
-  phone?: string;
-  message: string;
-  website?: string; // honeypot
-};
-
-function buildMessage(body: Body): string {
-  const name = body.name?.trim() || "не указано";
-  const phone = body.phone?.trim() || "не указан";
+function buildMessage(name: string, phone: string, message: string): string {
+  const n = (name || "").trim() || "Не указано";
+  const p = (phone || "").trim() || "Не указано";
   return [
     "💬 НОВОЕ СООБЩЕНИЕ ИЗ ЧАТА",
-    `👤 Имя: ${name}`,
-    `📞 Телефон: ${phone}`,
-    `📝 Вопрос: ${body.message}`,
+    `👤 Имя: ${n}`,
+    `📞 Телефон: ${p}`,
+    `📝 Вопрос: ${message}`,
   ].join("\n");
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as Body;
+    const raw = await request.json();
+    const body = raw && typeof raw === "object" ? raw : {};
+    const name = typeof body.name === "string" ? body.name : "";
+    const phone = typeof body.phone === "string" ? body.phone : "";
+    const message = typeof body.message === "string" ? body.message : "";
+    const website = typeof body.website === "string" ? body.website : "";
 
-    if (body.website?.trim()) {
+    if ((website || "").trim()) {
       return NextResponse.json({ success: true }, { status: 200 });
     }
 
-    if (!body.message?.trim()) {
+    if (!(message || "").trim()) {
       return NextResponse.json(
         { error: "Введите сообщение" },
         { status: 400 }
@@ -36,18 +34,14 @@ export async function POST(request: NextRequest) {
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID ?? process.env.CHAT_ID;
 
-    if (!token?.trim() || !chatId?.trim()) {
+    if (!(token || "").trim() || !(chatId || "").trim()) {
       return NextResponse.json(
         { error: "Настройте TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID в .env.local" },
         { status: 500 }
       );
     }
 
-    const text = buildMessage({
-      name: body.name.trim(),
-      phone: body.phone.trim(),
-      message: body.message.trim(),
-    });
+    const text = buildMessage(name, phone, message.trim());
 
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
     const res = await fetch(url, {
