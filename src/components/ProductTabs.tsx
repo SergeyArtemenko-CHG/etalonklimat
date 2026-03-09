@@ -48,7 +48,29 @@ export default function ProductTabs({
       <div className="p-4 md:p-6">
         {active === "description" && (
           <div className="prose prose-sm max-w-none text-slate-600">
-            <p>{longDescription || description || "Описание отсутствует."}</p>
+            {(() => {
+              const text = (longDescription || description || "").trim();
+              if (!text) {
+                return <p>Описание отсутствует.</p>;
+              }
+
+              const lines = text
+                .split(/\r?\n/)
+                .map((line) => line.trim())
+                .filter(Boolean);
+
+              if (lines.length <= 1) {
+                return <p>{lines[0]}</p>;
+              }
+
+              return (
+                <ul className="list-disc space-y-1 pl-4 marker:text-[#FF8C00]">
+                  {lines.map((line, index) => (
+                    <li key={index}>{line}</li>
+                  ))}
+                </ul>
+              );
+            })()}
           </div>
         )}
 

@@ -2,10 +2,32 @@
 
 import { useState, useRef, useEffect } from "react";
 
-const PHONE = "74993980140";
-const WHATSAPP_URL = `https://wa.me/${PHONE}`;
-const TELEGRAM_URL = `https://t.me/+${PHONE}`;
-const TEL_URL = "tel:+74993980140";
+const STORAGE_KEY = "chat_widget_messages";
+
+type Message = { role: "client" | "max"; text: string; id: string };
+
+function loadMessages(): Message[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveMessages(messages: Message[]) {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+  } catch {}
+}
+
+function genId() {
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
 
 function ChatIcon({ className }: { className?: string }) {
   return (
@@ -24,71 +46,202 @@ function CloseIcon({ className }: { className?: string }) {
   );
 }
 
+const WELCOME_MSG: Message = {
+  role: "max",
+  text: "Здравствуйте! Я Макс. Чем могу помочь?",
+  id: "welcome",
+};
+
 export default function FloatingContactBtn() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMessages(loadMessages());
+  }, []);
+
+  const welcomeAddedRef = useRef(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      welcomeAddedRef.current = true;
+      setMessages((prev) => {
+        const hasWelcome = prev.some((m) => m.id === "welcome");
+        if (hasWelcome) return prev;
+        const next = [...prev, WELCOME_MSG];
+        saveMessages(next);
+        return next;
+      });
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen || !welcomeAddedRef.current) return;
+    setMessages((prev) => {
+      const hasWelcome = prev.some((m) => m.id === "welcome");
+      if (hasWelcome) return prev;
+      const next = [...prev, WELCOME_MSG];
+      saveMessages(next);
+      return next;
+    });
+  }, [isOpen]);
+
+  useEffect(() => {
+    saveMessages(messages);
+  }, [messages]);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setOpen(false);
+        setIsOpen(false);
       }
     };
-    if (open) document.addEventListener("mousedown", handleClickOutside);
+    if (isOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [open]);
+  }, [isOpen]);
+
+  const handleSend = async () => {
+    const text = input.trim();
+    if (!text || loading) return;
+
+    const clientMsg: Message = { role: "client", text, id: genId() };
+    setMessages((prev) => [...prev, clientMsg]);
+    setInput("");
+    setLoading(true);
+
+    try {
+      await fetch("/api/contact-message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text }),
+      });
+    } catch {
+      // сообщение уже добавлено, просто не показываем ошибку
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const hasWelcome = messages.some((m) => m.id === "welcome");
 
   return (
-    <div ref={menuRef} className="fixed bottom-20 right-6 z-40 md:bottom-6">
-      {open && (
-        <div className="absolute bottom-14 right-0 min-w-[220px] rounded-xl border border-slate-200 bg-white py-2 shadow-lg">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-800 transition hover:bg-slate-50"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white">
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-            </span>
-            Написать в WhatsApp
-          </a>
-          <a
-            href={TELEGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-800 transition hover:bg-slate-50"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0088cc] text-white">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.098.155.229.171.322.016.094.036.308.02.475z" />
-              </svg>
-            </span>
-            Написать в Telegram
-          </a>
-          <a
-            href={TEL_URL}
-            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-800 transition hover:bg-slate-50"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#003366] text-white">
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-            </span>
-            Заказать звонок
-          </a>
+    <div ref={menuRef} className="fixed bottom-5 right-5 z-[9999] isolate">
+      {/* Окно чата с плавным появлением */}
+      <div
+        className={`absolute bottom-16 right-0 z-20 flex w-[340px] max-w-[calc(100vw-3rem)] flex-col rounded-xl border border-slate-200 bg-white shadow-lg transition-all duration-300 ${
+          isOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"
+        }`}
+        style={{ height: "420px" }}
+      >
+          <div className="flex flex-1 flex-col overflow-hidden">
+            <div className="flex flex-1 flex-col gap-2 overflow-y-auto p-3">
+              {messages.map((m) => (
+                <div
+                  key={m.id}
+                  className={`flex ${m.role === "client" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
+                      m.role === "client"
+                        ? "bg-[#0088cc] text-white"
+                        : "bg-slate-200 text-slate-800"
+                    }`}
+                  >
+                    {m.text}
+                  </div>
+                </div>
+              ))}
+              <div ref={messagesEndRef} />
+            </div>
+
+            <div className="border-t border-slate-200 p-2">
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}
+                  placeholder="Напишите сообщение..."
+                  disabled={loading}
+                  className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-sm outline-none focus:border-[#FF8C00] disabled:bg-slate-50"
+                />
+                <button
+                  type="button"
+                  onClick={handleSend}
+                  disabled={loading || !input.trim()}
+                  className="rounded-full bg-[#FF8C00] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60"
+                >
+                  {loading ? "…" : "Отпр."}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {/* Tooltip с приветствием и полем ввода, когда окно закрыто */}
+      {hasWelcome && !isOpen && (
+        <div
+          className="absolute bottom-16 right-0 z-10 w-64 animate-[fadeIn_0.3s_ease-out] rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-700 shadow-lg"
+        >
+          <p className="mb-3 leading-snug">{WELCOME_MSG.text}</p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey && input.trim()) {
+                  handleSend();
+                  setIsOpen(true);
+                }
+              }}
+              placeholder="Напишите ответ..."
+              disabled={loading}
+              className="flex-1 rounded-full border border-slate-200 px-3 py-2 text-sm outline-none focus:border-[#FF8C00] disabled:bg-slate-50"
+            />
+            <button
+              type="button"
+              onClick={async () => {
+                const hadText = !!input.trim();
+                await handleSend();
+                if (hadText) setIsOpen(true);
+              }}
+              disabled={loading || !input.trim()}
+              className="rounded-full bg-[#FF8C00] px-3 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60"
+            >
+              {loading ? "…" : "Отпр."}
+            </button>
+          </div>
+          <div className="absolute -bottom-1.5 right-6 h-3 w-3 rotate-45 border-r border-b border-slate-200 bg-white" />
         </div>
       )}
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#FF8C00] text-white shadow-lg transition hover:bg-[#ff9f26] hover:shadow-xl"
-        aria-label={open ? "Закрыть меню связи" : "Связаться с нами"}
-      >
-        {open ? <CloseIcon className="h-6 w-6" /> : <ChatIcon className="h-6 w-6" />}
-      </button>
+
+      {/* Кнопка чата с индикатором */}
+      <div className="absolute bottom-0 right-0 z-10">
+        {hasWelcome && !isOpen && (
+          <span
+            className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 ring-2 ring-white"
+            aria-hidden
+          />
+        )}
+        <button
+          type="button"
+          onClick={() => setIsOpen((v) => !v)}
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-[#FF8C00] text-white shadow-lg transition hover:bg-[#ff9f26] hover:shadow-xl"
+          aria-label={isOpen ? "Закрыть чат" : "Открыть чат"}
+        >
+          {isOpen ? <CloseIcon className="h-6 w-6" /> : <ChatIcon className="h-6 w-6" />}
+        </button>
+      </div>
     </div>
   );
 }

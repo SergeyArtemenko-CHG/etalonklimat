@@ -31,7 +31,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="transition hover:text-[#FF8C00]">
+                <Link href="/requisites" className="transition hover:text-[#FF8C00]">
                   Реквизиты
                 </Link>
               </li>

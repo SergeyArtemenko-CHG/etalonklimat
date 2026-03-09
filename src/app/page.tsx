@@ -4,12 +4,111 @@ import Footer from "@/components/Footer";
 import { products, categories } from "@/data/products";
 import Link from "next/link";
 
-function CategoryIcon({ className }: { className?: string }) {
+function CategoryIcon({
+  slug,
+  className,
+}: {
+  slug: string;
+  className?: string;
+}) {
+  const key = slug.toLowerCase();
+
+  // Горелки
+  if (key.includes("gorelki")) {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className={className}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      >
+        <path
+          d="M12 3c1.8 1.6 3.5 3.8 3.5 6.2 0 2.2-1.6 3.8-3.5 3.8S8.5 11.4 8.5 9.2C8.5 6.8 10.2 4.6 12 3Z"
+          fill="currentColor"
+          stroke="none"
+        />
+        <path
+          d="M8.5 13.5C7.3 14.3 6.5 15.7 6.5 17.2 6.5 19.4 8.4 21 12 21s5.5-1.6 5.5-3.8c0-1.5-.8-2.9-2-3.7"
+          stroke="currentColor"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+
+  // Котлы (водогрейные / паровые / конденсационные)
+  if (key.includes("kotly") || key.includes("kotel") || key.includes("kotelnye")) {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className={className}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        <rect x="4" y="5" width="16" height="14" rx="2" />
+        <rect x="7" y="8" width="10" height="5" rx="1.5" />
+        <path d="M8 17h8" />
+        <circle cx="9" cy="11" r="0.9" fill="currentColor" stroke="none" />
+        <circle cx="15" cy="11" r="0.9" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+
+  // Деаэраторы, баки, сосуды
+  if (key.includes("deaerator") || key.includes("deaeratory") || key.includes("bak")) {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className={className}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        <rect x="4" y="8" width="16" height="8" rx="3" />
+        <path d="M8 8V6a4 4 0 0 1 8 0v2" />
+        <path d="M6 16v2M18 16v2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // Пар / давление / парогенераторы
+  if (key.includes("parov") || key.includes("parogenerator") || key.includes("par")) {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className={className}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        <path
+          d="M8 17c0-1 .4-1.5.9-2 .5-.5 1.1-1 .1-2C8 11 8.6 10.5 9.1 10 9.6 9.5 10 9 10 8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M14 17c0-1 .4-1.5.9-2 .5-.5 1.1-1 .1-2C14 11 14.6 10.5 15.1 10 15.6 9.5 16 9 16 8"
+          strokeLinecap="round"
+        />
+        <rect x="4" y="17" width="16" height="3" rx="1.5" />
+      </svg>
+    );
+  }
+
+  // Аксессуары / универсальная иконка
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="3.5" y="5" width="17" height="6" rx="1.5" />
-      <rect x="3.5" y="13" width="10" height="6" rx="1.5" />
-      <circle cx="18.5" cy="16" r="2.5" />
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    >
+      <rect x="4" y="4" width="7" height="7" rx="1.5" />
+      <rect x="13" y="4" width="7" height="7" rx="1.5" />
+      <rect x="4" y="13" width="7" height="7" rx="1.5" />
+      <path d="M15 13h3v7h-3z" />
     </svg>
   );
 }
@@ -19,6 +118,24 @@ export default function Home() {
   const uniqueBrands = Array.from(
     new Set(products.map((p) => p.brand).filter((b): b is string => Boolean(b?.trim())))
   ).sort((a, b) => a.localeCompare(b, "ru")).slice(0, 6);
+
+  const featuredBrands = [
+    {
+      name: "Энергостандарт",
+      slug: "energostandart",
+      logo: "/images/brands/ENERGOSTANDART.png",
+    },
+    {
+      name: "FBR",
+      slug: "fbr",
+      logo: "/images/brands/FBR.png",
+    },
+    {
+      name: "ЭнергоГаз Сервис",
+      slug: "egs",
+      logo: "/images/brands/ICI.png",
+    },
+  ] as const;
 
   return (
     <div className="min-h-screen bg-slate-100">
@@ -42,6 +159,31 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Brands */}
+        <section className="mx-auto max-w-6xl px-4 py-8 md:py-10">
+          <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
+            <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
+              Наши бренды
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+              {featuredBrands.map((brand) => (
+                <Link
+                  key={brand.slug}
+                  href={`/brands/${brand.slug}`}
+                  className="group flex h-16 min-w-[120px] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 shadow-sm transition hover:border-[#FF8C00]/60 hover:bg-white hover:shadow-md"
+                >
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="max-h-10 max-w-[120px] object-contain grayscale group-hover:grayscale-0 transition"
+                    loading="lazy"
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Categories grid */}
         <section id="categories" className="mx-auto max-w-6xl px-4 py-10">
           <h2 className="mb-6 text-xl font-semibold text-[#0b1f33] md:text-2xl">
@@ -55,7 +197,7 @@ export default function Home() {
                 className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-[#FF8C00]/50 hover:shadow-md"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#003366]/10">
-                  <CategoryIcon className="h-6 w-6 text-[#003366]" />
+                  <CategoryIcon slug={cat.slug} className="h-6 w-6 text-[#003366]" />
                 </div>
                 <span className="font-medium text-slate-800">{cat.name}</span>
               </Link>
@@ -63,7 +205,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Popular products + Brands */}
+        {/* Popular products */}
         <section className="mx-auto max-w-6xl px-4 py-6 md:py-8">
           <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
             <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
@@ -83,23 +225,6 @@ export default function Home() {
                   burnerPowerMax={product.burnerPowerMax}
                   inStock={product.inStock}
                 />
-              ))}
-            </div>
-          </div>
-
-          {/* Brands */}
-          <div className="mt-8 rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
-            <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
-              Наши бренды
-            </h2>
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-              {uniqueBrands.map((brand) => (
-                <div
-                  key={brand}
-                  className="flex h-14 min-w-[100px] items-center justify-center rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700"
-                >
-                  {brand}
-                </div>
               ))}
             </div>
           </div>
