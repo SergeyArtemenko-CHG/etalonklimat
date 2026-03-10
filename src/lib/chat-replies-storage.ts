@@ -1,9 +1,9 @@
 import { readFile, writeFile, mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import path from "path";
+import os from "os";
 
-const STORAGE_DIR = path.join(process.cwd(), "data");
-const STORAGE_FILE = path.join(STORAGE_DIR, "chat_answers.json");
+const STORAGE_FILE = path.join(os.tmpdir(), "chat_answers.json");
 
 export type ReplyRecord = {
   text: string;
@@ -27,8 +27,9 @@ async function readStorage(): Promise<Storage> {
 
 async function writeStorage(data: Storage): Promise<void> {
   try {
-    if (!existsSync(STORAGE_DIR)) {
-      await mkdir(STORAGE_DIR, { recursive: true });
+    const dir = path.dirname(STORAGE_FILE);
+    if (!existsSync(dir)) {
+      await mkdir(dir, { recursive: true });
     }
     await writeFile(STORAGE_FILE, JSON.stringify(data, null, 0), "utf-8");
   } catch (e) {
