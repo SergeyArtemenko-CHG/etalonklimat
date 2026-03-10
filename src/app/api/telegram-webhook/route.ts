@@ -1,49 +1,33 @@
 import { NextRequest } from "next/server";
 import fs from "fs";
-import path from "path";
 
-// Принудительно отключаем все фишки Next.js для этого роута
 export const dynamic = 'force-dynamic';
-export const runtime = 'nodejs';
-
-const ANSWERS_PATH = "/tmp/chat_answers.json";
 
 export async function POST(req: NextRequest) {
-  // 1. Сразу читаем тело, чтобы Telegram не ждал
-  const body = await req.json();
-  
-  // 2. Логика обработки (в блоке try, чтобы не уронить сервер)
   try {
-    const message = body?.message;
-    const replyTo = message?.reply_to_message;
+    const body = await req.json();
+    const sessionIdMatch = body?.message?.reply_to_message?.text?.match(/ID:\s*(\S+)/);
 
-    if (replyTo && message.text) {
-      const text = replyTo.text || "";
-      const match = text.match(/ID:\s*(\S+)/);
+    if (sessionIdMatch && body.message.text) {
+      const sessionId = sessionIdMatch[1];
+      const answer = encodeURIComponent(body.message.text);
       
-      if (match) {
-        const sessionId = match[1];
-        const answer = encodeURIComponent(message.text);
-
-        let answers = {};
-        if (fs.existsSync(ANSWERS_PATH)) {
-          answers = JSON.parse(fs.readFileSync(ANSWERS_PATH, "utf8"));
-        }
-        answers[sessionId] = answer;
-        fs.writeFileSync(ANSWERS_PATH, JSON.stringify(answers));
-        console.log("SUCCESS: Answer saved for", sessionId);
+      const filePath = "/tmp/chat_answers.json";
+      let answers = {};
+      if (fs.existsSync(filePath)) {
+        answers = JSON.parse(fs.readFileSync(filePath, "utf8"));
       }
+      answers[sessionId] = answer;
+      fs.writeFileSync(filePath, JSON.stringify(answers));
+      console.log("SUCCESS_SAVE_ID:", sessionId);
     }
   } catch (e) {
-    console.log("WORKER ERROR:", e.message);
+    // Тихо игнорируем ошибки логики, чтобы не пугать Telegram
   }
 
-  // 3. САМОЕ ВАЖНОЕ: Возвращаем чистейший ответ, который не вызовет ByteString
+  // ОТВЕТ БЕЗ КИРИЛЛИЦЫ (важнейшая часть)
   return new Response('{"ok":true}', {
     status: 200,
-    headers: {
-      'Content-Type': 'application/json',
-      'Connection': 'close' // Говорим Telegram сразу закрыть соединение
-    }
+    headers: { 'Content-Type': 'application/json' }
   });
 }
