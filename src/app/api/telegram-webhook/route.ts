@@ -5,26 +5,22 @@ const ANSWERS_PATH = "/tmp/chat_answers.json";
 const DEBUG_LOG_PATH = "/tmp/tg_debug.log";
 
 export async function POST(req: NextRequest) {
-  console.log("WEBHOOK HIT");
-
-  let body: any = null;
   try {
-    body = await req.json();
+    console.log("WEBHOOK HIT");
+
+    let body: any = null;
     try {
+      body = await req.json();
       fs.appendFileSync(DEBUG_LOG_PATH, JSON.stringify(body) + "\n");
     } catch {
-      // ignore fs logging errors
+      // ignore JSON/FS errors
     }
-  } catch {
-    // ignore JSON parse errors
-  }
 
-  const okResponse = () =>
-    new Response(JSON.stringify({ ok: true }), {
-      status: 200,
-    });
+    const okResponse = () =>
+      new Response(JSON.stringify({ ok: true }), {
+        status: 200,
+      });
 
-  try {
     const message = body?.message;
     if (!message) return okResponse();
 
@@ -46,9 +42,8 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    console.log("Full Reply Text:", replyTo?.text || "");
-
     if (!sessionId || typeof message.text !== "string") {
+      console.log("Full Reply Text (no ID):", replyTo?.text || "");
       return okResponse();
     }
 
@@ -61,6 +56,7 @@ export async function POST(req: NextRequest) {
         answers = raw ? JSON.parse(raw) : {};
       }
       answers[sessionId] = answer;
+      console.log("SAVING FOR SESSION:", sessionId);
       fs.writeFileSync(ANSWERS_PATH, JSON.stringify(answers));
     } catch {
       // ignore file write errors
@@ -68,6 +64,8 @@ export async function POST(req: NextRequest) {
 
     return okResponse();
   } catch {
-    return okResponse();
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200,
+    });
   }
 }
