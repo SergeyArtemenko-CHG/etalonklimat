@@ -23,7 +23,15 @@ export async function GET(request: NextRequest) {
     const replies = await getReplies(sessionId);
 
     const body = JSON.stringify({
-      replies: replies.map((r) => ({ text: r.text, timestamp: r.timestamp })),
+      replies: replies.map((r) => {
+        let text = r.text;
+        try {
+          text = decodeURIComponent(text);
+        } catch {
+          // leave as is
+        }
+        return { text, timestamp: r.timestamp };
+      }),
     });
 
     return new NextResponse(body, {

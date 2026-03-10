@@ -40,7 +40,7 @@ async function writeStorage(data: Storage): Promise<void> {
 export async function addReply(sessionId: string, text: string): Promise<void> {
   const storage = await readStorage();
   const list = storage[sessionId] ?? [];
-  list.push({ text, timestamp: Date.now() });
+  list.push({ text: encodeURIComponent(text), timestamp: Date.now() });
   storage[sessionId] = list.slice(-50); // keep last 50
   await writeStorage(storage);
 }
