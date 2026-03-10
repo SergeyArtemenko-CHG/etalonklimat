@@ -17,8 +17,9 @@ export async function POST(req: NextRequest) {
     }
 
     const okResponse = () =>
-      new Response(JSON.stringify({ ok: true }), {
+      new Response('{"ok":true}', {
         status: 200,
+        headers: { 'Content-Type': 'application/json' }
       });
 
     const message = body?.message;
