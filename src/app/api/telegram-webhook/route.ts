@@ -4,8 +4,6 @@ export const dynamic = 'force-dynamic';
 import { NextRequest } from "next/server";
 import fs from "fs";
 
-export const dynamic = 'force-dynamic';
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
