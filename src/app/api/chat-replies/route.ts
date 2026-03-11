@@ -53,21 +53,13 @@ export async function GET(request: NextRequest) {
     const keyBracketed = `[${sessionId}]`;
     const keyEncoded = encodeURIComponent(sessionId);
 
-    let usedKey: string | null = null;
-    let rawValue: string | undefined = undefined;
+    const val1 = rawMap[keyPlain];
+    const val2 = rawMap[keyBracketed];
+    const val3 = rawMap[keyEncoded];
 
-    if (Object.prototype.hasOwnProperty.call(rawMap, keyPlain)) {
-      usedKey = keyPlain;
-      rawValue = rawMap[keyPlain];
-    } else if (Object.prototype.hasOwnProperty.call(rawMap, keyBracketed)) {
-      usedKey = keyBracketed;
-      rawValue = rawMap[keyBracketed];
-    } else if (Object.prototype.hasOwnProperty.call(rawMap, keyEncoded)) {
-      usedKey = keyEncoded;
-      rawValue = rawMap[keyEncoded];
-    }
+    const answer = val1 || val2 || val3;
 
-    if (typeof rawValue === "undefined" || usedKey === null) {
+    if (typeof answer === "undefined") {
       return NextResponse.json(
         { replies: [] },
         { status: 200, headers: { "Content-Type": "application/json; charset=utf-8" } }
@@ -77,8 +69,10 @@ export async function GET(request: NextRequest) {
     // лог для отладки
     console.log("API_MATCH_FOUND:", sessionId);
 
-    // удаляем использованный ключ, чтобы сообщение не приходило повторно
-    delete rawMap[usedKey];
+    // удаляем все возможные варианты ключей, чтобы не было дублей
+    delete rawMap[keyPlain];
+    delete rawMap[keyBracketed];
+    delete rawMap[keyEncoded];
 
     // сохраняем обновлённую карту
     try {
@@ -87,9 +81,9 @@ export async function GET(request: NextRequest) {
       // если не удалось записать — это не должно ломать выдачу ответа
     }
 
-    let decoded = rawValue;
+    let decoded = answer;
     try {
-      decoded = decodeURIComponent(rawValue);
+      decoded = decodeURIComponent(answer);
     } catch {
       // оставляем как есть
     }
