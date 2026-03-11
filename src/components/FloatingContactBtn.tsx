@@ -83,10 +83,12 @@ export default function FloatingContactBtn() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
   const [sessionId, setSessionId] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const lastReplyIdxRef = useRef(0);
+  const messagesRef = useRef<Message[]>([]);
 
   useEffect(() => {
     const sid = getSessionId();
@@ -126,6 +128,7 @@ export default function FloatingContactBtn() {
 
   useEffect(() => {
     saveMessages(messages);
+    messagesRef.current = messages;
   }, [messages]);
 
   useEffect(() => {
@@ -136,8 +139,15 @@ export default function FloatingContactBtn() {
     if (!sessionId || !(sessionId || "").trim()) return;
 
     const fetchReplies = async () => {
+      console.log(
+        "Poll cycle:",
+        new Date().toLocaleTimeString(),
+        "Messages count:",
+        messagesRef.current.length
+      );
       console.log("Fetching replies for:", sessionId);
       try {
+        setIsTyping(true);
         const res = await fetch("/api/chat-replies", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -145,28 +155,33 @@ export default function FloatingContactBtn() {
         });
         const data = await res.json().catch(() => ({ replies: [] }));
         const replies = Array.isArray(data.replies) ? data.replies : [];
-        if (replies.length > lastReplyIdxRef.current) {
-          const newReplies = replies.slice(lastReplyIdxRef.current);
-          lastReplyIdxRef.current = replies.length;
-          setMessages((prev) => [
-            ...prev,
-            ...newReplies.map((r: { text: string; timestamp: number }) => {
+        if (replies.length) {
+          setMessages((prev) => {
+            let next = prev;
+            for (const r of replies as { text: string; timestamp: number }[]) {
               let text = r.text || "";
               try {
                 text = decodeURIComponent(text);
               } catch {
                 // leave as is
               }
-              return {
-                role: "max" as const,
+              const newMsg: Message = {
+                role: "max",
                 text,
                 id: `reply-${r.timestamp}-${Math.random().toString(36).slice(2, 9)}`,
               };
-            }),
-          ]);
+              if (next.some((m) => m.text === newMsg.text)) {
+                continue;
+              }
+              next = [...next, newMsg];
+            }
+            return next;
+          });
         }
       } catch {
         // ignore
+      } finally {
+        setIsTyping(false);
       }
     };
 
@@ -242,6 +257,13 @@ export default function FloatingContactBtn() {
                   </div>
                 </div>
               ))}
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="max-w-[85%] rounded-2xl bg-slate-200 px-3 py-2 text-xs text-slate-500 italic">
+                    Макс печатает...
+                  </div>
+                </div>
+              )}
               <div ref={messagesEndRef} />
             </div>
 
