@@ -46,27 +46,15 @@ export async function GET(request: NextRequest) {
     }
 
     const keys = Object.keys(rawMap);
-    console.log("KEYS_IN_FILE:", keys);
+    console.log("SEARCHING:", sessionId, "KEYS_IN_FILE:", keys);
 
-    // 2. Поиск ответа (три варианта ключа)
+    // 2. Поиск ответа: чистый ID или ID в скобках
     const keyPlain = sessionId;
     const keyBracketed = `[${sessionId}]`;
-    const keyEncoded = encodeURIComponent(sessionId);
 
-    const val1 = rawMap[keyPlain];
-    const val2 = rawMap[keyBracketed];
-    const val3 = rawMap[keyEncoded];
+    const answer = rawMap[keyPlain] || rawMap[keyBracketed];
 
-    let foundAnswer: string | undefined;
-    if (typeof val2 !== "undefined") {
-      foundAnswer = val2;
-    } else if (typeof val1 !== "undefined") {
-      foundAnswer = val1;
-    } else if (typeof val3 !== "undefined") {
-      foundAnswer = val3;
-    }
-
-    if (typeof foundAnswer === "undefined") {
+    if (typeof answer === "undefined") {
       return new Response(JSON.stringify({ replies: [] }), {
         status: 200,
         headers: { 
@@ -78,10 +66,9 @@ export async function GET(request: NextRequest) {
 
     console.log("API_MATCH_FOUND:", sessionId);
 
-    // 3. Удаляем использованные ключи
+    // 3. Удаляем оба варианта ключей
     delete rawMap[keyPlain];
     delete rawMap[keyBracketed];
-    delete rawMap[keyEncoded];
 
     try {
       fs.writeFileSync(filePath, JSON.stringify(rawMap));
@@ -89,9 +76,9 @@ export async function GET(request: NextRequest) {
       console.error("FS_WRITE_ERROR:", e);
     }
 
-    let decoded = foundAnswer;
+    let decoded = answer;
     try {
-      decoded = decodeURIComponent(foundAnswer);
+      decoded = decodeURIComponent(answer);
     } catch {
       // оставляем как есть
     }
