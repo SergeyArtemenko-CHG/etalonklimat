@@ -77,7 +77,8 @@ export default function FloatingContactBtn() {
   const lastReplyIdxRef = useRef(0);
 
   useEffect(() => {
-    setSessionId(getSessionId());
+    const sid = getSessionId();
+    setSessionId(sid);
   }, []);
 
   useEffect(() => {
@@ -121,7 +122,9 @@ export default function FloatingContactBtn() {
 
   useEffect(() => {
     if (!sessionId) return;
-    const poll = async () => {
+
+    const fetchReplies = async () => {
+      console.log("Fetching replies for:", sessionId);
       try {
         const url = `/api/chat-replies?session=${encodeURIComponent(sessionId)}`;
         const res = await fetch(url);
@@ -132,19 +135,28 @@ export default function FloatingContactBtn() {
           lastReplyIdxRef.current = replies.length;
           setMessages((prev) => [
             ...prev,
-            ...newReplies.map((r: { text: string; timestamp: number }) => ({
-              role: "max" as const,
-              text: r.text,
-              id: `reply-${r.timestamp}`,
-            })),
+            ...newReplies.map((r: { text: string; timestamp: number }) => {
+              let text = r.text || "";
+              try {
+                text = decodeURIComponent(text);
+              } catch {
+                // leave as is
+              }
+              return {
+                role: "max" as const,
+                text,
+                id: `reply-${r.timestamp}-${Math.random().toString(36).slice(2, 9)}`,
+              };
+            }),
           ]);
         }
       } catch {
         // ignore
       }
     };
-    const id = setInterval(poll, 5000);
-    poll();
+
+    const id = setInterval(fetchReplies, 3000);
+    fetchReplies();
     return () => clearInterval(id);
   }, [sessionId]);
 
@@ -169,7 +181,7 @@ export default function FloatingContactBtn() {
         }),
       });
       const data = await res.json().catch(() => ({}));
-      if (data.sessionId && typeof data.sessionId === "string") {
+      if (!sessionId && data.sessionId && typeof data.sessionId === "string") {
         const newSid = (data.sessionId || "").trim();
         if (newSid) {
           setSessionId(newSid);

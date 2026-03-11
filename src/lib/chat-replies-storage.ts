@@ -47,7 +47,10 @@ export async function addReply(sessionId: string, text: string): Promise<void> {
 
 export async function getReplies(sessionId: string): Promise<ReplyRecord[]> {
   const storage = await readStorage();
-  return storage[sessionId] ?? [];
+  const raw = storage[sessionId];
+  if (Array.isArray(raw)) return raw;
+  if (typeof raw === "string") return [{ text: raw, timestamp: 0 }];
+  return [];
 }
 
 export async function clearReplies(sessionId: string): Promise<void> {
