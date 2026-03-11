@@ -5,15 +5,15 @@ export const revalidate = 0;
 import { NextRequest } from "next/server";
 import fs from "fs";
 
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
-    const sessionParam = request.nextUrl.searchParams.get("session");
+    const { sessionId: rawSessionId } = await request.json().catch(() => ({ sessionId: "" }));
     let sessionId = "";
-    if (typeof sessionParam === "string") {
+    if (typeof rawSessionId === "string") {
       try {
-        sessionId = (decodeURIComponent(sessionParam) || "").trim();
+        sessionId = (decodeURIComponent(rawSessionId) || "").trim();
       } catch {
-        sessionId = (sessionParam || "").trim();
+        sessionId = (rawSessionId || "").trim();
       }
     }
 
