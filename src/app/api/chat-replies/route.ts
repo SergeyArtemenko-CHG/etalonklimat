@@ -45,31 +45,42 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // сначала ищем по чистому sessionId
-    let rawValue = rawMap[sessionId];
+    // три варианта ключа:
+    // 1) чистый sessionId
+    // 2) [sessionId]
+    // 3) encodeURIComponent(sessionId)
+    const keyPlain = sessionId;
+    const keyBracketed = `[${sessionId}]`;
+    const keyEncoded = encodeURIComponent(sessionId);
 
-    // если нет — пробуем legacy-ключ с квадратными скобками
-    if (typeof rawValue === "undefined") {
-      const legacyKey = `[${sessionId}]`;
-      rawValue = rawMap[legacyKey];
-      if (typeof rawValue !== "undefined") {
-        // удаляем legacy-ключ, чтобы не слать повторно
-        delete rawMap[legacyKey];
-      }
-    } else {
-      // если нашли по чистому ключу — тоже удаляем, чтобы не повторять ответ
-      delete rawMap[sessionId];
+    let usedKey: string | null = null;
+    let rawValue: string | undefined = undefined;
+
+    if (Object.prototype.hasOwnProperty.call(rawMap, keyPlain)) {
+      usedKey = keyPlain;
+      rawValue = rawMap[keyPlain];
+    } else if (Object.prototype.hasOwnProperty.call(rawMap, keyBracketed)) {
+      usedKey = keyBracketed;
+      rawValue = rawMap[keyBracketed];
+    } else if (Object.prototype.hasOwnProperty.call(rawMap, keyEncoded)) {
+      usedKey = keyEncoded;
+      rawValue = rawMap[keyEncoded];
     }
 
-    // если так и не нашли — просто возвращаем пустой массив
-    if (typeof rawValue === "undefined") {
+    if (typeof rawValue === "undefined" || usedKey === null) {
       return NextResponse.json(
         { replies: [] },
         { status: 200, headers: { "Content-Type": "application/json; charset=utf-8" } }
       );
     }
 
-    // сохраняем обновлённую карту (без уже выданного ответа)
+    // лог для отладки
+    console.log("API_MATCH_FOUND:", sessionId);
+
+    // удаляем использованный ключ, чтобы сообщение не приходило повторно
+    delete rawMap[usedKey];
+
+    // сохраняем обновлённую карту
     try {
       fs.writeFileSync(filePath, JSON.stringify(rawMap));
     } catch {
