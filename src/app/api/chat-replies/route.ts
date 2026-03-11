@@ -1,9 +1,16 @@
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 export const revalidate = 0;
+export const fetchCache = "force-no-store";
 
 import { NextRequest } from "next/server";
 import fs from "fs";
+
+const JSON_HEADERS = {
+  "Content-Type": "application/json",
+  "Cache-Control": "no-store, max-age=0",
+  Connection: "close",
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,15 +24,8 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // 1. Если сессии нет, возвращаем пустой массив (нативный Response)
     if (!sessionId) {
-      return new Response(JSON.stringify({ replies: [] }), {
-        status: 200,
-        headers: { 
-          "Content-Type": "application/json",
-          "Cache-Control": "no-store, max-age=0" 
-        },
-      });
+      return new Response(JSON.stringify({ replies: [] }), { status: 200, headers: JSON_HEADERS });
     }
 
     console.log("API_LOOKING_FOR:", sessionId);
@@ -33,22 +33,22 @@ export async function POST(request: NextRequest) {
     const filePath = "/tmp/chat_answers.json";
     let rawMap: Record<string, string> = {};
 
-    if (fs.existsSync(filePath)) {
-      try {
+    try {
+      if (fs.existsSync(filePath)) {
         const raw = fs.readFileSync(filePath, "utf8");
         const parsed = JSON.parse(raw);
         if (parsed && typeof parsed === "object") {
           rawMap = parsed as Record<string, string>;
         }
-      } catch {
-        rawMap = {};
       }
+    } catch (e) {
+      console.error("FS_READ_ERROR:", e);
+      rawMap = {};
     }
 
     const keys = Object.keys(rawMap);
     console.log("SEARCHING:", sessionId, "KEYS_IN_FILE:", keys);
 
-    // 2. Поиск ответа по всем ключам с использованием includes
     let answer: string | undefined;
     let matchedKey: string | null = null;
     for (const key in rawMap) {
@@ -60,18 +60,11 @@ export async function POST(request: NextRequest) {
     }
 
     if (typeof answer === "undefined" || !matchedKey) {
-      return new Response(JSON.stringify({ replies: [] }), {
-        status: 200,
-        headers: { 
-          "Content-Type": "application/json",
-          "Cache-Control": "no-store" 
-        },
-      });
+      return new Response(JSON.stringify({ replies: [] }), { status: 200, headers: JSON_HEADERS });
     }
 
     console.log("API_FOUND_MATCH_FOR:", sessionId);
 
-    // 3. Удаляем найденный ключ
     delete rawMap[matchedKey];
 
     try {
@@ -84,31 +77,19 @@ export async function POST(request: NextRequest) {
     try {
       decoded = decodeURIComponent(answer);
     } catch {
-      // оставляем как есть
+      decoded = answer;
     }
 
-    // 4. ФИНАЛЬНЫЙ ОТВЕТ (БЕЗ КИРИЛЛИЦЫ В ЗАГОЛОВКАХ)
-    return new Response(JSON.stringify({
-      replies: [
-        {
-          text: decoded,
-          role: "max",
-          id: Date.now(),
-        },
-      ],
-    }), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-store, no-cache, must-revalidate",
-      },
+    const body = JSON.stringify({
+      replies: [{ text: decoded, role: "max", id: Date.now() }],
     });
 
+    return new Response(body, { status: 200, headers: JSON_HEADERS });
   } catch (e) {
     console.error("Chat-replies API error:", e);
     return new Response(JSON.stringify({ replies: [], error: "Internal Server Error" }), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: { ...JSON_HEADERS },
     });
   }
 }
