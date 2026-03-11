@@ -48,13 +48,18 @@ export async function POST(request: NextRequest) {
     const keys = Object.keys(rawMap);
     console.log("SEARCHING:", sessionId, "KEYS_IN_FILE:", keys);
 
-    // 2. Поиск ответа: чистый ID или ID в скобках
-    const keyPlain = sessionId;
-    const keyBracketed = `[${sessionId}]`;
+    // 2. Поиск ответа по всем ключам с использованием includes
+    let answer: string | undefined;
+    let matchedKey: string | null = null;
+    for (const key in rawMap) {
+      if (Object.prototype.hasOwnProperty.call(rawMap, key) && key.includes(sessionId)) {
+        matchedKey = key;
+        answer = rawMap[key];
+        break;
+      }
+    }
 
-    const answer = rawMap[keyPlain] || rawMap[keyBracketed];
-
-    if (typeof answer === "undefined") {
+    if (typeof answer === "undefined" || !matchedKey) {
       return new Response(JSON.stringify({ replies: [] }), {
         status: 200,
         headers: { 
@@ -64,11 +69,10 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    console.log("API_MATCH_FOUND:", sessionId);
+    console.log("API_FOUND_MATCH_FOR:", sessionId);
 
-    // 3. Удаляем оба варианта ключей
-    delete rawMap[keyPlain];
-    delete rawMap[keyBracketed];
+    // 3. Удаляем найденный ключ
+    delete rawMap[matchedKey];
 
     try {
       fs.writeFileSync(filePath, JSON.stringify(rawMap));
