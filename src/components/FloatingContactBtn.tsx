@@ -166,26 +166,23 @@ export default function FloatingContactBtn() {
         const data = await res.json().catch(() => ({ replies: [] }));
         const replies = Array.isArray(data.replies) ? data.replies : [];
         if (replies.length) {
-          setMessages((prev) => {
-            let next = prev;
-            for (const r of replies as { text: string; timestamp: number }[]) {
-              let text = r.text || "";
-              try {
-                text = decodeURIComponent(text);
-              } catch {
-                // leave as is
-              }
-              const newMsg: Message = {
-                role: "max",
-                text,
-                id: `reply-${r.timestamp}-${Math.random().toString(36).slice(2, 9)}`,
-              };
-              if (next.some((m) => m.text === newMsg.text)) {
-                continue;
-              }
-              next = [...next, newMsg];
+          const newReplies: Message[] = replies.map((r: { text?: string }) => {
+            let text = (r?.text ?? "").toString();
+            try {
+              text = decodeURIComponent(text);
+            } catch {
+              // leave as is
             }
-            return next;
+            return {
+              role: "max" as const,
+              text,
+              id: Math.random().toString(),
+            };
+          });
+          console.log("ADDING_MESSAGES_TO_UI:", newReplies);
+          setMessages((prev) => {
+            const safePrev = Array.isArray(prev) ? prev : [];
+            return [...safePrev, ...newReplies];
           });
         }
       } catch {
