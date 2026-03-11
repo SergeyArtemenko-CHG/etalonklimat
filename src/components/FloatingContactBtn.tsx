@@ -82,7 +82,7 @@ export default function FloatingContactBtn() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [sessionId, setSessionId] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
@@ -192,12 +192,11 @@ export default function FloatingContactBtn() {
 
   const handleSend = async () => {
     const text = input.trim();
-    if (!text || loading) return;
+    if (!text || isSending) return;
 
     const clientMsg: Message = { role: "client", text, id: genId() };
     setMessages((prev) => [...prev, clientMsg]);
-    setInput("");
-    setLoading(true);
+    setIsSending(true);
 
     try {
       const sid = (sessionId || "").trim() || getSessionId();
@@ -212,6 +211,7 @@ export default function FloatingContactBtn() {
         }),
       });
       const data = await res.json().catch(() => ({}));
+      setInput("");
       if (!sessionId && data.sessionId && typeof data.sessionId === "string") {
         const newSid = (data.sessionId || "").trim();
         if (newSid) {
@@ -224,7 +224,7 @@ export default function FloatingContactBtn() {
     } catch {
       // сообщение уже добавлено, просто не показываем ошибку
     } finally {
-      setLoading(false);
+      setIsSending(false);
     }
   };
 
@@ -275,16 +275,16 @@ export default function FloatingContactBtn() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}
                   placeholder="Напишите сообщение..."
-                  disabled={loading}
+                  disabled={isSending}
                   className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-sm outline-none focus:border-[#FF8C00] disabled:bg-slate-50"
                 />
                 <button
                   type="button"
                   onClick={handleSend}
-                  disabled={loading || !input.trim()}
+                  disabled={isSending || !input.trim()}
                   className="rounded-full bg-[#FF8C00] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60"
                 >
-                  {loading ? "…" : "Отпр."}
+                  {isSending ? "…" : "Отпр."}
                 </button>
               </div>
             </div>
@@ -309,7 +309,7 @@ export default function FloatingContactBtn() {
                 }
               }}
               placeholder="Напишите ответ..."
-              disabled={loading}
+              disabled={isSending}
               className="flex-1 rounded-full border border-slate-200 px-3 py-2 text-sm outline-none focus:border-[#FF8C00] disabled:bg-slate-50"
             />
             <button
@@ -319,10 +319,10 @@ export default function FloatingContactBtn() {
                 await handleSend();
                 if (hadText) setIsOpen(true);
               }}
-              disabled={loading || !input.trim()}
+              disabled={isSending || !input.trim()}
               className="rounded-full bg-[#FF8C00] px-3 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60"
             >
-              {loading ? "…" : "Отпр."}
+              {isSending ? "…" : "Отпр."}
             </button>
           </div>
           <div className="absolute -bottom-1.5 right-6 h-3 w-3 rotate-45 border-r border-b border-slate-200 bg-white" />
