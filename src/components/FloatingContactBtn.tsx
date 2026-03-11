@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 
 const STORAGE_KEY = "chat_widget_messages";
-const SESSION_STORAGE_KEY = "chat_widget_session";
+const SESSION_STORAGE_KEY = "chat_widget_session_id";
 
 type Message = { role: "client" | "max"; text: string; id: string };
 
@@ -33,11 +33,12 @@ function genId() {
 function getSessionId(): string {
   if (typeof window === "undefined") return "";
   try {
-    let s = localStorage.getItem(SESSION_STORAGE_KEY);
-    if (s) return s;
-    s = `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
-    localStorage.setItem(SESSION_STORAGE_KEY, s);
-    return s;
+    const stored = localStorage.getItem(SESSION_STORAGE_KEY);
+    if (stored && (stored || "").trim()) return stored.trim();
+    const newId = `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
+    localStorage.setItem(SESSION_STORAGE_KEY, newId);
+    console.log("SESSION_ID_SAVED:", newId);
+    return newId;
   } catch {
     return `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
   }
@@ -78,7 +79,7 @@ export default function FloatingContactBtn() {
 
   useEffect(() => {
     const sid = getSessionId();
-    setSessionId(sid);
+    if (sid) setSessionId(sid);
   }, []);
 
   useEffect(() => {
@@ -121,7 +122,7 @@ export default function FloatingContactBtn() {
   }, [messages]);
 
   useEffect(() => {
-    if (!sessionId) return;
+    if (!sessionId || !(sessionId || "").trim()) return;
 
     const fetchReplies = async () => {
       console.log("Fetching replies for:", sessionId);

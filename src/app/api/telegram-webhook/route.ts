@@ -16,7 +16,8 @@ export async function POST(req: NextRequest) {
     const match = replyToText.match(/ID:\s*(\S+)/);
 
     if (match && body.message?.text) {
-      const sessionId = match[1];
+      let sessionId = (match[1] || "").trim();
+      sessionId = sessionId.replace(/^\[|\]$/g, "") || sessionId;
       const answer = encodeURIComponent(body.message.text);
       
       const filePath = "/tmp/chat_answers.json";
