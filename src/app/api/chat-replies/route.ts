@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 export const revalidate = 0;
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import fs from "fs";
 
 export async function GET(request: NextRequest) {
@@ -17,17 +17,15 @@ export async function GET(request: NextRequest) {
       }
     }
 
+    // 1. Если сессии нет, возвращаем пустой массив (нативный Response)
     if (!sessionId) {
-      return NextResponse.json(
-        { replies: [] },
-        {
-          status: 200,
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            "Cache-Control": "no-store",
-          },
-        }
-      );
+      return new Response(JSON.stringify({ replies: [] }), {
+        status: 200,
+        headers: { 
+          "Content-Type": "application/json",
+          "Cache-Control": "no-store, max-age=0" 
+        },
+      });
     }
 
     console.log("API_LOOKING_FOR:", sessionId);
@@ -43,7 +41,6 @@ export async function GET(request: NextRequest) {
           rawMap = parsed as Record<string, string>;
         }
       } catch {
-        // если файл битый — считаем, что ответов нет
         rawMap = {};
       }
     }
@@ -51,23 +48,7 @@ export async function GET(request: NextRequest) {
     const keys = Object.keys(rawMap);
     console.log("KEYS_IN_FILE:", keys);
 
-    if (!keys.length) {
-      return NextResponse.json(
-        { replies: [] },
-        {
-          status: 200,
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            "Cache-Control": "no-store",
-          },
-        }
-      );
-    }
-
-    // три варианта ключа:
-    // 1) чистый sessionId
-    // 2) [sessionId]
-    // 3) encodeURIComponent(sessionId)
+    // 2. Поиск ответа (три варианта ключа)
     const keyPlain = sessionId;
     const keyBracketed = `[${sessionId}]`;
     const keyEncoded = encodeURIComponent(sessionId);
@@ -76,78 +57,67 @@ export async function GET(request: NextRequest) {
     const val2 = rawMap[keyBracketed];
     const val3 = rawMap[keyEncoded];
 
-    // Если есть ключ со скобками — он в приоритете
-    let answer: string | undefined;
+    let foundAnswer: string | undefined;
     if (typeof val2 !== "undefined") {
-      answer = val2;
-    } else {
-      answer = val1 || val3;
+      foundAnswer = val2;
+    } else if (typeof val1 !== "undefined") {
+      foundAnswer = val1;
+    } else if (typeof val3 !== "undefined") {
+      foundAnswer = val3;
     }
 
-    if (typeof answer === "undefined") {
-      return NextResponse.json(
-        { replies: [] },
-        {
-          status: 200,
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            "Cache-Control": "no-store",
-          },
-        }
-      );
+    if (typeof foundAnswer === "undefined") {
+      return new Response(JSON.stringify({ replies: [] }), {
+        status: 200,
+        headers: { 
+          "Content-Type": "application/json",
+          "Cache-Control": "no-store" 
+        },
+      });
     }
 
-    // лог для отладки
     console.log("API_MATCH_FOUND:", sessionId);
 
-    // удаляем все возможные варианты ключей, чтобы не было дублей
+    // 3. Удаляем использованные ключи
     delete rawMap[keyPlain];
     delete rawMap[keyBracketed];
     delete rawMap[keyEncoded];
 
-    // сохраняем обновлённую карту
     try {
       fs.writeFileSync(filePath, JSON.stringify(rawMap));
-    } catch {
-      // если не удалось записать — это не должно ломать выдачу ответа
+    } catch (e) {
+      console.error("FS_WRITE_ERROR:", e);
     }
 
-    let decoded = answer;
+    let decoded = foundAnswer;
     try {
-      decoded = decodeURIComponent(answer);
+      decoded = decodeURIComponent(foundAnswer);
     } catch {
       // оставляем как есть
     }
 
-    return NextResponse.json(
-      {
-        replies: [
-          {
-            text: decoded,
-            role: "max",
-            id: Date.now(),
-          },
-        ],
-      },
-      {
-        status: 200,
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          "Cache-Control": "no-store",
+    // 4. ФИНАЛЬНЫЙ ОТВЕТ (БЕЗ КИРИЛЛИЦЫ В ЗАГОЛОВКАХ)
+    return new Response(JSON.stringify({
+      replies: [
+        {
+          text: decoded,
+          role: "max",
+          id: Date.now(),
         },
-      }
-    );
+      ],
+    }), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+      },
+    });
+
   } catch (e) {
     console.error("Chat-replies API error:", e);
-    return NextResponse.json(
-      { error: "Ошибка загрузки ответов", replies: [] },
-      {
-        status: 500,
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          "Cache-Control": "no-store",
-        },
-      }
-    );
+    return new Response(JSON.stringify({ replies: [], error: "Internal Server Error" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
