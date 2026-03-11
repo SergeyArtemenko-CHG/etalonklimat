@@ -20,10 +20,20 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const replies = await getReplies(sessionId);
+    // основная попытка — чистый sessionId
+    let replies = await getReplies(sessionId);
+
+    // fallback для старых записей с ключом в квадратных скобках
+    if ((!replies || replies.length === 0) && sessionId) {
+      const legacyKey = `[${sessionId}]`;
+      const legacyReplies = await getReplies(legacyKey);
+      if (legacyReplies && legacyReplies.length > 0) {
+        replies = legacyReplies;
+      }
+    }
 
     const body = JSON.stringify({
-      replies: replies.map((r) => {
+      replies: (replies || []).map((r) => {
         let text = r.text;
         try {
           text = decodeURIComponent(text);
