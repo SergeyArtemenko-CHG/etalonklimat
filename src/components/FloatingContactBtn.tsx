@@ -89,10 +89,14 @@ export default function FloatingContactBtn() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const lastReplyIdxRef = useRef(0);
   const messagesRef = useRef<Message[]>([]);
+  const sessionIdRef = useRef<string>("");
 
   useEffect(() => {
     const sid = getSessionId();
-    if (sid) setSessionId(sid);
+    if (sid) {
+      setSessionId(sid);
+      sessionIdRef.current = sid;
+    }
   }, []);
 
   useEffect(() => {
@@ -132,26 +136,32 @@ export default function FloatingContactBtn() {
   }, [messages]);
 
   useEffect(() => {
+    if (sessionId && (sessionId || "").trim()) {
+      sessionIdRef.current = sessionId.trim();
+    }
+  }, [sessionId]);
+
+  useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   useEffect(() => {
-    if (!sessionId || !(sessionId || "").trim()) return;
-
     const fetchReplies = async () => {
+      const currentSession = (sessionIdRef.current || "").trim();
+      if (!currentSession) return;
       console.log(
         "Poll cycle:",
         new Date().toLocaleTimeString(),
         "Messages count:",
         messagesRef.current.length
       );
-      console.log("Fetching replies for:", sessionId);
+      console.log("Fetching replies for:", currentSession);
       try {
         setIsTyping(true);
         const res = await fetch("/api/chat-replies", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ sessionId }),
+          body: JSON.stringify({ sessionId: currentSession }),
         });
         const data = await res.json().catch(() => ({ replies: [] }));
         const replies = Array.isArray(data.replies) ? data.replies : [];
@@ -188,7 +198,7 @@ export default function FloatingContactBtn() {
     const id = setInterval(fetchReplies, 3000);
     fetchReplies();
     return () => clearInterval(id);
-  }, [sessionId]);
+  }, []);
 
   const handleSend = async () => {
     const text = input.trim();
