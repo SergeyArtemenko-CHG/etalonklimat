@@ -1,4 +1,6 @@
+export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
+export const revalidate = 0;
 
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
@@ -18,9 +20,17 @@ export async function GET(request: NextRequest) {
     if (!sessionId) {
       return NextResponse.json(
         { replies: [] },
-        { status: 200, headers: { "Content-Type": "application/json; charset=utf-8" } }
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+          },
+        }
       );
     }
+
+    console.log("API_LOOKING_FOR:", sessionId);
 
     const filePath = "/tmp/chat_answers.json";
     let rawMap: Record<string, string> = {};
@@ -38,10 +48,19 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    if (!Object.keys(rawMap).length) {
+    const keys = Object.keys(rawMap);
+    console.log("KEYS_IN_FILE:", keys);
+
+    if (!keys.length) {
       return NextResponse.json(
         { replies: [] },
-        { status: 200, headers: { "Content-Type": "application/json; charset=utf-8" } }
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+          },
+        }
       );
     }
 
@@ -57,12 +76,24 @@ export async function GET(request: NextRequest) {
     const val2 = rawMap[keyBracketed];
     const val3 = rawMap[keyEncoded];
 
-    const answer = val1 || val2 || val3;
+    // Если есть ключ со скобками — он в приоритете
+    let answer: string | undefined;
+    if (typeof val2 !== "undefined") {
+      answer = val2;
+    } else {
+      answer = val1 || val3;
+    }
 
     if (typeof answer === "undefined") {
       return NextResponse.json(
         { replies: [] },
-        { status: 200, headers: { "Content-Type": "application/json; charset=utf-8" } }
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+          },
+        }
       );
     }
 
@@ -88,25 +119,35 @@ export async function GET(request: NextRequest) {
       // оставляем как есть
     }
 
-    const body = JSON.stringify({
-      replies: [
-        {
-          text: decoded,
-          role: "max",
-          id: Date.now(),
+    return NextResponse.json(
+      {
+        replies: [
+          {
+            text: decoded,
+            role: "max",
+            id: Date.now(),
+          },
+        ],
+      },
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Cache-Control": "no-store",
         },
-      ],
-    });
-
-    return new NextResponse(body, {
-      status: 200,
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-    });
+      }
+    );
   } catch (e) {
     console.error("Chat-replies API error:", e);
     return NextResponse.json(
       { error: "Ошибка загрузки ответов", replies: [] },
-      { status: 500, headers: { "Content-Type": "application/json; charset=utf-8" } }
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Cache-Control": "no-store",
+        },
+      }
     );
   }
 }
