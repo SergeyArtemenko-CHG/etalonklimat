@@ -8,7 +8,9 @@ import fs from "fs";
 
 const JSON_HEADERS = {
   "Content-Type": "application/json",
-  "Cache-Control": "no-store, max-age=0",
+  "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+  Pragma: "no-cache",
+  Expires: "0",
   Connection: "close",
 };
 
@@ -35,7 +37,7 @@ export async function POST(request: NextRequest) {
 
     try {
       if (fs.existsSync(filePath)) {
-        const raw = fs.readFileSync(filePath, "utf8");
+        const raw = fs.readFileSync(filePath, { encoding: "utf8", flag: "r" });
         const parsed = JSON.parse(raw);
         if (parsed && typeof parsed === "object") {
           rawMap = parsed as Record<string, string>;
@@ -82,6 +84,7 @@ export async function POST(request: NextRequest) {
 
     const body = JSON.stringify({
       replies: [{ text: decoded, role: "max", id: Date.now() }],
+      salt: Math.random(),
     });
 
     return new Response(body, { status: 200, headers: JSON_HEADERS });
