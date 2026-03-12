@@ -173,7 +173,14 @@ export default function FloatingContactBtn() {
           },
           body: JSON.stringify({ sessionId: currentSession }),
         });
-        const data = await res.json().catch(() => ({ replies: [] }));
+        const raw = await res.text();
+        console.log("RAW_FROM_SERVER:", raw);
+        let data: any = { replies: [] };
+        try {
+          data = JSON.parse(raw);
+        } catch {
+          data = { replies: [] };
+        }
         const replies = Array.isArray(data.replies) ? data.replies : [];
         if (replies.length) {
           const newReplies: Message[] = replies.map((r: { text?: string }) => {
