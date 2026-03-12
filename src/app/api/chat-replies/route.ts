@@ -6,12 +6,10 @@ export const fetchCache = "force-no-store";
 import { NextRequest } from "next/server";
 import fs from "fs";
 
-const JSON_HEADERS = {
+const NO_CACHE_HEADERS = {
   "Content-Type": "application/json",
-  "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
-  Pragma: "no-cache",
-  Expires: "0",
-  Connection: "close",
+  "Cache-Control":
+    "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
 };
 
 export async function POST(request: NextRequest) {
@@ -27,7 +25,10 @@ export async function POST(request: NextRequest) {
     }
 
     if (!sessionId) {
-      return new Response(JSON.stringify({ replies: [] }), { status: 200, headers: JSON_HEADERS });
+      return new Response(JSON.stringify({ replies: [], _t: Date.now() }), {
+        status: 200,
+        headers: NO_CACHE_HEADERS,
+      });
     }
 
     console.log("API_LOOKING_FOR:", sessionId);
@@ -62,7 +63,10 @@ export async function POST(request: NextRequest) {
     }
 
     if (typeof answer === "undefined" || !matchedKey) {
-      return new Response(JSON.stringify({ replies: [] }), { status: 200, headers: JSON_HEADERS });
+      return new Response(JSON.stringify({ replies: [], _t: Date.now() }), {
+        status: 200,
+        headers: NO_CACHE_HEADERS,
+      });
     }
 
     console.log("API_FOUND_MATCH_FOR:", sessionId);
@@ -84,15 +88,15 @@ export async function POST(request: NextRequest) {
 
     const body = JSON.stringify({
       replies: [{ text: decoded, role: "max", id: Date.now() }],
-      salt: Math.random(),
+      _t: Date.now(),
     });
 
-    return new Response(body, { status: 200, headers: JSON_HEADERS });
+    return new Response(body, { status: 200, headers: NO_CACHE_HEADERS });
   } catch (e) {
     console.error("Chat-replies API error:", e);
-    return new Response(JSON.stringify({ replies: [], error: "Internal Server Error" }), {
-      status: 500,
-      headers: { ...JSON_HEADERS },
-    });
+    return new Response(
+      JSON.stringify({ replies: [], error: "Internal Server Error", _t: Date.now() }),
+      { status: 500, headers: NO_CACHE_HEADERS }
+    );
   }
 }
