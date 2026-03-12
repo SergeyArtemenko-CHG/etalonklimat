@@ -158,9 +158,19 @@ export default function FloatingContactBtn() {
       console.log("Fetching replies for:", currentSession);
       try {
         setIsTyping(true);
-        const res = await fetch("/api/chat-replies", {
+        const url =
+          "/api/chat-replies?session=" +
+          encodeURIComponent(currentSession) +
+          "&t=" +
+          Date.now();
+        const res = await fetch(url, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          cache: "no-store",
+          headers: {
+            "Content-Type": "application/json",
+            Pragma: "no-cache",
+            "Cache-Control": "no-cache",
+          },
           body: JSON.stringify({ sessionId: currentSession }),
         });
         const data = await res.json().catch(() => ({ replies: [] }));
