@@ -65,11 +65,7 @@ export default function ProductCard({
   const [imageError, setImageError] = useState(false);
   const openRequestModal = useProductRequestStore((s) => s.open);
   const href = `/product/${id}`;
-  const baseImage = image?.trim() || undefined;
-  const imageSrc =
-    baseImage && !/\.[a-zA-Z0-9]+$/.test(baseImage)
-      ? `${baseImage}.jpg`
-      : baseImage;
+  const imageSrc = image?.trim() || undefined;
   const showImage = imageSrc && !imageError;
 
   const handleImageError = () => {
