@@ -159,8 +159,11 @@ export default function FloatingContactBtn() {
   }, [messages]);
 
   useEffect(() => {
+    const sid = (sessionId || "").trim() || (sessionIdRef.current || "").trim();
+    if (!sid) return;
+
     const fetchReplies = async () => {
-      const currentSession = (sessionIdRef.current || "").trim();
+      const currentSession = (sessionIdRef.current || sessionId || "").trim();
       if (!currentSession) return;
       console.log(
         "Poll cycle:",
@@ -221,7 +224,7 @@ export default function FloatingContactBtn() {
     const id = setInterval(fetchReplies, 3000);
     fetchReplies();
     return () => clearInterval(id);
-  }, []);
+  }, [sessionId]);
 
   const handleSend = async () => {
     const text = input.trim();

@@ -18,10 +18,10 @@ export async function POST(request: NextRequest) {
     }
 
     if (!sessionId) {
-      return new Response(
-        JSON.stringify({ replies: [] }),
-        { status: 200, headers: { "Content-Type": "text/plain" } }
-      );
+      return new Response(JSON.stringify({ replies: [] }), {
+        status: 200,
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+      });
     }
 
     console.log("API_LOOKING_FOR:", sessionId);
@@ -56,10 +56,10 @@ export async function POST(request: NextRequest) {
     }
 
     if (typeof answer === "undefined" || !matchedKey) {
-      return new Response(
-        JSON.stringify({ replies: [] }),
-        { status: 200, headers: { "Content-Type": "text/plain" } }
-      );
+      return new Response(JSON.stringify({ replies: [] }), {
+        status: 200,
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+      });
     }
 
     console.log("API_FOUND_MATCH_FOR:", sessionId);
@@ -83,12 +83,15 @@ export async function POST(request: NextRequest) {
       replies: [{ text: decoded, role: "max", id: "m" + Math.random().toString(36).slice(2) }],
     });
 
-    return new Response(body, { status: 200, headers: { "Content-Type": "text/plain" } });
+    return new Response(body, {
+      status: 200,
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+    });
   } catch (e) {
     console.error("Chat-replies API error:", e);
-    return new Response(JSON.stringify({
-      replies: [],
-      error: "Internal Server Error",
-    }), { status: 500, headers: { "Content-Type": "text/plain" } });
+    return new Response(
+      JSON.stringify({ replies: [], error: "Internal Server Error" }),
+      { status: 500, headers: { "Content-Type": "application/json; charset=utf-8" } }
+    );
   }
 }
