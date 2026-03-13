@@ -233,7 +233,7 @@ export default function Header() {
             <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
               {isClient && (
                 <span
-                  className="pointer-events-none absolute left-3 z-10 text-sm text-slate-500 md:left-4 transition-opacity duration-200"
+                  className="pointer-events-none absolute left-3 z-10 text-sm text-red-600 md:left-4 transition-opacity duration-200"
                 >
                   {isFocused && query.length === 0
                     ? "Поиск по артикулу или названию..."
