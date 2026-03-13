@@ -18,7 +18,7 @@ export default function Header() {
   const catalogRef = useRef<HTMLDivElement>(null);
   const [isShrunk, setIsShrunk] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [placeholderChar, setPlaceholderChar] = useState(0);
   const [placeholderPhase, setPlaceholderPhase] = useState<"typing" | "erasing">("typing");
@@ -26,6 +26,8 @@ export default function Header() {
   const router = useRouter();
   const totalItems = useCartStore((s) => s.getTotalItems());
   const rate = useCurrencyStore((s) => s.rate);
+
+  console.log("Categories for animation:", categories?.length);
 
   const placeholderPhrases = useMemo(() => {
     const names: string[] = [];
@@ -39,7 +41,7 @@ export default function Header() {
         }
       }
     }
-    return names.length ? names : ["горелки", "котлы", "аксессуары"];
+    return names.length ? names : ["горелки", "котлы", "запчасти"];
   }, []);
 
   const trimmed = query.trim().toLowerCase();
@@ -78,7 +80,7 @@ export default function Header() {
   }, [handleClickOutside]);
 
   useEffect(() => {
-    setMounted(true);
+    setIsClient(true);
   }, []);
 
   useEffect(() => {
@@ -99,7 +101,7 @@ export default function Header() {
 
   // Анимация подсказки в поиске: "Найти [категория/подкатегория]"
   useEffect(() => {
-    if (!mounted || !placeholderPhrases.length) return;
+    if (!isClient || !placeholderPhrases.length) return;
 
     const current = placeholderPhrases[placeholderIndex % placeholderPhrases.length];
     const typingSpeed = 80;
@@ -133,7 +135,7 @@ export default function Header() {
     }
 
     return () => window.clearTimeout(timer);
-  }, [mounted, placeholderChar, placeholderPhase, placeholderPhrases, placeholderIndex]);
+  }, [isClient, placeholderChar, placeholderPhase, placeholderPhrases, placeholderIndex]);
 
   const animatedPlaceholder =
     "Найти " +
@@ -228,7 +230,7 @@ export default function Header() {
             </button>
 
             <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
-              {mounted && (
+              {isClient && (
                 <>
                   {/* Статичный плейсхолдер при фокусе */}
                   <span
