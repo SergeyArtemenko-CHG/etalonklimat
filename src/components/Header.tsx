@@ -41,7 +41,8 @@ export default function Header() {
         }
       }
     }
-    return names.length ? names : ["горелки", "котлы", "запчасти"];
+    // если на сервере/клиенте категорий нет — жёсткий дефолт
+    return names.length ? names : ["котлы", "горелки", "запчасти", "насосы"];
   }, []);
 
   const trimmed = query.trim().toLowerCase();
@@ -234,7 +235,7 @@ export default function Header() {
                 <>
                   {/* Статичный плейсхолдер при фокусе */}
                   <span
-                    className={`pointer-events-none absolute left-3 text-sm text-slate-400 md:left-4 transition-opacity duration-200 ${
+                    className={`pointer-events-none absolute left-3 text-sm text-slate-500 md:left-4 transition-opacity duration-200 ${
                       isFocused && query.length === 0 ? "opacity-100" : "opacity-0"
                     }`}
                   >
@@ -242,7 +243,7 @@ export default function Header() {
                   </span>
                   {/* Анимированный плейсхолдер, когда поле пустое и не в фокусе */}
                   <span
-                    className={`pointer-events-none absolute left-3 text-sm text-slate-400 md:left-4 transition-opacity duration-200 ${
+                    className={`pointer-events-none absolute left-3 text-sm text-slate-500 md:left-4 transition-opacity duration-200 ${
                       !isFocused && query.length === 0 ? "opacity-100" : "opacity-0"
                     }`}
                   >
