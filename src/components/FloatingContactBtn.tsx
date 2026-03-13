@@ -8,13 +8,23 @@ const LEGACY_SESSION_STORAGE_KEY = "chat_widget_session";
 
 type Message = { role: "client" | "max"; text: string; id: string };
 
+const WELCOME_MSG: Message = {
+  role: "max",
+  text: "Если у вас есть вопрос по оборудованию, пожалуйста, напишите мне. Я помогу.",
+  id: "welcome",
+};
+
 function loadMessages(): Message[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    const arr = Array.isArray(parsed) ? parsed : [];
+    // Миграция: обновить старое приветствие на актуальный текст
+    return arr.map((m: Message) =>
+      m.id === "welcome" ? { ...m, text: WELCOME_MSG.text } : m
+    );
   } catch {
     return [];
   }
@@ -71,12 +81,6 @@ function CloseIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-
-const WELCOME_MSG: Message = {
-  role: "max",
-  text: "Здравствуйте! Я Макс. Чем могу помочь?",
-  id: "welcome",
-};
 
 export default function FloatingContactBtn() {
   const [isOpen, setIsOpen] = useState(false);
@@ -257,10 +261,20 @@ export default function FloatingContactBtn() {
     }
   };
 
-  const hasWelcome = messages.some((m) => m.id === "welcome");
+  const [showWidget, setShowWidget] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowWidget(true), 2000);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
-    <div ref={menuRef} className="fixed bottom-5 right-5 z-[9999] isolate">
+    <div
+      ref={menuRef}
+      className={`fixed bottom-5 right-5 z-[9999] isolate transition-all duration-500 ${
+        showWidget ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"
+      }`}
+    >
       {/* Окно чата с плавным появлением */}
       <div
         className={`absolute bottom-16 right-0 z-20 flex w-[340px] max-w-[calc(100vw-3rem)] flex-col rounded-xl border border-slate-200 bg-white shadow-lg transition-all duration-300 ${
@@ -268,13 +282,30 @@ export default function FloatingContactBtn() {
         }`}
         style={{ height: "420px" }}
       >
+          {/* Шапка: менеджер и аватар */}
+          <div className="flex shrink-0 items-center gap-3 border-b border-slate-200 px-3 py-2.5">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FF8C00]/20 text-sm font-semibold text-[#FF8C00]">
+              СС
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="truncate font-medium text-slate-800">Сергей Снегирев</p>
+              <p className="text-xs text-slate-500">менеджер по продажам</p>
+            </div>
+            <span className="flex shrink-0 items-center gap-1.5 text-xs text-emerald-600">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Мы онлайн
+            </span>
+          </div>
           <div className="flex flex-1 flex-col overflow-hidden">
             <div className="flex flex-1 flex-col gap-2 overflow-y-auto p-3">
               {messages.map((m) => (
                 <div
                   key={m.id}
-                  className={`flex ${m.role === "client" ? "justify-end" : "justify-start"}`}
+                  className={`flex flex-col ${m.role === "client" ? "items-end" : "items-start"}`}
                 >
+                  <span className="mb-0.5 px-1 text-xs text-slate-500">
+                    {m.role === "client" ? "Вы" : "Сергей"}
+                  </span>
                   <div
                     className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
                       m.role === "client"
@@ -287,9 +318,10 @@ export default function FloatingContactBtn() {
                 </div>
               ))}
               {isTyping && (
-                <div className="flex justify-start">
+                <div className="flex flex-col items-start">
+                  <span className="mb-0.5 px-1 text-xs text-slate-500">Сергей</span>
                   <div className="max-w-[85%] rounded-2xl bg-slate-200 px-3 py-2 text-xs text-slate-500 italic">
-                    Макс печатает...
+                    печатает...
                   </div>
                 </div>
               )}
@@ -320,60 +352,39 @@ export default function FloatingContactBtn() {
           </div>
         </div>
 
-      {/* Tooltip с приветствием и полем ввода, когда окно закрыто */}
-      {hasWelcome && !isOpen && (
-        <div
-          className="absolute bottom-16 right-0 z-10 w-64 animate-[fadeIn_0.3s_ease-out] rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-700 shadow-lg"
-        >
-          <p className="mb-3 leading-snug">{WELCOME_MSG.text}</p>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey && input.trim()) {
-                  handleSend();
-                  setIsOpen(true);
-                }
-              }}
-              placeholder="Напишите ответ..."
-              disabled={isSending}
-              className="flex-1 rounded-full border border-slate-200 px-3 py-2 text-sm outline-none focus:border-[#FF8C00] disabled:bg-slate-50"
-            />
-            <button
-              type="button"
-              onClick={async () => {
-                const hadText = !!input.trim();
-                await handleSend();
-                if (hadText) setIsOpen(true);
-              }}
-              disabled={isSending || !input.trim()}
-              className="rounded-full bg-[#FF8C00] px-3 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60"
-            >
-              {isSending ? "…" : "Отпр."}
-            </button>
+      {/* Кнопка чата с надписью «Помощь в подборе» на значке */}
+      <div className="absolute bottom-0 right-0 z-10 flex items-center gap-2">
+        {showWidget && !isOpen && (
+          <div className="rounded-lg border border-slate-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm md:hidden">
+            <p className="flex items-center gap-1.5 text-xs text-emerald-600">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Мы онлайн
+            </p>
           </div>
-          <div className="absolute -bottom-1.5 right-6 h-3 w-3 rotate-45 border-r border-b border-slate-200 bg-white" />
-        </div>
-      )}
-
-      {/* Кнопка чата с индикатором */}
-      <div className="absolute bottom-0 right-0 z-10">
-        {hasWelcome && !isOpen && (
-          <span
-            className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 ring-2 ring-white"
-            aria-hidden
-          />
         )}
-        <button
-          type="button"
-          onClick={() => setIsOpen((v) => !v)}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-[#FF8C00] text-white shadow-lg transition hover:bg-[#ff9f26] hover:shadow-xl"
-          aria-label={isOpen ? "Закрыть чат" : "Открыть чат"}
-        >
-          {isOpen ? <CloseIcon className="h-6 w-6" /> : <ChatIcon className="h-6 w-6" />}
-        </button>
+        <div className="relative shrink-0">
+          {!isOpen && (
+            <span
+              className="absolute -top-0.5 -right-0.5 flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-white"
+              aria-hidden
+            />
+          )}
+          <button
+            type="button"
+            onClick={() => setIsOpen((v) => !v)}
+            className="flex h-14 items-center gap-2 rounded-full bg-[#FF8C00] pl-3 pr-4 text-white shadow-lg transition hover:bg-[#ff9f26] hover:shadow-xl"
+            aria-label={isOpen ? "Закрыть чат" : "Открыть чат — помощь в подборе"}
+          >
+            {isOpen ? (
+              <CloseIcon className="h-6 w-6 shrink-0" />
+            ) : (
+              <>
+                <ChatIcon className="h-6 w-6 shrink-0" />
+                <span className="whitespace-nowrap text-sm font-medium">Помощь в подборе</span>
+              </>
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );
