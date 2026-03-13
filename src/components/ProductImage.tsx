@@ -45,7 +45,9 @@ export default function ProductImage({
   fallbackToPlaceholder = true,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
-  const imageSrc = src?.trim() || undefined;
+  const baseSrc = src?.trim() || undefined;
+  const imageSrc =
+    baseSrc && !/\.[a-zA-Z0-9]+$/.test(baseSrc) ? `${baseSrc}.jpg` : baseSrc;
   const showImage = imageSrc && !failed;
 
   const handleError = () => {

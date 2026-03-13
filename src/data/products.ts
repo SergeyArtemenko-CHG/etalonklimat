@@ -180,7 +180,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -203,7 +203,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -226,7 +226,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -249,7 +249,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -272,7 +272,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -295,7 +295,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -318,7 +318,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -341,7 +341,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -364,7 +364,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -387,7 +387,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -410,7 +410,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -433,7 +433,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -456,7 +456,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -479,7 +479,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -502,7 +502,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -525,7 +525,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -548,7 +548,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -571,7 +571,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -594,7 +594,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -617,7 +617,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -640,7 +640,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -663,7 +663,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -686,7 +686,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -709,7 +709,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES",
+    image: "/images/products-watermarked/DA-ES.jpg",
     inStock: false,
   },
   {
@@ -741,7 +741,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -773,7 +773,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -805,7 +805,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -837,7 +837,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -869,7 +869,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -901,7 +901,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -933,7 +933,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -965,7 +965,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -997,7 +997,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1029,7 +1029,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1061,7 +1061,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ICI_REX_140-160",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1093,7 +1093,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1125,7 +1125,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1157,7 +1157,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1189,7 +1189,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1221,7 +1221,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1253,7 +1253,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1285,7 +1285,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1317,7 +1317,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1349,7 +1349,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1381,7 +1381,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1413,7 +1413,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1445,7 +1445,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85",
+    image: "/images/products-watermarked/ONIX10-85.jpg",
     inStock: false,
   },
   {
@@ -1477,7 +1477,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1509,7 +1509,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1541,7 +1541,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX",
+    image: "/images/products-watermarked/ONIX.jpg",
     inStock: false,
   },
   {
@@ -1564,7 +1564,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G.jpg",
     inStock: false,
   },
   {
@@ -1587,7 +1587,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G.jpg",
     inStock: false,
   },
   {
@@ -1610,7 +1610,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G.jpg",
     inStock: false,
   },
   {
@@ -1633,7 +1633,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G.jpg",
     inStock: false,
   },
   {
@@ -1656,7 +1656,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G.jpg",
     inStock: false,
   },
   {
@@ -1679,7 +1679,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G.jpg",
     inStock: false,
   },
   {
@@ -1702,7 +1702,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G.jpg",
     inStock: false,
   },
   {
@@ -1725,7 +1725,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G",
+    image: "/images/products-watermarked/ICI_ECO_G.jpg",
     inStock: false,
   },
   {
@@ -12061,7 +12061,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
     inStock: false,
   },
   {
@@ -12186,7 +12186,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
     inStock: false,
   },
   {
@@ -12261,7 +12261,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
     inStock: false,
   },
   {
@@ -12386,7 +12386,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
     inStock: false,
   },
   {
@@ -13411,7 +13411,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
     inStock: false,
   },
   {
@@ -13436,7 +13436,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
     inStock: false,
   },
   {
@@ -13461,7 +13461,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
     inStock: false,
   },
   {
@@ -13486,7 +13486,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
     inStock: false,
   },
   {
@@ -13511,7 +13511,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
     inStock: false,
   },
   {
@@ -13536,7 +13536,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: undefined,
+    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
     inStock: false,
   },
   {
@@ -16090,56 +16090,6 @@ export const products: Product[] = [
     inStock: false,
   },
   {
-    id: "gorelka-kombinirovannaya-fbr-k-4-m-2-tc-el-evo-r-1-1-2-s",
-    sku: "004277_41057027_31",
-    name: "Горелка комбинированная FBR K 4/M/2 TC EL EVO + R. 1\" 1/2-S",
-    description: undefined,
-    longDescription: undefined,
-    priceEur: 22510,
-    priceRub: undefined,
-    brand: "FBR",
-    burnerPowerMin: undefined,
-    burnerPowerMax: undefined,
-    fuelType: "Газ+дизель",
-    boilerType: undefined,
-    heatExchangerMaterial: "004277_41057027_31",
-    category: "Горелки для котлов отопления",
-    categorySlug: "gorelki-dlya-kotlov-otopleniya",
-    subCategory: "Горелки комбинированные",
-    subCategorySlug: "gorelki-kombinirovannye",
-    specs: undefined,
-    files: [
-    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
-  ],
-    image: undefined,
-    inStock: false,
-  },
-  {
-    id: "gorelka-kombinirovannaya-fbr-k-4-m-2-tl-el-evo-r-1-1-2-s",
-    sku: "004268_41057027_31",
-    name: "Горелка комбинированная FBR K 4/M/2 TL EL EVO + R. 1\" 1/2-S",
-    description: undefined,
-    longDescription: undefined,
-    priceEur: 22593,
-    priceRub: undefined,
-    brand: "FBR",
-    burnerPowerMin: undefined,
-    burnerPowerMax: undefined,
-    fuelType: "Газ+дизель",
-    boilerType: undefined,
-    heatExchangerMaterial: "004268_41057027_31",
-    category: "Горелки для котлов отопления",
-    categorySlug: "gorelki-dlya-kotlov-otopleniya",
-    subCategory: "Горелки комбинированные",
-    subCategorySlug: "gorelki-kombinirovannye",
-    specs: undefined,
-    files: [
-    { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
-  ],
-    image: undefined,
-    inStock: false,
-  },
-  {
     id: "gorelka-kombinirovannaya-fbr-k-5-m-tl-el-r-1-1-2-s",
     sku: "004264_31057027_31",
     name: "Горелка комбинированная FBR K 5/M TL EL+R 1\"1/2-S",
@@ -17730,7 +17680,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17753,7 +17703,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17776,7 +17726,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17799,7 +17749,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17822,7 +17772,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17845,7 +17795,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17868,7 +17818,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17891,7 +17841,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17914,7 +17864,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17937,7 +17887,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17960,7 +17910,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -17983,7 +17933,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -18006,7 +17956,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -18029,7 +17979,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES",
+    image: "/images/products-watermarked/VRC-ES.jpg",
     inStock: false,
   },
   {
@@ -18136,7 +18086,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
     inStock: false,
   },
   {
@@ -18164,7 +18114,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F150-300.jpg",
     inStock: false,
   },
   {
@@ -18192,7 +18142,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
     inStock: false,
   },
   {
@@ -18220,7 +18170,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F150-300.jpg",
     inStock: false,
   },
   {
@@ -18248,7 +18198,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F150-300.jpg",
     inStock: false,
   },
   {
@@ -18276,7 +18226,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F350-600.jpg",
     inStock: false,
   },
   {
@@ -18304,7 +18254,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F350-600.jpg",
     inStock: false,
   },
   {
@@ -18332,7 +18282,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F350-600.jpg",
     inStock: false,
   },
   {
@@ -18360,7 +18310,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F350-600.jpg",
     inStock: false,
   },
   {
@@ -18388,7 +18338,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
     inStock: false,
   },
   {
@@ -18416,7 +18366,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
     inStock: false,
   },
   {
@@ -18444,7 +18394,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный787658",
+    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
     inStock: false,
   },
   {
@@ -18472,7 +18422,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/EGS_ALUM_W_60-140.png",
     inStock: false,
   },
   {
@@ -18500,7 +18450,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/EGS_ALUM_W_60-140.png",
     inStock: false,
   },
   {
@@ -18523,7 +18473,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/EGS_CONDENSATE_NEUTRAL.png",
     inStock: false,
   },
   {
@@ -18546,7 +18496,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/EGS_CONDENSATE_NEUTRAL.png",
     inStock: false,
   },
   {
@@ -18569,7 +18519,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/EGS_CONDENSATE_NEUTRAL.png",
     inStock: false,
   },
   {
@@ -18592,7 +18542,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/EGS_CONDENSATE_NEUTRAL.png",
     inStock: false,
   },
   {
@@ -18812,7 +18762,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -18848,7 +18798,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -18884,7 +18834,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -18920,7 +18870,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -18956,7 +18906,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -18992,7 +18942,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19028,7 +18978,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19064,7 +19014,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19100,7 +19050,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19136,7 +19086,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19172,7 +19122,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19208,7 +19158,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19244,7 +19194,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19280,7 +19230,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19316,7 +19266,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19352,7 +19302,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA",
+    image: "/images/products-watermarked/NOVA.jpg",
     inStock: false,
   },
   {
@@ -19375,7 +19325,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/ES_NOVA_TECHNICS.png",
     inStock: false,
   },
   {
@@ -19398,7 +19348,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/Безымянный",
+    image: "/images/products-watermarked/ES_NOVA_TECHNICS.png",
     inStock: false,
   },
   {
@@ -19421,7 +19371,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19444,7 +19394,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19467,7 +19417,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19490,7 +19440,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19513,7 +19463,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19536,7 +19486,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19559,7 +19509,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19582,7 +19532,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19605,7 +19555,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19628,7 +19578,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19651,7 +19601,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19674,7 +19624,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2",
+    image: "/images/products-watermarked/PAR-ES_2.jpg",
     inStock: false,
   },
   {
@@ -19743,7 +19693,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BDV-ES",
+    image: "/images/products-watermarked/BDV-ES.jpg",
     inStock: false,
   },
   {
@@ -19766,7 +19716,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BDV-ES",
+    image: "/images/products-watermarked/BDV-ES.jpg",
     inStock: false,
   },
   {
@@ -19789,7 +19739,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BDV-ES",
+    image: "/images/products-watermarked/BDV-ES.jpg",
     inStock: false,
   },
   {
@@ -19812,7 +19762,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BDV-ES",
+    image: "/images/products-watermarked/BDV-ES.jpg",
     inStock: false,
   },
   {
@@ -19835,7 +19785,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products-watermarked/TURBUL.png",
     inStock: false,
   },
   {
@@ -19858,7 +19808,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products-watermarked/TURBUL.png",
     inStock: false,
   },
   {
@@ -19881,7 +19831,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products-watermarked/TURBUL.png",
     inStock: false,
   },
   {
@@ -19904,7 +19854,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products-watermarked/TURBUL.png",
     inStock: false,
   },
   {
@@ -19927,7 +19877,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products-watermarked/TURBUL.png",
     inStock: false,
   },
   {
@@ -19950,7 +19900,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products-watermarked/TURBUL.png",
     inStock: false,
   },
   {
@@ -19973,7 +19923,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products-watermarked/TURBUL.png",
     inStock: false,
   },
   {
@@ -19996,7 +19946,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products-watermarked/TURBUL.png",
     inStock: false,
   }
 ];
