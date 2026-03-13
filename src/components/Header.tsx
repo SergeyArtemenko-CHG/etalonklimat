@@ -17,7 +17,8 @@ export default function Header() {
   const containerRef = useRef<HTMLDivElement>(null);
   const catalogRef = useRef<HTMLDivElement>(null);
   const [isShrunk, setIsShrunk] = useState(false);
-  const [searchFocused, setSearchFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [placeholderChar, setPlaceholderChar] = useState(0);
   const [placeholderPhase, setPlaceholderPhase] = useState<"typing" | "erasing">("typing");
@@ -28,11 +29,13 @@ export default function Header() {
 
   const placeholderPhrases = useMemo(() => {
     const names: string[] = [];
-    for (const cat of categories) {
-      if (cat.name) names.push(cat.name);
-      if (Array.isArray(cat.subCategories)) {
-        for (const sub of cat.subCategories) {
-          if (sub?.name) names.push(sub.name);
+    if (Array.isArray(categories) && categories.length > 0) {
+      for (const cat of categories) {
+        if (cat?.name) names.push(cat.name);
+        if (Array.isArray(cat.subCategories)) {
+          for (const sub of cat.subCategories) {
+            if (sub?.name) names.push(sub.name);
+          }
         }
       }
     }
@@ -75,6 +78,10 @@ export default function Header() {
   }, [handleClickOutside]);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
       if (ticking) return;
@@ -92,7 +99,7 @@ export default function Header() {
 
   // Анимация подсказки в поиске: "Найти [категория/подкатегория]"
   useEffect(() => {
-    if (!placeholderPhrases.length) return;
+    if (!mounted || !placeholderPhrases.length) return;
 
     const current = placeholderPhrases[placeholderIndex % placeholderPhrases.length];
     const typingSpeed = 80;
@@ -126,7 +133,7 @@ export default function Header() {
     }
 
     return () => window.clearTimeout(timer);
-  }, [placeholderChar, placeholderPhase, placeholderPhrases, placeholderIndex]);
+  }, [mounted, placeholderChar, placeholderPhase, placeholderPhrases, placeholderIndex]);
 
   const animatedPlaceholder =
     "Найти " +
@@ -221,16 +228,31 @@ export default function Header() {
             </button>
 
             <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
-              {query.length === 0 && (
-                <span className="pointer-events-none absolute left-3 text-sm text-slate-400 md:left-4">
-                  {animatedPlaceholder}
-                </span>
+              {mounted && (
+                <>
+                  {/* Статичный плейсхолдер при фокусе */}
+                  <span
+                    className={`pointer-events-none absolute left-3 text-sm text-slate-400 md:left-4 transition-opacity duration-200 ${
+                      isFocused && query.length === 0 ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    Поиск по артикулу или названию...
+                  </span>
+                  {/* Анимированный плейсхолдер, когда поле пустое и не в фокусе */}
+                  <span
+                    className={`pointer-events-none absolute left-3 text-sm text-slate-400 md:left-4 transition-opacity duration-200 ${
+                      !isFocused && query.length === 0 ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    {animatedPlaceholder}
+                  </span>
+                </>
               )}
               <input
                 type="text"
                 value={query}
-                onFocus={() => setSearchFocused(true)}
-                onBlur={() => setSearchFocused(false)}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
                 onChange={(e) => {
                   setQuery(e.target.value);
                   setOpen(e.target.value.trim().length >= 2);
