@@ -205,13 +205,14 @@ export default function FloatingContactBtn() {
             return {
               role: "max" as const,
               text,
-              id: Math.random().toString(),
+              id: "r-" + Math.random().toString(36).slice(2),
             };
           });
-          console.log("ADDING_MESSAGES_TO_UI:", newReplies);
           setMessages((prev) => {
             const safePrev = Array.isArray(prev) ? prev : [];
-            return [...safePrev, ...newReplies];
+            const next = [...safePrev, ...newReplies];
+            saveMessages(next); // сохраняем сразу, чтобы не потерять при возможном remount
+            return next;
           });
         }
       } catch {
