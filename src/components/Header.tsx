@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { products, categories } from "@/data/products";
 import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
@@ -17,10 +17,27 @@ export default function Header() {
   const containerRef = useRef<HTMLDivElement>(null);
   const catalogRef = useRef<HTMLDivElement>(null);
   const [isShrunk, setIsShrunk] = useState(false);
+  const [searchFocused, setSearchFocused] = useState(false);
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [placeholderChar, setPlaceholderChar] = useState(0);
+  const [placeholderPhase, setPlaceholderPhase] = useState<"typing" | "erasing">("typing");
 
   const router = useRouter();
   const totalItems = useCartStore((s) => s.getTotalItems());
   const rate = useCurrencyStore((s) => s.rate);
+
+  const placeholderPhrases = useMemo(() => {
+    const names: string[] = [];
+    for (const cat of categories) {
+      if (cat.name) names.push(cat.name);
+      if (Array.isArray(cat.subCategories)) {
+        for (const sub of cat.subCategories) {
+          if (sub?.name) names.push(sub.name);
+        }
+      }
+    }
+    return names.length ? names : ["горелки", "котлы", "аксессуары"];
+  }, []);
 
   const trimmed = query.trim().toLowerCase();
   const showDropdown = trimmed.length >= 2;
@@ -72,6 +89,53 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Анимация подсказки в поиске: "Найти [категория/подкатегория]"
+  useEffect(() => {
+    if (!placeholderPhrases.length) return;
+
+    const current = placeholderPhrases[placeholderIndex % placeholderPhrases.length];
+    const typingSpeed = 80;
+    const pause = 900;
+
+    let timer: number;
+
+    if (placeholderPhase === "typing") {
+      if (placeholderChar < current.length) {
+        timer = window.setTimeout(
+          () => setPlaceholderChar((c) => c + 1),
+          typingSpeed
+        );
+      } else {
+        timer = window.setTimeout(
+          () => setPlaceholderPhase("erasing"),
+          pause
+        );
+      }
+    } else {
+      // erasing
+      if (placeholderChar > 0) {
+        timer = window.setTimeout(
+          () => setPlaceholderChar((c) => c - 1),
+          typingSpeed
+        );
+      } else {
+        setPlaceholderPhase("typing");
+        setPlaceholderIndex((i) => (i + 1) % placeholderPhrases.length);
+      }
+    }
+
+    return () => window.clearTimeout(timer);
+  }, [placeholderChar, placeholderPhase, placeholderPhrases, placeholderIndex]);
+
+  const animatedPlaceholder =
+    "Найти " +
+    (placeholderPhrases.length
+      ? placeholderPhrases[placeholderIndex % placeholderPhrases.length].slice(
+          0,
+          placeholderChar
+        )
+      : "");
 
   return (
     <header className="sticky top-0 w-full bg-[#003366] text-white shadow-lg z-[100]">
@@ -157,11 +221,20 @@ export default function Header() {
             </button>
 
             <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
+              {query.length === 0 && (
+                <span className="pointer-events-none absolute left-3 text-sm text-slate-400 md:left-4">
+                  {animatedPlaceholder}
+                </span>
+              )}
               <input
                 type="text"
-                placeholder="Поиск по артикулу или названию..."
                 value={query}
-                onChange={(e) => { setQuery(e.target.value); setOpen(e.target.value.trim().length >= 2); }}
+                onFocus={() => setSearchFocused(true)}
+                onBlur={() => setSearchFocused(false)}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setOpen(e.target.value.trim().length >= 2);
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && results.length > 0) {
                     e.preventDefault();
@@ -169,7 +242,7 @@ export default function Header() {
                     setOpen(false);
                   }
                 }}
-                className="h-10 w-full px-3 text-sm text-slate-900 focus:outline-none md:h-12 md:px-4"
+                className="h-10 w-full bg-transparent px-3 text-sm text-slate-900 focus:outline-none md:h-12 md:px-4"
               />
               
               {/* Dropdown Results */}

@@ -100,6 +100,15 @@ export default function FloatingContactBtn() {
   }, []);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handler = () => setIsOpen(true);
+    window.addEventListener("open-chat-widget", handler);
+    return () => {
+      window.removeEventListener("open-chat-widget", handler);
+    };
+  }, []);
+
+  useEffect(() => {
     setMessages(loadMessages());
   }, []);
 

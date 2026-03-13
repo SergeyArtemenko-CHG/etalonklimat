@@ -51,49 +51,82 @@ export default async function ProductPage({ params }: Props) {
           </nav>
 
           {/* Main block: image + info */}
-          <div className="mb-8 grid gap-6 md:grid-cols-[1fr,400px] lg:grid-cols-[1fr,420px]">
+          <div className="mb-8 grid gap-6 md:grid-cols-[minmax(0,1.1fr),minmax(360px,0.9fr)]">
             {/* Photo area */}
-            <div className="flex justify-center">
-              <div className="flex aspect-square w-full max-w-[400px] items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-gradient-to-br from-slate-100 to-slate-200 shadow-inner">
-                <ProductImage
-                  src={product.image}
-                  alt={product.name}
-                  className="max-h-full max-w-full object-contain"
-                  fallbackToPlaceholder
-                />
+            <div>
+              <div className="flex justify-center">
+                <div className="flex aspect-[4/3] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-gradient-to-br from-slate-100 to-slate-200 shadow-inner">
+                  <ProductImage
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-contain"
+                    fallbackToPlaceholder
+                  />
+                </div>
+              </div>
+              {/* Дополнительная галерея (если появятся картинки) */}
+              <div className="mt-4 flex gap-3 overflow-x-auto">
+                {/* Здесь в будущем можно отрисовывать доп. изображения */}
               </div>
             </div>
 
-            {/* Right block: price, sku, quantity, button */}
-            <div className="flex flex-col rounded-xl bg-white p-5 shadow-md transition-shadow hover:shadow-lg">
-              <h1 className="mb-2 text-xl font-semibold text-slate-900 md:text-2xl">
+            {/* Right block: purchase panel */}
+            <div className="flex flex-col rounded-xl bg-slate-50/80 p-5 shadow-md shadow-slate-200 transition-shadow hover:shadow-lg md:p-6">
+              <h1 className="mb-3 text-xl font-semibold text-slate-900 md:text-2xl">
                 {product.name}
               </h1>
-              <span className="mb-4 text-sm text-slate-500">
-                Артикул: {product.sku}
-              </span>
+              <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 md:text-sm">
+                <span>
+                  Артикул:{" "}
+                  <span className="font-medium text-slate-800">
+                    {product.sku || "—"}
+                  </span>
+                </span>
+                {product.brand && (
+                  <span>
+                    • Бренд:{" "}
+                    <span className="font-medium text-slate-800">
+                      {product.brand}
+                    </span>
+                  </span>
+                )}
+                <span>
+                  • Наличие:{" "}
+                  <span
+                    className={
+                      product.inStock !== false
+                        ? "font-semibold text-emerald-600"
+                        : "font-semibold text-amber-600"
+                    }
+                  >
+                    {product.inStock !== false ? "В наличии" : "Под заказ"}
+                  </span>
+                </span>
+              </div>
               <div className="mb-4 flex items-center gap-2">
                 {product.inStock !== false ? (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-[#fff4e6] px-2.5 py-1 text-xs font-medium text-[#ff8c00]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#ff8c00]" />
-                    В наличии
+                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    В наличии на складе
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
-                    <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-                    Под заказ
+                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                    Поставка под заказ
                   </span>
                 )}
               </div>
               {product.inStock !== false && (
                 <>
-                  <p className="mb-6 text-2xl font-bold text-slate-900 md:text-3xl">
+                  <p className="mb-2 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
                     <ProductPriceDisplay
                       priceEur={product.priceEur}
                       priceRub={product.priceRub}
                     />
                   </p>
-                  <span className="mb-3 text-xs text-slate-400">Цена с НДС</span>
+                  <span className="mb-5 text-xs uppercase tracking-[0.16em] text-slate-400">
+                    Цена с НДС
+                  </span>
                 </>
               )}
               <ProductPageActions

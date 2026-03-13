@@ -24,6 +24,11 @@ export default function ProductPageActions({
   const [qty, setQty] = useState(1);
   const openRequestModal = useProductRequestStore((s) => s.open);
 
+  const openChat = () => {
+    if (typeof window === "undefined") return;
+    window.dispatchEvent(new CustomEvent("open-chat-widget"));
+  };
+
   if (!inStock) {
     return (
       <button
@@ -94,9 +99,16 @@ export default function ProductPageActions({
               productSku: sku,
             })
           }
-          className="rounded-xl border-2 border-[#FF8C00] px-4 py-3 text-sm font-semibold text-[#FF8C00] transition hover:bg-[#FF8C00] hover:text-white"
+          className="w-full rounded-xl border-2 border-[#FF8C00] px-4 py-3 text-sm font-semibold text-[#FF8C00] transition hover:bg-[#FF8C00] hover:text-white sm:w-auto"
         >
-          Получить индивидуальную скидку
+          Запросить КП
+        </button>
+        <button
+          type="button"
+          onClick={openChat}
+          className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#0088cc] hover:bg-slate-50 hover:text-[#0088cc] sm:w-auto"
+        >
+          Консультация с инженером
         </button>
       </div>
     </>

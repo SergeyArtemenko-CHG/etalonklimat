@@ -92,7 +92,9 @@ export default function ProductTabs({
                   specs.map((spec, i) => (
                     <tr
                       key={i}
-                      className="border-b border-slate-100 last:border-0 hover:bg-slate-50/50"
+                      className={`border-b border-slate-100 last:border-0 ${
+                        i % 2 === 0 ? "bg-white" : "bg-slate-50/70"
+                      } hover:bg-slate-100/60`}
                     >
                       <td className="whitespace-nowrap px-3 py-3 text-xs text-slate-600 md:px-4 md:text-sm">
                         {spec.name}
@@ -104,7 +106,10 @@ export default function ProductTabs({
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={2} className="px-3 py-6 text-center text-xs text-slate-500 md:px-4 md:text-sm">
+                    <td
+                      colSpan={2}
+                      className="px-3 py-6 text-center text-xs text-slate-500 md:px-4 md:text-sm"
+                    >
                       Технические характеристики не указаны.
                     </td>
                   </tr>
