@@ -8,7 +8,29 @@ import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
 
-// ... (ProductImagePlaceholder остается без изменений)
+function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
+  const [failed, setFailed] = useState(false);
+  const showImg = src?.trim() && !failed;
+  return (
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+      {showImg ? (
+        <img
+          src={src!.trim()}
+          alt={alt}
+          className="h-full w-full object-contain"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-400" aria-hidden>
+          <rect x="3" y="6" width="18" height="11" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M3 14h18" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="9" cy="10" r="1.2" fill="currentColor" />
+          <circle cx="15" cy="10" r="1.2" fill="currentColor" />
+        </svg>
+      )}
+    </div>
+  );
+}
 
 export default function Header() {
   const [query, setQuery] = useState("");
@@ -231,11 +253,11 @@ export default function Header() {
             </button>
 
             <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
-              {isClient && (
+              {isClient && query.length === 0 && (
                 <span
                   className="pointer-events-none absolute left-3 z-10 text-sm text-slate-500 md:left-4 transition-opacity duration-200"
                 >
-                  {isFocused && query.length === 0
+                  {isFocused
                     ? "Поиск по артикулу или названию..."
                     : animatedPlaceholder}
                 </span>
@@ -262,13 +284,18 @@ export default function Header() {
               {/* Dropdown Results */}
               {open && results.length > 0 && (
                 <div className="absolute left-0 right-0 top-full z-[110] mt-2 max-h-[60vh] overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 shadow-2xl">
-                   {results.map(p => (
-                     <Link key={p.sku} href={`/product/${p.sku}`} onClick={() => setOpen(false)} className="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors">
-                        <div className="h-12 w-12 shrink-0 bg-slate-100 rounded flex items-center justify-center text-[10px] text-slate-400">IMG</div>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-slate-900 truncate">{p.name}</p>
-                          <p className="text-[10px] text-slate-500 uppercase tracking-tight">Арт: {p.sku}</p>
-                        </div>
+                   {results.map((p) => (
+                     <Link
+                       key={p.sku}
+                       href={`/product/${p.sku}`}
+                       onClick={() => setOpen(false)}
+                       className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-slate-50"
+                     >
+                       <SearchProductThumb src={p.image} alt={p.name} />
+                       <div className="min-w-0 flex-1">
+                         <p className="truncate text-sm font-medium text-slate-900">{p.name}</p>
+                         <p className="text-[10px] uppercase tracking-tight text-slate-500">Арт: {p.sku}</p>
+                       </div>
                      </Link>
                    ))}
                 </div>

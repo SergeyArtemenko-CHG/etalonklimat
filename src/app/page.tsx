@@ -170,12 +170,12 @@ export default function Home() {
                 <Link
                   key={brand.slug}
                   href={`/brands/${brand.slug}`}
-                  className="group flex h-16 min-w-[120px] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 shadow-sm transition hover:border-[#FF8C00]/60 hover:bg-white hover:shadow-md"
+                  className="group flex h-20 min-w-[140px] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 shadow-sm transition hover:border-[#FF8C00]/60 hover:bg-white hover:shadow-md"
                 >
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-h-10 max-w-[120px] object-contain grayscale group-hover:grayscale-0 transition"
+                    className="max-h-14 max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition"
                     loading="lazy"
                   />
                 </Link>
