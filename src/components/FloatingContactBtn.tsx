@@ -171,9 +171,8 @@ export default function FloatingContactBtn() {
         "Messages count:",
         messagesRef.current.length
       );
-      console.log("Fetching replies for:", currentSession);
+      console.log("Fetching for ID:", currentSession);
       try {
-        setIsTyping(true);
         const url = "/api/chat-replies?t=" + Date.now();
         const res = await fetch(url, {
           method: "POST",
@@ -186,14 +185,17 @@ export default function FloatingContactBtn() {
           body: JSON.stringify({ sessionId: currentSession, _t: Date.now() }),
         });
         const raw = await res.text();
-        console.log("RAW_FROM_SERVER:", raw);
+        if (!res.ok) return;
         let data: any = { replies: [] };
         try {
           data = JSON.parse(raw);
         } catch {
-          data = { replies: [] };
+          return;
         }
         const replies = Array.isArray(data.replies) ? data.replies : [];
+        // Показываем typing только при ответе сервера: typing или статус «в процессе»
+        const serverTyping = data.typing === true || data.status === "typing" || data.status === "pending";
+        if (serverTyping) setIsTyping(true);
         if (replies.length) {
           const newReplies: Message[] = replies.map((r: { text?: string }) => {
             let text = (r?.text ?? "").toString();
@@ -214,10 +216,11 @@ export default function FloatingContactBtn() {
             saveMessages(next); // сохраняем сразу, чтобы не потерять при возможном remount
             return next;
           });
+          setIsTyping(false);
+        } else if (!serverTyping) {
+          setIsTyping(false);
         }
       } catch {
-        // ignore
-      } finally {
         setIsTyping(false);
       }
     };
