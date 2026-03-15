@@ -214,16 +214,14 @@ export default function Header() {
 
       {/* Main header — фиксированная высота, чтобы не прыгал при скролле */}
       <div className="mx-auto max-w-6xl px-4 w-full">
-        <div className="flex flex-col md:flex-row md:items-center gap-3 h-[72px] md:h-[88px] py-3 md:py-4">
+        <div className="flex flex-col md:flex-row md:items-center gap-3 min-h-[72px] md:min-h-[88px] py-3 md:py-4">
           {/* Logo */}
-          <div className="flex items-center justify-between md:w-auto md:min-w-[180px]">
+          <div className="-ml-5 mr-4 flex items-center justify-between md:min-w-0 md:mr-6">
             <Link href="/" className="flex items-center transition-transform active:scale-95">
               <img
-                src="/images/Logo/ETALON_LOGO.png"
+                src="/images/Logo/Etalon_LOGO.svg"
                 alt="ETALON"
-                className={`shrink-0 object-contain transition-all duration-300 ${
-                  isShrunk ? "h-8 md:h-9" : "h-10 md:h-12"
-                }`}
+                className="h-auto w-24 shrink-0 object-contain object-left md:w-36"
               />
             </Link>
             
