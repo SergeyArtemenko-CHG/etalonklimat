@@ -9,6 +9,20 @@ import {
   getProductsByCategory,
 } from "@/data/products";
 
+export const dynamic = "force-static";
+export const revalidate = false;
+
+export async function generateStaticParams() {
+  const slugs: { slug: string }[] = [];
+  for (const cat of categories) {
+    slugs.push({ slug: cat.slug });
+    for (const sub of cat.subCategories ?? []) {
+      slugs.push({ slug: sub.slug });
+    }
+  }
+  return slugs;
+}
+
 type Props = {
   params: Promise<{ slug: string }>;
 };

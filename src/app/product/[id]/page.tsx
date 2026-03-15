@@ -6,10 +6,18 @@ import ProductTabs from "@/components/ProductTabs";
 import {
   getCategoryBySlug,
   getProductById,
+  products,
 } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
 import ProductPageActions from "./ProductPageActions";
 import ProductPriceDisplay from "@/components/ProductPriceDisplay";
+
+export const dynamic = "force-static";
+export const revalidate = false;
+
+export async function generateStaticParams() {
+  return products.map((p) => ({ id: p.sku }));
+}
 
 type Props = {
   params: Promise<{ id: string }>;
