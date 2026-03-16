@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { products, categories } from "@/data/products";
 import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
+import TopAuthBar from "@/components/TopAuthBar";
 
 function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
   const [failed, setFailed] = useState(false);
@@ -39,33 +40,13 @@ export default function Header() {
   const containerRef = useRef<HTMLDivElement>(null);
   const catalogRef = useRef<HTMLDivElement>(null);
   const [isShrunk, setIsShrunk] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const [placeholderIndex, setPlaceholderIndex] = useState(0);
-  const [placeholderChar, setPlaceholderChar] = useState(0);
-  const [placeholderPhase, setPlaceholderPhase] = useState<"typing" | "erasing">("typing");
 
   const router = useRouter();
   const totalItems = useCartStore((s) => s.getTotalItems());
   const rate = useCurrencyStore((s) => s.rate);
 
   console.log("Categories for animation:", categories?.length);
-
-  const placeholderPhrases = useMemo(() => {
-    const names: string[] = [];
-    if (Array.isArray(categories) && categories.length > 0) {
-      for (const cat of categories) {
-        if (cat?.name) names.push(cat.name);
-        if (Array.isArray(cat.subCategories)) {
-          for (const sub of cat.subCategories) {
-            if (sub?.name) names.push(sub.name);
-          }
-        }
-      }
-    }
-    // если на сервере/клиенте категорий нет — жёсткий дефолт
-    return names.length ? names : ["котлы", "горелки", "запчасти", "насосы"];
-  }, []);
 
   const trimmed = query.trim().toLowerCase();
   const showDropdown = trimmed.length >= 2;
@@ -122,55 +103,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Анимация подсказки в поиске: "Найти [категория/подкатегория]"
-  useEffect(() => {
-    if (!isClient || !placeholderPhrases.length) return;
-
-    const current = placeholderPhrases[placeholderIndex % placeholderPhrases.length];
-    const typingSpeed = 80;
-    const pause = 900;
-
-    let timer: number;
-
-    if (placeholderPhase === "typing") {
-      if (placeholderChar < current.length) {
-        timer = window.setTimeout(
-          () => setPlaceholderChar((c) => c + 1),
-          typingSpeed
-        );
-      } else {
-        timer = window.setTimeout(
-          () => setPlaceholderPhase("erasing"),
-          pause
-        );
-      }
-    } else {
-      // erasing
-      if (placeholderChar > 0) {
-        timer = window.setTimeout(
-          () => setPlaceholderChar((c) => c - 1),
-          typingSpeed
-        );
-      } else {
-        setPlaceholderPhase("typing");
-        setPlaceholderIndex((i) => (i + 1) % placeholderPhrases.length);
-      }
-    }
-
-    return () => window.clearTimeout(timer);
-  }, [isClient, placeholderChar, placeholderPhase, placeholderPhrases, placeholderIndex]);
-
-  const animatedPlaceholder =
-    "Найти " +
-    (placeholderPhrases.length
-      ? placeholderPhrases[placeholderIndex % placeholderPhrases.length].slice(
-          0,
-          placeholderChar
-        )
-      : "");
-
   return (
-    <header className="sticky top-0 w-full bg-[#003366] text-white shadow-lg z-[100]">
+    <header className="sticky top-0 z-[100] w-full bg-[#003366] text-white shadow-lg">
       {/* Top bar — скрываем при скролле, фиксированная высота в развёрнутом виде */}
       <div
         className={`border-b border-white/10 bg-[#02274d] overflow-hidden transition-[max-height] duration-300 ease-out ${
@@ -252,19 +186,13 @@ export default function Header() {
 
             <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
               {isClient && query.length === 0 && (
-                <span
-                  className="pointer-events-none absolute left-3 z-10 text-sm text-slate-500 md:left-4 transition-opacity duration-200"
-                >
-                  {isFocused
-                    ? "Поиск по артикулу или названию..."
-                    : animatedPlaceholder}
+                <span className="pointer-events-none absolute left-3 z-10 text-sm text-slate-500 md:left-4">
+                  Поиск по артикулу или названию...
                 </span>
               )}
               <input
                 type="text"
                 value={query}
-                onFocus={() => setIsFocused(true)}
-                onBlur={() => setIsFocused(false)}
                 onChange={(e) => {
                   setQuery(e.target.value);
                   setOpen(e.target.value.trim().length >= 2);
@@ -313,6 +241,9 @@ export default function Header() {
           </Link>
         </div>
       </div>
+
+      {/* Панель авторизации под хедером */}
+      <TopAuthBar />
 
       {/* Catalog Overlay */}
       {catalogOpen && (

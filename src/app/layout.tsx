@@ -48,9 +48,7 @@ export default function RootLayout({
         <ToastContainer />
         
         {/* Обертка flex-1 заставит содержимое страниц (включая их футеры) растягиваться на весь экран */}
-        <div className="flex flex-col flex-1">
-          {children}
-        </div>
+        <div className="flex flex-col flex-1">{children}</div>
 
         <CookieBanner />
         <FloatingScrollToTop />

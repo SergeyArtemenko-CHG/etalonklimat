@@ -91,20 +91,6 @@ export default function ProductPageActions({
         />
         <button
           type="button"
-          onClick={() =>
-            openRequestModal({
-              type: "discount",
-              productName: name,
-              productId: id,
-              productSku: sku,
-            })
-          }
-          className="w-full rounded-xl border-2 border-[#FF8C00] px-4 py-3 text-sm font-semibold text-[#FF8C00] transition hover:bg-[#FF8C00] hover:text-white sm:w-auto"
-        >
-          Запросить КП
-        </button>
-        <button
-          type="button"
           onClick={openChat}
           className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#0088cc] hover:bg-slate-50 hover:text-[#0088cc] sm:w-auto"
         >

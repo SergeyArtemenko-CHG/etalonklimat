@@ -125,17 +125,17 @@ export default async function ProductPage({ params }: Props) {
                 )}
               </div>
               {product.inStock !== false && (
-                <>
+                <div className="mb-5">
                   <p className="mb-2 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
                     <ProductPriceDisplay
                       priceEur={product.priceEur}
                       priceRub={product.priceRub}
                     />
                   </p>
-                  <span className="mb-5 text-xs uppercase tracking-[0.16em] text-slate-400">
+                  <span className="text-xs uppercase tracking-[0.16em] text-slate-400">
                     Цена с НДС
                   </span>
-                </>
+                </div>
               )}
               <ProductPageActions
                 id={product.id}
