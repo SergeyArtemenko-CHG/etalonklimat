@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 import AddToCartButton from "@/components/AddToCartButton";
 import { useProductRequestStore } from "@/store/productRequest";
 
@@ -23,6 +24,8 @@ export default function ProductPageActions({
 }: ProductPageActionsProps) {
   const [qty, setQty] = useState(1);
   const openRequestModal = useProductRequestStore((s) => s.open);
+  const { data: session } = useSession();
+  const isAuthorized = Number.isFinite((session?.user as any)?.status);
 
   const openChat = () => {
     if (typeof window === "undefined") return;
@@ -43,7 +46,7 @@ export default function ProductPageActions({
         }
         className="w-full rounded-xl bg-[#FF8C00] px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
       >
-        Узнать цену и срок поставки
+        {isAuthorized ? "Запросить" : "Узнать цену и срок поставки"}
       </button>
     );
   }

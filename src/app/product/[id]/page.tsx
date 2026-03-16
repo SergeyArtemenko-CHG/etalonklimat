@@ -10,7 +10,7 @@ import {
 } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
 import ProductPageActions from "./ProductPageActions";
-import ProductPriceDisplay from "@/components/ProductPriceDisplay";
+import ProductPriceBlock from "./ProductPriceBlock";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -124,19 +124,15 @@ export default async function ProductPage({ params }: Props) {
                   </span>
                 )}
               </div>
-              {product.inStock !== false && (
-                <div className="mb-5">
-                  <p className="mb-2 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-                    <ProductPriceDisplay
-                      priceEur={product.priceEur}
-                      priceRub={product.priceRub}
-                    />
-                  </p>
-                  <span className="text-xs uppercase tracking-[0.16em] text-slate-400">
-                    Цена с НДС
-                  </span>
-                </div>
-              )}
+              <ProductPriceBlock
+                priceEur={product.priceEur}
+                priceRub={product.priceRub}
+                partnerDiscount1={product.partnerDiscount1}
+                partnerDiscount2={product.partnerDiscount2}
+                partnerDiscount3={product.partnerDiscount3}
+                leadTime={product.leadTime}
+                inStock={product.inStock !== false}
+              />
               <ProductPageActions
                 id={product.id}
                 name={product.name}

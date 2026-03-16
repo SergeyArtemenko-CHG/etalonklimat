@@ -2,16 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
+import { products } from "@/data/products";
 
 export default function CartPage() {
   const [mounted, setMounted] = useState(false);
-  const { items, removeItem, updateQuantity, getTotalPriceRub, clearCart } = useCartStore();
+  const { items, removeItem, updateQuantity, clearCart } = useCartStore();
   const rate = useCurrencyStore((s) => s.rate);
+  const { data: session } = useSession();
   const honeypotRef = useRef<HTMLInputElement>(null);
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
@@ -24,7 +27,36 @@ export default function CartPage() {
     setMounted(true);
   }, []);
 
-  const totalPriceRub = getTotalPriceRub(rate);
+  const rawStatus = (session?.user as any)?.status as number | undefined;
+  const isAuthorized = Number.isFinite(rawStatus);
+  const partnerGroup = isAuthorized ? (rawStatus as 1 | 2 | 3) : undefined;
+
+  const calcItemFinalRub = (itemId: string, itemPriceRub?: number, itemPriceEur?: number) => {
+    const product = products.find((p) => p.id === itemId);
+    const priceRub =
+      itemPriceRub ??
+      product?.priceRub ??
+      (product?.priceEur != null && rate ? product.priceEur * rate : undefined) ??
+      (itemPriceEur != null && rate ? itemPriceEur * rate : undefined);
+    if (priceRub == null || priceRub <= 0) return undefined;
+
+    let discountPercent: number | undefined;
+    if (partnerGroup === 1) discountPercent = product?.partnerDiscount1;
+    if (partnerGroup === 2) discountPercent = product?.partnerDiscount2;
+    if (partnerGroup === 3) discountPercent = product?.partnerDiscount3;
+
+    const hasDiscount = isAuthorized && discountPercent != null;
+    return hasDiscount
+      ? Math.round(priceRub * (1 - discountPercent! / 100))
+      : priceRub;
+  };
+
+  const totalPriceRub = items.reduce((sum, item) => {
+    const finalRub = calcItemFinalRub(item.id, item.priceRub, item.priceEur);
+    if (finalRub == null) return sum;
+    return sum + finalRub * item.quantity;
+  }, 0);
+
   const totalPriceFormatted = formatPrice(undefined, totalPriceRub, rate);
   const isEmptyCart = items.length === 0 && !success;
 
@@ -117,15 +149,28 @@ export default function CartPage() {
                         </button>
                       </div>
                       <span className="text-base font-semibold text-slate-900">
-                        {formatPrice(
-                          item.priceEur != null
-                            ? item.priceEur * item.quantity
-                            : undefined,
-                          item.priceRub != null
-                            ? item.priceRub * item.quantity
-                            : undefined,
-                          rate
-                        )}
+                        {(() => {
+                          const finalRub = calcItemFinalRub(
+                            item.id,
+                            item.priceRub,
+                            item.priceEur
+                          );
+                          const fallback = formatPrice(
+                            item.priceEur != null
+                              ? item.priceEur * item.quantity
+                              : undefined,
+                            item.priceRub != null
+                              ? item.priceRub * item.quantity
+                              : undefined,
+                            rate
+                          );
+                          if (finalRub == null) return fallback;
+                          return formatPrice(
+                            undefined,
+                            finalRub * item.quantity,
+                            rate
+                          );
+                        })()}
                       </span>
                       <button
                         type="button"

@@ -7,6 +7,7 @@ import FloatingContactBtn from "@/components/FloatingContactBtn";
 import FloatingScrollToTop from "@/components/FloatingScrollToTop";
 import ProductRequestModalHost from "@/components/ProductRequestModalHost";
 import ToastContainer from "@/components/ToastContainer";
+import AuthSessionProvider from "@/components/AuthSessionProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -46,13 +47,14 @@ export default function RootLayout({
         <CurrencyRateLoader />
         <ProductRequestModalHost />
         <ToastContainer />
-        
-        {/* Обертка flex-1 заставит содержимое страниц (включая их футеры) растягиваться на весь экран */}
-        <div className="flex flex-col flex-1">{children}</div>
+        <AuthSessionProvider>
+          {/* Обертка flex-1 заставит содержимое страниц (включая их футеры) растягиваться на весь экран */}
+          <div className="flex flex-col flex-1">{children}</div>
 
-        <CookieBanner />
-        <FloatingScrollToTop />
-        <FloatingContactBtn />
+          <CookieBanner />
+          <FloatingScrollToTop />
+          <FloatingContactBtn />
+        </AuthSessionProvider>
       </body>
     </html>
   );

@@ -1,24 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 
 export default function TopAuthBar() {
-  const [hidden, setHidden] = useState(false);
+  const { data: session, status } = useSession();
 
-  useEffect(() => {
-    try {
-      const auth = typeof window !== "undefined" && (
-        document.cookie.includes("etalon_auth=") ||
-        localStorage.getItem("etalon_auth") === "1"
-      );
-      setHidden(!!auth);
-    } catch {
-      setHidden(false);
-    }
-  }, []);
-
-  if (hidden) return null;
+  // Пока не знаем статус — не показываем панель, чтобы не мигала
+  if (status === "loading") return null;
+  // Пользователь авторизован — панель не нужна
+  if (session?.user) return null;
 
   return (
     <div className="w-full bg-[#0b1f33] px-4 py-2.5 text-white shadow-md">

@@ -185,6 +185,9 @@ ${p.files
     },
     priceEur: ${p.priceEur != null ? p.priceEur : "undefined"},
     priceRub: ${p.priceRub != null ? p.priceRub : "undefined"},
+    partnerDiscount1: ${p.partnerDiscount1 != null ? p.partnerDiscount1 : "undefined"},
+    partnerDiscount2: ${p.partnerDiscount2 != null ? p.partnerDiscount2 : "undefined"},
+    partnerDiscount3: ${p.partnerDiscount3 != null ? p.partnerDiscount3 : "undefined"},
     brand: ${p.brand ? toTsString(p.brand) : "undefined"},
     burnerPowerMin: ${p.burnerPowerMin != null ? p.burnerPowerMin : "undefined"},
     burnerPowerMax: ${p.burnerPowerMax != null ? p.burnerPowerMax : "undefined"},
@@ -202,6 +205,7 @@ ${p.files
     specs: ${p.specs && p.specs.length ? JSON.stringify(p.specs, null, 2) : "undefined"},
     files: ${filesArray},
     image: ${p.image ? toTsString(p.image) : "undefined"},
+    leadTime: ${p.leadTime ? toTsString(p.leadTime) : "undefined"},
     inStock: ${p.inStock === false ? "false" : "undefined"},
   }`;
           })
@@ -329,6 +333,10 @@ function main() {
   const idxBoilerType = col("Тип котла");
   const idxHeatExchanger = col("Материал теплообменника");
   const idxPriceRub = col("Цена РУБ");
+  const idxDisc1 = col("Скидка партнера 1");
+  const idxDisc2 = col("Скидка партнера 2");
+  const idxDisc3 = col("Скидка партнера 3");
+  const idxLeadTime = col("Срок поставки");
   const idxAvailability = col("Наличие");
   const idxSku = col("Артикул");
   const idxBoilerPower = col("Мощность котла, кВт");
@@ -346,6 +354,10 @@ function main() {
       idxPriceRub >= 0 ? row[idxPriceRub] : row[12];
     const rawAvailability =
       idxAvailability >= 0 ? row[idxAvailability] : undefined;
+    const rawDisc1 = idxDisc1 >= 0 ? row[idxDisc1] : undefined;
+    const rawDisc2 = idxDisc2 >= 0 ? row[idxDisc2] : undefined;
+    const rawDisc3 = idxDisc3 >= 0 ? row[idxDisc3] : undefined;
+    const rawLeadTime = idxLeadTime >= 0 ? row[idxLeadTime] : undefined;
     const rawSku = idxSku >= 0 ? (row[idxSku] || "").toString().trim() : "";
     const rawBoilerPower =
       idxBoilerPower >= 0 ? (row[idxBoilerPower] || "").toString().trim() : "";
@@ -470,6 +482,21 @@ function main() {
       });
     }
 
+    const disc1 = rawDisc1 != null && `${rawDisc1}`.trim() !== ""
+      ? Number(`${rawDisc1}`.toString().replace(",", "."))
+      : NaN;
+    const disc2 = rawDisc2 != null && `${rawDisc2}`.trim() !== ""
+      ? Number(`${rawDisc2}`.toString().replace(",", "."))
+      : NaN;
+    const disc3 = rawDisc3 != null && `${rawDisc3}`.trim() !== ""
+      ? Number(`${rawDisc3}`.toString().replace(",", "."))
+      : NaN;
+
+    const leadTime =
+      rawLeadTime != null && `${rawLeadTime}`.trim() !== ""
+        ? `${rawLeadTime}`.toString().trim()
+        : undefined;
+
     const product = {
       id,
       sku,
@@ -492,6 +519,10 @@ function main() {
       files: files.length ? files : undefined,
       image: imageFile ? `/images/products-watermarked/${imageFile}` : undefined,
       inStock,
+      partnerDiscount1: Number.isFinite(disc1) ? disc1 : undefined,
+      partnerDiscount2: Number.isFinite(disc2) ? disc2 : undefined,
+      partnerDiscount3: Number.isFinite(disc3) ? disc3 : undefined,
+      leadTime,
     };
 
     products.push(product);

@@ -17,7 +17,8 @@ export default function LoginForm() {
       await signIn("credentials", {
         email: email.trim(),
         password,
-        callbackUrl: "/",
+        redirect: true,
+        callbackUrl: "/account",
       });
     } finally {
       setIsSubmitting(false);

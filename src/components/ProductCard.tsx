@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 import AddToCartButton from "./AddToCartButton";
 import { formatPrice } from "@/utils/currency";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
@@ -18,6 +19,10 @@ type ProductCardProps = {
   burnerPowerMin?: number;
   burnerPowerMax?: number;
   inStock?: boolean;
+  partnerDiscount1?: number;
+  partnerDiscount2?: number;
+  partnerDiscount3?: number;
+  leadTime?: string;
 };
 
 function CardImagePlaceholder() {
@@ -49,21 +54,28 @@ function CardImagePlaceholder() {
   );
 }
 
-export default function ProductCard({
-  id,
-  name,
-  sku,
-  priceEur,
-  priceRub,
-  description,
-  image,
-  burnerPowerMin,
-  burnerPowerMax,
-  inStock = true,
-}: ProductCardProps) {
+export default function ProductCard(props: ProductCardProps) {
+  const {
+    id,
+    name,
+    sku,
+    priceEur,
+    priceRub,
+    description,
+    image,
+    burnerPowerMin,
+    burnerPowerMax,
+    inStock = true,
+    partnerDiscount1,
+    partnerDiscount2,
+    partnerDiscount3,
+    leadTime,
+  } = props;
+
   const rate = useCurrencyStore((s) => s.rate);
   const [imageError, setImageError] = useState(false);
   const openRequestModal = useProductRequestStore((s) => s.open);
+  const { data: session } = useSession();
   const href = `/product/${id}`;
   const imageSrc = image?.trim() || undefined;
   const showImage = imageSrc && !imageError;
@@ -87,6 +99,36 @@ export default function ProductCard({
     }
     return null;
   })();
+
+  const trimmedDescription = description?.trim() || "";
+
+  const rawStatus = (session?.user as any)?.status as number | undefined;
+  const isAuthorized = Number.isFinite(rawStatus);
+  const partnerGroup = isAuthorized
+    ? ((rawStatus as 1 | 2 | 3) ?? undefined)
+    : undefined;
+
+  const hasRub = typeof priceRub === "number";
+  const retailRub = hasRub
+    ? priceRub!
+    : priceEur != null && rate
+    ? priceEur * rate
+    : undefined;
+  const hasRetailPrice = retailRub != null && retailRub > 0;
+
+  let discountPercent: number | undefined;
+  if (partnerGroup === 1) discountPercent = partnerDiscount1;
+  if (partnerGroup === 2) discountPercent = partnerDiscount2;
+  if (partnerGroup === 3) discountPercent = partnerDiscount3;
+
+  const hasDiscount = hasRetailPrice && isAuthorized && discountPercent != null;
+  const finalRub = hasDiscount
+    ? Math.round(retailRub! * (1 - discountPercent! / 100))
+    : hasRetailPrice
+    ? retailRub!
+    : undefined;
+
+  const isPriceOnRequest = !hasRetailPrice && !!leadTime;
 
   return (
     <article className="flex h-full flex-row overflow-hidden rounded-xl bg-white shadow-md shadow-slate-200/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-300/50 md:flex-col">
@@ -121,10 +163,56 @@ export default function ProductCard({
               Мощность: {powerText}
             </span>
           )}
-          {inStock && (
-            <span className="mt-1 text-base font-semibold text-slate-900">
-              {formatPrice(priceEur, priceRub, rate)}
-            </span>
+          {trimmedDescription && (
+            <p className="line-clamp-2 text-[11px] text-slate-500">
+              {trimmedDescription}
+            </p>
+          )}
+          {(isAuthorized || inStock) && (
+            <div className="mt-1 space-y-0.5">
+              {isPriceOnRequest ? (
+                <span className="text-sm font-medium text-slate-700">
+                  Цена по запросу
+                </span>
+              ) : finalRub != null ? (
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="text-base font-semibold text-slate-900">
+                    {finalRub.toLocaleString("ru-RU")} ₽
+                  </span>
+                  {hasDiscount && retailRub != null && (
+                    <>
+                      <span className="text-[11px] text-slate-400 line-through">
+                        {retailRub.toLocaleString("ru-RU")} ₽
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                        -{discountPercent}% <span className="ml-1">Ваша цена</span>
+                      </span>
+                    </>
+                  )}
+                </div>
+              ) : (
+                <span className="text-sm text-slate-500">
+                  {formatPrice(priceEur, priceRub, rate)}
+                </span>
+              )}
+              {isAuthorized ? (
+                leadTime && (
+                  <p
+                    className={`text-[11px] ${
+                      !inStock ? "text-blue-600" : "text-slate-500"
+                    }`}
+                  >
+                    Срок поставки:{" "}
+                    <span className="font-medium">{leadTime}</span>
+                  </p>
+                )
+              ) : (
+                <p className="text-[11px] text-slate-500">
+                  Срок поставки:{" "}
+                  <span className="font-medium">Уточняйте у менеджера</span>
+                </p>
+              )}
+            </div>
           )}
         </div>
       </Link>

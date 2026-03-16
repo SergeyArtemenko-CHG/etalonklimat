@@ -1,0 +1,101 @@
+import NextAuth, { NextAuthOptions } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import fs from "fs";
+import path from "path";
+
+type CsvUser = {
+  email: string;
+  password: string;
+  status?: number;
+};
+
+function readUsersFromCsv(): CsvUser[] {
+  try {
+    const filePath = path.join(process.cwd(), "Users.csv");
+    const raw = fs.readFileSync(filePath, "utf8");
+    const lines = raw.split(/\r?\n/).filter((l) => l.trim().length > 0);
+    if (lines.length <= 1) return [];
+    const [headerLine, ...rows] = lines;
+    const headers = headerLine
+      .split(";")
+      .map((h) => h.trim().toLowerCase());
+    const emailIdx = headers.indexOf("email");
+    const passwordIdx = headers.indexOf("password");
+    const statusIdx = headers.indexOf("status");
+    if (emailIdx === -1 || passwordIdx === -1) return [];
+
+    return rows.map((row) => {
+      const cols = row.split(";").map((c) => c.trim());
+      const statusRaw = statusIdx >= 0 ? cols[statusIdx] : "";
+      const statusNum = Number(statusRaw);
+      return {
+        email: cols[emailIdx] || "",
+        password: cols[passwordIdx] || "",
+        status: Number.isFinite(statusNum) ? statusNum : undefined,
+      };
+    });
+  } catch (e) {
+    console.error("Failed to read Users.csv:", e);
+    return [];
+  }
+}
+
+export const authOptions: NextAuthOptions = {
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "text" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) return null;
+
+        const users = readUsersFromCsv();
+        const email = credentials.email.trim().toLowerCase();
+        const found = users.find(
+          (u) => u.email.trim().toLowerCase() === email
+        );
+        if (!found) return null;
+
+        // Пока тестируем — сравнение в открытом виде.
+        // Позже можно заменить на bcrypt.compare(credentials.password, found.password).
+        if (credentials.password !== found.password) return null;
+
+        return {
+          id: found.email,
+          email: found.email,
+          status: found.status,
+        } as any;
+      },
+    }),
+  ],
+  pages: {
+    signIn: "/login",
+  },
+  session: { strategy: "jwt" },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user && (user as any).status != null) {
+        const status = (user as any).status as number;
+        (token as any).status = status;
+        // Для совместимости с логикой цен:
+        (token as any).partnerGroup = status;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user && (token as any).status != null) {
+        const status = (token as any).status as number;
+        (session.user as any).status = status;
+        (session.user as any).partnerGroup = status;
+      }
+      return session;
+    },
+  },
+};
+
+const handler = NextAuth(authOptions);
+
+export { handler as GET, handler as POST };
+

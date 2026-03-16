@@ -224,6 +224,10 @@ export default function Home() {
                   burnerPowerMin={product.burnerPowerMin}
                   burnerPowerMax={product.burnerPowerMax}
                   inStock={product.inStock}
+                  partnerDiscount1={product.partnerDiscount1}
+                  partnerDiscount2={product.partnerDiscount2}
+                  partnerDiscount3={product.partnerDiscount3}
+                  leadTime={product.leadTime}
                 />
               ))}
             </div>
