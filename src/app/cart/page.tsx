@@ -281,14 +281,31 @@ export default function CartPage() {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify({
-                                  items: items.map((i) => ({
-                                    id: i.id,
-                                    name: i.name,
-                                    quantity: i.quantity,
-                                    priceEur: i.priceEur,
-                                    priceRub: i.priceRub,
-                                  })),
-                                  totalPrice: totalPriceFormatted.replace(/\s/g, " ").replace(" ₽", ""),
+                                  items: items.map((i) => {
+                                    const finalRub = calcItemFinalRub(
+                                      i.id,
+                                      i.priceRub,
+                                      i.priceEur
+                                    );
+                                    if (finalRub != null) {
+                                      return {
+                                        id: i.id,
+                                        name: i.name,
+                                        quantity: i.quantity,
+                                        priceRub: finalRub,
+                                      };
+                                    }
+                                    return {
+                                      id: i.id,
+                                      name: i.name,
+                                      quantity: i.quantity,
+                                      priceEur: i.priceEur,
+                                      priceRub: i.priceRub,
+                                    };
+                                  }),
+                                  totalPrice: totalPriceFormatted
+                                    .replace(/\s/g, " ")
+                                    .replace(" ₽", ""),
                                   rate,
                                   customerName: customerName.trim(),
                                   customerPhone: customerPhone.trim(),
