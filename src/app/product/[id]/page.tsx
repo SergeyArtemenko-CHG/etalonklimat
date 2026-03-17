@@ -16,7 +16,13 @@ export const dynamic = "force-static";
 export const revalidate = false;
 
 export async function generateStaticParams() {
-  return products.map((p) => ({ id: p.sku }));
+  const params: { id: string }[] = [];
+  for (const p of products) {
+    if (p.sku) {
+      params.push({ id: p.sku });
+    }
+  }
+  return params;
 }
 
 type Props = {

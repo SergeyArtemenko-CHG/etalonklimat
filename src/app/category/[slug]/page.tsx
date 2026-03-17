@@ -15,9 +15,15 @@ export const revalidate = false;
 export async function generateStaticParams() {
   const slugs: { slug: string }[] = [];
   for (const cat of categories) {
-    slugs.push({ slug: cat.slug });
-    for (const sub of cat.subCategories ?? []) {
-      slugs.push({ slug: sub.slug });
+    if (cat.slug) {
+      slugs.push({ slug: cat.slug });
+    }
+    if (Array.isArray(cat.subCategories)) {
+      for (const sub of cat.subCategories) {
+        if (sub.slug) {
+          slugs.push({ slug: sub.slug });
+        }
+      }
     }
   }
   return slugs;
