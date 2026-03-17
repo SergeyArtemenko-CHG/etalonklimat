@@ -40,7 +40,13 @@ function readUsersFromCsv(): CsvUser[] {
   }
 }
 
+// В production на сервере ОБЯЗАТЕЛЬНЫ: NEXTAUTH_URL и NEXTAUTH_SECRET
+const nextAuthSecret = process.env.NEXTAUTH_SECRET;
+const nextAuthUrl = process.env.NEXTAUTH_URL;
+
 export const authOptions: NextAuthOptions = {
+  secret: nextAuthSecret,
+  ...(nextAuthUrl ? { trustHost: true } : {}),
   providers: [
     CredentialsProvider({
       name: "Credentials",
