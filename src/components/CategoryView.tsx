@@ -72,6 +72,8 @@ function applyFilters(
   let result = safeProducts;
 
   if (store.inStockOnly) {
+    // Показываем товары, которые не помечены как "под заказ" (inStock !== false).
+    // Так в выборку попадают и явно "в наличии", и без указания наличия в данных.
     result = result.filter((p) => p.inStock !== false);
   }
 

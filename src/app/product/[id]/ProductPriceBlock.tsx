@@ -37,6 +37,8 @@ export default function ProductPriceBlock({
     : priceEur != null && rate
     ? priceEur * rate
     : undefined;
+  const retailRubRounded =
+    retailRub != null && Number.isFinite(retailRub) ? Math.round(retailRub) : undefined;
   const hasRetailPrice = retailRub != null && retailRub > 0;
 
   let discountPercent: number | undefined;
@@ -46,16 +48,20 @@ export default function ProductPriceBlock({
 
   const hasDiscount = hasRetailPrice && isAuthorized && discountPercent != null;
   const finalRub = hasDiscount
-    ? Math.round(retailRub! * (1 - discountPercent! / 100))
+    ? Math.round(retailRubRounded! * (1 - discountPercent! / 100))
     : hasRetailPrice
-    ? retailRub!
+    ? retailRubRounded!
     : undefined;
 
   const isPriceOnRequest = !hasRetailPrice && !!leadTime;
+  // Цены товаров "под заказ" показываем только авторизованным
+  const showPrice = inStock || isAuthorized;
 
   return (
     <div className="mb-5 space-y-1">
-      {isPriceOnRequest ? (
+      {!showPrice ? (
+        <p className="text-lg font-semibold text-slate-800">Цена по запросу</p>
+      ) : isPriceOnRequest ? (
         <p className="text-lg font-semibold text-slate-800">Цена по запросу</p>
       ) : finalRub != null ? (
         <div className="flex flex-wrap items-baseline gap-3">
@@ -65,7 +71,7 @@ export default function ProductPriceBlock({
           {hasDiscount && retailRub != null && (
             <>
               <span className="text-sm text-slate-400 line-through">
-                {retailRub.toLocaleString("ru-RU")} ₽
+                {(retailRubRounded ?? retailRub).toLocaleString("ru-RU")} ₽
               </span>
               <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
                 -{discountPercent}% <span className="ml-1 text-[10px]">Ваша цена</span>

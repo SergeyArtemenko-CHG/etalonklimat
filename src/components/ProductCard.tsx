@@ -114,6 +114,8 @@ export default function ProductCard(props: ProductCardProps) {
     : priceEur != null && rate
     ? priceEur * rate
     : undefined;
+  const retailRubRounded =
+    retailRub != null && Number.isFinite(retailRub) ? Math.round(retailRub) : undefined;
   const hasRetailPrice = retailRub != null && retailRub > 0;
 
   let discountPercent: number | undefined;
@@ -123,9 +125,9 @@ export default function ProductCard(props: ProductCardProps) {
 
   const hasDiscount = hasRetailPrice && isAuthorized && discountPercent != null;
   const finalRub = hasDiscount
-    ? Math.round(retailRub! * (1 - discountPercent! / 100))
+    ? Math.round(retailRubRounded! * (1 - discountPercent! / 100))
     : hasRetailPrice
-    ? retailRub!
+    ? retailRubRounded!
     : undefined;
 
   const isPriceOnRequest = !hasRetailPrice && !!leadTime;
@@ -152,6 +154,22 @@ export default function ProductCard(props: ProductCardProps) {
           </div>
         </div>
         <div className="flex min-w-0 flex-1 flex-col gap-1.5 md:px-4 md:pb-4 md:pt-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <span
+              className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                inStock
+                  ? "bg-emerald-50 text-emerald-700"
+                  : "bg-amber-50 text-amber-700"
+              }`}
+            >
+              <span
+                className={`h-1.5 w-1.5 rounded-full ${
+                  inStock ? "bg-emerald-500" : "bg-amber-500"
+                }`}
+              />
+              {inStock ? "В наличии" : "Под заказ"}
+            </span>
+          </div>
           <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 hover:text-[#003366]">
             {name}
           </h3>
@@ -168,7 +186,17 @@ export default function ProductCard(props: ProductCardProps) {
               {trimmedDescription}
             </p>
           )}
-          {(isAuthorized || inStock) && (
+          {!inStock && !isAuthorized ? (
+            <div className="mt-1 space-y-0.5">
+              <span className="text-sm font-medium text-slate-700">
+                Цена по запросу
+              </span>
+              <p className="text-[11px] text-slate-500">
+                Срок поставки:{" "}
+                <span className="font-medium">Уточняйте у менеджера</span>
+              </p>
+            </div>
+          ) : (isAuthorized || inStock) ? (
             <div className="mt-1 space-y-0.5">
               {isPriceOnRequest ? (
                 <span className="text-sm font-medium text-slate-700">
@@ -182,7 +210,7 @@ export default function ProductCard(props: ProductCardProps) {
                   {hasDiscount && retailRub != null && (
                     <>
                       <span className="text-[11px] text-slate-400 line-through">
-                        {retailRub.toLocaleString("ru-RU")} ₽
+                        {(retailRubRounded ?? retailRub).toLocaleString("ru-RU")} ₽
                       </span>
                       <span className="inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
                         -{discountPercent}% <span className="ml-1">Ваша цена</span>
@@ -207,13 +235,15 @@ export default function ProductCard(props: ProductCardProps) {
                   </p>
                 )
               ) : (
-                <p className="text-[11px] text-slate-500">
-                  Срок поставки:{" "}
-                  <span className="font-medium">Уточняйте у менеджера</span>
-                </p>
+                !inStock && (
+                  <p className="text-[11px] text-slate-500">
+                    Срок поставки:{" "}
+                    <span className="font-medium">Уточняйте у менеджера</span>
+                  </p>
+                )
               )}
             </div>
-          )}
+          ) : null}
         </div>
       </Link>
       <div className="px-2 pb-2 md:px-4 md:pb-4 md:pt-0">
@@ -226,20 +256,26 @@ export default function ProductCard(props: ProductCardProps) {
             variant="card"
           />
         ) : (
-          <button
-            type="button"
-            onClick={() =>
-              openRequestModal({
-                type: "price",
-                productName: name,
-                productId: id,
-                productSku: sku,
-              })
-            }
-            className="w-full rounded-lg bg-[#FF8C00] px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-[#ff9f26] md:py-2"
-          >
-            Запросить
-          </button>
+          <>
+            {!isAuthorized || !leadTime ? (
+              <button
+                type="button"
+                onClick={() =>
+                  openRequestModal({
+                    type: "price",
+                    productName: name,
+                    productId: id,
+                    productSku: sku,
+                  })
+                }
+                className="w-full rounded-lg bg-[#FF8C00] px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-[#ff9f26] md:py-2"
+              >
+                Запросить
+              </button>
+            ) : (
+              <div className="h-[30px] md:h-[36px]" aria-hidden />
+            )}
+          </>
         )}
       </div>
     </article>

@@ -278,7 +278,7 @@ export default function FloatingContactBtn() {
   return (
     <div
       ref={menuRef}
-      className={`fixed bottom-5 right-5 z-[9999] isolate transition-all duration-500 ${
+      className={`fixed bottom-24 right-4 md:bottom-5 md:right-5 z-[9999] isolate transition-all duration-500 ${
         showWidget ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"
       }`}
     >
@@ -359,16 +359,8 @@ export default function FloatingContactBtn() {
           </div>
         </div>
 
-      {/* Кнопка чата с надписью «Помощь в подборе» на значке */}
+      {/* Кнопка чата с надписью «Помощь в подборе» и зелёной точкой статуса */}
       <div className="absolute bottom-0 right-0 z-10 flex items-center gap-2">
-        {showWidget && !isOpen && (
-          <div className="rounded-lg border border-slate-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm md:hidden">
-            <p className="flex items-center gap-1.5 text-xs text-emerald-600">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Мы онлайн
-            </p>
-          </div>
-        )}
         <div className="relative shrink-0">
           {!isOpen && (
             <span

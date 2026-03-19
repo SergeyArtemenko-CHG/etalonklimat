@@ -12,6 +12,7 @@ type ProductPageActionsProps = {
   priceEur?: number;
   priceRub?: number;
   inStock?: boolean;
+  leadTime?: string;
 };
 
 export default function ProductPageActions({
@@ -21,6 +22,7 @@ export default function ProductPageActions({
   priceEur,
   priceRub,
   inStock = true,
+  leadTime,
 }: ProductPageActionsProps) {
   const [qty, setQty] = useState(1);
   const openRequestModal = useProductRequestStore((s) => s.open);
@@ -33,6 +35,9 @@ export default function ProductPageActions({
   };
 
   if (!inStock) {
+    if (isAuthorized && !!leadTime?.trim()) {
+      return null;
+    }
     return (
       <button
         type="button"

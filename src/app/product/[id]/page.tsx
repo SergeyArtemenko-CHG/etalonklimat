@@ -146,6 +146,7 @@ export default async function ProductPage({ params }: Props) {
                 priceEur={product.priceEur}
                 priceRub={product.priceRub}
                 inStock={product.inStock}
+                leadTime={product.leadTime}
               />
             </div>
           </div>
