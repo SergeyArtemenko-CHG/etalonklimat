@@ -114,7 +114,55 @@ function CategoryIcon({
 }
 
 export default function Home() {
-  const popularProducts = products.filter((p) => p.priceEur != null || p.priceRub != null).slice(0, 8);
+  const isSmallBurner = (p: (typeof products)[number]) => {
+    const hasPrice = p.priceEur != null || p.priceRub != null;
+    const isBurnerCategory = p.categorySlug === "gorelki-dlya-kotlov-otopleniya";
+    const maxPower = p.burnerPowerMax ?? p.burnerPowerMin ?? Number.POSITIVE_INFINITY;
+    return hasPrice && isBurnerCategory && maxPower <= 1000;
+  };
+
+  const pseudoRandomOrder = (value: string) => {
+    let h = 0;
+    for (let i = 0; i < value.length; i++) {
+      h = (h * 31 + value.charCodeAt(i)) >>> 0;
+    }
+    return h;
+  };
+
+  const shuffled = <T extends { id: string }>(arr: T[]) =>
+    [...arr].sort((a, b) => pseudoRandomOrder(a.id) - pseudoRandomOrder(b.id));
+
+  const gasAndCombinedWithPlus = products.filter(
+    (p) =>
+      isSmallBurner(p) &&
+      p.name.includes("+") &&
+      /(газов|комбинирован)/i.test(p.name)
+  );
+
+  const dieselBurners = products.filter(
+    (p) => isSmallBurner(p) && /дизельн/i.test(p.name)
+  );
+
+  const selected = [
+    ...shuffled(gasAndCombinedWithPlus).slice(0, 5),
+    ...shuffled(dieselBurners).slice(0, 3),
+  ];
+
+  const uniqueSelected = selected.filter(
+    (item, idx, arr) => arr.findIndex((p) => p.id === item.id) === idx
+  );
+
+  const popularProducts =
+    uniqueSelected.length >= 8
+      ? uniqueSelected.slice(0, 8)
+      : [
+          ...uniqueSelected,
+          ...shuffled(
+            products.filter(
+              (p) => isSmallBurner(p) && !uniqueSelected.some((s) => s.id === p.id)
+            )
+          ).slice(0, 8 - uniqueSelected.length),
+        ];
   const uniqueBrands = Array.from(
     new Set(products.map((p) => p.brand).filter((b): b is string => Boolean(b?.trim())))
   ).sort((a, b) => a.localeCompare(b, "ru")).slice(0, 6);
@@ -239,11 +287,11 @@ export default function Home() {
         <section className="mx-auto max-w-6xl px-4 py-10">
           <div className="rounded-2xl bg-white p-6 shadow-md shadow-slate-200/60 md:p-8">
             <h2 className="mb-4 text-xl font-semibold text-[#0b1f33]">
-              О компании ЭТАЛОН
+              О компании ЭТАЛОН ПРОФИ
             </h2>
             <div className="space-y-3 text-slate-700">
               <p>
-                ЭТАЛОН — поставщик промышленного оборудования для котельных и систем теплоснабжения.
+                ЭТАЛОН ПРОФИ — поставщик промышленного оборудования для котельных и систем теплоснабжения.
                 В нашем каталоге представлены котлы водогрейные и паровые, горелки газовые и дизельные,
                 деаэраторы, парогенераторы, экономайзеры и другое оборудование.
               </p>

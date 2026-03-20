@@ -36,7 +36,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="transition hover:text-[#FF8C00]">
+                <Link href="/reviews" className="transition hover:text-[#FF8C00]">
                   Отзывы
                 </Link>
               </li>
@@ -89,12 +89,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="transition hover:text-[#FF8C00]">
-                  Как сделать заказ
+                <Link href="/faq" className="transition hover:text-[#FF8C00]">
+                  Частые вопросы
                 </Link>
               </li>
               <li>
-                <Link href="#" className="transition hover:text-[#FF8C00]">
+                <Link href="/returns" className="transition hover:text-[#FF8C00]">
                   Возврат и обмен
                 </Link>
               </li>
