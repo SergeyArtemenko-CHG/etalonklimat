@@ -12,14 +12,14 @@ import ProductImage from "@/components/ProductImage";
 import ProductPageActions from "./ProductPageActions";
 import ProductPriceBlock from "./ProductPriceBlock";
 
-export const dynamic = "force-static";
 export const revalidate = false;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // Не прегенерируем сотни карточек на этапе build —
-  // страницы будут создаваться по мере обращений пользователей.
-  return [];
+  // Легковесный список параметров: только ID (SKU), без дополнительных вычислений.
+  return products
+    .filter((p) => !!p.sku)
+    .map((p) => ({ id: p.sku }));
 }
 
 type Props = {

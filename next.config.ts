@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
   experimental: {
     // Отключаем PPR, чтобы не усложнять генерацию страниц в продакшене
     ppr: false,
+    // Ограничиваем параллелизм сборки для серверов с 2 ГБ ОЗУ
+    workerThreads: false,
+    cpus: 1,
   },
 
   /* config options here */
