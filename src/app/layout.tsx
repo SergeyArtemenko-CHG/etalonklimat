@@ -26,8 +26,13 @@ export const metadata: Metadata = {
   
   // 2. Ваши текущие настройки
   metadataBase: new URL("https://etalonklimat.ru"),
-  title: "ETALON — B2B каталог",
-  description: "Профессиональный B2B-портал оборудования",
+  title: "Эталон Профи — поставка и сервис оборудования",
+  description:
+    "Профессиональное климатическое оборудование. Скидки до 50% для партнеров, отгрузка со склада в Москве по всей России",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
