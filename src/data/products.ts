@@ -23122,3 +23122,20 @@ export function getProductsByCategory(slug: string): Product[] {
 export function getProductById(id: string): Product | undefined {
   return products.find((p) => p.id === id || p.sku === id);
 }
+
+export function getAllProductIds(): string[] {
+  return products
+    .map((p) => p.sku)
+    .filter((sku): sku is string => typeof sku === "string" && sku.length > 0);
+}
+
+export function getAllCategorySlugs(): string[] {
+  const out: string[] = [];
+  for (const cat of categories) {
+    if (cat.slug) out.push(cat.slug);
+    for (const sub of cat.subCategories ?? []) {
+      if (sub.slug) out.push(sub.slug);
+    }
+  }
+  return out;
+}

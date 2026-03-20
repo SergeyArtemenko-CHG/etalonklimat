@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CategoryView from "@/components/CategoryView";
 import {
   categories,
+  getAllCategorySlugs,
   getCategoryBySlug,
   getProductsByCategory,
 } from "@/data/products";
@@ -13,20 +14,7 @@ export const dynamic = "force-static";
 export const revalidate = false;
 
 export async function generateStaticParams() {
-  const slugs: { slug: string }[] = [];
-  for (const cat of categories) {
-    if (cat.slug) {
-      slugs.push({ slug: cat.slug });
-    }
-    if (Array.isArray(cat.subCategories)) {
-      for (const sub of cat.subCategories) {
-        if (sub.slug) {
-          slugs.push({ slug: sub.slug });
-        }
-      }
-    }
-  }
-  return slugs;
+  return getAllCategorySlugs().map((slug) => ({ slug }));
 }
 
 type Props = {
