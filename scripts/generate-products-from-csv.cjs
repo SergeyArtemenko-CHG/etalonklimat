@@ -7,6 +7,7 @@ const projectRoot = __dirname ? path.join(__dirname, "..") : process.cwd();
 // На Windows имя файла не чувствительно к регистру, поэтому достаточно одного варианта.
 const csvPath = path.join(projectRoot, "Nomenclature.csv");
 const outPath = path.join(projectRoot, "src", "data", "products.ts");
+const productsImagesDir = path.join(projectRoot, "public", "images", "products");
 
 function translit(str) {
   const map = {
@@ -136,14 +137,52 @@ function parsePower(value) {
 function normalizeImageFileName(value) {
   const raw = (value || "").toString().trim();
   if (!raw) return "no-image.webp";
-  if (/\.jpe?g$/i.test(raw) || /\.png$/i.test(raw)) {
-    return raw.replace(/\.(jpe?g|png)$/i, ".webp");
+  const baseName = path.basename(raw);
+  if (/\.jpe?g$/i.test(baseName) || /\.png$/i.test(baseName)) {
+    return baseName.replace(/\.(jpe?g|png)$/i, ".webp");
   }
-  if (/\.webp$/i.test(raw)) {
-    return raw;
+  if (/\.webp$/i.test(baseName)) {
+    return baseName;
   }
   // Если расширения нет/другое, приводим к webp, чтобы путь был единообразный.
-  return `${raw}.webp`;
+  return `${baseName}.webp`;
+}
+
+function ensureImageFileCaseOnDisk(expectedFileName) {
+  if (!expectedFileName || expectedFileName === "no-image.webp") return;
+  if (!fs.existsSync(productsImagesDir)) return;
+
+  const expectedPath = path.join(productsImagesDir, expectedFileName);
+  if (fs.existsSync(expectedPath)) return;
+
+  // Ищем файл без учета регистра в папке images/products
+  const entries = fs.readdirSync(productsImagesDir, { withFileTypes: true });
+  const expectedLower = expectedFileName.toLowerCase();
+  const matched = entries.find(
+    (e) => e.isFile() && e.name.toLowerCase() === expectedLower
+  );
+  if (!matched) return;
+
+  const currentPath = path.join(productsImagesDir, matched.name);
+  try {
+    // Если отличается только регистр, на Windows нужен промежуточный rename
+    const onlyCaseDiff = matched.name.toLowerCase() === expectedFileName.toLowerCase();
+    if (onlyCaseDiff) {
+      const tmpPath = path.join(
+        productsImagesDir,
+        `${expectedFileName}.tmp-rename-${Date.now()}`
+      );
+      fs.renameSync(currentPath, tmpPath);
+      fs.renameSync(tmpPath, expectedPath);
+    } else {
+      fs.renameSync(currentPath, expectedPath);
+    }
+  } catch (e) {
+    console.warn(
+      `Failed to normalize image file name on disk: ${matched.name} -> ${expectedFileName}`,
+      e
+    );
+  }
 }
 
 function generateTsFile(categories, products) {
@@ -404,6 +443,7 @@ function main() {
     const manualFile = (rawManualFile || "").trim();
     const description = (rawDescription || "").trim();
     const imageFile = normalizeImageFileName(rawImageFile);
+    ensureImageFileCaseOnDisk(imageFile);
     const priceEurRaw = (rawPriceEur || "").toString().trim();
     const brand = (rawBrand || "").trim();
     const burnerPowerMin = parsePower(rawPowerMin);

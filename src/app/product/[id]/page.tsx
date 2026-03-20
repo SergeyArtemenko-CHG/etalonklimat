@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductTabs from "@/components/ProductTabs";
 import {
-  getAllProductIds,
   getCategoryBySlug,
   getProductById,
+  products,
 } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
 import ProductPageActions from "./ProductPageActions";
@@ -16,8 +16,9 @@ export const revalidate = false;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // Легковесный список параметров: только ID (SKU).
-  return getAllProductIds().map((id) => ({ id }));
+  return products
+    .filter((p) => !!p.sku)
+    .map((p) => ({ id: p.sku }));
 }
 
 type Props = {
