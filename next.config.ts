@@ -4,13 +4,16 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true, // Пропускать ошибки типов при сборке
   },
+  // Таймаут генерации статических страниц (мс)
+  staticPageGenerationTimeout: 1000,
+  images: {
+    // Снижаем нагрузку на сборку/рантайм оптимизатора изображений
+    unoptimized: true,
+  },
 
   experimental: {
     // Отключаем PPR, чтобы не усложнять генерацию страниц в продакшене
     ppr: false,
-    // Ограничиваем время генерации одной статической страницы (мс),
-    // чтобы билдер не "зависал" на тяжёлых страницах
-    staticPageGenerationTimeout: 1000,
   },
 
   /* config options here */

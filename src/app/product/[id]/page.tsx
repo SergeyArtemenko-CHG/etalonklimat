@@ -14,15 +14,12 @@ import ProductPriceBlock from "./ProductPriceBlock";
 
 export const dynamic = "force-static";
 export const revalidate = false;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const params: { id: string }[] = [];
-  for (const p of products) {
-    if (p.sku) {
-      params.push({ id: p.sku });
-    }
-  }
-  return params;
+  // Не прегенерируем сотни карточек на этапе build —
+  // страницы будут создаваться по мере обращений пользователей.
+  return [];
 }
 
 type Props = {
