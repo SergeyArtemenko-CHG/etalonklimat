@@ -11,7 +11,7 @@ const sharp = require("sharp");
 
 const ROOT_DIR = path.join(__dirname, "..");
 const INPUT_DIR = path.join(ROOT_DIR, "public", "images", "products");
-const OUTPUT_DIR = path.join(ROOT_DIR, "public", "images", "products-watermarked");
+const OUTPUT_DIR = path.join(ROOT_DIR, "public", "images", "products");
 const WATERMARK_PATH = path.join(ROOT_DIR, "public", "logo-watermark.png");
 
 const SUPPORTED_EXT = new Set([".jpg", ".jpeg", ".png", ".webp"]);
@@ -53,6 +53,7 @@ async function main() {
   for (const inputPath of files) {
     const rel = path.relative(INPUT_DIR, inputPath);
     const outputPath = path.join(OUTPUT_DIR, rel);
+    const tempOutputPath = `${outputPath}.tmp`;
 
     await fs.promises.mkdir(path.dirname(outputPath), { recursive: true });
 
@@ -83,10 +84,17 @@ async function main() {
             opacity: 0.3,
           },
         ])
-        .toFile(outputPath);
+        .toFile(tempOutputPath);
+
+      await fs.promises.rename(tempOutputPath, outputPath);
 
       console.log("Watermarked:", rel);
     } catch (e) {
+      try {
+        if (fs.existsSync(tempOutputPath)) {
+          await fs.promises.unlink(tempOutputPath);
+        }
+      } catch {}
       console.error("Failed to process", inputPath, e);
     }
   }
