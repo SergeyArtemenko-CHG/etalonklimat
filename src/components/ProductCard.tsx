@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useSession } from "next-auth/react";
 import AddToCartButton from "./AddToCartButton";
 import { formatPrice } from "@/utils/currency";
@@ -23,6 +24,7 @@ type ProductCardProps = {
   partnerDiscount2?: number;
   partnerDiscount3?: number;
   leadTime?: string;
+  imagePriority?: boolean;
 };
 
 function CardImagePlaceholder() {
@@ -70,6 +72,7 @@ export default function ProductCard(props: ProductCardProps) {
     partnerDiscount2,
     partnerDiscount3,
     leadTime,
+    imagePriority = false,
   } = props;
 
   const rate = useCurrencyStore((s) => s.rate);
@@ -142,11 +145,15 @@ export default function ProductCard(props: ProductCardProps) {
         <div className="flex shrink-0 items-center justify-center p-2 md:w-full md:p-3">
           <div className="flex items-center justify-center rounded-lg border border-slate-200 bg-white p-1.5 shadow-sm md:p-3">
             {showImage ? (
-              <img
-                src={imageSrc}
+              <Image
+                src={imageSrc!}
                 alt={name}
+                width={240}
+                height={180}
+                sizes="(max-width: 768px) 80px, 240px"
                 className="h-20 w-20 object-contain md:h-32 md:w-full"
                 onError={handleImageError}
+                priority={imagePriority}
               />
             ) : (
               <CardImagePlaceholder />

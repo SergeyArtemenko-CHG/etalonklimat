@@ -133,6 +133,19 @@ function parsePower(value) {
   return Number.isFinite(n) ? n : undefined;
 }
 
+function normalizeImageFileName(value) {
+  const raw = (value || "").toString().trim();
+  if (!raw) return "no-image.webp";
+  if (/\.jpe?g$/i.test(raw) || /\.png$/i.test(raw)) {
+    return raw.replace(/\.(jpe?g|png)$/i, ".webp");
+  }
+  if (/\.webp$/i.test(raw)) {
+    return raw;
+  }
+  // Если расширения нет/другое, приводим к webp, чтобы путь был единообразный.
+  return `${raw}.webp`;
+}
+
 function generateTsFile(categories, products) {
   const headerComment = `// AUTO-GENERATED FROM Nomenclature.csv. DO NOT EDIT DIRECTLY.
 // Run \`node scripts/generate-products-from-csv.cjs\` to regenerate.
@@ -390,7 +403,7 @@ function main() {
     const certificateFile = (rawCertFile || "").trim();
     const manualFile = (rawManualFile || "").trim();
     const description = (rawDescription || "").trim();
-    const imageFile = (rawImageFile || "").trim();
+    const imageFile = normalizeImageFileName(rawImageFile);
     const priceEurRaw = (rawPriceEur || "").toString().trim();
     const brand = (rawBrand || "").trim();
     const burnerPowerMin = parsePower(rawPowerMin);
@@ -517,7 +530,7 @@ function main() {
       subCategorySlug: subCategorySlug || undefined,
       specs: specs.length ? specs : undefined,
       files: files.length ? files : undefined,
-      image: imageFile ? `/images/products-watermarked/${imageFile}` : undefined,
+      image: `/images/products/${imageFile}`,
       inStock,
       partnerDiscount1: Number.isFinite(disc1) ? disc1 : undefined,
       partnerDiscount2: Number.isFinite(disc2) ? disc2 : undefined,

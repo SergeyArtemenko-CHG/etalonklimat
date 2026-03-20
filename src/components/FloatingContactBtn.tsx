@@ -278,7 +278,7 @@ export default function FloatingContactBtn() {
   return (
     <div
       ref={menuRef}
-      className={`fixed bottom-24 right-4 md:bottom-5 md:right-5 z-[9999] isolate transition-all duration-500 ${
+      className={`fixed bottom-3 right-4 md:bottom-5 md:right-5 z-[9999] isolate transition-all duration-500 ${
         showWidget ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"
       }`}
     >

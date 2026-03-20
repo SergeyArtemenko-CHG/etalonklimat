@@ -183,7 +183,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -210,7 +210,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -237,7 +237,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -264,7 +264,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -291,7 +291,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -318,7 +318,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -345,7 +345,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -372,7 +372,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -399,7 +399,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -426,7 +426,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -453,7 +453,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -480,7 +480,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -507,7 +507,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -534,7 +534,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -561,7 +561,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -588,7 +588,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -615,7 +615,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -642,7 +642,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -669,7 +669,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -696,7 +696,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -723,7 +723,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -750,7 +750,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -777,7 +777,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -804,7 +804,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/DA-ES.jpg",
+    image: "/images/products/DA-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -840,7 +840,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -876,7 +876,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -912,7 +912,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -948,7 +948,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -984,7 +984,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1020,7 +1020,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1056,7 +1056,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1092,7 +1092,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1128,7 +1128,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1164,7 +1164,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1200,7 +1200,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1236,7 +1236,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1272,7 +1272,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1308,7 +1308,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1344,7 +1344,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1380,7 +1380,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1416,7 +1416,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1452,7 +1452,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1488,7 +1488,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1524,7 +1524,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1560,7 +1560,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1596,7 +1596,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1632,7 +1632,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX10-85.jpg",
+    image: "/images/products/ONIX10-85.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1668,7 +1668,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1704,7 +1704,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1740,7 +1740,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/ONIX.jpg",
+    image: "/images/products/ONIX.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1767,7 +1767,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G.jpg",
+    image: "/images/products/ICI_ECO_G.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1794,7 +1794,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G.jpg",
+    image: "/images/products/ICI_ECO_G.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1821,7 +1821,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G.jpg",
+    image: "/images/products/ICI_ECO_G.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1848,7 +1848,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G.jpg",
+    image: "/images/products/ICI_ECO_G.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1875,7 +1875,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G.jpg",
+    image: "/images/products/ICI_ECO_G.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1902,7 +1902,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G.jpg",
+    image: "/images/products/ICI_ECO_G.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1929,7 +1929,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G.jpg",
+    image: "/images/products/ICI_ECO_G.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1956,7 +1956,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ICI_ECO_G.jpg",
+    image: "/images/products/ICI_ECO_G.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -1985,7 +1985,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_1_2.jpg",
+    image: "/images/products/FBR_GAS_1_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2014,7 +2014,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_1_2.jpg",
+    image: "/images/products/FBR_GAS_1_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2043,7 +2043,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2072,7 +2072,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2101,7 +2101,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2130,7 +2130,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2159,7 +2159,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2188,7 +2188,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2217,7 +2217,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2246,7 +2246,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2275,7 +2275,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2304,7 +2304,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2333,7 +2333,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2362,7 +2362,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_2.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2391,7 +2391,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2420,7 +2420,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2449,7 +2449,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2478,7 +2478,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2507,7 +2507,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2536,7 +2536,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2565,7 +2565,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2594,7 +2594,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2623,7 +2623,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2652,7 +2652,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2681,7 +2681,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2710,7 +2710,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2739,7 +2739,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2768,7 +2768,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2797,7 +2797,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2826,7 +2826,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -2855,7 +2855,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -2884,7 +2884,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -2913,7 +2913,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -2942,7 +2942,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -2971,7 +2971,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3000,7 +3000,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3029,7 +3029,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3058,7 +3058,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3087,7 +3087,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3116,7 +3116,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3145,7 +3145,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3174,7 +3174,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3203,7 +3203,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3232,7 +3232,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -3261,7 +3261,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -3290,7 +3290,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -3319,7 +3319,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -3348,7 +3348,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3377,7 +3377,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3406,7 +3406,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3435,7 +3435,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3464,7 +3464,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3493,7 +3493,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3522,7 +3522,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3551,7 +3551,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/GAS P130, 160-M.jpg",
+    image: "/images/products/GAS P130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3580,7 +3580,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_70_100_150_M.jpg",
+    image: "/images/products/FBR_GAS_P_70_100_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3609,7 +3609,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/gas p.jpg",
+    image: "/images/products/gas p.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -3638,7 +3638,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/gas p.jpg",
+    image: "/images/products/gas p.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -3667,7 +3667,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/gas p.jpg",
+    image: "/images/products/gas p.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -3696,7 +3696,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/gas p.jpg",
+    image: "/images/products/gas p.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -3725,7 +3725,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3754,7 +3754,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3783,7 +3783,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3812,7 +3812,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3841,7 +3841,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3870,7 +3870,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3899,7 +3899,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3928,7 +3928,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3957,7 +3957,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -3986,7 +3986,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4015,7 +4015,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4044,7 +4044,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -4073,7 +4073,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4102,7 +4102,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4131,7 +4131,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4160,7 +4160,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4189,7 +4189,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4218,7 +4218,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4247,7 +4247,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4276,7 +4276,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4305,7 +4305,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4334,7 +4334,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4363,7 +4363,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4392,7 +4392,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4421,7 +4421,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4450,7 +4450,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4479,7 +4479,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4508,7 +4508,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4537,7 +4537,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4566,7 +4566,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4595,7 +4595,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4624,7 +4624,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4653,7 +4653,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4682,7 +4682,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4711,7 +4711,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4740,7 +4740,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4769,7 +4769,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -4798,7 +4798,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_190-250-300_M.jpg",
+    image: "/images/products/FBR_GAS_P_190-250-300_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4827,7 +4827,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4856,7 +4856,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -4885,7 +4885,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4914,7 +4914,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4943,7 +4943,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -4972,7 +4972,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5001,7 +5001,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5030,7 +5030,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5059,7 +5059,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5088,7 +5088,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5117,7 +5117,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5146,7 +5146,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5175,7 +5175,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5204,7 +5204,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5233,7 +5233,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5262,7 +5262,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5291,7 +5291,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5320,7 +5320,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5349,7 +5349,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5378,7 +5378,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5407,7 +5407,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5436,7 +5436,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5465,7 +5465,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_350_450_550_M.jpg",
+    image: "/images/products/FBR_GAS_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5494,7 +5494,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_350_450_550_EVO.jpg",
+    image: "/images/products/FBR_GAS_P_350_450_550_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5523,7 +5523,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
+    image: "/images/products/FBR_GAS_P_650_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5552,7 +5552,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
+    image: "/images/products/FBR_GAS_P_650_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5581,7 +5581,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
+    image: "/images/products/FBR_GAS_P_650_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5610,7 +5610,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_650_M.jpg",
+    image: "/images/products/FBR_GAS_P_650_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5639,7 +5639,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5668,7 +5668,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_P_750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_GAS_P_750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -5697,7 +5697,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
+    image: "/images/products/FBR_GAS_X_1_2_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5726,7 +5726,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
+    image: "/images/products/FBR_GAS_X_1_2_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5755,7 +5755,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5784,7 +5784,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5813,7 +5813,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5842,7 +5842,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5871,7 +5871,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
+    image: "/images/products/FBR_GAS_X_1_2_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5900,7 +5900,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_1_2_F.jpg",
+    image: "/images/products/FBR_GAS_X_1_2_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5929,7 +5929,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5958,7 +5958,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -5987,7 +5987,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6016,7 +6016,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6045,7 +6045,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products/FBR_GAS_X_3_4_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6074,7 +6074,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products/FBR_GAS_X_3_4_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6103,7 +6103,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products/FBR_GAS_X_3_4_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6132,7 +6132,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products/FBR_GAS_X_3_4_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6161,7 +6161,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6190,7 +6190,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6219,7 +6219,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6248,7 +6248,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6277,7 +6277,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6306,7 +6306,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6335,7 +6335,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6364,7 +6364,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6393,7 +6393,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6422,7 +6422,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6451,7 +6451,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6480,7 +6480,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6509,7 +6509,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products/FBR_GAS_X_3_4_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6538,7 +6538,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products/FBR_GAS_X_3_4_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6567,7 +6567,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products/FBR_GAS_X_3_4_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6596,7 +6596,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X_3_4_5_F.jpg",
+    image: "/images/products/FBR_GAS_X_3_4_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6625,7 +6625,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6654,7 +6654,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6683,7 +6683,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6712,7 +6712,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6741,7 +6741,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6770,7 +6770,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6799,7 +6799,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6828,7 +6828,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6857,7 +6857,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6886,7 +6886,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6915,7 +6915,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6944,7 +6944,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -6973,7 +6973,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7002,7 +7002,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7031,7 +7031,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7060,7 +7060,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7089,7 +7089,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7118,7 +7118,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7147,7 +7147,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7176,7 +7176,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7205,7 +7205,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7234,7 +7234,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7263,7 +7263,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7292,7 +7292,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7321,7 +7321,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
+    image: "/images/products/FBR_GAS_X0.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7350,7 +7350,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
+    image: "/images/products/FBR_GAS_X0.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7379,7 +7379,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
+    image: "/images/products/FBR_GAS_X0.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7408,7 +7408,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
+    image: "/images/products/FBR_GAS_X0.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7437,7 +7437,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0_THLS.jpg",
+    image: "/images/products/FBR_GAS_X0_THLS.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7466,7 +7466,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
+    image: "/images/products/FBR_GAS_X0.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7495,7 +7495,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
+    image: "/images/products/FBR_GAS_X0.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7524,7 +7524,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
+    image: "/images/products/FBR_GAS_X0.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7553,7 +7553,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X0.jpg",
+    image: "/images/products/FBR_GAS_X0.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7582,7 +7582,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X2.jpg",
+    image: "/images/products/FBR_GAS_X2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7611,7 +7611,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X2.jpg",
+    image: "/images/products/FBR_GAS_X2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7640,7 +7640,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X2.jpg",
+    image: "/images/products/FBR_GAS_X2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7669,7 +7669,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X2.jpg",
+    image: "/images/products/FBR_GAS_X2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7698,7 +7698,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
+    image: "/images/products/FBR_GAS_X2_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7727,7 +7727,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
+    image: "/images/products/FBR_GAS_X2_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7756,7 +7756,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
+    image: "/images/products/FBR_GAS_X2_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7785,7 +7785,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X2_M.jpg",
+    image: "/images/products/FBR_GAS_X2_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7814,7 +7814,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7843,7 +7843,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7872,7 +7872,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7901,7 +7901,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7930,7 +7930,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7959,7 +7959,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -7988,7 +7988,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8017,7 +8017,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8046,7 +8046,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8075,7 +8075,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8104,7 +8104,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8133,7 +8133,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3.jpg",
+    image: "/images/products/FBR_GAS_X3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8162,7 +8162,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS X1-5--2 CE.jpg",
+    image: "/images/products/FBR_GAS X1-5--2 CE.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8191,7 +8191,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8220,7 +8220,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8249,7 +8249,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8278,7 +8278,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8307,7 +8307,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8336,7 +8336,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8365,7 +8365,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8394,7 +8394,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8423,7 +8423,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8452,7 +8452,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8481,7 +8481,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8510,7 +8510,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X3_M.jpg",
+    image: "/images/products/FBR_GAS_X3_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8539,7 +8539,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8568,7 +8568,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8597,7 +8597,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8626,7 +8626,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8655,7 +8655,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8684,7 +8684,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8713,7 +8713,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8742,7 +8742,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8771,7 +8771,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8800,7 +8800,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8829,7 +8829,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8858,7 +8858,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4.jpg",
+    image: "/images/products/FBR_GAS_X4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8887,7 +8887,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8916,7 +8916,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8945,7 +8945,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -8974,7 +8974,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9003,7 +9003,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9032,7 +9032,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9061,7 +9061,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9090,7 +9090,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9119,7 +9119,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9148,7 +9148,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9177,7 +9177,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9206,7 +9206,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X4_M.jpg",
+    image: "/images/products/FBR_GAS_X4_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9235,7 +9235,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9264,7 +9264,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9293,7 +9293,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9322,7 +9322,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9351,7 +9351,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9380,7 +9380,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9409,7 +9409,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9438,7 +9438,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9467,7 +9467,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9496,7 +9496,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9525,7 +9525,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9554,7 +9554,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9583,7 +9583,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5.jpg",
+    image: "/images/products/FBR_GAS_X5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9612,7 +9612,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9641,7 +9641,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9670,7 +9670,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9699,7 +9699,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9728,7 +9728,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9757,7 +9757,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9786,7 +9786,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9815,7 +9815,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9844,7 +9844,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9873,7 +9873,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9902,7 +9902,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9931,7 +9931,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_X5_M.jpg",
+    image: "/images/products/FBR_GAS_X5_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9960,7 +9960,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -9989,7 +9989,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10018,7 +10018,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10047,7 +10047,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10076,7 +10076,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10105,7 +10105,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10134,7 +10134,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10163,7 +10163,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10192,7 +10192,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10221,7 +10221,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10250,7 +10250,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10279,7 +10279,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10308,7 +10308,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10337,7 +10337,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10366,7 +10366,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10395,7 +10395,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10424,7 +10424,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10453,7 +10453,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10482,7 +10482,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10511,7 +10511,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10540,7 +10540,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10569,7 +10569,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10598,7 +10598,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10627,7 +10627,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10656,7 +10656,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10685,7 +10685,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -10714,7 +10714,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10743,7 +10743,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10772,7 +10772,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10801,7 +10801,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10830,7 +10830,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10859,7 +10859,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10888,7 +10888,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10917,7 +10917,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10946,7 +10946,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -10975,7 +10975,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11004,7 +11004,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11033,7 +11033,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP_60_2_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP_60_2_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11062,7 +11062,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP_60_2_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP_60_2_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11091,7 +11091,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11120,7 +11120,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11149,7 +11149,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11178,7 +11178,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11207,7 +11207,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11236,7 +11236,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11265,7 +11265,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11294,7 +11294,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11323,7 +11323,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11352,7 +11352,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -11381,7 +11381,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11410,7 +11410,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11439,7 +11439,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP60_EVO.jpg",
+    image: "/images/products/FBR_GAS_XP60_EVO.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11468,7 +11468,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11497,7 +11497,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GAS_XP40_60_M.jpg",
+    image: "/images/products/FBR_GAS_XP40_60_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11526,7 +11526,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11555,7 +11555,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11584,7 +11584,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11613,7 +11613,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11642,7 +11642,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11671,7 +11671,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11700,7 +11700,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11729,7 +11729,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11758,7 +11758,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11787,7 +11787,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11816,7 +11816,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11845,7 +11845,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-2.jpg",
+    image: "/images/products/XP80-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11874,7 +11874,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11903,7 +11903,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11932,7 +11932,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11961,7 +11961,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -11990,7 +11990,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12019,7 +12019,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12048,7 +12048,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12077,7 +12077,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12106,7 +12106,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12135,7 +12135,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12164,7 +12164,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12193,7 +12193,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12222,7 +12222,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12251,7 +12251,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12280,7 +12280,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12309,7 +12309,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/XP80-M.jpg",
+    image: "/images/products/XP80-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12338,7 +12338,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_HI_GAS_P.jpg",
+    image: "/images/products/FBR_HI_GAS_P.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -12367,7 +12367,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_HI_GAS_P.jpg",
+    image: "/images/products/FBR_HI_GAS_P.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -12397,7 +12397,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 75.2, FGP 100.2.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_70_100_2.jpg",
+    image: "/images/products/FBR_FGP_70_100_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12427,7 +12427,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 75.2, FGP 100.2.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_70_100_2.jpg",
+    image: "/images/products/FBR_FGP_70_100_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12456,7 +12456,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_50_70_100_120_150_M.jpg",
+    image: "/images/products/FBR_FGP_50_70_100_120_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12485,7 +12485,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_50_70_100_120_150_M.jpg",
+    image: "/images/products/FBR_FGP_50_70_100_120_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12514,7 +12514,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_750_1000_1300_1500_1800_M_EL.jpg",
+    image: "/images/products/FBR_FGP_750_1000_1300_1500_1800_M_EL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -12543,7 +12543,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP130, 160-2.jpg",
+    image: "/images/products/FGP130, 160-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12572,7 +12572,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP130, 160-2.jpg",
+    image: "/images/products/FGP130, 160-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12601,7 +12601,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP130, 160-M.jpg",
+    image: "/images/products/FGP130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12630,7 +12630,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP130, 160-M.jpg",
+    image: "/images/products/FGP130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12659,7 +12659,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP130, 160-2.jpg",
+    image: "/images/products/FGP130, 160-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12688,7 +12688,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP130, 160-2.jpg",
+    image: "/images/products/FGP130, 160-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12717,7 +12717,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP130, 160-M.jpg",
+    image: "/images/products/FGP130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12746,7 +12746,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP130, 160-M.jpg",
+    image: "/images/products/FGP130, 160-M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12775,7 +12775,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products/FBR_FGP_190_250_350_450_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12805,7 +12805,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_190_250_M.jpg",
+    image: "/images/products/FBR_FGP_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12834,7 +12834,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products/FBR_FGP_190_250_350_450_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12864,7 +12864,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_190_250_M.jpg",
+    image: "/images/products/FBR_FGP_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12893,7 +12893,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products/FBR_FGP_190_250_350_450_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12922,7 +12922,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products/FBR_FGP_190_250_350_450_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12952,7 +12952,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_350_450_550_M.jpg",
+    image: "/images/products/FBR_FGP_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -12981,7 +12981,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products/FBR_FGP_190_250_350_450_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13010,7 +13010,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_190_250_350_450_3.jpg",
+    image: "/images/products/FBR_FGP_190_250_350_450_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13040,7 +13040,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_350_450_550_M.jpg",
+    image: "/images/products/FBR_FGP_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -13070,7 +13070,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/fgp50_2.pdf" },
   ],
-    image: "/images/products-watermarked/FGP50.png",
+    image: "/images/products/FGP50.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13100,7 +13100,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/fgp50_2.pdf" },
   ],
-    image: "/images/products-watermarked/FGP50.png",
+    image: "/images/products/FGP50.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13130,7 +13130,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP50_M.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_50_70_100_120_150_M.jpg",
+    image: "/images/products/FBR_FGP_50_70_100_120_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13160,7 +13160,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP50_M.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_50_70_100_120_150_M.jpg",
+    image: "/images/products/FBR_FGP_50_70_100_120_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13190,7 +13190,7 @@ export const products: Product[] = [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
     { name: "Инструкция", url: "/docs-watermarked/manuals/FGP 190 M - 250 M-350 M - 450 M - 550 M.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_350_450_550_M.jpg",
+    image: "/images/products/FBR_FGP_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -13219,7 +13219,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FGP_650_M.jpg",
+    image: "/images/products/FBR_FGP_650_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -13248,7 +13248,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP75.jpg",
+    image: "/images/products/FGP75.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13277,7 +13277,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP75.jpg",
+    image: "/images/products/FGP75.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13306,7 +13306,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP75.jpg",
+    image: "/images/products/FGP75.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13335,7 +13335,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FGP75.jpg",
+    image: "/images/products/FGP75.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13364,7 +13364,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products/FBR_FNDL_8_16_25.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13393,7 +13393,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products/FBR_FNDL_8_16_25.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13422,7 +13422,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products/FBR_FNDL_8_16_25.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13451,7 +13451,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products/FBR_FNDL_8_16_25.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13480,7 +13480,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products/FBR_FNDL_8_16_25.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13509,7 +13509,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDL_8_16_25.jpg",
+    image: "/images/products/FBR_FNDL_8_16_25.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13538,7 +13538,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products/FBR_FNDP_100_125_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13567,7 +13567,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products/FBR_FNDP_100_125_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13596,7 +13596,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products/FBR_FNDP_70_100_125_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13625,7 +13625,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products/FBR_FNDP_70_100_125_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13654,7 +13654,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products/FBR_FNDP_100_125_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13683,7 +13683,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products/FBR_FNDP_100_125_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13712,7 +13712,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products/FBR_FNDP_70_100_125_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13741,7 +13741,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products/FBR_FNDP_70_100_125_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13770,7 +13770,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products/FBR_FNDP_100_125_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13799,7 +13799,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_100_125_150_2.jpg",
+    image: "/images/products/FBR_FNDP_100_125_150_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13828,7 +13828,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products/FBR_FNDP_70_100_125_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13857,7 +13857,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products/FBR_FNDP_70_100_125_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13886,7 +13886,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FNDP 1800.jpg",
+    image: "/images/products/FNDP 1800.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -13915,7 +13915,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13944,7 +13944,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -13973,7 +13973,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14002,7 +14002,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products/FBR_FNDP_25_45_70_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14031,7 +14031,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products/FBR_FNDP_25_45_70_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14060,7 +14060,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14089,7 +14089,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14118,7 +14118,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14147,7 +14147,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14176,7 +14176,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14205,7 +14205,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_350_450_550_M_EL.jpg",
+    image: "/images/products/FBR_FNDP_350_450_550_M_EL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -14234,7 +14234,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14263,7 +14263,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products/FBR_FNDP_25_45_70_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14292,7 +14292,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products/FBR_FNDP_25_45_70_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14321,7 +14321,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_3.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_3.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -14350,7 +14350,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_350_450_550_M_EL.jpg",
+    image: "/images/products/FBR_FNDP_350_450_550_M_EL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -14379,7 +14379,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -14408,7 +14408,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_350_450_550_M_EL.jpg",
+    image: "/images/products/FBR_FNDP_350_450_550_M_EL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -14437,7 +14437,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_190_250_350_450_550_M.jpg",
+    image: "/images/products/FBR_FNDP_190_250_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -14466,7 +14466,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products/FBR_FNDP_25_45_70_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14495,7 +14495,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_25_45_70_2.jpg",
+    image: "/images/products/FBR_FNDP_25_45_70_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14524,7 +14524,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products/FBR_FNDP_70_100_125_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14553,7 +14553,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_FNDP_70_100_125_150_M.jpg",
+    image: "/images/products/FBR_FNDP_70_100_125_150_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14582,7 +14582,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_S.jpg",
+    image: "/images/products/FBR_G_0_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14611,7 +14611,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_S.jpg",
+    image: "/images/products/FBR_G_0_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14640,7 +14640,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_S.jpg",
+    image: "/images/products/FBR_G_0_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14669,7 +14669,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_S.jpg",
+    image: "/images/products/FBR_G_0_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14698,7 +14698,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_S.jpg",
+    image: "/images/products/FBR_G_0_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14727,7 +14727,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_SR_S_H_LX.jpg",
+    image: "/images/products/FBR_G_0_SR_S_H_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14756,7 +14756,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_SR_S_H_LX.jpg",
+    image: "/images/products/FBR_G_0_SR_S_H_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14785,7 +14785,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_S.jpg",
+    image: "/images/products/FBR_G_0_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14814,7 +14814,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_S.jpg",
+    image: "/images/products/FBR_G_0_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14843,7 +14843,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_SR_S_H_LX.jpg",
+    image: "/images/products/FBR_G_0_SR_S_H_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14872,7 +14872,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_0_SR_S_H_LX.jpg",
+    image: "/images/products/FBR_G_0_SR_S_H_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14901,7 +14901,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_2_F.jpg",
+    image: "/images/products/FBR_G_1_2_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14930,7 +14930,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1.22.jpg",
+    image: "/images/products/FBR_G_1.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14959,7 +14959,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_S.jpg",
+    image: "/images/products/FBR_G_1_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -14988,7 +14988,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_S.jpg",
+    image: "/images/products/FBR_G_1_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15017,7 +15017,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_S.jpg",
+    image: "/images/products/FBR_G_1_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15046,7 +15046,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_S.jpg",
+    image: "/images/products/FBR_G_1_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15075,7 +15075,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_SR_S_H_LX.jpg",
+    image: "/images/products/FBR_G_1_SR_S_H_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15104,7 +15104,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_S.jpg",
+    image: "/images/products/FBR_G_1_S.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15133,7 +15133,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_SR_S_H_LX.jpg",
+    image: "/images/products/FBR_G_1_SR_S_H_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15162,7 +15162,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_1_2_F.jpg",
+    image: "/images/products/FBR_G_1_2_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15191,7 +15191,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2.22_LX.jpg",
+    image: "/images/products/FBR_G_2.22_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15220,7 +15220,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2.22_LX.jpg",
+    image: "/images/products/FBR_G_2.22_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15249,7 +15249,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2.22.jpg",
+    image: "/images/products/FBR_G_2.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15278,7 +15278,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2.22.jpg",
+    image: "/images/products/FBR_G_2.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15307,7 +15307,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2.22.jpg",
+    image: "/images/products/FBR_G_2.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15336,7 +15336,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2.22_LX.jpg",
+    image: "/images/products/FBR_G_2.22_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15365,7 +15365,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2.22_LX.jpg",
+    image: "/images/products/FBR_G_2.22_LX.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15394,7 +15394,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2_S_MAXI.jpg",
+    image: "/images/products/FBR_G_2_S_MAXI.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15423,7 +15423,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2_S_MAXI.jpg",
+    image: "/images/products/FBR_G_2_S_MAXI.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15452,7 +15452,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2_S_MAXI.jpg",
+    image: "/images/products/FBR_G_2_S_MAXI.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15481,7 +15481,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_2_S_MAXI.jpg",
+    image: "/images/products/FBR_G_2_S_MAXI.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15510,7 +15510,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15539,7 +15539,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15568,7 +15568,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15597,7 +15597,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15626,7 +15626,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15655,7 +15655,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15684,7 +15684,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_3_4_F.jpg",
+    image: "/images/products/FBR_G_3_4_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15713,7 +15713,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_3_4_F.jpg",
+    image: "/images/products/FBR_G_3_4_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15742,7 +15742,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15771,7 +15771,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15800,7 +15800,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_3.jpg",
+    image: "/images/products/FBR_G_X_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15829,7 +15829,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_3.jpg",
+    image: "/images/products/FBR_G_X_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15858,7 +15858,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_3.jpg",
+    image: "/images/products/FBR_G_X_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15887,7 +15887,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_3.jpg",
+    image: "/images/products/FBR_G_X_3.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15916,7 +15916,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_3_4_F.jpg",
+    image: "/images/products/FBR_G_3_4_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15945,7 +15945,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_3_4_F.jpg",
+    image: "/images/products/FBR_G_3_4_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -15974,7 +15974,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16003,7 +16003,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16032,7 +16032,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_2.jpg",
+    image: "/images/products/FBR_G_X_4_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16061,7 +16061,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_2.jpg",
+    image: "/images/products/FBR_G_X_4_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16090,7 +16090,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
+    image: "/images/products/FBR_G_X_4_5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16119,7 +16119,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
+    image: "/images/products/FBR_G_X_4_5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16148,7 +16148,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
+    image: "/images/products/FBR_G_X_4_5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16177,7 +16177,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
+    image: "/images/products/FBR_G_X_4_5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16206,7 +16206,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_5_F.jpg",
+    image: "/images/products/FBR_G_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16235,7 +16235,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_5_F.jpg",
+    image: "/images/products/FBR_G_5_F.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16264,7 +16264,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16293,7 +16293,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X3.22_4.22_5.22.jpg",
+    image: "/images/products/FBR_G_X3.22_4.22_5.22.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16322,7 +16322,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_5_2.jpg",
+    image: "/images/products/FBR_G_X_5_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16351,7 +16351,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_5_2.jpg",
+    image: "/images/products/FBR_G_X_5_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16380,7 +16380,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
+    image: "/images/products/FBR_G_X_4_5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16409,7 +16409,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
+    image: "/images/products/FBR_G_X_4_5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16438,7 +16438,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
+    image: "/images/products/FBR_G_X_4_5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16467,7 +16467,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/ДС EAЭС.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_G_X_4_5.jpg",
+    image: "/images/products/FBR_G_X_4_5.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16496,7 +16496,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_KN_750_1000_1300_1500_1800_EL.jpg",
+    image: "/images/products/FBR_KN_750_1000_1300_1500_1800_EL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -16525,7 +16525,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_KN_750_1000_1300_1500_1800_EL.jpg",
+    image: "/images/products/FBR_KN_750_1000_1300_1500_1800_EL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -16554,7 +16554,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16583,7 +16583,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16612,7 +16612,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16641,7 +16641,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16670,7 +16670,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16699,7 +16699,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16728,7 +16728,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16757,7 +16757,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16786,7 +16786,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16815,7 +16815,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16844,7 +16844,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16873,7 +16873,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16902,7 +16902,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16931,7 +16931,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16960,7 +16960,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -16989,7 +16989,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_GM_X0_4.jpg",
+    image: "/images/products/FBR_GM_X0_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17018,7 +17018,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17047,7 +17047,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17076,7 +17076,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17105,7 +17105,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17134,7 +17134,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17163,7 +17163,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17192,7 +17192,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17221,7 +17221,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17250,7 +17250,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17279,7 +17279,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17308,7 +17308,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17337,7 +17337,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17366,7 +17366,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17395,7 +17395,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17424,7 +17424,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17453,7 +17453,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17482,7 +17482,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17511,7 +17511,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17540,7 +17540,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17569,7 +17569,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17598,7 +17598,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17627,7 +17627,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17656,7 +17656,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17685,7 +17685,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_190_250_M.jpg",
+    image: "/images/products/FBR_K_190_250_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17714,7 +17714,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17743,7 +17743,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17772,7 +17772,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17801,7 +17801,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17830,7 +17830,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17859,7 +17859,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17888,7 +17888,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17917,7 +17917,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17946,7 +17946,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -17975,7 +17975,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18004,7 +18004,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18033,7 +18033,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18062,7 +18062,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18091,7 +18091,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18120,7 +18120,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18149,7 +18149,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_3_4.jpg",
+    image: "/images/products/FBR_K_3_4.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18178,7 +18178,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18207,7 +18207,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18236,7 +18236,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18265,7 +18265,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18294,7 +18294,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18323,7 +18323,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18352,7 +18352,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18381,7 +18381,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18410,7 +18410,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18439,7 +18439,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18468,7 +18468,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18497,7 +18497,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18526,7 +18526,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18555,7 +18555,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18584,7 +18584,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18613,7 +18613,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/K4_2_new.jpg",
+    image: "/images/products/K4_2_new.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18642,7 +18642,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_5_6_7.jpg",
+    image: "/images/products/FBR_K_5_6_7.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18671,7 +18671,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18700,7 +18700,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18729,7 +18729,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18758,7 +18758,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18787,7 +18787,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18816,7 +18816,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18845,7 +18845,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18874,7 +18874,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18903,7 +18903,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18932,7 +18932,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18961,7 +18961,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -18990,7 +18990,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19019,7 +19019,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19048,7 +19048,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19077,7 +19077,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19106,7 +19106,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19135,7 +19135,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19164,7 +19164,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19193,7 +19193,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19222,7 +19222,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19251,7 +19251,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19280,7 +19280,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19309,7 +19309,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19338,7 +19338,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19367,7 +19367,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19396,7 +19396,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19425,7 +19425,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19454,7 +19454,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_350_450_550_M.jpg",
+    image: "/images/products/FBR_K_350_450_550_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19483,7 +19483,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_650_M.jpg",
+    image: "/images/products/FBR_K_650_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19512,7 +19512,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K_650_M.jpg",
+    image: "/images/products/FBR_K_650_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19541,7 +19541,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_K750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19570,7 +19570,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_K750_1000_1300_1500_1800_M.jpg",
+    image: "/images/products/FBR_K750_1000_1300_1500_1800_M.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19599,7 +19599,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/FBR_KN_190-250.jpg",
+    image: "/images/products/FBR_KN_190-250.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19628,7 +19628,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KN7.png",
+    image: "/images/products/KN7.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19657,7 +19657,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KN7.png",
+    image: "/images/products/KN7.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19686,7 +19686,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KN 1800.jpg",
+    image: "/images/products/KN 1800.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -19715,7 +19715,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19744,7 +19744,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19773,7 +19773,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19802,7 +19802,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19831,7 +19831,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19860,7 +19860,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19889,7 +19889,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19918,7 +19918,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19947,7 +19947,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -19976,7 +19976,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20005,7 +20005,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20034,7 +20034,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20063,7 +20063,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20092,7 +20092,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20121,7 +20121,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20150,7 +20150,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX 5-2.jpg",
+    image: "/images/products/KX 5-2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20179,7 +20179,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX6, 7_2.jpg",
+    image: "/images/products/KX6, 7_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20208,7 +20208,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX6, 7_M.jpg",
+    image: "/images/products/KX6, 7_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20237,7 +20237,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX6, 7_M.jpg",
+    image: "/images/products/KX6, 7_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20266,7 +20266,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX6, 7_M.jpg",
+    image: "/images/products/KX6, 7_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20295,7 +20295,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX6, 7_2.jpg",
+    image: "/images/products/KX6, 7_2.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20324,7 +20324,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX6, 7_M.jpg",
+    image: "/images/products/KX6, 7_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20353,7 +20353,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX6, 7_M.jpg",
+    image: "/images/products/KX6, 7_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20382,7 +20382,7 @@ export const products: Product[] = [
     files: [
     { name: "Сертификат", url: "/docs-watermarked/certificates/С-IT.НВ54.В.06000.pdf" },
   ],
-    image: "/images/products-watermarked/KX6, 7_M.jpg",
+    image: "/images/products/KX6, 7_M.webp",
     leadTime: undefined,
     inStock: undefined,
   },
@@ -20409,7 +20409,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20436,7 +20436,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20463,7 +20463,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20490,7 +20490,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20517,7 +20517,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20544,7 +20544,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20571,7 +20571,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20598,7 +20598,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20625,7 +20625,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20652,7 +20652,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20679,7 +20679,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20706,7 +20706,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20733,7 +20733,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20760,7 +20760,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20787,7 +20787,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20814,7 +20814,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/VRC-ES.jpg",
+    image: "/images/products/VRC-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20846,7 +20846,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/BKT-F2.300-600-1-1",
+    image: "/images/products/BKT-F2.300-600-1-1.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20873,7 +20873,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BKT-F2.300-600-1-1",
+    image: "/images/products/BKT-F2.300-600-1-1.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20905,7 +20905,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/BKT-F2.300-600-1-1",
+    image: "/images/products/BKT-F2.300-600-1-1.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20937,7 +20937,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
+    image: "/images/products/EGS_ALUM_F700-1000.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -20969,7 +20969,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F150-300.jpg",
+    image: "/images/products/EGS_ALUM_F150-300.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21001,7 +21001,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
+    image: "/images/products/EGS_ALUM_F700-1000.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21033,7 +21033,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F150-300.jpg",
+    image: "/images/products/EGS_ALUM_F150-300.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21065,7 +21065,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F150-300.jpg",
+    image: "/images/products/EGS_ALUM_F150-300.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21097,7 +21097,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F350-600.jpg",
+    image: "/images/products/EGS_ALUM_F350-600.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21129,7 +21129,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F350-600.jpg",
+    image: "/images/products/EGS_ALUM_F350-600.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21161,7 +21161,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F350-600.jpg",
+    image: "/images/products/EGS_ALUM_F350-600.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21193,7 +21193,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F350-600.jpg",
+    image: "/images/products/EGS_ALUM_F350-600.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21225,7 +21225,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
+    image: "/images/products/EGS_ALUM_F700-1000.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21257,7 +21257,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
+    image: "/images/products/EGS_ALUM_F700-1000.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21289,7 +21289,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_F700-1000.jpg",
+    image: "/images/products/EGS_ALUM_F700-1000.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21321,7 +21321,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_W_60-140.png",
+    image: "/images/products/EGS_ALUM_W_60-140.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21353,7 +21353,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/EGS_ALUM_W_60-140.png",
+    image: "/images/products/EGS_ALUM_W_60-140.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21380,7 +21380,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/EGS_CONDENSATE_NEUTRAL.png",
+    image: "/images/products/EGS_CONDENSATE_NEUTRAL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21407,7 +21407,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/EGS_CONDENSATE_NEUTRAL.png",
+    image: "/images/products/EGS_CONDENSATE_NEUTRAL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21434,7 +21434,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/EGS_CONDENSATE_NEUTRAL.png",
+    image: "/images/products/EGS_CONDENSATE_NEUTRAL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21461,7 +21461,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/EGS_CONDENSATE_NEUTRAL.png",
+    image: "/images/products/EGS_CONDENSATE_NEUTRAL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21488,7 +21488,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21515,7 +21515,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21542,7 +21542,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21569,7 +21569,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21596,7 +21596,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21623,7 +21623,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21650,7 +21650,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21677,7 +21677,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21717,7 +21717,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21757,7 +21757,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21797,7 +21797,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21837,7 +21837,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21877,7 +21877,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21917,7 +21917,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21957,7 +21957,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -21997,7 +21997,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22037,7 +22037,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22077,7 +22077,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22117,7 +22117,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22157,7 +22157,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22197,7 +22197,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22237,7 +22237,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22277,7 +22277,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22317,7 +22317,7 @@ export const products: Product[] = [
   }
 ],
     files: undefined,
-    image: "/images/products-watermarked/NOVA.jpg",
+    image: "/images/products/NOVA.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22344,7 +22344,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ES_NOVA_TECHNICS.png",
+    image: "/images/products/ES_NOVA_TECHNICS.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22371,7 +22371,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/ES_NOVA_TECHNICS.png",
+    image: "/images/products/ES_NOVA_TECHNICS.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22398,7 +22398,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22425,7 +22425,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22452,7 +22452,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22479,7 +22479,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22506,7 +22506,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22533,7 +22533,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22560,7 +22560,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22587,7 +22587,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22614,7 +22614,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22641,7 +22641,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22668,7 +22668,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22695,7 +22695,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/PAR-ES_2.jpg",
+    image: "/images/products/PAR-ES_2.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22722,7 +22722,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22749,7 +22749,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: undefined,
+    image: "/images/products/no-image.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22776,7 +22776,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BDV-ES.jpg",
+    image: "/images/products/BDV-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22803,7 +22803,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BDV-ES.jpg",
+    image: "/images/products/BDV-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22830,7 +22830,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BDV-ES.jpg",
+    image: "/images/products/BDV-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22857,7 +22857,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/BDV-ES.jpg",
+    image: "/images/products/BDV-ES.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22884,7 +22884,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/TURBUL.png",
+    image: "/images/products/TURBUL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22911,7 +22911,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/TURBUL.png",
+    image: "/images/products/TURBUL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22938,7 +22938,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/TURBUL.png",
+    image: "/images/products/TURBUL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22965,7 +22965,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/TURBUL.png",
+    image: "/images/products/TURBUL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -22992,7 +22992,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/TURBUL.png",
+    image: "/images/products/TURBUL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -23019,7 +23019,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/TURBUL.png",
+    image: "/images/products/TURBUL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -23046,7 +23046,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/TURBUL.png",
+    image: "/images/products/TURBUL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   },
@@ -23073,7 +23073,7 @@ export const products: Product[] = [
     subCategorySlug: undefined,
     specs: undefined,
     files: undefined,
-    image: "/images/products-watermarked/TURBUL.png",
+    image: "/images/products/TURBUL.webp",
     leadTime: "4-6 недель",
     inStock: false,
   }

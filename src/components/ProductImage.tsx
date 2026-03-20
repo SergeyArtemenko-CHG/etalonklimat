@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type ProductImageProps = {
   src: string | undefined;
@@ -57,11 +58,15 @@ export default function ProductImage({
 
   if (showImage) {
     return (
-      <img
-        src={imageSrc}
+      <Image
+        src={imageSrc!}
         alt={alt}
+        width={1200}
+        height={900}
+        sizes="(max-width: 768px) 100vw, 50vw"
         className={className}
         onError={handleError}
+        priority
       />
     );
   }

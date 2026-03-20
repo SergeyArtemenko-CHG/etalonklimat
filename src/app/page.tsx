@@ -212,7 +212,7 @@ export default function Home() {
               Популярные товары
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {popularProducts.map((product) => (
+              {popularProducts.map((product, index) => (
                 <ProductCard
                   key={product.id}
                   id={product.id}
@@ -228,6 +228,7 @@ export default function Home() {
                   partnerDiscount2={product.partnerDiscount2}
                   partnerDiscount3={product.partnerDiscount3}
                   leadTime={product.leadTime}
+                  imagePriority={index === 0}
                 />
               ))}
             </div>

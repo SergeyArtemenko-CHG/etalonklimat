@@ -289,7 +289,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
           <div ref={productsRef}>
             {filteredProducts.length > 0 ? (
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {(filteredProducts ?? []).map((product) => (
+                {(filteredProducts ?? []).map((product, index) => (
                   <ProductCard
                     key={product.id}
                     id={product.id}
@@ -305,6 +305,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
                     partnerDiscount2={product.partnerDiscount2}
                     partnerDiscount3={product.partnerDiscount3}
                     leadTime={product.leadTime}
+                    imagePriority={index === 0}
                   />
                 ))}
               </div>

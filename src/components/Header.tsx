@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { products, categories } from "@/data/products";
@@ -15,9 +16,12 @@ function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
   return (
     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
       {showImg ? (
-        <img
+        <Image
           src={src!.trim()}
           alt={alt}
+          width={48}
+          height={48}
+          sizes="48px"
           className="h-full w-full object-contain"
           onError={() => setFailed(true)}
         />
@@ -37,6 +41,10 @@ export default function Header() {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
+  const [cityModalOpen, setCityModalOpen] = useState(false);
+  const [cityName, setCityName] = useState("Москва");
+  const [cityInput, setCityInput] = useState("");
+  const [cityLoaded, setCityLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const catalogRef = useRef<HTMLDivElement>(null);
   const [isShrunk, setIsShrunk] = useState(false);
@@ -103,6 +111,101 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let cancelled = false;
+
+    const pickCity = (value: unknown) =>
+      typeof value === "string" ? value.trim() : "";
+    const normalize = (s: string) => s.trim().toLowerCase();
+    const cityRuMap: Record<string, string> = {
+      chernogolovka: "Черноголовка",
+      moscow: "Москва",
+      "saint petersburg": "Санкт-Петербург",
+      "st petersburg": "Санкт-Петербург",
+      petersburg: "Санкт-Петербург",
+      kazan: "Казань",
+      yekaterinburg: "Екатеринбург",
+      ekaterinburg: "Екатеринбург",
+      novosibirsk: "Новосибирск",
+      "nizhny novgorod": "Нижний Новгород",
+      samara: "Самара",
+      ufa: "Уфа",
+      krasnodar: "Краснодар",
+      voronezh: "Воронеж",
+      perm: "Пермь",
+      omsk: "Омск",
+      chelyabinsk: "Челябинск",
+      "rostov-on-don": "Ростов-на-Дону",
+      "rostov on don": "Ростов-на-Дону",
+    };
+    const localizeCity = (city: string) => {
+      const raw = city.trim();
+      if (!raw) return raw;
+      const mapped = cityRuMap[normalize(raw)];
+      return mapped || raw;
+    };
+
+    const detectCity = async () => {
+      try {
+        let detected = "";
+
+        // 1) Основной источник (HTTPS, работает в браузере без mixed-content)
+        const ipInfoRes = await fetch("https://ipinfo.io/json", { cache: "no-store" });
+        if (ipInfoRes.ok) {
+          const ipInfo = (await ipInfoRes.json()) as { city?: string };
+          detected = pickCity(ipInfo.city);
+        }
+
+        // 2) Фолбэк на ip-api (если основной источник не вернул город)
+        if (!detected) {
+          const ipApiRes = await fetch("http://ip-api.com/json/?fields=status,city", {
+            cache: "no-store",
+          });
+          if (ipApiRes.ok) {
+            const ipApi = (await ipApiRes.json()) as { status?: string; city?: string };
+            detected = pickCity(ipApi.city);
+          }
+        }
+
+        if (!detected) return;
+        if (cancelled) return;
+        const detectedRu = localizeCity(detected);
+        if (normalize(detectedRu) !== "москва") {
+          setCityName(detectedRu);
+        }
+      } catch {
+        // Безопасный фолбэк: оставляем Москву
+      } finally {
+        if (!cancelled) setCityLoaded(true);
+      }
+    };
+
+    const runAfterFullLoad = () => {
+      // Запускаем только в idle-фазе после полной загрузки страницы,
+      // чтобы определение города не влияло на рендер и метрики загрузки.
+      const idle = (window as any).requestIdleCallback as
+        | ((cb: () => void, opts?: { timeout: number }) => number)
+        | undefined;
+      if (typeof idle === "function") {
+        idle(() => void detectCity(), { timeout: 2000 });
+      } else {
+        setTimeout(() => void detectCity(), 0);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      runAfterFullLoad();
+    } else {
+      window.addEventListener("load", runAfterFullLoad, { once: true });
+    }
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener("load", runAfterFullLoad);
+    };
+  }, []);
+
   return (
     <header className="sticky top-0 z-[100] w-full bg-[#003366] text-white shadow-lg">
       {/* Top bar — скрываем при скролле, фиксированная высота в развёрнутом виде */}
@@ -114,9 +217,20 @@ export default function Header() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 text-xs sm:text-sm">
           <div className="flex items-center gap-2">
             <span className="text-white/70">Ваш город:</span>
-            <button className="rounded-full border border-white/30 px-2 py-0.5 text-xs font-medium hover:border-white hover:bg-white/10">
-              Москва
+            <button
+              type="button"
+              onClick={() => setCityModalOpen(true)}
+              className={`rounded-full border border-white/30 px-2 py-0.5 text-xs font-medium hover:border-white hover:bg-white/10 transition-all duration-300 ${
+                cityLoaded ? "opacity-100" : "opacity-95"
+              }`}
+            >
+              <span className="underline decoration-white/40 underline-offset-2">
+                {cityName}
+              </span>
             </button>
+            <span className="hidden text-[10px] text-white/70 lg:inline">
+              Доставка по всей России
+            </span>
           </div>
           <nav className="flex items-center gap-3 sm:gap-4 text-white/80">
             <Link href="/about" className="hover:text-white hidden sm:block">О компании</Link>
@@ -272,6 +386,74 @@ export default function Header() {
                   <span className="text-sm font-medium text-white">{cat.name}</span>
                 </Link>
               ))}
+            </div>
+          </div>
+        </>
+      )}
+
+      {cityModalOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-[120] bg-black/40"
+            onClick={() => setCityModalOpen(false)}
+            aria-hidden
+          />
+          <div className="fixed inset-0 z-[130] flex items-center justify-center p-4">
+            <div className="w-full max-w-md rounded-2xl bg-white p-5 shadow-2xl">
+              <h3 className="text-base font-semibold text-slate-900">
+                Выбор города
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Текущий город: <span className="font-medium">{cityName}</span>
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["Москва", "Санкт-Петербург", "Казань", "Екатеринбург", "Новосибирск"].map(
+                  (city) => (
+                    <button
+                      key={city}
+                      type="button"
+                      onClick={() => {
+                        setCityName(city);
+                        setCityModalOpen(false);
+                      }}
+                      className="rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 hover:border-[#FF8C00] hover:text-[#FF8C00]"
+                    >
+                      {city}
+                    </button>
+                  )
+                )}
+              </div>
+              <div className="mt-4">
+                <input
+                  type="text"
+                  value={cityInput}
+                  onChange={(e) => setCityInput(e.target.value)}
+                  placeholder="Или введите ваш город"
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:border-[#FF8C00] focus:outline-none focus:ring-1 focus:ring-[#FF8C00]"
+                />
+              </div>
+              <div className="mt-4 flex items-center justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setCityModalOpen(false)}
+                  className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
+                >
+                  Отмена
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const manual = cityInput.trim();
+                    if (manual) {
+                      setCityName(manual);
+                    }
+                    setCityModalOpen(false);
+                  }}
+                  className="rounded-lg bg-[#FF8C00] px-3 py-2 text-sm font-semibold text-white hover:bg-[#ff9f26]"
+                >
+                  Подтвердить
+                </button>
+              </div>
             </div>
           </div>
         </>
