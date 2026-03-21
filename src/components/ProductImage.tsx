@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 
+const NO_IMAGE_PLACEHOLDER = "/images/products/no-image.webp";
+const IMG_WIDTH = 800;
+const IMG_HEIGHT = 600;
+
 type ProductImageProps = {
   src: string | undefined;
   alt: string;
@@ -49,34 +53,45 @@ export default function ProductImage({
   priority = true,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
-  const imageSrc = src?.trim() || undefined;
-  const showImage = imageSrc && !failed;
+  const [placeholderFailed, setPlaceholderFailed] = useState(false);
+  const rawSrc = src?.trim();
+  const usePlaceholder =
+    !rawSrc ||
+    rawSrc.endsWith("no-image.webp") ||
+    (fallbackToPlaceholder && failed);
+  const imageSrc = usePlaceholder ? NO_IMAGE_PLACEHOLDER : rawSrc!;
 
   const handleError = () => {
-    console.error("Ошибка загрузки:", imageSrc);
-    if (fallbackToPlaceholder) {
-      setFailed(true);
+    if (imageSrc === NO_IMAGE_PLACEHOLDER) {
+      setPlaceholderFailed(true);
+      return;
     }
+    console.error("Ошибка загрузки:", imageSrc);
+    if (fallbackToPlaceholder) setFailed(true);
   };
 
-  if (showImage) {
+  if (usePlaceholder && placeholderFailed) {
     return (
-      <Image
-        src={imageSrc!}
-        alt={alt}
-        width={1200}
-        height={900}
-        sizes="(max-width: 768px) 100vw, 50vw"
-        className={className}
-        onError={handleError}
-        priority={priority}
-      />
+      <div
+        className={`flex items-center justify-center bg-slate-100 ${className ?? ""}`}
+        style={{ width: IMG_WIDTH, height: IMG_HEIGHT, maxWidth: "100%" }}
+      >
+        <PlaceholderSvg className="h-16 w-16 text-slate-400" />
+      </div>
     );
   }
 
   return (
-    <div className="flex h-32 w-32 items-center justify-center rounded-xl border-2 border-dashed border-slate-400/60 bg-white/70">
-      <PlaceholderSvg className="h-16 w-16 text-slate-400" />
-    </div>
+    <Image
+      src={imageSrc}
+      alt={alt}
+      width={IMG_WIDTH}
+      height={IMG_HEIGHT}
+      sizes="(max-width: 768px) 100vw, 50vw"
+      className={className}
+      onError={handleError}
+      priority={priority}
+      fetchPriority="high"
+    />
   );
 }
