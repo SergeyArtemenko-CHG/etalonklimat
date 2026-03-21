@@ -177,6 +177,7 @@ function ensureImageFileCaseOnDisk(expectedFileName) {
     } else {
       fs.renameSync(currentPath, expectedPath);
     }
+    console.log(`Renamed image: ${matched.name} -> ${expectedFileName}`);
   } catch (e) {
     console.warn(
       `Failed to normalize image file name on disk: ${matched.name} -> ${expectedFileName}`,
@@ -382,6 +383,7 @@ function main() {
   const categoryMap = new Map();
   const usedIds = new Set();
 
+  const idxImageFile = col("Файл картинки");
   const idxBoilerType = col("Тип котла");
   const idxHeatExchanger = col("Материал теплообменника");
   const idxPriceRub = col("Цена РУБ");
@@ -419,6 +421,8 @@ function main() {
       idxWorkingPressure >= 0 ? (row[idxWorkingPressure] || "").toString().trim() : "";
 
     // CSV: Номенклатура;Вид номенклатуры;Подвид;Файл сертификат;Файл инструкция;Текстовое описание;Файл картинки;Цена Евро;Бренд;Мощность горелки мин., кВт;Мощность горелки макс., кВт;Вид топлива;Цена РУБ;...
+    const rawImageFile =
+      idxImageFile >= 0 ? row[idxImageFile] : row[6];
     const [
       rawName,
       rawCategory,
@@ -426,7 +430,7 @@ function main() {
       rawCertFile,
       rawManualFile,
       rawDescription,
-      rawImageFile,
+      _rawImageFileIgnored,
       rawPriceEur,
       rawBrand,
       rawPowerMin,

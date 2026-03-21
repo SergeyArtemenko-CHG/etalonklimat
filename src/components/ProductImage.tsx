@@ -8,6 +8,8 @@ type ProductImageProps = {
   alt: string;
   className?: string;
   fallbackToPlaceholder?: boolean;
+  /** LCP: приоритетная загрузка главного изображения (по умолчанию true для страницы товара) */
+  priority?: boolean;
 };
 
 function PlaceholderSvg({ className }: { className?: string }) {
@@ -44,6 +46,7 @@ export default function ProductImage({
   alt,
   className,
   fallbackToPlaceholder = true,
+  priority = true,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
   const imageSrc = src?.trim() || undefined;
@@ -66,7 +69,7 @@ export default function ProductImage({
         sizes="(max-width: 768px) 100vw, 50vw"
         className={className}
         onError={handleError}
-        priority
+        priority={priority}
       />
     );
   }
