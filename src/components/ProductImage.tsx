@@ -73,10 +73,10 @@ export default function ProductImage({
   if (usePlaceholder && placeholderFailed) {
     return (
       <div
-        className={`flex items-center justify-center bg-slate-100 ${className ?? ""}`}
-        style={{ width: IMG_WIDTH, height: IMG_HEIGHT, maxWidth: "100%" }}
+        className={`flex min-h-0 min-w-0 items-center justify-center bg-slate-100 ${className ?? ""}`}
+        style={{ aspectRatio: `${IMG_WIDTH}/${IMG_HEIGHT}`, width: "100%" }}
       >
-        <PlaceholderSvg className="h-16 w-16 text-slate-400" />
+        <PlaceholderSvg className="h-16 w-16 shrink-0 text-slate-400" />
       </div>
     );
   }
