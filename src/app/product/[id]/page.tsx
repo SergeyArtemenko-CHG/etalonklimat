@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductTabs from "@/components/ProductTabs";
+import type { Product } from "@/data/products";
 import {
   getCategoryBySlug,
   getProductById,
@@ -14,7 +15,61 @@ import ProductPageActions from "./ProductPageActions";
 import ProductPriceBlock from "./ProductPriceBlock";
 import PreloadProductImage from "@/components/PreloadProductImage";
 
-const SITE_URL = "https://etalonklimat.ru";
+const SITE_URL = "https://etalon-klimat.ru";
+
+/** Текст для микроразметки без HTML */
+function toPlainDescription(product: Product): string {
+  const raw =
+    product.longDescription?.trim() ||
+    product.description?.trim() ||
+    product.name;
+  return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+/** Schema.org Product (ld+json) — базовая цена из CSV (priceRub / priceEur) */
+function buildProductJsonLd(product: Product, pageId: string): string {
+  const url = `${SITE_URL}/product/${encodeURIComponent(pageId)}`;
+  const imagePath = product.image?.trim() || "/images/products/no-image.webp";
+  const imageUrl = imagePath.startsWith("http")
+    ? imagePath
+    : `${SITE_URL}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
+
+  const offers: Record<string, unknown> = {
+    "@type": "Offer",
+    url,
+    availability:
+      product.inStock !== false
+        ? "https://schema.org/InStock"
+        : "https://schema.org/BackOrder",
+  };
+
+  if (typeof product.priceRub === "number" && product.priceRub > 0) {
+    offers.priceCurrency = "RUB";
+    offers.price = product.priceRub;
+  } else if (typeof product.priceEur === "number" && product.priceEur > 0) {
+    offers.priceCurrency = "EUR";
+    offers.price = product.priceEur;
+  }
+
+  const node: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: toPlainDescription(product),
+    sku: product.sku,
+    image: [imageUrl],
+    offers,
+  };
+
+  if (product.brand?.trim()) {
+    node.brand = {
+      "@type": "Brand",
+      name: product.brand.trim(),
+    };
+  }
+
+  return JSON.stringify(node);
+}
 
 export const revalidate = false;
 export const dynamicParams = true;
@@ -29,24 +84,50 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
+/**
+ * Метаданные по товару: данные совпадают с Nomenclature.csv (см. generate-products-from-csv → products.ts).
+ * Поиск по params.id (артикул/slug) через getProductById.
+ */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const product = getProductById(id);
-  if (!product?.image) return {};
 
-  const imageHref = product.image.startsWith("/")
-    ? `${SITE_URL}${product.image}`
-    : product.image;
+  if (!product) {
+    return { title: "Товар не найден" };
+  }
+
+  const title = `${product.name} — Купить в ETALON KLIMAT`;
+  const description = `Закажите ${product.name} с доставкой. Специальные цены для партнеров (Статус 1/2/3). В наличии на складе`;
+
+  const imagePath =
+    product.image?.trim() || "/images/products/no-image.webp";
+  const ogImageUrl = imagePath.startsWith("http")
+    ? imagePath
+    : `${SITE_URL}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
 
   return {
-    links: [
-      {
-        rel: "preload",
-        as: "image",
-        href: imageHref,
-        fetchPriority: "high",
-      },
-    ],
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/product/${encodeURIComponent(id)}`,
+      siteName: "ETALON KLIMAT",
+      locale: "ru_RU",
+      type: "website",
+      images: [
+        {
+          url: ogImageUrl,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImageUrl],
+    },
   };
 }
 
@@ -59,9 +140,14 @@ export default async function ProductPage({ params }: Props) {
   }
 
   const categoryMatch = getCategoryBySlug(product.categorySlug);
+  const productJsonLd = buildProductJsonLd(product, id);
 
   return (
     <div className="min-h-screen bg-slate-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: productJsonLd }}
+      />
       {product.image && <PreloadProductImage href={product.image} />}
       <Header />
       <main className="mx-auto max-w-6xl px-4 py-6 md:py-8">

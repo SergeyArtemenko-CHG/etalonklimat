@@ -17,15 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  // 1. Закрываем от поисковиков
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-  },
-  
-  // 2. Ваши текущие настройки
-  metadataBase: new URL("https://etalonklimat.ru"),
+  metadataBase: new URL("https://etalon-klimat.ru"),
   title: "Эталон Профи — поставка и сервис оборудования",
   description:
     "Профессиональное климатическое оборудование. Скидки до 50% для партнеров, отгрузка со склада в Москве по всей России",
