@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductTabs from "@/components/ProductTabs";
@@ -11,6 +12,9 @@ import {
 import ProductImage from "@/components/ProductImage";
 import ProductPageActions from "./ProductPageActions";
 import ProductPriceBlock from "./ProductPriceBlock";
+import PreloadProductImage from "@/components/PreloadProductImage";
+
+const SITE_URL = "https://etalonklimat.ru";
 
 export const revalidate = false;
 export const dynamicParams = true;
@@ -25,6 +29,27 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const product = getProductById(id);
+  if (!product?.image) return {};
+
+  const imageHref = product.image.startsWith("/")
+    ? `${SITE_URL}${product.image}`
+    : product.image;
+
+  return {
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: imageHref,
+        fetchPriority: "high",
+      },
+    ],
+  };
+}
+
 export default async function ProductPage({ params }: Props) {
   const { id } = await params;
   const product = getProductById(id);
@@ -37,6 +62,7 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-slate-100">
+      {product.image && <PreloadProductImage href={product.image} />}
       <Header />
       <main className="mx-auto max-w-6xl px-4 py-6 md:py-8">
         <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-6">
