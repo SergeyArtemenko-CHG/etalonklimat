@@ -143,7 +143,7 @@ export default function Footer() {
 
         {/* Bottom: legal */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="flex flex-col gap-2 text-center text-[11px] text-white/70 leading-snug max-w-2xl mx-auto">
+          <div className="flex flex-col gap-2 text-center text-[11px] text-white/85 leading-snug max-w-2xl mx-auto">
             <p>
               Продолжая использовать наш сайт, вы даете согласие на обработку Cookies и других
               данных в соответствии с{" "}
@@ -171,7 +171,7 @@ export default function Footer() {
               запрещена. Информация на сайте не является публичной офертой, определяемой положениями Статьи 437 ГК РФ.
             </p>
           </div>
-          <p className="mt-4 text-center text-[11px] text-white/60">
+          <p className="mt-4 text-center text-[11px] text-white/75">
             © {new Date().getFullYear()} ООО «ЭТАЛОН ПРОФИ» · ИНН 7720486235 · КПП 772001001 · 111141,
             г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
           </p>

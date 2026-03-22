@@ -32,7 +32,7 @@ function CardImagePlaceholder() {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className="h-12 w-12 text-slate-400"
+      className="h-12 w-12 text-slate-500"
     >
       <rect
         x="3"
@@ -139,6 +139,7 @@ export default function ProductCard(props: ProductCardProps) {
     <article className="flex h-full flex-row overflow-hidden rounded-xl bg-white shadow-md shadow-slate-200/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-300/50 md:flex-col">
       <Link
         href={href}
+        aria-label={`${name}, артикул ${sku}${inStock ? ", в наличии" : ", под заказ"}`}
         className="flex flex-1 items-center gap-2 px-2 py-2 md:flex-col md:items-stretch md:px-0 md:py-0"
         tabIndex={0}
       >
@@ -180,11 +181,11 @@ export default function ProductCard(props: ProductCardProps) {
           <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 hover:text-[#003366]">
             {name}
           </h3>
-          <span className="text-[11px] font-medium text-slate-400">
+          <span className="text-[11px] font-medium text-slate-600">
             Артикул: {sku}
           </span>
           {powerText && (
-            <span className="text-[11px] text-slate-500">
+            <span className="text-[11px] text-slate-600">
               Мощность: {powerText}
             </span>
           )}
@@ -198,7 +199,7 @@ export default function ProductCard(props: ProductCardProps) {
               <span className="text-sm font-medium text-slate-700">
                 Цена по запросу
               </span>
-              <p className="text-[11px] text-slate-500">
+              <p className="text-[11px] text-slate-600">
                 Срок поставки:{" "}
                 <span className="font-medium">Уточняйте у менеджера</span>
               </p>
@@ -216,7 +217,7 @@ export default function ProductCard(props: ProductCardProps) {
                   </span>
                   {hasDiscount && retailRub != null && (
                     <>
-                      <span className="text-[11px] text-slate-400 line-through">
+                      <span className="text-[11px] text-slate-500 line-through">
                         {(retailRubRounded ?? retailRub).toLocaleString("ru-RU")} ₽
                       </span>
                       <span className="inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
@@ -226,7 +227,7 @@ export default function ProductCard(props: ProductCardProps) {
                   )}
                 </div>
               ) : (
-                <span className="text-sm text-slate-500">
+                <span className="text-sm text-slate-600">
                   {formatPrice(priceEur, priceRub, rate)}
                 </span>
               )}
@@ -234,7 +235,7 @@ export default function ProductCard(props: ProductCardProps) {
                 leadTime && (
                   <p
                     className={`text-[11px] ${
-                      !inStock ? "text-blue-600" : "text-slate-500"
+                      !inStock ? "text-blue-600" : "text-slate-600"
                     }`}
                   >
                     Срок поставки:{" "}
@@ -243,7 +244,7 @@ export default function ProductCard(props: ProductCardProps) {
                 )
               ) : (
                 !inStock && (
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-slate-600">
                     Срок поставки:{" "}
                     <span className="font-medium">Уточняйте у менеджера</span>
                   </p>
@@ -275,6 +276,7 @@ export default function ProductCard(props: ProductCardProps) {
                     productSku: sku,
                   })
                 }
+                aria-label={`Запросить цену на ${name}`}
                 className="w-full rounded-lg bg-[#FF8C00] px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-[#ff9f26] md:py-2"
               >
                 Запросить

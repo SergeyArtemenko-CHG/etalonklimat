@@ -26,7 +26,7 @@ function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
           onError={() => setFailed(true)}
         />
       ) : (
-        <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-400" aria-hidden>
+        <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-500" aria-hidden>
           <rect x="3" y="6" width="18" height="11" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <path d="M3 14h18" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <circle cx="9" cy="10" r="1.2" fill="currentColor" />
@@ -216,10 +216,11 @@ export default function Header() {
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 text-xs sm:text-sm">
           <div className="flex items-center gap-2">
-            <span className="text-white/70">Ваш город:</span>
+            <span className="text-white/80">Ваш город:</span>
             <button
               type="button"
               onClick={() => setCityModalOpen(true)}
+              aria-label={`Выбрать город. Текущий: ${cityName}`}
               className={`rounded-full border border-white/30 px-2 py-0.5 text-xs font-medium hover:border-white hover:bg-white/10 transition-all duration-300 ${
                 cityLoaded ? "opacity-100" : "opacity-95"
               }`}
@@ -228,34 +229,14 @@ export default function Header() {
                 {cityName}
               </span>
             </button>
-            <span className="hidden text-[10px] text-white/70 lg:inline">
+            <span className="hidden text-[10px] text-white/80 lg:inline">
               Доставка по всей России
             </span>
           </div>
-          <nav className="flex items-center gap-3 sm:gap-4 text-white/80">
+          <nav className="flex items-center gap-3 sm:gap-4 text-white/80" aria-label="Верхнее меню">
             <Link href="/about" className="hover:text-white hidden sm:block">О компании</Link>
             <Link href="/delivery" className="hover:text-white">Доставка</Link>
             <Link href="/contacts" className="hover:text-white">Контакты</Link>
-            <a
-              href="https://t.me/+74993980140"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0088cc] text-white transition hover:bg-[#0099e6]"
-              aria-label="Telegram"
-            >
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.098.155.229.171.322.016.094.036.308.02.475z" />
-              </svg>
-            </a>
-            <a
-              href="tel:+74993980140"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white transition hover:bg-white/30"
-              aria-label="Позвонить"
-            >
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-            </a>
           </nav>
         </div>
       </div>
@@ -264,8 +245,8 @@ export default function Header() {
       <div className="mx-auto max-w-6xl px-4 w-full">
         <div className="flex flex-col md:flex-row md:items-center gap-3 min-h-[72px] md:min-h-[88px] py-3 md:py-4">
           {/* Logo */}
-          <div className="-ml-5 mr-4 flex items-center justify-between md:min-w-0 md:mr-6">
-            <Link href="/" className="flex items-center transition-transform active:scale-95">
+          <div className="mr-4 flex items-center justify-between max-md:pl-3 md:min-w-0 md:mr-6 md:-ml-5">
+            <Link href="/" aria-label="ETALON — перейти на главную" className="flex items-center transition-transform active:scale-95">
               <img
                 src="/images/Logo/Etalon_LOGO.svg"
                 alt="ETALON"
@@ -274,7 +255,7 @@ export default function Header() {
             </Link>
             
             {/* Мобильная кнопка корзины (появляется только в мобильном ряду логотипа) */}
-            <Link href="/cart" className="relative p-2 md:hidden">
+            <Link href="/cart" aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`} className="relative p-2 md:hidden">
                 <span className="text-xl">🛒</span>
                 {totalItems > 0 && (
                   <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#FF8C00] text-[10px] font-bold">
@@ -288,6 +269,8 @@ export default function Header() {
           <div ref={containerRef} className="flex flex-1 items-center gap-2 md:gap-4 h-full">
             <button
               onClick={() => setCatalogOpen(!catalogOpen)}
+              aria-label={catalogOpen ? "Закрыть каталог" : "Открыть каталог"}
+              aria-expanded={catalogOpen}
               className="group flex h-10 items-center gap-2 rounded-lg bg-[#FF8C00] px-3 text-sm font-bold text-white transition-all hover:bg-[#ff9f26] active:scale-95 md:h-12 md:px-6"
             >
               <div className="flex flex-col gap-1">
@@ -299,14 +282,19 @@ export default function Header() {
             </button>
 
             <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
+              <label htmlFor="header-search" className="sr-only">
+                Поиск по артикулу или названию товара
+              </label>
               {isClient && query.length === 0 && (
-                <span className="pointer-events-none absolute left-3 z-10 text-sm text-slate-500 md:left-4">
+                <span className="pointer-events-none absolute left-3 z-10 text-sm text-slate-600 md:left-4">
                   Поиск по артикулу или названию...
                 </span>
               )}
               <input
+                id="header-search"
                 type="text"
                 value={query}
+                aria-autocomplete="list"
                 onChange={(e) => {
                   setQuery(e.target.value);
                   setOpen(e.target.value.trim().length >= 2);
@@ -323,7 +311,7 @@ export default function Header() {
               
               {/* Dropdown Results */}
               {open && results.length > 0 && (
-                <div className="absolute left-0 right-0 top-full z-[110] mt-2 max-h-[60vh] overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 shadow-2xl">
+                <div id="search-results" className="absolute left-0 right-0 top-full z-[110] mt-2 max-h-[60vh] overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 shadow-2xl">
                    {results.map((p) => (
                      <Link
                        key={p.sku}
@@ -334,7 +322,7 @@ export default function Header() {
                        <SearchProductThumb src={p.image} alt={p.name} />
                        <div className="min-w-0 flex-1">
                          <p className="truncate text-sm font-medium text-slate-900">{p.name}</p>
-                         <p className="text-[10px] uppercase tracking-tight text-slate-500">Арт: {p.sku}</p>
+                         <p className="text-[10px] uppercase tracking-tight text-slate-600">Арт: {p.sku}</p>
                        </div>
                      </Link>
                    ))}
@@ -344,9 +332,9 @@ export default function Header() {
           </div>
 
           {/* Desktop Cart */}
-          <Link href="/cart" className="hidden md:flex items-center gap-3 rounded-xl bg-white/10 p-2 pl-4 transition hover:bg-white/20">
+          <Link href="/cart" aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`} className="hidden md:flex items-center gap-3 rounded-xl bg-white/10 p-2 pl-4 transition hover:bg-white/20">
             <div className="text-right">
-              <p className="text-[10px] uppercase tracking-wider text-white/60">Корзина</p>
+              <p className="text-[10px] uppercase tracking-wider text-white/80">Корзина</p>
               <p className="text-sm font-bold">{totalItems} тов.</p>
             </div>
             <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-[#FF8C00]">
@@ -424,7 +412,11 @@ export default function Header() {
                 )}
               </div>
               <div className="mt-4">
+                <label htmlFor="city-input" className="sr-only">
+                  Введите ваш город
+                </label>
                 <input
+                  id="city-input"
                   type="text"
                   value={cityInput}
                   onChange={(e) => setCityInput(e.target.value)}
@@ -436,6 +428,7 @@ export default function Header() {
                 <button
                   type="button"
                   onClick={() => setCityModalOpen(false)}
+                  aria-label="Отменить выбор города"
                   className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
                 >
                   Отмена
@@ -449,6 +442,7 @@ export default function Header() {
                     }
                     setCityModalOpen(false);
                   }}
+                  aria-label="Подтвердить выбор города"
                   className="rounded-lg bg-[#FF8C00] px-3 py-2 text-sm font-semibold text-white hover:bg-[#ff9f26]"
                 >
                   Подтвердить
