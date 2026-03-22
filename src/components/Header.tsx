@@ -9,6 +9,7 @@ import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
 import TopAuthBar from "@/components/TopAuthBar";
+import { useStickyGuard } from "@/hooks/useStickyGuard";
 
 function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
   const [failed, setFailed] = useState(false);
@@ -47,6 +48,12 @@ export default function Header() {
   const [cityLoaded, setCityLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const catalogRef = useRef<HTMLDivElement>(null);
+  const { ref: headerStickyRef, isSticky } = useStickyGuard({
+    thresholdRatio: 0.4,
+    applyGuardOnlyOnCompactViewport: true,
+    compactMaxWidth: 768,
+    compactMaxHeight: 700,
+  });
   const [isShrunk, setIsShrunk] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -207,7 +214,12 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-[100] w-full bg-[#003366] text-white shadow-lg">
+    <header
+      ref={headerStickyRef}
+      className={`w-full bg-[#003366] text-white shadow-lg transition-all duration-300 ease-out ${
+        isSticky ? "sticky top-0 z-[100]" : "relative z-[100]"
+      }`}
+    >
       {/* Top bar — скрываем при скролле, фиксированная высота в развёрнутом виде */}
       <div
         className={`border-b border-white/10 bg-[#02274d] overflow-hidden transition-[max-height] duration-300 ease-out ${
