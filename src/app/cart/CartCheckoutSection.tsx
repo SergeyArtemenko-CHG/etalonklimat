@@ -28,19 +28,21 @@ export default function CartCheckoutSection({
         <div className="flex items-center justify-center py-10">
           <div className="max-w-xl rounded-2xl border border-green-200 bg-green-50 px-6 py-10 text-center shadow-sm">
             <h2 className="text-xl font-bold text-green-900 md:text-2xl">
-              Ваш заказ {orderNumber ? `${orderNumber} ` : ""}сформирован.
+              {orderNumber
+                ? `Ваш заказ ${orderNumber} сформирован.`
+                : "Ваш заказ сформирован."}
             </h2>
-            <p className="mt-5 text-sm leading-relaxed text-green-900 md:text-base">
-              📞 Позвоните нам:{" "}
+            <p className="mt-5 text-sm font-semibold leading-relaxed text-green-900 md:text-base">
+              ВАЖНО: для подтверждения заказа свяжитесь с нами по телефону{" "}
               <a
                 href={`tel:${CALLBACK_PHONE_TEL}`}
-                className="font-semibold text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                className="text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
               >
                 {CALLBACK_PHONE_DISPLAY}
-              </a>{" "}
-              для подтверждения состава и адреса доставки.
+              </a>
+              .
             </p>
-            <p className="mt-3 text-sm text-green-800/90">
+            <p className="mt-6 text-sm text-green-900 md:text-base">
               Время работы: 9:00 – 19:00 МСК.
             </p>
             <Link
@@ -58,8 +60,7 @@ export default function CartCheckoutSection({
               Итого: {totalPriceFormatted}
             </p>
             <p className="mt-1 text-xs text-slate-500">
-              Номер заказа будет создан автоматически. Контакты для подтверждения — после
-              оформления.
+              После оформления вы получите номер заказа и инструкцию по подтверждению по телефону.
             </p>
           </div>
           <div className="flex flex-col items-stretch gap-2 sm:items-end">
@@ -70,7 +71,7 @@ export default function CartCheckoutSection({
               onClick={() => void onSubmit()}
               className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#FF8C00] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg disabled:opacity-70"
             >
-              {loading ? "Отправка…" : "Оформить заказ и получить номер"}
+              {loading ? "Отправка…" : "Оформить заказ"}
             </button>
           </div>
         </div>
