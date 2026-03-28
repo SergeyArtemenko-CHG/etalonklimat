@@ -5,6 +5,8 @@ import Link from "next/link";
 import PersonalDataConsentCheckbox, {
   consentDisabledButtonClass,
 } from "@/components/PersonalDataConsentCheckbox";
+import DataFormsDisabledNotice from "@/components/DataFormsDisabledNotice";
+import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
 
 type Props = {
   success: boolean;
@@ -67,6 +69,7 @@ export default function CartCheckoutSection({
               id="website-honeypot"
             />
             <p className="mb-3 text-sm font-medium text-slate-700">Контактные данные для заказа</p>
+            <DataFormsDisabledNotice className="mb-3" />
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
               <label className="flex-1">
                 <span className="mb-1 block text-xs text-slate-500">Имя</span>
@@ -128,7 +131,8 @@ export default function CartCheckoutSection({
                     loading ||
                     !customerName.trim() ||
                     !customerPhone.trim() ||
-                    !checkoutConsent
+                    !checkoutConsent ||
+                    DATA_FORMS_SUBMISSION_DISABLED
                   }
                   onClick={async () => {
                     const website =

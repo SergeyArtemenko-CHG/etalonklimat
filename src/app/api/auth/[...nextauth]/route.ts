@@ -2,6 +2,7 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import fs from "fs";
 import path from "path";
+import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
 
 type CsvUser = {
   email: string;
@@ -55,6 +56,7 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        if (DATA_FORMS_SUBMISSION_DISABLED) return null;
         if (!credentials?.email || !credentials?.password) return null;
 
         const users = readUsersFromCsv();

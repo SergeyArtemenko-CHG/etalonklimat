@@ -4,6 +4,8 @@ import { useState, useRef, useEffect, useId } from "react";
 import PersonalDataConsentCheckbox, {
   consentDisabledButtonClass,
 } from "@/components/PersonalDataConsentCheckbox";
+import DataFormsDisabledNotice from "@/components/DataFormsDisabledNotice";
+import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
 
 const STORAGE_KEY = "chat_widget_messages";
 const SESSION_STORAGE_KEY = "chat_widget_session_id";
@@ -237,7 +239,8 @@ export default function FloatingContactBtn() {
 
   const handleSend = async () => {
     const text = input.trim();
-    if (!text || isSending || !chatConsent) return;
+    if (DATA_FORMS_SUBMISSION_DISABLED || !text || isSending || !chatConsent)
+      return;
 
     const clientMsg: Message = { role: "client", text, id: genId() };
     setMessages((prev) => [...prev, clientMsg]);
@@ -341,6 +344,7 @@ export default function FloatingContactBtn() {
             </div>
 
             <div className="border-t border-slate-200 p-2">
+              <DataFormsDisabledNotice className="mb-2" />
               <PersonalDataConsentCheckbox
                 id={`chat-widget-pd-consent-${chatConsentId}`}
                 checked={chatConsent}
@@ -353,19 +357,29 @@ export default function FloatingContactBtn() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === "Enter" && !e.shiftKey && chatConsent) {
+                    if (
+                      e.key === "Enter" &&
+                      !e.shiftKey &&
+                      chatConsent &&
+                      !DATA_FORMS_SUBMISSION_DISABLED
+                    ) {
                       e.preventDefault();
                       void handleSend();
                     }
                   }}
                   placeholder="Напишите сообщение..."
-                  disabled={isSending}
+                  disabled={isSending || DATA_FORMS_SUBMISSION_DISABLED}
                   className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-sm outline-none focus:border-[#FF8C00] disabled:bg-slate-50"
                 />
                 <button
                   type="button"
                   onClick={handleSend}
-                  disabled={isSending || !input.trim() || !chatConsent}
+                  disabled={
+                    isSending ||
+                    !input.trim() ||
+                    !chatConsent ||
+                    DATA_FORMS_SUBMISSION_DISABLED
+                  }
                   className={`rounded-full bg-[#FF8C00] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60 ${consentDisabledButtonClass}`}
                 >
                   {isSending ? "…" : "Отпр."}

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rejectIfDataFormsDisabled } from "@/lib/dataFormsSubmissionGuard";
 
 type OrderItem = {
   id?: string;
@@ -59,6 +60,9 @@ function buildMessage(body: OrderBody, orderNumber: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  const denied = rejectIfDataFormsDisabled();
+  if (denied) return denied;
+
   try {
     const body = (await request.json()) as OrderBody;
 

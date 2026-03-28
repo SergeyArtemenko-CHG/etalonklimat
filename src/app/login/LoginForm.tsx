@@ -6,6 +6,8 @@ import Link from "next/link";
 import PersonalDataConsentCheckbox, {
   consentDisabledButtonClass,
 } from "@/components/PersonalDataConsentCheckbox";
+import DataFormsDisabledNotice from "@/components/DataFormsDisabledNotice";
+import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -24,6 +26,7 @@ export default function LoginForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (DATA_FORMS_SUBMISSION_DISABLED) return;
     if (!email.trim() || !password.trim() || !loginConsent || isSubmitting) return;
     setIsSubmitting(true);
     try {
@@ -45,6 +48,7 @@ export default function LoginForm() {
         Введите ваши данные для входа. После авторизации будут доступны
         персональные цены и скидки.
       </p>
+      <DataFormsDisabledNotice className="mb-4" />
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -72,7 +76,9 @@ export default function LoginForm() {
         <button
           type="submit"
           className={`rounded-lg bg-[#FF8C00] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#ff9f26] disabled:opacity-70 ${consentDisabledButtonClass}`}
-          disabled={isSubmitting || !loginConsent}
+          disabled={
+            isSubmitting || !loginConsent || DATA_FORMS_SUBMISSION_DISABLED
+          }
         >
           {isSubmitting ? "Входим..." : "Войти"}
         </button>
@@ -98,6 +104,7 @@ export default function LoginForm() {
               className="flex flex-col gap-3"
               onSubmit={async (e) => {
                 e.preventDefault();
+                if (DATA_FORMS_SUBMISSION_DISABLED) return;
                 if (
                   !orgName.trim() ||
                   !contactName.trim() ||
@@ -191,7 +198,11 @@ export default function LoginForm() {
               />
               <button
                 type="submit"
-                disabled={regLoading || !registerConsent}
+                disabled={
+                  regLoading ||
+                  !registerConsent ||
+                  DATA_FORMS_SUBMISSION_DISABLED
+                }
                 className={`mt-1 rounded-lg bg-[#003366] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#004080] disabled:opacity-70 ${consentDisabledButtonClass}`}
               >
                 {regLoading ? "Отправка..." : "Отправить заявку"}

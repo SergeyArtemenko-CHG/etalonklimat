@@ -4,6 +4,8 @@ import { useId, useRef, useState } from "react";
 import PersonalDataConsentCheckbox, {
   consentDisabledButtonClass,
 } from "@/components/PersonalDataConsentCheckbox";
+import DataFormsDisabledNotice from "@/components/DataFormsDisabledNotice";
+import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
 
 export type RequestType = "discount" | "price";
 
@@ -41,6 +43,10 @@ export default function ProductRequestForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (DATA_FORMS_SUBMISSION_DISABLED) {
+      setError("Отправка временно недоступна.");
+      return;
+    }
     if (honeypotRef.current?.value) return; // Honeypot: bot detected
     setError("");
     if (!name.trim() || !phone.trim()) {
@@ -107,6 +113,7 @@ export default function ProductRequestForm({
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            <DataFormsDisabledNotice />
             <input
               ref={honeypotRef}
               type="text"
@@ -156,7 +163,11 @@ export default function ProductRequestForm({
             <div className="flex gap-2">
               <button
                 type="submit"
-                disabled={loading || !consent}
+                disabled={
+                  loading ||
+                  !consent ||
+                  DATA_FORMS_SUBMISSION_DISABLED
+                }
                 className={`flex-1 rounded-xl bg-[#FF8C00] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] disabled:opacity-70 ${consentDisabledButtonClass}`}
               >
                 {loading ? "Отправка…" : "Отправить"}
