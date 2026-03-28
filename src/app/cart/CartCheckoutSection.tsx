@@ -1,6 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import PersonalDataConsentCheckbox, {
+  consentDisabledButtonClass,
+} from "@/components/PersonalDataConsentCheckbox";
 
 type Props = {
   success: boolean;
@@ -27,6 +31,8 @@ export default function CartCheckoutSection({
   setCustomerPhone,
   onSubmit,
 }: Props) {
+  const [checkoutConsent, setCheckoutConsent] = useState(false);
+
   return (
     <div className="mt-8 space-y-6">
       {success ? (
@@ -86,6 +92,12 @@ export default function CartCheckoutSection({
               </label>
             </div>
             {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+            <PersonalDataConsentCheckbox
+              id="cart-checkout-pd-consent"
+              checked={checkoutConsent}
+              onChange={setCheckoutConsent}
+              className="mt-4"
+            />
           </div>
           <div className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
             <p className="text-lg font-bold text-slate-900">
@@ -112,28 +124,22 @@ export default function CartCheckoutSection({
               <div className="flex flex-col items-center gap-2">
                 <button
                   type="button"
-                  disabled={loading || !customerName.trim() || !customerPhone.trim()}
+                  disabled={
+                    loading ||
+                    !customerName.trim() ||
+                    !customerPhone.trim() ||
+                    !checkoutConsent
+                  }
                   onClick={async () => {
                     const website =
                       (document.getElementById("website-honeypot") as HTMLInputElement | null)
                         ?.value ?? "";
                     await onSubmit(website);
                   }}
-                  className="inline-flex items-center justify-center rounded-xl bg-[#FF8C00] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none"
+                  className={`inline-flex items-center justify-center rounded-xl bg-[#FF8C00] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg ${consentDisabledButtonClass}`}
                 >
                   {loading ? "Отправка…" : "Оформить заказ"}
                 </button>
-                <p className="text-center text-[10px] text-slate-500">
-                  Нажимая кнопку, я подтверждаю, что ознакомлен с информацией о товаре и принимаю условия{" "}
-                  <Link href="/agreement" className="underline hover:text-slate-700" target="_blank" rel="noopener noreferrer">
-                    пользовательского соглашения
-                  </Link>
-                  , и даю согласие на{" "}
-                  <Link href="/privacy-policy" className="underline hover:text-slate-700" target="_blank" rel="noopener noreferrer">
-                    обработку моих персональных данных
-                  </Link>
-                  .
-                </p>
               </div>
             </div>
           </div>

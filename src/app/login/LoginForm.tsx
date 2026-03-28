@@ -3,23 +3,28 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
+import PersonalDataConsentCheckbox, {
+  consentDisabledButtonClass,
+} from "@/components/PersonalDataConsentCheckbox";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-   const [showRegister, setShowRegister] = useState(false);
-   const [orgName, setOrgName] = useState("");
-   const [contactName, setContactName] = useState("");
-   const [phone, setPhone] = useState("");
-   const [regEmail, setRegEmail] = useState("");
-   const [regLoading, setRegLoading] = useState(false);
-   const [regSuccess, setRegSuccess] = useState<string | null>(null);
-   const [regError, setRegError] = useState<string | null>(null);
+  const [loginConsent, setLoginConsent] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+  const [orgName, setOrgName] = useState("");
+  const [contactName, setContactName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [regEmail, setRegEmail] = useState("");
+  const [regLoading, setRegLoading] = useState(false);
+  const [regSuccess, setRegSuccess] = useState<string | null>(null);
+  const [regError, setRegError] = useState<string | null>(null);
+  const [registerConsent, setRegisterConsent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim() || !password.trim() || isSubmitting) return;
+    if (!email.trim() || !password.trim() || !loginConsent || isSubmitting) return;
     setIsSubmitting(true);
     try {
       await signIn("credentials", {
@@ -59,10 +64,15 @@ export default function LoginForm() {
           autoComplete="current-password"
           required
         />
+        <PersonalDataConsentCheckbox
+          id="login-pd-consent"
+          checked={loginConsent}
+          onChange={setLoginConsent}
+        />
         <button
           type="submit"
-          className="rounded-lg bg-[#FF8C00] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#ff9f26] disabled:opacity-70"
-          disabled={isSubmitting}
+          className={`rounded-lg bg-[#FF8C00] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#ff9f26] disabled:opacity-70 ${consentDisabledButtonClass}`}
+          disabled={isSubmitting || !loginConsent}
         >
           {isSubmitting ? "Входим..." : "Войти"}
         </button>
@@ -93,6 +103,7 @@ export default function LoginForm() {
                   !contactName.trim() ||
                   !phone.trim() ||
                   !regEmail.trim() ||
+                  !registerConsent ||
                   regLoading
                 ) {
                   return;
@@ -125,6 +136,7 @@ export default function LoginForm() {
                   setContactName("");
                   setPhone("");
                   setRegEmail("");
+                  setRegisterConsent(false);
                 } catch (err) {
                   setRegError(
                     err instanceof Error ? err.message : "Ошибка отправки заявки"
@@ -172,35 +184,18 @@ export default function LoginForm() {
               {regSuccess && (
                 <p className="text-xs text-emerald-600">{regSuccess}</p>
               )}
+              <PersonalDataConsentCheckbox
+                id="register-pd-consent"
+                checked={registerConsent}
+                onChange={setRegisterConsent}
+              />
               <button
                 type="submit"
-                disabled={regLoading}
-                className="mt-1 rounded-lg bg-[#003366] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#004080] disabled:opacity-70"
+                disabled={regLoading || !registerConsent}
+                className={`mt-1 rounded-lg bg-[#003366] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#004080] disabled:opacity-70 ${consentDisabledButtonClass}`}
               >
                 {regLoading ? "Отправка..." : "Отправить заявку"}
               </button>
-              <p className="mt-2 text-[11px] leading-snug text-slate-500">
-                Нажимая на кнопку, я подтверждаю, что ознакомлен с информацией о
-                товаре и принимаю условия{" "}
-                <Link
-                  href="/agreement"
-                  className="underline hover:text-slate-700"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  пользовательского соглашения
-                </Link>
-                , и даю согласие на{" "}
-                <Link
-                  href="/privacy-policy"
-                  className="underline hover:text-slate-700"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  обработку моих персональных данных
-                </Link>
-                .
-              </p>
             </form>
           </div>
         )}

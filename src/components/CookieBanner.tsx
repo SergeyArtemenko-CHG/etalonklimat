@@ -42,9 +42,9 @@ export default function CookieBanner() {
             href="/privacy-policy"
             className="underline decoration-white/70 underline-offset-2 transition hover:decoration-white"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
           >
-            Политикой конфиденциальности
+            Политикой в отношении обработки персональных данных
           </Link>
           .
         </p>

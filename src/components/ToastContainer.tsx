@@ -9,7 +9,7 @@ export default function ToastContainer() {
   if (toasts.length === 0) return null;
 
   return (
-    <div className="pointer-events-none fixed bottom-4 right-4 z-[60] flex flex-col gap-2">
+    <div className="pointer-events-none fixed bottom-24 right-4 z-[10050] flex flex-col gap-2 md:bottom-28 md:right-5">
       {toasts.map((toast) => (
         <div
           key={toast.id}

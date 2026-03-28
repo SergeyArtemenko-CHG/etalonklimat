@@ -151,16 +151,16 @@ export default function Footer() {
                 href="/privacy-policy"
                 className="underline underline-offset-1 hover:text-[#FF8C00] transition"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
               >
-                Политикой конфиденциальности
+                Политикой в отношении обработки персональных данных
               </Link>{" "}
               и{" "}
               <Link
                 href="/agreement"
                 className="underline underline-offset-1 hover:text-[#FF8C00] transition"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
               >
                 Пользовательским соглашением
               </Link>

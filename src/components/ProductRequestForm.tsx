@@ -1,7 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
-import Link from "next/link";
+import { useId, useRef, useState } from "react";
+import PersonalDataConsentCheckbox, {
+  consentDisabledButtonClass,
+} from "@/components/PersonalDataConsentCheckbox";
 
 export type RequestType = "discount" | "price";
 
@@ -23,8 +25,10 @@ export default function ProductRequestForm({
   onSuccess,
 }: ProductRequestFormProps) {
   const honeypotRef = useRef<HTMLInputElement>(null);
+  const consentId = useId().replace(/:/g, "");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [consent, setConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -41,6 +45,10 @@ export default function ProductRequestForm({
     setError("");
     if (!name.trim() || !phone.trim()) {
       setError("Заполните имя и телефон");
+      return;
+    }
+    if (!consent) {
+      setError("Подтвердите согласие на обработку персональных данных");
       return;
     }
     setLoading(true);
@@ -139,12 +147,17 @@ export default function ProductRequestForm({
                 Товар: {productName}
               </div>
             )}
+            <PersonalDataConsentCheckbox
+              id={`product-request-consent-${consentId}`}
+              checked={consent}
+              onChange={setConsent}
+            />
             {error && <p className="text-sm text-red-600">{error}</p>}
             <div className="flex gap-2">
               <button
                 type="submit"
-                disabled={loading}
-                className="flex-1 rounded-xl bg-[#FF8C00] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] disabled:opacity-70"
+                disabled={loading || !consent}
+                className={`flex-1 rounded-xl bg-[#FF8C00] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] disabled:opacity-70 ${consentDisabledButtonClass}`}
               >
                 {loading ? "Отправка…" : "Отправить"}
               </button>
@@ -156,17 +169,6 @@ export default function ProductRequestForm({
                 Отмена
               </button>
             </div>
-            <p className="text-center text-[10px] text-slate-500">
-              Нажимая кнопку, я подтверждаю, что ознакомлен с информацией о товаре и принимаю условия{" "}
-              <Link href="/agreement" className="underline hover:text-slate-700" target="_blank" rel="noopener noreferrer">
-                пользовательского соглашения
-              </Link>
-              , и даю согласие на{" "}
-              <Link href="/privacy-policy" className="underline hover:text-slate-700" target="_blank" rel="noopener noreferrer">
-                обработку моих персональных данных
-              </Link>
-              .
-            </p>
           </form>
         )}
       </div>
