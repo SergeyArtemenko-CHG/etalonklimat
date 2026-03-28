@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useSession } from "next-auth/react";
@@ -15,7 +15,7 @@ const CartCheckoutSection = dynamic(() => import("./CartCheckoutSection"), {
   ssr: false,
   loading: () => (
     <div className="mt-8 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-500 shadow-sm">
-      Загрузка формы заказа...
+      Загрузка оформления заказа...
     </div>
   ),
 });
@@ -25,8 +25,6 @@ export default function CartPage() {
   const { items, removeItem, updateQuantity, clearCart } = useCartStore();
   const rate = useCurrencyStore((s) => s.rate);
   const { data: session } = useSession();
-  const [customerName, setCustomerName] = useState("");
-  const [customerPhone, setCustomerPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -40,7 +38,11 @@ export default function CartPage() {
   const isAuthorized = Number.isFinite(rawStatus);
   const partnerGroup = isAuthorized ? (rawStatus as 1 | 2 | 3) : undefined;
 
-  const calcItemFinalRub = (itemId: string, itemPriceRub?: number, itemPriceEur?: number) => {
+  const calcItemFinalRub = (
+    itemId: string,
+    itemPriceRub?: number,
+    itemPriceEur?: number
+  ) => {
     const product = products.find((p) => p.id === itemId);
     const priceRub =
       itemPriceRub ??
@@ -88,7 +90,7 @@ export default function CartPage() {
           </h1>
 
           {isEmptyCart ? (
-            <div className="rounded-2xl bg-white p-8 shadow-md shadow-slate-200/60 text-center">
+            <div className="rounded-2xl bg-white p-8 text-center shadow-md shadow-slate-200/60">
               <h2 className="mb-4 text-xl font-semibold text-[#0b1f33]">
                 Корзина пуста
               </h2>
@@ -199,13 +201,8 @@ export default function CartPage() {
                 orderNumber={orderNumber}
                 error={error}
                 totalPriceFormatted={totalPriceFormatted}
-                customerName={customerName}
-                customerPhone={customerPhone}
                 loading={loading}
-                setCustomerName={setCustomerName}
-                setCustomerPhone={setCustomerPhone}
-                onSubmit={async (website: string) => {
-                  if (website) return;
+                onSubmit={async () => {
                   setError(null);
                   setLoading(true);
                   try {
@@ -239,8 +236,6 @@ export default function CartPage() {
                           .replace(/\s/g, " ")
                           .replace(" ₽", ""),
                         rate,
-                        customerName: customerName.trim(),
-                        customerPhone: customerPhone.trim(),
                       }),
                     });
                     const data = await res.json().catch(() => null);
@@ -260,10 +255,10 @@ export default function CartPage() {
                     );
                     setSuccess(true);
                     clearCart();
-                    setCustomerName("");
-                    setCustomerPhone("");
                   } catch (e) {
-                    setError(e instanceof Error ? e.message : "Ошибка отправки заказа");
+                    setError(
+                      e instanceof Error ? e.message : "Ошибка отправки заказа"
+                    );
                   } finally {
                     setLoading(false);
                   }

@@ -1,24 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import PersonalDataConsentCheckbox, {
-  consentDisabledButtonClass,
-} from "@/components/PersonalDataConsentCheckbox";
-import DataFormsDisabledNotice from "@/components/DataFormsDisabledNotice";
-import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
+
+const CALLBACK_PHONE_DISPLAY = "+7 (499) 398-01-40";
+const CALLBACK_PHONE_TEL = "+74993980140";
 
 type Props = {
   success: boolean;
   orderNumber: string | null;
   error: string | null;
   totalPriceFormatted: string;
-  customerName: string;
-  customerPhone: string;
   loading: boolean;
-  setCustomerName: (value: string) => void;
-  setCustomerPhone: (value: string) => void;
-  onSubmit: (website: string) => Promise<void>;
+  onSubmit: () => Promise<void>;
 };
 
 export default function CartCheckoutSection({
@@ -26,27 +19,29 @@ export default function CartCheckoutSection({
   orderNumber,
   error,
   totalPriceFormatted,
-  customerName,
-  customerPhone,
   loading,
-  setCustomerName,
-  setCustomerPhone,
   onSubmit,
 }: Props) {
-  const [checkoutConsent, setCheckoutConsent] = useState(false);
-
   return (
     <div className="mt-8 space-y-6">
       {success ? (
         <div className="flex items-center justify-center py-10">
-          <div className="max-w-xl text-center rounded-2xl border border-green-200 bg-green-50 px-6 py-10 shadow-sm">
-            <h2 className="text-2xl font-bold text-green-800 md:text-3xl">
-              {orderNumber
-                ? `Ваш заказ №${orderNumber} успешно оформлен!`
-                : "Ваш заказ успешно оформлен!"}
+          <div className="max-w-xl rounded-2xl border border-green-200 bg-green-50 px-6 py-10 text-center shadow-sm">
+            <h2 className="text-xl font-bold text-green-900 md:text-2xl">
+              Ваш заказ {orderNumber ? `${orderNumber} ` : ""}сформирован.
             </h2>
-            <p className="mt-4 text-sm text-green-800 md:text-base">
-              Наш менеджер свяжется с вами в ближайшее время.
+            <p className="mt-5 text-sm leading-relaxed text-green-900 md:text-base">
+              📞 Позвоните нам:{" "}
+              <a
+                href={`tel:${CALLBACK_PHONE_TEL}`}
+                className="font-semibold text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+              >
+                {CALLBACK_PHONE_DISPLAY}
+              </a>{" "}
+              для подтверждения состава и адреса доставки.
+            </p>
+            <p className="mt-3 text-sm text-green-800/90">
+              Время работы: 9:00 – 19:00 МСК.
             </p>
             <Link
               href="/"
@@ -57,99 +52,29 @@ export default function CartCheckoutSection({
           </div>
         </div>
       ) : (
-        <>
-          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-            <input
-              type="text"
-              name="website"
-              tabIndex={-1}
-              autoComplete="off"
-              className="absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
-              aria-hidden
-              id="website-honeypot"
-            />
-            <p className="mb-3 text-sm font-medium text-slate-700">Контактные данные для заказа</p>
-            <DataFormsDisabledNotice className="mb-3" />
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <label className="flex-1">
-                <span className="mb-1 block text-xs text-slate-500">Имя</span>
-                <input
-                  type="text"
-                  value={customerName}
-                  onChange={(e) => setCustomerName(e.target.value)}
-                  placeholder="Иван Иванов"
-                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#003366] focus:outline-none focus:ring-1 focus:ring-[#003366]"
-                  required
-                />
-              </label>
-              <label className="flex-1">
-                <span className="mb-1 block text-xs text-slate-500">Телефон</span>
-                <input
-                  type="tel"
-                  value={customerPhone}
-                  onChange={(e) => setCustomerPhone(e.target.value)}
-                  placeholder="+7 (999) 123-45-67"
-                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#003366] focus:outline-none focus:ring-1 focus:ring-[#003366]"
-                  required
-                />
-              </label>
-            </div>
-            {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-            <PersonalDataConsentCheckbox
-              id="cart-checkout-pd-consent"
-              checked={checkoutConsent}
-              onChange={setCheckoutConsent}
-              className="mt-4"
-            />
-          </div>
-          <div className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+          <div>
             <p className="text-lg font-bold text-slate-900">
               Итого: {totalPriceFormatted}
             </p>
-            <div className="flex flex-wrap gap-3">
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                Скачать коммерческое предложение (PDF)
-              </button>
-              <div className="flex flex-col items-center gap-2">
-                <button
-                  type="button"
-                  disabled={
-                    loading ||
-                    !customerName.trim() ||
-                    !customerPhone.trim() ||
-                    !checkoutConsent ||
-                    DATA_FORMS_SUBMISSION_DISABLED
-                  }
-                  onClick={async () => {
-                    const website =
-                      (document.getElementById("website-honeypot") as HTMLInputElement | null)
-                        ?.value ?? "";
-                    await onSubmit(website);
-                  }}
-                  className={`inline-flex items-center justify-center rounded-xl bg-[#FF8C00] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg ${consentDisabledButtonClass}`}
-                >
-                  {loading ? "Отправка…" : "Оформить заказ"}
-                </button>
-              </div>
-            </div>
+            <p className="mt-1 text-xs text-slate-500">
+              Номер заказа будет создан автоматически. Контакты для подтверждения — после
+              оформления.
+            </p>
           </div>
-        </>
+          <div className="flex flex-col items-stretch gap-2 sm:items-end">
+            {error && <p className="text-sm text-red-600 sm:text-right">{error}</p>}
+            <button
+              type="button"
+              disabled={loading}
+              onClick={() => void onSubmit()}
+              className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#FF8C00] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg disabled:opacity-70"
+            >
+              {loading ? "Отправка…" : "Оформить заказ и получить номер"}
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
 }
-

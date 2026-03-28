@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { rejectIfDataFormsDisabled } from "@/lib/dataFormsSubmissionGuard";
 
 type OrderItem = {
   id?: string;
@@ -13,12 +12,15 @@ type OrderBody = {
   items: OrderItem[];
   totalPrice: string | number;
   rate?: number;
-  customerName: string;
-  customerPhone: string;
 };
 
 function formatRub(num: number): string {
   return new Intl.NumberFormat("ru-RU").format(Math.round(num)) + " руб.";
+}
+
+function generateOrderNumber(): string {
+  const n = Math.floor(10000 + Math.random() * 90000);
+  return `EK-${n}`;
 }
 
 function calculateTotalRub(items: OrderItem[], rate: number): number {
@@ -30,50 +32,61 @@ function calculateTotalRub(items: OrderItem[], rate: number): number {
   }, 0);
 }
 
-function buildMessage(body: OrderBody, orderNumber: string): string {
+function linePriceRub(
+  item: OrderItem,
+  rate: number
+): number {
+  const isRub = item.priceRub != null && item.priceRub > 0;
+  if (isRub) return item.priceRub! * item.quantity;
+  return (item.priceEur ?? 0) * rate * item.quantity;
+}
+
+function buildTelegramMessage(body: OrderBody, orderNumber: string): string {
   const rate = body.rate ?? 1;
   const totalRub =
     body.rate != null
       ? calculateTotalRub(body.items, rate)
       : typeof body.totalPrice === "number"
         ? body.totalPrice
-        : parseFloat(String(body.totalPrice).replace(/\s/g, "")) || 0;
+        : parseFloat(
+            String(body.totalPrice)
+              .replace(/\s/g, "")
+              .replace(/[^\d.,-]/g, "")
+              .replace(",", ".")
+          ) || 0;
 
-  const lines = [
-    `📦 ЗАКАЗ №${orderNumber}`,
-    "",
-    `👤 Клиент: ${body.customerName}`,
-    `📞 Телефон: ${body.customerPhone}`,
-    "",
-    "🛒 Товары:",
-    ...body.items.map((item) => {
-      const isRub = item.priceRub != null && item.priceRub > 0;
-      const sumRub = isRub
-        ? item.priceRub! * item.quantity
-        : (item.priceEur ?? 0) * rate * item.quantity;
-      return `  • ${item.name} — ${item.quantity} шт. — ${formatRub(sumRub)}`;
-    }),
-    "",
-    `💰 Итого: ${formatRub(totalRub)}`,
-  ];
-  return lines.join("\n");
+  const skuLines = body.items.map((item) => {
+    const sku = (item.id ?? "—").trim() || "—";
+    const qty = item.quantity;
+    const lineTotal = formatRub(linePriceRub(item, rate));
+    return `${sku} - ${qty} шт. - ${lineTotal}`;
+  });
+
+  return [
+    `📦 НОВЫЙ ЗАКАЗ ${orderNumber}`,
+    "------------------------",
+    "🛒 Состав:",
+    ...skuLines,
+    "------------------------",
+    `💰 ИТОГО: ${formatRub(totalRub)}`,
+    "📢 Ждите звонка клиента для подтверждения.",
+  ].join("\n");
 }
 
 export async function POST(request: NextRequest) {
-  const denied = rejectIfDataFormsDisabled();
-  if (denied) return denied;
-
   try {
     const body = (await request.json()) as OrderBody;
 
-    if (
-      !Array.isArray(body.items) ||
-      body.totalPrice == null ||
-      !body.customerName?.trim() ||
-      !body.customerPhone?.trim()
-    ) {
+    if (!Array.isArray(body.items) || body.items.length === 0) {
       return NextResponse.json(
-        { error: "Не указаны items, totalPrice, customerName или customerPhone" },
+        { error: "Корзина пуста или не указан состав заказа" },
+        { status: 400 }
+      );
+    }
+
+    if (body.totalPrice == null) {
+      return NextResponse.json(
+        { error: "Не указана сумма заказа" },
         { status: 400 }
       );
     }
@@ -88,12 +101,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const orderNumber = new Date()
-      .toISOString()
-      .replace(/[-:.TZ]/g, "")
-      .slice(0, 14);
-
-    const text = buildMessage(body, orderNumber);
+    const orderNumber = generateOrderNumber();
+    const text = buildTelegramMessage(body, orderNumber);
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
     const res = await fetch(url, {

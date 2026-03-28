@@ -1,11 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useId } from "react";
-import PersonalDataConsentCheckbox, {
-  consentDisabledButtonClass,
-} from "@/components/PersonalDataConsentCheckbox";
-import DataFormsDisabledNotice from "@/components/DataFormsDisabledNotice";
-import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
+import { useState, useRef, useEffect } from "react";
 
 const STORAGE_KEY = "chat_widget_messages";
 const SESSION_STORAGE_KEY = "chat_widget_session_id";
@@ -88,8 +83,6 @@ function CloseIcon({ className }: { className?: string }) {
 }
 
 export default function FloatingContactBtn() {
-  const chatConsentId = useId().replace(/:/g, "");
-  const [chatConsent, setChatConsent] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -239,8 +232,7 @@ export default function FloatingContactBtn() {
 
   const handleSend = async () => {
     const text = input.trim();
-    if (DATA_FORMS_SUBMISSION_DISABLED || !text || isSending || !chatConsent)
-      return;
+    if (!text || isSending) return;
 
     const clientMsg: Message = { role: "client", text, id: genId() };
     setMessages((prev) => [...prev, clientMsg]);
@@ -344,47 +336,34 @@ export default function FloatingContactBtn() {
             </div>
 
             <div className="border-t border-slate-200 p-2">
-              <DataFormsDisabledNotice className="mb-2" />
-              <PersonalDataConsentCheckbox
-                id={`chat-widget-pd-consent-${chatConsentId}`}
-                checked={chatConsent}
-                onChange={setChatConsent}
-                className="mb-2 px-1"
-              />
               <div className="flex gap-2">
                 <input
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => {
-                    if (
-                      e.key === "Enter" &&
-                      !e.shiftKey &&
-                      chatConsent &&
-                      !DATA_FORMS_SUBMISSION_DISABLED
-                    ) {
+                    if (e.key === "Enter" && !e.shiftKey) {
                       e.preventDefault();
                       void handleSend();
                     }
                   }}
                   placeholder="Напишите сообщение..."
-                  disabled={isSending || DATA_FORMS_SUBMISSION_DISABLED}
+                  disabled={isSending}
                   className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-sm outline-none focus:border-[#FF8C00] disabled:bg-slate-50"
                 />
                 <button
                   type="button"
                   onClick={handleSend}
-                  disabled={
-                    isSending ||
-                    !input.trim() ||
-                    !chatConsent ||
-                    DATA_FORMS_SUBMISSION_DISABLED
-                  }
-                  className={`rounded-full bg-[#FF8C00] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60 ${consentDisabledButtonClass}`}
+                  disabled={isSending || !input.trim()}
+                  className="rounded-full bg-[#FF8C00] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60"
                 >
                   {isSending ? "…" : "Отпр."}
                 </button>
               </div>
+              <p className="mt-2 px-1 text-center text-xs leading-snug text-slate-500">
+                Чат предназначен исключительно для технических консультаций, не отправляйте в чате
+                Ваши персональные данные
+              </p>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import LoginForm from "./LoginForm";
 export const metadata: Metadata = {
   title: "Вход — ETALON",
   description:
-    "Вход в личный кабинет для просмотра персональных цен и скидок",
+    "Вход в личный кабинет по ID партнёра и паролю; персональные цены и скидки.",
 };
 
 export default function LoginPage() {

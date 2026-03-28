@@ -2,10 +2,9 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import fs from "fs";
 import path from "path";
-import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
 
 type CsvUser = {
-  email: string;
+  partnerId: string;
   password: string;
   status?: number;
 };
@@ -17,20 +16,24 @@ function readUsersFromCsv(): CsvUser[] {
     const lines = raw.split(/\r?\n/).filter((l) => l.trim().length > 0);
     if (lines.length <= 1) return [];
     const [headerLine, ...rows] = lines;
-    const headers = headerLine
-      .split(";")
-      .map((h) => h.trim().toLowerCase());
+    const headers = headerLine.split(";").map((h) => h.trim().toLowerCase());
+
+    const partnerIdx = headers.indexOf("partner_id");
+    const idIdx = headers.indexOf("id");
     const emailIdx = headers.indexOf("email");
     const passwordIdx = headers.indexOf("password");
     const statusIdx = headers.indexOf("status");
-    if (emailIdx === -1 || passwordIdx === -1) return [];
+
+    const keyIdx =
+      partnerIdx >= 0 ? partnerIdx : idIdx >= 0 ? idIdx : emailIdx;
+    if (keyIdx === -1 || passwordIdx === -1) return [];
 
     return rows.map((row) => {
       const cols = row.split(";").map((c) => c.trim());
       const statusRaw = statusIdx >= 0 ? cols[statusIdx] : "";
       const statusNum = Number(statusRaw);
       return {
-        email: cols[emailIdx] || "",
+        partnerId: cols[keyIdx] || "",
         password: cols[passwordIdx] || "",
         status: Number.isFinite(statusNum) ? statusNum : undefined,
       };
@@ -52,18 +55,15 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "text" },
-        password: { label: "Password", type: "password" },
+        partnerId: { label: "ID партнёра", type: "text" },
+        password: { label: "Пароль", type: "password" },
       },
       async authorize(credentials) {
-        if (DATA_FORMS_SUBMISSION_DISABLED) return null;
-        if (!credentials?.email || !credentials?.password) return null;
+        const pid = credentials?.partnerId?.trim();
+        if (!pid || !credentials?.password) return null;
 
         const users = readUsersFromCsv();
-        const email = credentials.email.trim().toLowerCase();
-        const found = users.find(
-          (u) => u.email.trim().toLowerCase() === email
-        );
+        const found = users.find((u) => u.partnerId.trim() === pid);
         if (!found) return null;
 
         // Пока тестируем — сравнение в открытом виде.
@@ -71,8 +71,9 @@ export const authOptions: NextAuthOptions = {
         if (credentials.password !== found.password) return null;
 
         return {
-          id: found.email,
-          email: found.email,
+          id: found.partnerId,
+          email: `${found.partnerId}@partner.local`,
+          name: `Партнёр ${found.partnerId}`,
           status: found.status,
         } as any;
       },
@@ -87,7 +88,6 @@ export const authOptions: NextAuthOptions = {
       if (user && (user as any).status != null) {
         const status = (user as any).status as number;
         (token as any).status = status;
-        // Для совместимости с логикой цен:
         (token as any).partnerGroup = status;
       }
       return token;
@@ -106,4 +106,3 @@ export const authOptions: NextAuthOptions = {
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
-

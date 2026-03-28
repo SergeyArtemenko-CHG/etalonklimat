@@ -1,11 +1,6 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
-import PersonalDataConsentCheckbox, {
-  consentDisabledButtonClass,
-} from "@/components/PersonalDataConsentCheckbox";
-import DataFormsDisabledNotice from "@/components/DataFormsDisabledNotice";
-import { DATA_FORMS_SUBMISSION_DISABLED } from "@/config/dataFormsSubmission";
+import { useRef, useState } from "react";
 
 export type RequestType = "discount" | "price";
 
@@ -27,10 +22,8 @@ export default function ProductRequestForm({
   onSuccess,
 }: ProductRequestFormProps) {
   const honeypotRef = useRef<HTMLInputElement>(null);
-  const consentId = useId().replace(/:/g, "");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [consent, setConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -43,18 +36,10 @@ export default function ProductRequestForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (DATA_FORMS_SUBMISSION_DISABLED) {
-      setError("Отправка временно недоступна.");
-      return;
-    }
     if (honeypotRef.current?.value) return; // Honeypot: bot detected
     setError("");
     if (!name.trim() || !phone.trim()) {
       setError("Заполните имя и телефон");
-      return;
-    }
-    if (!consent) {
-      setError("Подтвердите согласие на обработку персональных данных");
       return;
     }
     setLoading(true);
@@ -113,7 +98,6 @@ export default function ProductRequestForm({
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <DataFormsDisabledNotice />
             <input
               ref={honeypotRef}
               type="text"
@@ -154,21 +138,12 @@ export default function ProductRequestForm({
                 Товар: {productName}
               </div>
             )}
-            <PersonalDataConsentCheckbox
-              id={`product-request-consent-${consentId}`}
-              checked={consent}
-              onChange={setConsent}
-            />
             {error && <p className="text-sm text-red-600">{error}</p>}
             <div className="flex gap-2">
               <button
                 type="submit"
-                disabled={
-                  loading ||
-                  !consent ||
-                  DATA_FORMS_SUBMISSION_DISABLED
-                }
-                className={`flex-1 rounded-xl bg-[#FF8C00] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] disabled:opacity-70 ${consentDisabledButtonClass}`}
+                disabled={loading}
+                className="flex-1 rounded-xl bg-[#FF8C00] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] disabled:opacity-70"
               >
                 {loading ? "Отправка…" : "Отправить"}
               </button>

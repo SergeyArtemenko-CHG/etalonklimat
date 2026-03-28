@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { rejectIfDataFormsDisabled } from "@/lib/dataFormsSubmissionGuard";
 
 function buildMessage(
   name: string,
@@ -21,9 +20,6 @@ function buildMessage(
 }
 
 export async function POST(request: NextRequest) {
-  const denied = rejectIfDataFormsDisabled();
-  if (denied) return denied;
-
   try {
     const raw = await request.json();
     const body = raw && typeof raw === "object" ? raw : {};
