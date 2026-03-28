@@ -259,6 +259,8 @@ export default function ProductCard(props: ProductCardProps) {
           <AddToCartButton
             id={id}
             name={name}
+            sku={sku}
+            image={image}
             priceEur={priceEur}
             priceRub={priceRub}
             variant="card"

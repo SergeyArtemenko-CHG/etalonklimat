@@ -6,6 +6,8 @@ import { useToastStore } from "@/store/toast";
 type AddToCartButtonProps = {
   id: string;
   name: string;
+  sku?: string;
+  image?: string;
   priceEur?: number;
   priceRub?: number;
   quantity?: number;
@@ -15,6 +17,8 @@ type AddToCartButtonProps = {
 export default function AddToCartButton({
   id,
   name,
+  sku,
+  image,
   priceEur,
   priceRub,
   quantity = 1,
@@ -24,7 +28,7 @@ export default function AddToCartButton({
   const addToast = useToastStore((s) => s.addToast);
 
   const handleClick = () => {
-    addItem({ id, name, priceEur, priceRub, quantity });
+    addItem({ id, name, sku, image, priceEur, priceRub, quantity });
     addToast(`Товар «${name}» добавлен в корзину`);
   };
 

@@ -9,6 +9,7 @@ type ProductPageActionsProps = {
   id: string;
   name: string;
   sku: string;
+  image?: string;
   priceEur?: number;
   priceRub?: number;
   inStock?: boolean;
@@ -19,6 +20,7 @@ export default function ProductPageActions({
   id,
   name,
   sku,
+  image,
   priceEur,
   priceRub,
   inStock = true,
@@ -92,6 +94,8 @@ export default function ProductPageActions({
         <AddToCartButton
           id={id}
           name={name}
+          sku={sku}
+          image={image}
           priceEur={priceEur}
           priceRub={priceRub}
           quantity={qty}

@@ -4,6 +4,8 @@ import { persist } from "zustand/middleware";
 export type CartItem = {
   id: string;
   name: string;
+  sku?: string;
+  image?: string;
   priceEur?: number;
   priceRub?: number;
   quantity: number;
@@ -14,6 +16,8 @@ type CartStore = {
   addItem: (item: {
     id: string;
     name: string;
+    sku?: string;
+    image?: string;
     priceEur?: number;
     priceRub?: number;
     quantity?: number;
@@ -31,18 +35,28 @@ export const useCartStore = create<CartStore>()(
     (set, get) => ({
       items: [],
 
-      addItem: ({ id, name, priceEur, priceRub, quantity = 1 }) => {
+      addItem: ({ id, name, sku, image, priceEur, priceRub, quantity = 1 }) => {
         set((state) => {
           const existing = state.items.find((i) => i.id === id);
           if (existing) {
             return {
               items: state.items.map((i) =>
-                i.id === id ? { ...i, quantity: i.quantity + quantity } : i
+                i.id === id
+                  ? {
+                      ...i,
+                      quantity: i.quantity + quantity,
+                      sku: sku ?? i.sku,
+                      image: image ?? i.image,
+                    }
+                  : i
               ),
             };
           }
           return {
-            items: [...state.items, { id, name, priceEur, priceRub, quantity }],
+            items: [
+              ...state.items,
+              { id, name, sku, image, priceEur, priceRub, quantity },
+            ],
           };
         });
       },
