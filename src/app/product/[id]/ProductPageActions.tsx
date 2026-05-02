@@ -51,7 +51,7 @@ export default function ProductPageActions({
             productSku: sku,
           })
         }
-        className="w-full rounded-xl bg-[#FF8C00] px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
+        className="w-full rounded-xl bg-accent px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-md transition hover:bg-accent-hover hover:shadow-lg"
       >
         {isAuthorized ? "Запросить" : "Узнать цену и срок поставки"}
       </button>
@@ -61,12 +61,12 @@ export default function ProductPageActions({
   return (
     <>
       <div className="mb-4 flex items-center gap-3">
-        <span className="text-sm font-medium text-slate-600">Количество:</span>
-        <div className="flex overflow-hidden rounded-lg border border-slate-200">
+        <span className="text-sm font-medium text-text-muted">Количество:</span>
+        <div className="flex overflow-hidden rounded-lg border border-text-muted/25">
           <button
             type="button"
             onClick={() => setQty(Math.max(1, qty - 1))}
-            className="flex h-10 w-10 items-center justify-center bg-slate-100 text-slate-600 transition hover:bg-slate-200"
+            className="flex h-10 w-10 items-center justify-center bg-main-bg text-text-muted transition hover:bg-text-muted/20"
             aria-label="Уменьшить"
           >
             −
@@ -78,12 +78,12 @@ export default function ProductPageActions({
             onChange={(e) =>
               setQty(Math.max(1, parseInt(e.target.value, 10) || 1))
             }
-            className="h-10 w-14 border-x border-slate-200 text-center text-sm font-medium tabular-nums"
+            className="h-10 w-14 border-x border-text-muted/25 text-center text-sm font-medium tabular-nums"
           />
           <button
             type="button"
             onClick={() => setQty(qty + 1)}
-            className="flex h-10 w-10 items-center justify-center bg-slate-100 text-slate-600 transition hover:bg-slate-200"
+            className="flex h-10 w-10 items-center justify-center bg-main-bg text-text-muted transition hover:bg-text-muted/20"
             aria-label="Увеличить"
           >
             +
@@ -104,7 +104,7 @@ export default function ProductPageActions({
         <button
           type="button"
           onClick={openChat}
-          className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#0088cc] hover:bg-slate-50 hover:text-[#0088cc] sm:w-auto"
+          className="w-full rounded-xl border border-text-muted/35 px-4 py-3 text-sm font-semibold text-text-main transition hover:border-[#0088cc] hover:bg-text-muted/5 hover:text-[#0088cc] sm:w-auto"
         >
           Консультация с инженером
         </button>

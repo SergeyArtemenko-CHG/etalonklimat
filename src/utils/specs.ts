@@ -24,12 +24,12 @@ function parseSpecValue(value: string): { min: number; max: number } | null {
 function findSpec(product: Product, name: string): { min: number; max: number } | null {
   try {
     if (!product?.specs) return null;
-    if (!Array.isArray(product.specs)) return null;
-    const spec = product.specs.find(
-      (s) => s && s.name && (s.name === name || s.name.includes(name))
+    const entries = Object.entries(product.specs);
+    const pair = entries.find(
+      ([specName]) => specName === name || specName.includes(name)
     );
-    if (!spec?.value) return null;
-    return parseSpecValue(spec.value);
+    if (!pair?.[1]) return null;
+    return parseSpecValue(pair[1]);
   } catch {
     return null;
   }

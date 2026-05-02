@@ -26,9 +26,9 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-md shadow-slate-200/60">
-      <h1 className="mb-4 text-xl font-semibold text-slate-900">Авторизация</h1>
-      <p className="mb-6 text-sm text-slate-600">
+    <div className="rounded-2xl bg-card-bg p-6 shadow-md shadow-text-muted/8">
+      <h1 className="mb-4 text-xl font-semibold text-text-main">Авторизация</h1>
+      <p className="mb-6 text-sm text-text-muted">
         Введите ID партнёра и пароль. После входа будут доступны персональные цены и скидки.
       </p>
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ export default function LoginForm() {
           placeholder="ID партнёра"
           value={partnerId}
           onChange={(e) => setPartnerId(e.target.value.replace(/\D/g, ""))}
-          className="rounded-lg border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-[#FF8C00]"
+          className="rounded-lg border border-text-muted/25 px-4 py-2.5 text-sm outline-none focus:border-accent"
           autoComplete="username"
           required
         />
@@ -52,13 +52,13 @@ export default function LoginForm() {
           placeholder="Пароль"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="rounded-lg border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-[#FF8C00]"
+          className="rounded-lg border border-text-muted/25 px-4 py-2.5 text-sm outline-none focus:border-accent"
           autoComplete="current-password"
           required
         />
         <button
           type="submit"
-          className="rounded-lg bg-[#FF8C00] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#ff9f26] disabled:opacity-70"
+          className="rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-hover disabled:opacity-70"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Вход…" : "Авторизоваться"}
@@ -67,13 +67,13 @@ export default function LoginForm() {
       <p className="mt-5 text-center text-sm">
         <Link
           href="/login/access"
-          className="text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+          className="text-primary underline underline-offset-2 hover:text-accent"
         >
           получить данные для входа в личный кабинет
         </Link>
       </p>
-      <p className="mt-4 text-center text-xs text-slate-500">
-        <Link href="/" className="text-[#FF8C00] hover:underline">
+      <p className="mt-4 text-center text-xs text-text-muted">
+        <Link href="/" className="text-accent hover:underline">
           ← Вернуться на главную
         </Link>
       </p>

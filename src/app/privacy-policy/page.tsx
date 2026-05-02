@@ -19,33 +19,33 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-main-bg">
       <Header />
       <main className="mx-auto max-w-4xl px-4 py-12">
-        <article className="rounded-2xl bg-white p-6 shadow-md shadow-slate-200/60 md:p-10">
-          <nav className="mb-8 text-sm text-slate-500">
-            <Link href="/" className="hover:text-[#003366]">
+        <article className="rounded-2xl bg-card-bg p-6 shadow-md shadow-text-muted/8 md:p-10">
+          <nav className="mb-8 text-sm text-text-muted">
+            <Link href="/" className="hover:text-primary">
               Главная
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-[#0b1f33]">
+            <span className="text-primary">
               Политика в отношении обработки персональных данных
             </span>
           </nav>
 
-          <h1 className="mb-2 text-2xl font-bold text-[#0b1f33] md:text-3xl">
+          <h1 className="mb-2 text-2xl font-bold text-primary md:text-3xl">
             Политика в отношении обработки персональных данных и Согласие на их
             обработку
           </h1>
-          <p className="mb-10 text-sm text-slate-500">
+          <p className="mb-10 text-sm text-text-muted">
             Дата публикации: 28 марта 2026 г.
           </p>
 
           <section className="mb-10">
-            <h2 className="mb-4 border-b-2 border-slate-200 pb-3 text-xl font-bold text-[#003366]">
+            <h2 className="mb-4 border-b-2 border-text-muted/25 pb-3 text-xl font-bold text-primary">
               1. ОБЩИЕ ПОЛОЖЕНИЯ
             </h2>
-            <ol className="list-none space-y-4 pl-0 leading-relaxed text-slate-700">
+            <ol className="list-none space-y-4 pl-0 leading-relaxed text-text-main">
               <li>
                 <strong>1.1.</strong> Настоящая Политика (далее — Политика)
                 разработана в соответствии с Федеральным законом от 27.07.2006 №
@@ -67,14 +67,14 @@ export default function PrivacyPolicyPage() {
                 адрес: {COMPANY_ADDRESS}, e-mail для связи:{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   {CONTACT_EMAIL}
                 </a>
                 . Дополнительные контакты — на странице{" "}
                 <Link
                   href="/contacts"
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   «Контакты»
                 </Link>
@@ -84,14 +84,14 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 border-b-2 border-slate-200 pb-3 text-xl font-bold text-[#003366]">
+            <h2 className="mb-4 border-b-2 border-text-muted/25 pb-3 text-xl font-bold text-primary">
               2. ЦЕЛИ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ
             </h2>
-            <p className="mb-4 leading-relaxed text-slate-700">
+            <p className="mb-4 leading-relaxed text-text-main">
               Оператор обрабатывает персональные данные Пользователя
               исключительно в следующих целях:
             </p>
-            <ol className="list-none space-y-4 pl-0 leading-relaxed text-slate-700">
+            <ol className="list-none space-y-4 pl-0 leading-relaxed text-text-main">
               <li>
                 <strong>2.1.</strong> Регистрация и аутентификация Пользователя в
                 Личном кабинете Сайта.
@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
                 Пользователя в порядке, предусмотренном{" "}
                 <Link
                   href="/agreement"
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   Пользовательским соглашением
                 </Link>
@@ -129,10 +129,10 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 border-b-2 border-slate-200 pb-3 text-xl font-bold text-[#003366]">
+            <h2 className="mb-4 border-b-2 border-text-muted/25 pb-3 text-xl font-bold text-primary">
               3. ПЕРЕЧЕНЬ ОБРАБАТЫВАЕМЫХ ДАННЫХ
             </h2>
-            <ol className="list-none space-y-4 pl-0 leading-relaxed text-slate-700">
+            <ol className="list-none space-y-4 pl-0 leading-relaxed text-text-main">
               <li>
                 <strong>3.1.</strong> В настоящее время Оператор обрабатывает
                 следующие персональные данные, указываемые Пользователем в
@@ -162,10 +162,10 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 border-b-2 border-slate-200 pb-3 text-xl font-bold text-[#003366]">
+            <h2 className="mb-4 border-b-2 border-text-muted/25 pb-3 text-xl font-bold text-primary">
               4. ПОРЯДОК ОБРАБОТКИ И БЕЗОПАСНОСТЬ
             </h2>
-            <ol className="list-none space-y-4 pl-0 leading-relaxed text-slate-700">
+            <ol className="list-none space-y-4 pl-0 leading-relaxed text-text-main">
               <li>
                 <strong>4.1.</strong> Обработка персональных данных осуществляется
                 законными способами: сбор, запись, систематизация, накопление,
@@ -202,10 +202,10 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 border-b-2 border-slate-200 pb-3 text-xl font-bold text-[#003366]">
+            <h2 className="mb-4 border-b-2 border-text-muted/25 pb-3 text-xl font-bold text-primary">
               5. ПРАВА ПОЛЬЗОВАТЕЛЯ И ОТЗЫВ СОГЛАСИЯ
             </h2>
-            <ol className="list-none space-y-4 pl-0 leading-relaxed text-slate-700">
+            <ol className="list-none space-y-4 pl-0 leading-relaxed text-text-main">
               <li>
                 <strong>5.1.</strong> Пользователь имеет право на получение
                 информации, касающейся обработки его персональных данных, в
@@ -222,7 +222,7 @@ export default function PrivacyPolicyPage() {
                 на электронную почту{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Отзыв согласия на обработку персональных данных")}`}
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   {CONTACT_EMAIL}
                 </a>{" "}
@@ -239,10 +239,10 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 border-b-2 border-slate-200 pb-3 text-xl font-bold text-[#003366]">
+            <h2 className="mb-4 border-b-2 border-text-muted/25 pb-3 text-xl font-bold text-primary">
               6. ЗАКЛЮЧИТЕЛЬНЫЕ ПОЛОЖЕНИЯ
             </h2>
-            <ol className="list-none space-y-4 pl-0 leading-relaxed text-slate-700">
+            <ol className="list-none space-y-4 pl-0 leading-relaxed text-text-main">
               <li>
                 <strong>6.1.</strong> Порядок выражения согласия с условиями
                 настоящей Политики при заполнении форм на Сайте и проставлении
@@ -255,7 +255,7 @@ export default function PrivacyPolicyPage() {
                 Сайте по адресу:{" "}
                 <Link
                   href="/privacy-policy"
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   {SITE_HOST}/privacy-policy
                 </Link>
@@ -268,11 +268,11 @@ export default function PrivacyPolicyPage() {
             </ol>
           </section>
 
-          <p className="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-500">
+          <p className="mt-10 border-t border-text-muted/25 pt-6 text-sm text-text-muted">
             Дата публикации: 28 марта 2026 г. ·{" "}
             <Link
               href="/agreement"
-              className="text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+              className="text-primary underline underline-offset-2 hover:text-accent"
             >
               Пользовательское соглашение
             </Link>

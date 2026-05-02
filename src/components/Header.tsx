@@ -9,13 +9,14 @@ import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
 import TopAuthBar from "@/components/TopAuthBar";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useStickyGuard } from "@/hooks/useStickyGuard";
 
 function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
   const [failed, setFailed] = useState(false);
   const showImg = src?.trim() && !failed;
   return (
-    <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-text-muted/25 bg-main-bg">
       {showImg ? (
         <Image
           src={src!.trim()}
@@ -27,7 +28,7 @@ function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
           onError={() => setFailed(true)}
         />
       ) : (
-        <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-500" aria-hidden>
+        <svg viewBox="0 0 24 24" className="h-6 w-6 text-text-muted" aria-hidden>
           <rect x="3" y="6" width="18" height="11" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <path d="M3 14h18" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <circle cx="9" cy="10" r="1.2" fill="currentColor" />
@@ -216,13 +217,13 @@ export default function Header() {
   return (
     <header
       ref={headerStickyRef}
-      className={`w-full bg-[#003366] text-white shadow-lg transition-all duration-300 ease-out ${
+      className={`w-full bg-primary text-white shadow-lg transition-all duration-300 ease-out ${
         isSticky ? "sticky top-0 z-[100]" : "relative z-[100]"
       }`}
     >
       {/* Top bar — скрываем при скролле, фиксированная высота в развёрнутом виде */}
       <div
-        className={`border-b border-white/10 bg-[#02274d] overflow-hidden transition-[max-height] duration-300 ease-out ${
+        className={`border-b border-white/10 bg-primary-hover overflow-hidden transition-[max-height] duration-300 ease-out ${
           isShrunk ? "max-h-0" : "max-h-[52px]"
         }`}
       >
@@ -245,11 +246,14 @@ export default function Header() {
               Доставка по всей России
             </span>
           </div>
-          <nav className="flex items-center gap-3 sm:gap-4 text-white/80" aria-label="Верхнее меню">
-            <Link href="/about" className="hover:text-white hidden sm:block">О компании</Link>
-            <Link href="/delivery" className="hover:text-white">Доставка</Link>
-            <Link href="/contacts" className="hover:text-white">Контакты</Link>
-          </nav>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <nav className="flex items-center gap-3 sm:gap-4 text-white/80" aria-label="Верхнее меню">
+              <Link href="/about" className="hover:text-white hidden sm:block">О компании</Link>
+              <Link href="/delivery" className="hover:text-white">Доставка</Link>
+              <Link href="/contacts" className="hover:text-white">Контакты</Link>
+            </nav>
+            <ThemeSwitcher ringOffsetClassName="ring-offset-primary-hover" />
+          </div>
         </div>
       </div>
 
@@ -270,7 +274,7 @@ export default function Header() {
             <Link href="/cart" aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`} className="relative p-2 md:hidden">
                 <span className="text-xl">🛒</span>
                 {totalItems > 0 && (
-                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#FF8C00] text-[10px] font-bold">
+                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold">
                     {totalItems}
                   </span>
                 )}
@@ -283,7 +287,7 @@ export default function Header() {
               onClick={() => setCatalogOpen(!catalogOpen)}
               aria-label={catalogOpen ? "Закрыть каталог" : "Открыть каталог"}
               aria-expanded={catalogOpen}
-              className="group flex h-10 items-center gap-2 rounded-lg bg-[#FF8C00] px-3 text-sm font-bold text-white transition-all hover:bg-[#ff9f26] active:scale-95 md:h-12 md:px-6"
+              className="group flex h-10 items-center gap-2 rounded-lg bg-accent px-3 text-sm font-bold text-white transition-all hover:bg-accent-hover active:scale-95 md:h-12 md:px-6"
             >
               <div className="flex flex-col gap-1">
                 <span className={`h-0.5 w-4 bg-white transition-all ${catalogOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
@@ -293,12 +297,12 @@ export default function Header() {
               <span className="hidden md:block">Каталог</span>
             </button>
 
-            <div className="relative flex flex-1 items-center rounded-lg bg-white shadow-inner focus-within:ring-2 focus-within:ring-[#FF8C00]/50">
+            <div className="relative flex flex-1 items-center rounded-lg bg-card-bg shadow-inner focus-within:ring-2 focus-within:ring-accent/50">
               <label htmlFor="header-search" className="sr-only">
                 Поиск по артикулу или названию товара
               </label>
               {isClient && query.length === 0 && (
-                <span className="pointer-events-none absolute left-3 z-10 text-sm text-slate-600 md:left-4">
+                <span className="pointer-events-none absolute left-3 z-10 text-sm text-text-muted md:left-4">
                   Поиск по артикулу или названию...
                 </span>
               )}
@@ -318,23 +322,23 @@ export default function Header() {
                     setOpen(false);
                   }
                 }}
-                className="h-10 w-full bg-transparent px-3 text-sm text-slate-900 focus:outline-none md:h-12 md:px-4"
+                className="h-10 w-full bg-transparent px-3 text-sm text-text-main focus:outline-none md:h-12 md:px-4"
               />
               
               {/* Dropdown Results */}
               {open && results.length > 0 && (
-                <div id="search-results" className="absolute left-0 right-0 top-full z-[110] mt-2 max-h-[60vh] overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 shadow-2xl">
+                <div id="search-results" className="absolute left-0 right-0 top-full z-[110] mt-2 max-h-[60vh] overflow-y-auto rounded-xl border border-text-muted/25 bg-card-bg p-2 shadow-2xl">
                    {results.map((p) => (
                      <Link
                        key={p.sku}
                        href={`/product/${p.sku}`}
                        onClick={() => setOpen(false)}
-                       className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-slate-50"
+                       className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-main-bg"
                      >
                        <SearchProductThumb src={p.image} alt={p.name} />
                        <div className="min-w-0 flex-1">
-                         <p className="truncate text-sm font-medium text-slate-900">{p.name}</p>
-                         <p className="text-[10px] uppercase tracking-tight text-slate-600">Арт: {p.sku}</p>
+                         <p className="truncate text-sm font-medium text-text-main">{p.name}</p>
+                         <p className="text-[10px] uppercase tracking-tight text-text-muted">Арт: {p.sku}</p>
                        </div>
                      </Link>
                    ))}
@@ -349,7 +353,7 @@ export default function Header() {
               <p className="text-[10px] uppercase tracking-wider text-white/80">Корзина</p>
               <p className="text-sm font-bold">{totalItems} тов.</p>
             </div>
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-[#FF8C00]">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
               <span className="text-xl">🛒</span>
             </div>
           </Link>
@@ -369,7 +373,7 @@ export default function Header() {
           />
           <div
             ref={catalogRef}
-            className="absolute left-0 top-full w-full border-t border-white/10 bg-[#003366] p-6 shadow-2xl z-50"
+            className="absolute left-0 top-full z-50 w-full border-t border-white/10 bg-primary p-6 shadow-2xl"
           >
             <div className="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4 relative">
               {categories.map((cat) => (
@@ -382,7 +386,7 @@ export default function Header() {
                   }}
                   className="group flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-all cursor-pointer"
                 >
-                  <span className="h-2 w-2 rounded-full bg-[#FF8C00] group-hover:scale-150 transition-transform" />
+                  <span className="h-2 w-2 rounded-full bg-accent transition-transform group-hover:scale-150" />
                   <span className="text-sm font-medium text-white">{cat.name}</span>
                 </Link>
               ))}
@@ -399,11 +403,11 @@ export default function Header() {
             aria-hidden
           />
           <div className="fixed inset-0 z-[130] flex items-center justify-center p-4">
-            <div className="w-full max-w-md rounded-2xl bg-white p-5 shadow-2xl">
-              <h3 className="text-base font-semibold text-slate-900">
+            <div className="w-full max-w-md rounded-2xl bg-card-bg p-5 shadow-2xl">
+              <h3 className="text-base font-semibold text-text-main">
                 Выбор города
               </h3>
-              <p className="mt-1 text-sm text-slate-600">
+              <p className="mt-1 text-sm text-text-muted">
                 Текущий город: <span className="font-medium">{cityName}</span>
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -416,7 +420,7 @@ export default function Header() {
                         setCityName(city);
                         setCityModalOpen(false);
                       }}
-                      className="rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 hover:border-[#FF8C00] hover:text-[#FF8C00]"
+                      className="rounded-full border border-text-muted/35 px-3 py-1 text-xs font-medium text-text-main hover:border-accent hover:text-accent"
                     >
                       {city}
                     </button>
@@ -433,7 +437,7 @@ export default function Header() {
                   value={cityInput}
                   onChange={(e) => setCityInput(e.target.value)}
                   placeholder="Или введите ваш город"
-                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:border-[#FF8C00] focus:outline-none focus:ring-1 focus:ring-[#FF8C00]"
+                  className="w-full rounded-lg border border-text-muted/35 px-3 py-2 text-sm text-text-main focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 />
               </div>
               <div className="mt-4 flex items-center justify-end gap-2">
@@ -441,7 +445,7 @@ export default function Header() {
                   type="button"
                   onClick={() => setCityModalOpen(false)}
                   aria-label="Отменить выбор города"
-                  className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
+                  className="rounded-lg border border-text-muted/35 px-3 py-2 text-sm text-text-main hover:bg-main-bg"
                 >
                   Отмена
                 </button>
@@ -455,7 +459,7 @@ export default function Header() {
                     setCityModalOpen(false);
                   }}
                   aria-label="Подтвердить выбор города"
-                  className="rounded-lg bg-[#FF8C00] px-3 py-2 text-sm font-semibold text-white hover:bg-[#ff9f26]"
+                  className="rounded-lg bg-accent px-3 py-2 text-sm font-semibold text-white hover:bg-accent-hover"
                 >
                   Подтвердить
                 </button>

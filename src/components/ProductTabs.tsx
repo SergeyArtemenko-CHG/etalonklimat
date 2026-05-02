@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { ProductSpec, ProductFile } from "@/data/products";
+import type { ProductSpecs, ProductFile } from "@/data/products";
 
 const TABS = [
   {
@@ -40,16 +40,17 @@ function fileDownloadHref(rawUrl: string): string {
 type ProductTabsProps = {
   longDescription?: string;
   description?: string;
-  specs?: ProductSpec[];
+  specs?: ProductSpecs;
   files?: ProductFile[];
 };
 
 export default function ProductTabs({
   longDescription,
   description,
-  specs = [],
+  specs,
   files = [],
 }: ProductTabsProps) {
+  const specEntries = specs ? Object.entries(specs).filter(([, v]) => !!v) : [];
   const [active, setActive] = useState<(typeof TABS)[number]["id"]>("description");
   const skipObserver = useRef(false);
 
@@ -107,19 +108,19 @@ export default function ProductTabs({
   const descriptionBlock = (() => {
     const text = (longDescription || description || "").trim();
     if (!text) {
-      return <p className="text-slate-600">Описание отсутствует.</p>;
+      return <p className="text-text-muted">Описание отсутствует.</p>;
     }
     const lines = text
       .split(/\r?\n/)
       .map((line) => line.trim())
       .filter(Boolean);
     if (lines.length <= 1) {
-      return <p className="text-slate-600">{lines[0]}</p>;
+      return <p className="text-text-muted">{lines[0]}</p>;
     }
     return (
-      <ul className="list-disc space-y-1 pl-4 marker:text-[#FF8C00]">
+      <ul className="list-disc space-y-1 pl-4 marker:text-accent">
         {lines.map((line, index) => (
-          <li key={index} className="text-slate-600">
+          <li key={index} className="text-text-muted">
             {line}
           </li>
         ))}
@@ -128,10 +129,10 @@ export default function ProductTabs({
   })();
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
+    <div className="rounded-xl border border-text-muted/25 bg-card-bg shadow-sm">
       <nav
         aria-label="Разделы карточки товара"
-        className="sticky top-0 z-20 flex flex-nowrap overflow-x-auto border-b border-slate-200 bg-white/95 py-1 shadow-sm backdrop-blur-sm max-md:top-14 md:top-0"
+        className="sticky top-0 z-20 flex flex-nowrap overflow-x-auto border-b border-text-muted/25 bg-card-bg/95 py-1 shadow-sm backdrop-blur-sm max-md:top-14 md:top-0"
       >
         {TABS.map((tab) => (
           <a
@@ -143,8 +144,8 @@ export default function ProductTabs({
             }}
             className={`shrink-0 border-b-2 px-3 py-3 text-xs font-medium transition md:flex-1 md:px-6 md:text-center md:text-sm ${
               active === tab.id
-                ? "border-[#ff8c00] text-[#ff8c00]"
-                : "border-transparent text-slate-500 hover:text-slate-700"
+                ? "border-accent text-accent"
+                : "border-transparent text-text-muted hover:text-text-main"
             }`}
           >
             <span className="md:hidden">{tab.labelMobile}</span>
@@ -153,7 +154,7 @@ export default function ProductTabs({
         ))}
       </nav>
 
-      <div className="divide-y divide-slate-200">
+      <div className="divide-y divide-text-muted/25">
         <section
           id={sectionDomId("description")}
           className="scroll-mt-28 px-4 py-6 md:scroll-mt-32 md:px-6 md:py-8"
@@ -161,7 +162,7 @@ export default function ProductTabs({
         >
           <h2
             id="product-heading-description"
-            className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl"
+            className="mb-4 text-lg font-semibold text-primary md:text-xl"
           >
             Описание
           </h2>
@@ -175,7 +176,7 @@ export default function ProductTabs({
         >
           <h2
             id="product-heading-specs"
-            className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl"
+            className="mb-4 text-lg font-semibold text-primary md:text-xl"
           >
             Технические характеристики
           </h2>
@@ -183,28 +184,28 @@ export default function ProductTabs({
             <table className="w-full min-w-[320px] border-collapse text-sm">
               <thead>
                 <tr>
-                  <th className="whitespace-nowrap border-b border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-semibold text-slate-700 md:px-4 md:text-sm">
+                  <th className="whitespace-nowrap border-b border-text-muted/25 bg-text-muted/5 px-3 py-2 text-left text-xs font-semibold text-text-main md:px-4 md:text-sm">
                     Название свойства
                   </th>
-                  <th className="whitespace-nowrap border-b border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-semibold text-slate-700 md:px-4 md:text-sm">
+                  <th className="whitespace-nowrap border-b border-text-muted/25 bg-text-muted/5 px-3 py-2 text-left text-xs font-semibold text-text-main md:px-4 md:text-sm">
                     Значение
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {specs.length > 0 ? (
-                  specs.map((spec, i) => (
+                {specEntries.length > 0 ? (
+                  specEntries.map(([name, value], i) => (
                     <tr
                       key={i}
-                      className={`border-b border-slate-100 last:border-0 ${
-                        i % 2 === 0 ? "bg-white" : "bg-slate-50/70"
-                      } hover:bg-slate-100/60`}
+                      className={`border-b border-text-muted/15 last:border-0 ${
+                        i % 2 === 0 ? "bg-card-bg" : "bg-text-muted/5"
+                      } hover:bg-text-muted/10`}
                     >
-                      <td className="whitespace-nowrap px-3 py-3 text-xs text-slate-600 md:px-4 md:text-sm">
-                        {spec.name}
+                      <td className="whitespace-nowrap px-3 py-3 text-xs text-text-muted md:px-4 md:text-sm">
+                        {name}
                       </td>
-                      <td className="whitespace-nowrap px-3 py-3 text-xs font-medium text-slate-900 md:px-4 md:text-sm">
-                        {spec.value}
+                      <td className="whitespace-nowrap px-3 py-3 text-xs font-medium text-text-main md:px-4 md:text-sm">
+                        {value}
                       </td>
                     </tr>
                   ))
@@ -212,7 +213,7 @@ export default function ProductTabs({
                   <tr>
                     <td
                       colSpan={2}
-                      className="px-3 py-6 text-center text-xs text-slate-500 md:px-4 md:text-sm"
+                      className="px-3 py-6 text-center text-xs text-text-muted md:px-4 md:text-sm"
                     >
                       Технические характеристики не указаны.
                     </td>
@@ -230,7 +231,7 @@ export default function ProductTabs({
         >
           <h2
             id="product-heading-files"
-            className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl"
+            className="mb-4 text-lg font-semibold text-primary md:text-xl"
           >
             Документация и файлы
           </h2>
@@ -245,7 +246,7 @@ export default function ProductTabs({
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-[#003366] underline hover:text-[#ff8c00]"
+                      className="inline-flex items-center gap-2 text-sm text-primary underline hover:text-accent"
                     >
                       <svg
                         viewBox="0 0 24 24"
@@ -264,7 +265,7 @@ export default function ProductTabs({
                 );
               })
             ) : (
-              <li className="text-slate-500">
+              <li className="text-text-muted">
                 Документация и файлы не загружены.
               </li>
             )}

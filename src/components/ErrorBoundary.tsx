@@ -25,7 +25,7 @@ export default class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         this.props.fallback ?? (
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+          <div className="rounded-xl border border-text-muted/25 bg-text-muted/5 p-4 text-sm text-text-muted">
             Ошибка загрузки блока. Обновите страницу.
           </div>
         )

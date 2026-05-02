@@ -21,7 +21,7 @@ function PlaceholderSvg({ className }: { className?: string }) {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className={className ?? "h-16 w-16 text-slate-400"}
+      className={className ?? "h-16 w-16 text-text-muted"}
     >
       <rect
         x="3"
@@ -73,10 +73,10 @@ export default function ProductImage({
   if (usePlaceholder && placeholderFailed) {
     return (
       <div
-        className={`flex min-h-0 min-w-0 items-center justify-center bg-slate-100 ${className ?? ""}`}
+        className={`flex min-h-0 min-w-0 items-center justify-center bg-main-bg ${className ?? ""}`}
         style={{ aspectRatio: `${IMG_WIDTH}/${IMG_HEIGHT}`, width: "100%" }}
       >
-        <PlaceholderSvg className="h-16 w-16 shrink-0 text-slate-400" />
+        <PlaceholderSvg className="h-16 w-16 shrink-0 text-text-muted" />
       </div>
     );
   }

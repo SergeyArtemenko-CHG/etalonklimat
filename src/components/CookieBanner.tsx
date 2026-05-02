@@ -34,7 +34,7 @@ export default function CookieBanner() {
       role="banner"
       aria-live="polite"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 rounded-xl bg-[#003366] px-4 py-4 text-white shadow-md sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 rounded-xl bg-primary px-4 py-4 text-white shadow-md sm:flex-row sm:items-center sm:justify-between sm:gap-6">
         <p className="text-sm leading-relaxed sm:text-base">
           Мы используем файлы cookie, чтобы улучшить работу сайта. Продолжая
           использовать сайт, вы соглашаетесь с нашей{" "}
@@ -51,7 +51,7 @@ export default function CookieBanner() {
         <button
           type="button"
           onClick={handleAccept}
-          className="shrink-0 rounded-lg bg-[#ff8c00] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#ff9f26] focus:outline-none focus:ring-2 focus:ring-[#ff8c00] focus:ring-offset-2 focus:ring-offset-[#003366]"
+          className="shrink-0 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
         >
           Принять
         </button>

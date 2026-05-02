@@ -1,13 +1,84 @@
 const fs = require("fs");
 const path = require("path");
-const Papa = require("papaparse");
+const { parse } = require("csv-parse/sync");
 const iconv = require("iconv-lite");
 
 const projectRoot = __dirname ? path.join(__dirname, "..") : process.cwd();
-// На Windows имя файла не чувствительно к регистру, поэтому достаточно одного варианта.
-const csvPath = path.join(projectRoot, "Nomenclature.csv");
+const nomenclatureDir = path.join(projectRoot, "data", "nomenclature");
 const outPath = path.join(projectRoot, "src", "data", "products.ts");
+const brandsOutPath = path.join(projectRoot, "src", "data", "brands.ts");
 const productsImagesDir = path.join(projectRoot, "public", "images", "products");
+
+const BRANDS_CSV_NAME = "brands.csv";
+
+/** Колонки файла data/nomenclature/Brands.csv */
+const BRAND_COLUMN_ALIASES = {
+  name: ["Бренд", "Название", "Наименование", "Название бренда"],
+  logo: ["Файл логотип", "Логотип", "Файл логотипа"],
+  heading: ["Заголовок", "H1", "Title", "SEO-заголовок"],
+  description: ["Описание"],
+  slug: ["Слаг", "Slug", "ЧПУ", "URL"],
+};
+
+const BASE_COLUMNS = [
+  "Артикул",
+  "Номенклатура",
+  "Вид номенклатуры",
+  "Подвид",
+  "Текстовое описание",
+  "Файл картинки",
+  "Цена Евро",
+  "Цена РУБ",
+  "Бренд",
+  "Наличие",
+  "Скидка партнера 1",
+  "Скидка партнера 2",
+  "Скидка партнера 3",
+  "Срок поставки",
+  "Файл сертификат",
+  "Файл инструкция",
+];
+
+const BASE_KEYS = {
+  sku: "Артикул",
+  name: "Номенклатура",
+  category: "Вид номенклатуры",
+  subCategory: "Подвид",
+  description: "Текстовое описание",
+  image: "Файл картинки",
+  priceEur: "Цена Евро",
+  priceRub: "Цена РУБ",
+  brand: "Бренд",
+  availability: "Наличие",
+  disc1: "Скидка партнера 1",
+  disc2: "Скидка партнера 2",
+  disc3: "Скидка партнера 3",
+  leadTime: "Срок поставки",
+  cert: "Файл сертификат",
+  manual: "Файл инструкция",
+};
+
+const BASE_KEY_ALIASES = {
+  sku: ["Артикул"],
+  name: ["Номенклатура"],
+  category: ["Вид номенклатуры"],
+  subCategory: ["Подвид"],
+  description: ["Текстовое описание", "Текстовое описание2"],
+  image: ["Файл картинки"],
+  priceEur: ["Цена Евро"],
+  priceRub: ["Цена РУБ"],
+  brand: ["Бренд"],
+  availability: ["Наличие"],
+  disc1: ["Скидка партнера 1"],
+  disc2: ["Скидка партнера 2"],
+  disc3: ["Скидка партнера 3"],
+  leadTime: ["Срок поставки"],
+  cert: ["Файл сертификат"],
+  manual: ["Файл инструкция"],
+  popular: ["Популярные товары"],
+};
+
+const INTERNAL_SPEC_KEYS = new Set(["Популярные товары"]);
 
 function translit(str) {
   const map = {
@@ -91,39 +162,86 @@ function slugify(str) {
   return t || "item";
 }
 
-function readCsvRows() {
-  const raw = fs.readFileSync(csvPath);
+function normalizeHeaderName(value) {
+  return (value || "")
+    .toString()
+    .replace(/\uFEFF/g, "")
+    .replace(/\u00A0/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
+}
 
-  // Пробуем UTF‑8, при «кракозябрах» переходим на Windows‑1251.
-  let csvText;
+function parseSpecHeader(rawHeader) {
+  const normalized = normalizeHeaderName(rawHeader);
+  const filterable = normalized.startsWith("*");
+  const cleanName = normalized.replace(/^\*+\s*/, "").trim();
+  return { cleanName, filterable };
+}
+
+function normalizeHeaderForMatch(value) {
+  return normalizeHeaderName(value).replace(/^\*+\s*/, "").trim().toLowerCase();
+}
+
+function decodeCsvText(raw) {
   try {
-    csvText = raw.toString("utf8");
-    if (csvText.includes("��")) {
-      csvText = iconv.decode(raw, "win1251");
+    const utf8 = raw.toString("utf8");
+    if (utf8.includes("��")) {
+      return iconv.decode(raw, "win1251");
     }
+    return utf8;
   } catch {
-    csvText = iconv.decode(raw, "win1251");
+    return iconv.decode(raw, "win1251");
   }
+}
 
-  const parsed = Papa.parse(csvText, {
-    header: false,
+function listCsvFiles() {
+  if (!fs.existsSync(nomenclatureDir)) {
+    throw new Error(`Directory not found: ${nomenclatureDir}`);
+  }
+  return fs
+    .readdirSync(nomenclatureDir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".csv"))
+    .map((entry) => path.join(nomenclatureDir, entry.name))
+    .sort((a, b) => a.localeCompare(b, "ru"));
+}
+
+function readCsvRows(filePath) {
+  const raw = fs.readFileSync(filePath);
+  const csvText = decodeCsvText(raw);
+  return parse(csvText, {
     delimiter: ";",
-    skipEmptyLines: "greedy",
+    skip_empty_lines: true,
+    relax_column_count: true,
+    bom: true,
   });
+}
 
-  if (parsed.errors && parsed.errors.length) {
-    console.error("Errors while parsing CSV:", parsed.errors.slice(0, 5));
+function readDatasetRows() {
+  const files = listCsvFiles();
+  if (!files.length) {
+    throw new Error(`No .csv files in ${nomenclatureDir}`);
   }
-
-  return parsed.data;
+  const allRows = [];
+  for (const filePath of files) {
+    if (path.basename(filePath).toLowerCase() === BRANDS_CSV_NAME) {
+      continue;
+    }
+    const rows = readCsvRows(filePath);
+    if (!rows || rows.length < 2) {
+      console.warn(`Skip empty CSV: ${path.basename(filePath)}`);
+      continue;
+    }
+    const [headerRow, ...dataRows] = rows;
+    const headers = (headerRow || []).map(normalizeHeaderName);
+    allRows.push({ filePath, headers, dataRows });
+  }
+  return allRows;
 }
 
 function toTsString(value) {
-  // Возвращаем корректный TS‑литерал строки, c экранированием спецсимволов.
   return JSON.stringify(value ?? "");
 }
 
-/** Извлекает число из строки мощности, удаляя всё кроме цифр и точки/запятой. */
 function parsePower(value) {
   const s = (value ?? "").toString().trim();
   if (!s) return undefined;
@@ -132,6 +250,30 @@ function parsePower(value) {
   if (!m) return undefined;
   const n = Number(m[0]);
   return Number.isFinite(n) ? n : undefined;
+}
+
+function parsePrice(rawValue) {
+  if (rawValue == null) return NaN;
+  const s = `${rawValue}`.trim();
+  if (!s) return NaN;
+  const normalized = s.replace(/\s/g, "").replace(",", ".");
+  return parseFloat(normalized);
+}
+
+function parseDiscount(rawValue) {
+  if (rawValue == null) return undefined;
+  const s = `${rawValue}`.trim();
+  if (!s) return undefined;
+  const value = Number(s.replace(",", "."));
+  return Number.isFinite(value) ? value : undefined;
+}
+
+function isNumericSpecValue(rawValue) {
+  if (rawValue == null) return false;
+  const s = `${rawValue}`.trim();
+  if (!s) return false;
+  const normalized = s.replace(/\s/g, "").replace(",", ".");
+  return Number.isFinite(parseFloat(normalized));
 }
 
 function normalizeImageFileName(value) {
@@ -144,7 +286,6 @@ function normalizeImageFileName(value) {
   if (/\.webp$/i.test(baseName)) {
     return baseName;
   }
-  // Если расширения нет/другое, приводим к webp, чтобы путь был единообразный.
   return `${baseName}.webp`;
 }
 
@@ -155,7 +296,6 @@ function ensureImageFileCaseOnDisk(expectedFileName) {
   const expectedPath = path.join(productsImagesDir, expectedFileName);
   if (fs.existsSync(expectedPath)) return;
 
-  // Ищем файл без учета регистра в папке images/products
   const entries = fs.readdirSync(productsImagesDir, { withFileTypes: true });
   const expectedLower = expectedFileName.toLowerCase();
   const matched = entries.find(
@@ -165,8 +305,8 @@ function ensureImageFileCaseOnDisk(expectedFileName) {
 
   const currentPath = path.join(productsImagesDir, matched.name);
   try {
-    // Если отличается только регистр, на Windows нужен промежуточный rename
-    const onlyCaseDiff = matched.name.toLowerCase() === expectedFileName.toLowerCase();
+    const onlyCaseDiff =
+      matched.name.toLowerCase() === expectedFileName.toLowerCase();
     if (onlyCaseDiff) {
       const tmpPath = path.join(
         productsImagesDir,
@@ -186,8 +326,159 @@ function ensureImageFileCaseOnDisk(expectedFileName) {
   }
 }
 
-function generateTsFile(categories, products) {
-  const headerComment = `// AUTO-GENERATED FROM Nomenclature.csv. DO NOT EDIT DIRECTLY.
+function findFirstColumnIndex(headers, aliases) {
+  for (const alias of aliases) {
+    const target = normalizeHeaderForMatch(alias);
+    for (let i = 0; i < headers.length; i++) {
+      if (normalizeHeaderForMatch(headers[i]) === target) {
+        return i;
+      }
+    }
+  }
+  return -1;
+}
+
+function normalizeManualSlug(raw) {
+  const t = `${raw || ""}`.trim().toLowerCase();
+  if (!t) return "";
+  return t
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/** Короткий slug из имени файла лого: EGS.png → egs, EXECO_logo.png → execo */
+function slugFromLogoFileName(logoRaw) {
+  const base = path.basename(`${logoRaw || ""}`.trim());
+  if (!base || !base.includes(".")) return "";
+  const stem = base.slice(0, base.lastIndexOf(".")).toLowerCase();
+  const trimmed = stem.replace(/_logo$/i, "").replace(/[^a-z0-9]+/g, "");
+  if (trimmed.length >= 2 && trimmed.length <= 32) return trimmed;
+  return "";
+}
+
+/**
+ * Читает только data/nomenclature/Brands.csv (не смешивается с номенклатурой).
+ */
+function parseBrandsCsv() {
+  const filePath = path.join(nomenclatureDir, "Brands.csv");
+  if (!fs.existsSync(filePath)) {
+    console.warn(`Brands.csv not found at ${filePath} — featuredBrands will be empty.`);
+    return [];
+  }
+  const rows = readCsvRows(filePath);
+  if (!rows || rows.length < 2) {
+    console.warn("Brands.csv is empty or has no data rows.");
+    return [];
+  }
+  const [headerRow, ...dataRows] = rows;
+  const headers = (headerRow || []).map(normalizeHeaderName);
+  const idxName = findFirstColumnIndex(headers, BRAND_COLUMN_ALIASES.name);
+  const idxLogo = findFirstColumnIndex(headers, BRAND_COLUMN_ALIASES.logo);
+  const idxHeading = findFirstColumnIndex(
+    headers,
+    BRAND_COLUMN_ALIASES.heading
+  );
+  const idxDesc = findFirstColumnIndex(headers, BRAND_COLUMN_ALIASES.description);
+  const idxSlug = findFirstColumnIndex(headers, BRAND_COLUMN_ALIASES.slug);
+  if (idxName < 0 || idxLogo < 0) {
+    console.warn(
+      "Brands.csv: нужны колонки «Бренд» и «Файл логотип» — карточки брендов не сгенерированы."
+    );
+    return [];
+  }
+
+  const brands = [];
+  const usedSlugs = new Set();
+
+  for (const row of dataRows) {
+    if (!row) continue;
+    const name = `${row[idxName] ?? ""}`.trim();
+    if (!name) continue;
+    const logoRaw = `${row[idxLogo] ?? ""}`.trim();
+    const baseFile = path.basename(logoRaw);
+    if (!baseFile) continue;
+    const heading =
+      idxHeading >= 0 ? `${row[idxHeading] ?? ""}`.trim() : "";
+    const description =
+      idxDesc >= 0 ? `${row[idxDesc] ?? ""}`.trim() : "";
+
+    let slug =
+      idxSlug >= 0 ? normalizeManualSlug(`${row[idxSlug] ?? ""}`) : "";
+    if (!slug) {
+      slug = slugFromLogoFileName(logoRaw);
+    }
+    if (!slug) {
+      slug = slugify(name);
+    }
+    let uniqueSlug = slug;
+    let n = 2;
+    while (usedSlugs.has(uniqueSlug)) {
+      uniqueSlug = `${slug}-${n}`;
+      n += 1;
+    }
+    usedSlugs.add(uniqueSlug);
+
+    brands.push({
+      name,
+      slug: uniqueSlug,
+      logo: `/images/brands/${baseFile}`,
+      heading,
+      description,
+    });
+  }
+
+  return brands;
+}
+
+function generateBrandsTsFile(brands) {
+  const headerComment = `// AUTO-GENERATED FROM data/nomenclature/Brands.csv. DO NOT EDIT DIRECTLY.
+// Run: node scripts/generate-products-from-csv.cjs
+//
+// CSV (;): Бренд; Файл логотип; Заголовок; Описание [; Слаг]
+// Опционально «Слаг» — URL /brands/..., иначе slug из названия.
+
+`;
+
+  const block =
+    brands.length === 0
+      ? ""
+      : brands
+          .map(
+            (b) => `  {
+    name: ${toTsString(b.name)},
+    slug: ${toTsString(b.slug)},
+    logo: ${toTsString(b.logo)},
+    heading: ${toTsString(b.heading)},
+    description: ${toTsString(b.description)},
+  }`
+          )
+          .join(",\n");
+
+  const ts = `${headerComment}export interface FeaturedBrand {
+  name: string;
+  slug: string;
+  logo: string;
+  heading: string;
+  description: string;
+}
+
+export const featuredBrands: FeaturedBrand[] = [
+${block}
+];
+
+export function getFeaturedBrandBySlug(slug: string): FeaturedBrand | undefined {
+  const key = (slug || "").trim().toLowerCase();
+  return featuredBrands.find((b) => b.slug.toLowerCase() === key);
+}
+`;
+
+  fs.mkdirSync(path.dirname(brandsOutPath), { recursive: true });
+  fs.writeFileSync(brandsOutPath, ts, "utf8");
+  console.log(`Generated ${brandsOutPath} with ${brands.length} brands.`);
+}
+
+function generateTsFile(categories, products, specFieldMeta, specFieldOrder) {
+  const headerComment = `// AUTO-GENERATED FROM data/nomenclature/*.csv. DO NOT EDIT DIRECTLY.
 // Run \`node scripts/generate-products-from-csv.cjs\` to regenerate.
 
 `;
@@ -255,19 +546,18 @@ ${p.files
     subCategorySlug: ${
       p.subCategorySlug ? toTsString(p.subCategorySlug) : "undefined"
     },
-    specs: ${p.specs && p.specs.length ? JSON.stringify(p.specs, null, 2) : "undefined"},
+    specs: ${p.specs && Object.keys(p.specs).length ? JSON.stringify(p.specs, null, 2) : "undefined"},
     files: ${filesArray},
     image: ${p.image ? toTsString(p.image) : "undefined"},
     leadTime: ${p.leadTime ? toTsString(p.leadTime) : "undefined"},
     inStock: ${p.inStock === false ? "false" : "undefined"},
+    popular: ${p.popular === true ? "true" : "undefined"},
   }`;
           })
           .join(",\n");
 
-  const ts = `${headerComment}export type ProductSpec = {
-  name: string;
-  value: string;
-};
+  const ts = `${headerComment}export type ProductSpecs = Record<string, string>;
+export type SpecFieldMeta = { isNumeric: boolean; filterable: boolean };
 
 export type ProductFile = {
   name: string;
@@ -298,10 +588,15 @@ export interface Product {
   categorySlug: string;
   subCategory?: string;
   subCategorySlug?: string;
-    specs?: ProductSpec[];
+  specs?: ProductSpecs;
   files?: ProductFile[];
   image?: string;
   inStock?: boolean;
+  partnerDiscount1?: number;
+  partnerDiscount2?: number;
+  partnerDiscount3?: number;
+  leadTime?: string;
+  popular?: boolean;
 }
 
 export const categories: CategoryNode[] = [
@@ -311,6 +606,14 @@ ${categoriesBlock}
 export const products: Product[] = [
 ${productsBlock}
 ];
+
+export const specFieldMeta: Record<string, SpecFieldMeta> = ${JSON.stringify(
+    specFieldMeta,
+    null,
+    2
+  )};
+
+export const specFieldOrder: string[] = ${JSON.stringify(specFieldOrder, null, 2)};
 
 export type CategoryMatch =
   | { kind: "category"; slug: string; name: string }
@@ -353,7 +656,12 @@ export function getProductsByCategory(slug: string): Product[] {
 }
 
 export function getProductById(id: string): Product | undefined {
-  return products.find((p) => p.id === id || p.sku === id);
+  const normalized = (id || "").toString().trim().toLowerCase();
+  return products.find((p) => {
+    const sku = (p.sku || "").toString().trim().toLowerCase();
+    const pid = (p.id || "").toString().trim().toLowerCase();
+    return sku === normalized || pid === normalized;
+  });
 }
 `;
 
@@ -365,224 +673,222 @@ export function getProductById(id: string): Product | undefined {
 }
 
 function main() {
-  const rows = readCsvRows();
-  if (!rows || rows.length < 2) {
-    console.error("No data rows found in CSV.");
-    return;
-  }
+  const datasets = readDatasetRows();
 
-  const [headerRow, ...dataRows] = rows;
-  const headers = (headerRow || []).map((h) => (h || "").trim());
-  const col = (name) => {
-    const i = headers.findIndex((h) => h === name || h.includes(name));
-    return i >= 0 ? i : -1;
-  };
-
-  /** @type {any[]} */
   const products = [];
   const categoryMap = new Map();
   const usedIds = new Set();
+  const specStats = new Map();
+  const specOrder = [];
+  const seenSpecOrder = new Set();
 
-  const idxImageFile = col("Файл картинки");
-  const idxBoilerType = col("Тип котла");
-  const idxHeatExchanger = col("Материал теплообменника");
-  const idxPriceRub = col("Цена РУБ");
-  const idxDisc1 = col("Скидка партнера 1");
-  const idxDisc2 = col("Скидка партнера 2");
-  const idxDisc3 = col("Скидка партнера 3");
-  const idxLeadTime = col("Срок поставки");
-  const idxAvailability = col("Наличие");
-  const idxSku = col("Артикул");
-  const idxBoilerPower = col("Мощность котла, кВт");
-  const idxSteamOutput = col("Паропроизводительность котла");
-  const idxWorkingPressure = col("Рабочее давление котла");
+  for (const dataset of datasets) {
+    const { headers, dataRows } = dataset;
+    const headerIndex = new Map();
+    headers.forEach((h, idx) => {
+      if (h) headerIndex.set(h, idx);
+    });
 
-  for (let index = 0; index < dataRows.length; index++) {
-    const row = dataRows[index];
-    if (!row) continue;
-
-    const rawBoilerType = idxBoilerType >= 0 ? row[idxBoilerType] : row[17];
-    const rawHeatExchanger =
-      idxHeatExchanger >= 0 ? row[idxHeatExchanger] : row[18];
-    const rawPriceRub =
-      idxPriceRub >= 0 ? row[idxPriceRub] : row[12];
-    const rawAvailability =
-      idxAvailability >= 0 ? row[idxAvailability] : undefined;
-    const rawDisc1 = idxDisc1 >= 0 ? row[idxDisc1] : undefined;
-    const rawDisc2 = idxDisc2 >= 0 ? row[idxDisc2] : undefined;
-    const rawDisc3 = idxDisc3 >= 0 ? row[idxDisc3] : undefined;
-    const rawLeadTime = idxLeadTime >= 0 ? row[idxLeadTime] : undefined;
-    const rawSku = idxSku >= 0 ? (row[idxSku] || "").toString().trim() : "";
-    const rawBoilerPower =
-      idxBoilerPower >= 0 ? (row[idxBoilerPower] || "").toString().trim() : "";
-    const rawSteamOutput =
-      idxSteamOutput >= 0 ? (row[idxSteamOutput] || "").toString().trim() : "";
-    const rawWorkingPressure =
-      idxWorkingPressure >= 0 ? (row[idxWorkingPressure] || "").toString().trim() : "";
-
-    // CSV: Номенклатура;Вид номенклатуры;Подвид;Файл сертификат;Файл инструкция;Текстовое описание;Файл картинки;Цена Евро;Бренд;Мощность горелки мин., кВт;Мощность горелки макс., кВт;Вид топлива;Цена РУБ;...
-    const rawImageFile =
-      idxImageFile >= 0 ? row[idxImageFile] : row[6];
-    const [
-      rawName,
-      rawCategory,
-      rawSubCategory,
-      rawCertFile,
-      rawManualFile,
-      rawDescription,
-      _rawImageFileIgnored,
-      rawPriceEur,
-      rawBrand,
-      rawPowerMin,
-      rawPowerMax,
-      rawFuelType,
-    ] = row;
-
-    const name = (rawName || "").trim();
-    if (!name) continue;
-
-    const categoryName = (rawCategory || "").trim();
-    const subCategoryName = (rawSubCategory || "").trim();
-    const certificateFile = (rawCertFile || "").trim();
-    const manualFile = (rawManualFile || "").trim();
-    const description = (rawDescription || "").trim();
-    const imageFile = normalizeImageFileName(rawImageFile);
-    ensureImageFileCaseOnDisk(imageFile);
-    const priceEurRaw = (rawPriceEur || "").toString().trim();
-    const brand = (rawBrand || "").trim();
-    const burnerPowerMin = parsePower(rawPowerMin);
-    const burnerPowerMax = parsePower(rawPowerMax);
-    const fuelType = (rawFuelType || "").trim();
-    const boilerType = (rawBoilerType || "").trim() || undefined;
-    const heatExchangerMaterial =
-      (rawHeatExchanger || "").trim() || undefined;
-
-    const priceRubRaw = (rawPriceRub || "").toString().trim();
-    const priceRubNum = priceRubRaw
-      ? Number(priceRubRaw.replace(/\s/g, "").replace(",", "."))
-      : NaN;
-    const priceEurNum = priceEurRaw
-      ? Number(priceEurRaw.replace(",", "."))
-      : NaN;
-
-    let priceEur;
-    let priceRub;
-    if (Number.isFinite(priceRubNum) && priceRubNum > 0) {
-      priceRub = Math.round(priceRubNum);
-    } else if (Number.isFinite(priceEurNum)) {
-      priceEur = priceEurNum;
-    } else {
-      continue;
-    }
-
-    const baseId = slugify(name);
-    let id = baseId;
-    let counter = 2;
-    while (usedIds.has(id)) {
-      id = `${baseId}-${counter}`;
-      counter += 1;
-    }
-    usedIds.add(id);
-
-    const sku = rawSku || id;
-    // inStock: только '1' или 1 = в наличии; '0', пусто или иное = false
-    const inStock =
-      rawAvailability === "1" || rawAvailability === 1;
-
-    const categorySlug = categoryName ? slugify(categoryName) : "uncategorized";
-    const subCategorySlug = subCategoryName ? slugify(subCategoryName) : "";
-
-    if (categoryName) {
-      if (!categoryMap.has(categorySlug)) {
-        categoryMap.set(categorySlug, {
-          slug: categorySlug,
-          name: categoryName,
-          subCategories: new Map(),
-        });
-      }
-      const cat = categoryMap.get(categorySlug);
-      if (subCategoryName) {
-        if (!cat.subCategories.has(subCategorySlug)) {
-          cat.subCategories.set(subCategorySlug, {
-            slug: subCategorySlug,
-            name: subCategoryName,
-          });
+    const findHeaderIndex = (candidates) => {
+      for (const candidate of candidates) {
+        const normalizedTarget = normalizeHeaderForMatch(candidate);
+        for (const [headerName, index] of headerIndex.entries()) {
+          if (normalizeHeaderForMatch(headerName) === normalizedTarget) {
+            return index;
+          }
         }
       }
-    }
-
-    const specs = [];
-    if (rawBoilerPower) {
-      specs.push({ name: "Мощность котла, кВт", value: rawBoilerPower });
-    }
-    if (rawSteamOutput) {
-      specs.push({
-        name: "Паропроизводительность котла, кг пара в час",
-        value: rawSteamOutput,
-      });
-    }
-    if (rawWorkingPressure) {
-      specs.push({ name: "Рабочее давление котла, бар", value: rawWorkingPressure });
-    }
-
-    const files = [];
-    if (certificateFile) {
-      files.push({
-        name: "Сертификат",
-        url: `/docs-watermarked/certificates/${certificateFile}`,
-      });
-    }
-    if (manualFile) {
-      files.push({
-        name: "Инструкция",
-        url: `/docs-watermarked/manuals/${manualFile}`,
-      });
-    }
-
-    const disc1 = rawDisc1 != null && `${rawDisc1}`.trim() !== ""
-      ? Number(`${rawDisc1}`.toString().replace(",", "."))
-      : NaN;
-    const disc2 = rawDisc2 != null && `${rawDisc2}`.trim() !== ""
-      ? Number(`${rawDisc2}`.toString().replace(",", "."))
-      : NaN;
-    const disc3 = rawDisc3 != null && `${rawDisc3}`.trim() !== ""
-      ? Number(`${rawDisc3}`.toString().replace(",", "."))
-      : NaN;
-
-    const leadTime =
-      rawLeadTime != null && `${rawLeadTime}`.trim() !== ""
-        ? `${rawLeadTime}`.toString().trim()
-        : undefined;
-
-    const product = {
-      id,
-      sku,
-      name,
-      description: description || undefined,
-      longDescription: undefined,
-      priceEur: priceEur ?? undefined,
-      priceRub: priceRub ?? undefined,
-      brand: brand || undefined,
-      burnerPowerMin: burnerPowerMin ?? undefined,
-      burnerPowerMax: burnerPowerMax ?? undefined,
-      fuelType: fuelType || undefined,
-      boilerType,
-      heatExchangerMaterial,
-      category: categoryName || "",
-      categorySlug,
-      subCategory: subCategoryName || undefined,
-      subCategorySlug: subCategorySlug || undefined,
-      specs: specs.length ? specs : undefined,
-      files: files.length ? files : undefined,
-      image: `/images/products/${imageFile}`,
-      inStock,
-      partnerDiscount1: Number.isFinite(disc1) ? disc1 : undefined,
-      partnerDiscount2: Number.isFinite(disc2) ? disc2 : undefined,
-      partnerDiscount3: Number.isFinite(disc3) ? disc3 : undefined,
-      leadTime,
+      return -1;
     };
+    const baseKeyToIndex = {
+      sku: findHeaderIndex(BASE_KEY_ALIASES.sku),
+      name: findHeaderIndex(BASE_KEY_ALIASES.name),
+      category: findHeaderIndex(BASE_KEY_ALIASES.category),
+      subCategory: findHeaderIndex(BASE_KEY_ALIASES.subCategory),
+      description: findHeaderIndex(BASE_KEY_ALIASES.description),
+      image: findHeaderIndex(BASE_KEY_ALIASES.image),
+      priceEur: findHeaderIndex(BASE_KEY_ALIASES.priceEur),
+      priceRub: findHeaderIndex(BASE_KEY_ALIASES.priceRub),
+      brand: findHeaderIndex(BASE_KEY_ALIASES.brand),
+      availability: findHeaderIndex(BASE_KEY_ALIASES.availability),
+      disc1: findHeaderIndex(BASE_KEY_ALIASES.disc1),
+      disc2: findHeaderIndex(BASE_KEY_ALIASES.disc2),
+      disc3: findHeaderIndex(BASE_KEY_ALIASES.disc3),
+      leadTime: findHeaderIndex(BASE_KEY_ALIASES.leadTime),
+      cert: findHeaderIndex(BASE_KEY_ALIASES.cert),
+      manual: findHeaderIndex(BASE_KEY_ALIASES.manual),
+      popular: findHeaderIndex(BASE_KEY_ALIASES.popular),
+    };
+    for (const row of dataRows) {
+      if (!row) continue;
 
-    products.push(product);
+      const rawSku =
+        baseKeyToIndex.sku >= 0 ? `${row[baseKeyToIndex.sku] ?? ""}`.trim() : "";
+      const rawName =
+        baseKeyToIndex.name >= 0 ? `${row[baseKeyToIndex.name] ?? ""}` : "";
+      const rawCategory =
+        baseKeyToIndex.category >= 0 ? `${row[baseKeyToIndex.category] ?? ""}` : "";
+      const rawSubCategory =
+        baseKeyToIndex.subCategory >= 0
+          ? `${row[baseKeyToIndex.subCategory] ?? ""}`
+          : "";
+      const rawDescription =
+        baseKeyToIndex.description >= 0
+          ? `${row[baseKeyToIndex.description] ?? ""}`
+          : "";
+      const rawImageFile =
+        baseKeyToIndex.image >= 0 ? `${row[baseKeyToIndex.image] ?? ""}` : "";
+      const rawPriceEur =
+        baseKeyToIndex.priceEur >= 0 ? `${row[baseKeyToIndex.priceEur] ?? ""}` : "";
+      const rawPriceRub =
+        baseKeyToIndex.priceRub >= 0 ? `${row[baseKeyToIndex.priceRub] ?? ""}` : "";
+      const rawBrand =
+        baseKeyToIndex.brand >= 0 ? `${row[baseKeyToIndex.brand] ?? ""}` : "";
+      const rawAvailability =
+        baseKeyToIndex.availability >= 0 ? row[baseKeyToIndex.availability] : "";
+      const rawDisc1 = baseKeyToIndex.disc1 >= 0 ? row[baseKeyToIndex.disc1] : "";
+      const rawDisc2 = baseKeyToIndex.disc2 >= 0 ? row[baseKeyToIndex.disc2] : "";
+      const rawDisc3 = baseKeyToIndex.disc3 >= 0 ? row[baseKeyToIndex.disc3] : "";
+      const rawLeadTime =
+        baseKeyToIndex.leadTime >= 0 ? row[baseKeyToIndex.leadTime] : "";
+      const rawCertFile =
+        baseKeyToIndex.cert >= 0 ? `${row[baseKeyToIndex.cert] ?? ""}` : "";
+      const rawManualFile =
+        baseKeyToIndex.manual >= 0 ? `${row[baseKeyToIndex.manual] ?? ""}` : "";
+      const rawPopular =
+        baseKeyToIndex.popular >= 0 ? `${row[baseKeyToIndex.popular] ?? ""}` : "";
+
+      const name = rawName.trim();
+      if (!name) continue;
+
+      const categoryName = rawCategory.trim();
+      const subCategoryName = rawSubCategory.trim();
+      const certificateFile = rawCertFile.trim();
+      const manualFile = rawManualFile.trim();
+      const description = rawDescription.trim();
+      const imageFile = normalizeImageFileName(rawImageFile);
+      ensureImageFileCaseOnDisk(imageFile);
+      const priceRubNum = parsePrice(rawPriceRub);
+      const priceEurNum = parsePrice(rawPriceEur);
+      const brand = rawBrand.trim();
+
+      const specs = {};
+      let isPopular = parseFloat(rawPopular.replace(",", ".").trim()) > 0;
+      const specsStartIndex =
+        baseKeyToIndex.manual >= 0 ? baseKeyToIndex.manual + 1 : 16;
+      for (let colIndex = specsStartIndex; colIndex < headers.length; colIndex++) {
+        const { cleanName: specName, filterable } = parseSpecHeader(headers[colIndex]);
+        if (!specName) continue;
+        const specValue = (row[colIndex] ?? "").toString().trim();
+
+        if (INTERNAL_SPEC_KEYS.has(specName)) {
+          if (specName === "Популярные товары") {
+            isPopular = isPopular || parseFloat(specValue.replace(",", ".").trim()) > 0;
+          }
+          continue;
+        }
+
+        if (!seenSpecOrder.has(specName)) {
+          seenSpecOrder.add(specName);
+          specOrder.push(specName);
+        }
+        if (!specValue) continue;
+        specs[specName] = specValue;
+        const stat = specStats.get(specName) || { total: 0, numeric: 0, filterable: false };
+        stat.total += 1;
+        if (isNumericSpecValue(specValue)) stat.numeric += 1;
+        stat.filterable = stat.filterable || filterable;
+        specStats.set(specName, stat);
+      }
+
+      let priceEur;
+      let priceRub;
+      if (Number.isFinite(priceRubNum) && priceRubNum > 0) {
+        priceRub = Math.round(priceRubNum);
+      } else if (Number.isFinite(priceEurNum) && priceEurNum > 0) {
+        priceEur = priceEurNum;
+      } else {
+        continue;
+      }
+
+      const sku = rawSku || slugify(name);
+      let id = sku;
+      let counter = 2;
+      while (usedIds.has(id.toLowerCase())) {
+        id = `${sku}-${counter}`;
+        counter += 1;
+      }
+      usedIds.add(id.toLowerCase());
+
+      const inStock = `${rawAvailability ?? ""}`.trim() === "1";
+      const categorySlug = categoryName ? slugify(categoryName) : "uncategorized";
+      const subCategorySlug = subCategoryName ? slugify(subCategoryName) : "";
+
+      if (categoryName) {
+        if (!categoryMap.has(categorySlug)) {
+          categoryMap.set(categorySlug, {
+            slug: categorySlug,
+            name: categoryName,
+            subCategories: new Map(),
+          });
+        }
+        const cat = categoryMap.get(categorySlug);
+        if (subCategoryName) {
+          if (!cat.subCategories.has(subCategorySlug)) {
+            cat.subCategories.set(subCategorySlug, {
+              slug: subCategorySlug,
+              name: subCategoryName,
+            });
+          }
+        }
+      }
+
+      const files = [];
+      if (certificateFile) {
+        files.push({
+          name: "Сертификат",
+          url: `/docs-watermarked/certificates/${certificateFile}`,
+        });
+      }
+      if (manualFile) {
+        files.push({
+          name: "Инструкция",
+          url: `/docs-watermarked/manuals/${manualFile}`,
+        });
+      }
+
+      products.push({
+        id,
+        sku,
+        name,
+        description: description || undefined,
+        longDescription: undefined,
+        priceEur: priceEur ?? undefined,
+        priceRub: priceRub ?? undefined,
+        brand: brand || undefined,
+        burnerPowerMin: parsePower(specs["Мощность горелки мин., кВт"]),
+        burnerPowerMax: parsePower(specs["Мощность горелки макс., кВт"]),
+        fuelType: specs["Вид топлива"] || undefined,
+        boilerType: specs["Тип котла"] || undefined,
+        heatExchangerMaterial: specs["Материал теплообменника"] || undefined,
+        category: categoryName || "",
+        categorySlug,
+        subCategory: subCategoryName || undefined,
+        subCategorySlug: subCategorySlug || undefined,
+        specs: Object.keys(specs).length ? specs : undefined,
+        files: files.length ? files : undefined,
+        image: `/images/products/${imageFile}`,
+        inStock,
+        partnerDiscount1: parseDiscount(rawDisc1),
+        partnerDiscount2: parseDiscount(rawDisc2),
+        partnerDiscount3: parseDiscount(rawDisc3),
+        popular: isPopular || undefined,
+        leadTime:
+          rawLeadTime != null && `${rawLeadTime}`.trim() !== ""
+            ? `${rawLeadTime}`.toString().trim()
+            : undefined,
+      });
+    }
   }
 
   const categoryArray = Array.from(categoryMap.values()).map((cat) => ({
@@ -597,7 +903,16 @@ function main() {
     cat.subCategories.sort((a, b) => a.name.localeCompare(b.name, "ru"));
   }
 
-  generateTsFile(categoryArray, products);
+  const specFieldMeta = {};
+  for (const [key, stat] of specStats.entries()) {
+    specFieldMeta[key] = {
+      isNumeric: stat.numeric > 0 && stat.numeric >= stat.total * 0.6,
+      filterable: !!stat.filterable,
+    };
+  }
+
+  generateTsFile(categoryArray, products, specFieldMeta, specOrder);
+  generateBrandsTsFile(parseBrandsCsv());
 }
 
 main();

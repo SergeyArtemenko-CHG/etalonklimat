@@ -4,6 +4,10 @@ type FilterStore = {
   inStockOnly: boolean;
   fuelTypes: string[];
   brands: string[];
+  categories: string[];
+  subCategories: string[];
+  numericRanges: Record<string, { min: number | null; max: number | null }>;
+  specTextFilters: Record<string, string[]>;
   powerMin: number | null;
   powerMax: number | null;
   boilerTypes: string[];
@@ -19,6 +23,10 @@ type FilterStore = {
   toggleFuelType: (value: string) => void;
   setBrands: (values: string[]) => void;
   toggleBrand: (value: string) => void;
+  setCategories: (values: string[]) => void;
+  toggleCategory: (value: string) => void;
+  setSubCategories: (values: string[]) => void;
+  toggleSubCategory: (value: string) => void;
   setPowerMin: (value: number | null) => void;
   setPowerMax: (value: number | null) => void;
   setPowerRange: (min: number, max: number) => void;
@@ -27,6 +35,14 @@ type FilterStore = {
   setWorkingPressureRange: (min: number | null, max: number | null) => void;
   toggleBoilerType: (value: string) => void;
   toggleHeatExchangerMaterial: (value: string) => void;
+  setNumericRange: (
+    key: string,
+    min: number | null,
+    max: number | null
+  ) => void;
+  clearMissingNumericRanges: (keys: string[]) => void;
+  toggleSpecTextValue: (key: string, value: string) => void;
+  clearMissingSpecTextFilters: (keys: string[]) => void;
   resetFilters: () => void;
 };
 
@@ -45,6 +61,10 @@ const initialState = deepFreeze({
   inStockOnly: false,
   fuelTypes: [] as string[],
   brands: [] as string[],
+  categories: [] as string[],
+  subCategories: [] as string[],
+  numericRanges: {} as Record<string, { min: number | null; max: number | null }>,
+  specTextFilters: {} as Record<string, string[]>,
   powerMin: null as number | null,
   powerMax: null as number | null,
   boilerTypes: [] as string[],
@@ -80,6 +100,24 @@ export const useFilterStore = create<FilterStore>((set) => ({
         : [...state.brands, value],
     })),
 
+  setCategories: (values) => set({ categories: values }),
+
+  toggleCategory: (value) =>
+    set((state) => ({
+      categories: state.categories.includes(value)
+        ? state.categories.filter((v) => v !== value)
+        : [...state.categories, value],
+    })),
+
+  setSubCategories: (values) => set({ subCategories: values }),
+
+  toggleSubCategory: (value) =>
+    set((state) => ({
+      subCategories: state.subCategories.includes(value)
+        ? state.subCategories.filter((v) => v !== value)
+        : [...state.subCategories, value],
+    })),
+
   setPowerMin: (value) => set({ powerMin: value }),
 
   setPowerMax: (value) => set({ powerMax: value }),
@@ -109,6 +147,49 @@ export const useFilterStore = create<FilterStore>((set) => ({
         : [...state.heatExchangerMaterials, value],
     })),
 
+  setNumericRange: (key, min, max) =>
+    set((state) => ({
+      numericRanges: {
+        ...state.numericRanges,
+        [key]: { min, max },
+      },
+    })),
+
+  clearMissingNumericRanges: (keys) =>
+    set((state) => {
+      const allowed = new Set(keys);
+      const next = Object.fromEntries(
+        Object.entries(state.numericRanges).filter(([k]) => allowed.has(k))
+      );
+      if (Object.keys(next).length === Object.keys(state.numericRanges).length) {
+        return state;
+      }
+      return { numericRanges: next };
+    }),
+
+  toggleSpecTextValue: (key, value) =>
+    set((state) => {
+      const current = state.specTextFilters[key] ?? [];
+      const nextValues = current.includes(value)
+        ? current.filter((v) => v !== value)
+        : [...current, value];
+      const next = { ...state.specTextFilters, [key]: nextValues };
+      if (nextValues.length === 0) delete next[key];
+      return { specTextFilters: next };
+    }),
+
+  clearMissingSpecTextFilters: (keys) =>
+    set((state) => {
+      const allowed = new Set(keys);
+      const next = Object.fromEntries(
+        Object.entries(state.specTextFilters).filter(([k]) => allowed.has(k))
+      );
+      if (Object.keys(next).length === Object.keys(state.specTextFilters).length) {
+        return state;
+      }
+      return { specTextFilters: next };
+    }),
+
   resetFilters: () =>
     set((state) => {
       const alreadyEmpty =
@@ -123,6 +204,10 @@ export const useFilterStore = create<FilterStore>((set) => ({
         state.workingPressureMax == null &&
         state.fuelTypes.length === 0 &&
         state.brands.length === 0 &&
+        state.categories.length === 0 &&
+        state.subCategories.length === 0 &&
+        Object.keys(state.numericRanges).length === 0 &&
+        Object.keys(state.specTextFilters).length === 0 &&
         state.boilerTypes.length === 0 &&
         state.heatExchangerMaterials.length === 0;
       if (alreadyEmpty) return state;

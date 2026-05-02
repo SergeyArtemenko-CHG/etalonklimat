@@ -15,7 +15,7 @@ import { products } from "@/data/products";
 const CartCheckoutSection = dynamic(() => import("./CartCheckoutSection"), {
   ssr: false,
   loading: () => (
-    <div className="mt-8 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-500 shadow-sm">
+    <div className="mt-8 rounded-xl border border-text-muted/25 bg-card-bg p-4 text-sm text-text-muted shadow-sm">
       Загрузка оформления заказа...
     </div>
   ),
@@ -26,10 +26,10 @@ function CartProductThumb({ src, name }: { src?: string; name: string }) {
   const trimmed = src?.trim();
   if (!trimmed || failed) {
     return (
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-slate-50">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-dashed border-text-muted/35 bg-text-muted/5">
         <svg
           viewBox="0 0 24 24"
-          className="h-8 w-8 text-slate-400"
+          className="h-8 w-8 text-text-muted"
           fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
@@ -44,7 +44,7 @@ function CartProductThumb({ src, name }: { src?: string; name: string }) {
     );
   }
   return (
-    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-slate-200 bg-white">
+    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-text-muted/25 bg-card-bg">
       <Image
         src={trimmed}
         alt={name}
@@ -111,32 +111,32 @@ export default function CartPage() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-main-bg">
       <Header />
       <main className="mx-auto max-w-6xl px-4 py-6 md:py-8">
-        <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-6">
-          <nav className="mb-6 text-sm text-slate-500">
-            <Link href="/" className="hover:text-[#003366]">
+        <div className="rounded-2xl bg-card-bg p-4 shadow-md shadow-text-muted/8 md:p-6">
+          <nav className="mb-6 text-sm text-text-muted">
+            <Link href="/" className="hover:text-primary">
               Главная
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-[#0b1f33]">Корзина</span>
+            <span className="text-primary">Корзина</span>
           </nav>
-          <h1 className="mb-6 text-xl font-semibold text-[#0b1f33] md:text-2xl">
+          <h1 className="mb-6 text-xl font-semibold text-primary md:text-2xl">
             Корзина
           </h1>
 
           {isEmptyCart ? (
-            <div className="rounded-2xl bg-white p-8 text-center shadow-md shadow-slate-200/60">
-              <h2 className="mb-4 text-xl font-semibold text-[#0b1f33]">
+            <div className="rounded-2xl bg-card-bg p-8 text-center shadow-md shadow-text-muted/8">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 Корзина пуста
               </h2>
-              <p className="mb-6 text-slate-600">
+              <p className="mb-6 text-text-muted">
                 Добавьте товары из каталога, чтобы оформить заказ.
               </p>
               <Link
                 href="/"
-                className="inline-block rounded-xl bg-[#FF8C00] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
+                className="inline-block rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-accent-hover hover:shadow-lg"
               >
                 Перейти в каталог
               </Link>
@@ -153,43 +153,43 @@ export default function CartPage() {
                   return (
                   <div
                     key={item.id}
-                    className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+                    className="flex flex-col gap-4 rounded-xl border border-text-muted/25 bg-card-bg p-4 shadow-sm transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
                   >
                     <div className="flex flex-1 items-center gap-4">
                       <CartProductThumb src={imageSrc} name={item.name} />
                       <div className="min-w-0 flex-1">
                         <Link
                           href={`/product/${item.id}`}
-                          className="font-medium text-slate-900 hover:text-[#003366]"
+                          className="font-medium text-text-main hover:text-primary"
                         >
                           {item.name}
                         </Link>
-                        <p className="text-xs text-slate-500">Артикул: {article}</p>
+                        <p className="text-xs text-text-muted">Артикул: {article}</p>
                       </div>
                     </div>
                     <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-                      <div className="flex items-center overflow-hidden rounded-lg border border-slate-200">
+                      <div className="flex items-center overflow-hidden rounded-lg border border-text-muted/25">
                         <button
                           type="button"
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                          className="flex h-9 w-9 items-center justify-center bg-slate-100 text-slate-600 transition hover:bg-slate-200"
+                          className="flex h-9 w-9 items-center justify-center bg-main-bg text-text-muted transition hover:bg-text-muted/20"
                           aria-label="Уменьшить"
                         >
                           −
                         </button>
-                        <span className="flex h-9 min-w-[2.5rem] items-center justify-center border-x border-slate-200 text-sm font-medium">
+                        <span className="flex h-9 min-w-[2.5rem] items-center justify-center border-x border-text-muted/25 text-sm font-medium">
                           {item.quantity}
                         </span>
                         <button
                           type="button"
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          className="flex h-9 w-9 items-center justify-center bg-slate-100 text-slate-600 transition hover:bg-slate-200"
+                          className="flex h-9 w-9 items-center justify-center bg-main-bg text-text-muted transition hover:bg-text-muted/20"
                           aria-label="Увеличить"
                         >
                           +
                         </button>
                       </div>
-                      <span className="text-base font-semibold text-slate-900">
+                      <span className="text-base font-semibold text-text-main">
                         {(() => {
                           const finalRub = calcItemFinalRub(
                             item.id,
@@ -216,7 +216,7 @@ export default function CartPage() {
                       <button
                         type="button"
                         onClick={() => removeItem(item.id)}
-                        className="rounded px-2 py-1 text-sm text-slate-500 hover:bg-red-50 hover:text-red-600"
+                        className="rounded px-2 py-1 text-sm text-text-muted hover:bg-red-50 hover:text-red-600"
                         aria-label="Удалить"
                       >
                         Удалить

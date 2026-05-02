@@ -32,7 +32,7 @@ function CardImagePlaceholder() {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className="h-12 w-12 text-slate-500"
+      className="h-12 w-12 text-text-muted"
     >
       <rect
         x="3"
@@ -136,7 +136,7 @@ export default function ProductCard(props: ProductCardProps) {
   const isPriceOnRequest = !hasRetailPrice && !!leadTime;
 
   return (
-    <article className="flex h-full flex-row overflow-hidden rounded-xl bg-white shadow-md shadow-slate-200/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-300/50 md:flex-col">
+    <article className="flex h-full flex-row overflow-hidden rounded-xl bg-card-bg shadow-md shadow-text-muted/10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-text-muted/10 md:flex-col">
       <Link
         href={href}
         aria-label={`${name}, артикул ${sku}${inStock ? ", в наличии" : ", под заказ"}`}
@@ -144,7 +144,7 @@ export default function ProductCard(props: ProductCardProps) {
         tabIndex={0}
       >
         <div className="flex shrink-0 items-center justify-center p-2 md:w-full md:p-3">
-          <div className="flex items-center justify-center rounded-lg border border-slate-200 bg-white p-1.5 shadow-sm md:p-3">
+          <div className="flex items-center justify-center rounded-lg border border-text-muted/25 bg-card-bg p-1.5 shadow-sm md:p-3">
             {showImage ? (
               <Image
                 src={imageSrc!}
@@ -178,28 +178,28 @@ export default function ProductCard(props: ProductCardProps) {
               {inStock ? "В наличии" : "Под заказ"}
             </span>
           </div>
-          <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 hover:text-[#003366]">
+          <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-text-main hover:text-primary">
             {name}
           </h3>
-          <span className="text-[11px] font-medium text-slate-600">
+          <span className="text-[11px] font-medium text-text-muted">
             Артикул: {sku}
           </span>
           {powerText && (
-            <span className="text-[11px] text-slate-600">
+            <span className="text-[11px] text-text-muted">
               Мощность: {powerText}
             </span>
           )}
           {trimmedDescription && (
-            <p className="line-clamp-2 text-[11px] text-slate-500">
+            <p className="line-clamp-2 text-[11px] text-text-muted">
               {trimmedDescription}
             </p>
           )}
           {!inStock && !isAuthorized ? (
             <div className="mt-1 space-y-0.5">
-              <span className="text-sm font-medium text-slate-700">
+              <span className="text-sm font-medium text-text-main">
                 Цена по запросу
               </span>
-              <p className="text-[11px] text-slate-600">
+              <p className="text-[11px] text-text-muted">
                 Срок поставки:{" "}
                 <span className="font-medium">Уточняйте у менеджера</span>
               </p>
@@ -207,17 +207,17 @@ export default function ProductCard(props: ProductCardProps) {
           ) : (isAuthorized || inStock) ? (
             <div className="mt-1 space-y-0.5">
               {isPriceOnRequest ? (
-                <span className="text-sm font-medium text-slate-700">
+                <span className="text-sm font-medium text-text-main">
                   Цена по запросу
                 </span>
               ) : finalRub != null ? (
                 <div className="flex flex-wrap items-baseline gap-2">
-                  <span className="text-base font-semibold text-slate-900">
+                  <span className="text-base font-semibold text-text-main">
                     {finalRub.toLocaleString("ru-RU")} ₽
                   </span>
                   {hasDiscount && retailRub != null && (
                     <>
-                      <span className="text-[11px] text-slate-500 line-through">
+                      <span className="text-[11px] text-text-muted line-through opacity-80">
                         {(retailRubRounded ?? retailRub).toLocaleString("ru-RU")} ₽
                       </span>
                       <span className="inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
@@ -227,7 +227,7 @@ export default function ProductCard(props: ProductCardProps) {
                   )}
                 </div>
               ) : (
-                <span className="text-sm text-slate-600">
+                <span className="text-sm text-text-muted">
                   {formatPrice(priceEur, priceRub, rate)}
                 </span>
               )}
@@ -235,7 +235,7 @@ export default function ProductCard(props: ProductCardProps) {
                 leadTime && (
                   <p
                     className={`text-[11px] ${
-                      !inStock ? "text-blue-600" : "text-slate-600"
+                      !inStock ? "text-primary" : "text-text-muted"
                     }`}
                   >
                     Срок поставки:{" "}
@@ -244,7 +244,7 @@ export default function ProductCard(props: ProductCardProps) {
                 )
               ) : (
                 !inStock && (
-                  <p className="text-[11px] text-slate-600">
+                  <p className="text-[11px] text-text-muted">
                     Срок поставки:{" "}
                     <span className="font-medium">Уточняйте у менеджера</span>
                   </p>
@@ -279,7 +279,7 @@ export default function ProductCard(props: ProductCardProps) {
                   })
                 }
                 aria-label={`Запросить цену на ${name}`}
-                className="w-full rounded-lg bg-[#FF8C00] px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-[#ff9f26] md:py-2"
+                className="w-full rounded-lg bg-accent px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-accent-hover md:py-2"
               >
                 Запросить
               </button>

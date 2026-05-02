@@ -16,6 +16,10 @@ const WATERMARK_PATH = path.join(ROOT_DIR, "public", "logo-watermark.png");
 
 const SUPPORTED_EXT = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function collectFiles(dir) {
   const entries = await fs.promises.readdir(dir, { withFileTypes: true });
   const files = [];
@@ -86,7 +90,25 @@ async function main() {
         ])
         .toFile(tempOutputPath);
 
-      await fs.promises.rename(tempOutputPath, outputPath);
+      const replaceOutputFromTemp = async () => {
+        if (fs.existsSync(outputPath)) {
+          await fs.promises.unlink(outputPath);
+        }
+        await fs.promises.copyFile(tempOutputPath, outputPath);
+        await fs.promises.unlink(tempOutputPath);
+      };
+
+      try {
+        await replaceOutputFromTemp();
+      } catch (err) {
+        if (err && (err.code === "EPERM" || err.code === "EBUSY")) {
+          // Windows indexer/AV can briefly lock files; retry once after short delay.
+          await sleep(1000);
+          await replaceOutputFromTemp();
+        } else {
+          throw err;
+        }
+      }
 
       console.log("Watermarked:", rel);
     } catch (e) {

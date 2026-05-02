@@ -33,9 +33,9 @@ export default function AddToCartButton({
   };
 
   const baseCard =
-    "flex items-center justify-center rounded-lg bg-[#FF8C00] text-white font-semibold shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg";
+    "flex items-center justify-center rounded-lg bg-accent text-white font-semibold shadow-md transition hover:bg-accent-hover hover:shadow-lg";
   const basePage =
-    "rounded-xl bg-[#FF8C00] text-white font-semibold uppercase tracking-[0.12em] shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg";
+    "rounded-xl bg-accent text-white font-semibold uppercase tracking-[0.12em] shadow-md transition hover:bg-accent-hover hover:shadow-lg";
 
   if (variant === "card") {
     return (

@@ -16,14 +16,14 @@ function ContactRow({
 }) {
   return (
     <div className="flex items-start gap-3">
-      <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-full bg-[#003366]/5 text-[#003366]">
+      <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-full bg-primary/5 text-primary">
         {icon}
       </div>
       <div className="space-y-0.5 text-sm md:text-base">
-        <div className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+        <div className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">
           {label}
         </div>
-        <div className="text-slate-800">{children}</div>
+        <div className="text-text-main">{children}</div>
       </div>
     </div>
   );
@@ -51,7 +51,7 @@ export default function ContactsPage() {
           >
             <a
               href="tel:+74993980140"
-              className="font-semibold text-[#003366] hover:text-[#ff8c00]"
+              className="font-semibold text-primary hover:text-accent"
             >
               +7 (499) 398-01-40
             </a>
@@ -86,7 +86,7 @@ export default function ContactsPage() {
           >
             <a
               href="mailto:info@etalonklimat.ru"
-              className="font-semibold text-[#003366] hover:text-[#ff8c00]"
+              className="font-semibold text-primary hover:text-accent"
             >
               info@etalonklimat.ru
             </a>
@@ -111,11 +111,11 @@ export default function ContactsPage() {
           </ContactRow>
         </div>
 
-        <div className="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-600">
+        <div className="space-y-4 rounded-xl border border-text-muted/25 bg-text-muted/5 p-4">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-text-muted">
             Реквизиты компании
           </h2>
-          <ul className="space-y-1 text-sm text-slate-700 md:text-base">
+          <ul className="space-y-1 text-sm text-text-main md:text-base">
             <li>ООО «ЭТАЛОН ПРОФИ»</li>
             <li>ИНН 7720486235 · КПП 772001001</li>
             <li>111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2</li>
@@ -124,7 +124,7 @@ export default function ContactsPage() {
       </div>
 
       <section className="space-y-3">
-        <h2 className="text-base font-semibold text-[#0b1f33] md:text-lg">
+        <h2 className="text-base font-semibold text-primary md:text-lg">
           Схема проезда
         </h2>
         <ContactsMapSection />

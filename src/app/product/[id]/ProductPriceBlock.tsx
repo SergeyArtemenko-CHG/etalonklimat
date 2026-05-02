@@ -60,17 +60,17 @@ export default function ProductPriceBlock({
   return (
     <div className="mb-5 space-y-1">
       {!showPrice ? (
-        <p className="text-lg font-semibold text-slate-800">Цена по запросу</p>
+        <p className="text-lg font-semibold text-text-main">Цена по запросу</p>
       ) : isPriceOnRequest ? (
-        <p className="text-lg font-semibold text-slate-800">Цена по запросу</p>
+        <p className="text-lg font-semibold text-text-main">Цена по запросу</p>
       ) : finalRub != null ? (
         <div className="flex flex-wrap items-baseline gap-3">
-          <p className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+          <p className="text-3xl font-semibold tracking-tight text-text-main md:text-4xl">
             {finalRub.toLocaleString("ru-RU")} ₽
           </p>
           {hasDiscount && retailRub != null && (
             <>
-              <span className="text-sm text-slate-400 line-through">
+              <span className="text-sm text-text-muted line-through">
                 {(retailRubRounded ?? retailRub).toLocaleString("ru-RU")} ₽
               </span>
               <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
@@ -80,10 +80,10 @@ export default function ProductPriceBlock({
           )}
         </div>
       ) : (
-        <p className="text-base text-slate-500">Цена по запросу</p>
+        <p className="text-base text-text-muted">Цена по запросу</p>
       )}
 
-      <span className="block text-xs uppercase tracking-[0.16em] text-slate-400">
+      <span className="block text-xs uppercase tracking-[0.16em] text-text-muted">
         Цена с НДС
       </span>
 
@@ -91,14 +91,14 @@ export default function ProductPriceBlock({
         leadTime && (
           <p
             className={`text-sm ${
-              !inStock ? "text-blue-600" : "text-slate-600"
+              !inStock ? "text-blue-600" : "text-text-muted"
             }`}
           >
             Срок поставки: <span className="font-medium">{leadTime}</span>
           </p>
         )
       ) : (
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-text-muted">
           Срок поставки:{" "}
           <span className="font-medium">Уточняйте у менеджера</span>
         </p>

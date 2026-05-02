@@ -19,30 +19,30 @@ export const metadata = {
 
 export default function AgreementPage() {
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-main-bg">
       <Header />
       <main className="mx-auto max-w-4xl px-4 py-12">
-        <article className="rounded-2xl bg-white p-6 shadow-md shadow-slate-200/60 md:p-10">
-          <nav className="mb-8 text-sm text-slate-500">
-            <Link href="/" className="hover:text-[#003366]">
+        <article className="rounded-2xl bg-card-bg p-6 shadow-md shadow-text-muted/8 md:p-10">
+          <nav className="mb-8 text-sm text-text-muted">
+            <Link href="/" className="hover:text-primary">
               Главная
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-[#0b1f33]">Пользовательское соглашение</span>
+            <span className="text-primary">Пользовательское соглашение</span>
           </nav>
 
-          <h1 className="mb-2 text-2xl font-bold text-[#0b1f33] md:text-3xl">
+          <h1 className="mb-2 text-2xl font-bold text-primary md:text-3xl">
             Пользовательское соглашение (Публичная оферта)
           </h1>
-          <p className="mb-10 text-sm text-slate-500">
+          <p className="mb-10 text-sm text-text-muted">
             Дата публикации: 28 марта 2026 г.
           </p>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
+            <h2 className="mb-4 text-xl font-bold text-primary border-b-2 border-text-muted/25 pb-3">
               1. ОБЩИЕ ПОЛОЖЕНИЯ
             </h2>
-            <ol className="list-none space-y-4 pl-0 text-slate-700 leading-relaxed">
+            <ol className="list-none space-y-4 pl-0 text-text-main leading-relaxed">
               <li>
                 <strong>1.1.</strong> Настоящее Пользовательское соглашение (далее — Соглашение)
                 регулирует использование Сайта {SITE_HOST} (далее — Сайт). Сведения о товарах,
@@ -72,14 +72,14 @@ export default function AgreementPage() {
                 юридический адрес: {COMPANY_ADDRESS}. Контактный e-mail:{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   {CONTACT_EMAIL}
                 </a>
                 , телефон и иные реквизиты — на странице{" "}
                 <Link
                   href="/contacts"
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   «Контакты»
                 </Link>
@@ -89,10 +89,10 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
+            <h2 className="mb-4 text-xl font-bold text-primary border-b-2 border-text-muted/25 pb-3">
               2. СТАТУС ПОЛЬЗОВАТЕЛЯ И ПОРЯДОК ЦЕНООБРАЗОВАНИЯ
             </h2>
-            <ol className="list-none space-y-4 pl-0 text-slate-700 leading-relaxed">
+            <ol className="list-none space-y-4 pl-0 text-text-main leading-relaxed">
               <li>
                 <strong>2.1.</strong> Сайт предоставляет специализированный сервис для подбора
                 промышленного оборудования.
@@ -110,10 +110,10 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
+            <h2 className="mb-4 text-xl font-bold text-primary border-b-2 border-text-muted/25 pb-3">
               3. ПОРЯДОК ОФОРМЛЕНИЯ ЗАКАЗА
             </h2>
-            <ol className="list-none space-y-4 pl-0 text-slate-700 leading-relaxed">
+            <ol className="list-none space-y-4 pl-0 text-text-main leading-relaxed">
               <li>
                 <strong>3.1.</strong> Для уточнения технических характеристик промышленных горелок и
                 комплектующих Пользователь может воспользоваться{" "}
@@ -122,7 +122,7 @@ export default function AgreementPage() {
                 <strong>по телефону и e-mail</strong>, указанным на странице{" "}
                 <Link
                   href="/contacts"
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   «Контакты»
                 </Link>{" "}
@@ -147,17 +147,17 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
+            <h2 className="mb-4 text-xl font-bold text-primary border-b-2 border-text-muted/25 pb-3">
               4. ПЕРСОНАЛЬНЫЕ ДАННЫЕ И РАССЫЛКИ
             </h2>
-            <ol className="list-none space-y-4 pl-0 text-slate-700 leading-relaxed">
+            <ol className="list-none space-y-4 pl-0 text-text-main leading-relaxed">
               <li>
                 <strong>4.1.</strong> Порядок обработки персональных данных регулируется отдельным
                 документом — Политикой в отношении обработки персональных данных, доступной по
                 адресу:{" "}
                 <Link
                   href="/privacy-policy"
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   {SITE_HOST}/privacy-policy
                 </Link>
@@ -174,7 +174,7 @@ export default function AgreementPage() {
                 (при наличии) либо путём направления запроса на адрес электронной почты{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -184,10 +184,10 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
+            <h2 className="mb-4 text-xl font-bold text-primary border-b-2 border-text-muted/25 pb-3">
               5. ОГРАНИЧЕНИЕ ОТВЕТСТВЕННОСТИ
             </h2>
-            <ol className="list-none space-y-4 pl-0 text-slate-700 leading-relaxed">
+            <ol className="list-none space-y-4 pl-0 text-text-main leading-relaxed">
               <li>
                 <strong>5.1.</strong> Администрация Сайта не несет ответственности за убытки,
                 возникшие у Пользователя вследствие неправильного использования промышленного
@@ -202,10 +202,10 @@ export default function AgreementPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-xl font-bold text-[#003366] border-b-2 border-slate-200 pb-3">
+            <h2 className="mb-4 text-xl font-bold text-primary border-b-2 border-text-muted/25 pb-3">
               6. ПОРЯДОК ИЗМЕНЕНИЯ СОГЛАШЕНИЯ
             </h2>
-            <ol className="list-none space-y-4 pl-0 text-slate-700 leading-relaxed">
+            <ol className="list-none space-y-4 pl-0 text-text-main leading-relaxed">
               <li>
                 <strong>6.1.</strong> Администрация Сайта имеет право в одностороннем порядке
                 изменять условия настоящего Соглашения. Новая редакция публикуется на Сайте и вступает
@@ -221,7 +221,7 @@ export default function AgreementPage() {
             </ol>
           </section>
 
-          <p className="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-500">
+          <p className="mt-10 border-t border-text-muted/25 pt-6 text-sm text-text-muted">
             Дата публикации: 28 марта 2026 г.
           </p>
         </article>

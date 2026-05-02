@@ -36,7 +36,7 @@ export default function CartCheckoutSection({
               ВАЖНО: для подтверждения заказа свяжитесь с нами по телефону{" "}
               <a
                 href={`tel:${CALLBACK_PHONE_TEL}`}
-                className="text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+                className="text-primary underline underline-offset-2 hover:text-accent"
               >
                 {CALLBACK_PHONE_DISPLAY}
               </a>
@@ -47,19 +47,19 @@ export default function CartCheckoutSection({
             </p>
             <Link
               href="/"
-              className="mt-8 inline-block rounded-xl bg-[#FF8C00] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
+              className="mt-8 inline-block rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-accent-hover hover:shadow-lg"
             >
               Вернуться в каталог
             </Link>
           </div>
         </div>
       ) : (
-        <div className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 rounded-xl border border-text-muted/25 bg-card-bg p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-lg font-bold text-slate-900">
+            <p className="text-lg font-bold text-text-main">
               Итого: {totalPriceFormatted}
             </p>
-            <p className="mt-1 text-xs text-slate-500">
+            <p className="mt-1 text-xs text-text-muted">
               После оформления вы получите номер заказа и инструкцию по подтверждению по телефону.
             </p>
           </div>
@@ -69,7 +69,7 @@ export default function CartCheckoutSection({
               type="button"
               disabled={loading}
               onClick={() => void onSubmit()}
-              className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#FF8C00] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg disabled:opacity-70"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-accent-hover hover:shadow-lg disabled:opacity-70"
             >
               {loading ? "Отправка…" : "Оформить заказ"}
             </button>

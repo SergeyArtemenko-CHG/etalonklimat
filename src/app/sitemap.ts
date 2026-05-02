@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { MetadataRoute } from "next";
+import { featuredBrands } from "@/data/brands";
 import { products, categories } from "@/data/products";
 
 /**
@@ -52,10 +53,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/cart`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/agreement`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/brands/egs`, lastModified: now, changeFrequency: "monthly", priority: 0.65 },
-    { url: `${BASE}/brands/energostandart`, lastModified: now, changeFrequency: "monthly", priority: 0.65 },
-    { url: `${BASE}/brands/fbr`, lastModified: now, changeFrequency: "monthly", priority: 0.65 },
   ];
+
+  const brandEntries: MetadataRoute.Sitemap = featuredBrands.map((b) => ({
+    url: `${BASE}/brands/${encodeURIComponent(b.slug)}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.65,
+  }));
 
   const categoryEntries: MetadataRoute.Sitemap = categories.flatMap((cat) => {
     const main = {
@@ -80,5 +85,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...categoryEntries, ...productEntries];
+  return [...staticPages, ...brandEntries, ...categoryEntries, ...productEntries];
 }

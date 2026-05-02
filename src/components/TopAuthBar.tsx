@@ -12,8 +12,8 @@ export default function TopAuthBar() {
   const isAuthorized = !!session?.user;
 
   return (
-    <div className="w-full bg-[#0b1f33] px-4 py-2.5 text-white shadow-md">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-sm">
+    <div className="w-full border-b-2 border-accent bg-auth-bg px-4 py-3 text-white shadow-md shadow-black/15">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-sm md:gap-4">
         {isAuthorized ? (
           <>
             <p className="flex items-center gap-2 text-white/95">
@@ -27,7 +27,7 @@ export default function TopAuthBar() {
                 href="/account"
                 className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-white/20"
               >
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#FF8C00] text-xs font-bold">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent text-xs font-bold">
                   👤
                 </span>
                 Личный кабинет
@@ -43,26 +43,51 @@ export default function TopAuthBar() {
           </>
         ) : (
           <>
-            <p className="text-white/95">
-              Войдите, чтобы увидеть цены с Вашей персональной скидкой. Для авторизованных покупателей доступны{" "}
-              <span className="relative inline-block px-1.5">
-                <span className="relative z-10 font-extrabold text-[#FF8C00]">
-                  скидки до 50%
+            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-3 md:gap-4">
+              <span className="relative inline-flex shrink-0" aria-hidden>
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-accent shadow-inner shadow-black/10">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="h-7 w-7"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+                    />
+                  </svg>
                 </span>
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 overflow-hidden rounded-sm"
-                >
+                <span className="absolute -bottom-px -right-px flex h-[22px] min-w-[22px] items-center justify-center rounded-full border-2 border-auth-bg bg-accent px-1 text-[11px] font-extrabold leading-none text-white shadow-sm">
+                  %
+                </span>
+              </span>
+              <p className="min-w-0 max-w-3xl flex-1 text-[0.9375rem] font-medium leading-relaxed text-white md:max-w-none md:text-base">
+                Войдите, чтобы увидеть цены с Вашей персональной скидкой. Для
+                авторизованных покупателей доступны{" "}
+                <span className="relative inline-block px-1.5">
+                  <span className="relative z-10 font-extrabold text-accent">
+                    скидки до 50%
+                  </span>
                   <span
-                    className="absolute inset-y-0.5 left-0 w-full bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-70 animate-[shimmer_5s_linear_infinite]"
-                  />
-                </span>
-              </span>{" "}
-              от цен на сайте, актуальные цены и сроки поставки на товар под заказ.
-            </p>
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 overflow-hidden rounded-sm"
+                  >
+                    <span
+                      className="absolute inset-y-0.5 left-0 w-full bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-70 animate-[shimmer_5s_linear_infinite]"
+                    />
+                  </span>
+                </span>{" "}
+                от цен на сайте, актуальные цены и сроки поставки на товар под
+                заказ.
+              </p>
+            </div>
             <Link
               href="/login"
-              className="shrink-0 rounded-lg bg-[#FF8C00] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#ff9f26]"
+              className="shrink-0 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent-hover"
             >
               Авторизоваться
             </Link>

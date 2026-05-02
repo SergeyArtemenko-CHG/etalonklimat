@@ -1,4 +1,55 @@
 @import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* Темы: классы theme-1 | theme-2 на <html> (layout + ThemeSwitcher).
+ * В разметке используйте токены Tailwind: bg-main-bg, bg-card-bg, text-text-main,
+ * text-text-muted, border-text-muted/25 и т.д. Классы slate-* не меняются при смене темы. */
+.theme-1 {
+  /*
+   * Основная тема: нейтральная серая.
+   */
+  --primary: #2c3545;
+  --primary-hover: #1f2633;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --auth-bg: #161d28;
+  --hero-from: #3d4f66;
+  --hero-to: #243040;
+  --hero-text: #f8fafc;
+  --hero-lead: rgb(226 232 242 / 0.95);
+  --surface-tint: #eaf4ff;
+}
+
+.theme-2 {
+  /*
+   * Дополнительная тема: классическая синяя.
+   */
+  --primary: #003366;
+  --primary-hover: #02274d;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent: #ff8c00;
+  --accent-hover: #ff9f26;
+  --auth-bg: #0b1f33;
+  --hero-from: #003366;
+  --hero-to: #004080;
+  --hero-text: #ffffff;
+  --hero-lead: rgb(255 255 255 / 0.9);
+  --surface-tint: var(--bg-main);
+}
+
+* {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;

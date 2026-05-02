@@ -6,7 +6,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white/90 transition hover:border-[#FF8C00] hover:bg-[#FF8C00] hover:text-white"
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white/90 transition hover:border-accent hover:bg-accent hover:text-white"
       aria-label={label}
     >
       {children}
@@ -16,7 +16,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
 
 export default function Footer() {
   return (
-    <footer className="bg-[#003366] text-white">
+    <footer className="bg-primary text-white">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* О компании */}
@@ -26,22 +26,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/about" className="transition hover:text-[#FF8C00]">
+                <Link href="/about" className="transition hover:text-accent">
                   О нас
                 </Link>
               </li>
               <li>
-                <Link href="/requisites" className="transition hover:text-[#FF8C00]">
+                <Link href="/requisites" className="transition hover:text-accent">
                   Реквизиты
                 </Link>
               </li>
               <li>
-                <Link href="/reviews" className="transition hover:text-[#FF8C00]">
+                <Link href="/reviews" className="transition hover:text-accent">
                   Отзывы
                 </Link>
               </li>
               <li>
-                <Link href="/contacts" className="transition hover:text-[#FF8C00]">
+                <Link href="/contacts" className="transition hover:text-accent">
                   Контакты
                 </Link>
               </li>
@@ -55,22 +55,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/category/gorelki-dlya-kotlov-otopleniya" className="transition hover:text-[#FF8C00]">
+                <Link href="/category/gorelki-dlya-kotlov-otopleniya" className="transition hover:text-accent">
                   Горелки для котлов
                 </Link>
               </li>
               <li>
-                <Link href="/category/kotly-vodogreinye" className="transition hover:text-[#FF8C00]">
+                <Link href="/category/kotly-vodogreinye" className="transition hover:text-accent">
                   Котлы водогрейные
                 </Link>
               </li>
               <li>
-                <Link href="/category/kotly-parovye" className="transition hover:text-[#FF8C00]">
+                <Link href="/category/kotly-parovye" className="transition hover:text-accent">
                   Котлы паровые
                 </Link>
               </li>
               <li>
-                <Link href="/category/deaeratory" className="transition hover:text-[#FF8C00]">
+                <Link href="/category/deaeratory" className="transition hover:text-accent">
                   Деаэраторы
                 </Link>
               </li>
@@ -84,17 +84,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/delivery" className="transition hover:text-[#FF8C00]">
+                <Link href="/delivery" className="transition hover:text-accent">
                   Доставка и оплата
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="transition hover:text-[#FF8C00]">
+                <Link href="/faq" className="transition hover:text-accent">
                   Частые вопросы
                 </Link>
               </li>
               <li>
-                <Link href="/returns" className="transition hover:text-[#FF8C00]">
+                <Link href="/returns" className="transition hover:text-accent">
                   Возврат и обмен
                 </Link>
               </li>
@@ -108,7 +108,7 @@ export default function Footer() {
             </h3>
             <a
               href="tel:+74993980140"
-              className="mb-2 block text-lg font-semibold text-white hover:text-[#FF8C00]"
+              className="mb-2 block text-lg font-semibold text-white hover:text-accent"
             >
               +7 (499) 398-01-40
             </a>
@@ -117,7 +117,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:info@etalonklimat.ru"
-              className="mb-4 block text-sm text-white/80 underline-offset-2 hover:text-[#FF8C00] hover:underline"
+              className="mb-4 block text-sm text-white/80 underline-offset-2 hover:text-accent hover:underline"
             >
               info@etalonklimat.ru
             </a>
@@ -149,7 +149,7 @@ export default function Footer() {
               данных в соответствии с{" "}
               <Link
                 href="/privacy-policy"
-                className="underline underline-offset-1 hover:text-[#FF8C00] transition"
+                className="underline underline-offset-1 transition hover:text-accent"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
               >
@@ -158,7 +158,7 @@ export default function Footer() {
               и{" "}
               <Link
                 href="/agreement"
-                className="underline underline-offset-1 hover:text-[#FF8C00] transition"
+                className="underline underline-offset-1 transition hover:text-accent"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
               >

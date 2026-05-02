@@ -8,7 +8,7 @@ export default function DeliveryPage() {
   return (
     <ContentLayout title="Доставка и оплата">
       <section className="space-y-2">
-        <h2 className="text-base font-semibold text-[#0b1f33] md:text-lg">
+        <h2 className="text-base font-semibold text-primary md:text-lg">
           Доставка оборудования
         </h2>
         <p>
@@ -24,7 +24,7 @@ export default function DeliveryPage() {
       </section>
 
       <section className="space-y-2">
-        <h2 className="text-base font-semibold text-[#0b1f33] md:text-lg">
+        <h2 className="text-base font-semibold text-primary md:text-lg">
           Условия оплаты
         </h2>
         <p>
@@ -39,7 +39,7 @@ export default function DeliveryPage() {
       </section>
 
       <section className="space-y-2">
-        <h2 className="text-base font-semibold text-[#0b1f33] md:text-lg">
+        <h2 className="text-base font-semibold text-primary md:text-lg">
           Сроки поставки
         </h2>
         <p>

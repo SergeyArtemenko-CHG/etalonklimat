@@ -284,19 +284,19 @@ export default function FloatingContactBtn() {
     >
       {/* Окно чата с плавным появлением */}
       <div
-        className={`absolute bottom-16 right-0 z-20 flex w-[340px] max-w-[calc(100vw-3rem)] flex-col rounded-xl border border-slate-200 bg-white shadow-lg transition-all duration-300 ${
+        className={`absolute bottom-16 right-0 z-20 flex w-[340px] max-w-[calc(100vw-3rem)] flex-col rounded-xl border border-text-muted/25 bg-card-bg shadow-lg transition-all duration-300 ${
           isOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"
         }`}
         style={{ height: "420px" }}
       >
           {/* Шапка: менеджер и аватар */}
-          <div className="flex shrink-0 items-center gap-3 border-b border-slate-200 px-3 py-2.5">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FF8C00]/20 text-sm font-semibold text-[#FF8C00]">
+          <div className="flex shrink-0 items-center gap-3 border-b border-text-muted/25 px-3 py-2.5">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/20 text-sm font-semibold text-accent">
               СС
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate font-medium text-slate-800">Сергей Снегирев</p>
-              <p className="text-xs text-slate-500">менеджер по продажам</p>
+              <p className="truncate font-medium text-text-main">Сергей Снегирев</p>
+              <p className="text-xs text-text-muted">менеджер по продажам</p>
             </div>
             <span className="flex shrink-0 items-center gap-1.5 text-xs text-emerald-600">
               <span className="h-2 w-2 rounded-full bg-emerald-500" />
@@ -310,14 +310,14 @@ export default function FloatingContactBtn() {
                   key={m.id}
                   className={`flex flex-col ${m.role === "client" ? "items-end" : "items-start"}`}
                 >
-                  <span className="mb-0.5 px-1 text-xs text-slate-500">
+                  <span className="mb-0.5 px-1 text-xs text-text-muted">
                     {m.role === "client" ? "Вы" : "Сергей"}
                   </span>
                   <div
                     className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
                       m.role === "client"
                         ? "bg-[#0088cc] text-white"
-                        : "bg-slate-200 text-slate-800"
+                        : "bg-text-muted/15 text-text-main"
                     }`}
                   >
                     {m.text}
@@ -326,8 +326,8 @@ export default function FloatingContactBtn() {
               ))}
               {isTyping && (
                 <div className="flex flex-col items-start">
-                  <span className="mb-0.5 px-1 text-xs text-slate-500">Сергей</span>
-                  <div className="max-w-[85%] rounded-2xl bg-slate-200 px-3 py-2 text-xs text-slate-500 italic">
+                  <span className="mb-0.5 px-1 text-xs text-text-muted">Сергей</span>
+                  <div className="max-w-[85%] rounded-2xl bg-text-muted/15 px-3 py-2 text-xs text-text-muted italic">
                     печатает...
                   </div>
                 </div>
@@ -335,7 +335,7 @@ export default function FloatingContactBtn() {
               <div ref={messagesEndRef} />
             </div>
 
-            <div className="border-t border-slate-200 p-2">
+            <div className="border-t border-text-muted/25 p-2">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -349,18 +349,18 @@ export default function FloatingContactBtn() {
                   }}
                   placeholder="Напишите сообщение..."
                   disabled={isSending}
-                  className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-sm outline-none focus:border-[#FF8C00] disabled:bg-slate-50"
+                  className="flex-1 rounded-full border border-text-muted/25 px-4 py-2 text-sm outline-none focus:border-accent disabled:bg-text-muted/5"
                 />
                 <button
                   type="button"
                   onClick={handleSend}
                   disabled={isSending || !input.trim()}
-                  className="rounded-full bg-[#FF8C00] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#ff9f26] disabled:opacity-60"
+                  className="rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-hover disabled:opacity-60"
                 >
                   {isSending ? "…" : "Отпр."}
                 </button>
               </div>
-              <p className="mt-2 px-1 text-center text-xs leading-snug text-slate-500">
+              <p className="mt-2 px-1 text-center text-xs leading-snug text-text-muted">
                 Чат предназначен исключительно для технических консультаций, не отправляйте в чате
                 Ваши персональные данные
               </p>
@@ -380,7 +380,7 @@ export default function FloatingContactBtn() {
           <button
             type="button"
             onClick={() => setIsOpen((v) => !v)}
-            className="flex h-14 items-center gap-2 rounded-full bg-[#FF8C00] pl-3 pr-4 text-white shadow-lg transition hover:bg-[#ff9f26] hover:shadow-xl"
+            className="flex h-14 items-center gap-2 rounded-full bg-accent pl-3 pr-4 text-white shadow-lg transition hover:bg-accent-hover hover:shadow-xl"
             aria-label={isOpen ? "Закрыть чат" : "Открыть чат — помощь в подборе"}
           >
             {isOpen ? (

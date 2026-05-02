@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
+import HomeHero from "@/components/HomeHero";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
+import { featuredBrands } from "@/data/brands";
 import { products, categories } from "@/data/products";
 import Link from "next/link";
 
@@ -114,127 +116,46 @@ function CategoryIcon({
 }
 
 export default function Home() {
-  const isSmallBurner = (p: (typeof products)[number]) => {
-    const hasPrice = p.priceEur != null || p.priceRub != null;
-    const isBurnerCategory = p.categorySlug === "gorelki-dlya-kotlov-otopleniya";
-    const maxPower = p.burnerPowerMax ?? p.burnerPowerMin ?? Number.POSITIVE_INFINITY;
-    return hasPrice && isBurnerCategory && maxPower <= 1000;
-  };
-
-  const pseudoRandomOrder = (value: string) => {
-    let h = 0;
-    for (let i = 0; i < value.length; i++) {
-      h = (h * 31 + value.charCodeAt(i)) >>> 0;
-    }
-    return h;
-  };
-
-  const shuffled = <T extends { id: string }>(arr: T[]) =>
-    [...arr].sort((a, b) => pseudoRandomOrder(a.id) - pseudoRandomOrder(b.id));
-
-  const gasAndCombinedWithPlus = products.filter(
-    (p) =>
-      isSmallBurner(p) &&
-      p.name.includes("+") &&
-      /(газов|комбинирован)/i.test(p.name)
-  );
-
-  const dieselBurners = products.filter(
-    (p) => isSmallBurner(p) && /дизельн/i.test(p.name)
-  );
-
-  const selected = [
-    ...shuffled(gasAndCombinedWithPlus).slice(0, 5),
-    ...shuffled(dieselBurners).slice(0, 3),
-  ];
-
-  const uniqueSelected = selected.filter(
-    (item, idx, arr) => arr.findIndex((p) => p.id === item.id) === idx
-  );
-
-  const popularProducts =
-    uniqueSelected.length >= 8
-      ? uniqueSelected.slice(0, 8)
-      : [
-          ...uniqueSelected,
-          ...shuffled(
-            products.filter(
-              (p) => isSmallBurner(p) && !uniqueSelected.some((s) => s.id === p.id)
-            )
-          ).slice(0, 8 - uniqueSelected.length),
-        ];
-  const uniqueBrands = Array.from(
-    new Set(products.map((p) => p.brand).filter((b): b is string => Boolean(b?.trim())))
-  ).sort((a, b) => a.localeCompare(b, "ru")).slice(0, 6);
-
-  const featuredBrands = [
-    {
-      name: "Энергостандарт",
-      slug: "energostandart",
-      logo: "/images/brands/ENERGOSTANDART.png",
-    },
-    {
-      name: "FBR",
-      slug: "fbr",
-      logo: "/images/brands/FBR.png",
-    },
-    {
-      name: "ЭнергоГаз Сервис",
-      slug: "egs",
-      logo: "/images/brands/ICI.png",
-    },
-  ] as const;
+  const popularProducts = products.filter((p) => p.popular === true).slice(0, 8);
 
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-main-bg">
       <Header />
       <main>
-        {/* Hero */}
-        <section className="bg-gradient-to-r from-[#003366] to-[#004080] px-4 py-12 md:py-16">
-          <div className="mx-auto max-w-6xl text-center text-white">
-            <h1 className="mb-4 text-2xl font-bold md:text-4xl">
-              Оборудование для котельных и теплоснабжения
-            </h1>
-            <p className="mb-6 text-lg text-white/90 md:text-xl">
-              Котлы, горелки, деаэраторы, парогенераторы и комплектующие
-            </p>
-            <Link
-              href="/#categories"
-              className="inline-block rounded-xl bg-[#FF8C00] px-6 py-3 text-base font-semibold text-white shadow-md transition hover:bg-[#ff9f26] hover:shadow-lg"
-            >
-              В каталог
-            </Link>
-          </div>
-        </section>
+        <HomeHero />
 
-        {/* Brands */}
-        <section className="mx-auto max-w-6xl px-4 py-8 md:py-10">
-          <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
-            <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
-              Наши бренды
-            </h2>
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-              {featuredBrands.map((brand) => (
-                <Link
-                  key={brand.slug}
-                  href={`/brands/${brand.slug}`}
-                  className="group flex h-20 min-w-[140px] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 shadow-sm transition hover:border-[#FF8C00]/60 hover:bg-white hover:shadow-md"
-                >
-                  <img
-                    src={brand.logo}
-                    alt={brand.name}
-                    className="max-h-14 max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition"
-                    loading="lazy"
-                  />
-                </Link>
-              ))}
+        {/* Brands — источник: data/nomenclature/Brands.csv */}
+        {featuredBrands.length > 0 ? (
+          <section className="bg-surface-tint py-8 md:py-10">
+            <div className="mx-auto max-w-6xl px-4">
+            <div className="rounded-2xl bg-card-bg p-4 shadow-md shadow-text-muted/8 md:p-5">
+              <h2 className="mb-4 text-lg font-semibold text-primary md:text-xl">
+                Наши бренды
+              </h2>
+              <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+                {featuredBrands.map((brand) => (
+                  <Link
+                    key={brand.slug}
+                    href={`/brands/${brand.slug}`}
+                    className="group flex h-20 min-w-[140px] items-center justify-center rounded-xl border border-text-muted/25 bg-main-bg px-5 py-3 shadow-sm transition hover:border-accent/60 hover:bg-card-bg hover:shadow-md"
+                  >
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="max-h-14 max-w-[140px] object-contain grayscale transition group-hover:grayscale-0"
+                      loading="lazy"
+                    />
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+            </div>
+          </section>
+        ) : null}
 
         {/* Categories grid */}
         <section id="categories" className="mx-auto max-w-6xl px-4 py-10">
-          <h2 className="mb-6 text-xl font-semibold text-[#0b1f33] md:text-2xl">
+          <h2 className="mb-6 text-xl font-semibold text-primary md:text-2xl">
             Категории
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -242,21 +163,22 @@ export default function Home() {
               <Link
                 key={cat.slug}
                 href={`/category/${cat.slug}`}
-                className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-[#FF8C00]/50 hover:shadow-md"
+                className="flex items-center gap-4 rounded-xl border border-text-muted/25 bg-card-bg p-4 shadow-sm transition-all hover:border-accent/50 hover:shadow-md"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#003366]/10">
-                  <CategoryIcon slug={cat.slug} className="h-6 w-6 text-[#003366]" />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                  <CategoryIcon slug={cat.slug} className="h-6 w-6 text-primary" />
                 </div>
-                <span className="font-medium text-slate-800">{cat.name}</span>
+                <span className="font-medium text-text-main">{cat.name}</span>
               </Link>
             ))}
           </div>
         </section>
 
         {/* Popular products */}
-        <section className="mx-auto max-w-6xl px-4 py-6 md:py-8">
-          <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-5">
-            <h2 className="mb-4 text-lg font-semibold text-[#0b1f33] md:text-xl">
+        <section className="bg-surface-tint py-6 md:py-8">
+          <div className="mx-auto max-w-6xl px-4">
+          <div className="rounded-2xl bg-card-bg p-4 shadow-md shadow-text-muted/8 md:p-5">
+            <h2 className="mb-4 text-lg font-semibold text-primary md:text-xl">
               Популярные товары
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -281,15 +203,16 @@ export default function Home() {
               ))}
             </div>
           </div>
+          </div>
         </section>
 
         {/* SEO text */}
         <section className="mx-auto max-w-6xl px-4 py-10">
-          <div className="rounded-2xl bg-white p-6 shadow-md shadow-slate-200/60 md:p-8">
-            <h2 className="mb-4 text-xl font-semibold text-[#0b1f33]">
+          <div className="rounded-2xl bg-card-bg p-6 shadow-md shadow-text-muted/8 md:p-8">
+            <h2 className="mb-4 text-xl font-semibold text-primary">
               О компании ЭТАЛОН ПРОФИ
             </h2>
-            <div className="space-y-3 text-slate-700">
+            <div className="space-y-3 text-text-main">
               <p>
                 ЭТАЛОН ПРОФИ — поставщик промышленного оборудования для котельных и систем теплоснабжения.
                 В нашем каталоге представлены котлы водогрейные и паровые, горелки газовые и дизельные,

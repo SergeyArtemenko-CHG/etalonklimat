@@ -27,8 +27,9 @@ function toPlainDescription(product: Product): string {
 }
 
 /** Schema.org Product (ld+json) — базовая цена из CSV (priceRub / priceEur) */
-function buildProductJsonLd(product: Product, pageId: string): string {
-  const url = `${SITE_URL}/product/${encodeURIComponent(pageId)}`;
+function buildProductJsonLd(product: Product): string {
+  const canonicalId = product.sku || product.id;
+  const url = `${SITE_URL}/product/${encodeURIComponent(canonicalId)}`;
   const imagePath = product.image?.trim() || "/images/products/no-image.webp";
   const imageUrl = imagePath.startsWith("http")
     ? imagePath
@@ -105,13 +106,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? imagePath
     : `${SITE_URL}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
 
+  const canonicalId = product.sku || product.id;
+
   return {
     title,
     description,
     openGraph: {
       title,
       description,
-      url: `${SITE_URL}/product/${encodeURIComponent(id)}`,
+      url: `${SITE_URL}/product/${encodeURIComponent(canonicalId)}`,
       siteName: "ETALON KLIMAT",
       locale: "ru_RU",
       type: "website",
@@ -140,10 +143,10 @@ export default async function ProductPage({ params }: Props) {
   }
 
   const categoryMatch = getCategoryBySlug(product.categorySlug);
-  const productJsonLd = buildProductJsonLd(product, id);
+  const productJsonLd = buildProductJsonLd(product);
 
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-main-bg">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: productJsonLd }}
@@ -151,10 +154,10 @@ export default async function ProductPage({ params }: Props) {
       {product.image && <PreloadProductImage href={product.image} />}
       <Header />
       <main className="mx-auto max-w-6xl px-4 py-6 md:py-8">
-        <div className="rounded-2xl bg-white p-4 shadow-md shadow-slate-200/60 md:p-6">
+        <div className="rounded-2xl bg-card-bg p-4 shadow-md shadow-text-muted/8 md:p-6">
           {/* Breadcrumbs */}
-          <nav className="mb-6 text-sm text-slate-500">
-            <Link href="/" className="hover:text-[#003366]">
+          <nav className="mb-6 text-sm text-text-muted">
+            <Link href="/" className="hover:text-primary">
               Главная
             </Link>
             <span className="mx-2">/</span>
@@ -162,14 +165,14 @@ export default async function ProductPage({ params }: Props) {
               <>
                 <Link
                   href={`/category/${"parentSlug" in categoryMatch ? categoryMatch.parentSlug : categoryMatch.slug}`}
-                  className="hover:text-[#003366]"
+                  className="hover:text-primary"
                 >
                   {"parentName" in categoryMatch ? categoryMatch.parentName : categoryMatch.name}
                 </Link>
                 <span className="mx-2">/</span>
               </>
             )}
-            <span className="text-[#0b1f33]">{product.name}</span>
+            <span className="text-primary">{product.name}</span>
           </nav>
 
           {/* Main block: image + info */}
@@ -177,7 +180,7 @@ export default async function ProductPage({ params }: Props) {
             {/* Photo area */}
             <div>
               <div className="flex justify-center">
-                <div className="flex aspect-[4/3] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-gradient-to-br from-slate-100 to-slate-200 shadow-inner">
+                <div className="flex aspect-[4/3] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-lg border border-text-muted/25 bg-gradient-to-br from-main-bg to-text-muted/15 shadow-inner">
                   <ProductImage
                     src={product.image}
                     alt={product.name}
@@ -193,21 +196,21 @@ export default async function ProductPage({ params }: Props) {
             </div>
 
             {/* Right block: purchase panel */}
-            <div className="flex flex-col rounded-xl bg-slate-50/80 p-5 shadow-md shadow-slate-200 transition-shadow hover:shadow-lg md:p-6">
-              <h1 className="mb-3 text-xl font-semibold text-slate-900 md:text-2xl">
+            <div className="flex flex-col rounded-xl bg-card-bg/85 p-5 shadow-md shadow-text-muted/10 transition-shadow hover:shadow-lg md:p-6">
+              <h1 className="mb-3 text-xl font-semibold text-text-main md:text-2xl">
                 {product.name}
               </h1>
-              <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 md:text-sm">
+              <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-text-muted md:text-sm">
                 <span>
                   Артикул:{" "}
-                  <span className="font-medium text-slate-800">
+                  <span className="font-medium text-text-main">
                     {product.sku || "—"}
                   </span>
                 </span>
                 {product.brand && (
                   <span>
                     • Бренд:{" "}
-                    <span className="font-medium text-slate-800">
+                    <span className="font-medium text-text-main">
                       {product.brand}
                     </span>
                   </span>

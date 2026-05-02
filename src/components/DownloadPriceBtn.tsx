@@ -103,7 +103,7 @@ export default function DownloadPriceBtn() {
         type="button"
         onClick={handleClick}
         disabled={loading}
-        className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#FF8C00] bg-[#FF8C00] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#ff9f26] disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-accent bg-accent px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-hover disabled:opacity-60"
       >
         <svg
           viewBox="0 0 24 24"

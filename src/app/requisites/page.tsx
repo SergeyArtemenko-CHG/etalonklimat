@@ -9,25 +9,25 @@ export default function RequisitesPage() {
     <ContentLayout title="Реквизиты компании">
       <div className="space-y-4 text-sm md:text-base">
         <div>
-          <p className="font-semibold text-slate-900">ООО «ЭТАЛОН ПРОФИ»</p>
+          <p className="font-semibold text-text-main">ООО «ЭТАЛОН ПРОФИ»</p>
         </div>
 
         <div className="space-y-1">
-          <p className="font-semibold text-slate-900">Юридический адрес:</p>
+          <p className="font-semibold text-text-main">Юридический адрес:</p>
           <p>
             111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
           </p>
         </div>
 
         <div className="space-y-1">
-          <p className="font-semibold text-slate-900">Почтовый адрес:</p>
+          <p className="font-semibold text-text-main">Почтовый адрес:</p>
           <p>
             111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
           </p>
         </div>
 
         <div className="space-y-1">
-          <p className="font-semibold text-slate-900">Контакты:</p>
+          <p className="font-semibold text-text-main">Контакты:</p>
           <p>Тел.: +7 925 182 81-79</p>
         </div>
 

@@ -2,7 +2,7 @@
 
 export default function YandexMapCard() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+    <div className="overflow-hidden rounded-2xl border border-text-muted/25 bg-card-bg shadow-lg">
       <div className="relative aspect-[16/9] w-full min-h-[220px] sm:min-h-[260px]">
         <iframe
           title="Офис на Яндекс Картах"
@@ -16,12 +16,12 @@ export default function YandexMapCard() {
           referrerPolicy="no-referrer-when-downgrade"
         />
       </div>
-      <div className="border-t border-slate-200 bg-slate-50/80 px-4 py-3">
+      <div className="border-t border-text-muted/25 bg-card-bg/85 px-4 py-3">
         <a
           href="https://yandex.ru/maps/-/CPFXqI~6"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-xl bg-[#FF8C00] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#ff9f26] focus:outline-none focus:ring-2 focus:ring-[#FF8C00] focus:ring-offset-2 focus:ring-offset-white"
+          className="inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-card-bg"
         >
           <svg
             viewBox="0 0 24 24"

@@ -38,15 +38,15 @@ export default function ProductRequestForm({
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div
-        className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl"
+        className="w-full max-w-md rounded-2xl bg-card-bg p-6 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
+          <h3 className="text-lg font-semibold text-text-main">{title}</h3>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600"
+            className="rounded-lg p-1 text-text-muted transition hover:bg-text-muted/10 hover:text-text-muted"
             aria-label="Закрыть"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -55,11 +55,11 @@ export default function ProductRequestForm({
           </button>
         </div>
 
-        <p className="text-sm leading-relaxed text-slate-700">
+        <p className="text-sm leading-relaxed text-text-main">
           {lead}{" "}
           <Link
             href="/login"
-            className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+            className="font-medium text-primary underline underline-offset-2 hover:text-accent"
             onClick={onClose}
           >
             авторизуйтесь
@@ -67,14 +67,14 @@ export default function ProductRequestForm({
           или свяжитесь с нами по телефону{" "}
           <a
             href={`tel:${PHONE_TEL}`}
-            className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+            className="font-medium text-primary underline underline-offset-2 hover:text-accent"
           >
             {PHONE_DISPLAY}
           </a>{" "}
           или по e-mail{" "}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="font-medium text-[#003366] underline underline-offset-2 hover:text-[#FF8C00]"
+            className="font-medium text-primary underline underline-offset-2 hover:text-accent"
           >
             {CONTACT_EMAIL}
           </a>
@@ -82,7 +82,7 @@ export default function ProductRequestForm({
         </p>
 
         {type === "price" && (
-          <p className="mt-3 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600">
+          <p className="mt-3 rounded-lg bg-text-muted/5 px-3 py-2 text-sm text-text-muted">
             Товар: {productName}
           </p>
         )}
@@ -90,7 +90,7 @@ export default function ProductRequestForm({
         <button
           type="button"
           onClick={onClose}
-          className="mt-6 w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+          className="mt-6 w-full rounded-xl border border-text-muted/25 px-4 py-2.5 text-sm font-medium text-text-main transition hover:bg-text-muted/5"
         >
           Закрыть
         </button>
