@@ -12,6 +12,7 @@ import ToastContainer from "@/components/ToastContainer";
 import AuthSessionProvider from "@/components/AuthSessionProvider";
 import YandexMetrika from "@/components/YandexMetrika";
 import { SITE_THEME_STORAGE_KEY } from "@/lib/site-theme";
+import { getSiteOrigin } from "@/lib/site-url";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://etalon-klimat.ru"),
+  metadataBase: new URL(getSiteOrigin()),
   title: "Эталон Профи — поставка и сервис оборудования",
   description:
     "Профессиональное климатическое оборудование. Скидки до 50% для партнеров, отгрузка со склада в Москве по всей России",

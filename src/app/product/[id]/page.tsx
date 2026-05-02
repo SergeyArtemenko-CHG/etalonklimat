@@ -14,8 +14,7 @@ import ProductImage from "@/components/ProductImage";
 import ProductPageActions from "./ProductPageActions";
 import ProductPriceBlock from "./ProductPriceBlock";
 import PreloadProductImage from "@/components/PreloadProductImage";
-
-const SITE_URL = "https://etalon-klimat.ru";
+import { getSiteOrigin } from "@/lib/site-url";
 
 /** Текст для микроразметки без HTML */
 function toPlainDescription(product: Product): string {
@@ -26,14 +25,24 @@ function toPlainDescription(product: Product): string {
   return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+function truncateMetaDescription(plain: string, max = 160): string {
+  const s = plain.replace(/\s+/g, " ").trim();
+  if (s.length <= max) return s;
+  const slice = s.slice(0, max - 1).trim();
+  const lastSpace = slice.lastIndexOf(" ");
+  const safe = lastSpace > 90 ? slice.slice(0, lastSpace) : slice;
+  return `${safe}…`;
+}
+
 /** Schema.org Product (ld+json) — базовая цена из CSV (priceRub / priceEur) */
 function buildProductJsonLd(product: Product): string {
+  const site = getSiteOrigin();
   const canonicalId = product.sku || product.id;
-  const url = `${SITE_URL}/product/${encodeURIComponent(canonicalId)}`;
+  const url = `${site}/product/${encodeURIComponent(canonicalId)}`;
   const imagePath = product.image?.trim() || "/images/products/no-image.webp";
   const imageUrl = imagePath.startsWith("http")
     ? imagePath
-    : `${SITE_URL}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
+    : `${site}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
 
   const offers: Record<string, unknown> = {
     "@type": "Offer",
@@ -97,25 +106,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Товар не найден" };
   }
 
-  const title = `${product.name} — Купить в ETALON KLIMAT`;
-  const description = `Закажите ${product.name} с доставкой. Специальные цены для партнеров (Статус 1/2/3). В наличии на складе`;
+  const site = getSiteOrigin();
+  const plain = toPlainDescription(product);
+  const title = `${product.name} — арт. ${product.sku} · Эталон Профи`;
+  const description =
+    truncateMetaDescription(plain) ||
+    `${product.name}. Артикул ${product.sku}. Доставка по России; персональные цены и сроки — после входа в кабинет партнёра.`;
 
   const imagePath =
     product.image?.trim() || "/images/products/no-image.webp";
   const ogImageUrl = imagePath.startsWith("http")
     ? imagePath
-    : `${SITE_URL}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
+    : `${site}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
 
   const canonicalId = product.sku || product.id;
+  const canonicalUrl = `${site}/product/${encodeURIComponent(canonicalId)}`;
 
   return {
     title,
     description,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title,
       description,
-      url: `${SITE_URL}/product/${encodeURIComponent(canonicalId)}`,
-      siteName: "ETALON KLIMAT",
+      url: canonicalUrl,
+      siteName: "Эталон Профи",
       locale: "ru_RU",
       type: "website",
       images: [

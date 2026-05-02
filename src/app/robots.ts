@@ -1,13 +1,12 @@
 import type { MetadataRoute } from "next";
-
-/** Канонический домен (совпадает с sitemap.ts и metadataBase в layout.tsx) */
-const BASE = "https://etalon-klimat.ru";
+import { getSiteOrigin } from "@/lib/site-url";
 
 /**
  * Генерация /robots.txt через Metadata API Next.js.
  * Разрешает индексацию публичных страниц для всех поисковых роботов.
  */
 export default function robots(): MetadataRoute.Robots {
+  const base = getSiteOrigin();
   return {
     rules: [
       {
@@ -16,7 +15,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
+    sitemap: `${base}/sitemap.xml`,
+    host: base,
   };
 }
