@@ -42,17 +42,20 @@ export default function TopAuthBar() {
             </div>
           </>
         ) : (
-          <>
-            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-3 md:gap-4">
-              <span className="relative inline-flex shrink-0" aria-hidden>
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-accent shadow-inner shadow-black/10">
+          <div className="flex w-full flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-4">
+            <div className="flex min-w-0 items-start gap-3 md:flex-1 md:items-center md:gap-4">
+              <span
+                className="relative mt-0.5 inline-flex shrink-0 md:mt-0"
+                aria-hidden
+              >
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-accent shadow-inner shadow-black/10 md:h-12 md:w-12">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="h-7 w-7"
+                    className="h-6 w-6 md:h-7 md:w-7"
                   >
                     <path
                       strokeLinecap="round"
@@ -61,11 +64,11 @@ export default function TopAuthBar() {
                     />
                   </svg>
                 </span>
-                <span className="absolute -bottom-px -right-px flex h-[22px] min-w-[22px] items-center justify-center rounded-full border-2 border-auth-bg bg-accent px-1 text-[11px] font-extrabold leading-none text-white shadow-sm">
+                <span className="absolute -bottom-px -right-px flex h-[20px] min-w-[20px] items-center justify-center rounded-full border-2 border-auth-bg bg-accent px-1 text-[10px] font-extrabold leading-none text-white shadow-sm md:h-[22px] md:min-w-[22px] md:text-[11px]">
                   %
                 </span>
               </span>
-              <p className="min-w-0 max-w-3xl flex-1 text-[0.9375rem] font-medium leading-relaxed text-white md:max-w-none md:text-base">
+              <p className="min-w-0 flex-1 text-sm font-medium leading-snug text-white md:text-[0.9375rem] md:leading-relaxed lg:text-base">
                 Войдите, чтобы увидеть цены с Вашей персональной скидкой. Для
                 авторизованных покупателей доступны{" "}
                 <span className="relative inline-block px-1.5">
@@ -87,11 +90,11 @@ export default function TopAuthBar() {
             </div>
             <Link
               href="/login"
-              className="shrink-0 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent-hover"
+              className="w-full shrink-0 rounded-lg bg-accent px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-accent-hover md:w-auto md:py-2"
             >
               Авторизоваться
             </Link>
-          </>
+          </div>
         )}
       </div>
     </div>
