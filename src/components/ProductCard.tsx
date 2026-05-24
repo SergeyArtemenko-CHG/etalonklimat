@@ -25,6 +25,8 @@ type ProductCardProps = {
   partnerDiscount3?: number;
   leadTime?: string;
   imagePriority?: boolean;
+  /** Без скруглений (главная — «Популярные товары») */
+  sharpCorners?: boolean;
 };
 
 function CardImagePlaceholder() {
@@ -73,7 +75,12 @@ export default function ProductCard(props: ProductCardProps) {
     partnerDiscount3,
     leadTime,
     imagePriority = false,
+    sharpCorners = false,
   } = props;
+
+  const cardRound = sharpCorners ? "rounded-none" : "rounded-xl";
+  const innerRound = sharpCorners ? "rounded-none" : "rounded-lg";
+  const btnRound = sharpCorners ? "rounded-none" : "rounded-lg";
 
   const rate = useCurrencyStore((s) => s.rate);
   const [imageError, setImageError] = useState(false);
@@ -134,9 +141,14 @@ export default function ProductCard(props: ProductCardProps) {
     : undefined;
 
   const isPriceOnRequest = !hasRetailPrice && !!leadTime;
+  const showGuestPriceMeta =
+    !isAuthorized &&
+    !isPriceOnRequest &&
+    hasRetailPrice &&
+    inStock;
 
   return (
-    <article className="flex h-full flex-row overflow-hidden rounded-xl bg-card-bg shadow-md shadow-text-muted/10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-text-muted/10 md:flex-col">
+    <article className={`flex h-full flex-row overflow-hidden ${cardRound} bg-card-bg shadow-md shadow-text-muted/10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-text-muted/10 md:flex-col`}>
       <Link
         href={href}
         aria-label={`${name}, артикул ${sku}${inStock ? ", в наличии" : ", под заказ"}`}
@@ -144,7 +156,7 @@ export default function ProductCard(props: ProductCardProps) {
         tabIndex={0}
       >
         <div className="flex shrink-0 items-center justify-center p-2 md:w-full md:p-3">
-          <div className="flex items-center justify-center rounded-lg border border-text-muted/25 bg-card-bg p-1.5 shadow-sm md:p-3">
+          <div className={`flex items-center justify-center ${innerRound} border border-text-muted/25 bg-card-bg p-1.5 shadow-sm md:p-3`}>
             {showImage ? (
               <Image
                 src={imageSrc!}
@@ -231,6 +243,11 @@ export default function ProductCard(props: ProductCardProps) {
                   {formatPrice(priceEur, priceRub, rate)}
                 </span>
               )}
+              {showGuestPriceMeta && (
+                <span className="block text-xs uppercase tracking-[0.16em] text-text-muted">
+                  Цена без скидки
+                </span>
+              )}
               {isAuthorized ? (
                 leadTime && (
                   <p
@@ -264,6 +281,7 @@ export default function ProductCard(props: ProductCardProps) {
             priceEur={priceEur}
             priceRub={priceRub}
             variant="card"
+            sharpCorners={sharpCorners}
           />
         ) : (
           <>
@@ -279,7 +297,7 @@ export default function ProductCard(props: ProductCardProps) {
                   })
                 }
                 aria-label={`Запросить цену на ${name}`}
-                className="w-full rounded-lg bg-accent px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-accent-hover md:py-2"
+                className={`w-full ${btnRound} bg-accent px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-accent-hover md:py-2`}
               >
                 Запросить
               </button>

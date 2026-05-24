@@ -9,8 +9,38 @@ import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
 import TopAuthBar from "@/components/TopAuthBar";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useStickyGuard } from "@/hooks/useStickyGuard";
+
+function CartIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden
+    >
+      <path
+        d="M6 7h14l-1.2 7.2a1 1 0 01-1 .8H8.2a1 1 0 01-1-.8L6 7z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5 7L3.5 4H2"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 19.5a1 1 0 102 0 1 1 0 00-2 0zM16 19.5a1 1 0 102 0 1 1 0 00-2 0z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
 
 function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
   const [failed, setFailed] = useState(false);
@@ -217,17 +247,13 @@ export default function Header() {
   return (
     <header
       ref={headerStickyRef}
-      className={`w-full bg-primary text-white shadow-lg transition-all duration-300 ease-out ${
+      className={`w-full bg-[#005f67] text-white shadow-lg transition-all duration-300 ease-out ${
         isSticky ? "sticky top-0 z-[100]" : "relative z-[100]"
       }`}
     >
-      {/* Top bar — скрываем при скролле, фиксированная высота в развёрнутом виде */}
-      <div
-        className={`border-b border-white/10 bg-primary-hover overflow-hidden transition-[max-height] duration-300 ease-out ${
-          isShrunk ? "max-h-0" : "max-h-[52px]"
-        }`}
-      >
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 text-xs sm:text-sm">
+      {/* Top bar — всегда видима */}
+      <div className="border-b border-white/10 bg-black">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 text-xs sm:text-sm">
           <div className="flex items-center gap-2">
             <span className="text-white/80">Ваш город:</span>
             <button
@@ -242,7 +268,7 @@ export default function Header() {
                 {cityName}
               </span>
             </button>
-            <span className="hidden text-[10px] text-white/80 lg:inline">
+            <span className="hidden text-white/80 lg:inline">
               Доставка по всей России
             </span>
           </div>
@@ -251,43 +277,53 @@ export default function Header() {
               <Link href="/about" className="hover:text-white hidden sm:block">О компании</Link>
               <Link href="/delivery" className="hover:text-white">Доставка</Link>
               <Link href="/contacts" className="hover:text-white">Контакты</Link>
+              <Link href="/login" className="hover:text-white">Личный кабинет</Link>
             </nav>
-            <ThemeSwitcher ringOffsetClassName="ring-offset-primary-hover" />
           </div>
         </div>
       </div>
 
-      {/* Main header — фиксированная высота, чтобы не прыгал при скролле */}
-      <div className="mx-auto max-w-6xl px-4 w-full">
-        <div className="flex flex-col md:flex-row md:items-center gap-3 min-h-[72px] md:min-h-[88px] py-3 md:py-4">
-          {/* Logo */}
-          <div className="mr-4 flex items-center justify-between max-md:pl-3 md:min-w-0 md:mr-6 md:-ml-5">
-            <Link href="/" aria-label="ETALON — перейти на главную" className="flex items-center transition-transform active:scale-95">
-              <img
-                src="/images/Logo/Etalon_LOGO.svg"
-                alt="ETALON"
-                className="h-auto w-24 shrink-0 object-contain object-left md:w-36"
-              />
-            </Link>
-            
-            {/* Мобильная кнопка корзины (появляется только в мобильном ряду логотипа) */}
-            <Link href="/cart" aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`} className="relative p-2 md:hidden">
-                <span className="text-xl">🛒</span>
-                {totalItems > 0 && (
-                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold">
-                    {totalItems}
-                  </span>
-                )}
-            </Link>
-          </div>
+      {/* Main header — логотип у левого края; при скролле плавно компактнее */}
+      <div
+        className={`header-main-row flex w-full flex-col md:flex-row md:items-stretch ${
+          isShrunk ? "is-shrunk" : ""
+        }`}
+      >
+        <div className="header-logo-strip flex shrink-0 items-center justify-between self-stretch border-l border-white/45 pl-6 pr-4 md:pl-8 md:pr-5">
+          <Link
+            href="/"
+            aria-label="ETALON — перейти на главную"
+            className="header-logo-slot transition-transform duration-300 ease-out active:scale-95"
+          >
+            <img
+              src="/images/Logo/Etalon_LOGO.svg"
+              alt="ETALON"
+              className="header-logo-img h-auto shrink-0 object-contain object-left"
+            />
+          </Link>
 
+          <Link
+            href="/cart"
+            aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`}
+            className="relative p-2 md:hidden"
+          >
+            <CartIcon className="h-6 w-6 text-white" />
+            {totalItems > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold">
+                {totalItems}
+              </span>
+            )}
+          </Link>
+        </div>
+
+        <div className="header-main-inner mx-auto flex w-full min-w-0 max-w-6xl flex-1 flex-col gap-3 px-4 md:flex-row md:items-center">
           {/* Catalog + Search */}
-          <div ref={containerRef} className="flex flex-1 items-center gap-2 md:gap-4 h-full">
+          <div ref={containerRef} className="flex h-full flex-1 items-center gap-2 md:gap-4">
             <button
               onClick={() => setCatalogOpen(!catalogOpen)}
               aria-label={catalogOpen ? "Закрыть каталог" : "Открыть каталог"}
               aria-expanded={catalogOpen}
-              className="group flex h-10 items-center gap-2 rounded-lg bg-accent px-3 text-sm font-bold text-white transition-all hover:bg-accent-hover active:scale-95 md:h-12 md:px-6"
+              className="group flex h-11 shrink-0 items-center gap-2 rounded-none border border-white bg-[#005f67] px-3 text-sm font-bold text-white transition-[background-color] duration-300 ease-out hover:bg-[#004a51] active:scale-[0.98] md:h-[3.25rem] md:px-6"
             >
               <div className="flex flex-col gap-1">
                 <span className={`h-0.5 w-4 bg-white transition-all ${catalogOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
@@ -297,7 +333,7 @@ export default function Header() {
               <span className="hidden md:block">Каталог</span>
             </button>
 
-            <div className="relative flex flex-1 items-center rounded-lg bg-card-bg shadow-inner focus-within:ring-2 focus-within:ring-accent/50">
+            <div className="relative flex flex-1 items-center rounded-none bg-card-bg shadow-inner focus-within:ring-2 focus-within:ring-white/40">
               <label htmlFor="header-search" className="sr-only">
                 Поиск по артикулу или названию товара
               </label>
@@ -322,7 +358,7 @@ export default function Header() {
                     setOpen(false);
                   }
                 }}
-                className="h-10 w-full bg-transparent px-3 text-sm text-text-main focus:outline-none md:h-12 md:px-4"
+                className="h-11 w-full bg-transparent px-3 text-sm text-text-main focus:outline-none md:h-[3.25rem] md:px-4"
               />
               
               {/* Dropdown Results */}
@@ -348,14 +384,16 @@ export default function Header() {
           </div>
 
           {/* Desktop Cart */}
-          <Link href="/cart" aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`} className="hidden md:flex items-center gap-3 rounded-xl bg-white/10 p-2 pl-4 transition hover:bg-white/20">
+          <Link
+            href="/cart"
+            aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`}
+            className="hidden h-11 shrink-0 items-center gap-3 rounded-none border border-white bg-[#005f67] px-4 transition-[background-color] duration-300 ease-out hover:bg-[#004a51] md:flex md:h-[3.25rem] md:pl-5 md:pr-4"
+          >
             <div className="text-right">
               <p className="text-[10px] uppercase tracking-wider text-white/80">Корзина</p>
-              <p className="text-sm font-bold">{totalItems} тов.</p>
+              <p className="text-sm font-bold text-white">{totalItems} тов.</p>
             </div>
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-              <span className="text-xl">🛒</span>
-            </div>
+            <CartIcon className="h-6 w-6 shrink-0 text-white" />
           </Link>
         </div>
       </div>
@@ -373,9 +411,9 @@ export default function Header() {
           />
           <div
             ref={catalogRef}
-            className="absolute left-0 top-full z-50 w-full border-t border-white/10 bg-primary p-6 shadow-2xl"
+            className="absolute left-0 top-full z-50 w-full border-t border-text-muted/15 bg-card-bg px-6 py-8 shadow-2xl md:py-9"
           >
-            <div className="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4 relative">
+            <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-x-10 gap-y-5 md:grid-cols-4 md:gap-x-12 md:gap-y-6">
               {categories.map((cat) => (
                 <Link
                   key={cat.slug}
@@ -384,10 +422,9 @@ export default function Header() {
                     setCatalogOpen(false);
                     setQuery("");
                   }}
-                  className="group flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-all cursor-pointer"
+                  className="catalog-category-link w-fit text-sm font-medium"
                 >
-                  <span className="h-2 w-2 rounded-full bg-accent transition-transform group-hover:scale-150" />
-                  <span className="text-sm font-medium text-white">{cat.name}</span>
+                  {cat.name}
                 </Link>
               ))}
             </div>

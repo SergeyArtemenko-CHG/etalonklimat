@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
+import RetailPriceLabel from "@/components/RetailPriceLabel";
 import { products } from "@/data/products";
 
 const CartCheckoutSection = dynamic(() => import("./CartCheckoutSection"), {
@@ -189,7 +190,7 @@ export default function CartPage() {
                           +
                         </button>
                       </div>
-                      <span className="text-base font-semibold text-text-main">
+                      <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-base font-semibold text-text-main">
                         {(() => {
                           const finalRub = calcItemFinalRub(
                             item.id,
@@ -212,6 +213,12 @@ export default function CartPage() {
                             rate
                           );
                         })()}
+                        <RetailPriceLabel
+                          show={
+                            !isAuthorized &&
+                            calcItemFinalRub(item.id, item.priceRub, item.priceEur) != null
+                          }
+                        />
                       </span>
                       <button
                         type="button"
@@ -232,6 +239,7 @@ export default function CartPage() {
                 orderNumber={orderNumber}
                 error={error}
                 totalPriceFormatted={totalPriceFormatted}
+                showRetailPriceLabel={!isAuthorized && totalPriceRub > 0}
                 loading={loading}
                 onSubmit={async () => {
                   setError(null);

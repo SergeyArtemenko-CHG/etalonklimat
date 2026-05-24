@@ -2,7 +2,6 @@
 
 import { useSession } from "next-auth/react";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
-
 type Props = {
   priceEur?: number;
   priceRub?: number;
@@ -64,7 +63,7 @@ export default function ProductPriceBlock({
       ) : isPriceOnRequest ? (
         <p className="text-lg font-semibold text-text-main">Цена по запросу</p>
       ) : finalRub != null ? (
-        <div className="flex flex-wrap items-baseline gap-3">
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <p className="text-3xl font-semibold tracking-tight text-text-main md:text-4xl">
             {finalRub.toLocaleString("ru-RU")} ₽
           </p>
@@ -84,7 +83,9 @@ export default function ProductPriceBlock({
       )}
 
       <span className="block text-xs uppercase tracking-[0.16em] text-text-muted">
-        Цена с НДС
+        {!isAuthorized && showPrice && !isPriceOnRequest && finalRub != null
+          ? "Цена без скидки с НДС"
+          : "Цена с НДС"}
       </span>
 
       {isAuthorized ? (

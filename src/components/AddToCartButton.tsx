@@ -12,6 +12,7 @@ type AddToCartButtonProps = {
   priceRub?: number;
   quantity?: number;
   variant?: "card" | "page";
+  sharpCorners?: boolean;
 };
 
 export default function AddToCartButton({
@@ -23,6 +24,7 @@ export default function AddToCartButton({
   priceRub,
   quantity = 1,
   variant = "card",
+  sharpCorners = false,
 }: AddToCartButtonProps) {
   const addItem = useCartStore((s) => s.addItem);
   const addToast = useToastStore((s) => s.addToast);
@@ -32,8 +34,9 @@ export default function AddToCartButton({
     addToast(`Товар «${name}» добавлен в корзину`);
   };
 
-  const baseCard =
-    "flex items-center justify-center rounded-lg bg-accent text-white font-semibold shadow-md transition hover:bg-accent-hover hover:shadow-lg";
+  const baseCard = `flex items-center justify-center ${
+    sharpCorners ? "rounded-none" : "rounded-lg"
+  } bg-accent text-white font-semibold shadow-md transition hover:bg-accent-hover hover:shadow-lg`;
   const basePage =
     "rounded-xl bg-accent text-white font-semibold uppercase tracking-[0.12em] shadow-md transition hover:bg-accent-hover hover:shadow-lg";
 

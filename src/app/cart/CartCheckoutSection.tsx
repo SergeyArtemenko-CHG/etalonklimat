@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import RetailPriceLabel from "@/components/RetailPriceLabel";
 
 const CALLBACK_PHONE_DISPLAY = "+7 (499) 398-01-40";
 const CALLBACK_PHONE_TEL = "+74993980140";
@@ -10,6 +11,7 @@ type Props = {
   orderNumber: string | null;
   error: string | null;
   totalPriceFormatted: string;
+  showRetailPriceLabel?: boolean;
   loading: boolean;
   onSubmit: () => Promise<void>;
 };
@@ -19,6 +21,7 @@ export default function CartCheckoutSection({
   orderNumber,
   error,
   totalPriceFormatted,
+  showRetailPriceLabel = false,
   loading,
   onSubmit,
 }: Props) {
@@ -56,8 +59,11 @@ export default function CartCheckoutSection({
       ) : (
         <div className="flex flex-col gap-4 rounded-xl border border-text-muted/25 bg-card-bg p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-lg font-bold text-text-main">
-              Итого: {totalPriceFormatted}
+            <p className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-lg font-bold text-text-main">
+              <span>
+                Итого: {totalPriceFormatted}
+              </span>
+              <RetailPriceLabel show={showRetailPriceLabel} />
             </p>
             <p className="mt-1 text-xs text-text-muted">
               После оформления вы получите номер заказа и инструкцию по подтверждению по телефону.
