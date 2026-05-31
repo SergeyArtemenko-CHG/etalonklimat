@@ -1,3 +1,4 @@
+import BrandFbrIntro from "@/components/BrandFbrIntro";
 import ContentLayout from "@/components/ContentLayout";
 import BrandPageCatalog from "@/components/BrandPageCatalog";
 import {
@@ -5,6 +6,7 @@ import {
   getFeaturedBrandBySlug,
   type FeaturedBrand,
 } from "@/data/brands";
+import { getBrandSeoOverride } from "@/data/brand-page-seo";
 import { products } from "@/data/products";
 import { productBrandMatchesFeatured } from "@/lib/featured-brand-products";
 import type { Metadata } from "next";
@@ -27,6 +29,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!brand) {
     return { title: "Бренд — Эталон Профи" };
   }
+
+  const seo = getBrandSeoOverride(slug);
+  if (seo) {
+    return {
+      title: seo.metadataTitle,
+      description: seo.metadataDescription,
+    };
+  }
+
   const plain = brand.description.replace(/\s+/g, " ").trim();
   const description =
     plain.length > 160 ? `${plain.slice(0, 157)}…` : plain || undefined;
@@ -40,6 +51,9 @@ export default async function BrandPage({ params }: Props) {
   const { slug } = await params;
   const brand = getFeaturedBrandBySlug(slug);
   if (!brand) notFound();
+
+  const seo = getBrandSeoOverride(slug);
+  const pageTitle = seo?.h1 ?? brandPageHeading(brand);
 
   const paragraphs = brand.description
     .split(/\n\s*\n/)
@@ -58,7 +72,7 @@ export default async function BrandPage({ params }: Props) {
 
   return (
     <ContentLayout
-      title={brandPageHeading(brand)}
+      title={pageTitle}
       afterCard={
         <section
           className="border-t border-text-muted/20 pt-8"
@@ -94,7 +108,9 @@ export default async function BrandPage({ params }: Props) {
           />
         </div>
         <div className="min-w-0 flex-1 space-y-3 text-text-main">
-          {paragraphs.length > 0 ? (
+          {brand.slug === "fbr" ? (
+            <BrandFbrIntro />
+          ) : paragraphs.length > 0 ? (
             paragraphs.map((block, i) => (
               <p key={i} className="whitespace-pre-line">
                 {block}
