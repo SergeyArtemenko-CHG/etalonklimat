@@ -6,7 +6,6 @@ import {
   getFeaturedBrandBySlug,
   type FeaturedBrand,
 } from "@/data/brands";
-import { getBrandSeoOverride } from "@/data/brand-page-seo";
 import { products } from "@/data/products";
 import { productBrandMatchesFeatured } from "@/lib/featured-brand-products";
 import type { Metadata } from "next";
@@ -25,17 +24,18 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+
+  if (slug === "fbr") {
+    return {
+      title: "Купить промышленные горелки FBR: цены в интернет-магазине ЭТАЛОН",
+      description:
+        "Предлагаем купить оригинальные горелки FBR (газовые, дизельные, комбинированные) по выгодным ценам в Москве. Подбор оборудования под ваши задачи, всё в наличии!",
+    };
+  }
+
   const brand = getFeaturedBrandBySlug(slug);
   if (!brand) {
     return { title: "Бренд — Эталон Профи" };
-  }
-
-  const seo = getBrandSeoOverride(slug);
-  if (seo) {
-    return {
-      title: seo.metadataTitle,
-      description: seo.metadataDescription,
-    };
   }
 
   const plain = brand.description.replace(/\s+/g, " ").trim();
@@ -52,8 +52,10 @@ export default async function BrandPage({ params }: Props) {
   const brand = getFeaturedBrandBySlug(slug);
   if (!brand) notFound();
 
-  const seo = getBrandSeoOverride(slug);
-  const pageTitle = seo?.h1 ?? brandPageHeading(brand);
+  const pageTitle =
+    slug === "fbr"
+      ? "Газовые, дизельные и комбинированные горелки FBR"
+      : brandPageHeading(brand);
 
   const paragraphs = brand.description
     .split(/\n\s*\n/)
