@@ -5,6 +5,8 @@ import { useState, useRef, useEffect } from "react";
 const STORAGE_KEY = "chat_widget_messages";
 const SESSION_STORAGE_KEY = "chat_widget_session_id";
 const LEGACY_SESSION_STORAGE_KEY = "chat_widget_session";
+const POLL_INTERVAL_MS = 5000;
+const MAX_STORED_MESSAGES = 80;
 
 type Message = { role: "client" | "max"; text: string; id: string };
 
@@ -22,9 +24,12 @@ function loadMessages(): Message[] {
     const parsed = JSON.parse(raw);
     const arr = Array.isArray(parsed) ? parsed : [];
     // Миграция: обновить старое приветствие на актуальный текст
-    return arr.map((m: Message) =>
+    const migrated = arr.map((m: Message) =>
       m.id === "welcome" ? { ...m, text: WELCOME_MSG.text } : m
     );
+    return migrated.length > MAX_STORED_MESSAGES
+      ? migrated.slice(-MAX_STORED_MESSAGES)
+      : migrated;
   } catch {
     return [];
   }
@@ -33,7 +38,11 @@ function loadMessages(): Message[] {
 function saveMessages(messages: Message[]) {
   if (typeof window === "undefined") return;
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+    const trimmed =
+      messages.length > MAX_STORED_MESSAGES
+        ? messages.slice(-MAX_STORED_MESSAGES)
+        : messages;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
   } catch {}
 }
 
@@ -50,7 +59,6 @@ function getSessionId(): string {
       const migrated = legacy.trim();
       localStorage.setItem(SESSION_STORAGE_KEY, migrated);
       localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
-      console.log("SESSION_ID_SAVED:", migrated);
       return migrated;
     }
 
@@ -58,7 +66,6 @@ function getSessionId(): string {
     if (stored && (stored || "").trim()) return stored.trim();
     const newId = `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
     localStorage.setItem(SESSION_STORAGE_KEY, newId);
-    console.log("SESSION_ID_SAVED:", newId);
     return newId;
   } catch {
     return `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
@@ -91,9 +98,9 @@ export default function FloatingContactBtn() {
   const [sessionId, setSessionId] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const lastReplyIdxRef = useRef(0);
   const messagesRef = useRef<Message[]>([]);
   const sessionIdRef = useRef<string>("");
+  const pollActiveRef = useRef(false);
 
   useEffect(() => {
     const sid = getSessionId();
@@ -155,26 +162,32 @@ export default function FloatingContactBtn() {
   }, [sessionId]);
 
   useEffect(() => {
+    if (!isOpen) return;
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, isOpen]);
+
+  // Опрос ответов — только когда чат открыт или ждём ответ менеджера
+  const shouldPoll = isOpen || isTyping || isSending;
 
   useEffect(() => {
+    if (!shouldPoll) {
+      pollActiveRef.current = false;
+      return;
+    }
+
     const sid = (sessionId || "").trim() || (sessionIdRef.current || "").trim();
     if (!sid) return;
 
+    pollActiveRef.current = true;
+
     const fetchReplies = async () => {
+      if (!pollActiveRef.current) return;
+
       const currentSession = (sessionIdRef.current || sessionId || "").trim();
       if (!currentSession) return;
-      console.log(
-        "Poll cycle:",
-        new Date().toLocaleTimeString(),
-        "Messages count:",
-        messagesRef.current.length
-      );
-      console.log("Fetching for ID:", currentSession);
+
       try {
-        const url = "/api/chat-replies?t=" + Date.now();
-        const res = await fetch(url, {
+        const res = await fetch("/api/chat-replies?t=" + Date.now(), {
           method: "POST",
           cache: "no-store",
           headers: {
@@ -185,19 +198,29 @@ export default function FloatingContactBtn() {
           body: JSON.stringify({ sessionId: currentSession, _t: Date.now() }),
         });
         const raw = await res.text();
-        if (!res.ok) return;
-        let data: any = { replies: [] };
+        if (!res.ok || !pollActiveRef.current) return;
+
+        let data: { replies?: { text?: string }[]; typing?: boolean; status?: string } = {
+          replies: [],
+        };
         try {
           data = JSON.parse(raw);
         } catch {
           return;
         }
+
         const replies = Array.isArray(data.replies) ? data.replies : [];
-        // Показываем typing только при ответе сервера: typing или статус «в процессе»
-        const serverTyping = data.typing === true || data.status === "typing" || data.status === "pending";
-        if (serverTyping) setIsTyping(true);
+        const serverTyping =
+          data.typing === true ||
+          data.status === "typing" ||
+          data.status === "pending";
+
+        if (serverTyping) {
+          setIsTyping((prev) => (prev ? prev : true));
+        }
+
         if (replies.length) {
-          const newReplies: Message[] = replies.map((r: { text?: string }) => {
+          const newReplies: Message[] = replies.map((r) => {
             let text = (r?.text ?? "").toString();
             try {
               text = decodeURIComponent(text);
@@ -210,25 +233,37 @@ export default function FloatingContactBtn() {
               id: "r-" + Math.random().toString(36).slice(2),
             };
           });
+
           setMessages((prev) => {
             const safePrev = Array.isArray(prev) ? prev : [];
-            const next = [...safePrev, ...newReplies];
-            saveMessages(next); // сохраняем сразу, чтобы не потерять при возможном remount
+            const deduped = newReplies.filter(
+              (nr) =>
+                !safePrev.some(
+                  (p) => p.role === "max" && p.text.trim() === nr.text.trim()
+                )
+            );
+            if (deduped.length === 0) return safePrev;
+            const next = [...safePrev, ...deduped];
+            saveMessages(next);
             return next;
           });
           setIsTyping(false);
         } else if (!serverTyping) {
-          setIsTyping(false);
+          setIsTyping((prev) => (prev ? false : prev));
         }
       } catch {
-        setIsTyping(false);
+        setIsTyping((prev) => (prev ? false : prev));
       }
     };
 
-    const id = setInterval(fetchReplies, 3000);
-    fetchReplies();
-    return () => clearInterval(id);
-  }, [sessionId]);
+    void fetchReplies();
+    const id = window.setInterval(fetchReplies, POLL_INTERVAL_MS);
+
+    return () => {
+      pollActiveRef.current = false;
+      window.clearInterval(id);
+    };
+  }, [sessionId, shouldPoll]);
 
   const handleSend = async () => {
     const text = input.trim();
@@ -237,10 +272,10 @@ export default function FloatingContactBtn() {
     const clientMsg: Message = { role: "client", text, id: genId() };
     setMessages((prev) => [...prev, clientMsg]);
     setIsSending(true);
+    setIsTyping(true);
 
     try {
       const sid = (sessionId || "").trim() || getSessionId();
-      console.log("SENDING WITH ID:", sid);
       const res = await fetch("/api/contact-message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

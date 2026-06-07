@@ -40,7 +40,9 @@ export default function BrandPageCatalog({
     resetFilters();
     setBrands([...presetBrandKeys]);
     prevRef.current = { slug, presetKey };
-  }, [slug, presetKey, presetBrandKeys, resetFilters, setBrands]);
+    // presetBrandKeys стабилен при неизменном presetKey; resetFilters/setBrands — стабильные экшены zustand
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug, presetKey]);
 
   const safeProducts = products ?? [];
 
