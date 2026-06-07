@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { products, categories } from "@/data/products";
 import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
@@ -92,28 +92,27 @@ export default function Header() {
   const totalItems = useCartStore((s) => s.getTotalItems());
   const rate = useCurrencyStore((s) => s.rate);
 
-  console.log("Categories for animation:", categories?.length);
-
   const trimmed = query.trim().toLowerCase();
+  const results = useMemo(() => {
+    if (trimmed.length < 2) return [];
+    return products
+      .filter(
+        (p) =>
+          p.name.toLowerCase().includes(trimmed) ||
+          p.sku.toLowerCase().includes(trimmed) ||
+          (p.description?.toLowerCase().includes(trimmed) ?? false)
+      )
+      .sort((a, b) => {
+        const asku = a.sku.toLowerCase();
+        const bsku = b.sku.toLowerCase();
+        const aStarts = asku.startsWith(trimmed) ? 0 : asku.includes(trimmed) ? 1 : 2;
+        const bStarts = bsku.startsWith(trimmed) ? 0 : bsku.includes(trimmed) ? 1 : 2;
+        if (aStarts !== bStarts) return aStarts - bStarts;
+        return 0;
+      })
+      .slice(0, 8);
+  }, [trimmed]);
   const showDropdown = trimmed.length >= 2;
-  const results = showDropdown
-    ? products
-        .filter(
-          (p) =>
-            p.name.toLowerCase().includes(trimmed) ||
-            p.sku.toLowerCase().includes(trimmed) ||
-            (p.description?.toLowerCase().includes(trimmed) ?? false)
-        )
-        .sort((a, b) => {
-          const asku = a.sku.toLowerCase();
-          const bsku = b.sku.toLowerCase();
-          const aStarts = asku.startsWith(trimmed) ? 0 : asku.includes(trimmed) ? 1 : 2;
-          const bStarts = bsku.startsWith(trimmed) ? 0 : bsku.includes(trimmed) ? 1 : 2;
-          if (aStarts !== bStarts) return aStarts - bStarts;
-          return 0;
-        })
-        .slice(0, 8)
-    : [];
 
   const handleClickOutside = useCallback((e: MouseEvent) => {
     const target = e.target as Node;

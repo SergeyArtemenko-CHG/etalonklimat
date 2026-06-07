@@ -14,6 +14,8 @@ import { specFieldMeta, specFieldOrder, type Product } from "@/data/products";
 
 type SidebarProps = {
   products?: Product[];
+  /** Страница бренда: бренд уже зафиксирован фильтром */
+  hideBrandFilter?: boolean;
 };
 
 function toLogSlider(value: number, min: number, max: number): number {
@@ -34,7 +36,7 @@ function fromLogSlider(slider: number, min: number, max: number): number {
   return Number(Math.exp(minLog + t * (maxLog - minLog)).toFixed(3));
 }
 
-export default function Sidebar({ products = [] }: SidebarProps) {
+export default function Sidebar({ products = [], hideBrandFilter = false }: SidebarProps) {
   const [mounted, setMounted] = useState(false);
   const safeProducts = products ?? [];
 
@@ -146,7 +148,7 @@ export default function Sidebar({ products = [] }: SidebarProps) {
           <span className="text-sm font-medium text-white/90">В наличии</span>
         </label>
 
-        {brandOptions.length > 0 && (
+        {!hideBrandFilter && brandOptions.length > 0 && (
           <div>
             <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
               Бренд

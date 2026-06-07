@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
@@ -27,6 +27,8 @@ type ProductCardProps = {
   imagePriority?: boolean;
   /** Без скруглений (главная — «Популярные товары») */
   sharpCorners?: boolean;
+  /** Каталог бренда/категории: без hover-анимаций, меньше нагрузки на главный поток */
+  catalogLite?: boolean;
 };
 
 function CardImagePlaceholder() {
@@ -58,7 +60,7 @@ function CardImagePlaceholder() {
   );
 }
 
-export default function ProductCard(props: ProductCardProps) {
+function ProductCard(props: ProductCardProps) {
   const {
     id,
     name,
@@ -76,9 +78,13 @@ export default function ProductCard(props: ProductCardProps) {
     leadTime,
     imagePriority = false,
     sharpCorners = false,
+    catalogLite = false,
   } = props;
 
   const cardRound = sharpCorners ? "rounded-none" : "rounded-xl";
+  const cardMotionClass = catalogLite
+    ? ""
+    : "transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-text-muted/10";
   const innerRound = sharpCorners ? "rounded-none" : "rounded-lg";
   const btnRound = sharpCorners ? "rounded-none" : "rounded-lg";
 
@@ -91,7 +97,6 @@ export default function ProductCard(props: ProductCardProps) {
   const showImage = imageSrc && !imageError;
 
   const handleImageError = () => {
-    console.error("Ошибка загрузки:", imageSrc);
     setImageError(true);
   };
 
@@ -148,7 +153,7 @@ export default function ProductCard(props: ProductCardProps) {
     inStock;
 
   return (
-    <article className={`flex h-full flex-row overflow-hidden ${cardRound} bg-card-bg shadow-md shadow-text-muted/10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-text-muted/10 md:flex-col`}>
+    <article className={`flex h-full flex-row overflow-hidden ${cardRound} bg-card-bg shadow-md shadow-text-muted/10 md:flex-col ${cardMotionClass}`}>
       <Link
         href={href}
         aria-label={`${name}, артикул ${sku}${inStock ? ", в наличии" : ", под заказ"}`}
@@ -310,3 +315,5 @@ export default function ProductCard(props: ProductCardProps) {
     </article>
   );
 }
+
+export default memo(ProductCard);
