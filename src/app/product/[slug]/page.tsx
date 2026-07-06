@@ -7,7 +7,7 @@ import ProductTabs from "@/components/ProductTabs";
 import type { Product } from "@/data/products";
 import {
   getCategoryBySlug,
-  getProductById,
+  getProductBySlug,
   products,
 } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
@@ -15,8 +15,11 @@ import ProductPageActions from "./ProductPageActions";
 import ProductPriceBlock from "./ProductPriceBlock";
 import PreloadProductImage from "@/components/PreloadProductImage";
 import { getSiteOrigin } from "@/lib/site-url";
+import {
+  getProductPlaceholderImageUrl,
+  productImageAlt,
+} from "@/lib/product-url";
 
-/** Текст для микроразметки без HTML */
 function toPlainDescription(product: Product): string {
   const raw =
     product.longDescription?.trim() ||
@@ -34,12 +37,11 @@ function truncateMetaDescription(plain: string, max = 160): string {
   return `${safe}…`;
 }
 
-/** Schema.org Product (ld+json) — базовая цена из CSV (priceRub / priceEur) */
 function buildProductJsonLd(product: Product): string {
   const site = getSiteOrigin();
-  const canonicalId = product.sku || product.id;
-  const url = `${site}/product/${encodeURIComponent(canonicalId)}`;
-  const imagePath = product.image?.trim() || "/images/products/no-image.webp";
+  const url = `${site}/product/${encodeURIComponent(product.slug)}`;
+  const imagePath =
+    product.image?.trim() || getProductPlaceholderImageUrl(product.sku);
   const imageUrl = imagePath.startsWith("http")
     ? imagePath
     : `${site}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
@@ -85,22 +87,16 @@ export const revalidate = false;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return products
-    .filter((p) => !!p.sku)
-    .map((p) => ({ id: p.sku }));
+  return products.map((p) => ({ slug: p.slug }));
 }
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 };
 
-/**
- * Метаданные по товару: данные совпадают с Nomenclature.csv (см. generate-products-from-csv → products.ts).
- * Поиск по params.id (артикул/slug) через getProductById.
- */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
-  const product = getProductById(id);
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
 
   if (!product) {
     return { title: "Товар не найден" };
@@ -114,13 +110,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `${product.name}. Артикул ${product.sku}. Доставка по России; персональные цены и сроки — после входа в кабинет партнёра.`;
 
   const imagePath =
-    product.image?.trim() || "/images/products/no-image.webp";
+    product.image?.trim() || getProductPlaceholderImageUrl(product.sku);
   const ogImageUrl = imagePath.startsWith("http")
     ? imagePath
     : `${site}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
 
-  const canonicalId = product.sku || product.id;
-  const canonicalUrl = `${site}/product/${encodeURIComponent(canonicalId)}`;
+  const canonicalUrl = `${site}/product/${encodeURIComponent(product.slug)}`;
 
   return {
     title,
@@ -136,7 +131,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: ogImageUrl,
-          alt: product.name,
+          alt: productImageAlt(product.name),
         },
       ],
     },
@@ -150,8 +145,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProductPage({ params }: Props) {
-  const { id } = await params;
-  const product = getProductById(id);
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();
@@ -170,7 +165,6 @@ export default async function ProductPage({ params }: Props) {
       <Header />
       <main className="mx-auto max-w-6xl px-4 py-6 md:py-8">
         <div className="rounded-2xl bg-card-bg p-4 shadow-md shadow-text-muted/8 md:p-6">
-          {/* Breadcrumbs */}
           <nav className="mb-6 text-sm text-text-muted">
             <Link href="/" className="hover:text-primary">
               Главная
@@ -190,28 +184,22 @@ export default async function ProductPage({ params }: Props) {
             <span className="text-primary">{product.name}</span>
           </nav>
 
-          {/* Main block: image + info */}
           <div className="mb-8 grid gap-6 md:grid-cols-[minmax(0,1.1fr),minmax(360px,0.9fr)]">
-            {/* Photo area */}
             <div>
               <div className="flex justify-center">
                 <div className="flex aspect-[4/3] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-lg border border-text-muted/25 bg-gradient-to-br from-main-bg to-text-muted/15 shadow-inner">
                   <ProductImage
                     src={product.image}
                     alt={product.name}
+                    productKey={product.sku}
                     className="h-full w-full object-contain"
                     fallbackToPlaceholder
                   />
                 </div>
               </div>
-              {/* Дополнительная галерея (если появятся картинки) */}
-              <div className="mt-4 flex gap-3 overflow-x-auto">
-                {/* Здесь в будущем можно отрисовывать доп. изображения */}
-              </div>
             </div>
 
-            {/* Right block: purchase panel */}
-            <div className="flex flex-col rounded-xl bg-card-bg/85 p-5 shadow-md shadow-text-muted/10 transition-shadow hover:shadow-lg md:p-6">
+            <div className="flex flex-col rounded-xl bg-card-bg/85 p-5 shadow-md shadow-text-muted/10 md:p-6">
               <h1 className="mb-3 text-xl font-semibold text-text-main md:text-2xl">
                 {product.name}
               </h1>
@@ -278,7 +266,6 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </div>
 
-          {/* Tabs */}
           <ProductTabs
             longDescription={product.longDescription}
             description={product.description}

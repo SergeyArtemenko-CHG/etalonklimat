@@ -53,7 +53,6 @@ export default function ProductPriceBlock({
     : undefined;
 
   const isPriceOnRequest = !hasRetailPrice && !!leadTime;
-  // Цены товаров "под заказ" показываем только авторизованным
   const showPrice = inStock || isAuthorized;
 
   return (
@@ -107,4 +106,3 @@ export default function ProductPriceBlock({
     </div>
   );
 }
-

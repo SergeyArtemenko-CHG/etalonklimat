@@ -65,6 +65,7 @@ export default function Home() {
                   key={product.id}
                   sharpCorners
                   id={product.id}
+                  slug={product.slug}
                   name={product.name}
                   sku={product.sku}
                   priceEur={product.priceEur}

@@ -8,11 +8,17 @@ import AddToCartButton from "./AddToCartButton";
 import { formatPrice } from "@/utils/currency";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { useProductRequestStore } from "@/store/productRequest";
+import {
+  getProductHref,
+  productImageAlt,
+  resolveProductImageSrc,
+} from "@/lib/product-url";
 
 type ProductCardProps = {
   id: string;
   name: string;
   sku: string;
+  slug?: string;
   priceEur?: number;
   priceRub?: number;
   description?: string;
@@ -31,40 +37,12 @@ type ProductCardProps = {
   catalogLite?: boolean;
 };
 
-function CardImagePlaceholder() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className="h-12 w-12 text-text-muted"
-    >
-      <rect
-        x="3"
-        y="6"
-        width="18"
-        height="11"
-        rx="2"
-        className="fill-none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M3 14h18"
-        className="fill-none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <circle cx="9" cy="10" r="1.2" fill="currentColor" />
-      <circle cx="13" cy="10" r="1.2" fill="currentColor" />
-    </svg>
-  );
-}
-
 function ProductCard(props: ProductCardProps) {
   const {
     id,
     name,
     sku,
+    slug,
     priceEur,
     priceRub,
     description,
@@ -92,9 +70,10 @@ function ProductCard(props: ProductCardProps) {
   const [imageError, setImageError] = useState(false);
   const openRequestModal = useProductRequestStore((s) => s.open);
   const { data: session } = useSession();
-  const href = `/product/${id}`;
-  const imageSrc = image?.trim() || undefined;
-  const showImage = imageSrc && !imageError;
+  const href = getProductHref({ id, sku, name, slug });
+  const usePlaceholder = !image?.trim() || imageError;
+  const displayImageSrc = resolveProductImageSrc(image, sku, usePlaceholder);
+  const imageAlt = productImageAlt(name);
 
   const handleImageError = () => {
     setImageError(true);
@@ -162,20 +141,16 @@ function ProductCard(props: ProductCardProps) {
       >
         <div className="flex shrink-0 items-center justify-center p-2 md:w-full md:p-3">
           <div className={`flex items-center justify-center ${innerRound} border border-text-muted/25 bg-card-bg p-1.5 shadow-sm md:p-3`}>
-            {showImage ? (
-              <Image
-                src={imageSrc!}
-                alt={name}
-                width={240}
-                height={180}
-                sizes="(max-width: 768px) 80px, 240px"
-                className="h-20 w-20 object-contain md:h-32 md:w-full"
-                onError={handleImageError}
-                priority={imagePriority}
-              />
-            ) : (
-              <CardImagePlaceholder />
-            )}
+            <Image
+              src={displayImageSrc}
+              alt={imageAlt}
+              width={240}
+              height={180}
+              sizes="(max-width: 768px) 80px, 240px"
+              className="h-20 w-20 object-contain md:h-32 md:w-full"
+              onError={handleImageError}
+              priority={imagePriority}
+            />
           </div>
         </div>
         <div className="flex min-w-0 flex-1 flex-col gap-1.5 md:px-4 md:pb-4 md:pt-3">

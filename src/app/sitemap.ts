@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 import { products, categories } from "@/data/products";
 import { getSiteOrigin } from "@/lib/site-url";
 
-/** Сегмент URL товара: совпадает с generateStaticParams (id = sku). */
+/** Сегмент URL товара: совпадает с generateStaticParams (ЧПУ slug). */
 function productPathSegment(p: (typeof products)[number]): string {
-  const seg = (p.sku && String(p.sku).trim()) || p.id;
+  const seg = (p.slug && String(p.slug).trim()) || p.sku || p.id;
   return encodeURIComponent(seg);
 }
 

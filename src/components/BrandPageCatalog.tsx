@@ -123,6 +123,7 @@ export default function BrandPageCatalog({
                     key={product.id}
                     catalogLite
                     id={product.id}
+                    slug={product.slug}
                     name={product.name}
                     sku={product.sku}
                     priceEur={product.priceEur}

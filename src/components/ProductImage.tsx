@@ -2,8 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import {
+  getProductPlaceholderImageUrl,
+  productImageAlt,
+  resolveProductImageSrc,
+} from "@/lib/product-url";
 
-const NO_IMAGE_PLACEHOLDER = "/images/products/no-image.webp";
 const IMG_WIDTH = 800;
 const IMG_HEIGHT = 600;
 
@@ -12,7 +16,9 @@ type ProductImageProps = {
   alt: string;
   className?: string;
   fallbackToPlaceholder?: boolean;
-  /** LCP: приоритетная загрузка главного изображения (по умолчанию true для страницы товара) */
+  /** SKU или id — уникальный ?prod= для заглушки */
+  productKey?: string;
+  /** LCP: приоритетная загрузка главного изображения */
   priority?: boolean;
 };
 
@@ -50,6 +56,7 @@ export default function ProductImage({
   alt,
   className,
   fallbackToPlaceholder = true,
+  productKey = "item",
   priority = true,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
@@ -59,14 +66,15 @@ export default function ProductImage({
     !rawSrc ||
     rawSrc.endsWith("no-image.webp") ||
     (fallbackToPlaceholder && failed);
-  const imageSrc = usePlaceholder ? NO_IMAGE_PLACEHOLDER : rawSrc!;
+
+  const imageSrc = resolveProductImageSrc(src, productKey, usePlaceholder);
+  const imageAlt = productImageAlt(alt);
 
   const handleError = () => {
-    if (imageSrc === NO_IMAGE_PLACEHOLDER) {
+    if (imageSrc.includes("no-image.webp")) {
       setPlaceholderFailed(true);
       return;
     }
-    console.error("Ошибка загрузки:", imageSrc);
     if (fallbackToPlaceholder) setFailed(true);
   };
 
@@ -84,7 +92,7 @@ export default function ProductImage({
   return (
     <Image
       src={imageSrc}
-      alt={alt}
+      alt={imageAlt}
       width={IMG_WIDTH}
       height={IMG_HEIGHT}
       sizes="(max-width: 768px) 100vw, 50vw"

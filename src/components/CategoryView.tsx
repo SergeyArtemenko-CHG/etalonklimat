@@ -159,6 +159,7 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
                   <ProductCard
                     key={product.id}
                     id={product.id}
+                    slug={product.slug}
                     name={product.name}
                     sku={product.sku}
                     priceEur={product.priceEur}

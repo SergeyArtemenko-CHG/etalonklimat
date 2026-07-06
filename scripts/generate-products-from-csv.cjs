@@ -522,6 +522,7 @@ ${p.files
             return `  {
     id: ${toTsString(p.id)},
     sku: ${toTsString(p.sku)},
+    slug: ${toTsString(p.slug)},
     name: ${toTsString(p.name)},
     description: ${p.description ? toTsString(p.description) : "undefined"},
     longDescription: ${
@@ -573,6 +574,8 @@ export interface CategoryNode {
 export interface Product {
   id: string;
   sku: string;
+  /** ЧПУ для URL /product/[slug] */
+  slug: string;
   name: string;
   description?: string;
   longDescription?: string;
@@ -655,13 +658,18 @@ export function getProductsByCategory(slug: string): Product[] {
   return products.filter((p) => p.subCategorySlug === match.slug);
 }
 
-export function getProductById(id: string): Product | undefined {
-  const normalized = (id || "").toString().trim().toLowerCase();
+export function getProductBySlug(slug: string): Product | undefined {
+  const normalized = (slug || "").toString().trim().toLowerCase();
   return products.find((p) => {
+    const ps = (p.slug || "").toString().trim().toLowerCase();
     const sku = (p.sku || "").toString().trim().toLowerCase();
     const pid = (p.id || "").toString().trim().toLowerCase();
-    return sku === normalized || pid === normalized;
+    return ps === normalized || sku === normalized || pid === normalized;
   });
+}
+
+export function getProductById(id: string): Product | undefined {
+  return getProductBySlug(id);
 }
 `;
 
@@ -678,6 +686,7 @@ function main() {
   const products = [];
   const categoryMap = new Map();
   const usedIds = new Set();
+  const usedSlugs = new Set();
   const specStats = new Map();
   const specOrder = [];
   const seenSpecOrder = new Set();
@@ -820,6 +829,15 @@ function main() {
       }
       usedIds.add(id.toLowerCase());
 
+      let productSlug = slugify(name);
+      if (usedSlugs.has(productSlug)) {
+        productSlug = `${productSlug}-${sku}`;
+      }
+      if (usedSlugs.has(productSlug)) {
+        productSlug = `${productSlug}-${id}`;
+      }
+      usedSlugs.add(productSlug);
+
       const inStock = `${rawAvailability ?? ""}`.trim() === "1";
       const categorySlug = categoryName ? slugify(categoryName) : "uncategorized";
       const subCategorySlug = subCategoryName ? slugify(subCategoryName) : "";
@@ -860,6 +878,7 @@ function main() {
       products.push({
         id,
         sku,
+        slug: productSlug,
         name,
         description: description || undefined,
         longDescription: undefined,

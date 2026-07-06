@@ -12,6 +12,7 @@ import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
 import RetailPriceLabel from "@/components/RetailPriceLabel";
 import { products } from "@/data/products";
+import { getProductHref, productImageAlt, resolveProductImageSrc } from "@/lib/product-url";
 
 const CartCheckoutSection = dynamic(() => import("./CartCheckoutSection"), {
   ssr: false,
@@ -22,33 +23,15 @@ const CartCheckoutSection = dynamic(() => import("./CartCheckoutSection"), {
   ),
 });
 
-function CartProductThumb({ src, name }: { src?: string; name: string }) {
+function CartProductThumb({ src, name, sku }: { src?: string; name: string; sku: string }) {
   const [failed, setFailed] = useState(false);
-  const trimmed = src?.trim();
-  if (!trimmed || failed) {
-    return (
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-dashed border-text-muted/35 bg-text-muted/5">
-        <svg
-          viewBox="0 0 24 24"
-          className="h-8 w-8 text-text-muted"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          aria-hidden
-        >
-          <rect x="3" y="6" width="18" height="11" rx="2" />
-          <path d="M3 14h18" />
-          <circle cx="9" cy="10" r="1.2" fill="currentColor" />
-          <circle cx="15" cy="10" r="1.2" fill="currentColor" />
-        </svg>
-      </div>
-    );
-  }
+  const usePlaceholder = !src?.trim() || failed;
+  const imageSrc = resolveProductImageSrc(src, sku, usePlaceholder);
   return (
     <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-text-muted/25 bg-card-bg">
       <Image
-        src={trimmed}
-        alt={name}
+        src={imageSrc}
+        alt={productImageAlt(name)}
         fill
         className="object-contain p-1"
         sizes="64px"
@@ -157,10 +140,15 @@ export default function CartPage() {
                     className="flex flex-col gap-4 rounded-xl border border-text-muted/25 bg-card-bg p-4 shadow-sm transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
                   >
                     <div className="flex flex-1 items-center gap-4">
-                      <CartProductThumb src={imageSrc} name={item.name} />
+                      <CartProductThumb src={imageSrc} name={item.name} sku={article} />
                       <div className="min-w-0 flex-1">
                         <Link
-                          href={`/product/${item.id}`}
+                          href={getProductHref({
+                            id: item.id,
+                            sku: article,
+                            name: item.name,
+                            slug: product?.slug,
+                          })}
                           className="font-medium text-text-main hover:text-primary"
                         >
                           {item.name}

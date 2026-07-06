@@ -10,6 +10,11 @@ import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
 import TopAuthBar from "@/components/TopAuthBar";
 import { useStickyGuard } from "@/hooks/useStickyGuard";
+import {
+  getProductHref,
+  productImageAlt,
+  resolveProductImageSrc,
+} from "@/lib/product-url";
 
 function CartIcon({ className }: { className?: string }) {
   return (
@@ -42,29 +47,21 @@ function CartIcon({ className }: { className?: string }) {
   );
 }
 
-function SearchProductThumb({ src, alt }: { src?: string; alt: string }) {
+function SearchProductThumb({ src, alt, sku }: { src?: string; alt: string; sku: string }) {
   const [failed, setFailed] = useState(false);
-  const showImg = src?.trim() && !failed;
+  const usePlaceholder = !src?.trim() || failed;
+  const imageSrc = resolveProductImageSrc(src, sku, usePlaceholder);
   return (
     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-text-muted/25 bg-main-bg">
-      {showImg ? (
-        <Image
-          src={src!.trim()}
-          alt={alt}
-          width={48}
-          height={48}
-          sizes="48px"
-          className="h-full w-full object-contain"
-          onError={() => setFailed(true)}
-        />
-      ) : (
-        <svg viewBox="0 0 24 24" className="h-6 w-6 text-text-muted" aria-hidden>
-          <rect x="3" y="6" width="18" height="11" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M3 14h18" fill="none" stroke="currentColor" strokeWidth="1.5" />
-          <circle cx="9" cy="10" r="1.2" fill="currentColor" />
-          <circle cx="15" cy="10" r="1.2" fill="currentColor" />
-        </svg>
-      )}
+      <Image
+        src={imageSrc}
+        alt={productImageAlt(alt)}
+        width={48}
+        height={48}
+        sizes="48px"
+        className="h-full w-full object-contain"
+        onError={() => setFailed(true)}
+      />
     </div>
   );
 }
@@ -353,7 +350,7 @@ export default function Header() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && results.length > 0) {
                     e.preventDefault();
-                    router.push(`/product/${results[0].sku}`);
+                    router.push(getProductHref(results[0]));
                     setOpen(false);
                   }
                 }}
@@ -366,11 +363,11 @@ export default function Header() {
                    {results.map((p) => (
                      <Link
                        key={p.sku}
-                       href={`/product/${p.sku}`}
+                       href={getProductHref(p)}
                        onClick={() => setOpen(false)}
                        className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-main-bg"
                      >
-                       <SearchProductThumb src={p.image} alt={p.name} />
+                       <SearchProductThumb src={p.image} alt={p.name} sku={p.sku} />
                        <div className="min-w-0 flex-1">
                          <p className="truncate text-sm font-medium text-text-main">{p.name}</p>
                          <p className="text-[10px] uppercase tracking-tight text-text-muted">Арт: {p.sku}</p>
