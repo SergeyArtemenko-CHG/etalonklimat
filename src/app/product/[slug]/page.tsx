@@ -14,7 +14,7 @@ import ProductImage from "@/components/ProductImage";
 import ProductPageActions from "./ProductPageActions";
 import ProductPriceBlock from "./ProductPriceBlock";
 import PreloadProductImage from "@/components/PreloadProductImage";
-import { getSiteOrigin } from "@/lib/site-url";
+import { getSiteOrigin, buildCanonicalUrl } from "@/lib/site-url";
 import {
   getProductPlaceholderImageUrl,
   productImageAlt,
@@ -115,7 +115,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? imagePath
     : `${site}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
 
-  const canonicalUrl = `${site}/product/${encodeURIComponent(product.slug)}`;
+  const canonicalUrl = buildCanonicalUrl(
+    `/product/${encodeURIComponent(product.slug)}`
+  );
 
   return {
     title,

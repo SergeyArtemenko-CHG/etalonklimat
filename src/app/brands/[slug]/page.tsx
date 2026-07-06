@@ -11,7 +11,12 @@ import { productBrandMatchesFeatured } from "@/lib/featured-brand-products";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-type Props = { params: Promise<{ slug: string }> };
+import { buildCanonicalUrl, parseCatalogPageParam } from "@/lib/site-url";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ page?: string | string[] }>;
+};
 
 function brandPageHeading(brand: FeaturedBrand) {
   const h = brand.heading.trim();
@@ -22,14 +27,22 @@ export function generateStaticParams() {
   return featuredBrands.map((b) => ({ slug: b.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
   const { slug } = await params;
+  const sp = await searchParams;
+  const page = parseCatalogPageParam(sp.page);
+  const pathname = `/brands/${slug}`;
+  const canonical = buildCanonicalUrl(pathname, page);
 
   if (slug === "fbr") {
     return {
       title: "Купить промышленные горелки FBR: цены в интернет-магазине ЭТАЛОН",
       description:
         "Предлагаем купить оригинальные горелки FBR (газовые, дизельные, комбинированные) по выгодным ценам в Москве. Подбор оборудования под ваши задачи, всё в наличии!",
+      alternates: { canonical },
     };
   }
 
@@ -41,9 +54,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const plain = brand.description.replace(/\s+/g, " ").trim();
   const description =
     plain.length > 160 ? `${plain.slice(0, 157)}…` : plain || undefined;
+  const title =
+    page > 1
+      ? `${brandPageHeading(brand)} — страница ${page} · Эталон Профи`
+      : `${brandPageHeading(brand)} — Эталон Профи`;
+
   return {
-    title: `${brandPageHeading(brand)} — Эталон Профи`,
+    title,
     description,
+    alternates: { canonical },
   };
 }
 

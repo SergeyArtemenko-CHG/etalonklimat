@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CategoryView from "@/components/CategoryView";
@@ -8,8 +9,8 @@ import {
   getCategoryBySlug,
   getProductsByCategory,
 } from "@/data/products";
+import { buildCanonicalUrl, parseCatalogPageParam } from "@/lib/site-url";
 
-export const dynamic = "force-static";
 export const revalidate = false;
 
 export async function generateStaticParams() {
@@ -25,7 +26,34 @@ export async function generateStaticParams() {
 
 type Props = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ page?: string | string[] }>;
 };
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const categoryMatch = getCategoryBySlug(slug);
+
+  if (!categoryMatch) {
+    return { title: "Категория не найдена" };
+  }
+
+  const sp = await searchParams;
+  const page = parseCatalogPageParam(sp.page);
+  const pathname = `/category/${slug}`;
+  const canonical = buildCanonicalUrl(pathname, page);
+  const title =
+    page > 1
+      ? `${categoryMatch.name} — страница ${page} · Эталон Профи`
+      : `${categoryMatch.name} · Эталон Профи`;
+
+  return {
+    title,
+    alternates: { canonical },
+  };
+}
 
 export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
