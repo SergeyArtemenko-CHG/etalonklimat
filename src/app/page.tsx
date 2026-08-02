@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import Header from "@/components/Header";
 import HomeHero from "@/components/HomeHero";
 import HomeLeadCta from "@/components/HomeLeadCta";
@@ -19,34 +18,6 @@ const brandDealerCopy: Record<string, string> = {
     "Официальный дилер насосов Vandjord. Насосное оборудование для отопления, водоснабжения и инженерных систем объектов любой сложности.",
 };
 
-const HIGHLIGHT_TERMS = [
-  "официальный дилер",
-  "официальный партнёр",
-  "прямой поставщик",
-  "прямые поставки",
-];
-
-function withGreenHighlights(text: string): ReactNode[] {
-  const pattern = new RegExp(
-    `(${HIGHLIGHT_TERMS.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
-    "gi",
-  );
-  const parts = text.split(pattern);
-  return parts.map((part, i) => {
-    const isHit = HIGHLIGHT_TERMS.some(
-      (t) => t.toLowerCase() === part.toLowerCase(),
-    );
-    if (isHit) {
-      return (
-        <span key={i} className="text-[#91c73e]">
-          {part}
-        </span>
-      );
-    }
-    return <span key={i}>{part}</span>;
-  });
-}
-
 export default function Home() {
   const popularProducts = products.filter((p) => p.popular === true).slice(0, 8);
 
@@ -56,76 +27,39 @@ export default function Home() {
       <main>
         <HomeHero />
 
-        {/* Brands — источник: data/nomenclature/Brands.csv */}
+        {/* Brands — 5 карточек в ряд */}
         {featuredBrands.length > 0 ? (
           <section
             className="bg-[#f8f9fa] pb-8 pt-8 md:pb-10 md:pt-10"
             aria-label="Эталон Профи — официальный дилер"
           >
-            <div className="mx-auto max-w-6xl px-4">
-              <div className="flex overflow-hidden bg-card-bg shadow-md shadow-text-muted/8">
-                <div className="flex shrink-0 items-center justify-center bg-[#16566f] px-3 py-6 md:px-4 md:py-8">
-                  <p className="m-0 rotate-180 font-sans text-[clamp(1.2rem,2vw,1.75rem)] font-extrabold leading-tight tracking-[0.02em] text-white [writing-mode:vertical-rl]">
-                    Эталон Профи:
-                  </p>
-                </div>
-
-                <div className="flex min-w-0 flex-1 flex-col gap-5 p-5 md:gap-6 md:px-8 md:py-7">
-                  {Array.from(
-                    { length: Math.ceil(featuredBrands.length / 2) },
-                    (_, rowIndex) => {
-                      const left = featuredBrands[rowIndex * 2];
-                      const right = featuredBrands[rowIndex * 2 + 1];
-                      const cell = (
-                        brand: (typeof featuredBrands)[number],
-                        logoRight: boolean,
-                      ) => {
-                        const copy =
-                          brandDealerCopy[brand.slug] ??
-                          `Официальный дилер ${brand.name}. Оборудование для котельных и систем теплоснабжения.`;
-                        return (
-                          <Link
-                            key={brand.slug}
-                            href={`/brands/${brand.slug}`}
-                            className={`group flex min-w-0 flex-1 items-center overflow-hidden border border-text-muted/20 bg-main-bg transition hover:border-[#16566f]/50 hover:bg-card-bg ${
-                              logoRight ? "flex-row-reverse" : ""
-                            }`}
-                          >
-                            <div
-                              className={`flex size-[7.5rem] shrink-0 items-center justify-center bg-card-bg p-3 md:size-[9rem] md:p-4 ${
-                                logoRight
-                                  ? "border-l border-text-muted/20"
-                                  : "border-r border-text-muted/20"
-                              }`}
-                            >
-                              <img
-                                src={brand.logo}
-                                alt=""
-                                className="max-h-full max-w-full object-contain saturate-50 transition-[filter] duration-500 ease-in-out group-hover:saturate-100"
-                                loading="lazy"
-                              />
-                            </div>
-                            <div className="flex min-w-0 flex-1 items-center px-3 py-3 md:px-4 md:py-4">
-                              <span className="font-sans text-[0.85rem] font-bold leading-snug tracking-[0.02em] text-text-main md:text-[0.9rem]">
-                                {withGreenHighlights(copy)}
-                              </span>
-                            </div>
-                          </Link>
-                        );
-                      };
-
-                      return (
-                        <div
-                          key={left.slug}
-                          className="flex w-full flex-col gap-4 md:flex-row md:items-stretch md:gap-6"
-                        >
-                          {cell(left, false)}
-                          {right ? cell(right, true) : <div className="hidden flex-1 md:block" />}
-                        </div>
-                      );
-                    },
-                  )}
-                </div>
+            <div className="mx-auto max-w-7xl px-4">
+              <h2 className="home-section-heading">Эталон Профи:</h2>
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
+                {featuredBrands.slice(0, 5).map((brand) => {
+                  const copy =
+                    brandDealerCopy[brand.slug] ??
+                    `Официальный дилер ${brand.name}. Оборудование для котельных и систем теплоснабжения.`;
+                  return (
+                    <Link
+                      key={brand.slug}
+                      href={`/brands/${brand.slug}`}
+                      className="brand-card group flex min-h-[16rem] flex-col overflow-hidden rounded-tl-2xl rounded-br-2xl border-[6px] border-[#9ca3af] bg-card-bg p-4 shadow-md shadow-text-muted/8 transition-[background-color] duration-300 hover:bg-main-bg md:min-h-[18.5rem] md:p-6"
+                    >
+                      <div className="mx-auto flex h-24 w-full items-center justify-center md:h-28">
+                        <img
+                          src={brand.logo}
+                          alt=""
+                          className="brand-card-logo max-h-full max-w-[90%] object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="mt-4 m-0 flex-1 text-center font-sans text-[0.85rem] font-bold leading-snug tracking-[0.02em] text-text-main md:text-[0.95rem]">
+                        {copy}
+                      </p>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </section>

@@ -277,6 +277,17 @@
   }
 }
 
+/* Логотипы брендов: плавный переход насыщенности при hover */
+.brand-card-logo {
+  filter: grayscale(0.5);
+  transition: filter 1s ease-in-out;
+}
+
+a.brand-card:hover .brand-card-logo,
+a.brand-card:focus-visible .brand-card-logo {
+  filter: grayscale(0);
+}
+
 /* «О нас» — фото склада по краям (ч/б), fixed на десктопе */
 .home-about-parallax {
   position: relative;
