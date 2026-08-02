@@ -63,49 +63,68 @@ export default function Home() {
             aria-label="Эталон Профи — официальный дилер"
           >
             <div className="mx-auto max-w-6xl px-4">
-              <div className="flex overflow-hidden rounded-tl-2xl rounded-br-2xl border-[6px] border-[#16566f] bg-card-bg shadow-md shadow-text-muted/8">
+              <div className="flex overflow-hidden bg-card-bg shadow-md shadow-text-muted/8">
                 <div className="flex shrink-0 items-center justify-center bg-[#16566f] px-3 py-6 md:px-4 md:py-8">
                   <p className="m-0 rotate-180 font-sans text-[clamp(1.2rem,2vw,1.75rem)] font-extrabold leading-tight tracking-[0.02em] text-white [writing-mode:vertical-rl]">
                     Эталон Профи:
                   </p>
                 </div>
 
-                <div className="flex min-w-0 flex-1 flex-col items-center gap-6 p-5 md:gap-8 md:px-10 md:py-7">
-                  {featuredBrands.map((brand, i) => {
-                    const logoRight = i % 2 === 1;
-                    const copy =
-                      brandDealerCopy[brand.slug] ??
-                      `Официальный дилер ${brand.name}. Оборудование для котельных и систем теплоснабжения.`;
-                    return (
-                      <Link
-                        key={brand.slug}
-                        href={`/brands/${brand.slug}`}
-                        className={`group flex w-full max-w-3xl items-center overflow-hidden border border-text-muted/20 bg-main-bg transition hover:border-[#16566f]/50 hover:bg-card-bg ${
-                          logoRight ? "flex-row-reverse" : ""
-                        }`}
-                      >
+                <div className="flex min-w-0 flex-1 flex-col gap-5 p-5 md:gap-6 md:px-8 md:py-7">
+                  {Array.from(
+                    { length: Math.ceil(featuredBrands.length / 2) },
+                    (_, rowIndex) => {
+                      const left = featuredBrands[rowIndex * 2];
+                      const right = featuredBrands[rowIndex * 2 + 1];
+                      const cell = (
+                        brand: (typeof featuredBrands)[number],
+                        logoRight: boolean,
+                      ) => {
+                        const copy =
+                          brandDealerCopy[brand.slug] ??
+                          `Официальный дилер ${brand.name}. Оборудование для котельных и систем теплоснабжения.`;
+                        return (
+                          <Link
+                            key={brand.slug}
+                            href={`/brands/${brand.slug}`}
+                            className={`group flex min-w-0 flex-1 items-center overflow-hidden border border-text-muted/20 bg-main-bg transition hover:border-[#16566f]/50 hover:bg-card-bg ${
+                              logoRight ? "flex-row-reverse" : ""
+                            }`}
+                          >
+                            <div
+                              className={`flex size-[7.5rem] shrink-0 items-center justify-center bg-card-bg p-3 md:size-[9rem] md:p-4 ${
+                                logoRight
+                                  ? "border-l border-text-muted/20"
+                                  : "border-r border-text-muted/20"
+                              }`}
+                            >
+                              <img
+                                src={brand.logo}
+                                alt=""
+                                className="max-h-full max-w-full object-contain saturate-50 transition-[filter] duration-500 ease-in-out group-hover:saturate-100"
+                                loading="lazy"
+                              />
+                            </div>
+                            <div className="flex min-w-0 flex-1 items-center px-3 py-3 md:px-4 md:py-4">
+                              <span className="font-sans text-[0.85rem] font-bold leading-snug tracking-[0.02em] text-text-main md:text-[0.9rem]">
+                                {withGreenHighlights(copy)}
+                              </span>
+                            </div>
+                          </Link>
+                        );
+                      };
+
+                      return (
                         <div
-                          className={`flex size-[8.5rem] shrink-0 items-center justify-center bg-card-bg p-4 md:size-[10rem] md:p-5 ${
-                            logoRight
-                              ? "border-l border-text-muted/20"
-                              : "border-r border-text-muted/20"
-                          }`}
+                          key={left.slug}
+                          className="flex w-full flex-col gap-4 md:flex-row md:items-stretch md:gap-6"
                         >
-                          <img
-                            src={brand.logo}
-                            alt=""
-                            className="max-h-full max-w-full object-contain saturate-50 transition-[filter] duration-500 ease-in-out group-hover:saturate-100"
-                            loading="lazy"
-                          />
+                          {cell(left, false)}
+                          {right ? cell(right, true) : <div className="hidden flex-1 md:block" />}
                         </div>
-                        <div className="flex min-w-0 flex-1 items-center px-4 py-3 md:px-6 md:py-4">
-                          <span className="font-sans text-[0.95rem] font-bold leading-snug tracking-[0.02em] text-text-main">
-                            {withGreenHighlights(copy)}
-                          </span>
-                        </div>
-                      </Link>
-                    );
-                  })}
+                      );
+                    },
+                  )}
                 </div>
               </div>
             </div>
