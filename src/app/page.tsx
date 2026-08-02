@@ -18,7 +18,7 @@ export default function Home() {
 
         {/* Brands — источник: data/nomenclature/Brands.csv */}
         {featuredBrands.length > 0 ? (
-          <section className="bg-surface-tint pb-8 pt-0 md:pb-10">
+          <section className="bg-[#f8f9fa] pb-8 pt-0 md:pb-10">
             <div className="mx-auto max-w-6xl px-4">
             <div className="bg-card-bg p-4 shadow-md shadow-text-muted/8 md:p-5">
               <h2 className="home-section-heading">

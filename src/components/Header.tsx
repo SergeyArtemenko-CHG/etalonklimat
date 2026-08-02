@@ -244,7 +244,7 @@ export default function Header() {
     <header
       ref={headerStickyRef}
       className={`w-full bg-[#005f67] text-white shadow-lg transition-all duration-300 ease-out ${
-        isSticky ? "sticky top-0 z-[100]" : "relative z-[100]"
+        isSticky ? "sticky top-0 z-[200]" : "relative z-[200]"
       }`}
     >
       {/* Top bar — всегда видима */}

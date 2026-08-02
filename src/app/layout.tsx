@@ -9,7 +9,6 @@ import FloatingContactBtn from "@/components/FloatingContactBtn";
 import FloatingScrollToTop from "@/components/FloatingScrollToTop";
 import ProductRequestModalHost from "@/components/ProductRequestModalHost";
 import ToastContainer from "@/components/ToastContainer";
-import AuthToast from "@/components/AuthToast";
 import AuthSessionProvider from "@/components/AuthSessionProvider";
 import YandexMetrika from "@/components/YandexMetrika";
 import { SITE_THEME_STORAGE_KEY } from "@/lib/site-theme";
@@ -93,10 +92,6 @@ export default function RootLayout({
         <AuthSessionProvider>
           {/* Обертка flex-1 заставит содержимое страниц (включая их футеры) растягиваться на весь экран */}
           <div className="flex flex-col flex-1">{children}</div>
-
-          <Suspense fallback={null}>
-            <AuthToast />
-          </Suspense>
 
           <CookieBanner />
           <FloatingScrollToTop />
