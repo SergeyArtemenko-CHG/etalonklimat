@@ -140,10 +140,13 @@
   transform: scaleX(1);
 }
 
-/* Шапка: плавное сжатие основной строки при скролле (desktop — одна строка) */
+/* Шапка: высота ряда стабильна — иначе при скролле прыгает весь текст страницы.
+   Компактность только у логотипа через transform (без reflow). */
+/* Шапка: ряд сжимается (96→72). Тряску страницы гасит spacer в Header (fixed). */
 .header-main-row {
   min-height: 80px;
-  transition: min-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: min-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-main-row.is-shrunk {
@@ -154,7 +157,6 @@
   .header-main-row {
     min-height: unset;
     height: 96px;
-    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .header-main-row.is-shrunk {
@@ -196,6 +198,12 @@
 .header-main-inner {
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
+  transition: padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-main-row.is-shrunk .header-main-inner {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -204,11 +212,35 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+
+  .header-main-row.is-shrunk .header-main-inner {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.header-ctrl {
+  height: 2.75rem;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-main-row.is-shrunk .header-ctrl {
+  height: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .header-ctrl {
+    height: 3.25rem;
+  }
+
+  .header-main-row.is-shrunk .header-ctrl {
+    height: 2.5rem;
+  }
 }
 
 .header-logo-img {
   width: 7rem;
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
@@ -227,20 +259,52 @@
   }
 }
 
-/* Заголовки секций на главной */
+/* Заголовки секций на главной — как «Эталон Профи:», цвет #16566f */
 .home-section-heading {
   margin-bottom: 1.5rem;
   text-align: center;
-  font-size: 1.375rem;
-  font-weight: 600;
-  line-height: 1.3;
-  color: #475659;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #16566f;
 }
 
 @media (min-width: 768px) {
   .home-section-heading {
     margin-bottom: 1.75rem;
-    font-size: 1.625rem;
+  }
+}
+
+/* «О нас» — фото склада по краям (ч/б), fixed на десктопе */
+.home-about-parallax {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 2.5rem;
+}
+
+.home-about-parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/images/live-etalonprofi-2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(1);
+}
+
+@media (min-width: 768px) {
+  .home-about-parallax {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .home-about-parallax::before {
+    background-attachment: fixed;
   }
 }
 

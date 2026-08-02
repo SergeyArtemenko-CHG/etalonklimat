@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { products, categories } from "@/data/products";
 import { useCartStore } from "@/store/cart";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
@@ -76,14 +76,32 @@ export default function Header() {
   const [cityLoaded, setCityLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const catalogRef = useRef<HTMLDivElement>(null);
-  const { ref: headerStickyRef, isSticky } = useStickyGuard({
+  const headerElRef = useRef<HTMLElement | null>(null);
+  const { ref: stickyGuardRef, isSticky } = useStickyGuard({
     thresholdRatio: 0.4,
     applyGuardOnlyOnCompactViewport: true,
     compactMaxWidth: 768,
     compactMaxHeight: 700,
   });
   const [isShrunk, setIsShrunk] = useState(false);
+  const [spacerPx, setSpacerPx] = useState(0);
   const [isClient, setIsClient] = useState(false);
+
+  const setHeaderRef = useCallback(
+    (node: HTMLElement | null) => {
+      headerElRef.current = node;
+      stickyGuardRef.current = node;
+    },
+    [stickyGuardRef],
+  );
+
+  /** Высота спейсера = развёрнутая шапка; при сжатии не уменьшаем — нет тряски. */
+  useLayoutEffect(() => {
+    const el = headerElRef.current;
+    if (!el || isShrunk) return;
+    const h = Math.round(el.getBoundingClientRect().height);
+    if (h > 0) setSpacerPx((prev) => Math.max(prev, h));
+  }, [isShrunk, isSticky, cityLoaded]);
 
   const router = useRouter();
   const totalItems = useCartStore((s) => s.getTotalItems());
@@ -241,12 +259,18 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      ref={headerStickyRef}
-      className={`w-full bg-[#16566f] text-white shadow-lg transition-all duration-300 ease-out ${
-        isSticky ? "sticky top-0 z-[200]" : "relative z-[200]"
-      }`}
-    >
+    <>
+      {isSticky && spacerPx > 0 ? (
+        <div style={{ height: spacerPx }} aria-hidden className="w-full shrink-0" />
+      ) : null}
+      <header
+        ref={setHeaderRef}
+        className={`w-full bg-[#16566f] text-white shadow-lg ${
+          isSticky && spacerPx > 0
+            ? "fixed inset-x-0 top-0 z-[200]"
+            : "relative z-[200]"
+        }`}
+      >
       {/* Top bar — всегда видима */}
       <div className="border-b border-white/10 bg-[#0e2e39]">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 text-xs sm:text-sm">
@@ -279,7 +303,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main header — логотип у левого края; при скролле плавно компактнее */}
+      {/* Main header — при скролле сжимается; spacer снаружи держит поток */}
       <div
         className={`header-main-row flex w-full flex-col md:flex-row md:items-stretch ${
           isShrunk ? "is-shrunk" : ""
@@ -319,7 +343,7 @@ export default function Header() {
               onClick={() => setCatalogOpen(!catalogOpen)}
               aria-label={catalogOpen ? "Закрыть каталог" : "Открыть каталог"}
               aria-expanded={catalogOpen}
-              className="group flex h-11 shrink-0 items-center gap-2 rounded-none border border-white bg-[#16566f] px-3 text-sm font-bold text-white transition-[background-color] duration-300 ease-out hover:bg-[#124a5f] active:scale-[0.98] md:h-[3.25rem] md:px-6"
+              className="header-ctrl group flex shrink-0 items-center gap-2 rounded-none border border-white bg-[#16566f] px-3 text-sm font-bold text-white transition-[background-color,height] duration-300 ease-out hover:bg-[#124a5f] active:scale-[0.98] md:px-6"
             >
               <div className="flex flex-col gap-1">
                 <span className={`h-0.5 w-4 bg-white transition-all ${catalogOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
@@ -354,7 +378,7 @@ export default function Header() {
                     setOpen(false);
                   }
                 }}
-                className="h-11 w-full bg-transparent px-3 text-sm text-text-main focus:outline-none md:h-[3.25rem] md:px-4"
+                className="header-ctrl w-full bg-transparent px-3 text-sm text-text-main focus:outline-none md:px-4"
               />
               
               {/* Dropdown Results */}
@@ -383,7 +407,7 @@ export default function Header() {
           <Link
             href="/cart"
             aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`}
-            className="hidden h-11 shrink-0 items-center gap-3 rounded-none border border-white bg-[#16566f] px-4 transition-[background-color] duration-300 ease-out hover:bg-[#124a5f] md:flex md:h-[3.25rem] md:pl-5 md:pr-4"
+            className="header-ctrl hidden shrink-0 items-center gap-3 rounded-none border border-white bg-[#16566f] px-4 transition-[background-color,height] duration-300 ease-out hover:bg-[#124a5f] md:flex md:pl-5 md:pr-4"
           >
             <div className="text-right">
               <p className="text-[10px] uppercase tracking-wider text-white/80">Корзина</p>
@@ -502,5 +526,6 @@ export default function Header() {
         </>
       )}
     </header>
+    </>
   );
 }
