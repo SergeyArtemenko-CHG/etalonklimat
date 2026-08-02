@@ -357,55 +357,26 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding: 48px clamp(18px, 2vw, 28px);
+  /* Больше слева — текст уходит от скоса и читается вверху */
+  padding: 48px clamp(16px, 1.8vw, 24px) 48px clamp(36px, 3.8vw, 52px);
   pointer-events: none;
 }
 
-.badge {
-  display: block;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.72;
-}
-
-.mid {
-  max-width: 14rem;
-}
-
 .title {
-  margin: 0 0 0.65rem;
+  margin: 0;
+  max-width: 14rem;
   font-size: clamp(1rem, 1.35vw, 1.25rem);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.01em;
 }
 
-.description {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 400;
-  line-height: 1.45;
-  opacity: 0.82;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.colLight1 .description,
-.colLight2 .description,
-.colLight3 .description {
-  color: var(--text-muted);
-  opacity: 1;
-}
-
 .arrow {
   display: inline-block;
-  font-size: 1.35rem;
+  font-size: 0.95rem;
   font-weight: 300;
   line-height: 1;
+  opacity: 0.85;
   transition: transform 0.3s var(--ease-flex);
 }
 
@@ -527,7 +498,7 @@
   }
 
   .columnContent {
-    padding: 36px 22px;
+    padding: 36px 18px 36px 34px;
   }
 
   .watermark {

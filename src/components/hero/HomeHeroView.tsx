@@ -59,7 +59,6 @@ function ColumnCard({
   index,
   slug,
   name,
-  description,
   image,
   active,
   lifted,
@@ -70,7 +69,6 @@ function ColumnCard({
   index: number;
   slug: string;
   name: string;
-  description: string;
   image?: string;
   active?: boolean;
   lifted?: boolean;
@@ -82,7 +80,6 @@ function ColumnCard({
   const clipRef = useRef<HTMLDivElement>(null);
   const tweenRef = useRef<gsap.core.Timeline | null>(null);
   const tone = toneForIndex(index);
-  const badge = `${String(index + 1).padStart(2, "0")} / КАТАЛОГ`;
 
   useEffect(() => {
     const bg = bgRef.current;
@@ -102,23 +99,31 @@ function ColumnCard({
     const clip = clipRef.current;
     if (!bg || !clip) return;
 
-    const current = Number(gsap.getProperty(bg, "scaleX")) || 1;
     const target = active ? HOVER_SCALE : 1;
-    if (Math.abs(current - target) < 0.001) {
+    tweenRef.current?.kill();
+    gsap.killTweensOf([bg, clip]);
+
+    const current = Number(gsap.getProperty(bg, "scaleX")) || 1;
+    if (Math.abs(current - target) < 0.002) {
+      gsap.set(bg, { scaleX: target, skewX: SKEW, force3D: true });
       gsap.set(clip, { width: `${target * 100}%` });
       if (!active) onCollapseEnd?.(slug);
       return;
     }
 
-    tweenRef.current?.kill();
     const dist = Math.abs(target - current);
-    const duration = HOVER_DURATION * Math.min(1, dist / (HOVER_SCALE - 1));
+    const duration = Math.max(
+      0.12,
+      HOVER_DURATION * Math.min(1, dist / (HOVER_SCALE - 1)),
+    );
 
     gsap.set(clip, { width: `${current * 100}%` });
 
     const tl = gsap.timeline({
-      defaults: { duration, ease: "power2.inOut", overwrite: "auto" },
+      defaults: { duration, ease: "power2.inOut", overwrite: true },
       onComplete: () => {
+        gsap.set(bg, { scaleX: target, skewX: SKEW, force3D: true });
+        gsap.set(clip, { width: `${target * 100}%` });
         if (!active) onCollapseEnd?.(slug);
       },
     });
@@ -130,6 +135,10 @@ function ColumnCard({
   useEffect(() => {
     return () => {
       tweenRef.current?.kill();
+      const bg = bgRef.current;
+      const clip = clipRef.current;
+      if (bg) gsap.killTweensOf(bg);
+      if (clip) gsap.killTweensOf(clip);
     };
   }, []);
 
@@ -159,11 +168,7 @@ function ColumnCard({
 
         <div className={styles.columnInner}>
           <div className={styles.columnContent}>
-            <span className={styles.badge}>{badge}</span>
-            <div className={styles.mid}>
-              <h2 className={styles.title}>{name}</h2>
-              <p className={styles.description}>{description}</p>
-            </div>
+            <h2 className={styles.title}>{name}</h2>
             <span className={styles.arrow} aria-hidden>
               →
             </span>
@@ -243,6 +248,13 @@ export default function HomeHeroView({
     [cancelClear]
   );
 
+  const clearActive = useCallback(() => {
+    cancelClear();
+    activeRef.current = null;
+    setActiveSlug(null);
+    setCoverSlug(null);
+  }, [cancelClear]);
+
   const scheduleClear = useCallback(() => {
     cancelClear();
     clearTimerRef.current = setTimeout(() => {
@@ -268,14 +280,8 @@ export default function HomeHeroView({
         setActive(slug);
         return;
       }
-      const el = document.elementFromPoint(e.clientX, e.clientY);
-      if (
-        el &&
-        trackRef.current?.contains(el) &&
-        el.closest(`.${styles.colPromo}`)
-      ) {
-        scheduleClear();
-      }
+      // Зазор / spacer / promo — иначе при быстром уводе полоса «залипает»
+      scheduleClear();
     },
     [setActive, slugFromPoint, scheduleClear]
   );
@@ -284,10 +290,15 @@ export default function HomeHeroView({
     (e: React.PointerEvent<HTMLDivElement>) => {
       const related = e.relatedTarget;
       if (related instanceof Node && trackRef.current?.contains(related)) return;
-      scheduleClear();
+      // Уход с трека — сразу схлопнуть, без ожидания таймера
+      clearActive();
     },
-    [scheduleClear]
+    [clearActive]
   );
+
+  const onTrackPointerCancel = useCallback(() => {
+    clearActive();
+  }, [clearActive]);
 
   useEffect(() => () => {
     cancelClear();
@@ -368,6 +379,7 @@ export default function HomeHeroView({
               className={styles.track}
               onPointerMove={onTrackPointerMove}
               onPointerLeave={onTrackPointerLeave}
+              onPointerCancel={onTrackPointerCancel}
             >
               <PromoStrip stackZ={stripZ(0)} />
               {cats.map((cat, i) => (
@@ -376,7 +388,6 @@ export default function HomeHeroView({
                   index={i}
                   slug={cat.slug}
                   name={cat.name}
-                  description={cat.description}
                   image={cat.image}
                   active={activeSlug === cat.slug}
                   lifted={liftedSlugs.includes(cat.slug)}
