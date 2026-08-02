@@ -278,12 +278,17 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  /* Fixed to full hover width — clip reveal shows more, image doesn’t pan/zoom */
+  /*
+   * Last OK framing: left-anchored box (no side wedges / no hover pan).
+   * object-view-box pulls the subject toward the photo’s own center.
+   * Rollback: git checkout hero-photos-working-left-anchor -- this file
+   */
   width: calc(var(--col-w) * var(--col-hover-scale));
   max-width: none;
   height: 130%;
   object-fit: cover;
-  object-position: left 40%;
+  object-position: center 40%;
+  object-view-box: inset(0% 16% 0% 16%);
   filter: grayscale(1) contrast(1.25);
   mix-blend-mode: multiply;
   opacity: 0.92;

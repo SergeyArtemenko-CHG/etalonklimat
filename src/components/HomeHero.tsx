@@ -21,12 +21,20 @@ function isRealProductImage(image?: string): boolean {
   return true;
 }
 
+/** Prefer a sharper vertical pump shot over the tiny APV thumbnail (100×128). */
+const HERO_IMAGE_OVERRIDE: Record<string, string> = {
+  nasosy: "/images/products/CRV_CN.webp",
+};
+
 function firstImageByCategory(): Map<string, string> {
   const map = new Map<string, string>();
   if (!Array.isArray(products)) return map;
   for (const p of products) {
     if (!p?.categorySlug || !isRealProductImage(p.image)) continue;
     if (!map.has(p.categorySlug)) map.set(p.categorySlug, p.image!);
+  }
+  for (const [slug, image] of Object.entries(HERO_IMAGE_OVERRIDE)) {
+    if (isRealProductImage(image)) map.set(slug, image);
   }
   return map;
 }
