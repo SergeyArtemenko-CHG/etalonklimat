@@ -276,15 +276,14 @@
 
 .colPhotoUnskew img {
   position: absolute;
-  left: 50%;
+  left: 0;
   bottom: 0;
-  /* Fixed to full hover width; centered so mid aligns with strip center */
+  /* Fixed to full hover width — clip reveal shows more, image doesn’t pan/zoom */
   width: calc(var(--col-w) * var(--col-hover-scale));
   max-width: none;
   height: 130%;
-  transform: translateX(-50%);
   object-fit: cover;
-  object-position: center 40%;
+  object-position: left 40%;
   filter: grayscale(1) contrast(1.25);
   mix-blend-mode: multiply;
   opacity: 0.92;
