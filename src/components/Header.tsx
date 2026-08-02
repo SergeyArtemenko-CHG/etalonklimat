@@ -243,7 +243,7 @@ export default function Header() {
   return (
     <header
       ref={headerStickyRef}
-      className={`w-full bg-[#005f67] text-white shadow-lg transition-all duration-300 ease-out ${
+      className={`w-full bg-[#16566f] text-white shadow-lg transition-all duration-300 ease-out ${
         isSticky ? "sticky top-0 z-[200]" : "relative z-[200]"
       }`}
     >
@@ -319,7 +319,7 @@ export default function Header() {
               onClick={() => setCatalogOpen(!catalogOpen)}
               aria-label={catalogOpen ? "Закрыть каталог" : "Открыть каталог"}
               aria-expanded={catalogOpen}
-              className="group flex h-11 shrink-0 items-center gap-2 rounded-none border border-white bg-[#005f67] px-3 text-sm font-bold text-white transition-[background-color] duration-300 ease-out hover:bg-[#004a51] active:scale-[0.98] md:h-[3.25rem] md:px-6"
+              className="group flex h-11 shrink-0 items-center gap-2 rounded-none border border-white bg-[#16566f] px-3 text-sm font-bold text-white transition-[background-color] duration-300 ease-out hover:bg-[#124a5f] active:scale-[0.98] md:h-[3.25rem] md:px-6"
             >
               <div className="flex flex-col gap-1">
                 <span className={`h-0.5 w-4 bg-white transition-all ${catalogOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
@@ -383,7 +383,7 @@ export default function Header() {
           <Link
             href="/cart"
             aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`}
-            className="hidden h-11 shrink-0 items-center gap-3 rounded-none border border-white bg-[#005f67] px-4 transition-[background-color] duration-300 ease-out hover:bg-[#004a51] md:flex md:h-[3.25rem] md:pl-5 md:pr-4"
+            className="hidden h-11 shrink-0 items-center gap-3 rounded-none border border-white bg-[#16566f] px-4 transition-[background-color] duration-300 ease-out hover:bg-[#124a5f] md:flex md:h-[3.25rem] md:pl-5 md:pr-4"
           >
             <div className="text-right">
               <p className="text-[10px] uppercase tracking-wider text-white/80">Корзина</p>

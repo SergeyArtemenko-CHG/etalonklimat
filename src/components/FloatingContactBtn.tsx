@@ -319,7 +319,7 @@ export default function FloatingContactBtn() {
     >
       {/* Окно чата с плавным появлением */}
       <div
-        className={`absolute bottom-16 right-0 z-20 flex w-[340px] max-w-[calc(100vw-3rem)] flex-col rounded-xl border border-text-muted/25 bg-card-bg shadow-lg transition-all duration-300 ${
+        className={`absolute bottom-[5.25rem] right-0 z-20 flex w-[340px] max-w-[calc(100vw-3rem)] flex-col rounded-xl border border-text-muted/25 bg-card-bg shadow-lg transition-all duration-300 ${
           isOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"
         }`}
         style={{ height: "420px" }}
@@ -403,31 +403,20 @@ export default function FloatingContactBtn() {
           </div>
         </div>
 
-      {/* Кнопка чата с надписью «Помощь в подборе» и зелёной точкой статуса */}
-      <div className="absolute bottom-0 right-0 z-10 flex items-center gap-2">
-        <div className="relative shrink-0">
-          {!isOpen && (
-            <span
-              className="absolute -top-0.5 -right-0.5 flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-white"
-              aria-hidden
-            />
+      {/* Кнопка чата — только иконка */}
+      <div className="absolute bottom-0 right-0 z-10">
+        <button
+          type="button"
+          onClick={() => setIsOpen((v) => !v)}
+          className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-none bg-[#91c73e] text-[#0e2e39] shadow-lg transition hover:bg-[#7fb534] hover:shadow-xl"
+          aria-label={isOpen ? "Закрыть чат" : "Открыть чат — помощь в подборе"}
+        >
+          {isOpen ? (
+            <CloseIcon className="h-8 w-8 shrink-0" />
+          ) : (
+            <ChatIcon className="h-8 w-8 shrink-0" />
           )}
-          <button
-            type="button"
-            onClick={() => setIsOpen((v) => !v)}
-            className="flex h-14 items-center gap-2 rounded-full bg-accent pl-3 pr-4 text-white shadow-lg transition hover:bg-accent-hover hover:shadow-xl"
-            aria-label={isOpen ? "Закрыть чат" : "Открыть чат — помощь в подборе"}
-          >
-            {isOpen ? (
-              <CloseIcon className="h-6 w-6 shrink-0" />
-            ) : (
-              <>
-                <ChatIcon className="h-6 w-6 shrink-0" />
-                <span className="whitespace-nowrap text-sm font-medium">Помощь в подборе</span>
-              </>
-            )}
-          </button>
-        </div>
+        </button>
       </div>
     </div>
   );

@@ -3,10 +3,18 @@ import HomeHeroView, {
   type HeroCategory,
 } from "@/components/hero/HomeHeroView";
 
+/** 0 = горелки, 1 = котлы/парогенераторы, 2 = насосы/деаэраторы, 3 = остальное */
+function heroGroup(slug: string): 0 | 1 | 2 | 3 {
+  if (slug.includes("gorelki")) return 0;
+  if (slug.includes("kotly") || slug.includes("parogenerator")) return 1;
+  if (slug.includes("nasos") || slug.includes("deaerator")) return 2;
+  return 3;
+}
+
 function toHeroCategories(): HeroCategory[] {
   if (!Array.isArray(categories) || categories.length === 0) return [];
 
-  return categories.map((cat) => {
+  const mapped = categories.map((cat) => {
     const subs = cat.subCategories ?? [];
     const description =
       subs.length > 0
@@ -22,6 +30,12 @@ function toHeroCategories(): HeroCategory[] {
       description,
     };
   });
+
+  // Порядок: горелки → котлы/парогенераторы → насосы/деаэраторы → остальное.
+  // Цвета полос по-прежнему от индекса после сортировки.
+  return [...mapped].sort(
+    (a, b) => heroGroup(a.slug) - heroGroup(b.slug)
+  );
 }
 
 export default function HomeHero() {
