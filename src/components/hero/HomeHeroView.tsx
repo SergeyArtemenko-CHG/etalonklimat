@@ -48,12 +48,30 @@ function artForSlug(slug: string): ArtComponent | null {
   return null;
 }
 
+function PromoStrip({ stackZ }: { stackZ: number }) {
+  return (
+    <div
+      className={`${styles.catalogColumn} ${styles.colFixed} ${styles.colPromo}`}
+      style={{ zIndex: stackZ }}
+    >
+      <span className={styles.colBg} aria-hidden />
+      <div className={styles.promoBody}>
+        <p className={styles.promoText}>
+          Скидки до 45% от цен на сайте
+        </p>
+        <Link href="/login" className={styles.promoBtn}>
+          Цены со скидкой
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 function ColumnCard({
   index,
   slug,
   name,
   description,
-  pinned,
   active,
   lifted,
   cover,
@@ -64,10 +82,8 @@ function ColumnCard({
   slug: string;
   name: string;
   description: string;
-  pinned?: boolean;
   active?: boolean;
   lifted?: boolean;
-  /** Collapsing strip kept above the new active (L→R handoff) */
   cover?: boolean;
   stackZ: number;
   onCollapseEnd?: (slug: string) => void;
@@ -82,9 +98,7 @@ function ColumnCard({
   useEffect(() => {
     const bg = bgRef.current;
     const clip = clipRef.current;
-    if (!bg || !clip || pinned) return;
-    // Left origin: only the right edge moves — avoids left/right snaps
-    // when a neighbor covers/uncovers the opposite side mid-crossfade.
+    if (!bg || !clip) return;
     gsap.set(bg, {
       skewX: SKEW,
       scaleX: 1,
@@ -92,12 +106,12 @@ function ColumnCard({
       force3D: true,
     });
     gsap.set(clip, { width: "100%" });
-  }, [pinned]);
+  }, []);
 
   useEffect(() => {
     const bg = bgRef.current;
     const clip = clipRef.current;
-    if (!bg || !clip || pinned) return;
+    if (!bg || !clip) return;
 
     const current = Number(gsap.getProperty(bg, "scaleX")) || 1;
     const target = active ? HOVER_SCALE : 1;
@@ -111,10 +125,8 @@ function ColumnCard({
     const dist = Math.abs(target - current);
     const duration = HOVER_DURATION * Math.min(1, dist / (HOVER_SCALE - 1));
 
-    // Keep reveal width locked to current scale before tweening
     gsap.set(clip, { width: `${current * 100}%` });
 
-    // Bg scale + text reveal share the same progress (sharp text, no scale)
     const tl = gsap.timeline({
       defaults: { duration, ease: "power2.inOut", overwrite: "auto" },
       onComplete: () => {
@@ -124,7 +136,7 @@ function ColumnCard({
     tl.to(bg, { scaleX: target, skewX: SKEW, force3D: true }, 0);
     tl.to(clip, { width: `${target * 100}%` }, 0);
     tweenRef.current = tl;
-  }, [active, pinned, slug, onCollapseEnd]);
+  }, [active, slug, onCollapseEnd]);
 
   useEffect(() => {
     return () => {
@@ -135,17 +147,16 @@ function ColumnCard({
   return (
     <Link
       href={`/category/${slug}`}
-      data-hero-col={pinned ? undefined : slug}
+      data-hero-col={slug}
       className={`${styles.catalogColumn} ${toneClass[tone]}${
-        pinned ? ` ${styles.colFixed}` : ""
-      }${active ? ` ${styles.colActive}` : ""}${
-        lifted ? ` ${styles.colLifted}` : ""
-      }${cover ? ` ${styles.colCover}` : ""}`}
+        active ? ` ${styles.colActive}` : ""
+      }${lifted ? ` ${styles.colLifted}` : ""}${
+        cover ? ` ${styles.colCover}` : ""
+      }`}
       style={{ zIndex: stackZ }}
     >
       <span ref={bgRef} className={styles.colBg} aria-hidden />
 
-      {/* Width reveals with bg; inner is full hover size (text stays sharp) */}
       <div ref={clipRef} className={styles.columnClip}>
         <div className={styles.columnInner}>
           <div className={styles.columnContent}>
@@ -268,7 +279,7 @@ export default function HomeHeroView({
       if (
         el &&
         trackRef.current?.contains(el) &&
-        el.closest(`.${styles.colFixed}`)
+        el.closest(`.${styles.colPromo}`)
       ) {
         scheduleClear();
       }
@@ -337,18 +348,14 @@ export default function HomeHeroView({
 
   if (!cats.length) return null;
 
-  const n = cats.length;
-  // Leave a gap between idle layers so active/lifted can rise above
-  // their own base AND all strips to the right — but never above the
-  // left neighbor (whose right-edge shadow must keep painting the seam).
+  // +1 for the promo strip on the left
+  const n = cats.length + 1;
   const Z_GAP = 10;
   const idleZ = (i: number) => (n - i) * Z_GAP;
 
-  const stripZ = (i: number) => {
-    const idle = idleZ(i);
-    // Wide first strip: same stack as others, no hover lift
-    if (i === 0) return idle;
-    const slug = cats[i]!.slug;
+  const stripZ = (trackIndex: number, slug?: string) => {
+    const idle = idleZ(trackIndex);
+    if (trackIndex === 0 || !slug) return idle;
     if (coverSlug === slug) return idle + 3;
     if (activeSlug === slug) return idle + 2;
     if (liftedSlugs.includes(slug)) return idle + 1;
@@ -369,6 +376,7 @@ export default function HomeHeroView({
               onPointerMove={onTrackPointerMove}
               onPointerLeave={onTrackPointerLeave}
             >
+              <PromoStrip stackZ={stripZ(0)} />
               {cats.map((cat, i) => (
                 <ColumnCard
                   key={cat.slug}
@@ -376,11 +384,10 @@ export default function HomeHeroView({
                   slug={cat.slug}
                   name={cat.name}
                   description={cat.description}
-                  pinned={i === 0}
-                  active={i > 0 && activeSlug === cat.slug}
-                  lifted={i > 0 && liftedSlugs.includes(cat.slug)}
-                  cover={i > 0 && coverSlug === cat.slug}
-                  stackZ={stripZ(i)}
+                  active={activeSlug === cat.slug}
+                  lifted={liftedSlugs.includes(cat.slug)}
+                  cover={coverSlug === cat.slug}
+                  stackZ={stripZ(i + 1, cat.slug)}
                   onCollapseEnd={unlift}
                 />
               ))}

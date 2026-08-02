@@ -248,7 +248,7 @@ export default function Header() {
       }`}
     >
       {/* Top bar — всегда видима */}
-      <div className="border-b border-white/10 bg-black">
+      <div className="border-b border-white/10 bg-[#0e2e39]">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 text-xs sm:text-sm">
           <div className="flex items-center gap-2">
             <span className="text-white/80">Ваш город:</span>

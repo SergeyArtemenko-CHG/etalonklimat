@@ -16,7 +16,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-[#0e2e39] text-white">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* О компании */}
