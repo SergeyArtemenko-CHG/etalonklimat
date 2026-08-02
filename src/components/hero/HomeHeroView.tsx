@@ -3,21 +3,16 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import {
-  BurnerLineArt,
-  BoilerLineArt,
-  PumpLineArt,
-} from "@/components/hero/HeroLineArt";
 import styles from "@/components/hero/IndustrialHero.module.css";
 
 export type HeroCategory = {
   slug: string;
   name: string;
   description: string;
+  image?: string;
 };
 
 type Tone = "light1" | "light2" | "light3" | "green" | "dark";
-type ArtComponent = typeof BurnerLineArt;
 
 const LIGHT_TONES: Tone[] = ["light1", "light2", "light3"];
 const CLEAR_DELAY_MS = 60;
@@ -39,13 +34,6 @@ function toneForIndex(i: number): Tone {
   if (mod === 1) return "green";
   if (mod === 3) return "dark";
   return LIGHT_TONES[i % 3];
-}
-
-function artForSlug(slug: string): ArtComponent | null {
-  if (slug.includes("gorelki")) return BurnerLineArt;
-  if (slug.includes("kotly") || slug.includes("parogenerator")) return BoilerLineArt;
-  if (slug.includes("nasos")) return PumpLineArt;
-  return null;
 }
 
 function PromoStrip({ stackZ }: { stackZ: number }) {
@@ -72,6 +60,7 @@ function ColumnCard({
   slug,
   name,
   description,
+  image,
   active,
   lifted,
   cover,
@@ -82,6 +71,7 @@ function ColumnCard({
   slug: string;
   name: string;
   description: string;
+  image?: string;
   active?: boolean;
   lifted?: boolean;
   cover?: boolean;
@@ -92,7 +82,6 @@ function ColumnCard({
   const clipRef = useRef<HTMLDivElement>(null);
   const tweenRef = useRef<gsap.core.Timeline | null>(null);
   const tone = toneForIndex(index);
-  const Art = artForSlug(slug);
   const badge = `${String(index + 1).padStart(2, "0")} / КАТАЛОГ`;
 
   useEffect(() => {
@@ -158,6 +147,16 @@ function ColumnCard({
       <span ref={bgRef} className={styles.colBg} aria-hidden />
 
       <div ref={clipRef} className={styles.columnClip}>
+        {image ? (
+          <div className={styles.colPhoto} aria-hidden>
+            <div className={styles.colPhotoSkew}>
+              <div className={styles.colPhotoUnskew}>
+                <img src={image} alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        ) : null}
+
         <div className={styles.columnInner}>
           <div className={styles.columnContent}>
             <span className={styles.badge}>{badge}</span>
@@ -169,12 +168,6 @@ function ColumnCard({
               →
             </span>
           </div>
-
-          {Art ? (
-            <div className={styles.watermark} aria-hidden>
-              <Art className={styles.watermarkSvg} glowColor="currentColor" />
-            </div>
-          ) : null}
         </div>
       </div>
     </Link>
@@ -384,6 +377,7 @@ export default function HomeHeroView({
                   slug={cat.slug}
                   name={cat.name}
                   description={cat.description}
+                  image={cat.image}
                   active={activeSlug === cat.slug}
                   lifted={liftedSlugs.includes(cat.slug)}
                   cover={coverSlug === cat.slug}

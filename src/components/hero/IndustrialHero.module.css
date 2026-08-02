@@ -85,6 +85,9 @@
   color: inherit;
   cursor: pointer;
   background: transparent;
+  container-type: size;
+  /* Keep photo blend modes from compositing onto neighboring strips */
+  isolation: isolate;
   /* z-index set inline: earlier strips above later so right shadow stays visible */
 }
 
@@ -224,6 +227,69 @@
     inset 1px 0 0 rgba(255, 255, 255, 0.12);
 }
 
+/*
+ * Photo is a direct child of .columnClip (not .columnInner):
+ * width always = visible strip width → grows by reveal, doesn’t pan.
+ * Skew clip matches strip parallelogram so it can’t paint on the neighbor.
+ */
+.colPhoto {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 46%;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 30%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 30%,
+    #000 100%
+  );
+}
+
+.colPhotoSkew {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transform: skewX(var(--skew));
+  /* Same origin as .colBg (left center of full strip) */
+  transform-origin: left -8.7%;
+  background-color: var(--col-bg);
+}
+
+.colPhotoUnskew {
+  position: absolute;
+  inset: 0;
+  transform: skewX(calc(var(--skew) * -1));
+  transform-origin: left -8.7%;
+  isolation: isolate;
+  background-color: var(--col-bg);
+}
+
+.colPhotoUnskew img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  /* Fixed to full hover width; centered so mid aligns with strip center */
+  width: calc(var(--col-w) * var(--col-hover-scale));
+  max-width: none;
+  height: 130%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center 40%;
+  filter: grayscale(1) contrast(1.25);
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+}
+
 /* Type A — light industrial */
 .colLight1 {
   --col-bg: var(--col-light-1);
@@ -257,7 +323,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   overflow: hidden;
   pointer-events: none;

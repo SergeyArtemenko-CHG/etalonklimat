@@ -1,4 +1,4 @@
-﻿import { categories } from "@/data/products";
+﻿import { categories, products } from "@/data/products";
 import HomeHeroView, {
   type HeroCategory,
 } from "@/components/hero/HomeHeroView";
@@ -11,8 +11,30 @@ function heroGroup(slug: string): 0 | 1 | 2 | 3 {
   return 3;
 }
 
+function isRealProductImage(image?: string): boolean {
+  if (!image || typeof image !== "string") return false;
+  const path = image.trim().toLowerCase();
+  if (!path) return false;
+  // Catalog placeholder — not a real product photo
+  if (path.includes("no-image")) return false;
+  if (path.includes("placeholder")) return false;
+  return true;
+}
+
+function firstImageByCategory(): Map<string, string> {
+  const map = new Map<string, string>();
+  if (!Array.isArray(products)) return map;
+  for (const p of products) {
+    if (!p?.categorySlug || !isRealProductImage(p.image)) continue;
+    if (!map.has(p.categorySlug)) map.set(p.categorySlug, p.image!);
+  }
+  return map;
+}
+
 function toHeroCategories(): HeroCategory[] {
   if (!Array.isArray(categories) || categories.length === 0) return [];
+
+  const images = firstImageByCategory();
 
   const mapped = categories.map((cat) => {
     const subs = cat.subCategories ?? [];
@@ -28,6 +50,7 @@ function toHeroCategories(): HeroCategory[] {
       slug: cat.slug,
       name: cat.name,
       description,
+      image: images.get(cat.slug),
     };
   });
 
