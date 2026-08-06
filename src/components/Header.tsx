@@ -261,7 +261,11 @@ export default function Header() {
   return (
     <>
       {isSticky && spacerPx > 0 ? (
-        <div style={{ height: spacerPx }} aria-hidden className="w-full shrink-0" />
+        <div
+          style={{ height: spacerPx }}
+          aria-hidden
+          className="w-full shrink-0 bg-[#2E77AE]"
+        />
       ) : null}
       <header
         ref={setHeaderRef}

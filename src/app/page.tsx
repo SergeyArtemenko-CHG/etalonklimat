@@ -37,6 +37,7 @@ export default function Home() {
             aria-label="Бренды"
           >
             <div className="mx-auto max-w-6xl px-4">
+              <h2 className="home-section-heading">ОФИЦИАЛЬНЫЙ ДИСТРИБЬЮТОР</h2>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-y-8 md:gap-x-16">
                 {featuredBrands.slice(0, 5).map((brand, i, arr) => {
                   const copy = brandProductTypes(brand);
@@ -53,14 +54,17 @@ export default function Home() {
                           : ""
                       }`}
                     >
-                      <div className="mb-[18px] flex min-h-[72px] items-center justify-center">
+                      <div className="mb-3 flex min-h-[72px] items-center justify-center">
                         <img
                           src={brand.logo}
-                          alt={brand.name}
+                          alt=""
                           className="brand-card-logo max-h-[72px] max-w-[300px] w-auto object-contain"
                           loading="lazy"
                         />
                       </div>
+                      <h3 className="m-0 mb-2 font-open-sans text-base font-semibold leading-snug text-[#151617]">
+                        {brand.name}
+                      </h3>
                       <p className="mx-auto m-0 max-w-[420px] text-sm leading-5 text-[#151617]">
                         {copy}
                       </p>
