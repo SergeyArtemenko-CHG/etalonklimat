@@ -4,19 +4,22 @@ import HomeHero from "@/components/HomeHero";
 import HomeLeadCta from "@/components/HomeLeadCta";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
-import { featuredBrands } from "@/data/brands";
-import { products } from "@/data/products";
+import { featuredBrands, type FeaturedBrand } from "@/data/brands";
+import { categories, products } from "@/data/products";
+import { productBrandMatchesFeatured } from "@/lib/featured-brand-products";
 
-const brandDealerCopy: Record<string, string> = {
-  fbr: "Официальный дилер горелок FBR в России. Прямые поставки из Италии. Газовые, жидкотопливные и комбинированные горелки для промышленных и коммерческих котлов.",
-  energostandart:
-    "Прямой поставщик оборудования «Энергостандарт». Водогрейные и паровые котлы, деаэраторы и вспомогательные системы для котельных.",
-  egs: "Официальный партнёр «ЭнергоГазСервис». Котельное и горелочное оборудование для теплоснабжения и технологического пара.",
-  execo:
-    "Прямые поставки горелок ЭксЭко. Модулируемые горелочные устройства с высокой энергоэффективностью и низкими выбросами.",
-  vandjord:
-    "Официальный дилер насосов Vandjord. Насосное оборудование для отопления, водоснабжения и инженерных систем объектов любой сложности.",
-};
+/** Типы товаров бренда: подкатегории, иначе категории */
+function brandProductTypes(brand: FeaturedBrand): string {
+  const names = new Set<string>();
+  for (const p of products) {
+    if (!productBrandMatchesFeatured(p.brand, brand)) continue;
+    const cat = categories.find((c) => c.slug === p.categorySlug);
+    const sub = cat?.subCategories?.find((s) => s.slug === p.subCategorySlug);
+    if (sub?.name) names.add(sub.name);
+    else if (cat?.name) names.add(cat.name);
+  }
+  return [...names].join(". ");
+}
 
 export default function Home() {
   const popularProducts = products.filter((p) => p.popular === true).slice(0, 8);
@@ -27,34 +30,38 @@ export default function Home() {
       <main>
         <HomeHero />
 
-        {/* Brands — 5 карточек в ряд */}
+        {/* Brands — стиль карточек как santech.ru/main/brands */}
         {featuredBrands.length > 0 ? (
           <section
             className="bg-[#f8f9fa] pb-8 pt-8 md:pb-10 md:pt-10"
-            aria-label="Эталон Профи — официальный дилер"
+            aria-label="Бренды"
           >
-            <div className="mx-auto max-w-7xl px-4">
-              <h2 className="home-section-heading">Эталон Профи:</h2>
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
-                {featuredBrands.slice(0, 5).map((brand) => {
-                  const copy =
-                    brandDealerCopy[brand.slug] ??
-                    `Официальный дилер ${brand.name}. Оборудование для котельных и систем теплоснабжения.`;
+            <div className="mx-auto max-w-6xl px-4">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-y-8 md:gap-x-16">
+                {featuredBrands.slice(0, 5).map((brand, i, arr) => {
+                  const copy = brandProductTypes(brand);
+                  if (!copy) return null;
+                  const centerLast =
+                    i === arr.length - 1 && arr.length % 2 === 1;
                   return (
                     <Link
                       key={brand.slug}
                       href={`/brands/${brand.slug}`}
-                      className="brand-card group flex min-h-[16rem] flex-col overflow-hidden rounded-tl-2xl rounded-br-2xl border-[6px] border-[#9ca3af] bg-card-bg p-4 shadow-md shadow-text-muted/8 transition-[background-color] duration-300 hover:bg-main-bg md:min-h-[18.5rem] md:p-6"
+                      className={`brand-card group block rounded-lg bg-card-bg px-6 py-7 text-center${
+                        centerLast
+                          ? " md:col-span-2 md:mx-auto md:w-full md:max-w-[calc((100%-4rem)/2)]"
+                          : ""
+                      }`}
                     >
-                      <div className="mx-auto flex h-24 w-full items-center justify-center md:h-28">
+                      <div className="mb-[18px] flex min-h-[72px] items-center justify-center">
                         <img
                           src={brand.logo}
-                          alt=""
-                          className="brand-card-logo max-h-full max-w-[90%] object-contain"
+                          alt={brand.name}
+                          className="brand-card-logo max-h-[72px] max-w-[300px] w-auto object-contain"
                           loading="lazy"
                         />
                       </div>
-                      <p className="mt-4 m-0 flex-1 text-center font-sans text-[0.85rem] font-bold leading-snug tracking-[0.02em] text-text-main md:text-[0.95rem]">
+                      <p className="mx-auto m-0 max-w-[420px] text-sm leading-5 text-[#151617]">
                         {copy}
                       </p>
                     </Link>
@@ -68,7 +75,7 @@ export default function Home() {
         {/* О нас — фото по краям, fixed при скролле */}
         <section className="home-about-parallax py-10 md:py-14" aria-labelledby="home-about-heading">
           <div className="mx-auto max-w-2xl px-4 md:max-w-3xl">
-            <div className="rounded-tl-2xl rounded-br-2xl border-[6px] border-[#26999c] bg-card-bg p-6 shadow-md shadow-text-muted/8 md:p-8">
+            <div className="rounded-tl-2xl rounded-br-2xl border-[3px] border-[#E0EAF5] bg-card-bg p-6 shadow-md shadow-text-muted/8 md:p-8">
               <h2 id="home-about-heading" className="home-section-heading">
                 О нас
               </h2>

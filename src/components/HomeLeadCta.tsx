@@ -9,7 +9,7 @@ function openChatWidget() {
 export default function HomeLeadCta() {
   return (
     <section className="mx-auto max-w-6xl px-4 pb-10">
-      <div className="rounded-tl-2xl rounded-br-2xl border-[6px] border-[#4fb76a] bg-card-bg p-6 text-center shadow-md shadow-text-muted/8 md:p-8">
+      <div className="rounded-tl-2xl rounded-br-2xl border-[3px] border-[#E0EAF5] bg-card-bg p-6 text-center shadow-md shadow-text-muted/8 md:p-8">
         <h2 className="home-section-heading mb-3">
           Опишите Вашу задачу — мы предложим решение!
         </h2>

@@ -16,7 +16,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0e2e39] text-white">
+    <footer className="bg-[#2E77AE] text-white">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* О компании */}
@@ -26,22 +26,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/about" className="transition hover:text-accent">
+                <Link href="/about" className="transition hover:text-white">
                   О нас
                 </Link>
               </li>
               <li>
-                <Link href="/requisites" className="transition hover:text-accent">
+                <Link href="/requisites" className="transition hover:text-white">
                   Реквизиты
                 </Link>
               </li>
               <li>
-                <Link href="/reviews" className="transition hover:text-accent">
+                <Link href="/reviews" className="transition hover:text-white">
                   Отзывы
                 </Link>
               </li>
               <li>
-                <Link href="/contacts" className="transition hover:text-accent">
+                <Link href="/contacts" className="transition hover:text-white">
                   Контакты
                 </Link>
               </li>
@@ -55,22 +55,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/category/gorelki-dlya-kotlov-otopleniya" className="transition hover:text-accent">
+                <Link href="/category/gorelki-dlya-kotlov-otopleniya" className="transition hover:text-white">
                   Горелки для котлов
                 </Link>
               </li>
               <li>
-                <Link href="/category/kotly-vodogreinye" className="transition hover:text-accent">
+                <Link href="/category/kotly-vodogreinye" className="transition hover:text-white">
                   Котлы водогрейные
                 </Link>
               </li>
               <li>
-                <Link href="/category/kotly-parovye" className="transition hover:text-accent">
+                <Link href="/category/kotly-parovye" className="transition hover:text-white">
                   Котлы паровые
                 </Link>
               </li>
               <li>
-                <Link href="/category/deaeratory" className="transition hover:text-accent">
+                <Link href="/category/deaeratory" className="transition hover:text-white">
                   Деаэраторы
                 </Link>
               </li>
@@ -84,17 +84,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/delivery" className="transition hover:text-accent">
+                <Link href="/delivery" className="transition hover:text-white">
                   Доставка и оплата
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="transition hover:text-accent">
+                <Link href="/faq" className="transition hover:text-white">
                   Частые вопросы
                 </Link>
               </li>
               <li>
-                <Link href="/returns" className="transition hover:text-accent">
+                <Link href="/returns" className="transition hover:text-white">
                   Возврат и обмен
                 </Link>
               </li>
@@ -108,7 +108,7 @@ export default function Footer() {
             </h3>
             <a
               href="tel:+74993980140"
-              className="mb-2 block text-lg font-semibold text-white hover:text-accent"
+              className="mb-2 block text-lg font-semibold text-white hover:text-white"
             >
               +7 (499) 398-01-40
             </a>
@@ -117,7 +117,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:info@etalonklimat.ru"
-              className="mb-4 block text-sm text-white/80 underline-offset-2 hover:text-accent hover:underline"
+              className="mb-4 block text-sm text-white/80 underline-offset-2 hover:text-white hover:underline"
             >
               info@etalonklimat.ru
             </a>
@@ -149,7 +149,7 @@ export default function Footer() {
               данных в соответствии с{" "}
               <Link
                 href="/privacy-policy"
-                className="underline underline-offset-1 transition hover:text-accent"
+                className="underline underline-offset-1 transition hover:text-white"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
               >
@@ -158,7 +158,7 @@ export default function Footer() {
               и{" "}
               <Link
                 href="/agreement"
-                className="underline underline-offset-1 transition hover:text-accent"
+                className="underline underline-offset-1 transition hover:text-white"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
               >

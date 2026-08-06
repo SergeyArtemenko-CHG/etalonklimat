@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Open_Sans } from "next/font/google";
 import { Suspense } from "react";
 import Script from "next/script";
 import "./globals.css";
@@ -17,6 +17,13 @@ import { getSiteOrigin } from "@/lib/site-url";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "cyrillic"],
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin", "cyrillic"],
+  weight: ["300", "400", "600", "700", "800"],
   display: "swap",
 });
 
@@ -72,7 +79,7 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-main-bg text-text-main`}
+        className={`${inter.variable} ${openSans.variable} font-sans antialiased min-h-screen flex flex-col bg-main-bg text-text-main`}
       >
         <Suspense fallback={null}>
           <YandexMetrika />

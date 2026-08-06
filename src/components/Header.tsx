@@ -265,14 +265,14 @@ export default function Header() {
       ) : null}
       <header
         ref={setHeaderRef}
-        className={`w-full bg-[#16566f] text-white shadow-lg ${
+        className={`w-full bg-[#2E77AE] text-white shadow-lg ${
           isSticky && spacerPx > 0
             ? "fixed inset-x-0 top-0 z-[200]"
             : "relative z-[200]"
         }`}
       >
       {/* Top bar — всегда видима */}
-      <div className="border-b border-white/10 bg-[#0e2e39]">
+      <div className="border-b border-white/10 bg-[#0d2137] text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 text-xs sm:text-sm">
           <div className="flex items-center gap-2">
             <span className="text-white/80">Ваш город:</span>
@@ -280,7 +280,7 @@ export default function Header() {
               type="button"
               onClick={() => setCityModalOpen(true)}
               aria-label={`Выбрать город. Текущий: ${cityName}`}
-              className={`rounded-full border border-white/30 px-2 py-0.5 text-xs font-medium hover:border-white hover:bg-white/10 transition-all duration-300 ${
+              className={`rounded-full border border-white/30 px-2 py-0.5 text-xs font-medium text-white transition-all duration-300 hover:border-white hover:bg-white/10 ${
                 cityLoaded ? "opacity-100" : "opacity-95"
               }`}
             >
@@ -343,7 +343,7 @@ export default function Header() {
               onClick={() => setCatalogOpen(!catalogOpen)}
               aria-label={catalogOpen ? "Закрыть каталог" : "Открыть каталог"}
               aria-expanded={catalogOpen}
-              className="header-ctrl group flex shrink-0 items-center gap-2 rounded-none border border-white bg-[#16566f] px-3 text-sm font-bold text-white transition-[background-color,height] duration-300 ease-out hover:bg-[#124a5f] active:scale-[0.98] md:px-6"
+              className="header-ctrl group flex shrink-0 items-center gap-2 rounded-none border border-white bg-[#2E77AE] px-3 text-sm font-bold text-white transition-[background-color,height] duration-300 ease-out hover:bg-[#276a9c] active:scale-[0.98] md:px-6"
             >
               <div className="flex flex-col gap-1">
                 <span className={`h-0.5 w-4 bg-white transition-all ${catalogOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
@@ -407,7 +407,7 @@ export default function Header() {
           <Link
             href="/cart"
             aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`}
-            className="header-ctrl hidden shrink-0 items-center gap-3 rounded-none border border-white bg-[#16566f] px-4 transition-[background-color,height] duration-300 ease-out hover:bg-[#124a5f] md:flex md:pl-5 md:pr-4"
+            className="header-ctrl hidden shrink-0 items-center gap-3 rounded-none border border-white bg-[#2E77AE] px-4 transition-[background-color,height] duration-300 ease-out hover:bg-[#276a9c] md:flex md:pl-5 md:pr-4"
           >
             <div className="text-right">
               <p className="text-[10px] uppercase tracking-wider text-white/80">Корзина</p>
