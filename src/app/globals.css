@@ -326,6 +326,27 @@ a.brand-card:focus-visible .brand-card-logo {
   filter: grayscale(1);
 }
 
+/* Затемнение сверху/снизу на том же fixed-слое, что и фото */
+.home-about-parallax::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(13, 33, 55, 0.55) 0%,
+    rgba(13, 33, 55, 0.12) 22%,
+    transparent 38%,
+    transparent 62%,
+    rgba(13, 33, 55, 0.12) 78%,
+    rgba(13, 33, 55, 0.55) 100%
+  );
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media (min-width: 768px) {
   .home-about-parallax {
     margin-bottom: 3rem;
@@ -333,7 +354,8 @@ a.brand-card:focus-visible .brand-card-logo {
 }
 
 @media (min-width: 1025px) {
-  .home-about-parallax::before {
+  .home-about-parallax::before,
+  .home-about-parallax::after {
     background-attachment: fixed;
   }
 }

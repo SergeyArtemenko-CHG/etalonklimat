@@ -39,7 +39,7 @@ export default function HomeHero() {
           }}
         >
           <p className="m-0 text-[clamp(1rem,1.7vw,1.2rem)] font-semibold leading-snug tracking-[-0.01em]">
-            Скидки до 45% для зарегистрированных пользователей
+            Скидки до 45% для зарегистрированных покупателей
           </p>
           <Link
             href="/login"

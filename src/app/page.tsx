@@ -93,7 +93,7 @@ export default function Home() {
               <div className="text-center">
                 <Link
                   href="/about"
-                  className="inline-flex items-center justify-center bg-[#26999c] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
+                  className="inline-flex items-center justify-center bg-accent px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-accent-hover"
                 >
                   Подробнее
                 </Link>
