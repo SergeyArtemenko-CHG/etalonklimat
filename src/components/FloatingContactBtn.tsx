@@ -187,24 +187,33 @@ export default function FloatingContactBtn() {
       if (!currentSession) return;
 
       try {
-        const res = await fetch("/api/chat-replies?t=" + Date.now(), {
-          method: "POST",
+        // GET: Next не интерпретирует запрос как Server Action (ошибка после редеплоя).
+        const qs = new URLSearchParams({
+          sessionId: currentSession,
+          t: String(Date.now()),
+        });
+        const res = await fetch(`/api/chat-replies?${qs.toString()}`, {
+          method: "GET",
           cache: "no-store",
+          credentials: "same-origin",
           headers: {
-            "Content-Type": "application/json",
+            Accept: "application/json",
             Pragma: "no-cache",
             "Cache-Control": "no-cache",
           },
-          body: JSON.stringify({ sessionId: currentSession, _t: Date.now() }),
         });
         const raw = await res.text();
         if (!res.ok || !pollActiveRef.current) return;
+
+        // Ответ должен быть JSON; HTML/текст "Failed to find Server Action" игнорим.
+        const trimmed = (raw || "").trim();
+        if (!trimmed.startsWith("{") && !trimmed.startsWith("[")) return;
 
         let data: { replies?: { text?: string }[]; typing?: boolean; status?: string } = {
           replies: [],
         };
         try {
-          data = JSON.parse(raw);
+          data = JSON.parse(trimmed);
         } catch {
           return;
         }

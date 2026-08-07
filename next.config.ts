@@ -15,6 +15,22 @@ const nextConfig: NextConfig = {
     // Отключаем PPR, чтобы не усложнять генерацию страниц в продакшене
     ppr: false,
   },
+
+  /**
+   * Опционально: отдать /api/chat-replies микросервису check_api.js (pm2 :3001).
+   * В .env: CHAT_REPLIES_UPSTREAM=http://127.0.0.1:3001
+   * Без переменной отвечает встроенный Route Handler Next.js.
+   */
+  async rewrites() {
+    const upstream = (process.env.CHAT_REPLIES_UPSTREAM || "").trim().replace(/\/$/, "");
+    if (!upstream) return [];
+    return [
+      {
+        source: "/api/chat-replies",
+        destination: `${upstream}/api/chat-replies`,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
