@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
     // Снижаем нагрузку на сборку/рантайм оптимизатора изображений
     unoptimized: true,
   },
+  // ЧПУ без завершающего слэша — canonical должен совпадать
+  trailingSlash: false,
 
   experimental: {
     // Отключаем PPR, чтобы не усложнять генерацию страниц в продакшене

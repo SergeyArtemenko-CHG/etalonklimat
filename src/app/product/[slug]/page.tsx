@@ -14,7 +14,10 @@ import ProductImage from "@/components/ProductImage";
 import ProductPageActions from "./ProductPageActions";
 import ProductPriceBlock from "./ProductPriceBlock";
 import PreloadProductImage from "@/components/PreloadProductImage";
-import { getSiteOrigin, buildCanonicalUrl } from "@/lib/site-url";
+import {
+  getCanonicalOrigin,
+  buildProductCanonicalUrl,
+} from "@/lib/site-url";
 import {
   getProductPlaceholderImageUrl,
   productImageAlt,
@@ -37,9 +40,9 @@ function truncateMetaDescription(plain: string, max = 160): string {
   return `${safe}…`;
 }
 
-function buildProductJsonLd(product: Product): string {
-  const site = getSiteOrigin();
-  const url = `${site}/product/${encodeURIComponent(product.slug)}`;
+function buildProductJsonLd(product: Product, canonicalUrl: string): string {
+  const site = getCanonicalOrigin();
+  const url = canonicalUrl;
   const imagePath =
     product.image?.trim() || getProductPlaceholderImageUrl(product.sku);
   const imageUrl = imagePath.startsWith("http")
@@ -102,7 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Товар не найден" };
   }
 
-  const site = getSiteOrigin();
+  const site = getCanonicalOrigin();
   const plain = toPlainDescription(product);
   const title = `${product.name} — арт. ${product.sku} · Эталон Профи`;
   const description =
@@ -115,14 +118,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? imagePath
     : `${site}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
 
-  const canonicalUrl = buildCanonicalUrl(
-    `/product/${encodeURIComponent(product.slug)}`
-  );
+  // Абсолютный URL текущей карточки без UTM/yclid и без trailing slash.
+  const canonicalUrl = buildProductCanonicalUrl(product.slug);
 
   return {
+    metadataBase: new URL(`${site}/`),
     title,
     description,
-    alternates: { canonical: canonicalUrl },
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title,
       description,
@@ -155,7 +160,8 @@ export default async function ProductPage({ params }: Props) {
   }
 
   const categoryMatch = getCategoryBySlug(product.categorySlug);
-  const productJsonLd = buildProductJsonLd(product);
+  const canonicalUrl = buildProductCanonicalUrl(product.slug);
+  const productJsonLd = buildProductJsonLd(product, canonicalUrl);
 
   return (
     <div className="min-h-screen bg-main-bg">
