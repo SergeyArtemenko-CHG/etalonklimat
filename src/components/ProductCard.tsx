@@ -10,8 +10,8 @@ import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { useProductRequestStore } from "@/store/productRequest";
 import {
   getProductHref,
-  productImageAlt,
-  resolveProductImageSrc,
+  buildProductImageAlt,
+  resolveProductImageSeoSrc,
 } from "@/lib/product-url";
 
 type ProductCardProps = {
@@ -71,9 +71,10 @@ function ProductCard(props: ProductCardProps) {
   const openRequestModal = useProductRequestStore((s) => s.open);
   const { data: session } = useSession();
   const href = getProductHref({ id, sku, name, slug });
+  const seoSource = { name, sku, slug };
   const usePlaceholder = !image?.trim() || imageError;
-  const displayImageSrc = resolveProductImageSrc(image, sku, usePlaceholder);
-  const imageAlt = productImageAlt(name);
+  const displayImageSrc = resolveProductImageSeoSrc(image, seoSource, usePlaceholder);
+  const imageAlt = buildProductImageAlt(seoSource);
 
   const handleImageError = () => {
     setImageError(true);

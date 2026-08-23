@@ -12,8 +12,8 @@ import TopAuthBar from "@/components/TopAuthBar";
 import { useStickyGuard } from "@/hooks/useStickyGuard";
 import {
   getProductHref,
-  productImageAlt,
-  resolveProductImageSrc,
+  buildProductImageAlt,
+  resolveProductImageSeoSrc,
 } from "@/lib/product-url";
 
 function CartIcon({ className }: { className?: string }) {
@@ -47,15 +47,26 @@ function CartIcon({ className }: { className?: string }) {
   );
 }
 
-function SearchProductThumb({ src, alt, sku }: { src?: string; alt: string; sku: string }) {
+function SearchProductThumb({
+  src,
+  alt,
+  sku,
+  slug,
+}: {
+  src?: string;
+  alt: string;
+  sku: string;
+  slug?: string;
+}) {
   const [failed, setFailed] = useState(false);
+  const seoSource = { name: alt, sku, slug };
   const usePlaceholder = !src?.trim() || failed;
-  const imageSrc = resolveProductImageSrc(src, sku, usePlaceholder);
+  const imageSrc = resolveProductImageSeoSrc(src, seoSource, usePlaceholder);
   return (
     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-text-muted/25 bg-main-bg">
       <Image
         src={imageSrc}
-        alt={productImageAlt(alt)}
+        alt={buildProductImageAlt(seoSource)}
         width={48}
         height={48}
         sizes="48px"
@@ -395,7 +406,7 @@ export default function Header() {
                        onClick={() => setOpen(false)}
                        className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-main-bg"
                      >
-                       <SearchProductThumb src={p.image} alt={p.name} sku={p.sku} />
+                       <SearchProductThumb src={p.image} alt={p.name} sku={p.sku} slug={p.slug} />
                        <div className="min-w-0 flex-1">
                          <p className="truncate text-sm font-medium text-text-main">{p.name}</p>
                          <p className="text-[10px] uppercase tracking-tight text-text-muted">Арт: {p.sku}</p>

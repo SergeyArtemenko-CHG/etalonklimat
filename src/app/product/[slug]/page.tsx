@@ -19,8 +19,9 @@ import {
   buildProductCanonicalUrl,
 } from "@/lib/site-url";
 import {
-  getProductPlaceholderImageUrl,
-  productImageAlt,
+  buildProductImageAlt,
+  resolveProductImageSeoAbsoluteUrl,
+  resolveProductImageSeoSrc,
 } from "@/lib/product-url";
 
 function toPlainDescription(product: Product): string {
@@ -43,11 +44,12 @@ function truncateMetaDescription(plain: string, max = 160): string {
 function buildProductJsonLd(product: Product, canonicalUrl: string): string {
   const site = getCanonicalOrigin();
   const url = canonicalUrl;
-  const imagePath =
-    product.image?.trim() || getProductPlaceholderImageUrl(product.sku);
-  const imageUrl = imagePath.startsWith("http")
-    ? imagePath
-    : `${site}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
+  const seoSource = {
+    name: product.name,
+    sku: product.sku,
+    slug: product.slug,
+  };
+  const imageUrl = resolveProductImageSeoAbsoluteUrl(product.image, seoSource, site);
 
   const offers: Record<string, unknown> = {
     "@type": "Offer",
@@ -112,11 +114,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     truncateMetaDescription(plain) ||
     `${product.name}. Артикул ${product.sku}. Доставка по России; персональные цены и сроки — после входа в кабинет партнёра.`;
 
-  const imagePath =
-    product.image?.trim() || getProductPlaceholderImageUrl(product.sku);
-  const ogImageUrl = imagePath.startsWith("http")
-    ? imagePath
-    : `${site}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
+  const seoSource = {
+    name: product.name,
+    sku: product.sku,
+    slug: product.slug,
+  };
+  const imageAlt = buildProductImageAlt(seoSource);
+  const ogImageUrl = resolveProductImageSeoAbsoluteUrl(
+    product.image,
+    seoSource,
+    site
+  );
 
   // Абсолютный URL текущей карточки без UTM/yclid и без trailing slash.
   const canonicalUrl = buildProductCanonicalUrl(product.slug);
@@ -138,7 +146,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: ogImageUrl,
-          alt: productImageAlt(product.name),
+          alt: imageAlt,
         },
       ],
     },
@@ -162,6 +170,16 @@ export default async function ProductPage({ params }: Props) {
   const categoryMatch = getCategoryBySlug(product.categorySlug);
   const canonicalUrl = buildProductCanonicalUrl(product.slug);
   const productJsonLd = buildProductJsonLd(product, canonicalUrl);
+  const seoSource = {
+    name: product.name,
+    sku: product.sku,
+    slug: product.slug,
+  };
+  const preloadImageSrc = resolveProductImageSeoSrc(
+    product.image,
+    seoSource,
+    !product.image?.trim()
+  );
 
   return (
     <div className="min-h-screen bg-main-bg">
@@ -169,7 +187,7 @@ export default async function ProductPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: productJsonLd }}
       />
-      {product.image && <PreloadProductImage href={product.image} />}
+      <PreloadProductImage href={preloadImageSrc} />
       <Header />
       <main className="mx-auto max-w-6xl px-4 py-6 md:py-8">
         <div className="rounded-2xl bg-card-bg p-4 shadow-md shadow-text-muted/8 md:p-6">
@@ -200,6 +218,7 @@ export default async function ProductPage({ params }: Props) {
                     src={product.image}
                     alt={product.name}
                     productKey={product.sku}
+                    slug={product.slug}
                     className="h-full w-full object-contain"
                     fallbackToPlaceholder
                   />

@@ -3,9 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import {
-  getProductPlaceholderImageUrl,
-  productImageAlt,
-  resolveProductImageSrc,
+  buildProductImageAlt,
+  resolveProductImageSeoSrc,
 } from "@/lib/product-url";
 
 const IMG_WIDTH = 800;
@@ -16,8 +15,10 @@ type ProductImageProps = {
   alt: string;
   className?: string;
   fallbackToPlaceholder?: boolean;
-  /** SKU или id — уникальный ?prod= для заглушки */
+  /** SKU — уникальный ?v= / ?prod= для SEO */
   productKey?: string;
+  /** ЧПУ товара — резервный ключ уникальности */
+  slug?: string;
   /** LCP: приоритетная загрузка главного изображения */
   priority?: boolean;
 };
@@ -57,18 +58,20 @@ export default function ProductImage({
   className,
   fallbackToPlaceholder = true,
   productKey = "item",
+  slug,
   priority = true,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
   const [placeholderFailed, setPlaceholderFailed] = useState(false);
+  const seoSource = { name: alt, sku: productKey, slug };
   const rawSrc = src?.trim();
   const usePlaceholder =
     !rawSrc ||
     rawSrc.endsWith("no-image.webp") ||
     (fallbackToPlaceholder && failed);
 
-  const imageSrc = resolveProductImageSrc(src, productKey, usePlaceholder);
-  const imageAlt = productImageAlt(alt);
+  const imageSrc = resolveProductImageSeoSrc(src, seoSource, usePlaceholder);
+  const imageAlt = buildProductImageAlt(seoSource);
 
   const handleError = () => {
     if (imageSrc.includes("no-image.webp")) {

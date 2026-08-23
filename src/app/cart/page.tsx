@@ -12,7 +12,7 @@ import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { formatPrice } from "@/utils/currency";
 import RetailPriceLabel from "@/components/RetailPriceLabel";
 import { products } from "@/data/products";
-import { getProductHref, productImageAlt, resolveProductImageSrc } from "@/lib/product-url";
+import { getProductHref, buildProductImageAlt, resolveProductImageSeoSrc } from "@/lib/product-url";
 
 const CartCheckoutSection = dynamic(() => import("./CartCheckoutSection"), {
   ssr: false,
@@ -25,13 +25,14 @@ const CartCheckoutSection = dynamic(() => import("./CartCheckoutSection"), {
 
 function CartProductThumb({ src, name, sku }: { src?: string; name: string; sku: string }) {
   const [failed, setFailed] = useState(false);
+  const seoSource = { name, sku };
   const usePlaceholder = !src?.trim() || failed;
-  const imageSrc = resolveProductImageSrc(src, sku, usePlaceholder);
+  const imageSrc = resolveProductImageSeoSrc(src, seoSource, usePlaceholder);
   return (
     <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-text-muted/25 bg-card-bg">
       <Image
         src={imageSrc}
-        alt={productImageAlt(name)}
+        alt={buildProductImageAlt(seoSource)}
         fill
         className="object-contain p-1"
         sizes="64px"
