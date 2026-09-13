@@ -1,15 +1,21 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CategoryView from "@/components/CategoryView";
+import PumpsCategoryHub from "@/components/pumps/PumpsCategoryHub";
 import {
   categories,
   getCategoryBySlug,
   getProductsByCategory,
 } from "@/data/products";
 import { buildCanonicalUrl, parseCatalogPageParam } from "@/lib/site-url";
+import {
+  isLegacyPumpCategorySlug,
+  PUMPS_CATEGORY_SLUG,
+  PUMPS_CONFIGURATOR_PATH,
+} from "@/lib/pumps-nav";
 
 export const revalidate = false;
 
@@ -34,6 +40,19 @@ export async function generateMetadata({
   searchParams,
 }: Props): Promise<Metadata> {
   const { slug } = await params;
+
+  if (isLegacyPumpCategorySlug(slug) || slug === PUMPS_CATEGORY_SLUG) {
+    const pathname =
+      slug === PUMPS_CATEGORY_SLUG ? `/category/${slug}` : PUMPS_CONFIGURATOR_PATH;
+    return {
+      title:
+        slug === PUMPS_CATEGORY_SLUG
+          ? "Насосы Vandjord · Эталон Профи"
+          : "Подбор насосов Vandjord · Эталон Профи",
+      alternates: { canonical: buildCanonicalUrl(pathname) },
+    };
+  }
+
   const categoryMatch = getCategoryBySlug(slug);
 
   if (!categoryMatch) {
@@ -57,6 +76,27 @@ export async function generateMetadata({
 
 export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
+
+  // Старые подкатегории насосов → конфигуратор (301)
+  if (isLegacyPumpCategorySlug(slug)) {
+    permanentRedirect(PUMPS_CONFIGURATOR_PATH);
+  }
+
+  // Корневая «Насосы» — витрина серий Vandjord
+  if (slug === PUMPS_CATEGORY_SLUG) {
+    return (
+      <div className="min-h-screen bg-main-bg">
+        <Header />
+        <main className="px-4 py-6 md:py-8">
+          <div className="mx-auto max-w-6xl">
+            <PumpsCategoryHub />
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   const categoryMatch = getCategoryBySlug(slug);
 
   if (!categoryMatch) {

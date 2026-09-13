@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,12 +17,17 @@ import PreloadProductImage from "@/components/PreloadProductImage";
 import {
   getCanonicalOrigin,
   buildProductCanonicalUrl,
+  buildCanonicalUrl,
 } from "@/lib/site-url";
 import {
   buildProductImageAlt,
   resolveProductImageSeoAbsoluteUrl,
   resolveProductImageSeoSrc,
 } from "@/lib/product-url";
+import {
+  getPumpSeriesHrefWithSku,
+  isVandjordPumpSku,
+} from "@/lib/pumps-catalog";
 
 function toPlainDescription(product: Product): string {
   const raw =
@@ -92,7 +97,10 @@ export const revalidate = false;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
+  // Старые карточки насосов Vandjord не генерируем — только 301 на серии
+  return products
+    .filter((p) => !isVandjordPumpSku(p.sku))
+    .map((p) => ({ slug: p.slug }));
 }
 
 type Props = {
@@ -105,6 +113,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!product) {
     return { title: "Товар не найден" };
+  }
+
+  // Canonical на серию, если это насос из дерева Vandjord
+  if (isVandjordPumpSku(product.sku)) {
+    const seriesHref = getPumpSeriesHrefWithSku(product.sku);
+    if (seriesHref) {
+      const pathOnly = seriesHref.split("?")[0];
+      return {
+        title: `${product.name} · Эталон Профи`,
+        alternates: { canonical: buildCanonicalUrl(pathOnly) },
+        robots: { index: false, follow: true },
+      };
+    }
   }
 
   const site = getCanonicalOrigin();
@@ -165,6 +186,12 @@ export default async function ProductPage({ params }: Props) {
 
   if (!product) {
     notFound();
+  }
+
+  // 301: старые /product/{slug} насосов Vandjord → страница серии
+  if (isVandjordPumpSku(product.sku)) {
+    const target = getPumpSeriesHrefWithSku(product.sku);
+    if (target) permanentRedirect(target);
   }
 
   const categoryMatch = getCategoryBySlug(product.categorySlug);

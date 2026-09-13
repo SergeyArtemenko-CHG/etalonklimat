@@ -123,20 +123,10 @@ export const categories: CategoryNode[] = [
   {
     slug: "nasosy",
     name: "Насосы",
-    subCategories: [
-      { slug: "avtomaticheskaya-pogruzhnaya-kolodeznaya-nasosnaya-ustanovka", name: "Автоматическая погружная колодезная насосная установка" },
-      { slug: "vertikalnye-mnogostupenchatye-nasosy", name: "Вертикальные многоступенчатые насосы" },
-      { slug: "vertikalnye-mnogostupenchatye-nasosy-iz-nerzhaveyushchei-stali-aisi-316", name: "Вертикальные многоступенчатые насосы из нержавеющей стали AISI 316" },
-      { slug: "gorizontalnye-mnogostupenchatye-nasosy", name: "Горизонтальные многоступенчатые насосы" },
-      { slug: "drenazhnye-nasosy-iz-nerzhaveyushchei-stali", name: "Дренажные насосы из нержавеющей стали" },
-      { slug: "kommercheskie-ustanovki-povysheniya-davleniya", name: "Коммерческие установки повышения давления" },
-      { slug: "kommercheskie-ustanovki-pozharotusheniya", name: "Коммерческие установки пожаротушения" },
-      { slug: "konsolno-monoblochnye-nasosy", name: "Консольно-моноблочные насосы" },
-      { slug: "konsolno-monoblochnye-nasosy-iz-nerzhaveyushchei-stali", name: "Консольно-моноблочные насосы из нержавеющей стали" },
-      { slug: "konsolnye-nasosy", name: "Консольные насосы" },
-      { slug: "odnostupenchatye-nasosy-in-lain", name: "Одноступенчатые насосы ин-лайн" },
-      { slug: "samovsasyvayushchaya-nasosnaya-ustanovka", name: "Самовсасывающая насосная установка" },
-    ],
+    // Старые подкатегории (тысячи карточек) убраны.
+    // Навигация и витрина — через /catalog/podbor-nasosov-vandjord и страницы серий.
+    // Legacy URL /category/<old-sub> → 301 в next.config.ts.
+    subCategories: [],
   },
   {
     slug: "okhladiteli-prob",

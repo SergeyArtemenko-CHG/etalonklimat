@@ -229,25 +229,16 @@ function ProductCard(props: ProductCardProps) {
                   Цена без скидки
                 </span>
               )}
-              {isAuthorized ? (
-                leadTime && (
-                  <p
-                    className={`text-[11px] ${
-                      !inStock ? "text-primary" : "text-text-muted"
-                    }`}
-                  >
-                    Срок поставки:{" "}
-                    <span className="font-medium">{leadTime}</span>
-                  </p>
-                )
-              ) : (
-                !inStock && (
-                  <p className="text-[11px] text-text-muted">
-                    Срок поставки:{" "}
-                    <span className="font-medium">Уточняйте у менеджера</span>
-                  </p>
-                )
-              )}
+              {isAuthorized && leadTime ? (
+                <p
+                  className={`text-[11px] ${
+                    !inStock ? "text-primary" : "text-text-muted"
+                  }`}
+                >
+                  Срок поставки:{" "}
+                  <span className="font-medium">{leadTime}</span>
+                </p>
+              ) : null}
             </div>
           ) : null}
         </div>

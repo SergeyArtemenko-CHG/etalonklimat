@@ -87,22 +87,22 @@ export default function ProductPriceBlock({
           : "Цена с НДС"}
       </span>
 
-      {isAuthorized ? (
-        leadTime && (
-          <p
-            className={`text-sm ${
-              !inStock ? "text-blue-600" : "text-text-muted"
-            }`}
-          >
-            Срок поставки: <span className="font-medium">{leadTime}</span>
-          </p>
-        )
-      ) : (
-        <p className="text-sm text-text-muted">
-          Срок поставки:{" "}
-          <span className="font-medium">Уточняйте у менеджера</span>
-        </p>
-      )}
+      {isAuthorized
+        ? leadTime && (
+            <p
+              className={`text-sm ${
+                !inStock ? "text-blue-600" : "text-text-muted"
+              }`}
+            >
+              Срок поставки: <span className="font-medium">{leadTime}</span>
+            </p>
+          )
+        : !inStock && (
+            <p className="text-sm text-text-muted">
+              Срок поставки:{" "}
+              <span className="font-medium">Уточняйте у менеджера</span>
+            </p>
+          )}
     </div>
   );
 }

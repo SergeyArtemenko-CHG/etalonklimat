@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BrandFbrIntro from "@/components/BrandFbrIntro";
 import ContentLayout from "@/components/ContentLayout";
 import BrandPageCatalog from "@/components/BrandPageCatalog";
@@ -12,6 +13,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { buildCanonicalUrl, parseCatalogPageParam } from "@/lib/site-url";
+import { getAllPumpSeries } from "@/lib/pumps-catalog";
+import { PUMPS_CONFIGURATOR_PATH } from "@/lib/pumps-nav";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -91,6 +94,9 @@ export default async function BrandPage({ params }: Props) {
     )
   ).sort((a, b) => a.localeCompare(b, "ru"));
 
+  const pumpSeries =
+    slug === "vandjord" ? getAllPumpSeries() : [];
+
   return (
     <ContentLayout
       title={pageTitle}
@@ -103,9 +109,37 @@ export default async function BrandPage({ params }: Props) {
             id="brand-catalog-heading"
             className="mb-4 text-lg font-semibold text-primary md:text-xl"
           >
-            Товары бренда {brand.name}
+            {slug === "vandjord"
+              ? `Серии насосов ${brand.name}`
+              : `Товары бренда ${brand.name}`}
           </h2>
-          {brandProducts.length > 0 ? (
+          {slug === "vandjord" ? (
+            <div>
+              <Link
+                href={PUMPS_CONFIGURATOR_PATH}
+                className="mb-6 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-bold text-white shadow-md transition hover:bg-accent-hover"
+              >
+                Насосы (конфигуратор)
+              </Link>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {pumpSeries.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={s.path}
+                    className="rounded-xl border border-text-muted/20 bg-card-bg p-4 shadow-sm transition hover:border-accent hover:shadow-md"
+                  >
+                    <p className="font-semibold text-primary">{s.series}</p>
+                    <p className="mt-1 text-xs text-text-muted">
+                      {s.modelCount} модификаций
+                      {s.priceMin != null
+                        ? ` · от ${s.priceMin.toLocaleString("ru-RU")} ₽`
+                        : ""}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : brandProducts.length > 0 ? (
             <BrandPageCatalog
               slug={brand.slug}
               products={brandProducts}

@@ -1,0 +1,7 @@
+pandas>=2.0
+requests>=2.31
+urllib3>=2.0
+beautifulsoup4>=4.12
+lxml>=4.9
+# опционально для VJ Select API через Playwright:
+playwright>=1.40

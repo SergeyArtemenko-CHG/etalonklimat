@@ -1,0 +1,1179 @@
+id="app">
+    <div class="container">
+        <div class="tabs tabs-custom">
+            <div v-for="tab in tabs" class="tabs-custom-item">
+                <div class="tab" :key="tab.id" :class="{ active: activeTab === tab.id }">
+                    <input type="radio" :id="tab.id" name="tab" :checked="activeTab === tab.id"
+                           @change="setActiveTab(tab.id)">
+                    <label :for="tab.id">{{ tab.label }}</label>
+                    <div class="tab-content-custom" v-html="tab.content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-content">
+            <div class="app-panel">
+                                <div
+                        class="flex-grow-1 app-panel-inner"
+                        :class="{'app-panel-columns': activeTab === 'analog' || activeTab === 'extended'}"
+                >
+
+                    <div v-if="activeTab === 'search'" class="form-group app-panel-columns-no-break">
+                        <label for="article">Введите артикул или наименование</label>
+                        <input type="text" id="article" v-model="articleInput" placeholder="">
+                    </div>
+
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab !== 'search'"
+                         v-show="applications.length > 0">
+                        <label for="application">Область применения</label>
+                        <multiselect
+                                v-model="selectedApplication"
+                                @change="updateEquipmentTypes"
+                                :options="applications"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="selectedApplication"
+                                @remove="filterSmartInfo('selectedApplication')"
+                                @select="filterSmartInfo('selectedApplication')"
+                        >
+                        </multiselect>
+                                            </div>
+
+
+                    <div
+                            :class="{'app-panel-order-sm-1': activeTab === 'analog'}"
+                    >
+
+                        <div
+                                class="form-group app-panel-columns-no-break"
+                                v-show="!additionalParamsShow"
+                        >
+                            <label class="additional-param-button-label" for="additional-param-button">Добавить
+                                параметры системы</label>
+                            <button
+                                    class="w-100 app-button app-button-outline app-button-hover"
+                                    @click="additionalParamsShow = true"
+                            >
+                                Добавить параметры системы
+                            </button>
+                        </div>
+
+
+                        <div v-show="additionalParamsShow">
+
+                            <div class="form-group app-panel-columns-no-break">
+                                <label for="flow">Расход системы (Q)</label>
+                                <div class="d-flex gap-6">
+                                                                        <input class="js-m3-info-q" type="text" step="0.0001" @input="validateInputFlowVal" id="flow"
+                                           v-model="flowValue" placeholder="">
+                                    <div class="unit-select">
+                                        <multiselect
+                                                v-model="selectedUnits.flow"
+                                                :options="unitsFlow"
+                                                :multiple="false"
+                                                :searchable="false"
+                                                placeholder=""
+                                                @select="resetCustomGrafTable"
+                                                name="selectedUnits.flow"
+                                        >
+                                        </multiselect>
+                                                                            </div>
+                                </div>
+                            </div>
+                            <div class="form-group app-panel-columns-no-break">
+                                <label for="pressure">Требуемый напор (H)</label>
+                                <div class="d-flex gap-6">
+                                                                        <input class="js-m3-info-h" type="text" step="0.0001" @input="validateInputPresVal"
+                                           id="pressure" v-model="pressureValue" placeholder="">
+                                    <div class="unit-select">
+                                        <multiselect
+                                                v-model="selectedUnits.pressure"
+                                                :options="units"
+                                                :multiple="false"
+                                                :searchable="false"
+                                                placeholder=""
+                                                @select="resetCustomGrafTable"
+                                                name="selectedUnits.pressure"
+                                        >
+                                        </multiselect>
+                                                                            </div>
+                                </div>
+                            </div>
+                            <div class="form-group app-panel-columns-no-break">
+                                <label for="static-pressure">Статический напор (Hст)</label>
+                                <div class="d-flex gap-6">
+                                    <input type="text" step="0.0001" @input="validateInputPresSVal" id="static-pressure"
+                                           v-model="staticPressureValue" placeholder="">
+                                    <div class="unit-select">
+                                        <multiselect
+                                                v-model="selectedUnits.pressure"
+                                                :options="units"
+                                                :multiple="false"
+                                                :searchable="false"
+                                                placeholder=""
+                                                @select="resetCustomGrafTable"
+                                                name="selectedUnits.pressure"
+                                        >
+                                        </multiselect>
+                                                                                                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group app-panel-columns-no-break">
+                                <label for="liquid">Перекачиваемая жидкость</label>
+                                <multiselect
+                                        v-model="liquidValue"
+                                        :options="liquid"
+                                        :multiple="false"
+                                        track-by="id"
+                                        placeholder=""
+                                        label="name"
+                                        @select="selectedKey"
+                                        name="liquidValue"
+                                >
+                                </multiselect>
+                            </div>
+                            <div class="form-group app-panel-columns-no-break"
+                                 v-show="liquidValue.id === 'Добавить свою жидкость'">
+                                <label for="liquidCustom">Название перекачиваемой жидкости</label>
+                                <input type="text" id="liquidCustom" v-model="liquidCustom" placeholder="">
+                            </div>
+                            <div class="form-group app-panel-columns-no-break"
+                                 v-show="this.liquidValue && this.liquidValue.id != 'Вода'&& this.liquidValue.id != 'Добавить свою жидкость'"
+                                 v-if="1 || 0 && activeTab !== 'search' && activeTab !== 'quick' && activeTab !== 'analog'">
+                                <label for="concentration">Концентрация</label>
+                                <div class="d-flex gap-6">
+                                    <multiselect
+                                            v-model="concentrationValue"
+                                            :options="concentrationValueID"
+                                            :multiple="false"
+                                            track-by="id"
+                                            placeholder=""
+                                            label="name"
+                                            @select="selectedKey"
+                                            name="concentrationValue"
+                                    >
+                                    </multiselect>
+                                    <div class="unit-select">
+                                        <select class="dis-full" disabled>
+                                            <option value="%">%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group app-panel-columns-no-break">
+                                <label for="max-temp">Max t жидкости  <span
+                                            v-if="
+                                          liquidValue &&
+                                          liquidValue.id != 'Добавить свою жидкость' &&
+                                          ufNuMinKey !== null &&
+                                          ufNuMaxKey !== null
+                                        "
+                                        :class="['range-hint', { 'range-hint--error': isMaxTempOutOfRange }]"
+                                                                        >
+                                        (от {{ ufNuMinKey }} до {{ ufNuMaxKey }})
+                                      </span>
+                                </label>
+                                <div class="d-flex gap-6">
+                                    <input type="text" step="0.0001" @input="validateInputMaxTemp" id="max-temp"
+                                           v-model="maxTempValue" placeholder="" @keypress="resetCustomGrafTable"
+                                           :class="['range-hintv2', { 'range-hint--errorv2': isMaxTempOutOfRange }]"
+                                    >
+                                    <div class="unit-select">
+                                        <select class="dis-full" disabled>
+                                            <option value="°C">°C</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group app-panel-columns-no-break">
+                                <label for="density">Плотность жидкости</label>
+                                <div class="d-flex gap-6">
+                                    <input type="text" step="0.0001" id="density"
+                                           @input="validateInputDen" :disabled="liquidValue.id !== 'Добавить свою жидкость'"
+                                           v-model="densityValue" placeholder="" @keypress="resetCustomGrafTable">
+                                    <div class="unit-select">
+                                        <select class="dis-full" disabled>
+                                            <option value="кг/м³">кг/м³</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group app-panel-columns-no-break"
+                                 v-show="this.liquidValue && this.liquidValue.id != 'Вода'"
+                            >
+                                <label for="density">Вязкость</label>
+                                <div class="d-flex gap-6">
+                                    <input type="text" step="0.0001" id="densityV"
+                                           @input="validateInputDenV" :disabled="liquidValue.id !== 'Добавить свою жидкость'"
+                                           v-model="densityValueV" placeholder="" @keypress="resetCustomGrafTable">
+                                    <div class="unit-select">
+                                        <select class="dis-full" disabled>
+                                            <option value="мм²/с">мм²/с</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex d-flex-custom-bb">
+                                <div class="form-group app-panel-columns-no-break"
+                                     v-show="activeTab === 'quick' && (
+                                    (selectedApplication && (
+                                        selectedApplication.id == 'Пожаротушение'
+                                            || selectedApplication.id == 'Установки повышения давления'
+                                    )
+                                    )
+                                    || hasHydroPartial(selectedEquipmentTypes)
+                                 )">
+                                    <label for="parallelConnection">Рабочие насосы</label>
+                                    <multiselect
+                                            :class="{'custom-show-blue-select': activeTab === 'quick' && (
+                                        (selectedApplication && (
+                                            selectedApplication.id == 'Пожаротушение'
+                                            || selectedApplication.id == 'Установки повышения давления'
+                                        )
+                                        )
+                                        || hasHydroPartial(selectedEquipmentTypes)
+                                     )}"
+                                            v-model="selectedParallelConnection"
+                                            :options="parallelConnectionOptions"
+                                            :multiple="false"
+                                            track-by="value"
+                                            placeholder=""
+                                            label="value"
+                                            name="selectedParallelConnection"
+                                            @select="resetCustomGrafTable"
+                                    >
+                                    </multiselect>
+                        </div>
+                                <div class="form-group app-panel-columns-no-break"
+                                     v-show="(activeTab === 'quick' && (
+                                (selectedApplication && (
+                                            selectedApplication.id == 'Пожаротушение'
+                                            || selectedApplication.id == 'Установки повышения давления'
+                                )
+                                )
+                                || hasHydroPartial(selectedEquipmentTypes))
+                                //&& selectedParallelConnection && selectedParallelConnection.value > 1
+                             )">
+                                    <label for="backupPumps">Резервные насосы</label>
+                                    <multiselect
+                                            :class="{'custom-show-blue-select': activeTab === 'quick' && (
+                                        (selectedApplication && (
+                                            selectedApplication.id == 'Пожаротушение'
+                                            || selectedApplication.id == 'Установки повышения давления'
+                                        )
+                                        )
+                                        || hasHydroPartial(selectedEquipmentTypes)
+                                     )}"
+                                            v-model="selectedBackupPumps"
+                                            :options="backupPumpsOptions"
+                                            :multiple="false"
+                                            track-by="value"
+                                            placeholder=""
+                                            label="text"
+                                            name="selectedBackupPumps"
+                                            @select="resetCustomGrafTable"
+                                    >
+                                    </multiselect>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="app-panel-columns-break">
+
+                    </div>
+
+
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog'">
+                        <label for="manufacturer">Бренд аналога</label>
+                        <multiselect
+                                v-model="selectedManufacturer"
+                                :options="manufacturers"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="selectedManufacturer"
+                                @select="filterNames"
+                                @remove="filterNamesDelete"
+                        >
+                        </multiselect>
+                                            </div>
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog'">
+                        <label for="nameInput">Наименование аналога</label>
+                        <multiselect
+                                v-model="selectedName"
+                                :options="filteredNames"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="selectedName"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog' && showAnalogPopMD && showAnalog && selectedName && selectedName.id">
+                        <label for="analogDl">Монтажная длина</label>
+                        <multiselect
+                                :class="{'custom-show-blue-select': analog.dl === 'Совпадает'}"
+                                v-model="analog.dl"
+                                :options="analogDl"
+                                :multiple="false"
+                                :searchable="false"
+                                placeholder=""
+                                name="analog.dl"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog' && showAnalogPopRNP && selectedName && selectedName.id">
+                        <label for="analogRpat">Размер патрубка</label>
+                        <multiselect
+                                :class="{'custom-show-blue-select': analog.rpat === 'Совпадает'}"
+                                v-model="analog.rpat"
+                                :options="analogRpat"
+                                :multiple="false"
+                                :searchable="false"
+                                placeholder=""
+                                name="analog.rpat"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog' && showAnalogPopMDV && selectedName && selectedName.id">
+                        <label for="analogDl">Количество полюсов</label>
+                        <multiselect
+                                :class="{'custom-show-blue-select': analog.dlV === 'Совпадает'}"
+                                v-model="analog.dlV"
+                                :options="analogDlV"
+                                :multiple="false"
+                                :searchable="false"
+                                placeholder=""
+                                name="analog.dlV"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog' && showAnalogPopPV && showAnalogPop && selectedName && selectedName.id">
+                        <label for="analogPower">Поплавковый выключатель</label>
+                        <multiselect
+                                :class="{'custom-show-blue-select': analog.pVikl === 'Совпадает'}"
+                                v-model="analog.pVikl"
+                                :options="analogPvikl"
+                                :multiple="false"
+                                :searchable="false"
+                                placeholder=""
+                                name="analog.pVikl"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog' && showAnalogPopTM && selectedName && selectedName.id">
+                        <label for="analogPower">Тип монтажа</label>
+                        <multiselect
+                                :class="{'custom-show-blue-select': analog.pViklQ === 'Совпадает'}"
+                                v-model="analog.pViklQ"
+                                :options="analogPviklQ"
+                                :multiple="false"
+                                :searchable="false"
+                                placeholder=""
+                                name="analog.pViklQ"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog' && showAnalogPopNM && selectedName && selectedName.id">
+                        <label for="analogPower">Мощность</label>
+                        <multiselect
+                                :class="{'custom-show-blue-select': analog.pw === 'Совпадает'}"
+                                v-model="analog.pw"
+                                :options="analogPw"
+                                :multiple="false"
+                                :searchable="false"
+                                placeholder=""
+                                name="analog.pw"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break" v-if="activeTab === 'analog' && showAnalogPopF && selectedName && selectedName.id">
+                        <label for="analogTok">Напряжение</label>
+                        <multiselect
+                                :class="{'custom-show-blue-select': analog.t === 'Совпадает'}"
+                                v-model="analog.t"
+                                :options="analogT"
+                                :multiple="false"
+                                :searchable="false"
+                                placeholder=""
+                                name="analog.t"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break"
+                         v-if="0 && activeTab === 'quick' || 0 && activeTab === 'analog' || 0 && activeTab === 'search'">
+                        <label for="concentration">Концентрация</label>
+                        <div class="d-flex gap-6">
+                            <input type="text" id="concentration" v-model="concentrationValue" placeholder=""
+                                   @keypress="resetCustomGrafTable">
+                            <div class="unit-select">
+                                <select v-model="selectedUnits.concentration">
+                                    <!-- Изменено на selectedUnits.concentration -->
+                                    <option v-for="unit in unitsConcentration" :key="unit" :value="unit">{{ unit}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break"
+                         v-if="0 && activeTab === 'quick' || 0 && activeTab === 'analog' || 0 && activeTab === 'search'">
+                        <label for="density">Плотность жидкости</label>
+                        <div class="d-flex gap-6">
+                            <input type="text" id="density" v-model="densityValue" placeholder=""
+                                   @keypress="resetCustomGrafTable">
+                            <div class="unit-select">
+                                <select v-model="selectedUnits.density"> <!-- Изменено на selectedUnits.density -->
+                                    <option v-for="unit in unitsDensity" :key="unit" :value="unit">{{ unit }}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && equipmentTypes.length > 0">
+                        <label for="equipmentType">Тип оборудования</label>
+                        <multiselect
+                                v-model="selectedEquipmentTypes"
+                                :options="equipmentTypes"
+                                :multiple="true"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="selectedEquipmentTypes"
+                                @select="(event) => { loadSizeTypes(true); filterSmartInfo('selectedEquipmentTypes'); }"
+                                @remove="filterSmartInfo('selectedEquipmentTypes')"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && sizeTypes.length > 0"> <!-- Условие для отображения -->
+                        <label for="sizeType">Типоразмер оборудования</label>
+                        <multiselect
+                                v-model="selectedSizeTypes"
+                                :options="sizeTypes"
+                                :multiple="true"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedSizeTypes'); }"
+                                @remove="filterSmartInfo('selectedSizeTypes')"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && serviceFactor.length > 0"> <!-- Условие для отображения -->
+                        <label for="sizeType">Сервис фактор</label>
+                        <multiselect
+                                v-model="selectedServiceFactor"
+                                :options="serviceFactor"
+                                :multiple="true"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('filterSmartInfo'); }"
+                                @remove="filterSmartInfo('filterSmartInfo')"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="d-flex d-flex-custom-bb">
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && (
+                            (selectedApplication && (
+                                selectedApplication.id == 'Пожаротушение'
+                                || selectedApplication.id == 'Установки повышения давления'
+                            )
+                            )
+                            || hasHydroPartial(selectedEquipmentTypes)
+                         )">
+                            <label for="parallelConnection">Рабочие насосы</label>
+                        <multiselect
+                                    :class="{'custom-show-blue-select': activeTab === 'extended' && (
+                                        (selectedApplication && (
+                                            selectedApplication.id == 'Пожаротушение'
+                                            || selectedApplication.id == 'Установки повышения давления'
+                                        )
+                                        )
+                                        || hasHydroPartial(selectedEquipmentTypes)
+                                     )}"
+                                v-model="selectedParallelConnection"
+                                :options="parallelConnectionOptions"
+                                :multiple="false"
+                                track-by="value"
+                                placeholder=""
+                                label="value"
+                                name="selectedParallelConnection"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="(activeTab === 'extended' && (
+                            (selectedApplication && (
+                                selectedApplication.id == 'Пожаротушение'
+                                || selectedApplication.id == 'Установки повышения давления'
+                            )
+                            )
+                            || hasHydroPartial(selectedEquipmentTypes))
+                                //&& selectedParallelConnection && selectedParallelConnection.value > 1
+                         )">
+                        <label for="backupPumps">Резервные насосы</label>
+                        <multiselect
+                                    :class="{'custom-show-blue-select': activeTab === 'extended' && (
+                                        (selectedApplication && (
+                                            selectedApplication.id == 'Пожаротушение'
+                                            || selectedApplication.id == 'Установки повышения давления'
+                                        )
+                                        )
+                                        || hasHydroPartial(selectedEquipmentTypes)
+                                     )}"
+                                v-model="selectedBackupPumps"
+                                :options="backupPumpsOptions"
+                                :multiple="false"
+                                track-by="value"
+                                placeholder=""
+                                label="text"
+                                name="selectedBackupPumps"
+                                @select="resetCustomGrafTable"
+                        >
+                        </multiselect>
+                    </div>
+                    </div>
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && bodyMaterialCount.length > 0">
+                        <label for="bodyMaterial">Материал корпуса</label>
+                        <multiselect
+                                v-model="bodyMaterial"
+                                :options="bodyMaterialCount"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="bodyMaterial"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('bodyMaterial'); }"
+                                @remove="filterSmartInfo('bodyMaterial')"
+                        >
+                        </multiselect>
+                                            </div>
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && wheelMaterialCount.length > 0">
+                        <label for="wheelMaterial">Материал рабочего колеса</label>
+                        <multiselect
+                                v-model="wheelMaterial"
+                                :options="wheelMaterialCount"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="wheelMaterial"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('wheelMaterial'); }"
+                                @remove="filterSmartInfo('wheelMaterial')"
+                        >
+                        </multiselect>
+                                            </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && wheelTypeOptions.length > 0">
+                        <label for="wheelType">Тип рабочего колеса</label>
+                        <multiselect
+                                v-model="wheelType"
+                                :options="wheelTypeOptions"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="wheelType"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('wheelType'); }"
+                                @remove="filterSmartInfo('wheelType')"
+                        >
+                        </multiselect>
+                                            </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && wheelTypeCount.length > 0">
+                        <label for="maxWorkingPressure">Max рабочее давление</label>
+                        <multiselect
+                                v-model="maxWorkingPressure"
+                                :options="wheelTypeCount"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="maxWorkingPressure"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('maxWorkingPressure'); }"
+                                @remove="filterSmartInfo('maxWorkingPressure')"
+                        >
+                        </multiselect>
+                                            </div>
+
+                    <div class="form-group app-panel-columns-no-break" v-show="activeTab === 'extended' && wheelTypeCountFree.length > 0">
+                        <label for="maxWorkingPressureFree">Свободный проход рабочего колеса</label>
+                        <div class="range-select">
+                            <div class="d-flex gap-6">
+                                                                <multiselect
+                                        v-model="maxWorkingPressureFreeFrom"
+                                        :options="optionsFrom"
+                                        :multiple="false"
+                                        track-by="id"
+                                        placeholder="От"
+                                        label="name"
+                                        name="maxWorkingPressureFreeFrom"
+                                        @select="onRangeChange"
+                                        @remove="onRangeChange"
+                                >
+                        </multiselect>
+
+                                <multiselect
+                                        v-model="maxWorkingPressureFreeTo"
+                                        :options="optionsTo"
+                                        :multiple="false"
+                                        track-by="id"
+                                        placeholder="До"
+                                        label="name"
+                                        name="maxWorkingPressureFreeTo"
+                                        @select="onRangeChange"
+                                        @remove="onRangeChange"
+                                >
+                                </multiselect>
+                            </div>
+                            <div class="range-slider" v-if="wheelTypeCountFreeSorted.length > 1">
+                                <div class="range-slider__labels">
+                                    <span class="range-slider__label-min">
+                                        {{ wheelTypeCountFreeSorted[0].name }}
+                                    </span>
+                                    <span class="range-slider__label-max">
+                                        {{ wheelTypeCountFreeSorted[wheelTypeCountFreeSorted.length - 1].name }}
+                                    </span>
+                                </div>
+
+                                <vue-slider
+                                        v-model="sliderRange"
+                                        :min="0"
+                                        :max="wheelTypeCountFreeSorted.length - 1"
+                                        :interval="1"
+                                        :enable-cross="false"
+                                        :tooltip="'none'"
+                                        @change="onSliderChange"
+                                ></vue-slider>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && dischargeSizes.length > 0">
+                        <label for="dischargeSize">Размер напорного патрубка</label>
+                        <multiselect
+                                v-model="selectedDischargeSizes"
+                                :options="dischargeSizes"
+                                :multiple="true"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedDischargeSizes'); }"
+                                @remove="filterSmartInfo('selectedDischargeSizes')"
+                        >
+                        </multiselect>
+                    </div>
+
+                    <div class="form-group app-panel-columns-no-break" v-show="activeTab === 'extended' && suctionSizes.length > 0">
+                        <label for="suctionSize">Размер всасывающего патрубка</label>
+                        <multiselect
+                                v-model="selectedSuctionSizes"
+                                :options="suctionSizes"
+                                :multiple="true"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedSuctionSizes'); }"
+                                @remove="filterSmartInfo('selectedSuctionSizes')"
+                        >
+                        </multiselect>
+                    </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && typeMontag.length > 0">
+                        <label for="suctionSize">Тип монтажа</label>
+                        <multiselect
+                                v-model="selectedTypeMontag"
+                                :options="typeMontag"
+                                :multiple="true"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedTypeMontag'); }"
+                                @remove="filterSmartInfo('selectedTypeMontag')"
+                        >
+                        </multiselect>
+                    </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && powers.length > 0">
+                        <label for="power">Мощность</label>
+                        <div class="d-flex gap-6">
+                            <multiselect
+                                    v-model="selectedPowers"
+                                    :options="powers"
+                                    :multiple="true"
+                                    track-by="id"
+                                    placeholder=""
+                                    label="name"
+                                    @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedPowers'); }"
+                                    @remove="filterSmartInfo('selectedPowers')"
+                            >
+                            </multiselect>
+                            <div class="unit-select">
+                                                                <select class="dis-full" disabled>
+                                    <option value="кВт">кВт</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && vsPopVikl.length > 0">
+                        <label for="suctionSize">Встроенный поплавковый выключатель</label>
+                        <multiselect
+                                v-model="selectedVsPopVikl"
+                                :options="vsPopVikl"
+                                :multiple="true"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedVsPopVikl'); }"
+                                @remove="filterSmartInfo('selectedVsPopVikl')"
+                        >
+                        </multiselect>
+                    </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && timeWork.length > 0">
+                        <label for="suctionSize">Режим работы</label>
+                        <multiselect
+                                v-model="selectedTimeWork"
+                                :options="timeWork"
+                                :multiple="true"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedTimeWork'); }"
+                                @remove="filterSmartInfo('selectedTimeWork')"
+                        >
+                        </multiselect>
+                    </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && phaseCounts.length > 0">
+                        <label for="phaseCount">Количество фаз</label>
+                        <multiselect
+                                v-model="selectedPhaseCount"
+                                :options="phaseCounts"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="selectedPhaseCount"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedPhaseCount'); }"
+                                @remove="filterSmartInfo('selectedPhaseCount')"
+                        >
+                        </multiselect>
+                                            </div>
+
+                    <div class="form-group app-panel-columns-no-break"
+                         v-show="activeTab === 'extended' && poleCounts.length > 0">
+                        <label for="poleCount">Количество полюсов</label>
+                        <multiselect
+                                v-model="selectedPoleCount"
+                                :options="poleCounts"
+                                :multiple="false"
+                                track-by="id"
+                                placeholder=""
+                                label="name"
+                                name="selectedPoleCount"
+                                @select="(event) => { resetCustomGrafTable(); filterSmartInfo('selectedPoleCount'); }"
+                                @remove="filterSmartInfo('selectedPoleCount')"
+                        >
+                        </multiselect>
+                                            </div>
+
+
+                </div>
+
+                <div class="app-panel-buttons">
+
+                    <div class="app-panel-buttons-item">
+                        <button class="app-button app-button-outline app-button-icon" @click="showPopup = true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M12 9.5C13.3809 9.5 14.5 10.6191 14.5 12C14.5 13.3809 13.3809 14.5 12 14.5C10.6191 14.5 9.5 13.3809 9.5 12C9.5 10.6191 10.6191 9.5 12 9.5Z"
+                                      stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M20.168 7.25025V7.25025C19.4845 6.05799 17.9712 5.65004 16.7885 6.33852C15.7598 6.93613 14.4741 6.18838 14.4741 4.99218C14.4741 3.61619 13.3659 2.5 11.9998 2.5V2.5C10.6337 2.5 9.52546 3.61619 9.52546 4.99218C9.52546 6.18838 8.23977 6.93613 7.21199 6.33852C6.02829 5.65004 4.51507 6.05799 3.83153 7.25025C3.14896 8.4425 3.55399 9.96665 4.73769 10.6541C5.76546 11.2527 5.76546 12.7473 4.73769 13.3459C3.55399 14.0343 3.14896 15.5585 3.83153 16.7498C4.51507 17.942 6.02829 18.35 7.21101 17.6625H7.21199C8.23977 17.0639 9.52546 17.8116 9.52546 19.0078V19.0078C9.52546 20.3838 10.6337 21.5 11.9998 21.5V21.5C13.3659 21.5 14.4741 20.3838 14.4741 19.0078V19.0078C14.4741 17.8116 15.7598 17.0639 16.7885 17.6625C17.9712 18.35 19.4845 17.942 20.168 16.7498C20.8515 15.5585 20.4455 14.0343 19.2628 13.3459H19.2618C18.2341 12.7473 18.2341 11.2527 19.2628 10.6541C20.4455 9.96665 20.8515 8.4425 20.168 7.25025Z"
+                                      stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="app-panel-buttons-item app-panel-buttons-item-grow">
+                        <button
+                                class="app-button app-button-outline"
+                                @click="resetParameters(false, true)"
+                        >
+                            Сбросить <span class="app-button-xs-hidden">параметры</span>
+                        </button>
+                    </div>
+                    <div class="app-panel-buttons-divider"></div>
+                    <div
+                            class="app-panel-buttons-item app-panel-buttons-item-grow"
+                            :class="{'app-panel-buttons-item-half': activeTab === 'analog' || activeTab === 'extended'}"
+                    >
+                        <button
+                                class="app-button"
+                                @click="submitForm"
+                                ref="submitButton"
+                        >
+                            {{ activeTab === 'search' ? 'Найти' : 'Подобрать' }}
+                        </button>
+                    </div>
+
+
+                    <button
+                            class="app-button js-info-custom-click-graf"
+                            v-show="0"
+                            @click="submitFormCustom"
+                    >
+                        Подобрать
+                    </button>
+
+
+                </div>
+            </div>
+
+            <div class="app-panel">
+                <div :class="['app-panel-preview flex-grow-1', { 'active': isActive }]">
+                    <div v-if="isLoading" class="overlay">
+                        <div class="loader">
+                            <img class="lazyload "  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/product_selection/3dgifmaker38205.gif">
+                        </div>
+                    </div>
+                    <div v-show="activeMainTab === 'chart'">
+                        <div v-show="chartData">
+                            <!-- Здесь можно отобразить график на основе chartData -->
+                            <div id="data-d3js-settings" class=""
+                                 data-d3js-settings='{"stroke":"#0057b8","stroke_width":"3","stroke_dasharray":"","stroke_custom":"#b10020","stroke_width_custom":"1.5","stroke_dasharray_custom":"","line_thin_color":"#0057b8","line_thin_width":"0.5","line_thin_dasharray":"","stroke_kpd":"#000000","stroke_width_kpd":"3","stroke_dasharray_kpd":"","stroke_line_thin_kpd":"#000000","stroke_line_thin_width_kpd":"0.5","stroke_line_thin_dasharray_kpd":"","area_stroke":"#005eeb","area_opacity":"0.3","area_thin_stroke":"#005eeb","area_thin_opacity":"0.05","grid_stroke":"#9d9999","grid_stroke_width":"1","grid_stroke_opacity":"1","title_stroke":"#000","title_size":"18","title_stroke_opacity":"1","axis_x_color":"#000000","axis_x_size":"18","axis_x_opacity":"1","axis_x_translate_y":"40","axis_y_left_color":"#000000","axis_y_left_size":"18","axis_y_left_opacity":"1","axis_y_left_translate_x":"0","axis_y_left_translate_y":"0","axis_y_left_rotate":"0","axis_y_right_color":"#000000","axis_y_right_size":"18","axis_y_right_opacity":"1","axis_y_right_translate_x":"-100","axis_y_right_translate_y":"30","axis_y_right_rotate":"0","axis_y_right_height":"1.65","dot_color":"#979494","dot_radius":"5","dot_opacity":"0.8","dot_user_color":"#b10020","dot_user_radius":"5","dot_user_opacity":"0.8","dot_kpd_color":"#b10020","dot_kpd_radius":"5","dot_kpd_opacity":"0.8","stroke_similar":"#446d46","stroke_width_similar":"3","stroke_dasharray_similar":"","dot_similar_color":"#006c39","dot_similar_radius":"5","dot_similar_opacity":"0.8","stroke_type_equip":"#bf3bd5","stroke_width_type_equip":"0.5","stroke_dasharray_type_equip":"","stroke_reserve_pump":"","stroke_width_reserve_pump":"0.5","stroke_dasharray_reserve_pump":"","stroke_custom_schedule":"#ffa500","stroke_width_custom_schedule":"3","stroke_dasharray_custom_schedule":"","stroke_npsh":"#000000","stroke_width_npsh":"3","stroke_dasharray_npsh":"","stroke_line_thin_npsh":"#000000","stroke_line_thin_width_npsh":"0.5","stroke_line_thin_dasharray_npsh":"","stroke_power":"#0057b8","stroke_width_power":"3","stroke_dasharray_power":"","stroke_line_thin_power":"#0057b8","stroke_line_thin_width_power":"0.5","stroke_line_thin_dasharray_power":"","stroke_speed":"#0057B8","stroke_width_speed":"3","stroke_dasharray_speed":""}'>
+                                <div class="js-hide">
+                                    <div class="psc--d3js" data-d3js=""></div>
+                                    <div class="psc--d3js" data-d3jsKPD=""></div>
+                                    <div class="psc--d3js" data-d3jsNPSH=""
+                                         v-show="showNPSHblock"
+                                         :class="showNPSHblock ? 'add-show-block' : 'add-hide-block'"
+                                    ></div>
+                                    <div class="psc--d3js" data-d3jsP=""></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-show="!chartData">
+                            <h3>График</h3>
+                        </div>
+                    </div>
+                    <div v-show="activeMainTab === 'photo'">
+                        <div v-show="photoData">
+                            <h3>{{nameNasos}}</h3>
+                            <p class="t-center" v-html="photoData" @click="openModal(getImageUrl(photoData))"></p>
+                        </div>
+                        <div v-show="!photoData">
+                            <h3>Фото</h3>
+                        </div>
+                    </div>
+
+                    <div v-show="activeMainTab === 'drawing'" style=" width: 100%; ">
+                        <div v-show="drawingData" style=" width: 100%; ">
+                            <h3>{{nameNasos}}</h3>
+                                                        <div v-show="activeMainTabChert === 'gabChert'" v-for="(value, key) in gabChert" :key="key" class="t-align-center">
+                                <p v-html="value" @click="openModal(getImageUrl(value))"></p>
+                            </div>
+                            <div v-show="activeMainTabChert === 'elSchema'" v-for="(value, key) in elSchema" :key="key" class="t-align-center">
+                                <p v-html="value" @click="openModal(getImageUrl(value))"></p>
+                            </div>
+                            <div v-show="activeMainTabChert === 'schemMon'" v-for="(value, key) in schemMon" :key="key" class="t-align-center">
+                                <p v-html="value" @click="openModal(getImageUrl(value))"></p>
+                            </div>
+                            <div class="app-panel-buttons app-panel-buttons-tech-custom app-panel-buttons-tech-custom-sh"
+                                 v-if="techDataBim || techDataDwg3D || techDataDwg2D || gabChert || elSchema || schemMon"
+                            >
+                                <div class="table-tabs table-tabs-custom">
+                                    <div class="table-tabs__item" v-show="gabChert">
+                                        <div class="app-button" :class="{ 'app-button-outline': activeMainTabChert !== 'gabChert' }"
+                                             @click="activeMainTabChert = 'gabChert'">Габаритный чертеж
+                                        </div>
+                                    </div>
+                                    <div class="table-tabs__item" v-show="elSchema">
+                                        <div class="app-button" :class="{ 'app-button-outline': activeMainTabChert !== 'elSchema' }"
+                                             @click="activeMainTabChert = 'elSchema'">Эл. схема
+                                        </div>
+                                    </div>
+                                    <div class="table-tabs__item" v-show="schemMon">
+                                        <div class="app-button" :class="{ 'app-button-outline': activeMainTabChert !== 'schemMon' }"
+                                             @click="activeMainTabChert = 'schemMon'">Схема монтажа
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-tabs">
+                                    <div v-if="techDataBim"
+                                         class="app-panel-buttons-item app-panel-buttons-item-grow app-panel-buttons-item-grow-center">
+                                        <a :href="techDataBim" target="_blank" class="app-button app-button-outline">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g id="Iconly/Curved/Download">
+                                                    <g id="Download">
+                                                        <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0057b8"
+                                                              stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                        <path id="Stroke 3"
+                                                              d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                              stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                        <path id="Stroke 4"
+                                                              d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                              stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            Скачать&nbsp;BIM</a>
+                                    </div>
+                                    <div v-if="this.techDataDwg3D"
+                                         class="app-panel-buttons-item app-panel-buttons-item-grow  app-panel-buttons-item-grow-center">
+                                        <a :href="techDataDwg3D" target="_blank" class="app-button app-button-outline">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g id="Iconly/Curved/Download">
+                                                    <g id="Download">
+                                                        <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0057b8"
+                                                              stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                        <path id="Stroke 3"
+                                                              d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                              stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                        <path id="Stroke 4"
+                                                              d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                              stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            Скачать&nbsp;DWG&nbsp;3D</a>
+                                    </div>
+                                    <div v-if="techDataDwg2D"
+                                         class="app-panel-buttons-item app-panel-buttons-item-grow app-panel-buttons-item-grow-center">
+                                        <a :href="techDataDwg2D" target="_blank" class="app-button app-button-outline">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g id="Iconly/Curved/Download">
+                                                    <g id="Download">
+                                                        <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0057b8"
+                                                              stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                        <path id="Stroke 3"
+                                                              d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                              stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                        <path id="Stroke 4"
+                                                              d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                              stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            Скачать&nbsp;DWG&nbsp;2D</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-show="!drawingData">
+                            <h3>Чертежи</h3>
+                        </div>
+                    </div>
+
+                    <div v-show="activeMainTab === 'techData'">
+                        <div v-show="techData">
+                            <h3>{{nameNasos}}</h3>
+                            <p v-html="techData" @click="openModal(getImageUrl(techData))"></p>
+                        </div>
+                        <div v-show="!techData">
+                            <h3>Эл. схема</h3>
+                        </div>
+                    </div>
+
+                    <div v-show="activeMainTab === 'docData'" class="height-f-a-w">
+                        <div v-show="docData" class="height-f-a-w-dop">
+                            <h3>{{nameNasos}}</h3>
+                            <div class="app-panel-buttons app-panel-buttons-tech-custom"
+                            >
+                                <div v-if="techDataCatInfo"
+                                     class="app-panel-buttons-item app-panel-buttons-item-grow">
+                                    <a :href="techDataCatInfo" target="_blank" class="app-button app-button-outline">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Iconly/Curved/Download">
+                                                <g id="Download">
+                                                    <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0057b8"
+                                                          stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 3"
+                                                          d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 4"
+                                                          d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        Скачать&nbsp;каталог</a>
+                                </div>
+                                <div v-if="techDataRukInfo"
+                                     class="app-panel-buttons-item app-panel-buttons-item-grow">
+                                    <a :href="techDataRukInfo" target="_blank" class="app-button app-button-outline">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Iconly/Curved/Download">
+                                                <g id="Download">
+                                                    <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0057b8"
+                                                          stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 3"
+                                                          d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 4"
+                                                          d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        Скачать&nbsp;руководство&nbsp;по&nbsp;эксплуатации</a>
+                                </div>
+                                <div v-if="this.techDataSerInfo"
+                                     class="app-panel-buttons-item app-panel-buttons-item-grow">
+                                    <a :href="techDataSerInfo" target="_blank" class="app-button app-button-outline">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Iconly/Curved/Download">
+                                                <g id="Download">
+                                                    <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0057b8"
+                                                          stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 3"
+                                                          d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 4"
+                                                          d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        Скачать&nbsp;сертификат&nbsp;ЕАЭС</a>
+                                </div>
+                                <div v-if="techDataGig"
+                                     class="app-panel-buttons-item app-panel-buttons-item-grow">
+                                    <a :href="techDataGig" target="_blank"
+                                       class="app-button app-button-outline">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Iconly/Curved/Download">
+                                                <g id="Download">
+                                                    <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0057b8"
+                                                          stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 3"
+                                                          d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 4"
+                                                          d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        Скачать гигиенический сертификат</a>
+                                </div>
+                                <div v-if="techDataSertSeq"
+                                     class="app-panel-buttons-item app-panel-buttons-item-grow">
+                                    <a :href="techDataSertSeq" target="_blank"
+                                       class="app-button app-button-outline">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Iconly/Curved/Download">
+                                                <g id="Download">
+                                                    <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0057b8"
+                                                          stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 3"
+                                                          d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 4"
+                                                          d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                          stroke="#0057b8" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        Скачать сейсмосертификат</a>
+                                </div>
+                                <div v-show="this.anal != 'analog'"
+                                     class="app-panel-buttons-item app-panel-buttons-item-grow">
+                                    <a href="javascript:void(0);"
+                                       :disabled="isLoadingButton"
+                                       @click="downloadPassportTechStep" class="app-button app-button-outline">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Iconly/Curved/Download">
+                                                <g id="Download">
+                                                    <path id="Stroke 1" d="M11.8789 14.791V2.75" stroke="#0066B2"
+                                                          stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 3"
+                                                          d="M14.7949 11.8643L11.8789 14.7923L8.96289 11.8643"
+                                                          stroke="#0066B2" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path id="Stroke 4"
+                                                          d="M16.37 7.25879C19.949 7.58879 21.25 8.92879 21.25 14.2588C21.25 21.3588 18.939 21.3588 12 21.3588C5.059 21.3588 2.75 21.3588 2.75 14.2588C2.75 8.92879 4.05 7.58879 7.63 7.25879"
+                                                          stroke="#0066B2" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        {{ isLoadingButton ? 'Загрузка...' : 'Технический паспорт' }}</a>
+                                </div>
+                                <span style="height: 18px"></span>
+                                <div v-if="techDataBim"
+                                     class="app-panel-buttons-item app-panel-buttons-item-grow">
+                                    <a :href="techDataBim" target="_blank" class="app-button app-button-outline">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                           

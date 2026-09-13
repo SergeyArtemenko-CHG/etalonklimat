@@ -74,6 +74,19 @@ export default function Footer() {
                   Деаэраторы
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/catalog/podbor-nasosov-vandjord"
+                  className="font-semibold text-white transition hover:text-accent"
+                >
+                  Насосы (конфигуратор)
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/nasosy" className="transition hover:text-white">
+                  Серии насосов Vandjord
+                </Link>
+              </li>
             </ul>
           </div>
 

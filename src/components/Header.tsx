@@ -15,6 +15,8 @@ import {
   buildProductImageAlt,
   resolveProductImageSeoSrc,
 } from "@/lib/product-url";
+import PumpsCatalogMenu from "@/components/pumps/PumpsCatalogMenu";
+import { PUMPS_CATEGORY_SLUG } from "@/lib/pumps-nav";
 
 function CartIcon({ className }: { className?: string }) {
   return (
@@ -449,19 +451,32 @@ export default function Header() {
             className="absolute left-0 top-full z-50 w-full border-t border-text-muted/15 bg-card-bg px-6 py-8 shadow-2xl md:py-9"
           >
             <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-x-10 gap-y-5 md:grid-cols-4 md:gap-x-12 md:gap-y-6">
-              {categories.map((cat) => (
-                <Link
-                  key={cat.slug}
-                  href={`/category/${cat.slug}`}
-                  onClick={() => {
-                    setCatalogOpen(false);
-                    setQuery("");
-                  }}
-                  className="catalog-category-link w-fit text-sm font-medium"
-                >
-                  {cat.name}
-                </Link>
-              ))}
+              {categories.map((cat) => {
+                if (cat.slug === PUMPS_CATEGORY_SLUG) {
+                  return (
+                    <PumpsCatalogMenu
+                      key={cat.slug}
+                      onNavigate={() => {
+                        setCatalogOpen(false);
+                        setQuery("");
+                      }}
+                    />
+                  );
+                }
+                return (
+                  <Link
+                    key={cat.slug}
+                    href={`/category/${cat.slug}`}
+                    onClick={() => {
+                      setCatalogOpen(false);
+                      setQuery("");
+                    }}
+                    className="catalog-category-link w-fit text-sm font-medium"
+                  >
+                    {cat.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </>
