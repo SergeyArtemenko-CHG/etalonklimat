@@ -17,6 +17,8 @@ export type PumpModel = {
   source: string;
   /** true = в наличии (1 в CSV), false = нет (0) */
   inStock: boolean;
+  /** Путь вида /images/products/CRV.webp */
+  image: string;
 };
 
 export type PumpSeries = {

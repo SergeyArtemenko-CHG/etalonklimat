@@ -89,6 +89,21 @@ def parse_in_stock(value: Any) -> bool:
         return False
 
 
+def resolve_photo_path(value: Any) -> str:
+    """
+    Имя файла из CSV (CRV.jpeg) → публичный путь /images/products/CRV.webp.
+    На сайте картинки продуктов в webp.
+    """
+    raw = str(value or "").strip().replace("\\", "/")
+    if not raw or raw.lower() in {"nan", "none", "-", ""}:
+        return ""
+    name = raw.split("/")[-1]
+    stem = re.sub(r"\.(jpe?g|png|gif|webp|bmp)$", "", name, flags=re.I)
+    if not stem:
+        return ""
+    return f"/images/products/{stem}.webp"
+
+
 def unique_sorted_nums(values: list[Optional[float]]) -> list[float]:
     out = sorted({v for v in values if v is not None})
     return out
@@ -131,9 +146,14 @@ def build_tree(df) -> dict[str, Any]:
     c_poles = col("Полюса")
     c_source = col("Источник")
     c_stock = col("Наличие")
+    c_photo = col("Фото", "картин", "image", "файл картинки")
 
     if not c_sku or not c_series:
         raise SystemExit(f"Нет колонок Артикул / Родительская Серия. Есть: {list(df.columns)}")
+
+    # Excel иногда переименовывает «Цена» → «Столбец1»
+    if c_price is None and "Столбец1" in cols:
+        c_price = cols["Столбец1"]
 
     groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
@@ -155,6 +175,7 @@ def build_tree(df) -> dict[str, Any]:
                 "polesRpm": str(row.get(c_poles) or "").strip() if c_poles else "",
                 "source": str(row.get(c_source) or "").strip() if c_source else "",
                 "inStock": parse_in_stock(row.get(c_stock)) if c_stock else False,
+                "image": resolve_photo_path(row.get(c_photo)) if c_photo else "",
             }
         )
 

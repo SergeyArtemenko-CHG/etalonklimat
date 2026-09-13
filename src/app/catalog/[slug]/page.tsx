@@ -117,60 +117,6 @@ export default async function PumpSeriesPage({ params, searchParams }: Props) {
         </header>
 
         <PumpSeriesConfigurator series={series} initialSku={initialSku} />
-
-        <section className="mt-5 overflow-x-auto rounded-xl border border-text-muted/20 bg-card-bg">
-          <h2 className="border-b border-text-muted/15 px-4 py-3 text-base font-semibold text-primary">
-            Все модификации серии {series.series}
-          </h2>
-          <table className="min-w-full text-left text-sm">
-            <thead className="bg-main-bg text-xs uppercase text-text-muted">
-              <tr>
-                <th className="px-3 py-2 font-medium">Артикул</th>
-                <th className="px-3 py-2 font-medium">Модель</th>
-                <th className="px-3 py-2 font-medium">Q, м³/ч</th>
-                <th className="px-3 py-2 font-medium">H, м</th>
-                <th className="px-3 py-2 font-medium">P2, кВт</th>
-                <th className="px-3 py-2 font-medium">DN</th>
-                <th className="px-3 py-2 font-medium">Цена, ₽</th>
-                <th className="px-3 py-2 font-medium">Наличие</th>
-              </tr>
-            </thead>
-            <tbody>
-              {series.models.map((m) => (
-                <tr
-                  key={m.sku}
-                  className="border-t border-text-muted/10 hover:bg-main-bg/60"
-                >
-                  <td className="px-3 py-2 font-medium text-text-main">
-                    <Link
-                      href={`${series.path}?sku=${encodeURIComponent(m.sku)}`}
-                      className="hover:text-accent"
-                    >
-                      {m.sku}
-                    </Link>
-                  </td>
-                  <td className="px-3 py-2 text-text-main">{m.name}</td>
-                  <td className="px-3 py-2">{formatPumpNum(m.flowM3h)}</td>
-                  <td className="px-3 py-2">{formatPumpNum(m.headM)}</td>
-                  <td className="px-3 py-2">{formatPumpNum(m.powerKw)}</td>
-                  <td className="px-3 py-2">{formatPumpNum(m.dnMm)}</td>
-                  <td className="px-3 py-2">
-                    {m.priceRub != null
-                      ? m.priceRub.toLocaleString("ru-RU")
-                      : "—"}
-                  </td>
-                  <td
-                    className={`px-3 py-2 font-medium ${
-                      m.inStock ? "text-emerald-700" : "text-amber-700"
-                    }`}
-                  >
-                    {m.inStock ? "В наличии" : "Под заказ"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
       </main>
       <Footer />
     </div>
