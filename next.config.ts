@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import fbrProductRedirects from "./src/data/fbr_product_redirects.json";
 
 /** Старые подкатегории насосов → конфигуратор (дублирует LEGACY_PUMP_CATEGORY_SLUGS). */
 const LEGACY_PUMP_CATEGORY_REDIRECTS = [
@@ -35,15 +36,23 @@ const nextConfig: NextConfig = {
   },
 
   /**
-   * 301: старые подкатегории насосов → конфигуратор Vandjord.
-   * Остальные категории не трогаем.
+   * 301:
+   * - старые подкатегории насосов → конфигуратор Vandjord
+   * - старые /product/… горелок FBR → /catalog/gorelki-fbr-…?sku=
    */
   async redirects() {
-    return LEGACY_PUMP_CATEGORY_REDIRECTS.map((slug) => ({
-      source: `/category/${slug}`,
-      destination: "/catalog/podbor-nasosov-vandjord",
-      permanent: true,
-    }));
+    return [
+      ...LEGACY_PUMP_CATEGORY_REDIRECTS.map((slug) => ({
+        source: `/category/${slug}`,
+        destination: "/catalog/podbor-nasosov-vandjord",
+        permanent: true,
+      })),
+      ...(fbrProductRedirects as Array<{
+        source: string;
+        destination: string;
+        permanent: boolean;
+      }>),
+    ];
   },
 
   /**

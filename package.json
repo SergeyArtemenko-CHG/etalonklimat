@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "build:pumps-tree": "python scripts/build_pumps_catalog_tree.py",
+    "build:burners-tree": "python scripts/build_burners_catalog_tree.py",
     "watermark": "node scripts/watermark.js",
     "watermark-pdf": "node scripts/watermark-pdf.js"
   },

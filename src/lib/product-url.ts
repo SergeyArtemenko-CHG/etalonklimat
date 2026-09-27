@@ -1,5 +1,9 @@
 import type { Product } from "@/data/products";
 import { getPumpSeriesHrefWithSku, isVandjordPumpSku } from "@/lib/pumps-catalog";
+import {
+  getBurnerSeriesHrefWithSku,
+  isFbrBurnerSku,
+} from "@/lib/burners-catalog";
 
 const NO_IMAGE_PATH = "/images/products/no-image.webp";
 const IMAGE_ALT_STORE_SUFFIX = ", купить в интернет-магазине ЭТАЛОН";
@@ -50,6 +54,11 @@ export function getProductHref(product: ProductPathSource): string {
   // Насосы Vandjord → страница серии (не старая карточка /product/…)
   if (isVandjordPumpSku(product.sku)) {
     const seriesHref = getPumpSeriesHrefWithSku(product.sku);
+    if (seriesHref) return seriesHref;
+  }
+  // Горелки FBR → страница серии с ?sku=
+  if (isFbrBurnerSku(product.sku)) {
+    const seriesHref = getBurnerSeriesHrefWithSku(product.sku);
     if (seriesHref) return seriesHref;
   }
   return `/product/${encodeURIComponent(getProductSlug(product))}`;

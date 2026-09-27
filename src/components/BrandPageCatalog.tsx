@@ -6,6 +6,7 @@ import ProductCard from "@/components/ProductCard";
 import Sidebar from "@/components/Sidebar";
 import { useFilterStore } from "@/store/useFilterStore";
 import { applyCatalogFilters } from "@/lib/applyCatalogFilters";
+import { withFbrCatalogOverlayAll } from "@/lib/burners-catalog";
 import type { Product } from "@/data/products";
 
 const PAGE_SIZE = 32;
@@ -46,7 +47,10 @@ export default function BrandPageCatalog({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug, presetKey]);
 
-  const safeProducts = products ?? [];
+  const safeProducts = useMemo(
+    () => withFbrCatalogOverlayAll(products ?? []),
+    [products]
+  );
 
   const filteredProducts = useMemo(
     () =>

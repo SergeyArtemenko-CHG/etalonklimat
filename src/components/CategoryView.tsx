@@ -9,6 +9,7 @@ import { useFilterStore } from "@/store/useFilterStore";
 import type { Product } from "@/data/products";
 import type { CategoryMatch } from "@/data/products";
 import { applyCatalogFilters } from "@/lib/applyCatalogFilters";
+import { withFbrCatalogOverlayAll } from "@/lib/burners-catalog";
 
 type CategoryViewProps = {
   products: Product[];
@@ -43,7 +44,10 @@ export default function CategoryView({ products, categoryMatch }: CategoryViewPr
   const numericRanges = useFilterStore((s) => s.numericRanges);
   const specTextFilters = useFilterStore((s) => s.specTextFilters);
 
-  const safeProducts = products ?? [];
+  const safeProducts = useMemo(
+    () => withFbrCatalogOverlayAll(products ?? []),
+    [products]
+  );
 
   const filteredProducts = useMemo(
     () =>

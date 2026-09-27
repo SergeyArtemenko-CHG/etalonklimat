@@ -28,6 +28,11 @@ import {
   getPumpSeriesHrefWithSku,
   isVandjordPumpSku,
 } from "@/lib/pumps-catalog";
+import {
+  getBurnerSeriesHrefWithSku,
+  isFbrBurnerSku,
+} from "@/lib/burners-catalog";
+import { getFbrLegacyProductRedirect } from "@/lib/fbr-redirects";
 
 function toPlainDescription(product: Product): string {
   const raw =
@@ -97,9 +102,9 @@ export const revalidate = false;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // Старые карточки насосов Vandjord не генерируем — только 301 на серии
+  // Карточки насосов Vandjord и горелок FBR не генерируем — 301 на серии
   return products
-    .filter((p) => !isVandjordPumpSku(p.sku))
+    .filter((p) => !isVandjordPumpSku(p.sku) && !isFbrBurnerSku(p.sku))
     .map((p) => ({ slug: p.slug }));
 }
 
@@ -115,9 +120,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Товар не найден" };
   }
 
-  // Canonical на серию, если это насос из дерева Vandjord
+  // Canonical на серию, если это насос Vandjord или горелка FBR
   if (isVandjordPumpSku(product.sku)) {
     const seriesHref = getPumpSeriesHrefWithSku(product.sku);
+    if (seriesHref) {
+      const pathOnly = seriesHref.split("?")[0];
+      return {
+        title: `${product.name} · Эталон Профи`,
+        alternates: { canonical: buildCanonicalUrl(pathOnly) },
+        robots: { index: false, follow: true },
+      };
+    }
+  }
+  if (isFbrBurnerSku(product.sku)) {
+    const seriesHref = getBurnerSeriesHrefWithSku(product.sku);
     if (seriesHref) {
       const pathOnly = seriesHref.split("?")[0];
       return {
@@ -182,6 +198,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
+
+  // 301: старые /product/{slug|sku} горелок FBR → серия?sku= (маппинг до lookup)
+  const fbrTarget = getFbrLegacyProductRedirect(slug);
+  if (fbrTarget) permanentRedirect(fbrTarget);
+
   const product = getProductBySlug(slug);
 
   if (!product) {
@@ -191,6 +212,11 @@ export default async function ProductPage({ params }: Props) {
   // 301: старые /product/{slug} насосов Vandjord → страница серии
   if (isVandjordPumpSku(product.sku)) {
     const target = getPumpSeriesHrefWithSku(product.sku);
+    if (target) permanentRedirect(target);
+  }
+  // Запасной 301 FBR по SKU товара (если slug не попал в маппинг)
+  if (isFbrBurnerSku(product.sku)) {
+    const target = getBurnerSeriesHrefWithSku(product.sku);
     if (target) permanentRedirect(target);
   }
 

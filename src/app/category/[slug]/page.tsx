@@ -8,8 +8,8 @@ import PumpsCategoryHub from "@/components/pumps/PumpsCategoryHub";
 import {
   categories,
   getCategoryBySlug,
-  getProductsByCategory,
 } from "@/data/products";
+import { getProductsByCategory } from "@/lib/catalog-products";
 import { buildCanonicalUrl, parseCatalogPageParam } from "@/lib/site-url";
 import {
   isLegacyPumpCategorySlug,

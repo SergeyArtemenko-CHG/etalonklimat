@@ -123,19 +123,22 @@ export default function Header() {
   const trimmed = query.trim().toLowerCase();
   const results = useMemo(() => {
     if (trimmed.length < 2) return [];
+    const skuQuery = trimmed.replace(/\s+/g, "");
     return products
-      .filter(
-        (p) =>
+      .filter((p) => {
+        const sku = (p.sku || "").toLowerCase().replace(/\s+/g, "");
+        return (
+          sku.includes(skuQuery) ||
           p.name.toLowerCase().includes(trimmed) ||
-          p.sku.toLowerCase().includes(trimmed) ||
           (p.description?.toLowerCase().includes(trimmed) ?? false)
-      )
+        );
+      })
       .sort((a, b) => {
-        const asku = a.sku.toLowerCase();
-        const bsku = b.sku.toLowerCase();
-        const aStarts = asku.startsWith(trimmed) ? 0 : asku.includes(trimmed) ? 1 : 2;
-        const bStarts = bsku.startsWith(trimmed) ? 0 : bsku.includes(trimmed) ? 1 : 2;
-        if (aStarts !== bStarts) return aStarts - bStarts;
+        const asku = (a.sku || "").toLowerCase().replace(/\s+/g, "");
+        const bsku = (b.sku || "").toLowerCase().replace(/\s+/g, "");
+        const aExact = asku === skuQuery ? 0 : asku.startsWith(skuQuery) ? 1 : asku.includes(skuQuery) ? 2 : 3;
+        const bExact = bsku === skuQuery ? 0 : bsku.startsWith(skuQuery) ? 1 : bsku.includes(skuQuery) ? 2 : 3;
+        if (aExact !== bExact) return aExact - bExact;
         return 0;
       })
       .slice(0, 8);
@@ -391,8 +394,10 @@ export default function Header() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && results.length > 0) {
                     e.preventDefault();
-                    router.push(getProductHref(results[0]));
+                    const href = getProductHref(results[0]);
+                    setQuery("");
                     setOpen(false);
+                    router.push(href);
                   }
                 }}
                 className="header-ctrl w-full bg-transparent px-3 text-sm text-text-main focus:outline-none md:px-4"
@@ -401,11 +406,22 @@ export default function Header() {
               {/* Dropdown Results */}
               {open && results.length > 0 && (
                 <div id="search-results" className="absolute left-0 right-0 top-full z-[110] mt-2 max-h-[60vh] overflow-y-auto rounded-xl border border-text-muted/25 bg-card-bg p-2 shadow-2xl">
-                   {results.map((p) => (
+                   {results.map((p) => {
+                     const href = getProductHref(p);
+                     return (
                      <Link
                        key={p.sku}
-                       href={getProductHref(p)}
-                       onClick={() => setOpen(false)}
+                       href={href}
+                       onMouseDown={(e) => {
+                         // mousedown до blur — иначе клик по результату теряется
+                         e.preventDefault();
+                         setQuery("");
+                         setOpen(false);
+                         router.push(href);
+                       }}
+                       onClick={(e) => {
+                         e.preventDefault();
+                       }}
                        className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-main-bg"
                      >
                        <SearchProductThumb src={p.image} alt={p.name} sku={p.sku} slug={p.slug} />
@@ -414,7 +430,8 @@ export default function Header() {
                          <p className="text-[10px] uppercase tracking-tight text-text-muted">Арт: {p.sku}</p>
                        </div>
                      </Link>
-                   ))}
+                     );
+                   })}
                 </div>
               )}
             </div>

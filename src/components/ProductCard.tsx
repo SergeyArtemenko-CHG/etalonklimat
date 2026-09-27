@@ -13,6 +13,7 @@ import {
   buildProductImageAlt,
   resolveProductImageSeoSrc,
 } from "@/lib/product-url";
+import { withFbrCatalogOverlay } from "@/lib/burners-catalog";
 
 type ProductCardProps = {
   id: string;
@@ -43,21 +44,32 @@ function ProductCard(props: ProductCardProps) {
     name,
     sku,
     slug,
-    priceEur,
-    priceRub,
     description,
     image,
-    burnerPowerMin,
-    burnerPowerMax,
-    inStock = true,
     partnerDiscount1,
     partnerDiscount2,
     partnerDiscount3,
-    leadTime,
     imagePriority = false,
     sharpCorners = false,
     catalogLite = false,
   } = props;
+
+  // FBR: цена / наличие / мощность из дерева CSV (как на странице серии)
+  const offer = withFbrCatalogOverlay({
+    sku,
+    priceEur: props.priceEur,
+    priceRub: props.priceRub,
+    inStock: props.inStock,
+    leadTime: props.leadTime,
+    burnerPowerMin: props.burnerPowerMin,
+    burnerPowerMax: props.burnerPowerMax,
+  });
+  const priceEur = offer.priceEur;
+  const priceRub = offer.priceRub;
+  const burnerPowerMin = offer.burnerPowerMin;
+  const burnerPowerMax = offer.burnerPowerMax;
+  const leadTime = offer.leadTime;
+  const inStock = offer.inStock ?? true;
 
   const cardRound = sharpCorners ? "rounded-none" : "rounded-xl";
   const cardMotionClass = catalogLite

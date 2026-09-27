@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products, categories } from "@/data/products";
 import { getAllPumpSeries, isVandjordPumpSku } from "@/lib/pumps-catalog";
+import { getAllBurnerSeries, isFbrBurnerSku } from "@/lib/burners-catalog";
 import { buildCanonicalUrl, buildProductCanonicalUrl } from "@/lib/site-url";
 import { LEGACY_PUMP_CATEGORY_SLUGS } from "@/lib/pumps-nav";
 
@@ -28,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: buildCanonicalUrl("/catalog/gorelki-fbr"),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
   ];
 
   const legacyPumpSlugs = new Set<string>(LEGACY_PUMP_CATEGORY_SLUGS);
@@ -50,7 +57,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [main, ...subs];
   });
 
-  // Серии Vandjord — сильные страницы; отдельные артикулы в sitemap не кладём
   const pumpSeriesEntries: MetadataRoute.Sitemap = getAllPumpSeries().map((s) => ({
     url: buildCanonicalUrl(s.path),
     lastModified: now,
@@ -58,8 +64,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const burnerSeriesEntries: MetadataRoute.Sitemap = getAllBurnerSeries().map(
+    (s) => ({
+      url: buildCanonicalUrl(s.path),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })
+  );
+
   const productEntries: MetadataRoute.Sitemap = products
-    .filter((p) => !isVandjordPumpSku(p.sku))
+    .filter((p) => !isVandjordPumpSku(p.sku) && !isFbrBurnerSku(p.sku))
     .map((p) => ({
       url: buildProductCanonicalUrl(p.slug || p.sku || p.id),
       lastModified: now,
@@ -71,6 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...categoryEntries,
     ...pumpSeriesEntries,
+    ...burnerSeriesEntries,
     ...productEntries,
   ];
 }

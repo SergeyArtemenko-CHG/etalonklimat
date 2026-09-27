@@ -4,6 +4,7 @@ import { useState } from "react";
 import { products } from "@/data/products";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
 import type { Product } from "@/data/products";
+import { withFbrCatalogOverlayAll } from "@/lib/burners-catalog";
 
 function getPriceRub(p: Product, rate: number): number | null {
   if (p.priceRub != null && p.priceRub > 0) return p.priceRub;
@@ -39,7 +40,9 @@ export default function DownloadPriceBtn() {
         year: "numeric",
       });
 
-      const tableBody = products
+      const catalogProducts = withFbrCatalogOverlayAll(products);
+
+      const tableBody = catalogProducts
         .filter((p) => p.inStock !== false)
         .map((p) => {
           const priceRub = getPriceRub(p, rate);
