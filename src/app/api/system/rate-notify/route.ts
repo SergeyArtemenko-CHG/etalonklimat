@@ -5,9 +5,16 @@ import path from "path";
 /** Файл в корне проекта с датой последнего уведомления (YYYY-MM-DD). */
 const LAST_NOTIFY_FILE = path.join(process.cwd(), "last_notify_date.txt");
 
+/** Безопасный ответ: никогда не роняем страницу/робота 5xx. */
+function muted(extra?: Record<string, unknown>) {
+  return NextResponse.json(
+    { success: false, error: "muted", ...extra },
+    { status: 200 }
+  );
+}
+
 function getTodayIso(): string {
   const now = new Date();
-  // Локальная дата в формате YYYY-MM-DD
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, "0");
   const day = String(now.getDate()).padStart(2, "0");
@@ -34,33 +41,40 @@ function writeLastNotifyDateToFile(date: string): void {
   }
 }
 
+/** Роботы иногда дергают GET — отвечаем 200, без побочных эффектов. */
+export async function GET() {
+  try {
+    return NextResponse.json({ success: true, ok: true }, { status: 200 });
+  } catch {
+    return muted();
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as { rate?: unknown };
+    let body: { rate?: unknown } = {};
+    try {
+      body = (await request.json()) as { rate?: unknown };
+    } catch {
+      return muted({ reason: "bad_json" });
+    }
 
     const rate = body.rate;
     if (typeof rate !== "number" || !Number.isFinite(rate) || rate <= 0) {
-      return NextResponse.json(
-        { error: "Укажите число rate в теле запроса" },
-        { status: 400 }
-      );
+      return muted({ reason: "bad_rate" });
     }
 
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
     if (!token?.trim() || !chatId?.trim()) {
-      return NextResponse.json(
-        { error: "Настройте TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID в .env.local" },
-        { status: 500 }
-      );
+      return muted({ reason: "no_telegram_env" });
     }
 
     const today = getTodayIso();
     const lastDate = readLastNotifyDateFromFile();
-    console.log("Today:", today, "LastDate:", lastDate);
     if (lastDate && lastDate.trim() === today) {
-      return NextResponse.json({ skipped: true });
+      return NextResponse.json({ success: true, skipped: true }, { status: 200 });
     }
 
     const text = `📈 КУРС ОБНОВЛЕН: 1 EUR = ${rate} RUB.`;
@@ -76,21 +90,15 @@ export async function POST(request: NextRequest) {
     });
 
     if (!res.ok) {
-      const err = await res.text();
+      const err = await res.text().catch(() => "");
       console.error("Telegram API error (rate-notify):", res.status, err);
-      return NextResponse.json(
-        { error: "Не удалось отправить уведомление в Telegram" },
-        { status: 502 }
-      );
+      return muted({ reason: "telegram_failed" });
     }
 
     writeLastNotifyDateToFile(today);
-    return new NextResponse(null, { status: 200 });
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (e) {
     console.error("Rate-notify API error:", e);
-    return NextResponse.json(
-      { error: "Ошибка обработки запроса" },
-      { status: 500 }
-    );
+    return muted();
   }
 }
