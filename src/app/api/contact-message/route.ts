@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
 
     const text = buildMessage(name, phone, (message || "").trim(), sessionId);
 
-    const url = `https://api.telegram.org/bot${encodeURIComponent(token)}/sendMessage`;
+    const url = `https://telegram-proxy-bridge.onrender.com/bot${encodeURIComponent(token)}/sendMessage`;
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
