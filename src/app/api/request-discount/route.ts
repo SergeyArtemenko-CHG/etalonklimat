@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       productId: body.productId,
     });
 
-    const url = `https://telegram-proxy-bridge.onrender.com/bot${token}/sendMessage`;
+    const url = "https://telegram-proxy-bridge.onrender.com/api/bridge";
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
