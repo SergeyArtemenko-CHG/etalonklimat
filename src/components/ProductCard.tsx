@@ -7,7 +7,6 @@ import { useSession } from "next-auth/react";
 import AddToCartButton from "./AddToCartButton";
 import { formatPrice } from "@/utils/currency";
 import { useCurrencyStore } from "@/store/useCurrencyStore";
-import { useProductRequestStore } from "@/store/productRequest";
 import {
   getProductHref,
   buildProductImageAlt,
@@ -76,11 +75,9 @@ function ProductCard(props: ProductCardProps) {
     ? ""
     : "transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-text-muted/10";
   const innerRound = sharpCorners ? "rounded-none" : "rounded-lg";
-  const btnRound = sharpCorners ? "rounded-none" : "rounded-lg";
 
   const rate = useCurrencyStore((s) => s.rate);
   const [imageError, setImageError] = useState(false);
-  const openRequestModal = useProductRequestStore((s) => s.open);
   const { data: session } = useSession();
   const href = getProductHref({ id, sku, name, slug });
   const seoSource = { name, sku, slug };
@@ -256,40 +253,17 @@ function ProductCard(props: ProductCardProps) {
         </div>
       </Link>
       <div className="px-2 pb-2 md:px-4 md:pb-4 md:pt-0">
-        {inStock ? (
-          <AddToCartButton
-            id={id}
-            name={name}
-            sku={sku}
-            image={image}
-            priceEur={priceEur}
-            priceRub={priceRub}
-            variant="card"
-            sharpCorners={sharpCorners}
-          />
-        ) : (
-          <>
-            {!isAuthorized || !leadTime ? (
-              <button
-                type="button"
-                onClick={() =>
-                  openRequestModal({
-                    type: "price",
-                    productName: name,
-                    productId: id,
-                    productSku: sku,
-                  })
-                }
-                aria-label={`Запросить цену на ${name}`}
-                className={`w-full ${btnRound} bg-accent px-2 py-1.5 text-[11px] font-semibold text-white shadow-md transition hover:bg-accent-hover md:py-2`}
-              >
-                Запросить
-              </button>
-            ) : (
-              <div className="h-[30px] md:h-[36px]" aria-hidden />
-            )}
-          </>
-        )}
+        <AddToCartButton
+          id={id}
+          name={name}
+          sku={sku}
+          image={image}
+          priceEur={priceEur}
+          priceRub={priceRub}
+          variant="card"
+          sharpCorners={sharpCorners}
+          label={inStock ? "Купить" : "Под заказ"}
+        />
       </div>
     </article>
   );

@@ -9,16 +9,15 @@ import BurnerSeriesConfigurator from "@/components/burners/BurnerSeriesConfigura
 import BurnerModelsTableSSR from "@/components/burners/BurnerModelsTableSSR";
 import {
   buildPumpSeriesCanonicalPath,
-  formatPumpNum,
+  buildPumpSeriesSeoText,
   getAllPumpSeries,
-  getPumpModel,
   getPumpSeriesBySlug,
 } from "@/lib/pumps-catalog";
 import {
   buildBurnerSeriesCanonicalPath,
+  buildBurnerSeriesSeoText,
   formatBurnerPower,
   getAllBurnerSeries,
-  getBurnerModel,
   getBurnerSeriesBySlug,
 } from "@/lib/burners-catalog";
 import { buildCanonicalUrl } from "@/lib/site-url";
@@ -46,47 +45,38 @@ function pickSku(raw: string | string[] | undefined): string | undefined {
 
 export async function generateMetadata({
   params,
-  searchParams,
 }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const sp = await searchParams;
-  const sku = pickSku(sp.sku);
 
   if (slug.startsWith("nasosy-vandjord-")) {
     const series = getPumpSeriesBySlug(slug);
     if (!series) return { title: "Серия не найдена" };
-    const model = getPumpModel(series, sku);
     const canonical = buildCanonicalUrl(
       buildPumpSeriesCanonicalPath(series.slug)
     );
     const titleBase = `Насос Vandjord ${series.series}`;
     return {
-      title: model
-        ? `${titleBase} — ${model.name || model.sku} · Эталон Профи`
-        : `${titleBase}: характеристики и цены · Эталон Профи`,
-      description: model
-        ? `Насос Vandjord ${model.name || series.series}, артикул ${model.sku}. Номинальный расход ${formatPumpNum(model.flowM3h)} м³/ч, напор ${formatPumpNum(model.headM)} м.`
-        : `Серия насосов Vandjord ${series.series}: ${series.modelCount} модификаций.`,
+      title: `${titleBase}: характеристики и цены · Эталон Профи`,
+      description: `Серия насосов Vandjord ${series.series}: ${series.modelCount} модификаций.`,
       alternates: { canonical },
+      openGraph: { url: canonical },
+      robots: { index: true, follow: true },
     };
   }
 
   if (slug.startsWith("gorelki-fbr-")) {
     const series = getBurnerSeriesBySlug(slug);
     if (!series) return { title: "Серия не найдена" };
-    const model = getBurnerModel(series, sku);
     const canonical = buildCanonicalUrl(
       buildBurnerSeriesCanonicalPath(series.slug)
     );
     const titleBase = `Горелка FBR ${series.series}`;
     return {
-      title: model
-        ? `${titleBase} — арт. ${model.sku} · Эталон Профи`
-        : `${titleBase}: модификации и цены · Эталон Профи`,
-      description: model
-        ? `Горелка FBR ${model.name}, артикул ${model.sku}. Мощность ${formatBurnerPower(model.powerMin, model.powerMax)}. Рампа: ${model.ramp || "—"}.`
-        : `Серия горелок FBR ${series.series}: ${series.modelCount} модификаций по рампе, длине трубы TC/TL и контролю герметичности CT.`,
+      title: `${titleBase}: модификации и цены · Эталон Профи`,
+      description: `Серия горелок FBR ${series.series}: ${series.modelCount} модификаций по рампе, длине трубы TC/TL и контролю герметичности CT.`,
       alternates: { canonical },
+      openGraph: { url: canonical },
+      robots: { index: true, follow: true },
     };
   }
 
@@ -137,6 +127,10 @@ function PumpSeriesPageBody({
       </header>
 
       <PumpSeriesConfigurator series={series} initialSku={initialSku} />
+
+      <p className="mt-5 max-w-3xl text-sm leading-relaxed text-text-muted">
+        {buildPumpSeriesSeoText(series)}
+      </p>
     </>
   );
 }
@@ -201,6 +195,10 @@ function BurnerSeriesPageBody({
 
       {/* Полная таблица в исходном HTML (Server Component) — для Яндекса */}
       <BurnerModelsTableSSR series={series} />
+
+      <p className="mt-5 max-w-3xl text-sm leading-relaxed text-text-muted">
+        {buildBurnerSeriesSeoText(series)}
+      </p>
     </>
   );
 }

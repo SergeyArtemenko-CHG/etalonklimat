@@ -140,3 +140,46 @@ export function formatPumpNum(value: number | null | undefined, digits = 2): str
   if (Math.abs(value - Math.round(value)) < 1e-9) return String(Math.round(value));
   return value.toFixed(digits).replace(/\.?0+$/, "");
 }
+
+function minMax(values: number[]): { min: number; max: number } | null {
+  if (!values.length) return null;
+  return { min: Math.min(...values), max: Math.max(...values) };
+}
+
+function formatRubRange(min: number | null, max: number | null): string {
+  const fmt = (n: number) => Math.round(n).toLocaleString("ru-RU");
+  if (min != null && max != null && min !== max) return `${fmt(min)} до ${fmt(max)}`;
+  const single = min ?? max;
+  return single != null ? fmt(single) : "по запросу";
+}
+
+/** Уникальный SEO-текст под таблицей модификаций серии насосов. */
+export function buildPumpSeriesSeoText(series: PumpSeries): string {
+  const prices = series.models
+    .map((m) => m.priceRub)
+    .filter((n): n is number => n != null && n > 0);
+  const powers = series.models
+    .map((m) => m.powerKw)
+    .filter((n): n is number => n != null);
+  const dns = series.models
+    .map((m) => m.dnMm)
+    .filter((n): n is number => n != null);
+  const price = minMax(prices);
+  const power = minMax(powers);
+  const dn = minMax(dns);
+  const pricePart = formatRubRange(
+    price?.min ?? series.priceMin,
+    price?.max ?? series.priceMax
+  );
+  const powerFrom = power ? formatPumpNum(power.min) : "—";
+  const powerTo = power ? formatPumpNum(power.max) : "—";
+  const dnLabel = dn
+    ? dn.min === dn.max
+      ? formatPumpNum(dn.min)
+      : `${formatPumpNum(dn.min)}–${formatPumpNum(dn.max)}`
+    : "";
+  const dnClause = dnLabel
+    ? ` и диаметром условного прохода (DN) ${dnLabel} мм`
+    : "";
+  return `В серии ${series.series} представлено ${series.modelCount} модификаций по цене от ${pricePart} руб. Оборудование обладает мощностью от ${powerFrom} до ${powerTo} кВт${dnClause}. Выберите подходящую модель по параметрам напора и расхода в таблице выше.`;
+}

@@ -8,6 +8,7 @@ import type { PumpModel, PumpSeries } from "@/lib/pumps-catalog";
 import { formatPumpNum, getPumpModel } from "@/lib/pumps-catalog";
 import { formatPrice } from "@/utils/currency";
 import { buildProductImageAlt } from "@/lib/product-url";
+import AddToCartButton from "@/components/AddToCartButton";
 
 type Props = {
   series: PumpSeries;
@@ -350,6 +351,18 @@ export default function PumpSeriesConfigurator({ series, initialSku }: Props) {
             <span className="mt-1 block text-xs uppercase tracking-[0.16em] text-text-muted">
               {!isAuthorized ? "Цена без скидки с НДС" : "Цена с НДС"}
             </span>
+          ) : null}
+
+          {selected ? (
+            <AddToCartButton
+              id={selected.sku}
+              name={selected.name || series.series}
+              sku={selected.sku}
+              image={selected.image}
+              priceRub={selected.priceRub ?? undefined}
+              variant="page"
+              label={inStock ? "Купить" : "Под заказ"}
+            />
           ) : null}
 
           <p className="mt-3 text-xs leading-relaxed text-text-muted">

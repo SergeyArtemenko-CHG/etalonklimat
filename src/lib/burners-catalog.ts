@@ -240,3 +240,31 @@ export function tubeLengthLabel(value: string): string {
   if (value === "TL") return "TL (длинная)";
   return value || "—";
 }
+
+function formatSeoRub(n: number): string {
+  return Math.round(n).toLocaleString("ru-RU");
+}
+
+/** Уникальный SEO-текст под таблицей модификаций серии горелок FBR. */
+export function buildBurnerSeriesSeoText(series: BurnerSeries): string {
+  const rubPrices = series.models
+    .map((m) => {
+      if (m.priceRub != null && m.priceRub > 0) return m.priceRub;
+      if (m.priceEur != null && m.priceEur > 0) return m.priceEur * 100;
+      return null;
+    })
+    .filter((n): n is number => n != null);
+  const priceMin = rubPrices.length ? Math.min(...rubPrices) : null;
+  const priceMax = rubPrices.length ? Math.max(...rubPrices) : null;
+  const pricePart =
+    priceMin != null && priceMax != null && priceMin !== priceMax
+      ? `${formatSeoRub(priceMin)} до ${formatSeoRub(priceMax)}`
+      : priceMin != null
+        ? formatSeoRub(priceMin)
+        : "по запросу";
+  const powerFrom =
+    series.powerMin != null ? String(series.powerMin) : "—";
+  const powerTo =
+    series.powerMax != null ? String(series.powerMax) : "—";
+  return `В серии ${series.series} представлено ${series.modelCount} модификаций по цене от ${pricePart} руб. Оборудование обладает мощностью от ${powerFrom} до ${powerTo} кВт. Выберите подходящую модель по параметрам рампы, длины трубы и контроля герметичности в таблице выше.`;
+}

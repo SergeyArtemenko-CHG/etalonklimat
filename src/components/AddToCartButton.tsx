@@ -13,6 +13,8 @@ type AddToCartButtonProps = {
   quantity?: number;
   variant?: "card" | "page";
   sharpCorners?: boolean;
+  /** Текст кнопки: «Купить» / «Под заказ» / «В корзину» */
+  label?: string;
 };
 
 export default function AddToCartButton({
@@ -25,6 +27,7 @@ export default function AddToCartButton({
   quantity = 1,
   variant = "card",
   sharpCorners = false,
+  label,
 }: AddToCartButtonProps) {
   const addItem = useCartStore((s) => s.addItem);
   const addToast = useToastStore((s) => s.addToast);
@@ -47,7 +50,7 @@ export default function AddToCartButton({
         onClick={handleClick}
         className={`w-full px-2 py-1.5 text-[11px] shadow-sm ${baseCard}`}
       >
-        Купить
+        {label || "Купить"}
       </button>
     );
   }
@@ -58,7 +61,7 @@ export default function AddToCartButton({
       onClick={handleClick}
         className={`mt-4 w-full px-4 py-3 text-center text-sm shadow-md ${basePage}`}
     >
-      В корзину
+      {label || "В корзину"}
     </button>
   );
 }

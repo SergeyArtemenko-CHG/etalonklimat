@@ -13,6 +13,7 @@ import {
   tubeLengthLabel,
 } from "@/lib/burners-catalog";
 import { buildProductImageAlt } from "@/lib/product-url";
+import AddToCartButton from "@/components/AddToCartButton";
 
 type Props = {
   series: BurnerSeries;
@@ -272,6 +273,19 @@ export default function BurnerSeriesConfigurator({
             <span className="mt-1 block text-xs uppercase tracking-[0.16em] text-text-muted">
               {!isAuthorized ? "Цена без скидки с НДС" : "Цена с НДС"}
             </span>
+          ) : null}
+
+          {selected ? (
+            <AddToCartButton
+              id={selected.sku}
+              name={selected.name || series.series}
+              sku={selected.sku}
+              image={selected.image}
+              priceEur={selected.priceEur ?? undefined}
+              priceRub={selected.priceRub ?? undefined}
+              variant="page"
+              label={selected.inStock ? "Купить" : "Под заказ"}
+            />
           ) : null}
         </aside>
       </div>
