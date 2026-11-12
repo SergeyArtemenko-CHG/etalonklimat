@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+} from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Данные для входа — ETALON",
@@ -21,17 +26,17 @@ export default function LoginAccessInfoPage() {
           <p className="text-sm leading-relaxed text-text-main md:text-base">
             Для получения данных для входа в личный кабинет свяжитесь с нами по телефону:{" "}
             <a
-              href="tel:+74993980140"
+              href={`tel:${CONTACT_PHONE_TEL}`}
               className="font-medium text-primary underline underline-offset-2 hover:text-accent"
             >
-              +7 (499) 398-01-40
+              {CONTACT_PHONE_DISPLAY}
             </a>{" "}
             или по E-mail:{" "}
             <a
-              href="mailto:info@etalonklimat.ru"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="font-medium text-primary underline underline-offset-2 hover:text-accent"
             >
-              info@etalonklimat.ru
+              {CONTACT_EMAIL}
             </a>
           </p>
           <p className="mt-8 text-center text-sm text-text-muted">

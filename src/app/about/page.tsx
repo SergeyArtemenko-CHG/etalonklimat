@@ -1,4 +1,5 @@
 import ContentLayout from "@/components/ContentLayout";
+import { COMPANY_FULL_NAME } from "@/lib/company";
 
 export const metadata = {
   title: "О компании — ЭТАЛОН ПРОФИ",
@@ -8,7 +9,7 @@ export default function AboutPage() {
   return (
     <ContentLayout title="О компании «ЭТАЛОН ПРОФИ»">
       <p>
-        ООО «Эталон Профи» занимается профессиональным подбором и поставкой промышленного
+        {COMPANY_FULL_NAME} (торговая марка «Эталон Профи») занимается профессиональным подбором и поставкой промышленного
         котельного оборудования: водогрейных и паровых котлов, горелочных устройств, а также
         систем промышленной водоподготовки.
       </p>

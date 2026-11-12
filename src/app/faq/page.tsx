@@ -1,4 +1,5 @@
 import ContentLayout from "@/components/ContentLayout";
+import { CONTACT_EMAIL } from "@/lib/company";
 
 export const metadata = {
   title: "Частые вопросы — ETALON",
@@ -45,10 +46,10 @@ export default function FaqPage() {
           <p>
             По вопросам работы личного кабинета и сайта напишите нам на{" "}
             <a
-              href="mailto:info@etalonklimat.ru"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="font-medium text-primary underline underline-offset-2 hover:text-accent"
             >
-              info@etalonklimat.ru
+              {CONTACT_EMAIL}
             </a>
             .
           </p>

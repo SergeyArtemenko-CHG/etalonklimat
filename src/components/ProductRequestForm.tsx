@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+} from "@/lib/company";
 
 export type RequestType = "discount" | "price";
-
-const PHONE_DISPLAY = "+7 (499) 398-01-40";
-const PHONE_TEL = "+74993980140";
-const CONTACT_EMAIL = "info@etalonklimat.ru";
 
 type ProductRequestFormProps = {
   type: RequestType;
@@ -66,10 +67,10 @@ export default function ProductRequestForm({
           </Link>{" "}
           или свяжитесь с нами по телефону{" "}
           <a
-            href={`tel:${PHONE_TEL}`}
+            href={`tel:${CONTACT_PHONE_TEL}`}
             className="font-medium text-primary underline underline-offset-2 hover:text-accent"
           >
-            {PHONE_DISPLAY}
+            {CONTACT_PHONE_DISPLAY}
           </a>{" "}
           или по e-mail{" "}
           <a

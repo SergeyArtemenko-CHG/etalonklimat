@@ -1,4 +1,13 @@
 import Link from "next/link";
+import {
+  COMPANY_ADDRESS,
+  COMPANY_FULL_NAME,
+  COMPANY_INN,
+  COMPANY_OGRNIP,
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+} from "@/lib/company";
 
 function SocialIcon({ href, label, children }: { href: string; label: string; children: React.ReactNode }) {
   return (
@@ -120,19 +129,17 @@ export default function Footer() {
               Контакты
             </h3>
             <a
-              href="tel:+74993980140"
+              href={`tel:${CONTACT_PHONE_TEL}`}
               className="mb-2 block text-lg font-semibold text-white hover:text-white"
             >
-              +7 (499) 398-01-40
+              {CONTACT_PHONE_DISPLAY}
             </a>
-            <p className="mb-2 text-sm text-white/80">
-              111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
-            </p>
+            <p className="mb-2 text-sm text-white/80">{COMPANY_ADDRESS}</p>
             <a
-              href="mailto:info@etalonklimat.ru"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="mb-4 block text-sm text-white/80 underline-offset-2 hover:text-white hover:underline"
             >
-              info@etalonklimat.ru
+              {CONTACT_EMAIL}
             </a>
             <div className="flex gap-2">
               <SocialIcon href="https://vk.com" label="ВКонтакте">
@@ -189,8 +196,8 @@ export default function Footer() {
             пользователей.
           </p>
           <p className="mt-4 text-center text-[11px] text-white/75">
-            © {new Date().getFullYear()} ООО «ЭТАЛОН ПРОФИ» · ИНН 7720486235 · КПП 772001001 · 111141,
-            г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
+            © {new Date().getFullYear()} {COMPANY_FULL_NAME} · ИНН {COMPANY_INN} ·
+            ОГРНИП {COMPANY_OGRNIP} · {COMPANY_ADDRESS}
           </p>
         </div>
       </div>

@@ -1,15 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import {
+  COMPANY_ADDRESS,
+  COMPANY_FULL_NAME,
+  COMPANY_INN,
+  COMPANY_OGRNIP,
+  CONTACT_EMAIL,
+} from "@/lib/company";
 
-/** Синхронно со страницей «Контакты» (src/app/contacts/page.tsx) */
+/** Синхронно со страницей «Контакты» */
 const SITE_HOST = "etalonklimat.ru";
-const CONTACT_EMAIL = "info@etalonklimat.ru";
-const COMPANY_FULL_NAME = "ООО «ЭТАЛОН ПРОФИ»";
-const COMPANY_INN = "7720486235";
-const COMPANY_KPP = "772001001";
-const COMPANY_ADDRESS =
-  "111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2";
 
 export const metadata = {
   title: "Пользовательское соглашение — ETALON",
@@ -68,8 +69,9 @@ export default function AgreementPage() {
                 <strong>1.4.</strong> Администратор Сайта, оператор персональных данных в случаях,
                 предусмотренных Политикой в отношении обработки персональных данных, и продавец по
                 договорам купли-продажи, заключаемым в рамках Сайта:{" "}
-                <strong>{COMPANY_FULL_NAME}</strong>, ИНН {COMPANY_INN}, КПП {COMPANY_KPP},
-                юридический адрес: {COMPANY_ADDRESS}. Контактный e-mail:{" "}
+                <strong>{COMPANY_FULL_NAME}</strong>, ИНН {COMPANY_INN}, ОГРНИП{" "}
+                {COMPANY_OGRNIP}, юридический адрес: {COMPANY_ADDRESS}. Контактный
+                e-mail:{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
                   className="font-medium text-primary underline underline-offset-2 hover:text-accent"

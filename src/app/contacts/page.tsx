@@ -1,5 +1,15 @@
 import ContentLayout from "@/components/ContentLayout";
 import ContactsMapSection from "@/components/ContactsMapSection";
+import {
+  COMPANY_ADDRESS,
+  COMPANY_FULL_NAME,
+  COMPANY_INN,
+  COMPANY_OGRNIP,
+  COMPANY_OGRNIP_DATE,
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+} from "@/lib/company";
 
 export const metadata = {
   title: "Контакты — ETALON",
@@ -50,10 +60,10 @@ export default function ContactsPage() {
             }
           >
             <a
-              href="tel:+74993980140"
+              href={`tel:${CONTACT_PHONE_TEL}`}
               className="font-semibold text-primary hover:text-accent"
             >
-              +7 (499) 398-01-40
+              {CONTACT_PHONE_DISPLAY}
             </a>
           </ContactRow>
 
@@ -85,10 +95,10 @@ export default function ContactsPage() {
             }
           >
             <a
-              href="mailto:info@etalonklimat.ru"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="font-semibold text-primary hover:text-accent"
             >
-              info@etalonklimat.ru
+              {CONTACT_EMAIL}
             </a>
           </ContactRow>
 
@@ -107,7 +117,7 @@ export default function ContactsPage() {
               </svg>
             }
           >
-            111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2
+            {COMPANY_ADDRESS}
           </ContactRow>
         </div>
 
@@ -116,9 +126,12 @@ export default function ContactsPage() {
             Реквизиты компании
           </h2>
           <ul className="space-y-1 text-sm text-text-main md:text-base">
-            <li>ООО «ЭТАЛОН ПРОФИ»</li>
-            <li>ИНН 7720486235 · КПП 772001001</li>
-            <li>111141, г. Москва, проезд Перова Поля 3-й, д.8, стр.11, пом.236, этаж 2</li>
+            <li>{COMPANY_FULL_NAME}</li>
+            <li>ИНН {COMPANY_INN}</li>
+            <li>
+              ОГРНИП {COMPANY_OGRNIP} от {COMPANY_OGRNIP_DATE}
+            </li>
+            <li>{COMPANY_ADDRESS}</li>
           </ul>
         </div>
       </div>

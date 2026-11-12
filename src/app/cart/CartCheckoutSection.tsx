@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import RetailPriceLabel from "@/components/RetailPriceLabel";
-
-const CALLBACK_PHONE_DISPLAY = "+7 (499) 398-01-40";
-const CALLBACK_PHONE_TEL = "+74993980140";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/company";
 
 type Props = {
   success: boolean;
@@ -38,10 +36,10 @@ export default function CartCheckoutSection({
             <p className="mt-5 text-sm font-semibold leading-relaxed text-green-900 md:text-base">
               ВАЖНО: для подтверждения заказа свяжитесь с нами по телефону{" "}
               <a
-                href={`tel:${CALLBACK_PHONE_TEL}`}
+                href={`tel:${CONTACT_PHONE_TEL}`}
                 className="text-primary underline underline-offset-2 hover:text-accent"
               >
-                {CALLBACK_PHONE_DISPLAY}
+                {CONTACT_PHONE_DISPLAY}
               </a>
               .
             </p>
