@@ -12,7 +12,7 @@ import {
 } from "@/lib/company";
 
 export const metadata = {
-  title: "Контакты — ETALON",
+  title: "Контакты",
 };
 
 function ContactRow({

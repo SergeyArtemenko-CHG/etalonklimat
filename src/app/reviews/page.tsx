@@ -1,7 +1,7 @@
 import ContentLayout from "@/components/ContentLayout";
 
 export const metadata = {
-  title: "Отзывы наших клиентов — ETALON",
+  title: "Отзывы наших клиентов",
 };
 
 export default function ReviewsPage() {

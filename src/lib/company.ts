@@ -1,6 +1,8 @@
 /** Юридические и контактные данные продавца (единый источник). */
 
 export const COMPANY_FULL_NAME = "ИП Райская Ю.П.";
+/** Подпись в title / Open Graph вместо старого бренда. */
+export const SITE_NAME = COMPANY_FULL_NAME;
 export const COMPANY_INN = "503198882239";
 export const COMPANY_OGRNIP = "326508100376728";
 export const COMPANY_OGRNIP_DATE = "25.06.2026";

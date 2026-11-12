@@ -47,8 +47,8 @@ export async function generateMetadata({
     return {
       title:
         slug === PUMPS_CATEGORY_SLUG
-          ? "Насосы Vandjord · Эталон Профи"
-          : "Подбор насосов Vandjord · Эталон Профи",
+          ? "Насосы Vandjord"
+          : "Подбор насосов Vandjord",
       alternates: { canonical: buildCanonicalUrl(pathname) },
     };
   }
@@ -65,8 +65,8 @@ export async function generateMetadata({
   const canonical = buildCanonicalUrl(pathname, page);
   const title =
     page > 1
-      ? `${categoryMatch.name} — страница ${page} · Эталон Профи`
-      : `${categoryMatch.name} · Эталон Профи`;
+      ? `${categoryMatch.name} — страница ${page}`
+      : categoryMatch.name;
 
   return {
     title,

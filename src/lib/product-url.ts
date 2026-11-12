@@ -6,7 +6,7 @@ import {
 } from "@/lib/burners-catalog";
 
 const NO_IMAGE_PATH = "/images/products/no-image.webp";
-const IMAGE_ALT_STORE_SUFFIX = ", купить в интернет-магазине ЭТАЛОН";
+const IMAGE_ALT_STORE_SUFFIX = ", купить в интернет-магазине";
 
 const TRANSLIT_MAP: Record<string, string> = {
   А: "A", а: "a", Б: "B", б: "b", В: "V", в: "v", Г: "G", г: "g",
@@ -75,7 +75,7 @@ export function getProductImageVersionKey(source: ProductImageSeoSource): string
 
 /**
  * Уникальный alt для SEO:
- * «Горелка газовая FBR GAS XP 60 — артикул EK-01234, купить в интернет-магазине ЭТАЛОН»
+ * «Горелка газовая FBR GAS XP 60 — артикул EK-01234, купить в интернет-магазине»
  */
 export function buildProductImageAlt(source: ProductImageSeoSource): string {
   const name = (source.name || "").trim();

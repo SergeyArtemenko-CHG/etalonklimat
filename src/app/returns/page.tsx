@@ -1,7 +1,7 @@
 import ContentLayout from "@/components/ContentLayout";
 
 export const metadata = {
-  title: "Возврат и обмен товара — ETALON",
+  title: "Возврат и обмен товара",
 };
 
 export default function ReturnsPage() {

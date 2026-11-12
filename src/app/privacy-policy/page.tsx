@@ -13,7 +13,7 @@ import {
 const SITE_HOST = "etalonklimat.ru";
 
 export const metadata = {
-  title: "Политика в отношении обработки персональных данных — ETALON",
+  title: "Политика в отношении обработки персональных данных",
   description:
     "Порядок обработки персональных данных и согласие на обработку ПДн пользователей сайта etalonklimat.ru.",
 };

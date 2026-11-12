@@ -33,6 +33,7 @@ import {
   isFbrBurnerSku,
 } from "@/lib/burners-catalog";
 import { getFbrLegacyProductRedirect } from "@/lib/fbr-redirects";
+import { SITE_NAME } from "@/lib/company";
 
 function toPlainDescription(product: Product): string {
   const raw =
@@ -126,7 +127,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (seriesHref) {
       const pathOnly = seriesHref.split("?")[0];
       return {
-        title: `${product.name} · Эталон Профи`,
+        title: product.name,
         alternates: { canonical: buildCanonicalUrl(pathOnly) },
         robots: { index: false, follow: true },
       };
@@ -137,7 +138,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (seriesHref) {
       const pathOnly = seriesHref.split("?")[0];
       return {
-        title: `${product.name} · Эталон Профи`,
+        title: product.name,
         alternates: { canonical: buildCanonicalUrl(pathOnly) },
         robots: { index: false, follow: true },
       };
@@ -146,7 +147,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const site = getCanonicalOrigin();
   const plain = toPlainDescription(product);
-  const title = `${product.name} — арт. ${product.sku} · Эталон Профи`;
+  const title = `${product.name} — арт. ${product.sku}`;
   const description =
     truncateMetaDescription(plain) ||
     `${product.name}. Артикул ${product.sku}. Доставка по России; персональные цены и сроки — после входа в кабинет партнёра.`;
@@ -177,7 +178,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: canonicalUrl,
-      siteName: "Эталон Профи",
+      siteName: SITE_NAME,
       locale: "ru_RU",
       type: "website",
       images: [

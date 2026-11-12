@@ -56,7 +56,7 @@ export async function generateMetadata({
     );
     const titleBase = `Насос Vandjord ${series.series}`;
     return {
-      title: `${titleBase}: характеристики и цены · Эталон Профи`,
+      title: `${titleBase}: характеристики и цены`,
       description: `Серия насосов Vandjord ${series.series}: ${series.modelCount} модификаций.`,
       alternates: { canonical },
       openGraph: { url: canonical },
@@ -72,7 +72,7 @@ export async function generateMetadata({
     );
     const titleBase = `Горелка FBR ${series.series}`;
     return {
-      title: `${titleBase}: модификации и цены · Эталон Профи`,
+      title: `${titleBase}: модификации и цены`,
       description: `Серия горелок FBR ${series.series}: ${series.modelCount} модификаций по рампе, длине трубы TC/TL и контролю герметичности CT.`,
       alternates: { canonical },
       openGraph: { url: canonical },

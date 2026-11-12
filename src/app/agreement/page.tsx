@@ -13,7 +13,7 @@ import {
 const SITE_HOST = "etalonklimat.ru";
 
 export const metadata = {
-  title: "Пользовательское соглашение — ETALON",
+  title: "Пользовательское соглашение",
   description:
     "Публичная оферта и условия использования сайта etalonklimat.ru, статус партнёра, заказы и персональные данные.",
 };

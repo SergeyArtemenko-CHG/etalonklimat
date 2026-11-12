@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { featuredBrands, type FeaturedBrand } from "@/data/brands";
 import { categories, products } from "@/data/products";
 import { productBrandMatchesFeatured } from "@/lib/featured-brand-products";
+import { COMPANY_FULL_NAME } from "@/lib/company";
 
 /** Типы товаров бренда: подкатегории, иначе категории */
 function brandProductTypes(brand: FeaturedBrand): string {
@@ -85,7 +86,7 @@ export default function Home() {
               </h2>
               <div className="mb-6 space-y-3 text-text-main">
                 <p>
-                  ЭТАЛОН ПРОФИ — поставщик промышленного оборудования для котельных и систем теплоснабжения.
+                  {COMPANY_FULL_NAME} — поставщик промышленного оборудования для котельных и систем теплоснабжения.
                   В нашем каталоге представлены котлы водогрейные и паровые, горелки газовые и дизельные,
                   деаэраторы, парогенераторы, экономайзеры и другое оборудование.
                 </p>

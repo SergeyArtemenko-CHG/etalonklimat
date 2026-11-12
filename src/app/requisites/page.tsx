@@ -11,7 +11,7 @@ import {
 } from "@/lib/company";
 
 export const metadata = {
-  title: "Реквизиты — ЭТАЛОН ПРОФИ",
+  title: "Реквизиты",
 };
 
 export default function RequisitesPage() {

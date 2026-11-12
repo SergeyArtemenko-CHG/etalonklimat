@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import LoginForm from "./LoginForm";
 
 export const metadata: Metadata = {
-  title: "Вход — ETALON",
+  title: "Вход",
   description:
     "Вход в личный кабинет по ID партнёра и паролю; персональные цены и скидки.",
 };

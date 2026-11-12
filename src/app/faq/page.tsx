@@ -2,7 +2,7 @@ import ContentLayout from "@/components/ContentLayout";
 import { CONTACT_EMAIL } from "@/lib/company";
 
 export const metadata = {
-  title: "Частые вопросы — ETALON",
+  title: "Частые вопросы",
 };
 
 export default function FaqPage() {

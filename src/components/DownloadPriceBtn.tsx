@@ -61,7 +61,7 @@ export default function DownloadPriceBtn() {
         pageMargins: [40, 60, 40, 40],
         defaultStyle: { font: "Roboto", fontSize: 9 },
         content: [
-          { text: "Прайс-лист ETALON", style: "header", margin: [0, 0, 0, 8] },
+          { text: "Прайс-лист", style: "header", margin: [0, 0, 0, 8] },
           { text: `Дата: ${dateStr}`, fontSize: 10, margin: [0, 0, 0, 4] },
           { text: `Курс EUR: ${rate} руб.`, fontSize: 10, margin: [0, 0, 0, 16] },
           {
@@ -91,7 +91,7 @@ export default function DownloadPriceBtn() {
       };
 
       const pdfDoc = pdfMake.createPdf(docDefinition);
-      pdfDoc.download(`price-list-etalon-${dateStr.replace(/\./g, "-")}.pdf`);
+      pdfDoc.download(`price-list-${dateStr.replace(/\./g, "-")}.pdf`);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Ошибка генерации PDF");
       console.error("DownloadPriceBtn PDF error:", e);

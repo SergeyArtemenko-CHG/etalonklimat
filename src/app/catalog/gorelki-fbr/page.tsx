@@ -14,7 +14,7 @@ export const revalidate = false;
 const PATH = "/catalog/gorelki-fbr";
 
 export const metadata: Metadata = {
-  title: "Горелки FBR — серии и модификации · Эталон Профи",
+  title: "Горелки FBR — серии и модификации",
   description:
     "Каталог серий горелок FBR: одна страница на серию вместо сотен дублей. Выбор рампы, длины трубы TC/TL и контроля герметичности CT.",
   alternates: { canonical: buildCanonicalUrl(PATH) },

@@ -13,6 +13,7 @@ import AuthSessionProvider from "@/components/AuthSessionProvider";
 import YandexMetrika from "@/components/YandexMetrika";
 import { SITE_THEME_STORAGE_KEY } from "@/lib/site-theme";
 import { getCanonicalOrigin } from "@/lib/site-url";
+import { SITE_NAME } from "@/lib/company";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,7 +30,7 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${getCanonicalOrigin()}/`),
-  title: "Эталон Профи — поставка и сервис оборудования",
+  title: `${SITE_NAME} — поставка и сервис оборудования`,
   description:
     "Профессиональное климатическое оборудование. Скидки до 50% для партнеров, отгрузка со склада в Москве по всей России",
   icons: {

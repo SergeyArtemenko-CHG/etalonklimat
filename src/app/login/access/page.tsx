@@ -9,9 +9,9 @@ import {
 } from "@/lib/company";
 
 export const metadata: Metadata = {
-  title: "Данные для входа — ETALON",
+  title: "Данные для входа",
   description:
-    "Как получить ID партнёра и пароль для входа в личный кабинет ETALON.",
+    "Как получить ID партнёра и пароль для входа в личный кабинет.",
 };
 
 export default function LoginAccessInfoPage() {

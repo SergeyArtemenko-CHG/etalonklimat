@@ -1,7 +1,7 @@
 import ContentLayout from "@/components/ContentLayout";
 
 export const metadata = {
-  title: "Доставка и оплата — ETALON",
+  title: "Доставка и оплата",
 };
 
 export default function DeliveryPage() {

@@ -11,7 +11,7 @@ export const revalidate = false;
 const PATH = "/catalog/podbor-nasosov-vandjord";
 
 export const metadata: Metadata = {
-  title: "Подбор насосов Vandjord по расходу и напору · Эталон Профи",
+  title: "Подбор насосов Vandjord по расходу и напору",
   description:
     "Конфигуратор насосов Vandjord: введите требуемый расход Q и напор H — подберём подходящие модели с допуском ±20% по Q и до +25% по H.",
   alternates: {

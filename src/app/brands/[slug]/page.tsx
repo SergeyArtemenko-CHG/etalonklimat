@@ -42,7 +42,7 @@ export async function generateMetadata({
 
   if (slug === "fbr") {
     return {
-      title: "Купить промышленные горелки FBR: цены в интернет-магазине ЭТАЛОН",
+      title: "Купить промышленные горелки FBR: цены",
       description:
         "Предлагаем купить оригинальные горелки FBR (газовые, дизельные, комбинированные) по выгодным ценам в Москве. Подбор оборудования под ваши задачи, всё в наличии!",
       alternates: { canonical },
@@ -51,7 +51,7 @@ export async function generateMetadata({
 
   const brand = getFeaturedBrandBySlug(slug);
   if (!brand) {
-    return { title: "Бренд — Эталон Профи" };
+    return { title: "Бренд" };
   }
 
   const plain = brand.description.replace(/\s+/g, " ").trim();
@@ -59,8 +59,8 @@ export async function generateMetadata({
     plain.length > 160 ? `${plain.slice(0, 157)}…` : plain || undefined;
   const title =
     page > 1
-      ? `${brandPageHeading(brand)} — страница ${page} · Эталон Профи`
-      : `${brandPageHeading(brand)} — Эталон Профи`;
+      ? `${brandPageHeading(brand)} — страница ${page}`
+      : brandPageHeading(brand);
 
   return {
     title,

@@ -332,12 +332,12 @@ export default function Header() {
         <div className="header-logo-strip flex shrink-0 items-center justify-between self-stretch border-l border-white/45 pl-6 pr-4 md:pl-8 md:pr-5">
           <Link
             href="/"
-            aria-label="ETALON — перейти на главную"
+            aria-label="Перейти на главную"
             className="header-logo-slot transition-transform duration-300 ease-out active:scale-95"
           >
             <img
               src="/images/Logo/Etalon_LOGO.svg"
-              alt="ETALON"
+              alt="Главная"
               className="header-logo-img h-auto shrink-0 object-contain object-left"
             />
           </Link>
