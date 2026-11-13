@@ -329,33 +329,6 @@ export default function Header() {
           isShrunk ? "is-shrunk" : ""
         }`}
       >
-        <div className="header-logo-strip flex shrink-0 items-center justify-between self-stretch border-l border-white/45 pl-6 pr-4 md:pl-8 md:pr-5">
-          <Link
-            href="/"
-            aria-label="Перейти на главную"
-            className="header-logo-slot transition-transform duration-300 ease-out active:scale-95"
-          >
-            <img
-              src="/images/Logo/Etalon_LOGO.svg"
-              alt="Главная"
-              className="header-logo-img h-auto shrink-0 object-contain object-left"
-            />
-          </Link>
-
-          <Link
-            href="/cart"
-            aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`}
-            className="relative p-2 md:hidden"
-          >
-            <CartIcon className="h-6 w-6 text-white" />
-            {totalItems > 0 && (
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold">
-                {totalItems}
-              </span>
-            )}
-          </Link>
-        </div>
-
         <div className="header-main-inner mx-auto flex w-full min-w-0 max-w-6xl flex-1 flex-col gap-3 px-4 md:flex-row md:items-center">
           {/* Catalog + Search */}
           <div ref={containerRef} className="flex h-full flex-1 items-center gap-2 md:gap-4">
@@ -435,6 +408,19 @@ export default function Header() {
                 </div>
               )}
             </div>
+
+            <Link
+              href="/cart"
+              aria-label={`Корзина${totalItems > 0 ? `, товаров: ${totalItems}` : ""}`}
+              className="relative p-2 md:hidden"
+            >
+              <CartIcon className="h-6 w-6 text-white" />
+              {totalItems > 0 && (
+                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold">
+                  {totalItems}
+                </span>
+              )}
+            </Link>
           </div>
 
           {/* Desktop Cart */}
